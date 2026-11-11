@@ -1,7 +1,7 @@
 <script>
   import { app, uuid, aviso } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
-  import { duracionSesion, etiquetasBloque, avisosSuperseries, restriccion, volumenPlanificado, BANDA, banda } from '../lib/entreno.js';
+  import { duracionSesion, etiquetasBloque, bloques, avisosSuperseries, restriccion, volumenPlanificado, BANDA, banda } from '../lib/entreno.js';
   import { nuevoItem, generarRutina, repartosPara, REPARTO_POR_DEFECTO } from '../lib/plan.js';
   import Hoja from '../componentes/Hoja.svelte';
   import { fmtMin, fmtNum, mostrar, guardar, ud } from '../lib/unidades.js';
@@ -135,7 +135,12 @@
         </div>
         <label class="fila peq"><input type="checkbox" bind:checked={s.exigente} style="width:22px;height:22px" /> Sesión exigente (días de más hidratos)</label>
 
-        {#each s.items as it, k (it.uid)}
+        {#each bloques(s.items) as b (b[0].it.uid)}
+        <div class:bloque-ss={b.length > 1}>
+        {#if b.length > 1}<div class="ss-cab"><Icono n="enlace" tam={16} /><b>Superserie {et[b[0].i][0]}</b> · {b.length} ejercicios sin descanso entre ellos</div>{/if}
+        {#each b as y (y.it.uid)}
+          {@const it = y.it}
+          {@const k = y.i}
           {@const e = ej(it.ej)}
           {@const rr = restriccion(it.ej, perfil.molestias)}
           {@const a = ss.find((x) => x.i === k)}
@@ -159,6 +164,8 @@
               <button class="icono-b" style="margin-left:auto" onclick={() => s.items.splice(k, 1)} aria-label="Quitar ejercicio"><Icono n="papelera" /></button>
             </div>
           </div>
+        {/each}
+        </div>
         {/each}
         <button class="boton sec2 ancho" onclick={() => (buscar = i)}><Icono n="mas" /> Añadir ejercicio</button>
         {#if r.sesiones.length > 1}<button class="boton peligro ancho" onclick={() => { r.sesiones.splice(i, 1); abierta = -1; }}>Quitar esta sesión</button>{/if}
@@ -202,7 +209,10 @@
 <style>
   .abrir { background: none; border: 0; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 2px; padding: 0; flex: 1; }
   .item { border-top: 1px solid var(--borde); padding-top: 10px; display: flex; flex-direction: column; gap: 8px; }
-  .item.unido { border-left: 3px solid var(--entrenar); padding-left: 8px; }
+  .bloque-ss { display: flex; flex-direction: column; gap: 8px; padding: 8px 10px 10px; border-radius: 14px; background: color-mix(in srgb, var(--entrenar) 10%, var(--superficie)); border: 1px solid color-mix(in srgb, var(--entrenar) 45%, var(--borde)); }
+  .bloque-ss > .item:first-of-type { border-top: 0; padding-top: 0; }
+  .ss-cab { display: flex; gap: 6px; align-items: center; font-size: 13px; color: var(--texto2); }
+  .ss-cab b { font-family: var(--titulos); font-size: 15px; color: var(--entrenar); text-transform: uppercase; letter-spacing: 0.03em; }
   .nom { overflow: hidden; text-overflow: ellipsis; }
   .ssl { color: var(--entrenar); font-family: var(--titulos); }
   .rej { display: grid; grid-template-columns: 0.8fr 1.4fr 1fr 1fr; gap: 6px; }

@@ -29,6 +29,8 @@
 
   const objetivo = $derived(app.datos.rutina?.objetivo ?? 'hipertrofia');
   const et = $derived(sa ? etiquetasBloque(sa.ejercicios) : []);
+  const bl = $derived(sa ? bloques(sa.ejercicios) : []);
+  const nombreBloque = (n) => (n === 2 ? 'biserie' : n === 3 ? 'triserie' : 'circuito');
   const avisosSS = $derived(sa ? avisosSuperseries(sa.ejercicios) : []);
   const transcurrido = $derived(sa ? (ahora - sa.inicio) / 1000 : 0);
   const restante = $derived.by(() => {
@@ -145,7 +147,14 @@
   </header>
 
   <div class="lista">
-    {#each sa.ejercicios as x, i (x.uid)}
+    {#each bl as b (b[0].it.uid)}
+    <div class:bloque-ss={b.length > 1}>
+    {#if b.length > 1}
+      <div class="ss-cab"><Icono n="enlace" tam={18} /><span><b>Superserie {et[b[0].i][0]}</b> · {nombreBloque(b.length)}<br /><span class="peq">Sin descanso entre ejercicios · {fmtReloj(Math.max(...b.map((y) => y.it.descanso || 90)))} al acabar la vuelta</span></span></div>
+    {/if}
+    {#each b as y (y.it.uid)}
+      {@const x = y.it}
+      {@const i = y.i}
       {@const e = ej(x.ej)}
       {@const r = restriccion(x.ej, app.datos.perfil.molestias)}
       {@const hechasX = x.series.filter((z) => z.hecha).length}
@@ -201,6 +210,8 @@
           </div>
         {/if}
       </section>
+    {/each}
+    </div>
     {/each}
 
     <button class="boton sec2 ancho" onclick={() => (hoja = { tipo: 'buscar' })}><Icono n="mas" /> Añadir ejercicio</button>
@@ -300,7 +311,12 @@
   .ej { background: var(--superficie); border: 1px solid var(--borde); border-radius: 14px; }
   .ej.abierto { border-color: var(--entrenar); }
   .ej.hecho:not(.abierto) { opacity: 0.6; }
-  .ej.unido { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; margin-bottom: -6px; }
+  .bloque-ss { display: flex; flex-direction: column; gap: 6px; padding: 8px; border-radius: 18px;
+    background: color-mix(in srgb, var(--entrenar) 10%, var(--fondo)); border: 1px solid color-mix(in srgb, var(--entrenar) 45%, var(--borde)); }
+  .bloque-ss .ej { border-color: color-mix(in srgb, var(--entrenar) 25%, var(--borde)); }
+  .ss-cab { display: flex; gap: 8px; align-items: flex-start; color: var(--entrenar); padding: 2px 4px 2px; font-size: 14px; line-height: 1.3; }
+  .ss-cab b { font-family: var(--titulos); font-size: 17px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .ss-cab .peq { color: var(--texto2); }
   .cab { display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 12px; }
   .nombre { flex: 1; display: flex; align-items: center; gap: 10px; background: none; border: 0; text-align: left; min-height: 56px; cursor: pointer; min-width: 0; }
   .ssl { font-family: var(--titulos); font-weight: 800; color: var(--entrenar); font-size: 20px; width: 28px; flex-shrink: 0; }

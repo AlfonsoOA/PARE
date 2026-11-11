@@ -1,7 +1,7 @@
 <script>
   import { app } from '../lib/estado.svelte.js';
   import { ej } from '../lib/catalogo.js';
-  import { duracionSesion, etiquetasBloque, restriccion } from '../lib/entreno.js';
+  import { duracionSesion, etiquetasBloque, restriccion, bloques } from '../lib/entreno.js';
   import { sesionPropuesta, iniciarSesion } from '../lib/sesiones.js';
   import { fmt, fmtMin, fmtReloj } from '../lib/unidades.js';
   import { archivoRutina, compartir } from '../lib/archivo.js';
@@ -47,7 +47,12 @@
           {:else if d.secuencia.pendientes?.includes(i)}<span class="insignia aviso">Pendiente</span>{/if}
         </button>
         {#if abierta === i}
-          {#each s.items as it, k (it.uid)}
+          {#each bloques(s.items) as b (b[0].it.uid)}
+          <div class:bloque-ss={b.length > 1}>
+          {#if b.length > 1}<div class="ss-cab"><b>Superserie {et[b[0].i][0]}</b> · sin descanso entre ejercicios · {fmtReloj(Math.max(...b.map((y) => y.it.descanso || 90)))} al acabar la vuelta</div>{/if}
+          {#each b as y (y.it.uid)}
+            {@const it = y.it}
+            {@const k = y.i}
             {@const e = ej(it.ej)}
             {@const r = restriccion(it.ej, d.perfil.molestias)}
             <button class="ej" onclick={() => (app.vista = { nombre: 'ficha', id: it.ej, acento: 'entrenar' })}>
@@ -59,6 +64,8 @@
               </span>
               {#if r?.nivel === 'precaucion'}<span class="insignia aviso">!</span>{/if}
             </button>
+          {/each}
+          </div>
           {/each}
           <button class="boton ancho" onclick={() => iniciarSesion(i)}>Empezar {s.nombre}</button>
         {/if}
@@ -76,5 +83,10 @@
   .ej { display: flex; align-items: center; gap: 10px; background: none; border: 0; border-top: 1px solid var(--borde); padding: 10px 0; text-align: left; cursor: pointer; }
   .nom { font-weight: 600; }
   .nota { color: var(--progreso); }
+  .bloque-ss { margin: 6px 0; padding: 4px 10px; border-radius: 12px; background: color-mix(in srgb, var(--entrenar) 10%, var(--superficie)); border: 1px solid color-mix(in srgb, var(--entrenar) 45%, var(--borde)); }
+  .bloque-ss .ej { width: 100%; }
+  .bloque-ss .ej:first-of-type { border-top: 0; }
+  .ss-cab { font-size: 13px; color: var(--texto2); padding: 6px 0 2px; }
+  .ss-cab b { font-family: var(--titulos); font-size: 15px; color: var(--entrenar); text-transform: uppercase; letter-spacing: 0.03em; }
   .ss { font-family: var(--titulos); font-weight: 800; color: var(--entrenar); width: 28px; flex-shrink: 0; }
 </style>
