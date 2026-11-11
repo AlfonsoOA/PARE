@@ -7,7 +7,9 @@ import './estilos.css';
 import { mount } from 'svelte';
 import App from './App.svelte';
 
-mount(App, { target: document.getElementById('app') });
+const raiz = document.getElementById('app');
+raiz.textContent = ''; // quita la pantalla de arranque de index.html
+mount(App, { target: raiz });
 
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));

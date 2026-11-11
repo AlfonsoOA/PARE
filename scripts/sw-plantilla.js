@@ -16,8 +16,18 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET' || new URL(e.request.url).origin !== location.origin) return;
+  // La página en sí: primero la red (así nunca se sirve un index viejo que apunte a archivos borrados); sin red, la de caché.
+  if (e.request.mode === 'navigate') {
+    // con mala cobertura (gimnasio) no esperamos más de 3 s a la red
+    const deCache = () => caches.match('./', { ignoreSearch: true }).then((r) => r || caches.match('./index.html'));
+    const red = fetch(e.request);
+    e.respondWith(Promise.race([red, new Promise((ok) => setTimeout(ok, 3000))])
+      .then((r) => r || deCache().then((c) => c || red))
+      .catch(() => deCache()));
+    return;
+  }
   e.respondWith(
-    caches.match(e.request, { ignoreSearch: true }).then((r) => r ||
+    caches.match(e.request, { ignoreSearch: true, ignoreVary: true }).then((r) => r ||
       fetch(e.request).catch(() => (e.request.mode === 'navigate' ? caches.match('./') : undefined))),
   );
 });

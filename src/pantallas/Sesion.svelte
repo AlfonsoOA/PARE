@@ -84,13 +84,22 @@
   function abrirSerie(i, k) {
     const z = sa.ejercicios[i].series[k];
     const prev = sa.ejercicios[i].series[k - 1];
-    ed = { carga: mostrar(z.carga ?? prev?.carga ?? null) ?? '', reps: z.reps ?? sa.ejercicios[i].objetivo.repMin, rir: z.rir };
+    const c = z.carga ?? prev?.carga ?? null;
+    ed = { carga: mostrar(c) ?? '', reps: z.reps ?? sa.ejercicios[i].objetivo.repMin, rir: z.rir, modo: null };
+    // ejercicios con peso corporal: el número va siempre en positivo y el modo dice si suma (lastre) o resta (asistencia)
+    if (usaPesoCorporal(ej(sa.ejercicios[i].ej))) {
+      ed.modo = c > 0 ? 'lastre' : c < 0 ? 'asistencia' : 'pc';
+      ed.carga = c ? mostrar(Math.abs(c)) : '';
+    }
     hoja = { tipo: 'serie', i, k };
   }
   function guardarSerie(marcar) {
     const { i, k } = hoja;
     const x = sa.ejercicios[i], z = x.series[k];
-    z.carga = ed.carga === '' || ed.carga == null ? (usaPesoCorporal(ej(x.ej)) ? 0 : null) : guardar(ed.carga);
+    if (ed.modo) {
+      const v = Math.abs(guardar(ed.carga) || 0);
+      z.carga = ed.modo === 'lastre' ? v : ed.modo === 'asistencia' ? -v : 0;
+    } else z.carga = ed.carga === '' || ed.carga == null ? null : guardar(ed.carga);
     z.reps = +ed.reps;
     z.rir = ed.rir;
     for (let j = k + 1; j < x.series.length; j++) if (!x.series[j].hecha && x.series[j].carga == null) x.series[j].carga = z.carga;
@@ -100,7 +109,12 @@
     if (marcar && !antes) despuesDeSerie(i);
   }
   const paso = (i) => incremento(sa.ejercicios[i].ej, app.datos.ajustes);
-  const masCarga = (s) => { const v = (+ed.carga || 0) + s * (mostrar(paso(hoja.i)) || 1); ed.carga = Math.round(v * 100) / 100; };
+  const masCarga = (s) => {
+    let v = (+ed.carga || 0) + s * (mostrar(paso(hoja.i)) || 1);
+    if (ed.modo) { v = Math.max(0, v); if (v > 0 && ed.modo === 'pc') ed.modo = 'lastre'; }
+    ed.carga = Math.round(v * 100) / 100;
+  };
+  function cambiarModo(m) { ed.modo = m; if (m === 'pc') ed.carga = ''; }
 
   // ---- Menú del ejercicio ----
   function anadirSerie(i) { const x = sa.ejercicios[i]; const u = x.series.at(-1); x.series.push({ carga: u?.carga ?? x.objetivo.carga, reps: u?.reps ?? x.objetivo.repMin, hecha: false, rir: null }); hoja = null; }
@@ -188,7 +202,7 @@
             {/if}
             {#if x.nota}<p class="peq nota">{x.nota}</p>{/if}
             {#if r && r.nivel !== 'recomendado'}<div class="aviso-l peq"><Icono n="aviso" tam={18} /><p><b>{r.zona}:</b> {r.motivo}</p></div>{/if}
-            {#if usaPesoCorporal(e)}<p class="sec peq">PC = tu peso corporal{pc ? ` (${fmt(pc)})` : ''}. Apunta el lastre con + y la asistencia con −.</p>{/if}
+            {#if usaPesoCorporal(e)}<p class="sec peq">PC = tu peso corporal{pc ? ` (${fmt(pc)})` : ''}. Toca una serie para indicar lastre o asistencia.</p>{/if}
             {#if x.objetivo.carga == null && !usaPesoCorporal(e) && !prev}
               <p class="guia peq">Primer día: elige un peso con el que te sobren 2-3 repeticiones y apúntalo.</p>
             {/if}
@@ -235,12 +249,23 @@
   {@const e = ej(x.ej)}
   <Hoja titulo="Serie {hoja.k + 1} · {e?.n}" cerrar={() => (hoja = null)}>
     <div class="ajuste">
-      <span class="sec">{usaPesoCorporal(e) ? `Lastre (+) o asistencia (−), ${ud()}` : `Carga (${ud()})`}</span>
+      {#if ed.modo}
+        <div class="fila envolver" role="group" aria-label="Tipo de carga">
+          {#each [['pc', 'Solo peso corporal'], ['lastre', 'Con lastre'], ['asistencia', 'Con asistencia']] as [m, l]}
+            <button class="chip" class:on={ed.modo === m} onclick={() => cambiarModo(m)}>{l}</button>
+          {/each}
+        </div>
+        {#if ed.modo !== 'pc'}<span class="sec">{ed.modo === 'lastre' ? `Lastre que te cuelgas (${ud()})` : `Asistencia: lo que marca la máquina o la goma (${ud()})`}</span>{/if}
+      {:else}
+        <span class="sec">Carga ({ud()})</span>
+      {/if}
+      {#if ed.modo !== 'pc'}
       <div class="fila">
         <button class="icono-b grande" onclick={() => masCarga(-1)} aria-label="Menos carga"><Icono n="menos" /></button>
-        <input type="number" inputmode="decimal" step="0.25" bind:value={ed.carga} aria-label="Carga" class="num" />
+        <input type="number" inputmode="decimal" step="0.25" min={ed.modo ? 0 : undefined} bind:value={ed.carga} aria-label={ed.modo === 'asistencia' ? 'Asistencia' : ed.modo === 'lastre' ? 'Lastre' : 'Carga'} class="num" />
         <button class="icono-b grande" onclick={() => masCarga(1)} aria-label="Más carga"><Icono n="mas" /></button>
       </div>
+      {/if}
     </div>
     <div class="ajuste">
       <span class="sec">{e?.ud === 'tiempo' ? 'Segundos' : 'Repeticiones'}</span>
