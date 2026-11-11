@@ -1,7 +1,7 @@
 // Del test de inicio al plan: rutina (plantillas de reparto + elección de ejercicios) y dieta.
 import { cat, ej } from './catalogo.js';
 import { uuid } from './estado.svelte.js';
-import { descansoPorDefecto, duracionSesion, restriccion, volumenPlanificado, pesosGrupo, banda } from './entreno.js';
+import { descansoPorDefecto, duracionSesion, restriccion, volumenPlanificado, pesosGrupo, banda, pesosDeltoides, deltoidesPlanificado, MIN_CABEZA } from './entreno.js';
 import { GRUPOS } from './catalogo.js';
 
 // ---------- Plantillas de reparto ----------
@@ -145,8 +145,30 @@ export function generarRutina(perfil, ajustes, repartoId = null, cargasPrevias =
   const rutina = { id: uuid(), version: 1, creada: new Date().toISOString(), nombre: `${reparto.nombre}, ${dias} días`, reparto: reparto.id, objetivo, sesiones };
   balancearVolumen(rutina, dias);
   ajustarDuracion(rutina, perfil, ajustes);
+  completarDeltoides(rutina, dias, perfil, usados, objetivo);
   balancearVolumen(rutina, dias);
   return rutina;
+}
+
+/** Que las cabezas lateral y posterior lleguen a su mínimo: primero más series del ejercicio que las trabaja
+ *  directamente; si no hay ninguno, se añade una elevación lateral o un pájaro en la sesión más corta de torso. */
+const PATRON_CABEZA = { lateral: 'elevacion_hombro', posterior: 'abduccion_horizontal_hombro' };
+function completarDeltoides(rutina, dias, perfil, usados, objetivo) {
+  for (const c of ['lateral', 'posterior']) {
+    for (let vuelta = 0; vuelta < 8; vuelta++) {
+      if (deltoidesPlanificado(rutina, dias)[c] >= MIN_CABEZA(dias)) break;
+      const items = rutina.sesiones.flatMap((s) => s.items).filter((it) => pesosDeltoides(it.ej)[c] === 1);
+      const subir = items.filter((it) => it.series < 4).sort((a, b) => a.series - b.series)[0];
+      if (subir) { subir.series++; continue; }
+      if (items.length >= rutina.sesiones.length) break; // ya hay uno por sesión: no más
+      const e = elegirEjercicio(PATRON_CABEZA[c], perfil, usados, 'A');
+      if (!e) break;
+      usados.add(e.id);
+      const torso = rutina.sesiones.filter((s) => !/pierna/i.test(s.nombre) && !s.items.some((it) => pesosDeltoides(it.ej)[c] === 1));
+      const destino = (torso.length ? torso : rutina.sesiones).reduce((a, b) => (a.items.length <= b.items.length ? a : b));
+      destino.items.push({ ...nuevoItem(e.id, objetivo, 'A'), series: 2, papel: 'A' });
+    }
+  }
 }
 
 /** Ajusta series para que cada grupo quede dentro de su banda semanal: la rutina que propone PARE no debe saltar sus propios avisos. */

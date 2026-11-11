@@ -25,6 +25,7 @@
   import Cambios from './pantallas/Cambios.svelte';
   import Ajustes from './pantallas/Ajustes.svelte';
   import Perfil from './pantallas/Perfil.svelte';
+  import Instalar from './pantallas/Instalar.svelte';
 
   let error = $state(null);
   Promise.all([cargarCatalogo(), cargarDatos()])
@@ -34,7 +35,7 @@
   const VISTAS = {
     test: Test, plan: TuPlan, sesion: Sesion, fin: FinSesion, editor: EditorRutina, ficha: FichaEjercicio,
     progresoEj: ProgresoEjercicio, midieta: MiDieta, archivo: Archivo, deportistas: Deportistas,
-    deportista: Deportista, cambios: Cambios, ajustes: Ajustes, perfil: Perfil,
+    deportista: Deportista, cambios: Cambios, ajustes: Ajustes, perfil: Perfil, instalar: Instalar,
   };
   const TABS = { hoy: Hoy, entrenar: Entrenar, comer: Comer, progreso: Progreso, yo: Yo };
   const SIN_BARRA = new Set(['test', 'plan', 'sesion', 'fin', 'bienvenida']);

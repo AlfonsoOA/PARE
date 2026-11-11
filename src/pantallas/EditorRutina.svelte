@@ -1,7 +1,7 @@
 <script>
   import { app, uuid, aviso } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
-  import { duracionSesion, etiquetasBloque, bloques, avisosSuperseries, restriccion, volumenPlanificado, BANDA, banda } from '../lib/entreno.js';
+  import { duracionSesion, etiquetasBloque, bloques, avisosSuperseries, restriccion, volumenPlanificado, BANDA, banda, deltoidesPlanificado, MIN_CABEZA } from '../lib/entreno.js';
   import { nuevoItem, generarRutina, repartosPara, REPARTO_POR_DEFECTO } from '../lib/plan.js';
   import Hoja from '../componentes/Hoja.svelte';
   import { fmtMin, fmtNum, mostrar, guardar, ud } from '../lib/unidades.js';
@@ -38,6 +38,7 @@
 
   const dsem = $derived(r._dias || perfil.diasSemana || r.sesiones.length);
   const vol = $derived(volumenPlanificado(r, dsem));
+  const delt = $derived(deltoidesPlanificado(r, dsem));
   const balance = $derived.by(() => {
     let emp = 0, tir = 0, cua = 0, isq = 0;
     for (const s of r.sesiones) for (const it of s.items) {
@@ -55,6 +56,7 @@
       if (vol[g] > banda(g, dsem).max) out.push(`${NOMBRE_GRUPO[g]}: ${fmtNum(vol[g], 1)} series a la semana. Más no es mejor, es más cansancio.`);
       else if (vol[g] < banda(g, dsem).min && ['pecho', 'espalda', 'hombros', 'piernas'].includes(g)) out.push(`${NOMBRE_GRUPO[g]}: ${fmtNum(vol[g], 1)} series a la semana. Se queda corta.`);
     }
+    for (const c of ['lateral', 'posterior']) if (vol.hombros > 0 && delt[c] < MIN_CABEZA(dsem)) out.push(`Deltoides ${c}: ${fmtNum(delt[c], 1)} series a la semana. Se queda corto: añade ${c === 'lateral' ? 'elevaciones laterales' : 'pájaros o face pull'}.`);
     const { emp, tir, cua, isq } = balance;
     if (emp && tir && (emp / tir > 1.5 || tir / emp > 1.5)) out.push(`Empuje ${emp} series frente a tirón ${tir}: conviene equilibrarlos.`);
     if (cua && isq && (cua / isq > 2 || isq / cua > 2)) out.push(`Cuádriceps ${cua} series frente a isquios y glúteo ${isq}: descompensado.`);
@@ -184,8 +186,11 @@
     <span class="etiqueta">Volumen semanal previsto</span>
     {#each GRUPOS.filter((g) => vol[g] > 0) as g}
       <div class="fila entre peq"><span>{NOMBRE_GRUPO[g]}</span><span class:fuera={vol[g] > banda(g, dsem).max || vol[g] < banda(g, dsem).min}>{fmtNum(vol[g], 1)} series</span></div>
+      {#if g === 'hombros'}
+        <div class="cabezas peq">{#each ['anterior', 'lateral', 'posterior'] as c}<span class:fuera={c !== 'anterior' && delt[c] < MIN_CABEZA(dsem)}>{c} {fmtNum(delt[c], 1)}</span>{/each}</div>
+      {/if}
     {/each}
-    <p class="sec peq">Banda recomendada: {BANDA.min}-{BANDA.max} series por grupo y semana; piernas, {banda('piernas').min}-{banda('piernas').max}, porque junta cuádriceps, isquios, glúteo y gemelo (principal 1, secundario 0,5).</p>
+    <p class="sec peq">Banda recomendada: {BANDA.min}-{BANDA.max} series por grupo y semana; piernas, {banda('piernas').min}-{banda('piernas').max}, porque junta cuádriceps, isquios, glúteo y gemelo (principal 1, secundario 0,5). En hombros, el deltoides anterior como secundario de press y aperturas no cuenta: ya trabaja de sobra.</p>
   </div>
   {#if avisos.length}
     <div class="tarjeta avisos">
@@ -228,6 +233,7 @@
   .ssa { font-size: 13px; color: var(--aviso); }
   .ssa.etq { color: var(--texto2); }
   .fuera { color: var(--aviso); font-weight: 600; }
+  .cabezas { display: flex; gap: 12px; justify-content: flex-end; color: var(--texto2); margin-top: -6px; }
   .avisos { border-color: #5a4316; }
   .opcion { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; padding: 12px 14px; min-height: 60px; cursor: pointer; }
   .bloque-ss .ssl { color: var(--ss); }

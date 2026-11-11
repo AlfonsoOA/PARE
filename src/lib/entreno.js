@@ -101,13 +101,56 @@ export function pesosGrupo(idEj) {
   if (!e || !e.vol) return w;
   for (const g of e.gp || []) w[g] = Math.max(w[g] || 0, PONDERACION.principal);
   for (const g of e.gs || []) {
-    // El deltoides anterior trabaja en todos los press horizontales y aperturas: no se cuenta como volumen de
-    // hombro, igual que no se cuenta el antebrazo en los remos (el catálogo no separa las tres cabezas).
-    if (g === 'hombros' && (e.pat === 'empuje_horizontal' || e.pat === 'aduccion_horizontal_hombro')) continue;
+    if (g === 'hombros') continue; // hombros se calcula abajo, cabeza a cabeza
     w[g] = Math.max(w[g] || 0, PONDERACION.secundario);
+  }
+  // Hombros: la mayor de sus cabezas, salvo el deltoides anterior como secundario (press y aperturas lo
+  // trabajan siempre; contarlo inflaría el grupo, igual que no se cuenta el antebrazo en los remos).
+  const d = pesosDeltoides(idEj);
+  const h = Math.max(d.anterior >= PONDERACION.principal ? d.anterior : 0, d.lateral, d.posterior);
+  if (h > 0) w.hombros = Math.max(w.hombros || 0, h);
+  else if ((e.gp || []).includes('hombros')) w.hombros = PONDERACION.principal; // catálogo sin cabezas (por si acaso)
+  return w;
+}
+export const CABEZAS = ['anterior', 'lateral', 'posterior'];
+/** Peso de cada cabeza del deltoides en un ejercicio (principal 1, secundario 0,5). */
+export function pesosDeltoides(idEj) {
+  const e = ej(idEj);
+  const w = { anterior: 0, lateral: 0, posterior: 0 };
+  if (!e || !e.vol) return w;
+  for (const c of CABEZAS) {
+    if ((e.mp || []).includes(`deltoides_${c}`)) w[c] = PONDERACION.principal;
+    else if ((e.ms || []).includes(`deltoides_${c}`)) w[c] = PONDERACION.secundario;
   }
   return w;
 }
+/** Series semanales por cabeza del deltoides, previstas por la rutina. */
+export function deltoidesPlanificado(rutina, diasSemana) {
+  const v = { anterior: 0, lateral: 0, posterior: 0 };
+  if (!rutina?.sesiones?.length) return v;
+  const factor = (diasSemana || rutina.sesiones.length) / rutina.sesiones.length;
+  for (const s of rutina.sesiones) for (const it of s.items) {
+    const d = pesosDeltoides(it.ej);
+    for (const c of CABEZAS) v[c] += it.series * d[c] * factor;
+  }
+  for (const c of CABEZAS) v[c] = Math.round(v[c] * 2) / 2;
+  return v;
+}
+/** Series hechas por cabeza en la semana que empieza en `isoLunes`. */
+export function deltoidesSemana(sesiones, isoLunes) {
+  const v = { anterior: 0, lateral: 0, posterior: 0 };
+  for (const s of sesiones) {
+    if (lunes(s.fecha) !== isoLunes) continue;
+    for (const x of s.ejercicios) {
+      const n = x.series.filter((z) => z.hecha).length;
+      const d = pesosDeltoides(x.ej);
+      for (const c of CABEZAS) v[c] += n * d[c];
+    }
+  }
+  return v;
+}
+/** Mínimo orientativo de series directas+indirectas para las cabezas lateral y posterior (la anterior va sobrada con los press). */
+export const MIN_CABEZA = (dias) => ((dias || 4) <= 3 ? 4 : 6);
 export function lunes(iso) {
   const d = new Date(iso + 'T12:00:00');
   const dia = (d.getDay() + 6) % 7;

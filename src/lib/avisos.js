@@ -1,7 +1,7 @@
 // Avisos del día (pantalla Hoy). Tono: el dato primero y, cuando cabe, la gracia; en salud, nada de bromas.
 import { app, hoyISO } from './estado.svelte.js';
 import { ej, GRUPOS, NOMBRE_GRUPO } from './catalogo.js';
-import { estadoEjercicio, historialEjercicio, volumenPlanificado, banda } from './entreno.js';
+import { estadoEjercicio, historialEjercicio, volumenPlanificado, banda, deltoidesPlanificado, MIN_CABEZA } from './entreno.js';
 import { sesionEsquivada, pesoEnFecha, diasSinEntrenar } from './sesiones.js';
 
 export function estadosEjercicios(d = app.datos) {
@@ -37,6 +37,10 @@ export function avisosDeHoy() {
     for (const g of ['pecho', 'espalda', 'hombros', 'piernas']) {
       if (v[g] > banda(g, d.perfil.diasSemana).max + 2) out.push({ id: `volalto-${g}-${d.rutina.version}`, tipo: 'dato', texto: `${NOMBRE_GRUPO[g]}: ${v[g]} series a la semana en tu rutina. Más no es mejor, es más cansancio.` });
       if (v[g] < banda(g, d.perfil.diasSemana).min - 2) out.push({ id: `volbajo-${g}-${d.rutina.version}`, tipo: 'dato', texto: `${NOMBRE_GRUPO[g]}: ${v[g]} series a la semana en tu rutina. Se queda corta.` });
+    }
+    const dl = deltoidesPlanificado(d.rutina, d.perfil.diasSemana);
+    for (const c of ['lateral', 'posterior']) {
+      if (v.hombros > 0 && dl[c] < MIN_CABEZA(d.perfil.diasSemana)) out.push({ id: `delt-${c}-${d.rutina.version}`, tipo: 'dato', texto: `Deltoides ${c}: ${dl[c]} series a la semana en tu rutina. Se queda corto; ${c === 'lateral' ? 'unas elevaciones laterales' : 'unos pájaros o face pull'} lo arreglan.` });
     }
   }
   const ult = d.ajustes.ultimaCopia;

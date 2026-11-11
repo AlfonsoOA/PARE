@@ -1,7 +1,7 @@
 <script>
   import { app, hoyISO } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
-  import { volumenSemana, lunes, BANDA, banda, mejorSerie, usaPesoCorporal } from '../lib/entreno.js';
+  import { volumenSemana, lunes, BANDA, banda, mejorSerie, usaPesoCorporal, deltoidesSemana, MIN_CABEZA } from '../lib/entreno.js';
   import { estadosEjercicios } from '../lib/avisos.js';
   import { grasaNavy } from '../lib/plan.js';
   import { sumar } from '../lib/dieta.js';
@@ -26,7 +26,7 @@
     const out = [];
     let l = lunes(hoyISO());
     for (let k = 0; k < 8; k++) {
-      out.push({ lunes: l, v: volumenSemana(d.sesiones, l) });
+      out.push({ lunes: l, v: volumenSemana(d.sesiones, l), delt: deltoidesSemana(d.sesiones, l) });
       const x = new Date(l + 'T12:00:00'); x.setDate(x.getDate() - 7); l = x.toISOString().slice(0, 10);
     }
     return out;
@@ -92,6 +92,7 @@
         <div class="col" style="gap:4px">
           <div class="fila entre peq"><span>{NOMBRE_GRUPO[g]}</span><span class="sec">{fmtNum(v, 1)}</span></div>
           <div class="barra-p"><i style="width:{Math.min(100, (v / tope) * 100)}%"></i>{#if bg.min}<b style="left:{(bg.min / tope) * 100}%"></b>{/if}<b style="left:{(bg.max / tope) * 100}%"></b></div>
+          {#if g === 'hombros' && v > 0}<div class="fila peq sec" style="gap:12px;justify-content:flex-end">{#each ['anterior', 'lateral', 'posterior'] as c}<span>{c} {fmtNum(semanas[0].delt[c], 1)}</span>{/each}</div>{/if}
         </div>
       {/each}
       <p class="sec peq">Las marcas señalan la banda recomendada ({BANDA.min}-{BANDA.max}; piernas {banda('piernas').min}-{banda('piernas').max}). Conteo fraccional: principal 1, secundario 0,5.</p>
@@ -102,7 +103,9 @@
         <table>
           <thead><tr><th>Grupo</th>{#each [...semanas].reverse() as s}<th>{fmtFecha(s.lunes)}</th>{/each}</tr></thead>
           <tbody>
-            {#each GRUPOS as g}<tr><td>{NOMBRE_GRUPO[g]}</td>{#each [...semanas].reverse() as s}<td class:baja={s.v[g] > 0 && s.v[g] < banda(g).min} class:alta={s.v[g] > banda(g).max}>{s.v[g] ? fmtNum(s.v[g], 1) : '·'}</td>{/each}</tr>{/each}
+            {#each GRUPOS as g}<tr><td>{NOMBRE_GRUPO[g]}</td>{#each [...semanas].reverse() as s}<td class:baja={s.v[g] > 0 && s.v[g] < banda(g).min} class:alta={s.v[g] > banda(g).max}>{s.v[g] ? fmtNum(s.v[g], 1) : '·'}</td>{/each}</tr>
+              {#if g === 'hombros'}{#each ['lateral', 'posterior'] as c}<tr class="sub"><td>· {c}</td>{#each [...semanas].reverse() as s}<td class:baja={s.delt[c] > 0 && s.delt[c] < MIN_CABEZA(d.perfil.diasSemana)}>{s.delt[c] ? fmtNum(s.delt[c], 1) : '·'}</td>{/each}</tr>{/each}{/if}
+            {/each}
           </tbody>
         </table>
       </div>
@@ -180,6 +183,7 @@
   th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--superficie); }
   th { color: var(--texto2); font-weight: 500; }
   td.baja { color: var(--aviso); }
+  tr.sub td { color: var(--texto2); font-size: 12px; }
   td.alta { color: var(--entrenar); }
   .fila input[type='number'] { max-width: 90px; text-align: center; }
 </style>

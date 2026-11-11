@@ -7,6 +7,8 @@ import './estilos.css';
 import { mount } from 'svelte';
 import App from './App.svelte';
 
+import { vigilarInstalacion } from './lib/instalar.js';
+vigilarInstalacion();
 const raiz = document.getElementById('app');
 raiz.textContent = ''; // quita la pantalla de arranque de index.html
 mount(App, { target: raiz });
