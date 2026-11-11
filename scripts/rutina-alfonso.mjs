@@ -10,11 +10,11 @@ export const SESIONES = [
     ['EJ0829', 3, 12, 12, true, 'RPE 9-10'], ['EJ0112', 3, 12, 15, false, 'RPE 8-9'],
   ]],
   ['Día 2 · Tirón', false, [
-    ['EJ0845', 4, 6, 8, false, 'Jalón o dominadas, agarre neutro. Top set RPE 9. Controla el estiramiento', SOLA],
+    ['EJ0946', 4, 6, 8, false, 'O dominadas con agarre neutro. Top set RPE 9. Controla el estiramiento', SOLA],
     ['EJ0486', 3, 12, 12, true, 'RPE 9'], ['EJ0112', 3, 12, 15, false, 'RPE 8-9'],
     ['EJ0457', 3, 12, 12, true, 'RPE 9'], ['EJ0542', 3, 30, 45, false, 'Técnica'],
     ['EJ0253', 3, 10, 12, true, 'RPE 9-10'], ['EJ0267', 3, 15, 15, false, 'RPE 8-9 (RIR 2)'],
-    ['EJ0114', 3, 12, 12, false, 'Martillo en bayesiano. RPE 9-10', BISERIE],
+    ['EJ0945', 3, 12, 12, false, 'RPE 9-10', BISERIE],
   ]],
   ['Día 3 · Piernas', true, [
     ['EJ0415', 3, 10, 12, true, 'RPE 9, sin bloquear rodillas'], ['EJ0136', 4, 12, 15, false, 'RPE 10'],
@@ -36,7 +36,7 @@ export const SESIONES = [
     ['EJ0884', 3, 8, 8, false, 'RPE 8-9. Equilibrio y técnica', SOLA],
     ['EJ0413', 3, 12, 12, true, 'RPE 9'], ['EJ0451', 3, 12, 12, false, 'RPE 9'],
     ['EJ0771', 3, 10, 12, true, 'Curl femoral a una pierna. RPE 9'], ['EJ0267', 3, 15, 15, false, 'RPE 8-9 (RIR 2)'],
-    ['EJ0004', 3, 10, 12, true, 'Control total'], ['EJ0749', 2, 10, 12, false, 'Curl en bayesiano. RPE 9'],
+    ['EJ0004', 3, 10, 12, true, 'Control total'], ['EJ0944', 2, 10, 12, false, 'RPE 9'],
     ['EJ0192', 3, 15, 15, true, 'Control total, calidad'], ['EJ0940', 3, 15, 15, false, 'Control total, calidad. Al final, 2-3 min de estiramiento de espalda y psoas'],
   ]],
 ];

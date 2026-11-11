@@ -1,6 +1,6 @@
 {
  "esquema": 1,
- "generado": "2026-11-11T08:49:54",
+ "generado": "2026-11-11T13:25:41",
  "ejercicios": [
   {
    "id_ejercicio": "EJ0001",
@@ -32524,7 +32524,7 @@
   },
   {
    "id_ejercicio": "EJ0845",
-   "nombre_es": "Jalón con barra en V",
+   "nombre_es": "Jalón con barra en V (agarre neutro cerrado)",
    "nombre_en": "V-Bar Pulldown",
    "activo": "SI",
    "modalidad": "GYM",
@@ -36604,6 +36604,119 @@
    "id_fuente": null,
    "estado_revision": "revisado",
    "notas": null
+  },
+  {
+   "id_ejercicio": "EJ0944",
+   "nombre_es": "Curl bayesiano en polea",
+   "nombre_en": "Bayesian Cable Curl",
+   "activo": "SI",
+   "modalidad": "GYM",
+   "tipo_ejercicio": "fuerza",
+   "dominio_crossfit": null,
+   "patron_movimiento": "flexion_codo",
+   "familia_variantes": null,
+   "grupos_principales": [
+    "biceps"
+   ],
+   "grupos_secundarios": [],
+   "musculos_principales": [
+    "biceps"
+   ],
+   "musculos_secundarios": [],
+   "tipo_carga": "externa",
+   "unidad_registro": "repeticiones",
+   "fraccion_peso_corporal": null,
+   "fuente_fraccion": null,
+   "mecanica": "aislamiento",
+   "tipo_fuerza": "traccion",
+   "lateralidad": "unilateral",
+   "nivel": "principiante",
+   "equipamiento_principal": "polea",
+   "equipamiento_adicional": [],
+   "computa_volumen_muscular": "SI",
+   "origen": "PARE",
+   "id_fuente": null,
+   "estado_revision": "revisado",
+   "notas": "Añadido por PARE (11/11/2026): codo por detrás del tronco, bíceps estirado"
+  },
+  {
+   "id_ejercicio": "EJ0945",
+   "nombre_es": "Curl martillo bayesiano en polea",
+   "nombre_en": "Bayesian Cable Hammer Curl",
+   "activo": "SI",
+   "modalidad": "GYM",
+   "tipo_ejercicio": "fuerza",
+   "dominio_crossfit": null,
+   "patron_movimiento": "flexion_codo",
+   "familia_variantes": null,
+   "grupos_principales": [
+    "biceps"
+   ],
+   "grupos_secundarios": [
+    "antebrazos"
+   ],
+   "musculos_principales": [
+    "biceps"
+   ],
+   "musculos_secundarios": [
+    "antebrazos"
+   ],
+   "tipo_carga": "externa",
+   "unidad_registro": "repeticiones",
+   "fraccion_peso_corporal": null,
+   "fuente_fraccion": null,
+   "mecanica": "aislamiento",
+   "tipo_fuerza": "traccion",
+   "lateralidad": "unilateral",
+   "nivel": "principiante",
+   "equipamiento_principal": "polea",
+   "equipamiento_adicional": [],
+   "computa_volumen_muscular": "SI",
+   "origen": "PARE",
+   "id_fuente": null,
+   "estado_revision": "revisado",
+   "notas": "Añadido por PARE (11/11/2026): versión con cuerda y agarre neutro"
+  },
+  {
+   "id_ejercicio": "EJ0946",
+   "nombre_es": "Jalón con agarre neutro ancho",
+   "nombre_en": "Wide Neutral-Grip Lat Pulldown",
+   "activo": "SI",
+   "modalidad": "GYM",
+   "tipo_ejercicio": "fuerza",
+   "dominio_crossfit": null,
+   "patron_movimiento": "traccion_vertical",
+   "familia_variantes": null,
+   "grupos_principales": [
+    "espalda"
+   ],
+   "grupos_secundarios": [
+    "hombros",
+    "biceps"
+   ],
+   "musculos_principales": [
+    "dorsal_ancho"
+   ],
+   "musculos_secundarios": [
+    "biceps",
+    "espalda_media",
+    "deltoides"
+   ],
+   "tipo_carga": "externa",
+   "unidad_registro": "repeticiones",
+   "fraccion_peso_corporal": null,
+   "fuente_fraccion": null,
+   "mecanica": "compuesto",
+   "tipo_fuerza": "traccion",
+   "lateralidad": "bilateral",
+   "nivel": "principiante",
+   "equipamiento_principal": "polea",
+   "equipamiento_adicional": [],
+   "computa_volumen_muscular": "SI",
+   "origen": "PARE",
+   "id_fuente": null,
+   "estado_revision": "revisado",
+   "notas": "Añadido por PARE (11/11/2026): barra de agarres paralelos"
   }
  ],
  "musculos_ejercicio": [
@@ -56385,7 +56498,7 @@
   },
   {
    "id_ejercicio": "EJ0845",
-   "nombre_es": "Jalón con barra en V",
+   "nombre_es": "Jalón con barra en V (agarre neutro cerrado)",
    "musculo": "dorsal_ancho",
    "grupo": "espalda",
    "rol": "principal",
@@ -56393,7 +56506,7 @@
   },
   {
    "id_ejercicio": "EJ0845",
-   "nombre_es": "Jalón con barra en V",
+   "nombre_es": "Jalón con barra en V (agarre neutro cerrado)",
    "musculo": "biceps",
    "grupo": "biceps",
    "rol": "secundario",
@@ -56401,7 +56514,7 @@
   },
   {
    "id_ejercicio": "EJ0845",
-   "nombre_es": "Jalón con barra en V",
+   "nombre_es": "Jalón con barra en V (agarre neutro cerrado)",
    "musculo": "espalda_media",
    "grupo": "espalda",
    "rol": "secundario",
@@ -56409,7 +56522,7 @@
   },
   {
    "id_ejercicio": "EJ0845",
-   "nombre_es": "Jalón con barra en V",
+   "nombre_es": "Jalón con barra en V (agarre neutro cerrado)",
    "musculo": "deltoides",
    "grupo": "hombros",
    "rol": "secundario",
@@ -59638,6 +59751,62 @@
    "grupo": "hombros",
    "rol": "secundario",
    "ponderacion": 0.5
+  },
+  {
+   "id_ejercicio": "EJ0944",
+   "nombre_es": "Curl bayesiano en polea",
+   "musculo": "biceps",
+   "grupo": "biceps",
+   "rol": "principal",
+   "ponderacion": 1.0
+  },
+  {
+   "id_ejercicio": "EJ0945",
+   "nombre_es": "Curl martillo bayesiano en polea",
+   "musculo": "biceps",
+   "grupo": "biceps",
+   "rol": "principal",
+   "ponderacion": 1.0
+  },
+  {
+   "id_ejercicio": "EJ0945",
+   "nombre_es": "Curl martillo bayesiano en polea",
+   "musculo": "antebrazos",
+   "grupo": "antebrazos",
+   "rol": "secundario",
+   "ponderacion": 0.5
+  },
+  {
+   "id_ejercicio": "EJ0946",
+   "nombre_es": "Jalón con agarre neutro ancho",
+   "musculo": "dorsal_ancho",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 1.0
+  },
+  {
+   "id_ejercicio": "EJ0946",
+   "nombre_es": "Jalón con agarre neutro ancho",
+   "musculo": "biceps",
+   "grupo": "biceps",
+   "rol": "secundario",
+   "ponderacion": 0.5
+  },
+  {
+   "id_ejercicio": "EJ0946",
+   "nombre_es": "Jalón con agarre neutro ancho",
+   "musculo": "espalda_media",
+   "grupo": "espalda",
+   "rol": "secundario",
+   "ponderacion": 0.5
+  },
+  {
+   "id_ejercicio": "EJ0946",
+   "nombre_es": "Jalón con agarre neutro ancho",
+   "musculo": "deltoides",
+   "grupo": "hombros",
+   "rol": "secundario",
+   "ponderacion": 0.5
   }
  ],
  "variantes": [
@@ -62857,7 +63026,7 @@
   },
   {
    "id_ejercicio": "EJ0845",
-   "nombre_es": "Jalón con barra en V",
+   "nombre_es": "Jalón con barra en V (agarre neutro cerrado)",
    "familia": "jalon",
    "id_referencia": "EJ0861",
    "nombre_referencia": "Jalón al pecho, agarre abierto",
@@ -82938,7 +83107,7 @@
   },
   {
    "id_ejercicio": "EJ0845",
-   "nombre_es": "Jalón con barra en V",
+   "nombre_es": "Jalón con barra en V (agarre neutro cerrado)",
    "nombre_en": "V-Bar Pulldown",
    "ejecucion_es": "Jalón con el agarre en V (agarre neutro y cerrado). Tirar hasta la parte alta del pecho con el tronco ligeramente inclinado atrás y subir controlando.",
    "ejecucion_en": "A pulldown with the V-handle (close neutral grip). Pull to the upper chest with the torso slightly reclined and return under control.",
@@ -84908,6 +85077,66 @@
    "errores_en": "Stopping the squeeze halfway; flaring the elbows too much; bouncing off the chest.",
    "precauciones_es": "Carga moderada: la presión entre mancuernas limita el peso útil. También se conoce como hex press o crush press.",
    "precauciones_en": "Moderate load: the squeeze limits the usable weight. Also known as the hex press or crush press.",
+   "estado_ficha": "completa",
+   "instrucciones_fuente_en": null,
+   "imagen_inicio": null,
+   "imagen_final": null,
+   "estado_imagen": "pendiente_grabar",
+   "fuente_imagen": null,
+   "licencia_imagen": null
+  },
+  {
+   "id_ejercicio": "EJ0944",
+   "nombre_es": "Curl bayesiano en polea",
+   "nombre_en": "Bayesian Cable Curl",
+   "ejecucion_es": "De pie, de espaldas a una polea baja, con el agarre (estribo) en una mano y la palma hacia delante. Da un paso adelante para que el brazo quede por detrás del tronco y el bíceps estirado. Flexiona el codo sin moverlo hacia delante y baja controlando hasta estirar del todo.",
+   "ejecucion_en": "Stand facing away from a low pulley holding a single handle, palm forward. Step forward so the arm sits behind the torso with the biceps stretched. Curl without letting the elbow drift forward and lower under control to full stretch.",
+   "recomendaciones_es": "El codo por detrás del tronco carga el bíceps en estiramiento, que es la gracia del ejercicio. Mejor a una mano y con carga moderada.",
+   "recomendaciones_en": "Keeping the elbow behind the torso loads the biceps in the stretched position, which is the point of the exercise. Best done one arm at a time with moderate load.",
+   "errores_es": "Adelantar el codo al subir; recortar la bajada; girar el tronco para ayudarse.",
+   "errores_en": "Letting the elbow drift forward; cutting the lowering phase short; twisting the torso to help.",
+   "precauciones_es": "El estiramiento final carga el tendón del bíceps y el hombro anterior: con molestias en codo u hombro, rango sin dolor.",
+   "precauciones_en": "The end stretch loads the biceps tendon and the front of the shoulder: with elbow or shoulder discomfort, use a pain-free range.",
+   "estado_ficha": "completa",
+   "instrucciones_fuente_en": null,
+   "imagen_inicio": null,
+   "imagen_final": null,
+   "estado_imagen": "pendiente_grabar",
+   "fuente_imagen": null,
+   "licencia_imagen": null
+  },
+  {
+   "id_ejercicio": "EJ0945",
+   "nombre_es": "Curl martillo bayesiano en polea",
+   "nombre_en": "Bayesian Cable Hammer Curl",
+   "ejecucion_es": "Igual que el curl bayesiano, pero con la cuerda o un estribo en agarre neutro (pulgar hacia arriba). De espaldas a la polea baja, brazo por detrás del tronco; flexiona el codo sin adelantarlo y baja controlando.",
+   "ejecucion_en": "As the Bayesian curl, but with a rope or handle in a neutral grip (thumb up). Facing away from the low pulley, arm behind the torso; curl without moving the elbow forward and lower under control.",
+   "recomendaciones_es": "El agarre neutro reparte el trabajo con el braquial y el braquiorradial. Buena opción si el agarre supino molesta en el codo.",
+   "recomendaciones_en": "The neutral grip shares the work with the brachialis and brachioradialis. A good option if the supinated grip bothers the elbow.",
+   "errores_es": "Adelantar el codo; balancear el cuerpo; no completar la bajada.",
+   "errores_en": "Moving the elbow forward; swinging the body; not finishing the lowering phase.",
+   "precauciones_es": "Rango sin dolor si hay molestias de codo u hombro.",
+   "precauciones_en": "Pain-free range with elbow or shoulder discomfort.",
+   "estado_ficha": "completa",
+   "instrucciones_fuente_en": null,
+   "imagen_inicio": null,
+   "imagen_final": null,
+   "estado_imagen": "pendiente_grabar",
+   "fuente_imagen": null,
+   "licencia_imagen": null
+  },
+  {
+   "id_ejercicio": "EJ0946",
+   "nombre_es": "Jalón con agarre neutro ancho",
+   "nombre_en": "Wide Neutral-Grip Lat Pulldown",
+   "ejecucion_es": "Sentado en el jalón con la barra de agarres paralelos (palmas enfrentadas, a la anchura de los hombros o algo más). Saca el pecho, baja los hombros y tira de los codos hacia los costados hasta llevar la barra a la parte alta del pecho. Sube controlando hasta estirar.",
+   "ejecucion_en": "Seated at the pulldown with a parallel-grip bar (palms facing, shoulder-width or a little wider). Lift the chest, set the shoulders down and drive the elbows to your sides until the bar reaches the upper chest. Return under control to full stretch.",
+   "recomendaciones_es": "El agarre neutro suele ser el más cómodo para hombros y codos y permite cargar bien el dorsal.",
+   "recomendaciones_en": "The neutral grip is usually the most comfortable for shoulders and elbows and lets you load the lats well.",
+   "errores_es": "Echarse atrás para mover más peso; tirar con los brazos sin bajar antes los hombros; recortar la subida.",
+   "errores_en": "Leaning back to move more weight; pulling with the arms without first setting the shoulders; cutting the return short.",
+   "precauciones_es": "Ninguna específica; con molestias de hombro, controlar el estiramiento arriba.",
+   "precauciones_en": "None specific; with shoulder discomfort, control the stretch at the top.",
    "estado_ficha": "completa",
    "instrucciones_fuente_en": null,
    "imagen_inicio": null,
@@ -87930,7 +88159,7 @@
    "alternativas": [
     "EJ0845"
    ],
-   "nombres_alternativas": "Jalón con barra en V",
+   "nombres_alternativas": "Jalón con barra en V (agarre neutro cerrado)",
    "estado": "definitiva"
   },
   {
@@ -109143,5 +109372,5 @@
    "notas": "Con leche suma además una ración de lácteo; con agua, solo la de proteína."
   }
  ],
- "ejercicios_activos": 337
+ "ejercicios_activos": 340
 }
