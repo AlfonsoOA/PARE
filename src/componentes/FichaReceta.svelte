@@ -20,6 +20,13 @@
   const apta = recetaApta(r, d.perfil);
   const entrada = () => (r.tipo === 'plato' ? { tipo: 'plato', rid: r.id, items: aj.items.map(({ aid, g }) => ({ aid, g })) } : { tipo: 'receta', rid: r.id, porciones: 1 });
 
+  const gusto = $derived(d.gustosRecetas?.[r.id] ?? 0);
+  function marcarGusto(v) {
+    d.gustosRecetas ||= {};
+    if (d.gustosRecetas[r.id] === v) delete d.gustosRecetas[r.id];
+    else d.gustosRecetas[r.id] = v;
+    aviso(d.gustosRecetas[r.id] === 1 ? 'Saldrá antes en tus recetas y en el menú' : d.gustosRecetas[r.id] === -1 ? 'No te la volverá a proponer' : 'Quitado');
+  }
   function anotarHoy() {
     anotar(hoyISO(), { ...entrada(), comida });
     aviso(`Anotada en ${c?.nombre.toLowerCase() ?? 'tu comida'} de hoy`);
@@ -40,6 +47,10 @@
   <p class="sec peq">
     {#if r.tiempo}{r.tiempo} min{/if}{#if r.coste} · ≈ {fmtNum(r.coste, 2)} € por ración{/if} · {momentosDe(r).map((m) => NOMBRE_MOMENTO[m] ?? m).join(', ')}
   </p>
+  <div class="fila" style="gap:6px">
+    <button class="chip" class:on={gusto === 1} onclick={() => marcarGusto(1)} aria-pressed={gusto === 1}>Me gusta</button>
+    <button class="chip" class:on={gusto === -1} onclick={() => marcarGusto(-1)} aria-pressed={gusto === -1}>No me gusta</button>
+  </div>
   {#if !apta}<div class="aviso-l peq"><p>Lleva algo que dijiste que no tomas o no te gusta: {(r.alerg || []).filter((x) => (d.perfil.alergenos || []).includes(x)).join(', ') || 'revisa los ingredientes'}.</p></div>{/if}
 
   {#if comidas.length}

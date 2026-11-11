@@ -84,3 +84,87 @@ export function entradaPlato(r, objetivo) {
   const { items } = ajustarReceta(r, objetivo);
   return { tipo: 'plato', rid: r.id, items: items.map(({ aid, g }) => ({ aid, g })) };
 }
+
+// ---------- Recomendación: qué platos salen primero para cada persona ----------
+// No filtra (todas siguen disponibles): ordena. Pesan el objetivo, el día, el tiempo para cocinar, el
+// presupuesto y los gustos (me gusta / no me gusta y lo que más anota).
+
+/** Métricas de la receta base, calculadas una vez. */
+const metricas = new Map();
+function medir(r) {
+  if (metricas.has(r.id)) return metricas.get(r.id);
+  let peso = 0, verdura = 0;
+  for (const i of r.ingredientes) {
+    const a = alimento(i.id);
+    if (!a || a.grupo === 'condimento' && a.kcal < 10) continue; // agua, caldo, sal: no cuentan para la densidad
+    peso += i.g;
+    if (a.grupo === 'verdura') verdura += i.g;
+  }
+  const kcal = r.kcal || 1;
+  const m = { densidad: kcal / Math.max(1, peso), verdura, prot: (r.p * 4) / kcal, hidr: (r.hc * 4) / kcal };
+  metricas.set(r.id, m);
+  return m;
+}
+
+export const preferenciasCocina = (perfil) => ({
+  tiempo: perfil.cocina?.tiempo ?? perfil.test?.cocinaTiempo ?? 'normal',
+  presupuesto: perfil.cocina?.presupuesto ?? perfil.test?.presupuesto ?? 'normal',
+});
+const enDeficit = (perfil) => perfil.faseDieta === 'deficit' || ['perder_grasa', 'recomposicion'].includes(perfil.objetivo);
+const ganando = (perfil) => perfil.faseDieta === 'superavit' || perfil.objetivo === 'ganar_musculo';
+
+/** Veces que cada receta se ha anotado. */
+export function usosRecetas(comidas) {
+  const u = {};
+  for (const lista of Object.values(comidas || {})) for (const e of lista) if (e.rid) u[e.rid] = (u[e.rid] || 0) + 1;
+  return u;
+}
+
+/**
+ * Puntuación de una receta para esta persona y por qué. ctx: { perfil, gustos, usos, momento?, exigente? }.
+ * Los motivos son las etiquetas que se enseñan en la lista ("Sacia mucho", "Rápida"…).
+ */
+export function puntuarReceta(r, { perfil, gustos = {}, usos = {}, momento = null, exigente = false }) {
+  const motivos = [];
+  let p = 0;
+  if (gustos[r.id] === -1) return { puntos: -100, motivos: ['No te gusta'], vetada: true };
+  if (!recetaApta(r, perfil)) return { puntos: -50, motivos: [], vetada: true };
+  if (r.tipo === 'plato') {
+    const m = medir(r);
+    if (enDeficit(perfil)) {
+      p += Math.max(-1, Math.min(1, (1.2 - m.densidad) / 0.5)) * 2;
+      if (m.verdura >= 150) p += 1;
+      if (m.prot >= 0.27) p += 1;
+      if (m.densidad < 1.05 || m.verdura >= 250) motivos.push('Sacia mucho');
+    }
+    if (ganando(perfil)) {
+      p += m.hidr >= 0.42 ? 2 : m.hidr >= 0.34 ? 1 : 0;
+      if (m.verdura > 250) p -= 0.5;
+      if (m.hidr >= 0.38) motivos.push('Rica en hidratos');
+    }
+    if (exigente && (momento === 'comida' || momento === null) && momentosDe(r).includes('comida')) {
+      p += m.hidr >= 0.42 ? 2 : m.hidr >= 0.34 ? 1 : -0.5;
+      if (m.hidr >= 0.38) motivos.push('Para tu día de entreno fuerte');
+    }
+    const { tiempo, presupuesto } = preferenciasCocina(perfil);
+    const t = r.tiempo ?? 30, c = r.coste ?? 2;
+    if (tiempo === 'poco') p += t <= 15 ? 2 : t <= 20 ? 1 : t > 30 ? -2 : 0;
+    else if (tiempo === 'normal' && t > 40) p -= 1;
+    if (t <= 15) motivos.push('Rápida');
+    if (presupuesto === 'ajustado') p += c <= 1.3 ? 2 : c <= 1.7 ? 1 : c > 2.2 ? -1.5 : 0;
+    else if (c > 2.5) p -= 0.5;
+    if (c <= 1.3) motivos.push('Barata');
+  }
+  if (gustos[r.id] === 1) { p += 3; motivos.unshift('Te gusta'); }
+  const n = usos[r.id] || 0;
+  if (n) p += Math.min(2, Math.log2(1 + n));
+  if (n >= 2 && gustos[r.id] !== 1) motivos.unshift('La sueles comer');
+  return { puntos: p, motivos: motivos.slice(0, 3), vetada: false };
+}
+
+/** Recetas ordenadas para esta persona (las vetadas, al final). `azar` > 0 baraja un poco los empates. */
+export function recetasOrdenadas(lista, ctx, azar = 0) {
+  return lista
+    .map((r, k) => ({ r, ...puntuarReceta(r, ctx), k: azar ? Math.random() * azar : -k * 1e-6 }))
+    .sort((a, b) => b.puntos + b.k - (a.puntos + a.k));
+}

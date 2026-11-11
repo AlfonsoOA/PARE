@@ -2,7 +2,7 @@
 // Es una propuesta general: el deportista la cambia en Comer → Mi menú.
 import { app } from './estado.svelte.js';
 import { cat, normalizar } from './catalogo.js';
-import { platos, recetaApta, momentosDe, ajustarReceta } from './recetas.js';
+import { platos, momentosDe, ajustarReceta, recetasOrdenadas, usosRecetas } from './recetas.js';
 
 // Opciones por tipo de comida y grupo de ración (IDs de ALIMENTOS). Se van rotando por día.
 const OPCIONES = {
@@ -50,16 +50,18 @@ function elegir(lista, k, perfil, aversiones, usados) {
 const redondear5 = (g) => Math.max(5, Math.round(g / 5) * 5);
 
 /** Devuelve { [dia 0-6]: { [comidaId]: [entradas] } } a partir de la pauta. */
-export function proponerMenu(dieta, perfil = app.datos.perfil) {
+export function proponerMenu(dieta, perfil = app.datos.perfil, azar = 0) {
   const aversiones = normalizar(perfil.test?.aversiones || '').split(/[,;\n]+| y /).map((s) => s.trim()).filter(Boolean);
   const menu = {};
   // Platos del recetario: la comida, todos los días; la cena, en días alternos (las otras, algo sencillo).
-  const aptos = platos().filter((r) => recetaApta(r, perfil));
-  const deMomento = (m) => aptos.filter((r) => momentosDe(r).includes(m));
+  // ordenados por lo que mejor encaja con su objetivo, su tiempo, su presupuesto y sus gustos
+  const ctx = { perfil, gustos: app.datos.gustosRecetas || {}, usos: usosRecetas(app.datos.comidas) };
+  const deMomento = (m) => recetasOrdenadas(platos().filter((r) => momentosDe(r).includes(m)), { ...ctx, momento: m }, azar)
+    .filter((x) => !x.vetada).map((x) => x.r);
   const listaComida = deMomento('comida'), listaCena = deMomento('cena');
   const usadosSemana = new Set();
   const elegirPlato = (lista, k) => {
-    for (let j = 0; j < lista.length; j++) { const r = lista[(k + j) % lista.length]; if (!usadosSemana.has(r.id)) return r; }
+    for (const r of lista) if (!usadosSemana.has(r.id)) return r;
     return lista.length ? lista[k % lista.length] : null;
   };
   for (let dia = 0; dia < 7; dia++) {

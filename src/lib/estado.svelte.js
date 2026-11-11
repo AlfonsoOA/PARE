@@ -33,6 +33,7 @@ export function datosVacios() {
       id: uuid(), nombre: '', sexo: '', edad: null, altura: null, nivel: 'principiante', objetivo: '',
       faseDieta: 'mantenimiento', diasSemana: 3, minutos: 60, lugar: 'gimnasio', material: [],
       molestias: [], alergenos: [], evitar: [], test: null, testFecha: null,
+      cocina: { tiempo: 'normal', presupuesto: 'normal' },
     },
     rutina: null, // { id, version, nombre, objetivo, sesiones: [...] }
     rutinasAnteriores: [],
@@ -44,6 +45,7 @@ export function datosVacios() {
     descansos: {}, // fecha -> true (día marcado como descanso)
     productosPropios: [],
     favoritos: [],
+    gustosRecetas: {}, // rid -> 1 (me gusta) | -1 (no me gusta)
     avisosDescartados: {},
     entrenador: { activo: false, deportistas: [] },
     cambiosPropuestos: null,
@@ -69,6 +71,7 @@ export async function cargarDatos() {
     if (guardado?.datos) {
       app.datos = { ...datosVacios(), ...guardado.datos };
       app.datos.ajustes = { ...datosVacios().ajustes, ...guardado.datos.ajustes };
+      app.datos.perfil = { ...datosVacios().perfil, ...guardado.datos.perfil };
       app.sesionActiva = guardado.sesionActiva ?? null;
     }
   } catch (e) {

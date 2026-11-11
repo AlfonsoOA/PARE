@@ -3,6 +3,7 @@
   import { GRUPOS_RACION, NOMBRE_RACION } from '../lib/dieta.js';
   import Icono from '../componentes/Icono.svelte';
   let dd = $derived(app.datos.dieta);
+  let perfil = $derived(app.datos.perfil);
   const total = (g) => dd.comidas.reduce((s, c) => s + (+c.raciones[g] || 0), 0);
   function recalcular() { for (const g of GRUPOS_RACION) dd.raciones[g] = total(g); aviso('Pauta actualizada'); }
   function nuevaComida() { dd.comidas.push({ id: uuid().slice(0, 8), nombre: 'Nueva comida', hora: '12:00', raciones: { P: 0, HC: 0, G: 0, fruta: 0, lacteo: 0 }, verdura: false }); }
@@ -24,6 +25,14 @@
     <div class="tarjeta">
       <label class="fila entre"><span><b>Días de más hidratos</b><br /><span class="sec peq">+1 ración de hidratos en las sesiones exigentes (como la de pierna), descontada de los días sin entreno. El total semanal no cambia.</span></span>
         <input type="checkbox" bind:checked={dd.hidratosExtra} style="width:26px;height:26px;flex-shrink:0" /></label>
+    </div>
+    <div class="tarjeta">
+      <span class="etiqueta">Para proponerte recetas</span>
+      <span class="peq">Tiempo para cocinar</span>
+      <div class="fila envolver">{#each [['poco', 'Poco (15 min)'], ['normal', 'Normal'], ['mucho', 'Me gusta cocinar']] as [v, l]}<button class="chip" class:on={(perfil.cocina?.tiempo ?? 'normal') === v} onclick={() => (perfil.cocina = { ...(perfil.cocina ?? {}), tiempo: v })}>{l}</button>{/each}</div>
+      <span class="peq">Presupuesto</span>
+      <div class="fila envolver">{#each [['ajustado', 'Ajustado'], ['normal', 'Normal']] as [v, l]}<button class="chip" class:on={(perfil.cocina?.presupuesto ?? 'normal') === v} onclick={() => (perfil.cocina = { ...(perfil.cocina ?? {}), presupuesto: v })}>{l}</button>{/each}</div>
+      <p class="sec peq">Junto con tu objetivo y lo que marques como «me gusta», decide qué platos salen primero en Recetas y en el menú automático.</p>
     </div>
     <h2>Comidas</h2>
     {#each dd.comidas as c, i (c.id)}

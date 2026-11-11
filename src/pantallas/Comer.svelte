@@ -7,11 +7,11 @@
   import Hoja from '../componentes/Hoja.svelte';
   import AnadirAlimento from '../componentes/AnadirAlimento.svelte';
   import FichaReceta from '../componentes/FichaReceta.svelte';
-  import { momentosDe, NOMBRE_MOMENTO, recetaApta } from '../lib/recetas.js';
+  import { momentosDe, NOMBRE_MOMENTO, recetasOrdenadas, usosRecetas, MOMENTO_DE_COMIDA } from '../lib/recetas.js';
   import { proponerMenu } from '../lib/menu.js';
   import { aviso } from '../lib/estado.svelte.js';
   let confirmarMenu = $state(false);
-  function generarMenu() { d.dieta.menu = proponerMenu(d.dieta, d.perfil); confirmarMenu = false; aviso('Menú propuesto. Cámbialo a tu gusto.'); }
+  function generarMenu() { d.dieta.menu = proponerMenu(d.dieta, d.perfil, hayMenu ? 1.5 : 0); confirmarMenu = false; aviso('Menú propuesto. Cámbialo a tu gusto.'); }
   const hayMenu = $derived(Object.values(d.dieta?.menu ?? {}).some((dia) => Object.values(dia ?? {}).some((l) => l?.length)));
 
   let d = $derived(app.datos);
@@ -19,8 +19,15 @@
   let fecha = $state(hoyISO());
   let anadirEn = $state(null); // { comida } o { menu: [dia, comida] }
   let recetaAbierta = $state(null); // { r, comida }
-  let filtroRecetas = $state('todas');
-  const recetasFiltradas = $derived(cat.recetas.filter((r) => filtroRecetas === 'todas' || (filtroRecetas === 'postre' ? r.tipo === 'lote' : r.tipo === 'plato' && momentosDe(r).includes(filtroRecetas))).sort((a, b) => (a.tipo === b.tipo ? (a.tiempo ?? 99) - (b.tiempo ?? 99) : a.tipo === 'plato' ? -1 : 1)));
+  let filtroRecetas = $state('parati');
+  // Orden personal: objetivo, día de hoy (si toca sesión exigente), tiempo, presupuesto y gustos.
+  const ctxRecetas = $derived({ perfil: d.perfil, gustos: d.gustosRecetas || {}, usos: usosRecetas(d.comidas), exigente: tipoDeDia(hoyISO()) === true || !!d.rutina?.sesiones.find((s) => s.id === app.sesionActiva?.sesionId)?.exigente });
+  const recetasFiltradas = $derived.by(() => {
+    const f = filtroRecetas;
+    const lista = cat.recetas.filter((r) => f === 'todas' || f === 'parati' ? (f === 'todas' || r.tipo === 'plato') : f === 'postre' ? r.tipo === 'lote' : r.tipo === 'plato' && momentosDe(r).includes(f));
+    const ord = recetasOrdenadas(lista, { ...ctxRecetas, momento: ['comida', 'cena', 'desayuno', 'merienda'].includes(f) ? f : null });
+    return f === 'parati' ? ord.filter((x) => !x.vetada).slice(0, 10) : ord;
+  });
   let diaMenu = $state(diaSemana(hoyISO()));
 
   const reg = $derived(delDia(fecha));
@@ -143,16 +150,18 @@
 
   {:else if sub === 'recetas'}
     <p class="sec peq">Platos sencillos y baratos. Al abrir uno, las cantidades se ajustan a las raciones de tu comida.</p>
-    <div class="desliza">{#each [['todas', 'Todas'], ['desayuno', 'Desayuno'], ['comida', 'Comida'], ['cena', 'Cena'], ['merienda', 'Merienda'], ['postre', 'Postres']] as [v, l]}<button class="chip" class:on={filtroRecetas === v} onclick={() => (filtroRecetas = v)}>{l}</button>{/each}</div>
-    {#each recetasFiltradas as r (r.id)}
-      {@const apta = recetaApta(r, d.perfil)}
-      <button class="tarjeta pulsable receta" class:noapta={!apta} onclick={() => (recetaAbierta = { r })}>
-        <span class="fila entre" style="gap:8px"><b>{r.n}</b>{#if !apta}<span class="insignia aviso">No para ti</span>{/if}</span>
+    <div class="desliza">{#each [['parati', 'Para ti'], ['comida', 'Comida'], ['cena', 'Cena'], ['desayuno', 'Desayuno'], ['merienda', 'Merienda'], ['postre', 'Postres'], ['todas', 'Todas']] as [v, l]}<button class="chip" class:on={filtroRecetas === v} onclick={() => (filtroRecetas = v)}>{l}</button>{/each}</div>
+    {#if filtroRecetas === 'parati'}<p class="sec peq">Las que mejor encajan con tu objetivo{ctxRecetas.exigente ? ', con el entreno fuerte de hoy' : ''}, tu tiempo, tu presupuesto y lo que te gusta. Cámbialo en Mi dieta; marca «Me gusta» o «No me gusta» dentro de cada receta.</p>{/if}
+    {#each recetasFiltradas as x (x.r.id)}
+      {@const r = x.r}
+      <button class="tarjeta pulsable receta" class:noapta={x.vetada} onclick={() => (recetaAbierta = { r })}>
+        <span class="fila entre" style="gap:8px"><b>{r.n}</b>{#if x.vetada}<span class="insignia aviso">{x.motivos[0] ?? 'No para ti'}</span>{/if}</span>
         {#if r.tipo === 'plato'}
           <span class="sec peq">{r.tiempo} min · ≈ {fmtNum(r.coste, 2)} € · {momentosDe(r).map((m) => NOMBRE_MOMENTO[m] ?? m).join(', ')}</span>
         {:else}
           <span class="sec peq">{r.kcal} kcal · {r.p} g prot por porción ({r.porciones} porciones) · {r.cuenta}</span>
         {/if}
+        {#if !x.vetada && x.motivos.length}<span class="fila envolver" style="gap:4px">{#each x.motivos as m}<span class="motivo">{m}</span>{/each}</span>{/if}
       </button>
     {/each}
 
@@ -193,4 +202,5 @@
   .enlace-l { background: none; border: 0; padding: 4px 0; text-align: left; color: inherit; cursor: pointer; font: inherit; min-height: 36px; }
   .receta { gap: 4px; }
   .noapta { opacity: 0.55; }
+  .motivo { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: color-mix(in srgb, var(--comer) 16%, transparent); color: var(--comer); }
 </style>
