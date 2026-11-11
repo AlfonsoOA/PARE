@@ -148,7 +148,7 @@
 
   <div class="lista">
     {#each bl as b (b[0].it.uid)}
-    <div class:bloque-ss={b.length > 1}>
+    <div class:bloque-ss={b.length > 1} style:--ss={b.length > 1 ? `var(--ss-${(et[b[0].i].charCodeAt(0) - 65) % 2 + 1})` : null}>
     {#if b.length > 1}
       <div class="ss-cab"><Icono n="enlace" tam={18} /><span><b>Superserie {et[b[0].i][0]}</b> · {nombreBloque(b.length)}<br /><span class="peq">Sin descanso entre ejercicios · {fmtReloj(Math.max(...b.map((y) => y.it.descanso || 90)))} al acabar la vuelta</span></span></div>
     {/if}
@@ -312,9 +312,9 @@
   .ej.abierto { border-color: var(--entrenar); }
   .ej.hecho:not(.abierto) { opacity: 0.6; }
   .bloque-ss { display: flex; flex-direction: column; gap: 6px; padding: 8px; border-radius: 18px;
-    background: color-mix(in srgb, var(--entrenar) 10%, var(--fondo)); border: 1px solid color-mix(in srgb, var(--entrenar) 45%, var(--borde)); }
-  .bloque-ss .ej { border-color: color-mix(in srgb, var(--entrenar) 25%, var(--borde)); }
-  .ss-cab { display: flex; gap: 8px; align-items: flex-start; color: var(--entrenar); padding: 2px 4px 2px; font-size: 14px; line-height: 1.3; }
+    background: color-mix(in srgb, var(--ss) 10%, var(--fondo)); border: 1px solid color-mix(in srgb, var(--ss) 45%, var(--borde)); }
+  .bloque-ss .ej { border-color: color-mix(in srgb, var(--ss) 25%, var(--borde)); }
+  .ss-cab { display: flex; gap: 8px; align-items: flex-start; color: var(--ss); padding: 2px 4px 2px; font-size: 14px; line-height: 1.3; }
   .ss-cab b { font-family: var(--titulos); font-size: 17px; text-transform: uppercase; letter-spacing: 0.03em; }
   .ss-cab .peq { color: var(--texto2); }
   .cab { display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 12px; }
@@ -346,4 +346,5 @@
   .num { text-align: center; font-family: var(--titulos); font-weight: 800; font-size: 32px !important; min-height: 60px !important; }
   .grande { width: 60px; height: 60px; }
   details summary { cursor: pointer; min-height: 32px; }
+  .bloque-ss .ssl { color: var(--ss); }
 </style>

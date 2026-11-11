@@ -136,7 +136,7 @@
         <label class="fila peq"><input type="checkbox" bind:checked={s.exigente} style="width:22px;height:22px" /> Sesión exigente (días de más hidratos)</label>
 
         {#each bloques(s.items) as b (b[0].it.uid)}
-        <div class:bloque-ss={b.length > 1}>
+        <div class:bloque-ss={b.length > 1} style:--ss={b.length > 1 ? `var(--ss-${(et[b[0].i].charCodeAt(0) - 65) % 2 + 1})` : null}>
         {#if b.length > 1}<div class="ss-cab"><Icono n="enlace" tam={16} /><b>Superserie {et[b[0].i][0]}</b> · {b.length} ejercicios sin descanso entre ellos</div>{/if}
         {#each b as y (y.it.uid)}
           {@const it = y.it}
@@ -209,10 +209,10 @@
 <style>
   .abrir { background: none; border: 0; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 2px; padding: 0; flex: 1; }
   .item { border-top: 1px solid var(--borde); padding-top: 10px; display: flex; flex-direction: column; gap: 8px; }
-  .bloque-ss { display: flex; flex-direction: column; gap: 8px; padding: 8px 10px 10px; border-radius: 14px; background: color-mix(in srgb, var(--entrenar) 10%, var(--superficie)); border: 1px solid color-mix(in srgb, var(--entrenar) 45%, var(--borde)); }
+  .bloque-ss { display: flex; flex-direction: column; gap: 8px; padding: 8px 10px 10px; border-radius: 14px; background: color-mix(in srgb, var(--ss) 10%, var(--superficie)); border: 1px solid color-mix(in srgb, var(--ss) 45%, var(--borde)); }
   .bloque-ss > .item:first-of-type { border-top: 0; padding-top: 0; }
   .ss-cab { display: flex; gap: 6px; align-items: center; font-size: 13px; color: var(--texto2); }
-  .ss-cab b { font-family: var(--titulos); font-size: 15px; color: var(--entrenar); text-transform: uppercase; letter-spacing: 0.03em; }
+  .ss-cab b { font-family: var(--titulos); font-size: 15px; color: var(--ss); text-transform: uppercase; letter-spacing: 0.03em; }
   .nom { overflow: hidden; text-overflow: ellipsis; }
   .ssl { color: var(--entrenar); font-family: var(--titulos); }
   .rej { display: grid; grid-template-columns: 0.8fr 1.4fr 1fr 1fr; gap: 6px; }
@@ -224,4 +224,5 @@
   .fuera { color: var(--aviso); font-weight: 600; }
   .avisos { border-color: #5a4316; }
   .opcion { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; padding: 12px 14px; min-height: 60px; cursor: pointer; }
+  .bloque-ss .ssl { color: var(--ss); }
 </style>

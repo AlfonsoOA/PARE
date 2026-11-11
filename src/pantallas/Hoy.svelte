@@ -25,13 +25,23 @@
   const plan = $derived(volumenPlanificado(d.rutina, d.perfil.diasSemana));
   const comida = $derived(sumar(delDia(hoy)));
   const objComida = $derived(objetivoDelDia(hoy));
+  const dif = (kg) => { const v = fmt(Math.abs(kg), false); return Math.abs(kg) < 0.05 ? `±0` : `${kg > 0 ? '+' : '−'}${v}`; };
+  // verde si va hacia el objetivo; neutro si no hay objetivo de peso claro
+  function colorDif(kg) {
+    const o = d.perfil.objetivo;
+    if (Math.abs(kg) < 0.05) return 'var(--texto2)';
+    const bajar = o === 'perder_grasa' || o === 'recomposicion';
+    const subir = o === 'ganar_musculo';
+    if ((bajar && kg < 0) || (subir && kg > 0)) return 'var(--comer)';
+    return 'var(--texto)';
+  }
   const medias = $derived.by(() => {
     const ps = d.medidas.filter((m) => m.peso);
     const ult = ps.at(-1);
     if (!ult) return null;
-    const desde = new Date(new Date(ult.fecha) - 6 * 864e5).toISOString().slice(0, 10);
-    const sem = ps.filter((m) => m.fecha >= desde);
-    return { ult, media: sem.reduce((s, m) => s + m.peso, 0) / sem.length, n: sem.length };
+    const ini = ps[0];
+    const ant = ps.length > 1 ? ps.at(-2) : null;
+    return { ult, ini, ant, total: ult.peso - ini.peso, semana: ant ? ult.peso - ant.peso : null };
   });
 
   function empezar() { iniciarSesion(idx); }
@@ -125,7 +135,10 @@
     {#if medias}
       <div class="fila" style="gap:18px">
         <div><p class="cifra">{fmt(medias.ult.peso, false)}</p><p class="sec peq">{fmtFecha(medias.ult.fecha)}</p></div>
-        <div><p class="cifra" style="color:var(--texto2)">{fmt(medias.media, false)}</p><p class="sec peq">media de 7 días</p></div>
+        {#if medias.ult !== medias.ini}
+          <div><p class="cifra" style="color:{colorDif(medias.total)}">{dif(medias.total)}</p><p class="sec peq">desde el inicio ({fmtFecha(medias.ini.fecha)})</p></div>
+          {#if medias.semana != null && medias.ant !== medias.ini}<div><p class="cifra" style="color:var(--texto2)">{dif(medias.semana)}</p><p class="sec peq">desde la pesada anterior</p></div>{/if}
+        {:else}<p class="sec peq" style="align-self:center">Pésate una vez a la semana, mismo día y en ayunas.</p>{/if}
       </div>
     {:else}<p class="sec">Sin registros todavía.</p>{/if}
   </button>

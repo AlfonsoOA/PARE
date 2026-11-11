@@ -48,7 +48,7 @@
         </button>
         {#if abierta === i}
           {#each bloques(s.items) as b (b[0].it.uid)}
-          <div class:bloque-ss={b.length > 1}>
+          <div class:bloque-ss={b.length > 1} style:--ss={b.length > 1 ? `var(--ss-${(et[b[0].i].charCodeAt(0) - 65) % 2 + 1})` : null}>
           {#if b.length > 1}<div class="ss-cab"><b>Superserie {et[b[0].i][0]}</b> · sin descanso entre ejercicios · {fmtReloj(Math.max(...b.map((y) => y.it.descanso || 90)))} al acabar la vuelta</div>{/if}
           {#each b as y (y.it.uid)}
             {@const it = y.it}
@@ -83,10 +83,11 @@
   .ej { display: flex; align-items: center; gap: 10px; background: none; border: 0; border-top: 1px solid var(--borde); padding: 10px 0; text-align: left; cursor: pointer; }
   .nom { font-weight: 600; }
   .nota { color: var(--progreso); }
-  .bloque-ss { margin: 6px 0; padding: 4px 10px; border-radius: 12px; background: color-mix(in srgb, var(--entrenar) 10%, var(--superficie)); border: 1px solid color-mix(in srgb, var(--entrenar) 45%, var(--borde)); }
+  .bloque-ss { margin: 6px 0; padding: 4px 10px; border-radius: 12px; background: color-mix(in srgb, var(--ss) 10%, var(--superficie)); border: 1px solid color-mix(in srgb, var(--ss) 45%, var(--borde)); }
   .bloque-ss .ej { width: 100%; }
   .bloque-ss .ej:first-of-type { border-top: 0; }
   .ss-cab { font-size: 13px; color: var(--texto2); padding: 6px 0 2px; }
-  .ss-cab b { font-family: var(--titulos); font-size: 15px; color: var(--entrenar); text-transform: uppercase; letter-spacing: 0.03em; }
+  .ss-cab b { font-family: var(--titulos); font-size: 15px; color: var(--ss); text-transform: uppercase; letter-spacing: 0.03em; }
   .ss { font-family: var(--titulos); font-weight: 800; color: var(--entrenar); width: 28px; flex-shrink: 0; }
+  .bloque-ss .ss { color: var(--ss); }
 </style>
