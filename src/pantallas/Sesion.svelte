@@ -192,14 +192,17 @@
 
         {#if abierto === i}
           <div class="cuerpo">
-            {#if e?.img}
-              <button class="img" onclick={() => (app.vista = { nombre: 'ficha', id: x.ej, acento: 'entrenar', volver: { nombre: 'sesion', acento: 'entrenar' } })} aria-label="Ver ficha técnica de {e.n}">
-                <Animacion id={x.ej} tam="peq" />
-                <span class="sec peq">Ficha <Icono n="info" tam={16} /></span>
-              </button>
-            {:else}
-              <button class="enlace" style="align-self:flex-start" onclick={() => (app.vista = { nombre: 'ficha', id: x.ej, acento: 'entrenar', volver: { nombre: 'sesion', acento: 'entrenar' } })}>Ver ficha técnica</button>
-            {/if}
+            <div class="fila entre" style="gap:10px">
+              {#if e?.img}
+                <button class="img" onclick={() => (app.vista = { nombre: 'ficha', id: x.ej, acento: 'entrenar', volver: { nombre: 'sesion', acento: 'entrenar' } })} aria-label="Ver ficha técnica de {e.n}">
+                  <Animacion id={x.ej} tam="peq" />
+                  <span class="sec peq">Ficha <Icono n="info" tam={16} /></span>
+                </button>
+              {:else}
+                <button class="enlace" style="align-self:flex-start" onclick={() => (app.vista = { nombre: 'ficha', id: x.ej, acento: 'entrenar', volver: { nombre: 'sesion', acento: 'entrenar' } })}>Ver ficha técnica</button>
+              {/if}
+              {#if prev}<button class="enlace mprog" onclick={() => (app.vista = { nombre: 'progresoEj', id: x.ej, acento: 'progreso', volver: { nombre: 'sesion', acento: 'entrenar' } })}><Icono n="progreso" tam={18} /> Mi progreso</button>{/if}
+            </div>
             {#if x.nota}<p class="peq nota">{x.nota}</p>{/if}
             {#if r && r.nivel !== 'recomendado'}<div class="aviso-l peq"><Icono n="aviso" tam={18} /><p><b>{r.zona}:</b> {r.motivo}</p></div>{/if}
             {#if usaPesoCorporal(e)}<p class="sec peq">PC = tu peso corporal{pc ? ` (${fmt(pc)})` : ''}. Toca una serie para indicar lastre o asistencia.</p>{/if}
@@ -347,6 +350,7 @@
   .ssl { font-family: var(--titulos); font-weight: 800; color: var(--entrenar); font-size: 20px; width: 28px; flex-shrink: 0; }
   .ok { color: var(--comer); margin-left: auto; }
   .cuerpo { padding: 0 12px 12px; display: flex; flex-direction: column; gap: 10px; }
+  .mprog { padding: 0; min-height: 40px; display: inline-flex; align-items: center; gap: 6px; color: var(--progreso); }
   .img { display: flex; align-items: center; gap: 10px; background: none; border: 0; padding: 0; cursor: pointer; color: inherit; }
   .guia { color: var(--progreso); }
   .nota { color: var(--progreso); }

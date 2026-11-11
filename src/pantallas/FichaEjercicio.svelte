@@ -9,6 +9,8 @@
   const r = restriccion(id, app.datos.perfil.molestias);
   const musc = (l) => (l || []).map((m) => cat.etiquetas.musculo?.[m] ?? m).join(', ');
   const atras = () => (app.vista = volver ?? null);
+  const sesionesHechas = app.datos.sesiones.filter((s) => s.ejercicios.some((x) => x.ej === id && x.series.some((z) => z.hecha))).length;
+  const vengoDeProgreso = volver?.nombre === 'progresoEj' && volver.id === id;
 </script>
 
 <div class="pantalla">
@@ -16,6 +18,11 @@
   {#if !e}<p class="vacio">Ejercicio no encontrado.</p>{:else}
     <h1>{e.n}</h1>
     <p class="sec peq">{e.en}</p>
+    {#if !vengoDeProgreso}
+      {#if sesionesHechas}
+        <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'progresoEj', id, acento: 'progreso', volver: { nombre: 'ficha', id, acento: app.vista?.acento ?? 'entrenar', volver } })}><Icono n="progreso" /> Mi progreso en este ejercicio · {sesionesHechas} {sesionesHechas === 1 ? 'sesión' : 'sesiones'}</button>
+      {:else}<p class="sec peq">Tu progreso en este ejercicio aparecerá aquí cuando lo hagas por primera vez.</p>{/if}
+    {/if}
     {#if e.img}<Animacion {id} />{:else}<div class="tarjeta"><p class="sec">Imagen pendiente: este ejercicio se grabará.</p></div>{/if}
     {#if r}
       <div class="aviso-l"><Icono n="aviso" tam={20} /><p><b>{r.nivel === 'evitar' ? 'Evitar' : r.nivel === 'precaucion' ? 'Precaución' : 'Recomendado'} por tu {r.zona}.</b> {r.motivo}</p></div>

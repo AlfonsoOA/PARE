@@ -1,11 +1,11 @@
 <script>
   import { app, hoyISO } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
-  import { volumenSemana, lunes, BANDA, banda, mejorSerie } from '../lib/entreno.js';
+  import { volumenSemana, lunes, BANDA, banda, mejorSerie, usaPesoCorporal } from '../lib/entreno.js';
   import { estadosEjercicios } from '../lib/avisos.js';
   import { grasaNavy } from '../lib/plan.js';
   import { sumar } from '../lib/dieta.js';
-  import { fmt, fmtNum, fmtFecha, fmtMin, mostrar, ud } from '../lib/unidades.js';
+  import { fmt, fmtCarga, fmtNum, fmtFecha, fmtMin, mostrar, ud } from '../lib/unidades.js';
   import Grafica from '../componentes/Grafica.svelte';
   import Hoja from '../componentes/Hoja.svelte';
   import AnotarMedida from '../componentes/AnotarMedida.svelte';
@@ -74,7 +74,7 @@
       <button class="tarjeta fila entre pulsable" onclick={() => (app.vista = { nombre: 'progresoEj', id, acento: 'progreso', datos, depId })}>
         <span class="col" style="gap:2px;align-items:flex-start;min-width:0">
           <b>{ej(id)?.n ?? id}</b>
-          <span class="sec peq">Última: {fmt(m.carga)} × {m.reps} · {fmtFecha(e.hist.at(-1).fecha)} · {e.hist.length} sesiones</span>
+          <span class="sec peq">Última: {fmtCarga(m.carga, usaPesoCorporal(ej(id)))} × {m.reps} · {fmtFecha(e.hist.at(-1).fecha)} · {e.hist.length} sesiones</span>
         </span>
         <span class="insignia {ESTADO[e.estado]?.[1]}">{ESTADO[e.estado]?.[0]}</span>
       </button>

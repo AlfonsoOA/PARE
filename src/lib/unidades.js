@@ -38,3 +38,10 @@ export function fmtReloj(seg) {
   const s = Math.max(0, Math.round(seg));
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 }
+
+/** Carga legible: con peso corporal, «PC», «PC + 10» o «PC − 20»; si no, la carga normal. */
+export function fmtCarga(carga, pesoCorporal, conUd = true) {
+  if (!pesoCorporal) return fmt(carga, conUd);
+  if (!carga) return 'PC';
+  return `PC ${carga > 0 ? '+' : '−'} ${fmt(Math.abs(carga), conUd)}`;
+}
