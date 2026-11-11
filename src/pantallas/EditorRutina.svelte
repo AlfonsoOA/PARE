@@ -101,12 +101,18 @@
     aviso('Rutina guardada');
     app.vista = null;
   }
-  const salir = () => (app.vista = modo === 'entrenador' ? { nombre: 'deportista', id: depId, acento: 'yo' } : null);
+  const inicial = JSON.stringify(r);
+  let avisadoSalir = 0;
+  function salir() {
+    // con cambios sin guardar, la primera pulsación solo avisa (el gesto atrás de Android es fácil de dar sin querer)
+    if (JSON.stringify(r) !== inicial && Date.now() - avisadoSalir > 2500) { avisadoSalir = Date.now(); aviso('Tienes cambios sin guardar. Pulsa otra vez para salir sin guardar.'); return; }
+    app.vista = modo === 'entrenador' ? { nombre: 'deportista', id: depId, acento: 'yo' } : null;
+  }
 </script>
 
 <div class="pantalla">
   <div class="fila entre">
-    <button class="icono-b" onclick={salir} aria-label="Salir sin guardar"><Icono n="atras" /></button>
+    <button class="icono-b" data-atras onclick={salir} aria-label="Salir sin guardar"><Icono n="atras" /></button>
     <span class="etiqueta">{modo === 'entrenador' ? `Proponer cambios · ${dep?.nombre ?? ''}` : 'Editar rutina'}</span>
     <button class="boton" style="min-height:44px" onclick={guardarRutina}>Guardar</button>
   </div>

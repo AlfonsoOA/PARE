@@ -27,7 +27,7 @@
 </script>
 
 <div class="pantalla">
-  <div class="fila"><button class="icono-b" onclick={() => (app.vista = datos ? { nombre: 'deportista', id: depId, acento: 'yo' } : null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Progreso</span></div>
+  <div class="fila"><button class="icono-b" data-atras onclick={() => (app.vista = datos ? { nombre: 'deportista', id: depId, acento: 'yo' } : null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Progreso</span></div>
   <h1>{e?.n ?? id}</h1>
   <div class="tarjeta"><p>{TXT[est.estado]}</p>
     {#if item}<p class="sec peq">Próxima vez: {item.series} × {item.repMin}-{item.repMax} con {item.carga != null ? fmt(item.carga) : 'la carga del último día'}.</p>{/if}

@@ -34,7 +34,7 @@
   <div class="pantalla"><p class="vacio">No hay cambios pendientes.</p></div>
 {:else}
 <div class="pantalla">
-  <div class="fila"><button class="icono-b" onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Cambios propuestos</span></div>
+  <div class="fila"><button class="icono-b" data-atras onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Cambios propuestos</span></div>
   <h1>{c.compartida ? `Rutina de ${c.de?.nombre ?? 'un compañero'}` : `Cambios de ${c.de?.nombre ?? 'tu entrenador'}`}</h1>
   <p class="sec peq">Del {fmtFecha(c.creado?.slice(0, 10))}. Nada cambia hasta que lo aceptes.{c.compartida ? ' Si la aceptas, sustituye a tu rutina; las cargas que ya tenías en los mismos ejercicios se conservan y el resto las pones tú el primer día.' : ''}</p>
   {#if c.nota}<div class="tarjeta"><p>«{c.nota}»</p></div>{/if}

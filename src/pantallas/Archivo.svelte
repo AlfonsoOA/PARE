@@ -18,7 +18,7 @@
 </script>
 
 <div class="pantalla">
-  <div class="fila"><button class="icono-b" onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Archivo PARE</span></div>
+  <div class="fila"><button class="icono-b" data-atras onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Archivo PARE</span></div>
   <h1>Archivo PARE</h1>
 
   {#if pendiente}

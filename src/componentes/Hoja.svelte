@@ -1,6 +1,9 @@
 <script>
   // Hoja que sube desde abajo, para acciones rápidas con el pulgar.
+  import { onMount } from 'svelte';
+  import { registrarHoja } from '../lib/atras.js';
   let { titulo = '', cerrar, children } = $props();
+  onMount(() => registrarHoja(() => cerrar?.()));
   let y0 = null, dy = $state(0);
   const empezar = (e) => { y0 = e.touches[0].clientY; };
   const mover = (e) => { if (y0 != null) dy = Math.max(0, e.touches[0].clientY - y0); };

@@ -20,7 +20,7 @@
 </script>
 
 <div class="pantalla">
-  <div class="fila"><button class="icono-b" onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Perfil</span></div>
+  <div class="fila"><button class="icono-b" data-atras onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Perfil</span></div>
   <h1>Perfil</h1>
   <label class="campo">Nombre o alias<input type="text" bind:value={p.nombre} /></label>
   <div class="tarjeta">

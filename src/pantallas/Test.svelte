@@ -78,7 +78,7 @@
 
 <div class="pantalla">
   <div class="fila entre">
-    <button class="icono-b" onclick={atras} aria-label="Atrás"><Icono n="atras" /></button>
+    <button class="icono-b" data-atras onclick={atras} aria-label="Atrás"><Icono n="atras" /></button>
     <span class="sec peq">Bloque {t.paso + 1} de {BLOQUES.length}</span>
   </div>
   <div class="avance" aria-hidden="true"><i style="width: {((t.paso + 1) / BLOQUES.length) * 100}%"></i></div>

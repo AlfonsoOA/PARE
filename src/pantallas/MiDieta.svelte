@@ -9,7 +9,7 @@
 </script>
 
 <div class="pantalla">
-  <div class="fila"><button class="icono-b" onclick={() => { recalcular(); app.vista = null; }} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Mi dieta</span></div>
+  <div class="fila"><button class="icono-b" data-atras onclick={() => { recalcular(); app.vista = null; }} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Mi dieta</span></div>
   <h1>Mi dieta</h1>
   {#if !dd}<p class="vacio">Sin pauta. Haz el test de inicio.</p>{:else}
     <div class="tarjeta">

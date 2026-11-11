@@ -38,7 +38,7 @@
   <div class="pantalla"><p class="vacio">Deportista no encontrado.</p></div>
 {:else}
 <div class="pantalla">
-  <div class="fila"><button class="icono-b" onclick={() => (app.vista = { nombre: 'deportistas', acento: 'yo' })} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Deportista</span></div>
+  <div class="fila"><button class="icono-b" data-atras onclick={() => (app.vista = { nombre: 'deportistas', acento: 'yo' })} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Deportista</span></div>
   <h1>{dep.nombre}</h1>
   <p class="sec peq">Foto del {fmtFecha(dep.creado?.slice(0, 10))}, no está en directo. Incluye: {dep.incluye?.join(', ')}.{dep.autoriza?.centro ? ' Autoriza también a tu centro.' : ''}</p>
 

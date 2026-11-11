@@ -7,7 +7,7 @@
 </script>
 
 <div class="pantalla">
-  <div class="fila"><button class="icono-b" onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Ajustes</span></div>
+  <div class="fila"><button class="icono-b" data-atras onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Ajustes</span></div>
   <h1>Ajustes</h1>
   <div class="tarjeta">
     <span class="etiqueta">Unidades</span>

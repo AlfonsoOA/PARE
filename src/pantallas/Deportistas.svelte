@@ -21,7 +21,7 @@
 </script>
 
 <div class="pantalla">
-  <div class="fila"><button class="icono-b" onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Modo entrenador</span></div>
+  <div class="fila"><button class="icono-b" data-atras onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Modo entrenador</span></div>
   <h1>Mis deportistas</h1>
   {#each app.datos.entrenador.deportistas as dep (dep.id)}
     {@const av = resumen(dep)}

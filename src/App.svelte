@@ -1,6 +1,8 @@
 <script>
   import { app, cargarDatos } from './lib/estado.svelte.js';
   import { cargarCatalogo, cat } from './lib/catalogo.js';
+  import { iniciarAtras } from './lib/atras.js';
+  iniciarAtras();
   import BarraPestanas from './componentes/BarraPestanas.svelte';
   import Logo from './componentes/Logo.svelte';
   import Bienvenida from './pantallas/Bienvenida.svelte';

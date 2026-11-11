@@ -138,7 +138,7 @@
 {:else}
 <div class="sesion">
   <header>
-    <button class="icono-b" onclick={() => (app.vista = null)} aria-label="Salir sin terminar (la sesión sigue abierta)"><Icono n="atras" /></button>
+    <button class="icono-b" data-atras onclick={() => (app.vista = null)} aria-label="Salir sin terminar (la sesión sigue abierta)"><Icono n="atras" /></button>
     <div class="col" style="gap:0;min-width:0;flex:1">
       <b class="tit">{sa.nombre}</b>
       <span class="sec peq">{fmtReloj(transcurrido)} · quedan ~{fmtMin(restante)} · {hechas}/{totales} series</span>

@@ -12,7 +12,7 @@
 </script>
 
 <div class="pantalla">
-  <div class="fila"><button class="icono-b" onclick={atras} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Ficha técnica</span></div>
+  <div class="fila"><button class="icono-b" data-atras onclick={atras} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Ficha técnica</span></div>
   {#if !e}<p class="vacio">Ejercicio no encontrado.</p>{:else}
     <h1>{e.n}</h1>
     <p class="sec peq">{e.en}</p>
