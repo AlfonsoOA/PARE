@@ -107,3 +107,19 @@ export function comidaHidratosExtra(d = app.datos) {
   const elegida = d.dieta?.comidas.find((c) => c.id === d.dieta.hidratosExtraEn);
   return elegida ?? comidaTrasEntreno(d.dieta?.comidas ?? [], d.perfil.horaEntreno);
 }
+
+/**
+ * Objetivo en gramos de una comida (para pesar): los gramos del día repartidos según las raciones de esa comida.
+ * Aquí se cuentan los macros de verdad de cada alimento (el huevo también trae grasa; las legumbres, proteína).
+ */
+export function objetivoComidaGramos(dieta, c) {
+  const tot = (g) => dieta.comidas.reduce((s, x) => s + (+x.raciones[g] || 0), 0) || 1;
+  const hcPeso = (x) => (+x.raciones.HC || 0) * 40 + (+x.raciones.fruta || 0) * 15;
+  const totHC = dieta.comidas.reduce((s, x) => s + hcPeso(x), 0) || 1;
+  const p = (dieta.p * (+c.raciones.P || 0)) / tot('P');
+  const hc = (dieta.hc * hcPeso(c)) / totHC;
+  const g = (dieta.g * (+c.raciones.G || 0)) / tot('G');
+  // las kcal de las tablas incluyen fibra y factores propios de cada alimento: se reparte la cifra del día tal cual
+  const kcalMacros = 4 * dieta.p + 4 * dieta.hc + 9 * dieta.g || 1;
+  return { p, hc, g, kcal: ((4 * p + 4 * hc + 9 * g) * dieta.kcal) / kcalMacros };
+}

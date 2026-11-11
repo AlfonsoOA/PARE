@@ -1,7 +1,8 @@
 <script>
   // Ficha de una receta: ingredientes ajustados a la comida elegida, pasos y botones para anotarla o ponerla en el menú.
   import { app, hoyISO, aviso } from '../lib/estado.svelte.js';
-  import { anotar, pautaComida, alimento, aporte, sumar, diaSemana, DIAS_SEMANA, NOMBRE_RACION } from '../lib/dieta.js';
+  import { anotar, pautaComida, alimento, aporte, sumar, diaSemana, DIAS_SEMANA, NOMBRE_RACION, objetivoComidaGramos } from '../lib/dieta.js';
+  import { cuadrarComida } from '../lib/menu.js';
   import { ajustarReceta, enCasero, momentosDe, MOMENTO_DE_COMIDA, NOMBRE_MOMENTO, recetaApta } from '../lib/recetas.js';
   import { fmtNum } from '../lib/unidades.js';
   import Hoja from './Hoja.svelte';
@@ -16,7 +17,14 @@
   let dia = $state(diaSemana(hoyISO()));
   const c = $derived(comidas.find((x) => x.id === comida));
   const objetivo = $derived(r.tipo === 'plato' && c && !base ? pautaComida(c, hoyISO()) : null);
-  const aj = $derived(ajustarReceta(r, objetivo));
+  // Cantidades: primero por raciones y luego afinadas con los macros reales de cada ingrediente
+  const aj = $derived.by(() => {
+    const a = ajustarReceta(r, objetivo);
+    if (!objetivo || !d.dieta) return a;
+    const plato = { tipo: 'plato', items: a.items.map((x) => ({ ...x })) };
+    cuadrarComida([plato], objetivoComidaGramos(d.dieta, { raciones: objetivo }));
+    return { ...a, items: plato.items };
+  });
   const total = $derived(r.tipo === 'plato' ? sumar(aj.items.map((it) => ({ tipo: 'alimento', aid: it.aid, g: it.g }))) : aporte({ tipo: 'receta', rid: r.id, porciones: 1 }));
   const apta = recetaApta(r, d.perfil);
   const entrada = () => (r.tipo === 'plato' ? { tipo: 'plato', rid: r.id, items: aj.items.map(({ aid, g }) => ({ aid, g })) } : { tipo: 'receta', rid: r.id, porciones: 1 });
@@ -82,7 +90,7 @@
     {/each}
     <p class="sec peq">{fmtNum(total.kcal)} kcal · {fmtNum(total.p)} g proteína · {fmtNum(total.hc)} g hidratos · {fmtNum(total.g)} g grasa{r.tipo === 'lote' ? ' por porción' : ''}</p>
     {#if r.tipo === 'plato' && objetivo}
-      <p class="sec peq">Ajustada a tu {c.nombre.toLowerCase()}: {['P', 'HC', 'G'].filter((g) => objetivo[g] > 0).map((g) => `${fmtNum(objetivo[g], 1)} ${NOMBRE_RACION[g].toLowerCase()}`).join(' · ')}. Verdura y especias, igual.</p>
+      <p class="sec peq">Ajustada a tu {c.nombre.toLowerCase()}: {['P', 'HC', 'G'].filter((g) => objetivo[g] > 0).map((g) => `${fmtNum(objetivo[g], 1)} ${NOMBRE_RACION[g].toLowerCase()}`).join(' · ')}. Verdura y especias, igual. Se cuentan todos los macros de cada ingrediente.</p>
       {#each Object.entries(aj.faltan) as [g, n]}
         <p class="peq aviso-t">Tu {c.nombre.toLowerCase()} lleva además {fmtNum(n, 1)} {n === 1 ? 'ración' : 'raciones'} de {NOMBRE_RACION[g].toLowerCase()} que este plato no tiene: {g === 'HC' ? 'pan, arroz, patata o fruta' : (r.etq || []).includes('vegano') ? 'tofu, soja texturizada o un yogur de soja' : 'huevo, atún, pollo o un lácteo proteico'} aparte.</p>
       {/each}

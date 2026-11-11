@@ -1,6 +1,7 @@
 // Propuesta automática de menú semanal a partir de las raciones de cada comida.
 // Es una propuesta general: el deportista la cambia en Comer → Mi menú.
 import { app } from './estado.svelte.js';
+import { alimento, objetivoComidaGramos } from './dieta.js';
 import { cat, normalizar } from './catalogo.js';
 import { platos, momentosDe, ajustarReceta, recetasOrdenadas, usosRecetas, topeGramos } from './recetas.js';
 
@@ -105,8 +106,47 @@ export function proponerMenu(dieta, perfil = app.datos.perfil, azar = 0) {
           n -= r;
         }
       }
+      cuadrarComida(items, objetivoComidaGramos(dieta, c));
       menu[dia][c.id] = items;
     });
   }
   return menu;
+}
+
+/**
+ * Ajusta los gramos de una comida para que sus macros REALES (todos los de cada alimento, no solo el principal)
+ * se acerquen al objetivo de esa comida: proteína con los alimentos proteicos, grasa con las grasas e hidratos con
+ * los hidratos. La fruta, la verdura y los condimentos se quedan como están.
+ */
+export function cuadrarComida(items, obj) {
+  const piezas = [];
+  for (const e of items) {
+    if (e.tipo === 'alimento') piezas.push(e);
+    else if (e.tipo === 'plato') piezas.push(...e.items);
+  }
+  const macro = (k, lista = piezas) => lista.reduce((s, x) => s + ((alimento(x.aid)?.[k] || 0) * x.g) / 100, 0);
+  const grupo = (cc) => piezas.filter((x) => alimento(x.aid)?.cc === cc);
+  const K = { P: 'p', G: 'g', HC: 'hc' };
+  for (let vuelta = 0; vuelta < 6; vuelta++) {
+    for (const cc of ['P', 'G', 'HC']) {
+      const k = K[cc], ps = grupo(cc);
+      const propio = macro(k, ps);
+      if (propio <= 0.5) continue;
+      const falta = obj[k] - macro(k);
+      const f = Math.min(1.6, Math.max(cc === 'G' ? 0.3 : 0.4, (propio + falta) / propio));
+      for (const x of ps) x.g = Math.min(topeGramos(alimento(x.aid)), x.g * f);
+    }
+    // al final, las kcal: lo que falte o sobre lo absorben los hidratos (sin tocar la proteína)
+    const hcs = grupo('HC'), kHC = macro('kcal', hcs);
+    if (kHC > 20) {
+      const f = Math.min(1.3, Math.max(0.6, (kHC + obj.kcal - macro('kcal')) / kHC));
+      for (const x of hcs) x.g = Math.min(topeGramos(alimento(x.aid)), x.g * f);
+    }
+  }
+  for (const x of piezas) {
+    const a = alimento(x.aid);
+    if (/^1 huevo/.test(a?.medida || '') && a.gm) x.g = Math.max(a.gm, Math.round(x.g / a.gm) * a.gm);
+    else x.g = x.g < 20 ? Math.max(1, Math.round(x.g)) : Math.round(x.g / 5) * 5;
+  }
+  return items;
 }

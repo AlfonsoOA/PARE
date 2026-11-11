@@ -1,7 +1,7 @@
 <script>
   import { app, hoyISO } from '../lib/estado.svelte.js';
   import { cat } from '../lib/catalogo.js';
-  import { delDia, sumar, anotar, quitar, objetivoDelDia, pautaComida, tipoDeDia, aporte, alimento, receta, GRUPOS_RACION, NOMBRE_RACION, DEF_RACION, redondear, diaSemana, DIAS_SEMANA, comidaHidratosExtra } from '../lib/dieta.js';
+  import { delDia, sumar, anotar, quitar, objetivoDelDia, pautaComida, tipoDeDia, aporte, alimento, receta, GRUPOS_RACION, NOMBRE_RACION, DEF_RACION, redondear, diaSemana, DIAS_SEMANA, comidaHidratosExtra, objetivoComidaGramos } from '../lib/dieta.js';
   import { fmtNum, fmtFecha } from '../lib/unidades.js';
   import Icono from '../componentes/Icono.svelte';
   import Hoja from '../componentes/Hoja.svelte';
@@ -141,6 +141,8 @@
       <button class="boton sec2 ancho" onclick={() => (hayMenu ? (confirmarMenu = true) : generarMenu())}>{hayMenu ? 'Volver a proponer el menú automático' : 'Proponer menú automático'}</button>
     {/if}
     <div class="desliza">{#each DIAS_SEMANA as nombre, i}<button class="chip" class:on={diaMenu === i} onclick={() => (diaMenu = i)}>{nombre.slice(0, 3)}</button>{/each}</div>
+    {@const totalDia = sumar(d.dieta.comidas.flatMap((c) => menuDe(diaMenu, c.id)))}
+    {#if totalDia.kcal > 0}<div class="tarjeta"><span class="etiqueta">Total de {DIAS_SEMANA[diaMenu].toLowerCase()}</span><p class="peq">{fmtNum(totalDia.kcal)} kcal · {fmtNum(totalDia.p)} g proteína · {fmtNum(totalDia.hc)} g hidratos · {fmtNum(totalDia.g)} g grasa</p><p class="sec peq">Tu dieta: {fmtNum(d.dieta.kcal)} kcal · {fmtNum(d.dieta.p)} g · {fmtNum(d.dieta.hc)} g · {fmtNum(d.dieta.g)} g. Se cuentan todos los macros de cada alimento, no solo el principal.</p></div>{/if}
     {#each d.dieta.comidas as c (c.id)}
       {@const s = sumaMenu(diaMenu, c.id)}
       <div class="tarjeta">
@@ -149,8 +151,10 @@
           <div class="fila entre peq">{#if e.tipo === 'plato' && receta(e.rid)}<button class="enlace-l" onclick={() => (recetaAbierta = { r: receta(e.rid), comida: c.id })}>{etiquetaEntrada(e)} <span class="sec">· ver receta</span></button>{:else}<span>{etiquetaEntrada(e)}</span>{/if}<button class="icono-b" style="width:36px;height:36px" onclick={() => d.dieta.menu[diaMenu][c.id].splice(k, 1)} aria-label="Quitar"><Icono n="cerrar" tam={18} /></button></div>
         {/each}
         {#if menuDe(diaMenu, c.id).length}
-          {@const dif = GRUPOS_RACION.filter((g) => Math.abs((s[g] || 0) - (c.raciones[g] || 0)) >= 0.5)}
-          <p class="peq" class:aviso={dif.length}>{dif.length ? `No cuadra: ${dif.map((g) => `${g} ${fmtNum(redondear(s[g]), 1)} de ${c.raciones[g]}`).join(', ')}` : 'Cuadra con tus raciones.'}</p>
+          {@const real = sumar(menuDe(diaMenu, c.id))}
+          {@const obj = objetivoComidaGramos(d.dieta, c)}
+          {@const mal = Math.abs(real.kcal / obj.kcal - 1) > 0.15 || real.p < obj.p * 0.8}
+          <p class="peq" class:aviso={mal}>≈ {fmtNum(real.kcal)} kcal · {fmtNum(real.p)} g proteína <span class="sec">(objetivo {fmtNum(obj.kcal)} kcal · {fmtNum(obj.p)} g)</span>{mal ? ' · revisa las cantidades' : ''}</p>
         {/if}
         <button class="enlace" style="align-self:flex-start" onclick={() => (anadirEn = { menu: [diaMenu, c.id] })}>+ Añadir</button>
       </div>
