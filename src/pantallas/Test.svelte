@@ -3,6 +3,7 @@
   import { ZONAS } from '../lib/catalogo.js';
   import { generarRutina, generarDieta, faseDeObjetivo, repartosPara, REPARTO_POR_DEFECTO } from '../lib/plan.js';
   import { nivelActual } from '../lib/entreno.js';
+  import { proponerMenu } from '../lib/menu.js';
   import Icono from '../componentes/Icono.svelte';
 
   const BLOQUES = ['Sobre ti', 'Salud', 'Objetivo', 'Entreno', 'Tu día', 'Comida', 'Constancia'];
@@ -68,6 +69,7 @@
     if (m) Object.assign(m, med); else app.datos.medidas.push(med);
     const rutina = generarRutina(perfil, app.datos.ajustes);
     const dieta = generarDieta({ ...t, peso: +t.peso, altura: +t.altura, edad: +t.edad, cintura: +t.cintura || null, cuello: +t.cuello || null, cadera: +t.cadera || null });
+    dieta.menu = proponerMenu(dieta, perfil);
     app.datos.planPropuesto = { rutina, dieta, fase: faseDeObjetivo(t.objetivo, dieta) };
     delete perfil.borradorTest;
     app.vista = { nombre: 'plan' };

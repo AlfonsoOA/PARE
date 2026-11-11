@@ -18,7 +18,7 @@ export function estadosEjercicios(d = app.datos) {
 export function avisosDeHoy() {
   const d = app.datos;
   const out = [];
-  if (d.cambiosPropuestos) out.push({ id: 'cambios', tipo: 'accion', texto: 'Tu entrenador te propone cambios.', accion: { nombre: 'cambios' } });
+  if (d.cambiosPropuestos) out.push({ id: 'cambios', tipo: 'accion', texto: d.cambiosPropuestos.compartida ? 'Tienes una rutina compartida pendiente de abrir.' : 'Tu entrenador te propone cambios.', accion: { nombre: 'cambios' } });
   const esq = sesionEsquivada(d);
   if (esq) out.push({ ...esq, tipo: 'pique' });
   const dias = diasSinEntrenar(d);

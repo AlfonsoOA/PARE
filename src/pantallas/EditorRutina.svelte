@@ -151,6 +151,7 @@
               <label class="campo">{ud()}<input type="number" inputmode="decimal" step="0.25" bind:value={it._carga} placeholder="—" /></label>
               <label class="campo">Desc. (s)<input type="number" inputmode="numeric" step="15" bind:value={it.descanso} /></label>
             </div>
+            <input type="text" bind:value={it.nota} placeholder="Nota (RPE, técnica…), opcional" aria-label="Nota del ejercicio" style="min-height:40px;font-size:14px" />
             <div class="fila acciones">
               <button class="icono-b" onclick={() => moverI(s, k, -1)} aria-label="Subir"><Icono n="arriba" /></button>
               <button class="icono-b" onclick={() => moverI(s, k, 1)} aria-label="Bajar"><Icono n="abajo" /></button>

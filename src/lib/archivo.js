@@ -14,6 +14,12 @@ export function archivoDeportista(incluye, autorizaCentro) {
   if (incluye.includes('progreso')) { datos.sesiones = d.sesiones; datos.medidas = d.medidas; }
   return cabecera('deportista', { incluye, autoriza: { entrenador: true, centro: !!autorizaCentro }, datos });
 }
+/** Una rutina para compartir (por ejemplo, con quien entrenas): sin cargas, cada uno pone las suyas. */
+export function archivoRutina(rutina, nota = '') {
+  const limpia = JSON.parse(JSON.stringify(rutina));
+  for (const s of limpia.sesiones) for (const it of s.items) it.carga = null;
+  return cabecera('rutina', { datos: { rutina: limpia }, nota });
+}
 export function archivoCopia() {
   return cabecera('copia', { incluye: ['todo'], datos: app.datos });
 }
@@ -71,6 +77,12 @@ export async function abrirArchivo(file) {
     aviso(previo ? `${reg.nombre}: datos actualizados` : `${reg.nombre} añadido a tus deportistas`);
     app.tab = 'yo';
     app.vista = { nombre: 'deportista', id: obj.de.id, acento: 'yo' };
+    return;
+  }
+  if (obj.tipo === 'rutina') {
+    if (!obj.datos?.rutina?.sesiones?.length) { aviso('El archivo no trae ninguna rutina.'); return; }
+    d.cambiosPropuestos = { de: obj.de, creado: obj.creado, nota: obj.nota, rutina: obj.datos.rutina, dieta: null, compartida: true };
+    app.vista = { nombre: 'cambios', acento: 'yo' };
     return;
   }
   if (obj.tipo === 'cambios') {

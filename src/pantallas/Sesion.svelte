@@ -177,6 +177,7 @@
             {:else}
               <button class="enlace" style="align-self:flex-start" onclick={() => (app.vista = { nombre: 'ficha', id: x.ej, acento: 'entrenar', volver: { nombre: 'sesion', acento: 'entrenar' } })}>Ver ficha técnica</button>
             {/if}
+            {#if x.nota}<p class="peq nota">{x.nota}</p>{/if}
             {#if r && r.nivel !== 'recomendado'}<div class="aviso-l peq"><Icono n="aviso" tam={18} /><p><b>{r.zona}:</b> {r.motivo}</p></div>{/if}
             {#if usaPesoCorporal(e)}<p class="sec peq">PC = tu peso corporal{pc ? ` (${fmt(pc)})` : ''}. Apunta el lastre con + y la asistencia con −.</p>{/if}
             {#if x.objetivo.carga == null && !usaPesoCorporal(e) && !prev}
@@ -307,6 +308,7 @@
   .cuerpo { padding: 0 12px 12px; display: flex; flex-direction: column; gap: 10px; }
   .img { display: flex; align-items: center; gap: 10px; background: none; border: 0; padding: 0; cursor: pointer; color: inherit; }
   .guia { color: var(--progreso); }
+  .nota { color: var(--progreso); }
   .serie { display: flex; gap: 8px; align-items: stretch; }
   .datos { flex: 1; display: flex; align-items: baseline; gap: 8px; background: var(--elevada); border: 1px solid var(--borde); border-radius: 12px; padding: 10px 12px; min-height: 60px; cursor: pointer; text-align: left; flex-wrap: wrap; }
   .serie.hecha .datos { border-color: #1f4a30; }

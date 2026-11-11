@@ -91,7 +91,7 @@ export function iniciarSesion(idx, items = null, nombre = null) {
     ejercicios: base.map((it) => {
       const previa = ultimaVez(it.ej);
       return {
-        uid: it.uid ?? uuid(), ej: it.ej, unir: !!it.unir, descanso: it.descanso,
+        uid: it.uid ?? uuid(), ej: it.ej, unir: !!it.unir, descanso: it.descanso, nota: it.nota ?? '',
         objetivo: { series: it.series, repMin: it.repMin, repMax: it.repMax, carga: it.carga },
         series: Array.from({ length: it.series }, (_, k) => nuevaSerie(it, previa, k)),
       };

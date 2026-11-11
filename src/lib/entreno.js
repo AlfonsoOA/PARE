@@ -100,7 +100,12 @@ export function pesosGrupo(idEj) {
   const w = {};
   if (!e || !e.vol) return w;
   for (const g of e.gp || []) w[g] = Math.max(w[g] || 0, PONDERACION.principal);
-  for (const g of e.gs || []) w[g] = Math.max(w[g] || 0, PONDERACION.secundario);
+  for (const g of e.gs || []) {
+    // El deltoides anterior trabaja en todos los press horizontales y aperturas: no se cuenta como volumen de
+    // hombro, igual que no se cuenta el antebrazo en los remos (el catálogo no separa las tres cabezas).
+    if (g === 'hombros' && (e.pat === 'empuje_horizontal' || e.pat === 'aduccion_horizontal_hombro')) continue;
+    w[g] = Math.max(w[g] || 0, PONDERACION.secundario);
+  }
   return w;
 }
 export function lunes(iso) {
@@ -163,7 +168,7 @@ export function comprobarSuperserie(idA, idB) {
     return { nivel: 'aviso', tipo: 'comparten', texto: `${b.n} tras ${a.n}: comparten ${m.toLowerCase()}, que ya llega cansado.` };
   }
   // Un básico + un ejercicio de apoyo del mismo grupo (fondos + aperturas): superserie buscada, solo se etiqueta.
-  if ((gruposComunes.length || comparten.length) && esBasico(a) !== esBasico(b)) {
+  if (comparten.length && esBasico(a) !== esBasico(b)) {
     return { nivel: 'etiqueta', tipo: esBasico(a) ? 'agotamiento' : 'prefatiga',
       texto: esBasico(a) ? 'Superserie de agotamiento' : 'Superserie de prefatiga' };
   }

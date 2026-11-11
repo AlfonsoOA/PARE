@@ -9,7 +9,13 @@
   function rutina(si) {
     if (si) {
       if (d.rutina) d.rutinasAnteriores.push(d.rutina);
-      d.rutina = { ...c.rutina, version: (d.rutina?.version ?? 0) + 1, de: c.de?.nombre };
+      // Las cargas propias se conservan en los ejercicios que coinciden.
+      const cargas = {};
+      for (const s of d.rutina?.sesiones ?? []) for (const it of s.items) if (it.carga != null) cargas[it.ej] = it.carga;
+      const nueva = JSON.parse(JSON.stringify(c.rutina));
+      for (const s of nueva.sesiones) for (const it of s.items) if (it.carga == null && cargas[it.ej] != null) it.carga = cargas[it.ej];
+      d.rutina = { ...nueva, version: (d.rutina?.version ?? 0) + 1, de: c.de?.nombre };
+      d.secuencia.saltos = {};
       const n = d.rutina.sesiones.length;
       if ((d.secuencia.siguiente ?? 0) >= n) d.secuencia.siguiente = 0;
       d.secuencia.pendientes = (d.secuencia.pendientes || []).filter((i) => i < n);
@@ -29,23 +35,23 @@
 {:else}
 <div class="pantalla">
   <div class="fila"><button class="icono-b" onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Cambios propuestos</span></div>
-  <h1>Cambios de {c.de?.nombre ?? 'tu entrenador'}</h1>
-  <p class="sec peq">Del {fmtFecha(c.creado?.slice(0, 10))}. Nada cambia hasta que lo aceptes.</p>
+  <h1>{c.compartida ? `Rutina de ${c.de?.nombre ?? 'un compañero'}` : `Cambios de ${c.de?.nombre ?? 'tu entrenador'}`}</h1>
+  <p class="sec peq">Del {fmtFecha(c.creado?.slice(0, 10))}. Nada cambia hasta que lo aceptes.{c.compartida ? ' Si la aceptas, sustituye a tu rutina; las cargas que ya tenías en los mismos ejercicios se conservan y el resto las pones tú el primer día.' : ''}</p>
   {#if c.nota}<div class="tarjeta"><p>«{c.nota}»</p></div>{/if}
 
   {#if c.rutina}
     <div class="tarjeta">
       <h2>Rutina</h2>
       {#each c.rutina.sesiones as s, i}
-        {@const antes = d.rutina?.sesiones.find((x) => x.id === s.id) ?? d.rutina?.sesiones[i]}
+        {@const antes = c.compartida ? null : (d.rutina?.sesiones.find((x) => x.id === s.id) ?? d.rutina?.sesiones[i])}
         <b>{s.nombre}</b>
         {#each s.items as it, k}
           {@const a = antes?.items[k]}
-          {@const cambia = !a || linea(a) !== linea(it)}
+          {@const cambia = !c.compartida && (!a || linea(a) !== linea(it))}
           <p class="peq" class:nuevo={cambia}>{linea(it)}{#if cambia && a}<span class="sec"> (antes: {linea(a)})</span>{/if}</p>
         {/each}
       {/each}
-      <div class="fila"><button class="boton" style="flex:1" onclick={() => rutina(true)}>Aceptar</button><button class="boton sec2" style="flex:1" onclick={() => rutina(false)}>Rechazar</button></div>
+      <div class="fila"><button class="boton" style="flex:1" onclick={() => rutina(true)}>{c.compartida ? 'Usar esta rutina' : 'Aceptar'}</button><button class="boton sec2" style="flex:1" onclick={() => rutina(false)}>Rechazar</button></div>
     </div>
   {/if}
   {#if c.dieta}

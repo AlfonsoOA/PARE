@@ -6,6 +6,11 @@
   import Icono from '../componentes/Icono.svelte';
   import Hoja from '../componentes/Hoja.svelte';
   import AnadirAlimento from '../componentes/AnadirAlimento.svelte';
+  import { proponerMenu } from '../lib/menu.js';
+  import { aviso } from '../lib/estado.svelte.js';
+  let confirmarMenu = $state(false);
+  function generarMenu() { d.dieta.menu = proponerMenu(d.dieta, d.perfil); confirmarMenu = false; aviso('Menú propuesto. Cámbialo a tu gusto.'); }
+  const hayMenu = $derived(Object.values(d.dieta?.menu ?? {}).some((dia) => Object.values(dia ?? {}).some((l) => l?.length)));
 
   let d = $derived(app.datos);
   let sub = $state('dia');
@@ -59,6 +64,11 @@
       <b>{fecha === hoyISO() ? 'Hoy' : fmtFecha(fecha, true)}</b>
       <button class="icono-b" onclick={() => cambiarDia(1)} aria-label="Día siguiente" disabled={fecha >= hoyISO()} style="transform:scaleX(-1)"><Icono n="atras" /></button>
     </div>
+    {#if !hayMenu}
+      <div class="tarjeta"><p>¿Quieres que PARE te proponga qué comer en cada comida, con tus raciones?</p>
+        <button class="boton ancho" onclick={generarMenu}>Proponer menú de la semana</button>
+        <p class="sec peq">Es una propuesta general: luego lo cambias en Mi menú.</p></div>
+    {/if}
     <div class="tarjeta">
       <div class="fila entre"><span class="etiqueta">Total del día</span>{#if d.dieta.hidratosExtra && tipoDeDia(fecha) === true}<span class="insignia bien">Día de más hidratos</span>{/if}</div>
       <div class="fila entre envolver">
@@ -105,6 +115,11 @@
 
   {:else if sub === 'menu'}
     <p class="sec peq">Concreta qué comes en cada comida de cada día, a partir de tus raciones. Es opcional: quien no quiera, va por raciones.</p>
+    {#if confirmarMenu}
+      <div class="tarjeta"><p>Se sustituye el menú de toda la semana.</p><div class="fila"><button class="boton" style="flex:1" onclick={generarMenu}>Sí, proponer</button><button class="boton sec2" style="flex:1" onclick={() => (confirmarMenu = false)}>Cancelar</button></div></div>
+    {:else}
+      <button class="boton sec2 ancho" onclick={() => (hayMenu ? (confirmarMenu = true) : generarMenu())}>{hayMenu ? 'Volver a proponer el menú automático' : 'Proponer menú automático'}</button>
+    {/if}
     <div class="desliza">{#each DIAS_SEMANA as nombre, i}<button class="chip" class:on={diaMenu === i} onclick={() => (diaMenu = i)}>{nombre.slice(0, 3)}</button>{/each}</div>
     {#each d.dieta.comidas as c (c.id)}
       {@const s = sumaMenu(diaMenu, c.id)}

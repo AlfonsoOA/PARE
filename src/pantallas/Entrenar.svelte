@@ -4,6 +4,12 @@
   import { duracionSesion, etiquetasBloque, restriccion } from '../lib/entreno.js';
   import { sesionPropuesta, iniciarSesion } from '../lib/sesiones.js';
   import { fmt, fmtMin, fmtReloj } from '../lib/unidades.js';
+  import { archivoRutina, compartir } from '../lib/archivo.js';
+  import { aviso } from '../lib/estado.svelte.js';
+  async function compartirRutina() {
+    const r = await compartir(archivoRutina(app.datos.rutina), app.datos.perfil.nombre);
+    if (r !== 'cancelado') aviso(r === 'compartido' ? 'Rutina enviada' : 'Archivo descargado: mándalo por WhatsApp');
+  }
 
   let d = $derived(app.datos);
   const prop = $derived(sesionPropuesta(d));
@@ -49,6 +55,7 @@
               <span class="col" style="gap:1px;min-width:0;align-items:flex-start">
                 <span class="nom">{e?.n ?? it.ej}</span>
                 <span class="sec peq">{it.series} × {it.repMin === it.repMax ? it.repMin : `${it.repMin}-${it.repMax}`}{e?.ud === 'tiempo' ? ' s' : ''} · {it.carga != null ? fmt(it.carga) : 'carga el primer día'} · descanso {fmtReloj(it.descanso)}</span>
+                {#if it.nota}<span class="sec peq nota">{it.nota}</span>{/if}
               </span>
               {#if r?.nivel === 'precaucion'}<span class="insignia aviso">!</span>{/if}
             </button>
@@ -58,6 +65,8 @@
       </div>
     {/each}
     <button class="boton sec2 ancho" onclick={() => iniciarSesion(null, [], 'Sesión libre')}>Sesión libre</button>
+    <button class="boton sec2 ancho" onclick={compartirRutina}>Compartir mi rutina con quien entreno</button>
+    <p class="sec peq">Se envía sin cargas: cada uno pone las suyas. La otra persona la abre en Yo → Archivo PARE → Abrir un archivo.</p>
   {/if}
 </div>
 
@@ -66,5 +75,6 @@
   .cab { display: flex; justify-content: space-between; align-items: center; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; min-height: 48px; }
   .ej { display: flex; align-items: center; gap: 10px; background: none; border: 0; border-top: 1px solid var(--borde); padding: 10px 0; text-align: left; cursor: pointer; }
   .nom { font-weight: 600; }
+  .nota { color: var(--progreso); }
   .ss { font-family: var(--titulos); font-weight: 800; color: var(--entrenar); width: 28px; flex-shrink: 0; }
 </style>
