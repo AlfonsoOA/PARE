@@ -21,6 +21,17 @@ export function racionesDe(items) {
   }
   return r;
 }
+/** Lo máximo razonable de un alimento en una comida (medio kilo de patata no se lo come nadie). */
+export function topeGramos(a) {
+  if (!a) return Infinity;
+  const rac = a.rac || 0;
+  if (/^1 huevo/.test(a.medida || '') && a.gm) return 3 * a.gm; // 3 huevos
+  if (a.estado === 'seco') return 140; // pasta, arroz, legumbre o avena en crudo
+  if (a.grupo === 'hidratos') return rac >= 150 ? 300 : Math.max(160, 2 * rac); // patata, boniato o legumbre cocida: 300 g; pan: unas 4 rebanadas
+  if (a.cc === 'P') return rac >= 150 ? Math.max(300, rac) : 250; // carne o pescado: 250 g; lácteos proteicos: un envase
+  if (a.cc === 'G') return 3 * rac;
+  return Math.max(300, rac * 1.5);
+}
 const redondearG = (g) => (g < 20 ? Math.max(1, Math.round(g)) : Math.round(g / 5) * 5);
 const ingredientesBase = (r) => r.ingredientes.map((i) => ({ aid: i.id, g: i.g, nota: i.nota ?? null }));
 
@@ -40,11 +51,18 @@ export function ajustarReceta(r, objetivo = null) {
     if (g === 'G') factores[g] = Math.max(0.3, factores[g]); // algo de aceite para cocinar siempre
   }
   const items = [];
+  const sobra = {};
   for (const it of base) {
     const a = alimento(it.aid);
     const f = a && BASE[a.cc] ? factores[a.cc] : 1;
     if (f === 1) { items.push(it); continue; }
     let g = it.g * f;
+    // si escalar deja una cantidad desproporcionada, se queda en el tope y lo que falta va aparte
+    if (a && BASE[a.cc] && g > topeGramos(a)) {
+      const [k, b] = BASE[a.cc];
+      sobra[a.cc] = (sobra[a.cc] || 0) + (((g - topeGramos(a)) * (a[k] || 0)) / 100 / b);
+      g = topeGramos(a);
+    }
     // huevos enteros: unidades completas
     if (/^1 huevo/.test(a?.medida || '') && a.gm) g = Math.round(g / a.gm) * a.gm;
     g = g > 0 ? redondearG(g) : 0;
@@ -52,6 +70,7 @@ export function ajustarReceta(r, objetivo = null) {
   }
   const faltan = {};
   for (const g of ['P', 'HC']) if ((+objetivo[g] || 0) >= 0.5 && c[g] <= 0.05) faltan[g] = +objetivo[g];
+  for (const [g, n] of Object.entries(sobra)) if (n >= 0.25) faltan[g] = Math.round(((faltan[g] || 0) + n) * 2) / 2 || 0.5;
   return { items, faltan, factores };
 }
 
