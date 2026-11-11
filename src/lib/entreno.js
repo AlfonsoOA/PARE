@@ -139,9 +139,14 @@ export function volumenPlanificado(rutina, diasSemana) {
   return v;
 }
 export const BANDA = { min: 10, max: 20 }; // RANGOS_VOLUMEN V02 (moderado), por grupo y semana
-// "Piernas" junta cuádriceps, isquios, glúteos y gemelos: su banda es mayor. Antebrazos, core y cuello, más baja.
-export const BANDA_GRUPO = { piernas: { min: 16, max: 40 }, core: { min: 4, max: 20 }, antebrazos: { min: 0, max: 16 }, cuello: { min: 0, max: 12 } };
-export const banda = (g) => BANDA_GRUPO[g] ?? BANDA;
+// "Piernas" junta cuádriceps, isquios, glúteos y gemelos: su banda es mayor. "Hombros" junta tres cabezas
+// y recibe mucho trabajo indirecto de los press (la anterior), así que su techo es algo más alto. Antebrazos, core y cuello, más baja.
+export const BANDA_GRUPO = { piernas: { min: 16, max: 40 }, hombros: { min: 10, max: 24 }, core: { min: 4, max: 20 }, antebrazos: { min: 0, max: 16 }, cuello: { min: 0, max: 12 } };
+/** Banda semanal de un grupo. Con 2-3 días a la semana el mínimo baja (6 series; piernas 10): llegar a 10 por grupo no cabe. */
+export function banda(g, dias = 4) {
+  const b = BANDA_GRUPO[g] ?? BANDA;
+  return dias <= 3 && b.min ? { min: g === 'piernas' ? 10 : 6, max: b.max } : b;
+}
 
 // ---------- Comprobación de superseries (criterio anatómico y funcional) ----------
 export function comprobarSuperserie(idA, idB) {

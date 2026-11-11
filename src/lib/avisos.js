@@ -35,8 +35,8 @@ export function avisosDeHoy() {
   if (d.rutina) {
     const v = volumenPlanificado(d.rutina, d.perfil.diasSemana);
     for (const g of ['pecho', 'espalda', 'hombros', 'piernas']) {
-      if (v[g] > banda(g).max + 2) out.push({ id: `volalto-${g}-${d.rutina.version}`, tipo: 'dato', texto: `${NOMBRE_GRUPO[g]}: ${v[g]} series a la semana en tu rutina. Más no es mejor, es más cansancio.` });
-      if (v[g] < banda(g).min - 2) out.push({ id: `volbajo-${g}-${d.rutina.version}`, tipo: 'dato', texto: `${NOMBRE_GRUPO[g]}: ${v[g]} series a la semana en tu rutina. Se queda corta.` });
+      if (v[g] > banda(g, d.perfil.diasSemana).max + 2) out.push({ id: `volalto-${g}-${d.rutina.version}`, tipo: 'dato', texto: `${NOMBRE_GRUPO[g]}: ${v[g]} series a la semana en tu rutina. Más no es mejor, es más cansancio.` });
+      if (v[g] < banda(g, d.perfil.diasSemana).min - 2) out.push({ id: `volbajo-${g}-${d.rutina.version}`, tipo: 'dato', texto: `${NOMBRE_GRUPO[g]}: ${v[g]} series a la semana en tu rutina. Se queda corta.` });
     }
   }
   const ult = d.ajustes.ultimaCopia;

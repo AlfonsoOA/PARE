@@ -2,7 +2,8 @@
   import { app, uuid, aviso } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
   import { duracionSesion, etiquetasBloque, avisosSuperseries, restriccion, volumenPlanificado, BANDA, banda } from '../lib/entreno.js';
-  import { nuevoItem } from '../lib/plan.js';
+  import { nuevoItem, generarRutina, repartosPara, REPARTO_POR_DEFECTO } from '../lib/plan.js';
+  import Hoja from '../componentes/Hoja.svelte';
   import { fmtMin, fmtNum, mostrar, guardar, ud } from '../lib/unidades.js';
   import Icono from '../componentes/Icono.svelte';
   import Buscador from '../componentes/Buscador.svelte';
@@ -18,8 +19,25 @@
   for (const s of r.sesiones) for (const it of s.items) it._carga = mostrar(it.carga) ?? '';
   let abierta = $state(0);
   let buscar = $state(null); // índice de sesión donde añadir
+  let reparto = $state(null); // hoja "Cambiar reparto": { dias }
+  function montar(id) {
+    const dias = reparto.dias;
+    const cargas = {};
+    for (const s of r.sesiones) for (const it of s.items) if (it._carga !== '' && it._carga != null) cargas[it.ej] = guardar(it._carga);
+    let nueva;
+    if (id === 'blanco') nueva = { id: uuid(), version: r.version, nombre: 'Mi rutina', objetivo: r.objetivo, sesiones: Array.from({ length: dias }, (_, k) => ({ id: uuid(), nombre: `Sesión ${String.fromCharCode(65 + k)}`, exigente: false, items: [] })) };
+    else nueva = generarRutina({ ...perfil, diasSemana: dias }, app.datos.ajustes, id, cargas);
+    for (const s of nueva.sesiones) for (const it of s.items) it._carga = mostrar(it.carga) ?? '';
+    nueva.version = r.version;
+    nueva._dias = dias;
+    r = nueva;
+    abierta = 0;
+    reparto = null;
+    aviso('Reparto cambiado. Revísalo y guarda.');
+  }
 
-  const vol = $derived(volumenPlanificado(r, perfil.diasSemana || r.sesiones.length));
+  const dsem = $derived(r._dias || perfil.diasSemana || r.sesiones.length);
+  const vol = $derived(volumenPlanificado(r, dsem));
   const balance = $derived.by(() => {
     let emp = 0, tir = 0, cua = 0, isq = 0;
     for (const s of r.sesiones) for (const it of s.items) {
@@ -34,8 +52,8 @@
     const out = [];
     for (const g of GRUPOS) {
       if (['antebrazos', 'cuello'].includes(g)) continue;
-      if (vol[g] > banda(g).max) out.push(`${NOMBRE_GRUPO[g]}: ${fmtNum(vol[g], 1)} series a la semana. Más no es mejor, es más cansancio.`);
-      else if (vol[g] < banda(g).min && ['pecho', 'espalda', 'hombros', 'piernas'].includes(g)) out.push(`${NOMBRE_GRUPO[g]}: ${fmtNum(vol[g], 1)} series a la semana. Se queda corta.`);
+      if (vol[g] > banda(g, dsem).max) out.push(`${NOMBRE_GRUPO[g]}: ${fmtNum(vol[g], 1)} series a la semana. Más no es mejor, es más cansancio.`);
+      else if (vol[g] < banda(g, dsem).min && ['pecho', 'espalda', 'hombros', 'piernas'].includes(g)) out.push(`${NOMBRE_GRUPO[g]}: ${fmtNum(vol[g], 1)} series a la semana. Se queda corta.`);
     }
     const { emp, tir, cua, isq } = balance;
     if (emp && tir && (emp / tir > 1.5 || tir / emp > 1.5)) out.push(`Empuje ${emp} series frente a tirón ${tir}: conviene equilibrarlos.`);
@@ -67,6 +85,7 @@
       if (s.items.length) s.items.at(-1).unir = false;
     }
     limpia.version = (origen?.version ?? 0) + 1;
+    if (limpia._dias) { if (modo === 'propia') app.datos.perfil.diasSemana = limpia._dias; delete limpia._dias; }
     limpia.modificada = new Date().toISOString();
     if (modo === 'entrenador') {
       dep.propuesta = { ...(dep.propuesta ?? {}), rutina: limpia };
@@ -92,6 +111,7 @@
     <button class="boton" style="min-height:44px" onclick={guardarRutina}>Guardar</button>
   </div>
 
+  <button class="boton sec2 ancho" onclick={() => (reparto = { dias: perfil.diasSemana || r.sesiones.length })}>Cambiar reparto (torso/pierna, empuje/tirón/pierna, Weider…)</button>
   <label class="campo">Nombre de la rutina<input type="text" bind:value={r.nombre} /></label>
   <div class="col"><span class="sec peq">Objetivo (para los descansos por defecto)</span>
     <div class="fila envolver">{#each [['hipertrofia', 'Hipertrofia'], ['fuerza', 'Fuerza'], ['salud', 'Salud']] as [v, l]}<button class="chip" class:on={r.objetivo === v} onclick={() => (r.objetivo = v)}>{l}</button>{/each}</div>
@@ -149,7 +169,7 @@
   <div class="tarjeta">
     <span class="etiqueta">Volumen semanal previsto</span>
     {#each GRUPOS.filter((g) => vol[g] > 0) as g}
-      <div class="fila entre peq"><span>{NOMBRE_GRUPO[g]}</span><span class:fuera={vol[g] > banda(g).max || vol[g] < banda(g).min}>{fmtNum(vol[g], 1)} series</span></div>
+      <div class="fila entre peq"><span>{NOMBRE_GRUPO[g]}</span><span class:fuera={vol[g] > banda(g, dsem).max || vol[g] < banda(g, dsem).min}>{fmtNum(vol[g], 1)} series</span></div>
     {/each}
     <p class="sec peq">Banda recomendada: {BANDA.min}-{BANDA.max} series por grupo y semana; piernas, {banda('piernas').min}-{banda('piernas').max}, porque junta cuádriceps, isquios, glúteo y gemelo (principal 1, secundario 0,5).</p>
   </div>
@@ -163,6 +183,20 @@
 </div>
 
 {#if buscar != null}<Buscador cerrar={() => (buscar = null)} elegir={anadir} />{/if}
+{#if reparto}
+  <Hoja titulo="Cambiar reparto" cerrar={() => (reparto = null)}>
+    <span class="sec peq">Días por semana</span>
+    <div class="fila">{#each [2, 3, 4, 5, 6] as n}<button class="chip" class:on={reparto.dias === n} onclick={() => (reparto.dias = n)}>{n}</button>{/each}</div>
+    {#each repartosPara(reparto.dias) as rp}
+      <button class="opcion" onclick={() => montar(rp.id)}>
+        <b>{rp.nombre}{rp.id === REPARTO_POR_DEFECTO[reparto.dias] ? ' · recomendado' : ''}</b>
+        <span class="sec peq">{rp.nota}</span>
+      </button>
+    {/each}
+    <button class="opcion" onclick={() => montar('blanco')}><b>En blanco</b><span class="sec peq">{reparto.dias} sesiones vacías para montarla a tu manera.</span></button>
+    <p class="sec peq">PARE elige los ejercicios según tu nivel, material y molestias, y ajusta las series para que cada grupo quede en su banda. Las cargas que ya tenías se conservan. No se guarda hasta que pulses Guardar.</p>
+  </Hoja>
+{/if}
 
 <style>
   .abrir { background: none; border: 0; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 2px; padding: 0; flex: 1; }
@@ -178,4 +212,5 @@
   .ssa.etq { color: var(--texto2); }
   .fuera { color: var(--aviso); font-weight: 600; }
   .avisos { border-color: #5a4316; }
+  .opcion { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; padding: 12px 14px; min-height: 60px; cursor: pointer; }
 </style>

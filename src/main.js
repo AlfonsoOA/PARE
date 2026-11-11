@@ -12,9 +12,11 @@ mount(App, { target: document.getElementById('app') });
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
   // Cuando se publica una versión nueva, recarga sola (salvo en mitad de una sesión: lo hará al salir).
+  // Solo si ya había una versión controlando la página: en la primera visita no se recarga.
+  const habiaVersion = !!navigator.serviceWorker.controller;
   let recargada = false;
   navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (recargada) return;
+    if (recargada || !habiaVersion) return;
     const recargar = () => { if (!recargada) { recargada = true; location.reload(); } };
     if (document.querySelector('.sesion')) document.addEventListener('visibilitychange', recargar, { once: true });
     else recargar();

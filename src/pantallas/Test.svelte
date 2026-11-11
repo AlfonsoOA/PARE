@@ -1,7 +1,7 @@
 <script>
   import { app, hoyISO } from '../lib/estado.svelte.js';
   import { ZONAS } from '../lib/catalogo.js';
-  import { generarRutina, generarDieta, faseDeObjetivo } from '../lib/plan.js';
+  import { generarRutina, generarDieta, faseDeObjetivo, repartosPara, REPARTO_POR_DEFECTO } from '../lib/plan.js';
   import { nivelActual } from '../lib/entreno.js';
   import Icono from '../componentes/Icono.svelte';
 
@@ -55,7 +55,7 @@
     const perfil = app.datos.perfil;
     Object.assign(perfil, {
       nombre: t.nombre.trim(), sexo: t.sexo, edad: +t.edad, altura: +t.altura, objetivo: t.objetivo,
-      diasSemana: +t.diasSemana, minutos: +t.minutos, lugar: t.lugar, material: [...t.material],
+      diasSemana: +t.diasSemana, minutos: +t.minutos, lugar: t.lugar, material: [...t.material], reparto: t.reparto || null,
       molestias: [...t.molestias], alergenos: [...t.alergenos], parqSi: t.parq.some((x) => x),
       parqCronica: t.parq[3] === true || t.parq[4] === true,
     });
@@ -131,6 +131,14 @@
     </div>
     <div class="col"><span class="etiqueta">Días por semana que de verdad puedes entrenar</span>
       <div class="fila envolver">{#each [2, 3, 4, 5, 6] as d}<button class="chip" class:on={+t.diasSemana === d} onclick={() => (t.diasSemana = d)}>{d}</button>{/each}</div>
+    </div>
+    <div class="col"><span class="etiqueta">¿Cómo quieres repartir los grupos?</span>
+      <div class="col" style="gap:6px">
+        <button class="chip grande" class:on={!t.reparto} onclick={() => (t.reparto = '')}>Que decida PARE</button>
+        {#each repartosPara(+t.diasSemana) as r}
+          <button class="chip grande" class:on={t.reparto === r.id} onclick={() => (t.reparto = r.id)}>{r.nombre}{r.id === REPARTO_POR_DEFECTO[+t.diasSemana] ? ' (recomendado)' : ''}</button>
+        {/each}
+      </div>
     </div>
     <div class="col"><span class="etiqueta">Minutos por sesión</span>
       <div class="fila envolver">{#each [30, 45, 60, 75, 90] as d}<button class="chip" class:on={+t.minutos === d} onclick={() => (t.minutos = d)}>{d}</button>{/each}</div>

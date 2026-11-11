@@ -1,7 +1,8 @@
 // Del test de inicio al plan: rutina (plantillas de reparto + elección de ejercicios) y dieta.
 import { cat, ej } from './catalogo.js';
 import { uuid } from './estado.svelte.js';
-import { descansoPorDefecto, duracionSesion, restriccion } from './entreno.js';
+import { descansoPorDefecto, duracionSesion, restriccion, volumenPlanificado, pesosGrupo, banda } from './entreno.js';
+import { GRUPOS } from './catalogo.js';
 
 // ---------- Plantillas de reparto ----------
 // Cada sesión es una lista de huecos: patrón de movimiento + papel (P = principal, A = accesorio).
@@ -16,14 +17,27 @@ const S = {
   brazos: ['Hombros y brazos', [['elevacion_hombro', 'A'], ['abduccion_horizontal_hombro', 'A'], ['flexion_codo', 'A'], ['extension_codo', 'A'], ['flexion_codo', 'A'], ['extension_codo', 'A']]],
   empuje: ['Empuje', [['empuje_horizontal', 'P'], ['empuje_vertical', 'P'], ['aduccion_horizontal_hombro', 'A'], ['elevacion_hombro', 'A'], ['extension_codo', 'A'], ['extension_codo', 'A']]],
   tiron: ['Tirón', [['traccion_vertical', 'P'], ['traccion_horizontal', 'P'], ['abduccion_horizontal_hombro', 'A'], ['elevacion_escapular', 'A'], ['flexion_codo', 'A'], ['flexion_codo', 'A']]],
+  torso: ['Torso', [['empuje_horizontal', 'P'], ['traccion_vertical', 'P'], ['empuje_vertical', 'A'], ['traccion_horizontal', 'A'], ['aduccion_horizontal_hombro', 'A'], ['flexion_codo', 'A'], ['extension_codo', 'A']]],
+  pierna: ['Pierna', [['sentadilla', 'P'], ['bisagra_cadera', 'P'], ['zancada_unilateral', 'A'], ['flexion_rodilla', 'A'], ['extension_rodilla', 'A'], ['flexion_plantar', 'A']], true],
+  pechoW: ['Pecho', [['empuje_horizontal', 'P'], ['empuje_horizontal', 'A'], ['aduccion_horizontal_hombro', 'A'], ['empuje_horizontal', 'A'], ['core_flexion', 'A']]],
+  espaldaW: ['Espalda', [['traccion_vertical', 'P'], ['traccion_horizontal', 'P'], ['traccion_vertical', 'A'], ['traccion_horizontal', 'A'], ['elevacion_escapular', 'A']]],
+  piernaW: ['Pierna', [['sentadilla', 'P'], ['bisagra_cadera', 'P'], ['zancada_unilateral', 'A'], ['flexion_rodilla', 'A'], ['extension_rodilla', 'A'], ['flexion_plantar', 'A']], true],
+  hombrosW: ['Hombros', [['empuje_vertical', 'P'], ['elevacion_hombro', 'A'], ['abduccion_horizontal_hombro', 'A'], ['elevacion_hombro', 'A'], ['core_estabilidad', 'A']]],
+  brazosW: ['Brazos', [['flexion_codo', 'A'], ['extension_codo', 'A'], ['flexion_codo', 'A'], ['extension_codo', 'A'], ['flexion_codo', 'A'], ['antebrazo_agarre', 'A']]],
 };
-export const PLANTILLAS = {
-  2: { nombre: 'Cuerpo completo, 2 días', sesiones: ['fullA', 'fullB'] },
-  3: { nombre: 'Cuerpo completo, 3 días', sesiones: ['fullA', 'fullB', 'fullC'] },
-  4: { nombre: 'Torso / Pierna, 4 días', sesiones: ['torsoA', 'piernaA', 'torsoB', 'piernaB'] },
-  5: { nombre: 'Torso / Pierna + hombros y brazos, 5 días', sesiones: ['torsoA', 'piernaA', 'torsoB', 'piernaB', 'brazos'] },
-  6: { nombre: 'Empuje / Tirón / Pierna, 6 días', sesiones: ['empuje', 'tiron', 'piernaA', 'empuje', 'tiron', 'piernaB'] },
-};
+
+/** Repartos disponibles. `dias` = días por semana con los que encaja. */
+export const REPARTOS = [
+  { id: 'completo', nombre: 'Cuerpo completo', dias: [2, 3], sesiones: (n) => ['fullA', 'fullB', 'fullC'].slice(0, n), nota: 'Todo el cuerpo en cada sesión. Ideal con pocos días.' },
+  { id: 'torso_pierna', nombre: 'Torso / Pierna', dias: [2, 4], sesiones: (n) => (n === 2 ? ['torso', 'pierna'] : ['torsoA', 'piernaA', 'torsoB', 'piernaB']), nota: 'Cada grupo dos veces por semana con 4 días.' },
+  { id: 'torso_pierna_extra', nombre: 'Torso / Pierna + extra', dias: [5], sesiones: () => ['torsoA', 'piernaA', 'torsoB', 'piernaB', 'brazos'], nota: 'El quinto día, hombros y brazos.' },
+  { id: 'ppl', nombre: 'Empuje / Tirón / Pierna', dias: [3, 6], sesiones: (n) => (n === 3 ? ['empuje', 'tiron', 'piernaA'] : ['empuje', 'tiron', 'piernaA', 'empuje', 'tiron', 'piernaB']), nota: 'Con 6 días, cada grupo dos veces por semana.' },
+  { id: 'ppl_tp', nombre: 'Empuje / Tirón / Pierna + Torso / Pierna', dias: [5], sesiones: () => ['empuje', 'tiron', 'piernaA', 'torso', 'piernaB'], nota: 'Mezcla los dos repartos más usados.' },
+  { id: 'ppl_tp_extra', nombre: 'Empuje / Tirón / Pierna + Torso / Pierna + extra', dias: [6], sesiones: () => ['empuje', 'tiron', 'piernaA', 'torso', 'piernaB', 'brazos'], nota: 'El sexto día, hombros y brazos.' },
+  { id: 'weider', nombre: 'Un grupo por día (Weider)', dias: [4, 5], sesiones: (n) => (n === 4 ? ['pechoW', 'espaldaW', 'piernaW', 'hombrosW'] : ['pechoW', 'espaldaW', 'piernaW', 'hombrosW', 'brazosW']), nota: 'Cada grupo una vez por semana: sesiones largas por músculo. Con el mismo volumen semanal, rinde parecido a repartos más frecuentes.' },
+];
+export const REPARTO_POR_DEFECTO = { 2: 'completo', 3: 'completo', 4: 'torso_pierna', 5: 'torso_pierna_extra', 6: 'ppl' };
+export const repartosPara = (dias) => REPARTOS.filter((r) => r.dias.includes(dias));
 
 // Ejercicios preferidos por patrón, en orden (gimnasio). Si no encajan, se elige por puntuación.
 const PREFERIDOS = {
@@ -104,35 +118,70 @@ export function nuevoItem(idEj, objetivo, papel = 'A') {
   return { uid: uuid(), ej: idEj, ...prescripcion(objetivo, papel, e), carga: null, descanso: descansoPorDefecto(idEj, objetivo), unir: false };
 }
 
-export function generarRutina(perfil, ajustes) {
+export function generarRutina(perfil, ajustes, repartoId = null, cargasPrevias = null) {
   const dias = Math.min(6, Math.max(2, perfil.diasSemana || 3));
-  const plantilla = PLANTILLAS[dias];
+  const pedido = REPARTOS.find((r) => r.id === (repartoId ?? perfil.reparto));
+  const reparto = pedido && pedido.dias.includes(dias) ? pedido : REPARTOS.find((r) => r.id === REPARTO_POR_DEFECTO[dias]);
   const objetivo = objetivoEntreno(perfil.objetivo);
   const usados = new Set();
-  const sesiones = plantilla.sesiones.map((clave) => {
+  const sesiones = reparto.sesiones(dias).map((clave) => {
     const [nombre, huecos, exigente] = S[clave];
     const items = [];
     for (const [patron, papel] of huecos) {
+      // en repartos de un grupo por día se repiten patrones: se permiten ejercicios distintos del mismo patrón
       const e = elegirEjercicio(patron, perfil, usados, papel);
       if (!e) continue;
       usados.add(e.id);
-      items.push({ ...nuevoItem(e.id, objetivo, papel), papel });
+      const it = { ...nuevoItem(e.id, objetivo, papel), papel };
+      if (cargasPrevias?.[e.id] != null) it.carga = cargasPrevias[e.id];
+      items.push(it);
     }
-    // Ajustar a los minutos disponibles: primero se quitan accesorios del final, luego se baja a 2 series.
-    const limite = (perfil.minutos || 60) * 60;
-    while (duracionSesion(items, ajustes) > limite && items.filter((x) => x.papel === 'A').length > 2) {
-      const k = items.map((x) => x.papel).lastIndexOf('A');
-      items.splice(k, 1);
-    }
-    for (const it of items) if (duracionSesion(items, ajustes) > limite && it.papel === 'A') it.series = 2;
     return { id: uuid(), nombre, exigente: !!exigente, items };
   });
-  // Nombres repetidos (6 días): Empuje 1 / Empuje 2
   const cuenta = {};
   for (const s of sesiones) cuenta[s.nombre] = (cuenta[s.nombre] || 0) + 1;
   const vistos = {};
   for (const s of sesiones) if (cuenta[s.nombre] > 1) s.nombre = `${s.nombre} ${(vistos[s.nombre] = (vistos[s.nombre] || 0) + 1)}`;
-  return { id: uuid(), version: 1, creada: new Date().toISOString(), nombre: plantilla.nombre, objetivo, sesiones };
+  const rutina = { id: uuid(), version: 1, creada: new Date().toISOString(), nombre: `${reparto.nombre}, ${dias} días`, reparto: reparto.id, objetivo, sesiones };
+  balancearVolumen(rutina, dias);
+  ajustarDuracion(rutina, perfil, ajustes);
+  balancearVolumen(rutina, dias);
+  return rutina;
+}
+
+/** Ajusta series para que cada grupo quede dentro de su banda semanal: la rutina que propone PARE no debe saltar sus propios avisos. */
+export function balancearVolumen(rutina, dias) {
+  const todos = () => rutina.sesiones.flatMap((s) => s.items.map((it) => ({ s, it })));
+  for (let vuelta = 0; vuelta < 60; vuelta++) {
+    const v = volumenPlanificado(rutina, dias);
+    const alto = GRUPOS.find((g) => v[g] > banda(g, dias).max);
+    const bajo = GRUPOS.find((g) => ['pecho', 'espalda', 'hombros', 'piernas'].includes(g) && v[g] < banda(g, dias).min);
+    if (alto) {
+      // primero bajar series de accesorios que trabajan ese grupo; si ya están a 2, quitar el accesorio
+      const cand = todos().filter(({ it }) => pesosGrupo(it.ej)[alto] && it.papel !== 'P').sort((a, b) => (pesosGrupo(b.it.ej)[alto] || 0) - (pesosGrupo(a.it.ej)[alto] || 0));
+      const bajar = cand.find(({ it }) => it.series > 2);
+      if (bajar) { bajar.it.series--; continue; }
+      const quitar = cand.find(({ s }) => s.items.length > 3);
+      if (quitar) { quitar.s.items.splice(quitar.s.items.indexOf(quitar.it), 1); continue; }
+      break;
+    }
+    if (bajo) {
+      const cand = todos().filter(({ it }) => (pesosGrupo(it.ej)[bajo] || 0) === 1 && it.series < 4).sort((a, b) => a.it.series - b.it.series);
+      if (cand.length) { cand[0].it.series++; continue; }
+      break;
+    }
+    break;
+  }
+}
+function ajustarDuracion(rutina, perfil, ajustes) {
+  const limite = (perfil.minutos || 60) * 60;
+  for (const s of rutina.sesiones) {
+    while (duracionSesion(s.items, ajustes) > limite && s.items.filter((x) => x.papel === 'A').length > 2) {
+      const k = s.items.map((x) => x.papel).lastIndexOf('A');
+      s.items.splice(k, 1);
+    }
+    for (const it of s.items) if (duracionSesion(s.items, ajustes) > limite && it.papel === 'A' && it.series > 2) it.series = 2;
+  }
 }
 
 /** Las tres razones que se enseñan en "Tu plan". */
