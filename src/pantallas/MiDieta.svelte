@@ -1,6 +1,7 @@
 <script>
   import { app, aviso, uuid } from '../lib/estado.svelte.js';
   import { GRUPOS_RACION, NOMBRE_RACION, comidaTrasEntreno } from '../lib/dieta.js';
+  import { HORA_ENTRENO } from '../lib/dieta.js';
   import Icono from '../componentes/Icono.svelte';
   let dd = $derived(app.datos.dieta);
   let perfil = $derived(app.datos.perfil);
@@ -23,8 +24,17 @@
       <p class="sec peq">Gasto estimado al empezar: {dd.tdee?.toLocaleString('es-ES')} kcal. A las 3 semanas, mira el gasto real en Progreso → Cuerpo.</p>
     </div>
     <div class="tarjeta">
-      <label class="fila entre"><span><b>Días de más hidratos</b><br /><span class="sec peq">+1 ración de hidratos en las sesiones exigentes (como la de pierna), descontada de los días sin entreno. El total semanal no cambia. Va a la comida de después de entrenar: {comidaTrasEntreno(dd.comidas, perfil.horaEntreno).nombre.toLowerCase()} (cámbialo en Yo → Perfil → hora de entreno).</span></span>
+      <label class="fila entre"><span><b>Días de más hidratos</b><br /><span class="sec peq">+1 ración de hidratos en las sesiones exigentes (como la de pierna), descontada de los días sin entreno. El total semanal no cambia. Va a la comida que elijas abajo.</span></span>
         <input type="checkbox" bind:checked={dd.hidratosExtra} style="width:26px;height:26px;flex-shrink:0" /></label>
+      {#if dd.hidratosExtra}
+        {@const auto = comidaTrasEntreno(dd.comidas, perfil.horaEntreno)}
+        <span class="peq">El extra va a:</span>
+        <div class="fila envolver" style="gap:6px">
+          <button class="chip" class:on={!dd.hidratosExtraEn} onclick={() => (dd.hidratosExtraEn = null)}>Automático: {auto.nombre.toLowerCase()}</button>
+          {#each dd.comidas as c (c.id)}<button class="chip" class:on={dd.hidratosExtraEn === c.id} onclick={() => (dd.hidratosExtraEn = c.id)}>{c.nombre}</button>{/each}
+        </div>
+        <p class="sec peq">{HORA_ENTRENO[perfil.horaEntreno] != null ? 'Automático = la primera comida de verdad después de tu hora de entreno (un batido no cuenta).' : 'Automático = la comida; di a qué hora entrenas en Yo → Perfil.'} Si desayunas antes de entrenar y después solo tomas un batido, lo normal es la comida.</p>
+      {/if}
     </div>
     <div class="tarjeta">
       <span class="etiqueta">Para proponerte recetas</span>

@@ -80,7 +80,7 @@ export function pautaComida(comida, fecha) {
   const obj = objetivoDelDia(fecha);
   if (obj && d.dieta.hidratosExtra) {
     const dif = obj.HC - d.dieta.raciones.HC;
-    const principal = comidaTrasEntreno(d.dieta.comidas, d.perfil.horaEntreno);
+    const principal = comidaHidratosExtra(d);
     if (comida.id === principal.id) base.HC = Math.max(0, Math.round((base.HC + dif) * 10) / 10);
   }
   return base;
@@ -98,5 +98,12 @@ export function comidaTrasEntreno(comidas, franja) {
   const porDefecto = comidas.find((c) => c.id === 'comida') ?? comidas[0];
   if (h == null) return porDefecto;
   const orden = [...comidas].sort((a, b) => aHoras(a.hora) - aHoras(b.hora));
-  return orden.find((c) => aHoras(c.hora) >= h + 0.5) ?? orden.at(-1);
+  // un batido o una toma pequeña (≤ 1,5 raciones de P+HC+G) no cuenta: la siguiente comida de verdad
+  const sustancial = (c) => (+c.raciones?.P || 0) + (+c.raciones?.HC || 0) + (+c.raciones?.G || 0) > 1.5;
+  return orden.find((c) => aHoras(c.hora) >= h + 0.5 && sustancial(c)) ?? orden.find((c) => aHoras(c.hora) >= h + 0.5) ?? orden.at(-1);
+}
+/** Dónde van los hidratos extra: la comida que elija la persona en Mi dieta o, si no, la de después de entrenar. */
+export function comidaHidratosExtra(d = app.datos) {
+  const elegida = d.dieta?.comidas.find((c) => c.id === d.dieta.hidratosExtraEn);
+  return elegida ?? comidaTrasEntreno(d.dieta?.comidas ?? [], d.perfil.horaEntreno);
 }
