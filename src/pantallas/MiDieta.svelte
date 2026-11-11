@@ -40,6 +40,8 @@
       <span class="etiqueta">Para proponerte recetas</span>
       <span class="peq">Tiempo para cocinar</span>
       <div class="fila envolver">{#each [['poco', 'Poco (15 min)'], ['normal', 'Normal'], ['mucho', 'Me gusta cocinar']] as [v, l]}<button class="chip" class:on={(perfil.cocina?.tiempo ?? 'normal') === v} onclick={() => (perfil.cocina = { ...(perfil.cocina ?? {}), tiempo: v })}>{l}</button>{/each}</div>
+      <span class="peq">Tipo de alimentación</span>
+      <div class="fila envolver">{#each [['omnivora', 'Como de todo'], ['vegetariana', 'Vegetariana'], ['vegana', 'Vegana']] as [v, l]}<button class="chip" class:on={(perfil.cocina?.dieta ?? 'omnivora') === v} onclick={() => (perfil.cocina = { ...(perfil.cocina ?? {}), dieta: v })}>{l}</button>{/each}</div>
       <span class="peq">Presupuesto</span>
       <div class="fila envolver">{#each [['ajustado', 'Ajustado'], ['normal', 'Normal']] as [v, l]}<button class="chip" class:on={(perfil.cocina?.presupuesto ?? 'normal') === v} onclick={() => (perfil.cocina = { ...(perfil.cocina ?? {}), presupuesto: v })}>{l}</button>{/each}</div>
       <p class="sec peq">Junto con tu objetivo y lo que marques como «me gusta», decide qué platos salen primero en Recetas y en el menú automático.</p>

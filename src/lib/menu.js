@@ -7,21 +7,21 @@ import { platos, momentosDe, ajustarReceta, recetasOrdenadas, usosRecetas } from
 // Opciones por tipo de comida y grupo de ración (IDs de ALIMENTOS). Se van rotando por día.
 const OPCIONES = {
   desayuno: {
-    P: ['AL0183', 'AL0044', 'AL0186', 'AL0042', 'AL0185', 'AL0179', 'AL0044'],
+    P: ['AL0183', 'AL0044', 'AL0186', 'AL0042', 'AL0185', 'AL0179', 'AL0044', 'AL0190', 'AL0215'],
     HC: ['AL0080', 'AL0063', 'AL0194', 'AL0063', 'AL0080', 'AL0067', 'AL0194'],
     G: ['AL0156', 'AL0159', 'AL0156', 'AL0160', 'AL0156', 'AL0123', 'AL0159'],
     fruta: ['AL0103', 'AL0110', 'AL0106', 'AL0101', 'AL0104', 'AL0103', 'AL0106'],
     lacteo: ['AL0047', 'AL0049'],
   },
   principal: {
-    P: ['AL0001', 'AL0192', 'AL0011', 'AL0035', 'AL0004', 'AL0026', 'AL0014', 'AL0034', 'AL0001', 'AL0042', 'AL0038', 'AL0004', 'AL0192', 'AL0011'],
+    P: ['AL0001', 'AL0192', 'AL0011', 'AL0035', 'AL0004', 'AL0026', 'AL0014', 'AL0034', 'AL0001', 'AL0042', 'AL0038', 'AL0004', 'AL0192', 'AL0011', 'AL0215', 'AL0216', 'AL0096'],
     HC: ['AL0065', 'AL0084', 'AL0068', 'AL0091', 'AL0085', 'AL0065', 'AL0088', 'AL0194', 'AL0084', 'AL0068', 'AL0065', 'AL0085', 'AL0091', 'AL0084'],
     G: ['AL0156'],
     fruta: ['AL0101', 'AL0104', 'AL0110', 'AL0103', 'AL0106'],
     lacteo: ['AL0049'],
   },
   ligera: {
-    P: ['AL0183', 'AL0186', 'AL0181', 'AL0185', 'AL0179', 'AL0183', 'AL0181'],
+    P: ['AL0183', 'AL0186', 'AL0181', 'AL0185', 'AL0179', 'AL0183', 'AL0181', 'AL0190', 'AL0215'],
     HC: ['AL0067', 'AL0080', 'AL0063'],
     G: ['AL0160', 'AL0159', 'AL0123'],
     fruta: ['AL0101', 'AL0103', 'AL0110', 'AL0104', 'AL0106', 'AL0101', 'AL0110'],
@@ -33,6 +33,9 @@ const tipoDeComida = (id) => (id === 'desayuno' ? 'desayuno' : id === 'comida' |
 function apto(a, perfil, aversiones) {
   if (!a) return false;
   if ((a.alerg || []).some((x) => (perfil.alergenos || []).includes(x))) return false;
+  const dieta = perfil.cocina?.dieta;
+  if (dieta === 'vegetariana' && !(a.etq || []).includes('vegetariano')) return false;
+  if (dieta === 'vegana' && !(a.etq || []).includes('vegano')) return false;
   const n = normalizar(a.n);
   return !aversiones.some((w) => w.length > 2 && n.includes(w));
 }

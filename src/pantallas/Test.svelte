@@ -25,7 +25,7 @@
       cintura: null, cuello: null, cadera: null, parq: PARQ.map(() => null), molestias: [...(p.molestias || [])],
       alergenos: [...(p.alergenos || [])], objetivo: '', plazo: '', experiencia: '', diasSemana: 4, minutos: 60, horaEntreno: p.horaEntreno || '',
       lugar: 'gimnasio', material: [], cargas: { sentadilla: null, banca: null, muerto: null, dominadas: null },
-      trabajo: '', pasos: '', otrosDeportes: 0, comidasDia: 4, hambre: '', registro: 'raciones', aversiones: '', cocinaTiempo: p.cocina?.tiempo || 'normal', presupuesto: p.cocina?.presupuesto || 'normal',
+      trabajo: '', pasos: '', otrosDeportes: 0, comidasDia: 4, hambre: '', registro: 'raciones', aversiones: '', cocinaTiempo: p.cocina?.tiempo || 'normal', tipoDieta: p.cocina?.dieta || 'omnivora', presupuesto: p.cocina?.presupuesto || 'normal',
       cuesta: [],
     };
   }
@@ -60,7 +60,7 @@
       molestias: [...t.molestias], alergenos: [...t.alergenos], parqSi: t.parq.some((x) => x),
       parqCronica: t.parq[3] === true || t.parq[4] === true,
       horaEntreno: t.horaEntreno || 'varia',
-      cocina: { tiempo: t.cocinaTiempo || 'normal', presupuesto: t.presupuesto || 'normal' },
+      cocina: { tiempo: t.cocinaTiempo || 'normal', presupuesto: t.presupuesto || 'normal', dieta: t.tipoDieta || 'omnivora' },
     });
     perfil.test = JSON.parse(JSON.stringify(t));
     perfil.testFecha = hoyISO();
@@ -191,6 +191,9 @@
       <p class="sec peq">Podrás cambiarlo y mezclar las dos formas cuando quieras.</p>
     </div>
     <label class="campo">Alimentos que no te gustan (opcional)<input type="text" bind:value={t.aversiones} /></label>
+    <div class="col"><span class="etiqueta">Tipo de alimentación</span>
+      <div class="fila envolver">{#each [['omnivora', 'Como de todo'], ['vegetariana', 'Vegetariana'], ['vegana', 'Vegana']] as [v, l]}<button class="chip" class:on={t.tipoDieta === v} onclick={() => (t.tipoDieta = v)}>{l}</button>{/each}</div>
+    </div>
     <div class="col"><span class="etiqueta">Tiempo para cocinar un día normal</span>
       <div class="fila envolver">{#each [['poco', 'Poco (15 min)'], ['normal', 'Normal (media hora)'], ['mucho', 'Me gusta cocinar']] as [v, l]}<button class="chip" class:on={t.cocinaTiempo === v} onclick={() => (t.cocinaTiempo = v)}>{l}</button>{/each}</div>
     </div>

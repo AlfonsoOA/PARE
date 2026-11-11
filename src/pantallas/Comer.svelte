@@ -7,7 +7,7 @@
   import Hoja from '../componentes/Hoja.svelte';
   import AnadirAlimento from '../componentes/AnadirAlimento.svelte';
   import FichaReceta from '../componentes/FichaReceta.svelte';
-  import { momentosDe, NOMBRE_MOMENTO, recetasOrdenadas, usosRecetas, MOMENTO_DE_COMIDA, todasRecetas } from '../lib/recetas.js';
+  import { momentosDe, NOMBRE_MOMENTO, recetasOrdenadas, usosRecetas, MOMENTO_DE_COMIDA, todasRecetas, ESTILOS, ESTILO_DE } from '../lib/recetas.js';
   import { proponerMenu } from '../lib/menu.js';
   import { aviso } from '../lib/estado.svelte.js';
   let confirmarMenu = $state(false);
@@ -23,11 +23,17 @@
   let recetaAbierta = $state(null); // { r, comida }
   let filtroRecetas = $state(app.filtroRecetas ?? 'parati');
   $effect(() => { app.filtroRecetas = filtroRecetas; });
+  let estiloRecetas = $state(null);
+  let dietaRecetas = $state([]);
+  const toggleDieta = (x) => { const i = dietaRecetas.indexOf(x); if (i >= 0) dietaRecetas.splice(i, 1); else dietaRecetas.push(x); };
   // Orden personal: objetivo, día de hoy (si toca sesión exigente), tiempo, presupuesto y gustos.
   const ctxRecetas = $derived({ momentoPost: d.dieta ? MOMENTO_DE_COMIDA[comidaHidratosExtra(d).id] ?? 'comida' : 'comida', perfil: d.perfil, gustos: d.gustosRecetas || {}, usos: usosRecetas(d.comidas), exigente: tipoDeDia(hoyISO()) === true || !!d.rutina?.sesiones.find((s) => s.id === app.sesionActiva?.sesionId)?.exigente });
   const recetasFiltradas = $derived.by(() => {
     const f = filtroRecetas;
-    const lista = todasRecetas().filter((r) => f === 'todas' ? true : f === 'parati' ? r.tipo === 'plato' : f === 'mias' ? r.propia : momentosDe(r).includes(f));
+    const est = estiloRecetas, die = dietaRecetas;
+    const lista = todasRecetas().filter((r) => (f === 'todas' ? true : f === 'parati' ? r.tipo === 'plato' : f === 'mias' ? r.propia : momentosDe(r).includes(f))
+      && (!est || (ESTILO_DE[r.estilo] ?? r.estilo) === est)
+      && die.every((x) => (r.etq || []).includes(x)));
     const ord = recetasOrdenadas(lista, { ...ctxRecetas, momento: ['comida', 'cena', 'desayuno', 'merienda'].includes(f) ? f : null });
     return f === 'parati' ? ord.filter((x) => !x.vetada).slice(0, 10) : ord;
   });
@@ -154,14 +160,17 @@
   {:else if sub === 'recetas'}
     <p class="sec peq">Platos sencillos y baratos. Al abrir uno, las cantidades se ajustan a las raciones de tu comida.</p>
     <div class="desliza">{#each [['parati', 'Para ti'], ['comida', 'Comida'], ['cena', 'Cena'], ['desayuno', 'Desayuno'], ['merienda', 'Merienda'], ['postre', 'Postres'], ...((d.recetasPropias || []).length ? [['mias', 'Mías']] : []), ['todas', 'Todas']] as [v, l]}<button class="chip" class:on={filtroRecetas === v} onclick={() => (filtroRecetas = v)}>{l}</button>{/each}</div>
+    <div class="desliza">{#each [['vegetariano', 'Vegetarianas'], ['vegano', 'Veganas'], ['sin_gluten', 'Sin gluten'], ['sin_lactosa', 'Sin lactosa']] as [v, l]}<button class="chip mini" class:on={dietaRecetas.includes(v)} onclick={() => toggleDieta(v)}>{l}</button>{/each}</div>
+    <div class="desliza"><button class="chip mini" class:on={!estiloRecetas} onclick={() => (estiloRecetas = null)}>Cualquier cocina</button>{#each ESTILOS as [v, l]}<button class="chip mini" class:on={estiloRecetas === v} onclick={() => (estiloRecetas = estiloRecetas === v ? null : v)}>{l}</button>{/each}</div>
     <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'editorReceta', acento: 'comer' })}><Icono n="mas" /> Crear mi receta</button>
+    {#if !recetasFiltradas.length}<p class="vacio">Ninguna receta con esos filtros.</p>{/if}
     {#if filtroRecetas === 'parati'}<p class="sec peq">Las que mejor encajan con tu objetivo{ctxRecetas.exigente ? ', con el entreno fuerte de hoy' : ''}, tu tiempo, tu presupuesto y lo que te gusta. Cámbialo en Mi dieta; marca «Me gusta» o «No me gusta» dentro de cada receta.</p>{/if}
     {#each recetasFiltradas as x (x.r.id)}
       {@const r = x.r}
       <button class="tarjeta pulsable receta" class:noapta={x.vetada} onclick={() => (recetaAbierta = { r })}>
         <span class="fila entre" style="gap:8px"><b>{r.n}</b>{#if r.propia}<span class="insignia">{r.de ? `De ${r.de}` : 'Tuya'}</span>{/if}{#if x.vetada}<span class="insignia aviso">{x.motivos[0] ?? 'No para ti'}</span>{/if}</span>
         {#if r.tipo === 'plato'}
-          <span class="sec peq">{r.tiempo ? `${r.tiempo} min · ` : ''}{r.coste ? `≈ ${fmtNum(r.coste, 2)} € · ` : ''}{momentosDe(r).map((m) => NOMBRE_MOMENTO[m] ?? m).join(', ')}</span>
+          <span class="sec peq">{r.estilo && r.estilo !== 'casera' ? `${r.estilo[0].toUpperCase()}${r.estilo.slice(1)} · ` : ''}{r.tiempo ? `${r.tiempo} min · ` : ''}{r.coste ? `≈ ${fmtNum(r.coste, 2)} € · ` : ''}{momentosDe(r).map((m) => NOMBRE_MOMENTO[m] ?? m).join(', ')}</span>
         {:else}
           <span class="sec peq">{r.kcal} kcal · {r.p} g prot por porción ({r.porciones} porciones) · {r.cuenta}</span>
         {/if}
@@ -206,5 +215,6 @@
   .enlace-l { background: none; border: 0; padding: 4px 0; text-align: left; color: inherit; cursor: pointer; font: inherit; min-height: 36px; }
   .receta { gap: 4px; }
   .noapta { opacity: 0.55; }
+  .chip.mini { min-height: 34px; padding: 0 11px; font-size: 13px; }
   .motivo { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: color-mix(in srgb, var(--comer) 16%, transparent); color: var(--comer); }
 </style>

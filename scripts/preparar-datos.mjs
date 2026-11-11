@@ -81,6 +81,7 @@ const salida = {
     hc: r.hidratos_porcion, g: r.grasa_porcion, cuenta: r.cuenta_como, momento: r.momento,
     alerg: r.alergenos, notas: r.notas, etq: r.etiquetas,
     tipo: r.tipo || 'lote', tiempo: r.tiempo_min ? +r.tiempo_min : null, coste: r.coste_porcion ? +r.coste_porcion : null,
+    estilo: r.estilo || null,
     momentos: String(r.momento || '').split(';').map((x) => x.trim()).filter(Boolean),
     pasos: r.pasos ? String(r.pasos).split('|').map((x) => x.trim()).filter(Boolean) : [],
     ingredientes: c.receta_ingredientes.filter((i) => i.id_receta === r.id_receta)

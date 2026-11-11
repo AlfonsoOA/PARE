@@ -6,6 +6,8 @@ import { app } from './estado.svelte.js';
 
 const BASE = { P: ['p', 25], HC: ['hc', 40], G: ['g', 10] };
 export const MOMENTO_DE_COMIDA = { desayuno: 'desayuno', media: 'merienda', comida: 'comida', merienda: 'merienda', cena: 'cena' };
+export const ESTILOS = [['española', 'Española'], ['mediterránea', 'Mediterránea'], ['italiana', 'Italiana'], ['asiática', 'Asiática'], ['mexicana', 'Mexicana'], ['árabe', 'Árabe e india'], ['internacional', 'Desayunos del mundo']];
+export const ESTILO_DE = { india: 'árabe' };
 export const NOMBRE_MOMENTO = { desayuno: 'Desayuno', comida: 'Comida', cena: 'Cena', merienda: 'Merienda', postre: 'Postres y dulces' };
 
 /** Raciones de proteína, hidratos y grasa que aportan unos ingredientes [{aid, g}]. */
@@ -72,6 +74,9 @@ function plural(t) {
 /** ¿Se puede proponer a esta persona? Sin sus alérgenos ni lo que no le gusta. */
 export function recetaApta(r, perfil) {
   if ((r.alerg || []).some((x) => (perfil.alergenos || []).includes(x))) return false;
+  const dieta = perfil.cocina?.dieta;
+  if (dieta === 'vegetariana' && !(r.etq || []).includes('vegetariano')) return false;
+  if (dieta === 'vegana' && !(r.etq || []).includes('vegano')) return false;
   const aversiones = normalizar(perfil.test?.aversiones || '').split(/[,;\n]+| y /).map((s) => s.trim()).filter((w) => w.length > 2);
   if (!aversiones.length) return true;
   return !r.ingredientes.some((i) => aversiones.some((w) => normalizar(i.n).includes(w))) && !aversiones.some((w) => normalizar(r.n).includes(w));

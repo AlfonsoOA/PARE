@@ -56,7 +56,7 @@
 
 <Hoja titulo={r.n} {cerrar}>
   <p class="sec peq">
-    {#if r.tiempo}{r.tiempo} min{/if}{#if r.coste} · ≈ {fmtNum(r.coste, 2)} € por ración{/if} · {momentosDe(r).map((m) => NOMBRE_MOMENTO[m] ?? m).join(', ')}
+    {#if r.estilo && r.estilo !== 'casera'}Cocina {r.estilo} · {/if}{#if (r.etq || []).includes('vegano')}Vegana · {:else if (r.etq || []).includes('vegetariano')}Vegetariana · {/if}{#if r.tiempo}{r.tiempo} min{/if}{#if r.coste} · ≈ {fmtNum(r.coste, 2)} € por ración{/if} · {momentosDe(r).map((m) => NOMBRE_MOMENTO[m] ?? m).join(', ')}
   </p>
   <div class="fila" style="gap:6px">
     <button class="chip" class:on={gusto === 1} onclick={() => marcarGusto(1)} aria-pressed={gusto === 1}>Me gusta</button>
@@ -84,7 +84,7 @@
     {#if r.tipo === 'plato' && objetivo}
       <p class="sec peq">Ajustada a tu {c.nombre.toLowerCase()}: {['P', 'HC', 'G'].filter((g) => objetivo[g] > 0).map((g) => `${fmtNum(objetivo[g], 1)} ${NOMBRE_RACION[g].toLowerCase()}`).join(' · ')}. Verdura y especias, igual.</p>
       {#each Object.entries(aj.faltan) as [g, n]}
-        <p class="peq aviso-t">Tu {c.nombre.toLowerCase()} lleva además {fmtNum(n, 1)} {n === 1 ? 'ración' : 'raciones'} de {NOMBRE_RACION[g].toLowerCase()} que este plato no tiene: {g === 'HC' ? 'pan, arroz, patata o fruta' : 'huevo, atún, pollo o un lácteo proteico'} aparte.</p>
+        <p class="peq aviso-t">Tu {c.nombre.toLowerCase()} lleva además {fmtNum(n, 1)} {n === 1 ? 'ración' : 'raciones'} de {NOMBRE_RACION[g].toLowerCase()} que este plato no tiene: {g === 'HC' ? 'pan, arroz, patata o fruta' : (r.etq || []).includes('vegano') ? 'tofu, soja texturizada o un yogur de soja' : 'huevo, atún, pollo o un lácteo proteico'} aparte.</p>
       {/each}
     {:else if r.tipo === 'lote'}
       <p class="sec peq">{r.cuenta}</p>
