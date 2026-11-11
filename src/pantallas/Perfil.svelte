@@ -3,6 +3,7 @@
   import { ZONAS, ej } from '../lib/catalogo.js';
   import { restriccion, nivelActual } from '../lib/entreno.js';
   import Icono from '../componentes/Icono.svelte';
+  import { comidaTrasEntreno } from '../lib/dieta.js';
   let p = $derived(app.datos.perfil);
   const toggle = (z) => { const i = p.molestias.indexOf(z); i >= 0 ? p.molestias.splice(i, 1) : p.molestias.push(z); };
   const afectados = $derived.by(() => {
@@ -32,6 +33,12 @@
     <span class="etiqueta">Fase de dieta</span>
     <div class="fila envolver">{#each [['deficit', 'Déficit'], ['mantenimiento', 'Mantenimiento'], ['superavit', 'Superávit']] as [v, l]}<button class="chip" class:on={p.faseDieta === v} onclick={() => (p.faseDieta = v)}>{l}</button>{/each}</div>
     <p class="sec peq">En déficit, mantener la fuerza no cuenta como estancamiento.</p>
+  </div>
+
+  <div class="tarjeta">
+    <span class="etiqueta">Hora a la que sueles entrenar</span>
+    <div class="fila envolver">{#each [['temprano', 'Temprano (antes de las 9)'], ['manana', 'Por la mañana'], ['mediodia', 'A mediodía'], ['tarde', 'Por la tarde'], ['noche', 'Por la noche'], ['varia', 'Varía']] as [v, l]}<button class="chip" class:on={(p.horaEntreno || 'varia') === v} onclick={() => (p.horaEntreno = v)}>{l}</button>{/each}</div>
+    <p class="sec peq">Los hidratos extra de los días exigentes van a la comida de después de entrenar{app.datos.dieta ? `: ahora, ${comidaTrasEntreno(app.datos.dieta.comidas, p.horaEntreno).nombre.toLowerCase()}` : ''}.</p>
   </div>
 
   <div class="tarjeta" id="molestias">

@@ -80,7 +80,7 @@ export function pautaComida(comida, fecha) {
   const obj = objetivoDelDia(fecha);
   if (obj && d.dieta.hidratosExtra) {
     const dif = obj.HC - d.dieta.raciones.HC;
-    const principal = d.dieta.comidas.find((c) => c.id === 'comida') ?? d.dieta.comidas[0];
+    const principal = comidaTrasEntreno(d.dieta.comidas, d.perfil.horaEntreno);
     if (comida.id === principal.id) base.HC = Math.max(0, Math.round((base.HC + dif) * 10) / 10);
   }
   return base;
@@ -88,3 +88,15 @@ export function pautaComida(comida, fecha) {
 export const redondear = (v) => Math.round(v * 10) / 10;
 export const DIAS_SEMANA = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
 export const diaSemana = (fecha) => (new Date(fecha + 'T12:00:00').getDay() + 6) % 7;
+
+// Hora típica de cada franja de entreno; la comida «de después» es la primera que cae al menos media hora después de la hora típica de empezar.
+export const HORA_ENTRENO = { temprano: 7, manana: 10.5, mediodia: 13.5, tarde: 18, noche: 20.5 };
+const aHoras = (h) => { const [a, b] = String(h || '0').split(':'); return +a + (+b || 0) / 60; };
+/** Comida que va justo después de entrenar (ahí van los hidratos extra del día exigente). Sin hora: la comida. */
+export function comidaTrasEntreno(comidas, franja) {
+  const h = HORA_ENTRENO[franja];
+  const porDefecto = comidas.find((c) => c.id === 'comida') ?? comidas[0];
+  if (h == null) return porDefecto;
+  const orden = [...comidas].sort((a, b) => aHoras(a.hora) - aHoras(b.hora));
+  return orden.find((c) => aHoras(c.hora) >= h + 0.5) ?? orden.at(-1);
+}

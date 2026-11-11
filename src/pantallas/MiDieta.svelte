@@ -1,6 +1,6 @@
 <script>
   import { app, aviso, uuid } from '../lib/estado.svelte.js';
-  import { GRUPOS_RACION, NOMBRE_RACION } from '../lib/dieta.js';
+  import { GRUPOS_RACION, NOMBRE_RACION, comidaTrasEntreno } from '../lib/dieta.js';
   import Icono from '../componentes/Icono.svelte';
   let dd = $derived(app.datos.dieta);
   let perfil = $derived(app.datos.perfil);
@@ -23,7 +23,7 @@
       <p class="sec peq">Gasto estimado al empezar: {dd.tdee?.toLocaleString('es-ES')} kcal. A las 3 semanas, mira el gasto real en Progreso → Cuerpo.</p>
     </div>
     <div class="tarjeta">
-      <label class="fila entre"><span><b>Días de más hidratos</b><br /><span class="sec peq">+1 ración de hidratos en las sesiones exigentes (como la de pierna), descontada de los días sin entreno. El total semanal no cambia.</span></span>
+      <label class="fila entre"><span><b>Días de más hidratos</b><br /><span class="sec peq">+1 ración de hidratos en las sesiones exigentes (como la de pierna), descontada de los días sin entreno. El total semanal no cambia. Va a la comida de después de entrenar: {comidaTrasEntreno(dd.comidas, perfil.horaEntreno).nombre.toLowerCase()} (cámbialo en Yo → Perfil → hora de entreno).</span></span>
         <input type="checkbox" bind:checked={dd.hidratosExtra} style="width:26px;height:26px;flex-shrink:0" /></label>
     </div>
     <div class="tarjeta">

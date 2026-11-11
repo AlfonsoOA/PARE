@@ -23,7 +23,7 @@
     p.borradorTest = {
       paso: 0, nombre: p.nombre || '', sexo: p.sexo || '', edad: p.edad, altura: p.altura, peso: app.datos.medidas.at(-1)?.peso ?? null,
       cintura: null, cuello: null, cadera: null, parq: PARQ.map(() => null), molestias: [...(p.molestias || [])],
-      alergenos: [...(p.alergenos || [])], objetivo: '', plazo: '', experiencia: '', diasSemana: 4, minutos: 60,
+      alergenos: [...(p.alergenos || [])], objetivo: '', plazo: '', experiencia: '', diasSemana: 4, minutos: 60, horaEntreno: p.horaEntreno || '',
       lugar: 'gimnasio', material: [], cargas: { sentadilla: null, banca: null, muerto: null, dominadas: null },
       trabajo: '', pasos: '', otrosDeportes: 0, comidasDia: 4, hambre: '', registro: 'raciones', aversiones: '', cocinaTiempo: p.cocina?.tiempo || 'normal', presupuesto: p.cocina?.presupuesto || 'normal',
       cuesta: [],
@@ -59,6 +59,7 @@
       diasSemana: +t.diasSemana, minutos: +t.minutos, lugar: t.lugar, material: [...t.material], reparto: t.reparto || null,
       molestias: [...t.molestias], alergenos: [...t.alergenos], parqSi: t.parq.some((x) => x),
       parqCronica: t.parq[3] === true || t.parq[4] === true,
+      horaEntreno: t.horaEntreno || 'varia',
       cocina: { tiempo: t.cocinaTiempo || 'normal', presupuesto: t.presupuesto || 'normal' },
     });
     perfil.test = JSON.parse(JSON.stringify(t));
@@ -145,6 +146,10 @@
     </div>
     <div class="col"><span class="etiqueta">Minutos por sesión</span>
       <div class="fila envolver">{#each [30, 45, 60, 75, 90] as d}<button class="chip" class:on={+t.minutos === d} onclick={() => (t.minutos = d)}>{d}</button>{/each}</div>
+    </div>
+    <div class="col"><span class="etiqueta">¿A qué hora sueles entrenar?</span>
+      <div class="fila envolver">{#each [['temprano', 'Temprano (antes de las 9)'], ['manana', 'Por la mañana'], ['mediodia', 'A mediodía'], ['tarde', 'Por la tarde'], ['noche', 'Por la noche'], ['varia', 'Varía']] as [v, l]}<button class="chip" class:on={t.horaEntreno === v} onclick={() => (t.horaEntreno = v)}>{l}</button>{/each}</div>
+      <p class="sec peq">Sirve para poner los hidratos extra en la comida de después de entrenar.</p>
     </div>
     <div class="col"><span class="etiqueta">¿Dónde entrenas?</span>
       <div class="fila">{#each [['gimnasio', 'Gimnasio'], ['casa', 'Casa']] as [v, l]}<button class="chip" class:on={t.lugar === v} onclick={() => (t.lugar = v)}>{l}</button>{/each}</div>

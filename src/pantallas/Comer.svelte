@@ -1,7 +1,7 @@
 <script>
   import { app, hoyISO } from '../lib/estado.svelte.js';
   import { cat } from '../lib/catalogo.js';
-  import { delDia, sumar, anotar, quitar, objetivoDelDia, pautaComida, tipoDeDia, aporte, alimento, receta, GRUPOS_RACION, NOMBRE_RACION, DEF_RACION, redondear, diaSemana, DIAS_SEMANA } from '../lib/dieta.js';
+  import { delDia, sumar, anotar, quitar, objetivoDelDia, pautaComida, tipoDeDia, aporte, alimento, receta, GRUPOS_RACION, NOMBRE_RACION, DEF_RACION, redondear, diaSemana, DIAS_SEMANA, comidaTrasEntreno } from '../lib/dieta.js';
   import { fmtNum, fmtFecha } from '../lib/unidades.js';
   import Icono from '../componentes/Icono.svelte';
   import Hoja from '../componentes/Hoja.svelte';
@@ -21,7 +21,7 @@
   let recetaAbierta = $state(null); // { r, comida }
   let filtroRecetas = $state('parati');
   // Orden personal: objetivo, día de hoy (si toca sesión exigente), tiempo, presupuesto y gustos.
-  const ctxRecetas = $derived({ perfil: d.perfil, gustos: d.gustosRecetas || {}, usos: usosRecetas(d.comidas), exigente: tipoDeDia(hoyISO()) === true || !!d.rutina?.sesiones.find((s) => s.id === app.sesionActiva?.sesionId)?.exigente });
+  const ctxRecetas = $derived({ momentoPost: d.dieta ? MOMENTO_DE_COMIDA[comidaTrasEntreno(d.dieta.comidas, d.perfil.horaEntreno).id] ?? 'comida' : 'comida', perfil: d.perfil, gustos: d.gustosRecetas || {}, usos: usosRecetas(d.comidas), exigente: tipoDeDia(hoyISO()) === true || !!d.rutina?.sesiones.find((s) => s.id === app.sesionActiva?.sesionId)?.exigente });
   const recetasFiltradas = $derived.by(() => {
     const f = filtroRecetas;
     const lista = cat.recetas.filter((r) => f === 'todas' || f === 'parati' ? (f === 'todas' || r.tipo === 'plato') : f === 'postre' ? r.tipo === 'lote' : r.tipo === 'plato' && momentosDe(r).includes(f));

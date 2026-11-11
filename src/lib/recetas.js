@@ -124,7 +124,7 @@ export function usosRecetas(comidas) {
  * Puntuación de una receta para esta persona y por qué. ctx: { perfil, gustos, usos, momento?, exigente? }.
  * Los motivos son las etiquetas que se enseñan en la lista ("Sacia mucho", "Rápida"…).
  */
-export function puntuarReceta(r, { perfil, gustos = {}, usos = {}, momento = null, exigente = false }) {
+export function puntuarReceta(r, { perfil, gustos = {}, usos = {}, momento = null, exigente = false, momentoPost = 'comida' }) {
   const motivos = [];
   let p = 0;
   if (gustos[r.id] === -1) return { puntos: -100, motivos: ['No te gusta'], vetada: true };
@@ -142,9 +142,9 @@ export function puntuarReceta(r, { perfil, gustos = {}, usos = {}, momento = nul
       if (m.verdura > 250) p -= 0.5;
       if (m.hidr >= 0.38) motivos.push('Rica en hidratos');
     }
-    if (exigente && (momento === 'comida' || momento === null) && momentosDe(r).includes('comida')) {
+    if (exigente && (momento === momentoPost || momento === null) && momentosDe(r).includes(momentoPost)) {
       p += m.hidr >= 0.42 ? 2 : m.hidr >= 0.34 ? 1 : -0.5;
-      if (m.hidr >= 0.38) motivos.push('Para tu día de entreno fuerte');
+      if (m.hidr >= 0.38) motivos.push('Para después de tu entreno fuerte');
     }
     const { tiempo, presupuesto } = preferenciasCocina(perfil);
     const t = r.tiempo ?? 30, c = r.coste ?? 2;
