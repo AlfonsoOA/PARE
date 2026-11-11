@@ -46,6 +46,7 @@ export function datosVacios() {
     productosPropios: [],
     favoritos: [],
     gustosRecetas: {}, // rid -> 1 (me gusta) | -1 (no me gusta)
+    recetasPropias: [], // recetas creadas por el deportista o recibidas en un archivo
     avisosDescartados: {},
     entrenador: { activo: false, deportistas: [] },
     cambiosPropuestos: null,
@@ -60,6 +61,8 @@ export const app = $state({
   sesionActiva: null, // sesión en curso (también se guarda para no perderla)
   toast: null,
   subProgreso: 'ejercicios',
+  subComer: 'dia',
+  filtroRecetas: 'parati',
   archivoPendiente: null,
   datos: datosVacios(),
 });

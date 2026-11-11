@@ -3,9 +3,10 @@
   import { app, uuid, aviso } from '../lib/estado.svelte.js';
   import { cat, normalizar } from '../lib/catalogo.js';
   import { alimento, receta, aporte, NOMBRE_RACION } from '../lib/dieta.js';
+  import { todasRecetas } from '../lib/recetas.js';
   import { fmtNum } from '../lib/unidades.js';
   import Hoja from './Hoja.svelte';
-  let { cerrar, anotar, titulo = 'Añadir alimento' } = $props();
+  let { cerrar, anotar, titulo = 'Añadir alimento', soloAlimentos = false } = $props();
   let q = $state('');
   let sel = $state(null); // { tipo: 'alimento'|'receta', id }
   let gramos = $state(100);
@@ -26,9 +27,9 @@
   });
   const resultados = $derived.by(() => {
     const n = normalizar(q.trim());
-    if (!n) return recientes;
+    if (!n) return soloAlimentos ? recientes.filter((x) => x.tipo === 'alimento') : recientes;
     const al = [...app.datos.productosPropios, ...cat.alimentos].filter((a) => normalizar(a.n).includes(n)).slice(0, 40).map((a) => ({ tipo: 'alimento', id: a.id }));
-    const re = cat.recetas.filter((r) => normalizar(r.n).includes(n)).map((r) => ({ tipo: 'receta', id: r.id }));
+    const re = soloAlimentos ? [] : todasRecetas().filter((r) => normalizar(r.n).includes(n)).map((r) => ({ tipo: 'receta', id: r.id }));
     return [...re, ...al];
   });
   const nombre = (x) => (x.tipo === 'receta' ? receta(x.id)?.n : alimento(x.id)?.n);

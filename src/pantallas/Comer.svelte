@@ -7,7 +7,7 @@
   import Hoja from '../componentes/Hoja.svelte';
   import AnadirAlimento from '../componentes/AnadirAlimento.svelte';
   import FichaReceta from '../componentes/FichaReceta.svelte';
-  import { momentosDe, NOMBRE_MOMENTO, recetasOrdenadas, usosRecetas, MOMENTO_DE_COMIDA } from '../lib/recetas.js';
+  import { momentosDe, NOMBRE_MOMENTO, recetasOrdenadas, usosRecetas, MOMENTO_DE_COMIDA, todasRecetas } from '../lib/recetas.js';
   import { proponerMenu } from '../lib/menu.js';
   import { aviso } from '../lib/estado.svelte.js';
   let confirmarMenu = $state(false);
@@ -15,16 +15,19 @@
   const hayMenu = $derived(Object.values(d.dieta?.menu ?? {}).some((dia) => Object.values(dia ?? {}).some((l) => l?.length)));
 
   let d = $derived(app.datos);
-  let sub = $state('dia');
+  // pestaña y filtro se recuerdan al volver de una receta o del editor
+  let sub = $state(app.subComer ?? 'dia');
+  $effect(() => { app.subComer = sub; });
   let fecha = $state(hoyISO());
   let anadirEn = $state(null); // { comida } o { menu: [dia, comida] }
   let recetaAbierta = $state(null); // { r, comida }
-  let filtroRecetas = $state('parati');
+  let filtroRecetas = $state(app.filtroRecetas ?? 'parati');
+  $effect(() => { app.filtroRecetas = filtroRecetas; });
   // Orden personal: objetivo, día de hoy (si toca sesión exigente), tiempo, presupuesto y gustos.
   const ctxRecetas = $derived({ momentoPost: d.dieta ? MOMENTO_DE_COMIDA[comidaHidratosExtra(d).id] ?? 'comida' : 'comida', perfil: d.perfil, gustos: d.gustosRecetas || {}, usos: usosRecetas(d.comidas), exigente: tipoDeDia(hoyISO()) === true || !!d.rutina?.sesiones.find((s) => s.id === app.sesionActiva?.sesionId)?.exigente });
   const recetasFiltradas = $derived.by(() => {
     const f = filtroRecetas;
-    const lista = cat.recetas.filter((r) => f === 'todas' || f === 'parati' ? (f === 'todas' || r.tipo === 'plato') : f === 'postre' ? r.tipo === 'lote' : r.tipo === 'plato' && momentosDe(r).includes(f));
+    const lista = todasRecetas().filter((r) => f === 'todas' ? true : f === 'parati' ? r.tipo === 'plato' : f === 'mias' ? r.propia : momentosDe(r).includes(f));
     const ord = recetasOrdenadas(lista, { ...ctxRecetas, momento: ['comida', 'cena', 'desayuno', 'merienda'].includes(f) ? f : null });
     return f === 'parati' ? ord.filter((x) => !x.vetada).slice(0, 10) : ord;
   });
@@ -150,14 +153,15 @@
 
   {:else if sub === 'recetas'}
     <p class="sec peq">Platos sencillos y baratos. Al abrir uno, las cantidades se ajustan a las raciones de tu comida.</p>
-    <div class="desliza">{#each [['parati', 'Para ti'], ['comida', 'Comida'], ['cena', 'Cena'], ['desayuno', 'Desayuno'], ['merienda', 'Merienda'], ['postre', 'Postres'], ['todas', 'Todas']] as [v, l]}<button class="chip" class:on={filtroRecetas === v} onclick={() => (filtroRecetas = v)}>{l}</button>{/each}</div>
+    <div class="desliza">{#each [['parati', 'Para ti'], ['comida', 'Comida'], ['cena', 'Cena'], ['desayuno', 'Desayuno'], ['merienda', 'Merienda'], ['postre', 'Postres'], ...((d.recetasPropias || []).length ? [['mias', 'Mías']] : []), ['todas', 'Todas']] as [v, l]}<button class="chip" class:on={filtroRecetas === v} onclick={() => (filtroRecetas = v)}>{l}</button>{/each}</div>
+    <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'editorReceta', acento: 'comer' })}><Icono n="mas" /> Crear mi receta</button>
     {#if filtroRecetas === 'parati'}<p class="sec peq">Las que mejor encajan con tu objetivo{ctxRecetas.exigente ? ', con el entreno fuerte de hoy' : ''}, tu tiempo, tu presupuesto y lo que te gusta. Cámbialo en Mi dieta; marca «Me gusta» o «No me gusta» dentro de cada receta.</p>{/if}
     {#each recetasFiltradas as x (x.r.id)}
       {@const r = x.r}
       <button class="tarjeta pulsable receta" class:noapta={x.vetada} onclick={() => (recetaAbierta = { r })}>
-        <span class="fila entre" style="gap:8px"><b>{r.n}</b>{#if x.vetada}<span class="insignia aviso">{x.motivos[0] ?? 'No para ti'}</span>{/if}</span>
+        <span class="fila entre" style="gap:8px"><b>{r.n}</b>{#if r.propia}<span class="insignia">{r.de ? `De ${r.de}` : 'Tuya'}</span>{/if}{#if x.vetada}<span class="insignia aviso">{x.motivos[0] ?? 'No para ti'}</span>{/if}</span>
         {#if r.tipo === 'plato'}
-          <span class="sec peq">{r.tiempo} min · ≈ {fmtNum(r.coste, 2)} € · {momentosDe(r).map((m) => NOMBRE_MOMENTO[m] ?? m).join(', ')}</span>
+          <span class="sec peq">{r.tiempo ? `${r.tiempo} min · ` : ''}{r.coste ? `≈ ${fmtNum(r.coste, 2)} € · ` : ''}{momentosDe(r).map((m) => NOMBRE_MOMENTO[m] ?? m).join(', ')}</span>
         {:else}
           <span class="sec peq">{r.kcal} kcal · {r.p} g prot por porción ({r.porciones} porciones) · {r.cuenta}</span>
         {/if}

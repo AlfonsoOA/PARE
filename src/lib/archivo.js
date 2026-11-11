@@ -91,7 +91,29 @@ export async function abrirArchivo(file) {
     app.vista = { nombre: 'cambios', acento: 'yo' };
     return;
   }
+  if (obj.tipo === 'recetas') {
+    const nuevas = obj.datos?.recetas ?? [];
+    if (!nuevas.length) { aviso('El archivo no trae recetas.'); return; }
+    for (const a of obj.datos.productos ?? []) if (!d.productosPropios.some((x) => x.id === a.id)) d.productosPropios.push(a);
+    d.recetasPropias ||= [];
+    for (const r of nuevas) {
+      const i = d.recetasPropias.findIndex((x) => x.id === r.id);
+      const reg = { ...r, propia: true, de: obj.de?.nombre || r.de || null };
+      if (i >= 0) d.recetasPropias[i] = reg; else d.recetasPropias.push(reg);
+    }
+    aviso(nuevas.length === 1 ? `Receta añadida: ${nuevas[0].n}` : `${nuevas.length} recetas añadidas`);
+    app.subComer = 'recetas'; app.filtroRecetas = 'mias';
+    app.vista = null; app.tab = 'comer';
+    return;
+  }
   aviso('Tipo de archivo PARE desconocido.');
+}
+
+/** Archivo con recetas propias (y los productos propios que usan) para pasárselas a otros. */
+export function archivoRecetas(recetas) {
+  const ids = new Set(recetas.flatMap((r) => r.ingredientes.map((i) => i.id)));
+  const productos = app.datos.productosPropios.filter((a) => ids.has(a.id));
+  return cabecera('recetas', { datos: { recetas: JSON.parse(JSON.stringify(recetas)), productos: JSON.parse(JSON.stringify(productos)) } });
 }
 
 export async function hacerCopia() {

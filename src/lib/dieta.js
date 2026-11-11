@@ -13,7 +13,7 @@ const MEDIA = {
 };
 
 export const alimento = (id) => cat.alimentoPorId.get(id) ?? app.datos.productosPropios.find((a) => a.id === id);
-export const receta = (id) => cat.recetaPorId.get(id);
+export const receta = (id) => cat.recetaPorId.get(id) ?? app.datos.recetasPropias?.find((r) => r.id === id);
 
 /** Raciones y macros que aporta una entrada del registro. */
 export function aporte(e) {

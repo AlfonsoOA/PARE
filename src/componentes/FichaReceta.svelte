@@ -5,6 +5,7 @@
   import { ajustarReceta, enCasero, momentosDe, MOMENTO_DE_COMIDA, NOMBRE_MOMENTO, recetaApta } from '../lib/recetas.js';
   import { fmtNum } from '../lib/unidades.js';
   import Hoja from './Hoja.svelte';
+  import { archivoRecetas, compartir } from '../lib/archivo.js';
 
   let { receta: r, cerrar, comidaInicial = null } = $props();
   const d = app.datos;
@@ -26,6 +27,16 @@
     if (d.gustosRecetas[r.id] === v) delete d.gustosRecetas[r.id];
     else d.gustosRecetas[r.id] = v;
     aviso(d.gustosRecetas[r.id] === 1 ? 'Saldrá antes en tus recetas y en el menú' : d.gustosRecetas[r.id] === -1 ? 'No te la volverá a proponer' : 'Quitado');
+  }
+  let borrar = $state(false);
+  async function compartirReceta() {
+    const res = await compartir(archivoRecetas([r]), r.n);
+    if (res !== 'cancelado') aviso(res === 'compartido' ? 'Receta enviada' : 'Archivo descargado: mándalo por WhatsApp');
+  }
+  function borrarReceta() {
+    const i = d.recetasPropias.findIndex((x) => x.id === r.id);
+    if (i >= 0) d.recetasPropias.splice(i, 1);
+    aviso('Receta borrada'); cerrar();
   }
   function anotarHoy() {
     anotar(hoyISO(), { ...entrada(), comida });
@@ -89,6 +100,14 @@
   {#if r.notas}<p class="sec peq">{r.notas}</p>{/if}
   {#if r.alerg?.length}<p class="peq">Alérgenos: {r.alerg.join(', ')}</p>{/if}
 
+  {#if r.propia}
+    <div class="fila" style="gap:8px">
+      <button class="boton sec2" style="flex:1" onclick={() => { cerrar(); app.vista = { nombre: 'editorReceta', id: r.id, acento: 'comer' }; }}>Editar</button>
+      <button class="boton sec2" style="flex:1" onclick={compartirReceta}>Compartir</button>
+      <button class="boton sec2" style="flex:1" onclick={() => (borrar = !borrar)}>Borrar</button>
+    </div>
+    {#if borrar}<button class="boton peligro ancho" onclick={borrarReceta}>Sí, borrar «{r.n}»</button>{/if}
+  {/if}
   {#if comida}
     <button class="boton ancho" onclick={anotarHoy}>Anotar hoy en {c?.nombre.toLowerCase()}</button>
     <div class="col" style="gap:6px">

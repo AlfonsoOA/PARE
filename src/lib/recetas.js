@@ -2,6 +2,7 @@
 // se hacen enteras y se toman por porciones).
 import { cat, normalizar } from './catalogo.js';
 import { alimento } from './dieta.js';
+import { app } from './estado.svelte.js';
 
 const BASE = { P: ['p', 25], HC: ['hc', 40], G: ['g', 10] };
 export const MOMENTO_DE_COMIDA = { desayuno: 'desayuno', media: 'merienda', comida: 'comida', merienda: 'merienda', cena: 'cena' };
@@ -76,7 +77,29 @@ export function recetaApta(r, perfil) {
   return !r.ingredientes.some((i) => aversiones.some((w) => normalizar(i.n).includes(w))) && !aversiones.some((w) => normalizar(r.n).includes(w));
 }
 
-export const platos = () => cat.recetas.filter((r) => r.tipo === 'plato');
+/** Recetario completo: las del catálogo y las propias (creadas o recibidas). */
+export const todasRecetas = () => [...(app.datos.recetasPropias || []), ...cat.recetas];
+export const platos = () => todasRecetas().filter((r) => r.tipo === 'plato');
+
+/** Macros por porción, alérgenos y peso de una receta propia a partir de sus ingredientes. */
+export function calcularReceta(r) {
+  const t = { kcal: 0, p: 0, hc: 0, g: 0 };
+  const alerg = new Set();
+  for (const i of r.ingredientes) {
+    const a = alimento(i.id);
+    if (!a) continue;
+    const f = i.g / 100;
+    t.kcal += a.kcal * f; t.p += a.p * f; t.hc += a.hc * f; t.g += a.g * f;
+    for (const x of a.alerg || []) alerg.add(x);
+    i.n = a.n;
+  }
+  const n = r.tipo === 'lote' ? Math.max(1, +r.porciones || 1) : 1;
+  Object.assign(r, { kcal: Math.round(t.kcal / n), p: +(t.p / n).toFixed(1), hc: +(t.hc / n).toFixed(1), g: +(t.g / n).toFixed(1), alerg: [...alerg].sort() });
+  if (r.tipo === 'lote') r.cuenta = `${r.porciones} porciones; cada una: ${Math.round(r.p / 25 * 10) / 10} P · ${Math.round(r.hc / 40 * 10) / 10} HC · ${Math.round(r.g / 10 * 10) / 10} G`;
+  else r.cuenta = 'Plato completo: se ajusta a las raciones de tu comida';
+  metricas.delete(r.id);
+  return r;
+}
 export const momentosDe = (r) => (r.momentos?.length ? r.momentos : [r.momento].filter(Boolean));
 
 /** Entrada de registro/menú para un plato ajustado. */
