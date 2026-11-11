@@ -38,7 +38,10 @@
     if (x.tipo === 'alimento') { const a = alimento(x.id); gramos = a.gm || a.rac || 100; }
     else porciones = 1;
   }
-  const entrada = $derived(sel ? (sel.tipo === 'alimento' ? { tipo: 'alimento', aid: sel.id, g: +gramos } : { tipo: 'receta', rid: sel.id, porciones: +porciones }) : null);
+  // un plato del recetario se guarda con sus ingredientes (receta base × porciones); un lote, por porciones
+  const entrada = $derived(sel ? (sel.tipo === 'alimento' ? { tipo: 'alimento', aid: sel.id, g: +gramos }
+    : receta(sel.id)?.tipo === 'plato' ? { tipo: 'plato', rid: sel.id, items: receta(sel.id).ingredientes.map((i) => ({ aid: i.id, g: Math.round(i.g * (+porciones || 1)) })) }
+    : { tipo: 'receta', rid: sel.id, porciones: +porciones }) : null);
   const ap = $derived(entrada ? aporte(entrada) : null);
   function guardarNuevo() {
     const a = { id: 'US-' + uuid(), n: nuevo.n.trim(), grupo: nuevo.cc === 'P' ? 'producto_proteico' : 'otro', cc: nuevo.cc,

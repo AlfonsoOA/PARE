@@ -2,6 +2,7 @@
 // Es una propuesta general: el deportista la cambia en Comer → Mi menú.
 import { app } from './estado.svelte.js';
 import { cat, normalizar } from './catalogo.js';
+import { platos, recetaApta, momentosDe, ajustarReceta } from './recetas.js';
 
 // Opciones por tipo de comida y grupo de ración (IDs de ALIMENTOS). Se van rotando por día.
 const OPCIONES = {
@@ -52,6 +53,15 @@ const redondear5 = (g) => Math.max(5, Math.round(g / 5) * 5);
 export function proponerMenu(dieta, perfil = app.datos.perfil) {
   const aversiones = normalizar(perfil.test?.aversiones || '').split(/[,;\n]+| y /).map((s) => s.trim()).filter(Boolean);
   const menu = {};
+  // Platos del recetario: la comida, todos los días; la cena, en días alternos (las otras, algo sencillo).
+  const aptos = platos().filter((r) => recetaApta(r, perfil));
+  const deMomento = (m) => aptos.filter((r) => momentosDe(r).includes(m));
+  const listaComida = deMomento('comida'), listaCena = deMomento('cena');
+  const usadosSemana = new Set();
+  const elegirPlato = (lista, k) => {
+    for (let j = 0; j < lista.length; j++) { const r = lista[(k + j) % lista.length]; if (!usadosSemana.has(r.id)) return r; }
+    return lista.length ? lista[k % lista.length] : null;
+  };
   for (let dia = 0; dia < 7; dia++) {
     menu[dia] = {};
     const usadosDia = new Set();
@@ -61,9 +71,17 @@ export function proponerMenu(dieta, perfil = app.datos.perfil) {
       const items = [];
       // la cena desfasada respecto a la comida para no repetir el mismo plato el mismo día
       const k = dia * 2 + (c.id === 'cena' ? 7 : 0) + ci;
+      let cubiertos = new Set();
+      const plato = c.id === 'comida' ? elegirPlato(listaComida, dia * 3) : c.id === 'cena' && dia % 2 === 0 ? elegirPlato(listaCena, dia * 5 + 1) : null;
+      if (plato) {
+        usadosSemana.add(plato.id);
+        const aj = ajustarReceta(plato, c.raciones);
+        items.push({ tipo: 'plato', rid: plato.id, items: aj.items.map(({ aid, g }) => ({ aid, g })) });
+        cubiertos = new Set(['P', 'HC', 'G'].filter((g) => !aj.faltan[g]));
+      }
       for (const g of ['P', 'HC', 'G', 'fruta', 'lacteo']) {
         const n = +c.raciones[g] || 0;
-        if (n <= 0) continue;
+        if (n <= 0 || cubiertos.has(g)) continue;
         const a = elegir(op[g], k, perfil, aversiones, usadosDia);
         if (!a?.rac) continue;
         usadosDia.add(a.id);

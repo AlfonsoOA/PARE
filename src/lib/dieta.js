@@ -27,6 +27,12 @@ export function aporte(e) {
     const f = e.g / 100;
     r.kcal += a.kcal * f; r.p += a.p * f; r.hc += a.hc * f; r.g += a.g * f;
     if (a.rac && ['P', 'HC', 'G', 'fruta', 'lacteo'].includes(a.cc)) r[a.cc] += e.g / a.rac;
+  } else if (e.tipo === 'plato') {
+    // plato del recetario ajustado: la suma de sus ingredientes pesados
+    for (const it of e.items || []) {
+      const a = aporte({ tipo: 'alimento', aid: it.aid, g: it.g });
+      for (const k in r) r[k] += a[k];
+    }
   } else if (e.tipo === 'receta') {
     const x = receta(e.rid);
     if (!x) return r;

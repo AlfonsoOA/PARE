@@ -6,6 +6,8 @@
   import Icono from '../componentes/Icono.svelte';
   import Hoja from '../componentes/Hoja.svelte';
   import AnadirAlimento from '../componentes/AnadirAlimento.svelte';
+  import FichaReceta from '../componentes/FichaReceta.svelte';
+  import { momentosDe, NOMBRE_MOMENTO, recetaApta } from '../lib/recetas.js';
   import { proponerMenu } from '../lib/menu.js';
   import { aviso } from '../lib/estado.svelte.js';
   let confirmarMenu = $state(false);
@@ -16,7 +18,9 @@
   let sub = $state('dia');
   let fecha = $state(hoyISO());
   let anadirEn = $state(null); // { comida } o { menu: [dia, comida] }
-  let recetaAbierta = $state(null);
+  let recetaAbierta = $state(null); // { r, comida }
+  let filtroRecetas = $state('todas');
+  const recetasFiltradas = $derived(cat.recetas.filter((r) => filtroRecetas === 'todas' || (filtroRecetas === 'postre' ? r.tipo === 'lote' : r.tipo === 'plato' && momentosDe(r).includes(filtroRecetas))).sort((a, b) => (a.tipo === b.tipo ? (a.tiempo ?? 99) - (b.tiempo ?? 99) : a.tipo === 'plato' ? -1 : 1)));
   let diaMenu = $state(diaSemana(hoyISO()));
 
   const reg = $derived(delDia(fecha));
@@ -34,7 +38,7 @@
       if (e) quitar(fecha, e.id);
     } else anotar(fecha, { comida: c, tipo: 'racion', grupo: g, n: 1 });
   }
-  const etiquetaEntrada = (e) => e.tipo === 'alimento' ? `${alimento(e.aid)?.n ?? '¿?'} · ${fmtNum(e.g)} g` : e.tipo === 'receta' ? `${receta(e.rid)?.n} · ${fmtNum(e.porciones, 1)} porción` : null;
+  const etiquetaEntrada = (e) => e.tipo === 'alimento' ? `${alimento(e.aid)?.n ?? '¿?'} · ${fmtNum(e.g)} g` : e.tipo === 'receta' ? `${receta(e.rid)?.n} · ${fmtNum(e.porciones, 1)} porción` : e.tipo === 'plato' ? `${receta(e.rid)?.n ?? 'Plato'}` : null;
   const menuDe = (dia, c) => d.dieta?.menu?.[dia]?.[c] ?? [];
   function anotarMenu(c) { for (const e of menuDe(diaSemana(fecha), c)) anotar(fecha, { ...e, comida: c, id: undefined }); }
   function agregarAlMenu(dia, c, entrada) {
@@ -106,7 +110,7 @@
         {/each}
         {#if c.verdura}<p class="sec peq">+ verdura libre</p>{/if}
         {#each deComida(c.id).filter((e) => e.tipo !== 'racion') as e (e.id)}
-          <div class="fila entre peq"><span>{etiquetaEntrada(e)} <span class="sec">({fmtNum(aporte(e).kcal)} kcal)</span></span><button class="icono-b" style="width:36px;height:36px" onclick={() => quitar(fecha, e.id)} aria-label="Quitar"><Icono n="cerrar" tam={18} /></button></div>
+          <div class="fila entre peq">{#if e.tipo === 'plato' && receta(e.rid)}<button class="enlace-l" onclick={() => (recetaAbierta = { r: receta(e.rid), comida: c.id })}>{etiquetaEntrada(e)} <span class="sec">({fmtNum(aporte(e).kcal)} kcal) · ver receta</span></button>{:else}<span>{etiquetaEntrada(e)} <span class="sec">({fmtNum(aporte(e).kcal)} kcal)</span></span>{/if}<button class="icono-b" style="width:36px;height:36px" onclick={() => quitar(fecha, e.id)} aria-label="Quitar"><Icono n="cerrar" tam={18} /></button></div>
         {/each}
         <button class="enlace" style="align-self:flex-start" onclick={() => (anadirEn = { comida: c.id })}>+ Añadir alimento o receta</button>
       </div>
@@ -126,7 +130,7 @@
       <div class="tarjeta">
         <div class="fila entre"><h3>{c.nombre}</h3><span class="sec peq">pauta: {GRUPOS_RACION.filter((g) => c.raciones[g] > 0).map((g) => `${c.raciones[g]} ${g}`).join(', ')}</span></div>
         {#each menuDe(diaMenu, c.id) as e, k}
-          <div class="fila entre peq"><span>{etiquetaEntrada(e)}</span><button class="icono-b" style="width:36px;height:36px" onclick={() => d.dieta.menu[diaMenu][c.id].splice(k, 1)} aria-label="Quitar"><Icono n="cerrar" tam={18} /></button></div>
+          <div class="fila entre peq">{#if e.tipo === 'plato' && receta(e.rid)}<button class="enlace-l" onclick={() => (recetaAbierta = { r: receta(e.rid), comida: c.id })}>{etiquetaEntrada(e)} <span class="sec">· ver receta</span></button>{:else}<span>{etiquetaEntrada(e)}</span>{/if}<button class="icono-b" style="width:36px;height:36px" onclick={() => d.dieta.menu[diaMenu][c.id].splice(k, 1)} aria-label="Quitar"><Icono n="cerrar" tam={18} /></button></div>
         {/each}
         {#if menuDe(diaMenu, c.id).length}
           {@const dif = GRUPOS_RACION.filter((g) => Math.abs((s[g] || 0) - (c.raciones[g] || 0)) >= 0.5)}
@@ -138,11 +142,17 @@
     {#if diaMenu > 0}<button class="boton sec2 ancho" onclick={() => { d.dieta.menu[diaMenu] = JSON.parse(JSON.stringify(d.dieta.menu?.[diaMenu - 1] ?? {})); }}>Copiar el menú de {DIAS_SEMANA[diaMenu - 1].toLowerCase()}</button>{/if}
 
   {:else if sub === 'recetas'}
-    {#each cat.recetas as r}
-      <button class="tarjeta pulsable" onclick={() => (recetaAbierta = r)}>
-        <b>{r.n}</b>
-        <span class="sec peq">{r.kcal} kcal · {r.p} g prot · {r.hc} g hidr · {r.g} g grasa por porción ({r.porciones} porciones)</span>
-        <span class="sec peq">{r.cuenta}</span>
+    <p class="sec peq">Platos sencillos y baratos. Al abrir uno, las cantidades se ajustan a las raciones de tu comida.</p>
+    <div class="desliza">{#each [['todas', 'Todas'], ['desayuno', 'Desayuno'], ['comida', 'Comida'], ['cena', 'Cena'], ['merienda', 'Merienda'], ['postre', 'Postres']] as [v, l]}<button class="chip" class:on={filtroRecetas === v} onclick={() => (filtroRecetas = v)}>{l}</button>{/each}</div>
+    {#each recetasFiltradas as r (r.id)}
+      {@const apta = recetaApta(r, d.perfil)}
+      <button class="tarjeta pulsable receta" class:noapta={!apta} onclick={() => (recetaAbierta = { r })}>
+        <span class="fila entre" style="gap:8px"><b>{r.n}</b>{#if !apta}<span class="insignia aviso">No para ti</span>{/if}</span>
+        {#if r.tipo === 'plato'}
+          <span class="sec peq">{r.tiempo} min · ≈ {fmtNum(r.coste, 2)} € · {momentosDe(r).map((m) => NOMBRE_MOMENTO[m] ?? m).join(', ')}</span>
+        {:else}
+          <span class="sec peq">{r.kcal} kcal · {r.p} g prot por porción ({r.porciones} porciones) · {r.cuenta}</span>
+        {/if}
       </button>
     {/each}
 
@@ -165,15 +175,7 @@
   <AnadirAlimento cerrar={() => (anadirEn = null)} anotar={(e) => (anadirEn.menu ? agregarAlMenu(anadirEn.menu[0], anadirEn.menu[1], e) : anotar(fecha, { ...e, comida: anadirEn.comida }))} />
 {/if}
 {#if recetaAbierta}
-  <Hoja titulo={recetaAbierta.n} cerrar={() => (recetaAbierta = null)}>
-    <p class="peq">{recetaAbierta.kcal} kcal · {recetaAbierta.p} g proteína · {recetaAbierta.hc} g hidratos · {recetaAbierta.g} g grasa por porción · {recetaAbierta.porciones} porciones</p>
-    <p class="sec peq">{recetaAbierta.cuenta}</p>
-    <span class="etiqueta">Ingredientes</span>
-    {#each recetaAbierta.ingredientes as i}<p class="peq">· {i.g} g {i.n.toLowerCase()}{i.nota ? ` (${i.nota})` : ''}</p>{/each}
-    {#if recetaAbierta.notas}<p class="sec peq">{recetaAbierta.notas}</p>{/if}
-    {#if recetaAbierta.alerg?.length}<p class="peq">Alérgenos: {recetaAbierta.alerg.join(', ')}</p>{/if}
-    <button class="boton ancho" onclick={() => { anotar(hoyISO(), { comida: d.dieta.comidas.at(-1).id, tipo: 'receta', rid: recetaAbierta.id, porciones: 1 }); recetaAbierta = null; sub = 'dia'; }}>Anotar 1 porción hoy</button>
-  </Hoja>
+  <FichaReceta receta={recetaAbierta.r} comidaInicial={recetaAbierta.comida ?? null} cerrar={() => (recetaAbierta = null)} />
 {/if}
 
 <style>
@@ -188,4 +190,7 @@
   .desliza { display: flex; gap: 6px; overflow-x: auto; }
   .desliza .chip { flex-shrink: 0; }
   .aviso { color: var(--aviso); }
+  .enlace-l { background: none; border: 0; padding: 4px 0; text-align: left; color: inherit; cursor: pointer; font: inherit; min-height: 36px; }
+  .receta { gap: 4px; }
+  .noapta { opacity: 0.55; }
 </style>

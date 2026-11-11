@@ -79,7 +79,10 @@ const salida = {
   recetas: c.recetas.filter((r) => r.activo === 'SI').map((r) => ({
     id: r.id_receta, n: r.nombre_es, porciones: r.porciones, kcal: r.kcal_porcion, p: r.proteina_porcion,
     hc: r.hidratos_porcion, g: r.grasa_porcion, cuenta: r.cuenta_como, momento: r.momento,
-    alerg: r.alergenos, notas: r.notas,
+    alerg: r.alergenos, notas: r.notas, etq: r.etiquetas,
+    tipo: r.tipo || 'lote', tiempo: r.tiempo_min ? +r.tiempo_min : null, coste: r.coste_porcion ? +r.coste_porcion : null,
+    momentos: String(r.momento || '').split(';').map((x) => x.trim()).filter(Boolean),
+    pasos: r.pasos ? String(r.pasos).split('|').map((x) => x.trim()).filter(Boolean) : [],
     ingredientes: c.receta_ingredientes.filter((i) => i.id_receta === r.id_receta)
       .map((i) => ({ id: i.id_alimento, n: i.nombre_alimento, g: i.gramos, nota: i.nota })),
   })),
