@@ -1,7 +1,7 @@
 <script>
   // Hoja para elegir un ejercicio del catálogo (editor de rutina y sesión en curso).
   import { app } from '../lib/estado.svelte.js';
-  import { cat, GRUPOS, NOMBRE_GRUPO, normalizar, etiqueta } from '../lib/catalogo.js';
+  import { cat, GRUPOS, NOMBRE_GRUPO, normalizar, etiqueta, palabras, coincide } from '../lib/catalogo.js';
   import { restriccion } from '../lib/entreno.js';
   import Hoja from './Hoja.svelte';
   let { cerrar, elegir, titulo = 'Añadir ejercicio', ids = null } = $props();
@@ -14,7 +14,10 @@
     let l = ids ? ids.map((i) => cat.porId.get(i)).filter(Boolean) : cat.ejercicios;
     if (grupo) l = l.filter((e) => e.gp?.includes(grupo));
     if (eq) l = l.filter((e) => e.eq === eq);
-    if (n) l = l.filter((e) => normalizar(e.n).includes(n) || normalizar(e.en).includes(n));
+    if (n) { const ws = palabras(q); l = l.filter((e) => coincide(ws, e.n, e.en, (e.gp || []).map((g) => NOMBRE_GRUPO[g]).join(' '), e.ficha?.recomendaciones));
+      // primero los que lo tienen en el nombre; luego los que lo dicen el grupo o la ficha
+      const enNombre = new Set(l.filter((e) => coincide(ws, e.n, e.en)).map((e) => e.id));
+      l = [...l.filter((e) => enNombre.has(e.id)), ...l.filter((e) => !enNombre.has(e.id))]; }
     return l.slice(0, 80);
   });
 </script>

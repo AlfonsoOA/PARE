@@ -42,3 +42,15 @@ export const imagenes = (id) => (ej(id)?.img ? [`./img/${id}_1.webp`, `./img/${i
 
 /** Quita tildes y pasa a minúsculas para buscar. */
 export const normalizar = (s) => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+// Búsqueda por palabras: «press banca declinado» encuentra «Press de banca declinado con barra».
+const VACIAS = new Set(['de', 'del', 'la', 'el', 'los', 'las', 'con', 'en', 'a', 'al', 'y', 'o', 'para', 'por', 'un', 'una']);
+const raiz = (w) => (w.length > 4 ? w.replace(/(as|os|es|s|a|o)$/, '') : w); // plural y género: declinado/declinada
+export function palabras(q) {
+  return normalizar(q).split(/[^a-z0-9ñ]+/).filter((w) => w && !VACIAS.has(w)).map(raiz);
+}
+/** ¿Están todas las palabras buscadas en alguno de los textos? */
+export function coincide(ws, ...textos) {
+  if (!ws.length) return true;
+  const t = textos.map(normalizar).join(' ');
+  return ws.every((w) => t.includes(w));
+}
