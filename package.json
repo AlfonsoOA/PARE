@@ -1,0 +1,22 @@
+{
+  "name": "pare",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "datos": "node scripts/preparar-datos.mjs",
+    "dev": "vite",
+    "build": "node scripts/preparar-datos.mjs && vite build && node scripts/precache.mjs",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "svelte": "^5.57.3",
+    "vite": "^8.3.8"
+  },
+  "dependencies": {
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "idb-keyval": "^6.3.0"
+  }
+}

@@ -1,0 +1,49 @@
+<script>
+  import { app, aviso, uuid } from '../lib/estado.svelte.js';
+  import { GRUPOS_RACION, NOMBRE_RACION } from '../lib/dieta.js';
+  import Icono from '../componentes/Icono.svelte';
+  let dd = $derived(app.datos.dieta);
+  const total = (g) => dd.comidas.reduce((s, c) => s + (+c.raciones[g] || 0), 0);
+  function recalcular() { for (const g of GRUPOS_RACION) dd.raciones[g] = total(g); aviso('Pauta actualizada'); }
+  function nuevaComida() { dd.comidas.push({ id: uuid().slice(0, 8), nombre: 'Nueva comida', hora: '12:00', raciones: { P: 0, HC: 0, G: 0, fruta: 0, lacteo: 0 }, verdura: false }); }
+</script>
+
+<div class="pantalla">
+  <div class="fila"><button class="icono-b" onclick={() => { recalcular(); app.vista = null; }} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Mi dieta</span></div>
+  <h1>Mi dieta</h1>
+  {#if !dd}<p class="vacio">Sin pauta. Haz el test de inicio.</p>{:else}
+    <div class="tarjeta">
+      <div class="fila entre envolver">
+        <label class="campo" style="flex:1">kcal<input type="number" inputmode="numeric" bind:value={dd.kcal} /></label>
+        <label class="campo" style="flex:1">Prot. (g)<input type="number" inputmode="numeric" bind:value={dd.p} /></label>
+        <label class="campo" style="flex:1">Hidr. (g)<input type="number" inputmode="numeric" bind:value={dd.hc} /></label>
+        <label class="campo" style="flex:1">Grasa (g)<input type="number" inputmode="numeric" bind:value={dd.g} /></label>
+      </div>
+      <p class="sec peq">Gasto estimado al empezar: {dd.tdee?.toLocaleString('es-ES')} kcal. A las 3 semanas, mira el gasto real en Progreso → Cuerpo.</p>
+    </div>
+    <div class="tarjeta">
+      <label class="fila entre"><span><b>Días de más hidratos</b><br /><span class="sec peq">+1 ración de hidratos en las sesiones exigentes (como la de pierna), descontada de los días sin entreno. El total semanal no cambia.</span></span>
+        <input type="checkbox" bind:checked={dd.hidratosExtra} style="width:26px;height:26px;flex-shrink:0" /></label>
+    </div>
+    <h2>Comidas</h2>
+    {#each dd.comidas as c, i (c.id)}
+      <div class="tarjeta">
+        <div class="fila"><input type="text" bind:value={c.nombre} aria-label="Nombre de la comida" /><input type="text" bind:value={c.hora} aria-label="Hora" style="max-width:90px;text-align:center" /></div>
+        <div class="rej">
+          {#each GRUPOS_RACION as g}<label class="campo">{NOMBRE_RACION[g]}<input type="number" inputmode="decimal" step="0.5" bind:value={c.raciones[g]} /></label>{/each}
+        </div>
+        <label class="fila peq"><input type="checkbox" bind:checked={c.verdura} style="width:22px;height:22px" /> Verdura libre</label>
+        {#if dd.comidas.length > 2}<button class="enlace" style="align-self:flex-start;color:var(--entrenar)" onclick={() => dd.comidas.splice(i, 1)}>Quitar comida</button>{/if}
+      </div>
+    {/each}
+    <button class="boton sec2 ancho" onclick={nuevaComida}>Añadir comida</button>
+    <p class="sec peq">Total: {GRUPOS_RACION.map((g) => `${total(g)} ${NOMBRE_RACION[g].toLowerCase()}`).join(' · ')}</p>
+    <button class="boton ancho" onclick={() => { recalcular(); app.vista = null; }}>Guardar</button>
+  {/if}
+</div>
+
+<style>
+  .rej { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+  .rej input { text-align: center; padding: 0 4px; }
+  .rej .campo { font-size: 11px; }
+</style>

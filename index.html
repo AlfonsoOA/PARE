@@ -1,12 +1,21 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111827"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="PARE"><link rel="apple-touch-icon" href="assets/icon.svg"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"><title>PARE — Pain and Reward</title></head>
-<body><header><div class="brand"><div class="mark">P</div><div><b>PARE</b><small>PAIN AND REWARD · EARN YOUR REWARD</small></div></div><button id="install" class="ghost" hidden>Instalar</button></header>
-<nav id="nav"><button data-page="home" class="active">Inicio</button><button data-page="routines">Rutinas</button><button data-page="train">Entrenar</button><button data-page="progress">Progreso</button><button data-page="library">Ejercicios</button><button data-page="settings">Datos</button></nav>
-<main>
-<section id="home" class="page active"><div class="hero"><p class="eyebrow">TRAINING · PROGRESS · PERFORMANCE</p><h1>El esfuerzo<br><em>deja huella.</em></h1><p>Planifica, registra y entiende tu entrenamiento.</p><button class="primary" data-go="train">Registrar entrenamiento →</button></div><div class="grid three" id="summary"></div><div class="panel"><div class="row"><h2>Actividad reciente</h2><button class="textbtn" data-go="progress">Ver progreso →</button></div><div id="recent"></div></div></section>
-<section id="routines" class="page"><div class="row"><div><p class="eyebrow">PLANIFICACIÓN</p><h1>Rutinas</h1></div><button class="primary" id="newRoutine">＋ Nueva rutina</button></div><div id="routineList" class="grid two"></div><div id="routineEditor" class="panel hidden"></div></section>
-<section id="train" class="page"><p class="eyebrow">REGISTRO</p><h1>Entrenar</h1><div class="panel"><div class="grid two"><label>Rutina<select id="sessionRoutine"><option value="">Sesión libre</option></select></label><label>Fecha<input type="date" id="sessionDate"></label></div><div class="row"><h2>Ejercicios de la sesión</h2><button id="addExercise" class="secondary">＋ Añadir ejercicio</button></div><div id="sessionExercises"></div><div class="divider"></div><label>Notas de la sesión<textarea id="sessionNotes" rows="2" placeholder="Sensaciones, incidencias..."></textarea></label><button class="primary wide" id="saveSession">Guardar sesión</button></div><div id="exercisePicker" class="panel hidden"></div></section>
-<section id="progress" class="page"><p class="eyebrow">ANÁLISIS</p><h1>Progreso</h1><div class="grid two"><div class="panel"><h2>Sesiones</h2><div id="sessionStats" class="metric">0</div><small>Sesiones registradas</small></div><div class="panel"><h2>Volumen registrado</h2><div id="volumeStats" class="metric">0 kg</div><small>Suma de carga × repeticiones; no equivale a volumen fisiológico.</small></div></div><div class="panel"><h2>Evolución corporal</h2><form id="bodyForm" class="inline"><label>Fecha<input type="date" id="bodyDate" required></label><label>Peso (kg)<input type="number" id="bodyWeight" step=".1" min="0" required></label><button class="secondary">Añadir</button></form><div id="bodyHistory"></div></div><div class="panel"><h2>Historial de sesiones</h2><div id="sessionHistory"></div></div></section>
-<section id="library" class="page"><p class="eyebrow">CATÁLOGO MAESTRO</p><h1>Ejercicios</h1><div class="panel"><div class="filters"><input id="exerciseSearch" placeholder="Buscar ejercicio..."><select id="modality"><option value="">Todas las modalidades</option><option value="GYM">Musculación</option><option value="CROSSFIT">CrossFit</option><option value="AMBAS">Ambas</option></select><label class="check"><input type="checkbox" id="showInactive"> Incluir inactivos</label></div><div id="exerciseCount" class="muted"></div><div id="exerciseList"></div></div><div id="exerciseDetail" class="panel hidden"></div></section>
-<section id="settings" class="page"><p class="eyebrow">CONTROL DE TUS DATOS</p><h1>Datos y ajustes</h1><div class="panel"><h2>Copia de seguridad</h2><p>Exporta todo el contenido de PARE en un archivo JSON o restaura una copia anterior.</p><div class="row wrap"><button class="primary" id="exportData">Exportar datos</button><label class="secondary filebtn">Importar copia<input type="file" id="importData" accept=".json,application/json" hidden></label><button class="danger" id="resetData">Borrar datos locales</button></div><p class="muted">Los datos se guardan en este navegador/dispositivo. Exporta copias periódicas. Borrar los datos del navegador puede eliminarlos.</p></div><div class="panel"><h2>Acerca del catálogo</h2><p id="catalogInfo"></p><p class="muted">El catálogo procede del Excel maestro facilitado. Se muestran por defecto los ejercicios marcados como activos. Las fichas técnicas incompletas se mantienen como tales: no se han rellenado automáticamente.</p></div></section>
-</main><footer>PARE · PAIN AND REWARD <span>EARN YOUR REWARD.</span></footer><script src="app.js"></script></body></html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0F1114">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PARE">
+  <meta name="description" content="PARE — Pain and Reward. Entrenamiento, dieta y progreso. Earn your reward.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icono.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icono-180.png">
+  <title>PARE</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

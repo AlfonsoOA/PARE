@@ -1,0 +1,17 @@
+{
+  "name": "PARE — Pain and Reward",
+  "short_name": "PARE",
+  "description": "Entrenamiento, dieta y progreso. Earn your reward.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0F1114",
+  "theme_color": "#0F1114",
+  "icons": [
+    { "src": "icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
