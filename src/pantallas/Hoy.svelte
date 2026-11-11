@@ -1,4 +1,5 @@
 <script>
+  import { resumenWod } from '../lib/wods.js';
   import { app, ir, hoyISO, aviso } from '../lib/estado.svelte.js';
   import { GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
   import { duracionSesion, volumenSemana, volumenPlanificado, lunes, BANDA } from '../lib/entreno.js';
@@ -100,8 +101,8 @@
     <div class="tarjeta">
       <span class="etiqueta acento">{elegida != null && elegida !== prop?.idx ? 'Has elegido' : prop?.pendiente ? 'Pendiente' : 'Toca hoy'}</span>
       <p class="cifra">{ses.nombre}</p>
-      <p class="sec peq">{ses.items.length} ejercicios · {fmtMin(duracionSesion(ses.items, d.ajustes))} estimados{#if ses.exigente && d.dieta?.hidratosExtra} · día de más hidratos{/if}</p>
-      <button class="boton ancho" onclick={empezar}>Empezar</button>
+      <p class="sec peq">{#if ses.tipo === 'wod'}CrossFit · {ses.wod ? resumenWod(ses.wod) : 'apunta el WOD de hoy o elígelo de la biblioteca'}{:else}{ses.items.length} ejercicios · {fmtMin(duracionSesion(ses.items, d.ajustes))} estimados{/if}{#if ses.exigente && d.dieta?.hidratosExtra} · día de más hidratos{/if}</p>
+      <button class="boton ancho" onclick={empezar}>{ses.tipo === 'wod' ? 'Ir al WOD' : 'Empezar'}</button>
       <button class="enlace" onclick={() => (hoja = 'cambiar')}>Cambiar sesión</button>
     </div>
   {/if}
@@ -150,7 +151,7 @@
       <button class="opcion" class:on={i === idx} onclick={() => { elegida = i; hoja = null; }}>
         <div class="col" style="gap:2px;align-items:flex-start">
           <b>{s.nombre}</b>
-          <span class="sec peq">{s.items.length} ejercicios · {fmtMin(duracionSesion(s.items, d.ajustes))}</span>
+          <span class="sec peq">{s.tipo === 'wod' ? 'CrossFit' : `${s.items.length} ejercicios · ${fmtMin(duracionSesion(s.items, d.ajustes))}`}</span>
         </div>
         {#if i === prop?.idx}<span class="insignia">Toca</span>{:else if d.secuencia.pendientes?.includes(i)}<span class="insignia aviso">Pendiente</span>{/if}
       </button>

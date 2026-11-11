@@ -36,7 +36,7 @@
     aviso('Reparto cambiado. Revísalo y guarda.');
   }
 
-  const dsem = $derived(r._dias || perfil.diasSemana || r.sesiones.length);
+  const dsem = $derived(r._dias || perfil.diasSemana || r.sesiones.filter((x) => x.tipo !== 'wod').length);
   const vol = $derived(volumenPlanificado(r, dsem));
   const delt = $derived(deltoidesPlanificado(r, dsem));
   const balance = $derived.by(() => {
@@ -132,7 +132,7 @@
       <div class="fila entre">
         <button class="abrir" onclick={() => (abierta = abierta === i ? -1 : i)} aria-expanded={abierta === i}>
           <h2>{i + 1}. {s.nombre}</h2>
-          <span class="sec peq">{s.items.length} ejercicios · {fmtMin(duracionSesion(s.items, app.datos.ajustes))}</span>
+          <span class="sec peq">{s.tipo === 'wod' ? 'CrossFit (WOD)' : `${s.items.length} ejercicios · ${fmtMin(duracionSesion(s.items, app.datos.ajustes))}`}</span>
         </button>
         <Icono n={abierta === i ? 'arriba' : 'abajo'} />
       </div>
@@ -143,6 +143,9 @@
         </div>
         <label class="fila peq"><input type="checkbox" bind:checked={s.exigente} style="width:22px;height:22px" /> Sesión exigente (días de más hidratos)</label>
 
+        {#if s.tipo === 'wod'}
+        <p class="sec peq">Día de CrossFit: el WOD se apunta ese día (el de la pizarra, uno de la biblioteca o el que pase el box). No suma volumen de musculación, pero cuenta como día de entreno.</p>
+        {:else}
         {#each bloques(s.items) as b (b[0].it.uid)}
         <div class:bloque-ss={b.length > 1} style:--ss={b.length > 1 ? `var(--ss-${(et[b[0].i].charCodeAt(0) - 65) % 2 + 1})` : null}>
         {#if b.length > 1}<div class="ss-cab"><Icono n="enlace" tam={16} /><b>Superserie {et[b[0].i][0]}</b> · {b.length} ejercicios sin descanso entre ellos</div>{/if}
@@ -176,11 +179,15 @@
         </div>
         {/each}
         <button class="boton sec2 ancho" onclick={() => (buscar = i)}><Icono n="mas" /> Añadir ejercicio</button>
+        {/if}
         {#if r.sesiones.length > 1}<button class="boton peligro ancho" onclick={() => { r.sesiones.splice(i, 1); abierta = -1; }}>Quitar esta sesión</button>{/if}
       {/if}
     </div>
   {/each}
-  <button class="boton sec2 ancho" onclick={nuevaSesion}><Icono n="mas" /> Añadir sesión</button>
+  <div class="fila" style="gap:8px">
+    <button class="boton sec2" style="flex:1" onclick={nuevaSesion}><Icono n="mas" /> Añadir sesión</button>
+    <button class="boton sec2" style="flex:1" onclick={() => { r.sesiones.push({ id: uuid(), nombre: 'WOD', tipo: 'wod', exigente: true, items: [], wod: null }); abierta = r.sesiones.length - 1; }}><Icono n="mas" /> Añadir día de WOD</button>
+  </div>
 
   <div class="tarjeta">
     <span class="etiqueta">Volumen semanal previsto</span>

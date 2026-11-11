@@ -1,4 +1,5 @@
 <script>
+  import { wodsHechos, mejoresWod, resumenWod, textoResultado, ESCALAS } from '../lib/wods.js';
   import { app, hoyISO } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
   import { volumenSemana, lunes, BANDA, banda, mejorSerie, usaPesoCorporal, deltoidesSemana, MIN_CABEZA } from '../lib/entreno.js';
@@ -15,6 +16,7 @@
   let d = $derived(datos ?? app.datos);
   const lectura = $derived(!!datos);
   let sub = $state(app.subProgreso || 'ejercicios');
+  const wods = $derived(wodsHechos(d.sesiones));
   let detalle = $state(null);
   let medir = $state(false);
 
@@ -62,7 +64,7 @@
 <div class="pantalla">
   {#if !lectura}<div class="cabecera"><h1>Progreso</h1></div>{/if}
   <div class="pestanas" role="tablist">
-    {#each [['ejercicios', 'Ejercicios'], ['volumen', 'Volumen'], ['cuerpo', 'Cuerpo'], ['historial', 'Historial']] as [v, l]}
+    {#each [['ejercicios', 'Ejercicios'], ...(wods.length ? [['wod', 'WOD']] : []), ['volumen', 'Volumen'], ['cuerpo', 'Cuerpo'], ['historial', 'Historial']] as [v, l]}
       <button role="tab" aria-selected={sub === v} class:on={sub === v} onclick={() => { sub = v; app.subProgreso = v; }}>{l}</button>
     {/each}
   </div>
@@ -133,11 +135,25 @@
       {/if}
     </div>
 
+  {:else if sub === 'wod'}
+    <p class="sec peq">Cada WOD se compara solo consigo mismo y con la misma escala (RX, escalado o personalizado).</p>
+    {#each wods as g (g.clave)}
+      {@const mejores = mejoresWod(g.clave, d.sesiones)}
+      <button class="tarjeta pulsable" onclick={() => (app.vista = { nombre: 'progresoWod', clave: g.clave, acento: 'progreso', datos: lectura ? datos : null })}>
+        <div class="fila entre"><b>{g.wod.nombre || 'WOD'}</b><span class="sec peq">{g.n} {g.n === 1 ? 'vez' : 'veces'}</span></div>
+        <span class="sec peq">{resumenWod(g.wod)}</span>
+        <span class="peq">{#each Object.entries(mejores) as [esc, m]}<span class="marca">{ESCALAS[esc]}: <b>{textoResultado(m.s.wod, m.s.resultado)}</b></span>{/each}</span>
+      </button>
+    {/each}
   {:else}
     {#each [...d.sesiones].reverse() as s (s.id)}
-      <button class="tarjeta pulsable" onclick={() => (detalle = s)}>
+      <button class="tarjeta pulsable" onclick={() => (s.tipo === 'wod' ? (app.vista = { nombre: 'progresoWod', clave: s.clave, acento: 'progreso', datos: lectura ? datos : null }) : (detalle = s))}>
         <div class="fila entre"><b>{s.nombre}</b><span class="sec peq">{fmtFecha(s.fecha)}</span></div>
-        <span class="sec peq">{fmtMin(s.duracion)} · {s.ejercicios.reduce((t, x) => t + x.series.filter((z) => z.hecha).length, 0)} series · {s.ejercicios.map((x) => ej(x.ej)?.n).join(', ')}</span>
+        {#if s.tipo === 'wod'}
+          <span class="sec peq">WOD · {ESCALAS[s.escala]} · {textoResultado(s.wod, s.resultado)}</span>
+        {:else}
+          <span class="sec peq">{fmtMin(s.duracion)} · {s.ejercicios.reduce((t, x) => t + x.series.filter((z) => z.hecha).length, 0)} series · {s.ejercicios.map((x) => ej(x.ej)?.n).join(', ')}</span>
+        {/if}
       </button>
     {:else}
       <p class="vacio">Sin sesiones todavía.</p>
@@ -173,6 +189,7 @@
 {#if medir}<AnotarMedida cerrar={() => (medir = false)} />{/if}
 
 <style>
+  .marca { margin-right: 12px; }
   .pestanas { display: flex; gap: 4px; background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; padding: 4px; }
   .pestanas button { flex: 1; background: none; border: 0; border-radius: 9px; min-height: 40px; color: var(--texto2); font-size: 14px; cursor: pointer; }
   .pestanas button.on { background: var(--elevada); color: var(--acento); font-weight: 600; }

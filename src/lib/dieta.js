@@ -71,7 +71,7 @@ export function tipoDeDia(fecha) {
 export function objetivoDelDia(fecha) {
   const d = app.datos;
   if (!d.dieta) return null;
-  return racionesDelDia(d.dieta, tipoDeDia(fecha), d.rutina, d.perfil.diasSemana);
+  return racionesDelDia(d.dieta, tipoDeDia(fecha), d.rutina, d.perfil.diasSemana, d.perfil.diasWod);
 }
 /** Pauta de raciones de una comida, con el extra de hidratos sumado a la comida tras entrenar (la siguiente a la sesión). */
 export function pautaComida(comida, fecha) {

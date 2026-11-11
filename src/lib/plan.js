@@ -147,7 +147,24 @@ export function generarRutina(perfil, ajustes, repartoId = null, cargasPrevias =
   ajustarDuracion(rutina, perfil, ajustes);
   completarDeltoides(rutina, dias, perfil, usados, objetivo);
   balancearVolumen(rutina, dias);
+  intercalarWods(rutina, +perfil.diasWod || 0);
   return rutina;
+}
+
+/** Mete los días de WOD repartidos entre las sesiones de fuerza (p. ej. F F W F F W). */
+function intercalarWods(rutina, k) {
+  if (!k) return;
+  const fuerza = rutina.sesiones, n = fuerza.length, out = [];
+  let w = 0;
+  fuerza.forEach((s, i) => {
+    out.push(s);
+    while (w < k && i + 1 >= Math.round(((w + 1) * n) / k)) {
+      out.push({ id: uuid(), nombre: k > 1 ? `WOD ${String.fromCharCode(65 + w)}` : 'WOD', tipo: 'wod', exigente: true, items: [], wod: null });
+      w++;
+    }
+  });
+  rutina.sesiones = out;
+  rutina.nombre = `${rutina.nombre} + ${k} de WOD`;
 }
 
 /** Que las cabezas lateral y posterior lleguen a su mínimo: primero más series del ejercicio que las trabaja
@@ -213,6 +230,7 @@ export function porQue(perfil, rutina) {
   if (obj) out.push(`Series y repeticiones pensadas para ${obj}; los descansos, según el tipo de ejercicio.`);
   if (perfil.molestias?.length) out.push(`Sin ejercicios a evitar por tus molestias; los de precaución llevan su aviso.`);
   else out.push(`Sesiones ajustadas a unos ${perfil.minutos} minutos.`);
+  if (+perfil.diasWod > 0) out.push(`${perfil.diasWod} ${+perfil.diasWod === 1 ? 'día' : 'días'} de WOD intercalados entre las sesiones de pesas, para no juntar dos días fuertes de las mismas piernas. No suman volumen de musculación, pero sí cuentan como días exigentes para la dieta.`);
   return out;
 }
 
@@ -296,9 +314,10 @@ export const faseDeObjetivo = (obj, dieta) =>
   dieta && dieta.kcal < dieta.tdee - 100 ? 'deficit' : dieta && dieta.kcal > dieta.tdee + 100 ? 'superavit' : 'mantenimiento';
 
 /** Raciones del día, con la opción de días de más hidratos (+1 HC en sesión exigente, compensado). */
-export function racionesDelDia(dieta, esDiaExigente, rutina, diasSemana) {
+export function racionesDelDia(dieta, esDiaExigente, rutina, diasSemana, diasWod = 0) {
   const r = { ...dieta.raciones };
   if (!dieta.hidratosExtra || !rutina) return r;
+  diasSemana = (diasSemana || 0) + (+diasWod || 0) || null; // los WOD también son días de entreno
   const exigentes = rutina.sesiones.filter((s) => s.exigente).length;
   const porSemana = Math.round((exigentes / rutina.sesiones.length) * (diasSemana || rutina.sesiones.length));
   const descanso = Math.max(1, 7 - (diasSemana || rutina.sesiones.length));

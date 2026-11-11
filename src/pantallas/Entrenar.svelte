@@ -1,4 +1,5 @@
 <script>
+  import { resumenWod } from '../lib/wods.js';
   import { app } from '../lib/estado.svelte.js';
   import { ej } from '../lib/catalogo.js';
   import { duracionSesion, etiquetasBloque, restriccion, bloques } from '../lib/entreno.js';
@@ -41,12 +42,15 @@
         <button class="cab" onclick={() => (abierta = abierta === i ? null : i)} aria-expanded={abierta === i}>
           <div class="col" style="gap:2px;align-items:flex-start">
             <h2>{s.nombre}</h2>
-            <span class="sec peq">{s.items.length} ejercicios · {fmtMin(duracionSesion(s.items, d.ajustes))}</span>
+            <span class="sec peq">{s.tipo === 'wod' ? (s.wod ? resumenWod(s.wod) : 'CrossFit: el WOD que toque ese día') : `${s.items.length} ejercicios · ${fmtMin(duracionSesion(s.items, d.ajustes))}`}</span>
           </div>
           {#if prop?.idx === i}<span class="insignia" style="color:var(--entrenar)">Toca</span>
           {:else if d.secuencia.pendientes?.includes(i)}<span class="insignia aviso">Pendiente</span>{/if}
         </button>
-        {#if abierta === i}
+        {#if abierta === i && s.tipo === 'wod'}
+          <p class="sec peq">Día de CrossFit. Apunta el WOD de la pizarra, elige uno de la biblioteca o abre el que te pase tu box; PARE lo cronometra y guarda tu marca.</p>
+          <button class="boton ancho" onclick={() => iniciarSesion(i)}>Ir al WOD</button>
+        {:else if abierta === i}
           {#each bloques(s.items) as b (b[0].it.uid)}
           <div class:bloque-ss={b.length > 1} style:--ss={b.length > 1 ? `var(--ss-${(et[b[0].i].charCodeAt(0) - 65) % 2 + 1})` : null}>
           {#if b.length > 1}<div class="ss-cab"><b>Superserie {et[b[0].i][0]}</b> · sin descanso entre ejercicios · {fmtReloj(Math.max(...b.map((y) => y.it.descanso || 90)))} al acabar la vuelta</div>{/if}
@@ -72,6 +76,7 @@
       </div>
     {/each}
     <button class="boton sec2 ancho" onclick={() => iniciarSesion(null, [], 'Sesión libre')}>Sesión libre</button>
+    <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'wod', acento: 'entrenar' })}>WOD suelto (CrossFit)</button>
     <button class="boton sec2 ancho" onclick={compartirRutina}>Compartir mi rutina con quien entreno</button>
     <p class="sec peq">Se envía sin cargas: cada uno pone las suyas. La otra persona la abre en Yo → Archivo PARE → Abrir un archivo.</p>
   {/if}

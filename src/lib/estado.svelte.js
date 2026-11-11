@@ -34,6 +34,7 @@ export function datosVacios() {
       faseDieta: 'mantenimiento', diasSemana: 3, minutos: 60, lugar: 'gimnasio', material: [],
       molestias: [], alergenos: [], evitar: [], test: null, testFecha: null,
       cocina: { tiempo: 'normal', presupuesto: 'normal' },
+      diasWod: 0,
     },
     rutina: null, // { id, version, nombre, objetivo, sesiones: [...] }
     rutinasAnteriores: [],
@@ -47,6 +48,7 @@ export function datosVacios() {
     favoritos: [],
     gustosRecetas: {}, // rid -> 1 (me gusta) | -1 (no me gusta)
     recetasPropias: [], // recetas creadas por el deportista o recibidas en un archivo
+    wodsGuardados: [], // WOD propios o recibidos (biblioteca personal)
     avisosDescartados: {},
     entrenador: { activo: false, deportistas: [] },
     cambiosPropuestos: null,

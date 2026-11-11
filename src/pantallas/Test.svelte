@@ -23,7 +23,7 @@
     p.borradorTest = {
       paso: 0, nombre: p.nombre || '', sexo: p.sexo || '', edad: p.edad, altura: p.altura, peso: app.datos.medidas.at(-1)?.peso ?? null,
       cintura: null, cuello: null, cadera: null, parq: PARQ.map(() => null), molestias: [...(p.molestias || [])],
-      alergenos: [...(p.alergenos || [])], objetivo: '', plazo: '', experiencia: '', diasSemana: 4, minutos: 60, horaEntreno: p.horaEntreno || '',
+      alergenos: [...(p.alergenos || [])], objetivo: '', plazo: '', experiencia: '', diasSemana: 4, diasWod: p.diasWod || 0, minutos: 60, horaEntreno: p.horaEntreno || '',
       lugar: 'gimnasio', material: [], cargas: { sentadilla: null, banca: null, muerto: null, dominadas: null },
       trabajo: '', pasos: '', otrosDeportes: 0, comidasDia: 4, hambre: '', registro: 'raciones', aversiones: '', cocinaTiempo: p.cocina?.tiempo || 'normal', tipoDieta: p.cocina?.dieta || 'omnivora', presupuesto: p.cocina?.presupuesto || 'normal',
       cuesta: [],
@@ -56,7 +56,7 @@
     const perfil = app.datos.perfil;
     Object.assign(perfil, {
       nombre: t.nombre.trim(), sexo: t.sexo, edad: +t.edad, altura: +t.altura, objetivo: t.objetivo,
-      diasSemana: +t.diasSemana, minutos: +t.minutos, lugar: t.lugar, material: [...t.material], reparto: t.reparto || null,
+      diasSemana: +t.diasSemana, diasWod: +t.diasWod || 0, minutos: +t.minutos, lugar: t.lugar, material: [...t.material], reparto: t.reparto || null,
       molestias: [...t.molestias], alergenos: [...t.alergenos], parqSi: t.parq.some((x) => x),
       parqCronica: t.parq[3] === true || t.parq[4] === true,
       horaEntreno: t.horaEntreno || 'varia',
@@ -133,8 +133,12 @@
     <div class="col"><span class="etiqueta">Experiencia entrenando fuerza</span>
       <div class="fila envolver">{#each [['nunca', 'Nunca'], ['menos6m', 'Menos de 6 meses'], ['6a24m', '6 meses a 2 años'], ['2a5a', '2 a 5 años'], ['mas5a', 'Más de 5 años']] as [v, l]}<button class="chip" class:on={t.experiencia === v} onclick={() => (t.experiencia = v)}>{l}</button>{/each}</div>
     </div>
-    <div class="col"><span class="etiqueta">Días por semana que de verdad puedes entrenar</span>
+    <div class="col"><span class="etiqueta">Días por semana de pesas que de verdad puedes entrenar</span>
       <div class="fila envolver">{#each [2, 3, 4, 5, 6] as d}<button class="chip" class:on={+t.diasSemana === d} onclick={() => (t.diasSemana = d)}>{d}</button>{/each}</div>
+    </div>
+    <div class="col"><span class="etiqueta">¿Haces CrossFit? Días de WOD a la semana, además</span>
+      <div class="fila envolver">{#each [0, 1, 2, 3] as d}<button class="chip" class:on={+t.diasWod === d} onclick={() => (t.diasWod = d)}>{d === 0 ? 'No' : d}</button>{/each}</div>
+      {#if +t.diasWod > 0}<p class="sec peq">Se meten en tu rutina como días de WOD: apuntas el de la pizarra (o uno de la biblioteca) y PARE lo cronometra y guarda tus marcas.{+t.diasSemana + +t.diasWod > 6 ? ' Ojo: son muchos días; deja al menos uno de descanso.' : ''}</p>{/if}
     </div>
     <div class="col"><span class="etiqueta">¿Cómo quieres repartir los grupos?</span>
       <div class="col" style="gap:6px">

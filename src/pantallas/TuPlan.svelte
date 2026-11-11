@@ -33,8 +33,8 @@
     <span class="etiqueta">Rutina · se hace en este orden</span>
     {#each prop.rutina.sesiones as s, i}
       <div class="ses">
-        <div class="fila entre"><b>{i + 1}. {s.nombre}</b><span class="sec peq">{s.items.length} ejercicios · {fmtMin(duracionSesion(s.items, app.datos.ajustes))}</span></div>
-        <p class="sec peq">{s.items.map((x) => ej(x.ej)?.n).join(' · ')}</p>
+        <div class="fila entre"><b>{i + 1}. {s.nombre}</b><span class="sec peq">{s.tipo === 'wod' ? 'CrossFit' : `${s.items.length} ejercicios · ${fmtMin(duracionSesion(s.items, app.datos.ajustes))}`}</span></div>
+        <p class="sec peq">{s.tipo === 'wod' ? 'El WOD del día: el de tu box o uno de la biblioteca.' : s.items.map((x) => ej(x.ej)?.n).join(' · ')}</p>
       </div>
     {/each}
   </div>

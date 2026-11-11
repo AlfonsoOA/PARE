@@ -91,6 +91,19 @@ export async function abrirArchivo(file) {
     app.vista = { nombre: 'cambios', acento: 'yo' };
     return;
   }
+  if (obj.tipo === 'wod') {
+    const w = obj.datos?.wod;
+    if (!w?.movimientos?.length) { aviso('El archivo no trae un WOD válido.'); return; }
+    d.wodsGuardados ||= [];
+    const copia = { ...w, de: obj.de?.nombre || null };
+    const i = d.wodsGuardados.findIndex((x) => x.id === copia.id);
+    if (i >= 0) d.wodsGuardados[i] = copia; else d.wodsGuardados.unshift(copia);
+    // si hoy toca WOD en la rutina, se abre para esa sesión
+    const idx = d.rutina?.sesiones.findIndex((s) => s.tipo === 'wod');
+    aviso(`WOD recibido${copia.de ? ` de ${copia.de}` : ''}: ${copia.nombre || 'sin nombre'}`);
+    app.vista = { nombre: 'wod', wodId: copia.id, sesionIdx: idx >= 0 ? idx : null, acento: 'entrenar' };
+    return;
+  }
   if (obj.tipo === 'recetas') {
     const nuevas = obj.datos?.recetas ?? [];
     if (!nuevas.length) { aviso('El archivo no trae recetas.'); return; }
@@ -114,6 +127,11 @@ export function archivoRecetas(recetas) {
   const ids = new Set(recetas.flatMap((r) => r.ingredientes.map((i) => i.id)));
   const productos = app.datos.productosPropios.filter((a) => ids.has(a.id));
   return cabecera('recetas', { datos: { recetas: JSON.parse(JSON.stringify(recetas)), productos: JSON.parse(JSON.stringify(productos)) } });
+}
+
+/** Archivo con un WOD (el del box, uno tuyo) para pasárselo a otros. */
+export function archivoWod(w) {
+  return cabecera('wod', { datos: { wod: JSON.parse(JSON.stringify(w)) } });
 }
 
 export async function hacerCopia() {

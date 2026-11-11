@@ -83,6 +83,7 @@ export function nuevaSerie(it, previa, k) {
 export function iniciarSesion(idx, items = null, nombre = null) {
   const r = app.datos.rutina;
   const s = idx != null ? r.sesiones[idx] : null;
+  if (s?.tipo === 'wod') { app.vista = { nombre: 'wod', sesionIdx: idx, acento: 'entrenar' }; return; }
   const base = items ?? s?.items ?? [];
   app.sesionActiva = {
     id: uuid(), fecha: hoyISO(), inicio: Date.now(), sesionIdx: idx, sesionId: s?.id ?? null,

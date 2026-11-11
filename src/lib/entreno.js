@@ -128,8 +128,10 @@ export function pesosDeltoides(idEj) {
 export function deltoidesPlanificado(rutina, diasSemana) {
   const v = { anterior: 0, lateral: 0, posterior: 0 };
   if (!rutina?.sesiones?.length) return v;
-  const factor = (diasSemana || rutina.sesiones.length) / rutina.sesiones.length;
-  for (const s of rutina.sesiones) for (const it of s.items) {
+  const fuerza = rutina.sesiones.filter((s) => s.tipo !== 'wod');
+  if (!fuerza.length) return v;
+  const factor = (diasSemana || fuerza.length) / fuerza.length;
+  for (const s of fuerza) for (const it of s.items) {
     const d = pesosDeltoides(it.ej);
     for (const c of CABEZAS) v[c] += it.series * d[c] * factor;
   }
@@ -178,7 +180,9 @@ export function volumenSemana(sesiones, isoLunes) {
 export function volumenPlanificado(rutina, diasSemana) {
   const v = Object.fromEntries(GRUPOS.map((g) => [g, 0]));
   if (!rutina?.sesiones?.length) return v;
-  const ses = rutina.sesiones;
+  // los días de WOD no suman volumen de musculación ni cuentan para repartir la semana
+  const ses = rutina.sesiones.filter((s) => s.tipo !== 'wod');
+  if (!ses.length) return v;
   const factor = (diasSemana || ses.length) / ses.length;
   for (const s of ses) for (const it of s.items) {
     for (const [g, w] of Object.entries(pesosGrupo(it.ej))) v[g] += it.series * w * factor;
