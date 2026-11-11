@@ -81,7 +81,7 @@
     <p class="sec peq">¿No está un ingrediente? Búscalo y pulsa «Añadir producto de etiqueta» con los datos del envase.</p>
   </div>
 
-  <label class="campo">Cómo se hace (un paso por línea)<textarea rows="6" bind:value={pasosTxt} placeholder={'Cuece el arroz.\nDora el pollo con el curry.\n…'}></textarea></label>
+  <label class="campo">Protocolo (un paso por línea; «Título: texto» pone el título en negrita)<textarea rows="6" bind:value={pasosTxt} placeholder={'Cuece el arroz.\nPunto ideal: el pollo dorado por fuera y jugoso por dentro.\n…'}></textarea></label>
   <label class="campo">Nota (opcional)<input type="text" bind:value={r.notas} /></label>
 </div>
 

@@ -1,6 +1,6 @@
 {
  "esquema": 1,
- "generado": "2026-11-11T17:14:27",
+ "generado": "2026-11-11T21:29:43",
  "ejercicios": [
   {
    "id_ejercicio": "EJ0001",
@@ -95916,11 +95916,11 @@
    ],
    "activo": "SI",
    "fuente": "Recetas de Alfonso (plan de Pedro)",
-   "notas": "Receta de Alfonso; su desayuno habitual. Agua 250-300 ml (cálculo con 275).",
+   "notas": "Receta de Alfonso; su desayuno habitual. Agua 250-300 ml en total (los macros, con 275 ml). Una rebanada fina (40-50 g) es la tostada del desayuno.",
    "tipo": "lote",
    "tiempo_min": null,
    "coste_porcion": null,
-   "pasos": null,
+   "pasos": "Además: especias al gusto (cúrcuma, pimienta, orégano…). Molde alargado de unos 25 cm. | El gel (el paso más importante): mezcla el lino y la chía con 150 ml de agua tibia y deja reposar 10-15 min. Tiene que quedar un gel espeso, como una clara de huevo densa. Si sigue líquido, espera más; si está seco, falta agua. | Mezcla líquida: bate los 4 huevos y añade el gel y el resto del agua (100-150 ml) hasta tener una mezcla homogénea. | Mezcla seca: añade la avena (la molida y los copos), la proteína, la levadura, la sal y las especias. Mezcla bien. | Ajuste de textura (decide si sale bien): la masa debe ser espesa, tipo masilla, y costar moverla; una cuchara clavada se queda algo de pie. Ni líquida como un bizcocho ni seca como una masa de pan duro. Si está seca, añade agua poco a poco; si está líquida, un poco más de avena. | Pipas: mézclalas en la masa, dejando algunas para la superficie si quieres. | Horneado: horno precalentado a 180 ºC, 45-55 min. A los 35-40 min, pincha con un cuchillo: si sale húmedo, le falta; si sale seco, está listo. Si se dora mucho por fuera y sigue crudo por dentro, tápalo con papel de aluminio y sigue. | Enfriado (no te lo saltes): al menos 30-60 min fuera del horno antes de cortarlo. En caliente se rompe y parece crudo. | Resultado esperado: consistente pero jugoso, no seco, fácil de cortar y sin desmoronarse. | Errores típicos: con la masa demasiado líquida queda apelmazado; con la masa demasiado seca, tipo ladrillo.",
    "estilo": "casera"
   },
   {
@@ -95946,11 +95946,11 @@
    ],
    "activo": "SI",
    "fuente": "Recetas de Alfonso (plan de Pedro)",
-   "notas": null,
+   "notas": "La receta original ponía 120 g de harina de avena, ajustada a 80 g para compensar la humedad de la zanahoria; los macros van con 80 g.",
    "tipo": "lote",
    "tiempo_min": null,
    "coste_porcion": null,
-   "pasos": null,
+   "pasos": "Además: vainilla concentrada (8 gotas), sacarina líquida (12 gotas en la masa y 6 en el frosting, o 40 g de eritritol + 6 gotas), 1 pellizco de sal (~0,5 g), ralladura de 1 naranja entera (masa) y de 1 limón entero (frosting). Opcional: 1/4 de cucharada de postre de jengibre y otro de nuez moscada. | Zanahoria: rállala muy fina y escúrrela bien; si va con su agua, la masa queda húmeda. | Base líquida y aromas: en un bol, bate los huevos, las claras, los 120 g de yogur griego, la vainilla, la sacarina, la sal y la ralladura de naranja. | Secos: incorpora la harina de avena, los 30 g de whey, la canela (y las especias opcionales) y la levadura. Mezcla bien. | Integrar: añade la zanahoria escurrida y las nueces picadas. | Horneado: 175 ºC durante 35-40 min, hasta que el palillo salga limpio. Deja enfriar completamente a temperatura ambiente. | Frosting: mezcla el queso fresco batido, los 30 g de yogur griego, los 15 g de whey, la sacarina y la ralladura de limón. Guárdalo en la nevera. | Montaje: solo con el bizcocho 100 % frío, extiende la cobertura. Conserva en la nevera.",
    "estilo": "casera"
   },
   {
@@ -95976,11 +95976,11 @@
    ],
    "activo": "SI",
    "fuente": "Recetas de Alfonso (plan de Pedro)",
-   "notas": null,
+   "notas": "Sin queso fresco batido: 130 g de yogur griego + 20 ml de leche proteica. Con nueces, unas 110 kcal por porción.",
    "tipo": "lote",
    "tiempo_min": null,
    "coste_porcion": null,
-   "pasos": null,
+   "pasos": "Además: vainilla concentrada (8-10 gotas), 3-4 gotas de sacarina líquida (con el eritritol) y 1 g generoso de sal. Opcional: 15 g de nueces troceadas. Molde con papel vegetal. | Base: bate los huevos, las claras, el queso fresco batido, la crema de frutos secos, el eritritol, la sacarina, la vainilla y la sal hasta integrar la crema. La crema de frutos secos es la clave: anula la astringencia del cacao. | Secos: añade la avena, la whey, el cacao y la levadura. Mezcla suavemente hasta que no queden grumos. | Toque crujiente: incorpora el chocolate negro picado a cuchillo (y, si quieres, las nueces). | Horneado: vierte en el molde y hornea a 175-180 ºC durante 18-20 min. | Punto ideal: sácalo cuando el palillo salga del centro con migas húmedas pegadas. Si sale limpio, ya se ha secado.",
    "estilo": "casera"
   },
   {
@@ -96006,11 +96006,11 @@
    ],
    "activo": "SI",
    "fuente": "Recetas de Alfonso (plan de Pedro)",
-   "notas": "Si se corta en 8 porciones, unas 185 kcal cada una.",
+   "notas": "Con quark en lugar de queso fresco batido también sale. Si se corta en 8 porciones, unas 185 kcal cada una.",
    "tipo": "lote",
    "tiempo_min": null,
    "coste_porcion": null,
-   "pasos": null,
+   "pasos": "Además: 8-10 gotas de sacarina líquida (con el eritritol del relleno), vainilla concentrada (14-16 gotas) y ralladura de 1 limón entero. Molde de 22-24 cm. | Base: mezcla la harina de avena, la almendra, la canela, los 8 g de eritritol y el yogur (o un chorrito de leche proteica) hasta tener una pasta. Compáctala en el fondo del molde y hornea 6-8 min a 170-180 ºC. Reserva. | Relleno: bate suavemente los 3 huevos con el queso fresco batido y el yogur griego. | Integrar: añade la proteína, la maicena, el eritritol, la sacarina, la vainilla y la ralladura. Integra a velocidad baja, sin meter demasiado aire. La maicena es indispensable: amarra el suero y evita que la tarta lo suelte. | Horneado: vierte sobre la base y hornea a 165-170 ºC durante 45-55 min. | Punto ideal: los bordes firmes y el centro con un ligero temblor tipo flan. | Reposo: apaga el horno, deja la puerta entreabierta 15 min y pásala a la nevera mínimo 4-6 h (ideal de un día para otro).",
    "estilo": "casera"
   },
   {
@@ -96040,7 +96040,7 @@
    "tipo": "lote",
    "tiempo_min": null,
    "coste_porcion": null,
-   "pasos": null,
+   "pasos": "Además: vainilla concentrada (6-8 gotas), sacarina líquida (8-10 gotas, o 40 g de eritritol + 4 gotas), ralladura de medio limón y canela extra para espolvorear. | Manzana: pélala y córtala en dos partes: 200 g en dados (van dentro) y 100 g en láminas finas (van encima). | Base líquida: bate los huevos, las claras, el yogur, la vainilla, el edulcorante y la ralladura de limón. | Secos: añade la harina de avena, la whey, la levadura y la canela. | Integrar: incorpora los 200 g de manzana en dados. | Montaje: vierte en el molde, coloca las láminas de manzana por la superficie, añade las nueces picadas y espolvorea canela por encima. | Horneado: 175 ºC durante 35-40 min.",
    "estilo": "casera"
   },
   {
@@ -96065,11 +96065,11 @@
    ],
    "activo": "SI",
    "fuente": "Recetas de Alfonso (plan de Pedro)",
-   "notas": "Con yogur griego 0 % o más queso batido en lugar del yogur, la proteína sube a unos 15 g por porción.",
+   "notas": "La original daba 15-16 g de proteína por porción; con yogur griego normal salen unos 11-12 g. Para llegar a 15 g, usa yogur griego 0 % o cambia el yogur por más queso fresco batido.",
    "tipo": "lote",
    "tiempo_min": null,
    "coste_porcion": null,
-   "pasos": null,
+   "pasos": "Además: ralladura de 2 limones enteros (más un poco para servir), vainilla concentrada (6 gotas) y sacarina líquida (8-10 gotas, o 40 g de eritritol + 4 gotas). Molde pequeño forrado con papel vegetal. | Mezcla: bate todos los ingredientes, con el zumo de limón filtrado, hasta conseguir una crema fina y homogénea, sin grumos. | Horneado: vierte en el molde y hornea a 170 ºC durante 30-35 min. | Reposo en el horno: apágalo y deja la tarta dentro 10 min más con la puerta entreabierta. | Frío: deja enfriar a temperatura ambiente y después reposar en la nevera mínimo 3-4 h. | Servir con ralladura fresca de limón por encima.",
    "estilo": "casera"
   },
   {

@@ -60,6 +60,11 @@
     aviso(`En tu menú: ${DIAS_SEMANA[dia].toLowerCase()}, ${c?.nombre.toLowerCase()}`);
     cerrar();
   }
+  // «Título: texto» → el título en negrita (Horneado, Punto ideal, Reposo…)
+  function tituloPaso(p) {
+    const i = p.indexOf(':');
+    return i > 0 && i <= 40 && !/\d$/.test(p.slice(0, i)) ? [p.slice(0, i), p.slice(i + 1)] : null;
+  }
 </script>
 
 <Hoja titulo={r.n} {cerrar}>
@@ -101,8 +106,8 @@
 
   {#if r.pasos?.length}
     <div class="col" style="gap:6px">
-      <span class="etiqueta">Cómo se hace</span>
-      <ol class="pasos">{#each r.pasos as p}<li>{p}</li>{/each}</ol>
+      <span class="etiqueta">Protocolo</span>
+      <ol class="pasos">{#each r.pasos as p}{@const t = tituloPaso(p)}<li>{#if t}<b>{t[0]}:</b>{t[1]}{:else}{p}{/if}</li>{/each}</ol>
     </div>
   {/if}
   {#if r.notas}<p class="sec peq">{r.notas}</p>{/if}
