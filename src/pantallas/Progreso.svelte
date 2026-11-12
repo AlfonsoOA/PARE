@@ -125,7 +125,7 @@
         <span class="etiqueta">Adherencia (%)</span>
         <Grafica puntos={enc.filter((e) => e.puntos.global != null).map((e) => ({ f: e.fecha, v: e.puntos.global }))} unidad="%" />
         <p class="peq">Última ({fmtFecha(ult.fecha)}): <b>{nivel(ult.puntos.global)} ({ult.puntos.global} %)</b>{[['dieta', ult.puntos.dieta], ['entreno', ult.puntos.entreno], ['hábito', ult.puntos.habito]].filter(([, v]) => v != null).map(([k, v]) => ` · ${k} ${v} %`).join('')}</p>
-        {#if ult.auto?.previstas}<p class="sec peq">Sesiones: {ult.auto.hechas} de {ult.auto.previstas} en 14 días.</p>{/if}
+        {#if ult.auto?.previstas}<p class="sec peq">Sesiones: {ult.auto.hechas} de {ult.auto.previstas} previstas en {ult.auto.dias ?? 14} días.</p>{/if}
         <p class="sec peq">{P_ESTADO.map((p) => `${p.t.split(' (')[0]}: ${p.escala.find(([v]) => v === ult.r[p.id])?.[1]?.toLowerCase() ?? '—'}`).join(' · ')}</p>
       </div>
       {@const frec = barrerasFrecuentes(d)}

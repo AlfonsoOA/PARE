@@ -96,13 +96,16 @@ export const posponerEncuesta = (d = app.datos) => { d.encuestaPospuesta = hoyIS
 
 // ---------- Métricas automáticas (lo que la app ya sabe) ----------
 export function metricasAuto(d = app.datos, hasta = hoyISO()) {
-  const desde = menosDias(hasta, CADA_DIAS - 1);
+  // la ventana empieza cuando empezó a usar la app (lo de antes no está registrado y no puede contar como fallado)
+  const usoDesde = [d.creado?.slice(0, 10), d.sesiones[0]?.fecha].filter(Boolean).sort()[0] ?? hasta;
+  const desde = [menosDias(hasta, CADA_DIAS - 1), usoDesde].sort().at(-1);
   const dentro = (f) => f >= desde && f <= hasta;
   const hechas = d.sesiones.filter((s) => dentro(s.fecha)).length;
   const porSemana = (+d.perfil.diasSemana || 0) + (+d.perfil.diasWod || 0) || d.rutina?.sesiones.length || 0;
-  const previstas = d.rutina ? porSemana * 2 : 0;
+  const dias = diasEntre(desde, hasta) + 1;
+  const previstas = d.rutina ? Math.max(1, Math.round((porSemana * dias) / 7)) : 0;
   const anotados = Object.keys(d.comidas || {}).filter((f) => dentro(f) && d.comidas[f]?.length).length;
-  return { desde, hasta, hechas, previstas, anotados, dias: CADA_DIAS };
+  return { desde, hasta, hechas, previstas, anotados, dias };
 }
 
 // ---------- Puntuaciones 0-100 ----------
@@ -124,7 +127,9 @@ export const nivel = (p) => (p == null ? '' : p >= 80 ? 'Alta' : p >= 60 ? 'Medi
 export function guardarEncuesta(r, barreras, d = app.datos) {
   const auto = metricasAuto(d);
   const e = { fecha: hoyISO(), r: { ...r }, barreras: [...barreras], auto, puntos: puntuar(r, auto) };
-  (d.encuestas ||= []).push(e);
+  d.encuestas ||= [];
+  // si la repite el mismo día, vale la última
+  if (d.encuestas.at(-1)?.fecha === e.fecha) d.encuestas[d.encuestas.length - 1] = e; else d.encuestas.push(e);
   d.encuestaPospuesta = null;
   return e;
 }

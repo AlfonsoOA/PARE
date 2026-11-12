@@ -34,7 +34,7 @@
 
   {#if !hecha}
     <h1>Tu revisión quincenal</h1>
-    <p class="sec peq">Menos de un minuto y sin escribir nada. Sirve para ver cómo vas y proponerte ajustes.{#if auto.previstas}{" "}En estos 14 días llevas <b>{auto.hechas} de {auto.previstas}</b> sesiones previstas: eso ya lo cuenta la app.{/if}</p>
+    <p class="sec peq">Menos de un minuto y sin escribir nada. Sirve para ver cómo vas y proponerte ajustes.{#if auto.previstas}{" "}En {auto.dias === 14 ? 'estos 14 días' : `estos ${auto.dias} días con la app`} llevas <b>{auto.hechas} de {auto.previstas}</b> sesiones previstas: eso ya lo cuenta la app.{/if}</p>
 
     {#if conDieta}
       <div class="tarjeta">
