@@ -2,6 +2,7 @@
   import { app } from '../lib/estado.svelte.js';
   import Icono from '../componentes/Icono.svelte';
   import Logo from '../componentes/Logo.svelte';
+  import { URL_OPINION } from '../lib/instalar.js';
   let d = $derived(app.datos);
   const ir = (nombre, extra = {}) => (app.vista = { nombre, acento: 'yo', ...extra });
   const filas = $derived([
@@ -15,12 +16,14 @@
     ...(d.entrenador.activo ? [['deportistas', 'Mis deportistas', `${d.entrenador.deportistas.length} deportistas`]] : []),
     ['ajustes', 'Ajustes', `Unidades ${d.ajustes.unidades}, incrementos, pantalla`],
     ['instalar', 'Instalar y compartir PARE', 'Tenerla como app · pasársela a la gente del gimnasio'],
+    ...(URL_OPINION ? [['opinion', 'Danos tu opinión', 'Un minuto, anónimo: fallos, ideas, lo que echas en falta']] : []),
   ]);
   function abrir(k) {
     if (k === 'perfil-molestias') return ir('perfil', { seccion: 'molestias' });
     if (k === 'editor') return (app.vista = { nombre: 'editor', acento: 'entrenar' });
     if (k === 'midieta') return (app.vista = { nombre: 'midieta', acento: 'comer' });
     if (k === 'test') return (app.vista = { nombre: 'test' });
+    if (k === 'opinion') return window.open(URL_OPINION, '_blank', 'noopener');
     ir(k);
   }
 </script>
