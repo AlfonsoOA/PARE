@@ -28,6 +28,7 @@
   import Instalar from './pantallas/Instalar.svelte';
   import EditorReceta from './pantallas/EditorReceta.svelte';
   import Wod from './pantallas/Wod.svelte';
+  import Encuesta from './pantallas/Encuesta.svelte';
   import ProgresoWod from './pantallas/ProgresoWod.svelte';
 
   let error = $state(null);
@@ -38,10 +39,10 @@
   const VISTAS = {
     test: Test, plan: TuPlan, sesion: Sesion, fin: FinSesion, editor: EditorRutina, ficha: FichaEjercicio,
     progresoEj: ProgresoEjercicio, midieta: MiDieta, archivo: Archivo, deportistas: Deportistas,
-    deportista: Deportista, cambios: Cambios, ajustes: Ajustes, perfil: Perfil, instalar: Instalar, editorReceta: EditorReceta, wod: Wod, progresoWod: ProgresoWod,
+    deportista: Deportista, cambios: Cambios, ajustes: Ajustes, perfil: Perfil, instalar: Instalar, editorReceta: EditorReceta, wod: Wod, progresoWod: ProgresoWod, encuesta: Encuesta,
   };
   const TABS = { hoy: Hoy, entrenar: Entrenar, comer: Comer, progreso: Progreso, yo: Yo };
-  const SIN_BARRA = new Set(['test', 'plan', 'sesion', 'fin', 'bienvenida', 'editorReceta', 'wod']);
+  const SIN_BARRA = new Set(['test', 'plan', 'sesion', 'fin', 'bienvenida', 'editorReceta', 'wod', 'encuesta']);
 
   const nuevo = $derived(app.listo && !app.datos.rutina && !app.datos.perfil.test);
   const Vista = $derived(app.vista && VISTAS[app.vista.nombre]);

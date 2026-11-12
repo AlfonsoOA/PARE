@@ -10,6 +10,8 @@
   import Grafica from '../componentes/Grafica.svelte';
   import Hoja from '../componentes/Hoja.svelte';
   import AnotarMedida from '../componentes/AnotarMedida.svelte';
+  import ContrasteBascula from '../componentes/ContrasteBascula.svelte';
+  import { barrerasFrecuentes, NOMBRE_BARRERA, pautasDe, nivel, P_ESTADO } from '../lib/adherencia.js';
 
   // Si se pasa `datos` (modo entrenador), se muestran los de ese deportista en solo lectura.
   let { datos = null, depId = null } = $props();
@@ -46,25 +48,12 @@
     if (!ult || !d.perfil.altura) return null;
     return grasaNavy({ sexo: d.perfil.sexo, altura: d.perfil.altura, cintura: ult.cintura, cuello: ult.cuello, cadera: ult.cadera });
   });
-  // Gasto real (TDEE adaptativo): ingesta media − cambio de peso × 7.700 kcal/kg, con ≥14 días de datos.
-  const gastoReal = $derived.by(() => {
-    if (!d.dieta) return null;
-    const dias = Object.keys(d.comidas).filter((f) => (d.comidas[f] || []).length).sort();
-    if (dias.length < 14 || mediaMovil.length < 2) return null;
-    const ini = dias[0], fin = dias.at(-1);
-    const kcal = dias.reduce((s, f) => s + sumar(d.comidas[f]).kcal, 0) / dias.length;
-    const mIni = mediaMovil.find((m) => m.f >= ini) ?? mediaMovil[0];
-    const mFin = mediaMovil.at(-1);
-    const nd = Math.max(7, (Date.parse(mFin.f) - Date.parse(mIni.f)) / 864e5);
-    const dkg = (mFin.v - mIni.v) / (ud() === 'lb' ? 2.20462 : 1);
-    return Math.round(kcal - (dkg * 7700) / nd);
-  });
 </script>
 
 <div class="pantalla">
   {#if !lectura}<div class="cabecera"><h1>Progreso</h1></div>{/if}
   <div class="pestanas" role="tablist">
-    {#each [['ejercicios', 'Ejercicios'], ...(wods.length ? [['wod', 'WOD']] : []), ['volumen', 'Volumen'], ['cuerpo', 'Cuerpo'], ['historial', 'Historial']] as [v, l]}
+    {#each [['ejercicios', 'Ejercicios'], ...(wods.length ? [['wod', 'WOD']] : []), ['volumen', 'Volumen'], ['cuerpo', 'Cuerpo'], ['adherencia', 'Adherencia'], ['historial', 'Historial']] as [v, l]}
       <button role="tab" aria-selected={sub === v} class:on={sub === v} onclick={() => { sub = v; app.subProgreso = v; }}>{l}</button>
     {/each}
   </div>
@@ -124,16 +113,34 @@
       <Grafica puntos={cinturas} unidad="cm" />
       {#if grasa != null}<p class="peq">Grasa corporal estimada (fórmula de la Marina de EE. UU.): <b>{fmtNum(grasa, 1)} %</b></p>{/if}
     </div>
-    <div class="tarjeta">
-      <span class="etiqueta">Gasto real estimado</span>
-      {#if gastoReal}
-        <p class="cifra">{gastoReal.toLocaleString('es-ES')} kcal</p>
-        <p class="sec peq">Calculado con lo que comes y cómo cambia tu peso. Previsto al empezar: {d.dieta.tdee.toLocaleString('es-ES')} kcal.
-          {#if Math.abs(gastoReal - d.dieta.tdee) > 150} Hay una diferencia apreciable: conviene ajustar la dieta en Yo → Mi dieta.{/if}</p>
-      {:else}
-        <p class="sec peq">A partir de 2-3 semanas anotando comida y peso, PARE calcula tu gasto real.</p>
+    <ContrasteBascula datos={d} />
+
+  {:else if sub === 'adherencia'}
+    {@const enc = d.encuestas ?? []}
+    {@const ult = enc.at(-1)}
+    {#if !enc.length}
+      <p class="sec peq">Cada dos semanas aparece en Hoy una revisión de menos de un minuto. Con ella, aquí verás cómo evoluciona tu adherencia a la dieta y al entreno.</p>
+    {:else}
+      <div class="tarjeta">
+        <span class="etiqueta">Adherencia (%)</span>
+        <Grafica puntos={enc.filter((e) => e.puntos.global != null).map((e) => ({ f: e.fecha, v: e.puntos.global }))} unidad="%" />
+        <p class="peq">Última ({fmtFecha(ult.fecha)}): <b>{nivel(ult.puntos.global)} ({ult.puntos.global} %)</b>{[['dieta', ult.puntos.dieta], ['entreno', ult.puntos.entreno], ['hábito', ult.puntos.habito]].filter(([, v]) => v != null).map(([k, v]) => ` · ${k} ${v} %`).join('')}</p>
+        {#if ult.auto?.previstas}<p class="sec peq">Sesiones: {ult.auto.hechas} de {ult.auto.previstas} en 14 días · días con comida anotada: {ult.auto.anotados}.</p>{/if}
+        <p class="sec peq">{P_ESTADO.map((p) => `${p.t.split(' (')[0]}: ${p.escala.find(([v]) => v === ult.r[p.id])?.[1]?.toLowerCase() ?? '—'}`).join(' · ')}</p>
+      </div>
+      {@const frec = barrerasFrecuentes(d)}
+      {#if frec.length}
+        <div class="tarjeta" style="gap:6px">
+          <span class="etiqueta">Lo que más cuesta (últimas revisiones)</span>
+          {#each frec.slice(0, 3) as f}
+            <p class="peq"><b>{NOMBRE_BARRERA[f.id]}</b>{f.veces > 1 ? ` · ${f.veces} veces` : ''}</p>
+            {#each pautasDe(f.id) as t}<p class="sec peq">· {t}</p>{/each}
+          {/each}
+        </div>
       {/if}
-    </div>
+    {/if}
+    <ContrasteBascula datos={d} />
+    {#if !lectura}<button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'encuesta', acento: 'progreso' })}>Hacer la revisión ahora</button>{/if}
 
   {:else if sub === 'wod'}
     <p class="sec peq">Cada WOD se compara solo consigo mismo y con la misma escala (RX, escalado o personalizado).</p>

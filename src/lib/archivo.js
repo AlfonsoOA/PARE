@@ -3,7 +3,7 @@
 // · 'cambios' = lo que el entrenador devuelve (rutina o dieta propuestas).
 import { app, aviso, reemplazarDatos, hoyISO, ESQUEMA, ir } from './estado.svelte.js';
 
-export const INCLUYE = [['rutina', 'Rutina'], ['dieta', 'Dieta'], ['progreso', 'Progreso (sesiones y medidas)'], ['test', 'Test de inicio']];
+export const INCLUYE = [['rutina', 'Rutina'], ['dieta', 'Dieta'], ['progreso', 'Progreso (sesiones, medidas y adherencia)'], ['test', 'Test de inicio']];
 
 export function archivoDeportista(incluye, autorizaCentro) {
   const d = app.datos;
@@ -11,7 +11,7 @@ export function archivoDeportista(incluye, autorizaCentro) {
   if (!incluye.includes('test')) { datos.perfil.test = null; }
   if (incluye.includes('rutina')) { datos.rutina = d.rutina; datos.secuencia = d.secuencia; }
   if (incluye.includes('dieta')) { datos.dieta = d.dieta; datos.comidas = d.comidas; }
-  if (incluye.includes('progreso')) { datos.sesiones = d.sesiones; datos.medidas = d.medidas; }
+  if (incluye.includes('progreso')) { datos.sesiones = d.sesiones; datos.medidas = d.medidas; datos.encuestas = d.encuestas ?? []; }
   return cabecera('deportista', { incluye, autoriza: { entrenador: true, centro: !!autorizaCentro }, datos });
 }
 /** Una rutina para compartir (por ejemplo, con quien entrenas): sin cargas, cada uno pone las suyas. */

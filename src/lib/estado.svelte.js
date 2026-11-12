@@ -49,6 +49,8 @@ export function datosVacios() {
     gustosRecetas: {}, // rid -> 1 (me gusta) | -1 (no me gusta)
     recetasPropias: [], // recetas creadas por el deportista o recibidas en un archivo
     wodsGuardados: [], // WOD propios o recibidos (biblioteca personal)
+    encuestas: [], // encuesta quincenal de adherencia: { fecha, r, barreras, auto, puntos }
+    encuestaPospuesta: null,
     avisosDescartados: {},
     entrenador: { activo: false, deportistas: [] },
     cambiosPropuestos: null,

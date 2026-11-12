@@ -10,6 +10,7 @@
   import Hoja from '../componentes/Hoja.svelte';
   import Icono from '../componentes/Icono.svelte';
   import AnotarMedida from '../componentes/AnotarMedida.svelte';
+  import { encuestaPendiente, posponerEncuesta } from '../lib/adherencia.js';
 
   let d = $derived(app.datos);
   const hoy = hoyISO();
@@ -70,6 +71,14 @@
       <button class="x" onclick={() => descartar(a.id)} aria-label="Descartar aviso">×</button>
     </div>
   {/each}
+
+  {#if !app.sesionActiva && encuestaPendiente(d)}
+    <div class="tarjeta">
+      <span class="etiqueta acento">Revisión quincenal</span>
+      <p class="peq">¿Cómo van estas dos semanas? Menos de un minuto, todo de tocar.</p>
+      <div class="fila" style="gap:8px"><button class="boton" style="flex:1" onclick={() => (app.vista = { nombre: 'encuesta', acento: 'hoy' })}>Responder</button><button class="boton sec2" style="flex:1" onclick={() => posponerEncuesta(d)}>Mañana</button></div>
+    </div>
+  {/if}
 
   {#if app.sesionActiva}
     <div class="tarjeta">
