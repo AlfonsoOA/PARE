@@ -84,7 +84,7 @@
       <button class="boton ancho" onclick={() => (app.vista = { nombre: 'test' })}>Hacer el test</button>
       <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'editor', acento: 'entrenar' })}>Crear mi rutina</button>
     </div>
-  {:else if hechaHoy.length}
+  {:else if hechaHoy.length && elegida == null}
     <div class="tarjeta">
       <span class="etiqueta acento">Hecho hoy</span>
       <h2>{hechaHoy.map((s) => s.nombre).join(' + ')}</h2>

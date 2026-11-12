@@ -96,13 +96,15 @@
   function guardarSerie(marcar) {
     const { i, k } = hoja;
     const x = sa.ejercicios[i], z = x.series[k];
+    const antes0 = z.carga;
     if (ed.modo) {
       const v = Math.abs(guardar(ed.carga) || 0);
       z.carga = ed.modo === 'lastre' ? v : ed.modo === 'asistencia' ? -v : 0;
     } else z.carga = ed.carga === '' || ed.carga == null ? null : guardar(ed.carga);
     z.reps = +ed.reps;
     z.rir = ed.rir;
-    for (let j = k + 1; j < x.series.length; j++) if (!x.series[j].hecha && x.series[j].carga == null) x.series[j].carga = z.carga;
+    // las series siguientes sin hacer que llevaban el mismo peso (o ninguno) pasan al nuevo; las de una pirámide, no
+    if (z.carga !== antes0) for (let j = k + 1; j < x.series.length; j++) { const y = x.series[j]; if (!y.hecha && (y.carga == null || y.carga === antes0)) y.carga = z.carga; }
     const antes = z.hecha;
     if (marcar) z.hecha = true;
     hoja = null;

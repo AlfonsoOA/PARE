@@ -337,19 +337,24 @@ export function proponerSiguiente(item, hecho, ajustes) {
   const prop = { ...item };
   if (!series.length) return { prop, motivo: 'Sin series hechas: se mantiene.' };
   const cargaHoy = Math.max(...series.map((z) => z.carga ?? 0));
-  if (item.carga == null) prop.carga = cargaHoy;
-  const completas = series.length >= item.series && series.every((z) => (z.reps || 0) >= item.repMax && (z.carga ?? 0) >= (prop.carga ?? 0));
-  if (!completas) return { prop, motivo: `Aún no has llegado a ${item.repMax} repeticiones en todas las series: misma carga.` };
-  if (usaPesoCorporal(e) && !(prop.carga > 0)) {
+  // pesos de cada serie tal como se hicieron (pirámide, bajada en la última…)
+  prop.cargas = series.map((z) => z.carga ?? 0);
+  prop.carga = cargaHoy;
+  const completas = series.length >= item.series && series.every((z) => (z.reps || 0) >= item.repMax);
+  if (!completas) return { prop, motivo: `Aún no has llegado a ${item.repMax} repeticiones en todas las series: mismos pesos.` };
+  if (usaPesoCorporal(e) && !(cargaHoy > 0)) {
     if (item.repMax < 20) {
       prop.repMin = item.repMin + 2; prop.repMax = item.repMax + 2;
       return { prop, motivo: `Todas las series a ${item.repMax}: sube el rango a ${prop.repMin}-${prop.repMax} (o añade lastre).` };
     }
+    prop.cargas = prop.cargas.map(() => incremento(item.ej, ajustes));
     prop.carga = incremento(item.ej, ajustes);
     return { prop, motivo: 'Rango alto completado: empieza a añadir lastre.' };
   }
-  prop.carga = (prop.carga ?? 0) + incremento(item.ej, ajustes);
-  return { prop, motivo: `Todas las series a ${item.repMax}: sube la carga y vuelve a ${item.repMin} repeticiones.`, sube: true };
+  const inc = incremento(item.ej, ajustes);
+  prop.cargas = prop.cargas.map((c) => c + inc);
+  prop.carga = cargaHoy + inc;
+  return { prop, motivo: `Todas las series a ${item.repMax}: sube el peso de cada serie y vuelve a ${item.repMin} repeticiones.`, sube: true };
 }
 
 // ---------- Nivel ----------

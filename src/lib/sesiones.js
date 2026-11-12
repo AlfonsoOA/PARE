@@ -72,13 +72,24 @@ export function ultimaVez(idEj, d = app.datos) {
   }
   return null;
 }
-function repsObjetivo(it, previa, k) {
+/**
+ * Peso con el que empieza la serie k: el de esa misma serie guardado en la rutina (pirámides incluidas);
+ * si no hay, el peso único del ejercicio; si tampoco, lo que hiciste en esa serie la última vez.
+ */
+export function cargaSerie(it, previa, k) {
+  if (it.cargas?.length) return it.cargas[Math.min(k, it.cargas.length - 1)] ?? it.carga ?? null;
+  if (it.carga != null) return it.carga;
+  const ps = previa?.series;
+  return ps?.length ? (ps[Math.min(k, ps.length - 1)].carga ?? null) : null;
+}
+function repsObjetivo(it, previa, k, carga) {
   const z = previa?.series?.[k];
-  if (z && it.carga != null && (z.carga ?? 0) === (it.carga ?? 0)) return Math.min(it.repMax, (z.reps || it.repMin) + 1);
+  if (z && carga != null && (z.carga ?? 0) === (carga ?? 0)) return Math.min(it.repMax, (z.reps || it.repMin) + 1);
   return it.repMin;
 }
 export function nuevaSerie(it, previa, k) {
-  return { carga: it.carga, reps: repsObjetivo(it, previa, k), hecha: false, rir: null };
+  const carga = cargaSerie(it, previa, k);
+  return { carga, reps: repsObjetivo(it, previa, k, carga), hecha: false, rir: null };
 }
 export function iniciarSesion(idx, items = null, nombre = null) {
   const r = app.datos.rutina;
@@ -113,6 +124,15 @@ export function terminarSesion() {
   app.datos.sesiones.push(hecha);
   app.datos.sesiones.sort((a, b) => a.fecha.localeCompare(b.fecha));
   if (sa.sesionIdx != null && app.datos.rutina) marcarHecha(sa.sesionIdx);
+  // Los pesos de cada serie pasan a la rutina tal cual se hicieron (pirámides incluidas), aunque luego no se pulse «Guardar».
+  const ses = app.datos.rutina?.sesiones.find((y) => y.id === sa.sesionId);
+  if (ses) for (const x of hecha.ejercicios) {
+    const it = ses.items.find((y) => y.uid === x.uid);
+    const hechas = x.series.filter((z) => z.hecha && z.carga != null);
+    if (!it || !hechas.length) continue;
+    it.cargas = hechas.map((z) => z.carga);
+    it.carga = Math.max(...it.cargas);
+  }
   app.sesionActiva = null;
   app.vista = { nombre: 'fin', id: hecha.id, acento: 'entrenar' };
 }

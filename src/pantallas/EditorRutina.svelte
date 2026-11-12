@@ -83,7 +83,7 @@
   function guardarRutina() {
     const limpia = JSON.parse(JSON.stringify(r));
     for (const s of limpia.sesiones) {
-      s.items = s.items.map(({ _carga, ...it }) => ({ ...it, series: +it.series, repMin: +it.repMin, repMax: Math.max(+it.repMin, +it.repMax), descanso: +it.descanso, carga: _carga === '' || _carga == null ? null : guardar(_carga) }));
+      s.items = s.items.map(({ _carga, ...it }) => { const carga = _carga === '' || _carga == null ? null : guardar(_carga); const cambia = carga !== it.carga; return { ...it, series: +it.series, repMin: +it.repMin, repMax: Math.max(+it.repMin, +it.repMax), descanso: +it.descanso, carga, cargas: cambia ? undefined : it.cargas }; });
       if (s.items.length) s.items.at(-1).unir = false;
     }
     limpia.version = (origen?.version ?? 0) + 1;
@@ -167,6 +167,7 @@
               <label class="campo">{ud()}<input type="number" inputmode="decimal" step="0.25" bind:value={it._carga} placeholder="—" /></label>
               <label class="campo">Desc. (s)<input type="number" inputmode="numeric" step="15" bind:value={it.descanso} /></label>
             </div>
+            {#if it.cargas?.length > 1 && new Set(it.cargas).size > 1 && guardar(it._carga) === it.carga}<p class="sec peq">Por serie: {it.cargas.map((c) => fmtNum(mostrar(c))).join(' · ')} {ud()}. Si cambias el peso de arriba, todas las series pasan a ese peso.</p>{/if}
             <input type="text" bind:value={it.nota} placeholder="Nota (RPE, técnica…), opcional" aria-label="Nota del ejercicio" style="min-height:40px;font-size:14px" />
             <div class="fila acciones">
               <button class="icono-b" onclick={() => moverI(s, k, -1)} aria-label="Subir"><Icono n="arriba" /></button>

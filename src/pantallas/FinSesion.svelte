@@ -17,7 +17,10 @@
     return n.map((z) => ({ ...z, ej: x.ej }));
   }) : [];
   // Para la próxima: editable (en unidades de pantalla)
-  let prox = $state(s ? propuestasPara(s).map((p) => ({ ...p, carga: mostrar(p.prop.carga) ?? '' })) : []);
+  let prox = $state(s ? propuestasPara(s).map((p) => ({ ...p, cargas: (p.prop.cargas?.length ? p.prop.cargas : [p.prop.carga]).map((c) => mostrar(c) ?? '') })) : []);
+  // una casilla de peso por serie (si se cambia el número de series, se repite el último peso)
+  const casillas = (p) => Array.from({ length: Math.max(1, +p.prop.series || 1) }, (_, k) => k);
+  const valorSerie = (p, k) => p.cargas[k] ?? p.cargas.at(-1) ?? '';
   let nota = $state(s?.nota ?? '');
   let sensacion = $state(s?.sensacion ?? null);
 
@@ -29,7 +32,10 @@
         const it = ses.items.find((y) => y.uid === p.uid);
         if (!it) continue;
         it.series = +p.prop.series; it.repMin = +p.prop.repMin; it.repMax = +p.prop.repMax;
-        it.descanso = +p.prop.descanso; it.carga = p.carga === '' ? null : guardar(p.carga);
+        it.descanso = +p.prop.descanso;
+        const cs = casillas(p).map((k) => valorSerie(p, k)).map((v) => (v === '' || v == null ? null : guardar(v)));
+        if (cs.every((c) => c == null)) { it.carga = null; it.cargas = undefined; }
+        else { const f = cs.map((c, k) => c ?? cs.slice(0, k).reverse().find((y) => y != null) ?? cs.find((y) => y != null)); it.cargas = f; it.carga = Math.max(...f); }
       }
     }
     aviso('Guardado. Earn your reward.');
@@ -81,8 +87,13 @@
           <label class="campo">Series<input type="number" inputmode="numeric" bind:value={p.prop.series} /></label>
           <label class="campo">Reps mín.<input type="number" inputmode="numeric" bind:value={p.prop.repMin} /></label>
           <label class="campo">Reps máx.<input type="number" inputmode="numeric" bind:value={p.prop.repMax} /></label>
-          <label class="campo">{p.bw ? `Lastre (${ud()})` : `Carga (${ud()})`}<input type="number" inputmode="decimal" step="0.25" bind:value={p.carga} /></label>
           <label class="campo">Descanso (s)<input type="number" inputmode="numeric" step="15" bind:value={p.prop.descanso} /></label>
+        </div>
+        <span class="etiqueta">{p.bw ? `Lastre por serie (${ud()})` : `Peso por serie (${ud()})`}</span>
+        <div class="series">
+          {#each casillas(p) as k}
+            <label class="campo">S{k + 1}<input type="number" inputmode="decimal" step="0.25" value={valorSerie(p, k)} oninput={(ev) => (p.cargas[k] = ev.currentTarget.value)} aria-label="Peso de la serie {k + 1}" /></label>
+          {/each}
         </div>
       </div>
     {/each}
@@ -100,6 +111,8 @@
 <style>
   .rej { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
   .rej input { text-align: center; padding: 0 6px; }
+  .series { display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 8px; }
+  .series input { text-align: center; padding: 0 6px; }
   .logros { border-color: #5a4a1c; }
   .pantalla { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 28px); }
 </style>
