@@ -5,6 +5,7 @@
   let { datos } = $props();
   const c = $derived(contrasteBascula(datos));
   const kgSem = (v) => { const x = v * (ud() === 'lb' ? 2.20462 : 1); return Math.abs(x) < 0.005 ? `±0 ${ud()}/semana` : `${x > 0 ? '+' : '−'}${fmtNum(Math.abs(x), 2)} ${ud()}/semana`; };
+  const dp = $derived(datos.encuestas?.at(-1)?.r?.dp);
   const comes = $derived(c.ok && (c.modo === 'anotado' ? 'lo que anotas' : 'lo que marca tu dieta'));
 </script>
 
@@ -21,7 +22,7 @@
       {#if c.lectura === 'cuadra'}
         <b>Cuadra.</b> Con {comes} ({c.kcal.toLocaleString('es-ES')} kcal/día) y tu gasto estimado, la báscula hace lo que tiene que hacer.
       {:else if c.lectura === 'por_encima'}
-        <b>La báscula va por encima de lo esperado</b>, como si comieras unas <b>{c.difKcal.toLocaleString('es-ES')} kcal/día más</b> que {comes}. O hay extras que no se cuentan (picoteo, aceite, bebidas, fines de semana), o tu gasto es menor del estimado.
+        <b>La báscula va por encima de lo esperado</b>, como si comieras unas <b>{c.difKcal.toLocaleString('es-ES')} kcal/día más</b> que {comes}. O hay extras que no se cuentan (picoteo, aceite, bebidas, fines de semana), o tu gasto es menor del estimado.{#if c.modo === 'plan' && dp != null && dp < 100}{' '}En tu última revisión dijiste que seguías {dp === 90 ? 'casi todas' : `el ${dp}\u00a0%`} de las comidas: encaja.{/if}
       {:else}
         <b>Bajas más deprisa de lo esperado</b>, como si comieras unas <b>{Math.abs(c.difKcal).toLocaleString('es-ES')} kcal/día menos</b> que {comes}. O tu gasto es mayor del estimado, o comes menos de lo que crees. Si no buscas déficit, sube algo la ingesta.
       {/if}

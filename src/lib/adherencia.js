@@ -9,10 +9,9 @@ const menosDias = (iso, n) => new Date(Date.parse(iso + 'T12:00:00') - n * dia).
 const diasEntre = (a, b) => Math.round((Date.parse(b + 'T12:00:00') - Date.parse(a + 'T12:00:00')) / dia);
 
 // ---------- Preguntas (todo de tocar, nada que escribir) ----------
-// Dieta, adaptadas del PDAQ: días de los últimos 7 (0-7).
+// Dieta (idea del PDAQ, en una sola pregunta): % de comidas que siguieron el plan. Nada que anotar.
 export const P_DIETA = [
-  { id: 'd1', t: 'En los últimos 7 días, ¿cuántos días seguiste tu plan de comidas?' },
-  { id: 'd2', t: '¿Cuántos días comiste más de la cuenta o picoteaste fuera del plan?', inversa: true },
+  { id: 'dp', t: 'En estas dos semanas, ¿cuántas de tus comidas siguieron la dieta?', escala: [[10, 'Casi ninguna'], [25, 'Una de cada 4'], [50, 'La mitad'], [75, 'Tres de cada 4'], [90, 'Casi todas'], [100, 'Todas']] },
 ];
 // Entreno, adaptadas de la EARS (conducta): acuerdo 1-5.
 export const P_ENTRENO = [
@@ -110,7 +109,7 @@ export function metricasAuto(d = app.datos, hasta = hoyISO()) {
 const media = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null);
 const acuerdo01 = (v, inversa) => (v == null ? null : inversa ? (5 - v) / 4 : (v - 1) / 4);
 export function puntuar(r, auto) {
-  const pDieta = r.d1 != null ? 100 * (0.6 * (r.d1 / 7) + 0.4 * (1 - (r.d2 ?? 0) / 7)) : null;
+  const pDieta = r.dp != null ? r.dp : r.d1 != null ? 100 * (0.6 * (r.d1 / 7) + 0.4 * (1 - (r.d2 ?? 0) / 7)) : null; // d1/d2: versión anterior
   const items = media([acuerdo01(r.e1), acuerdo01(r.e2, true)].filter((x) => x != null));
   let pEntreno = null;
   if (auto?.previstas) pEntreno = 100 * (0.6 * Math.min(1, auto.hechas / auto.previstas) + 0.4 * (items ?? Math.min(1, auto.hechas / auto.previstas)));

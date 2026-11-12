@@ -34,14 +34,14 @@
 
   {#if !hecha}
     <h1>Tu revisión quincenal</h1>
-    <p class="sec peq">Menos de un minuto y sin escribir nada. Sirve para ver cómo vas y proponerte ajustes.{#if auto.previstas}{" "}En estos 14 días llevas <b>{auto.hechas} de {auto.previstas}</b> sesiones previstas{d.dieta ? ` y ${auto.anotados} días con comida anotada` : ''}: eso ya lo cuenta la app.{/if}</p>
+    <p class="sec peq">Menos de un minuto y sin escribir nada. Sirve para ver cómo vas y proponerte ajustes.{#if auto.previstas}{" "}En estos 14 días llevas <b>{auto.hechas} de {auto.previstas}</b> sesiones previstas: eso ya lo cuenta la app.{/if}</p>
 
     {#if conDieta}
       <div class="tarjeta">
-        <span class="etiqueta">Comida · últimos 7 días</span>
+        <span class="etiqueta">Dieta</span>
         {#each P_DIETA as p}
           <p class="peq">{p.t}</p>
-          <div class="fila envolver" style="gap:6px">{#each [0, 1, 2, 3, 4, 5, 6, 7] as v}<button class="chip n" class:on={r[p.id] === v} onclick={() => (r[p.id] = v)}>{v}</button>{/each}</div>
+          <div class="fila envolver" style="gap:6px">{#each p.escala as [v, l]}<button class="chip" class:on={r[p.id] === v} onclick={() => (r[p.id] = v)}>{l}</button>{/each}</div>
         {/each}
       </div>
     {/if}
