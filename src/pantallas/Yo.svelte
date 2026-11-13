@@ -15,6 +15,7 @@
     ...(d.cambiosPropuestos ? [['cambios', 'Cambios propuestos', 'Tu entrenador te ha mandado cambios']] : []),
     ...(d.entrenador.activo ? [['deportistas', 'Mis deportistas', `${d.entrenador.deportistas.length} deportistas`]] : []),
     ['ajustes', 'Ajustes', `Unidades ${d.ajustes.unidades}, incrementos, pantalla`],
+    ['guia', 'Cómo se usa', 'La guía por tareas: entrenar, comer, progreso, copia…'],
     ['instalar', 'Instalar y compartir PARE', 'Tenerla como app · pasársela a la gente del gimnasio'],
     ...(URL_OPINION ? [['opinion', 'Danos tu opinión', 'Un minuto, anónimo: fallos, ideas, lo que echas en falta']] : []),
   ]);

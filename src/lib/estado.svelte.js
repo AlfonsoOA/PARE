@@ -51,6 +51,8 @@ export function datosVacios() {
     wodsGuardados: [], // WOD propios o recibidos (biblioteca personal)
     encuestas: [], // encuesta quincenal de adherencia: { fecha, r, barreras, auto, puntos }
     encuestaPospuesta: null,
+    guiaVista: false, // abrió «Cómo se usa» o descartó el aviso
+    ayudas: {}, // ayudas de primera vez ya vistas (comer…)
     avisosDescartados: {},
     entrenador: { activo: false, deportistas: [] },
     cambiosPropuestos: null,

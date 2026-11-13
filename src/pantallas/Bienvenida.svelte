@@ -34,6 +34,7 @@
 
   <button class="boton ancho" onclick={() => (app.vista = { nombre: 'test' })}>Empezar</button>
   <button class="boton sec2 ancho" onclick={() => entrada.click()}>Tengo un archivo PARE</button>
+  <button class="enlace" style="align-self:center" onclick={() => (app.vista = { nombre: 'guia', acento: 'hoy' })}>¿Cómo funciona? Ver la guía</button>
   {#if !instalada()}<button class="enlace" style="align-self:center" onclick={() => (app.vista = { nombre: 'instalar', acento: 'hoy' })}>Instalarla como app en el móvil</button>{/if}
   <input bind:this={entrada} type="file" accept=".json,.pare,application/json" class="oculto" onchange={elegido} />
 </div>

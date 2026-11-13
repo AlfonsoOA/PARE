@@ -163,6 +163,9 @@
   </header>
 
   <div class="lista">
+    {#if !app.datos.sesiones.length}
+      <div class="aviso-l peq"><Icono n="info" tam={18} /><p>Toca un ejercicio para abrirlo. En cada serie, toca el peso para cambiarlo y el <b>✓</b> cuando la hagas. Al acabar, <b>Terminar</b>. <button class="enlace" style="padding:0" onclick={() => (app.vista = { nombre: 'guia', acento: 'yo', volver: { nombre: 'sesion', acento: 'entrenar' } })}>Más en la guía</button></p></div>
+    {/if}
     {#each bl as b (b[0].it.uid)}
     <div class:bloque-ss={b.length > 1} style:--ss={b.length > 1 ? `var(--ss-${(et[b[0].i].charCodeAt(0) - 65) % 2 + 1})` : null}>
     {#if b.length > 1}

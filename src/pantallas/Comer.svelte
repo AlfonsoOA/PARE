@@ -72,6 +72,15 @@
     <div class="tarjeta"><p>Aún no tienes pauta. Haz el test de inicio y PARE te la calcula.</p>
       <button class="boton ancho" onclick={() => (app.vista = { nombre: 'test' })}>Hacer el test</button></div>
   {:else}
+  {#if !d.ayudas?.comer}
+    <div class="aviso-l"><Icono n="info" tam={20} />
+      <div class="col" style="gap:4px">
+        <p>Tu dieta va por <b>raciones</b>: P = 25 g de proteína (unos 120 g de pollo), HC = 40 g de hidratos (unos 55 g de arroz en crudo), G = 10 g de grasa (una cucharada de aceite). En <b>El día</b>, toca la ficha de cada ración cuando la tomes.</p>
+        <button class="enlace" style="align-self:flex-start;padding:4px 0" onclick={() => (app.vista = { nombre: 'guia', acento: 'yo', volver: null })}>Más en la guía</button>
+      </div>
+      <button class="x" onclick={() => (d.ayudas = { ...(d.ayudas ?? {}), comer: true })} aria-label="Entendido, quitar">×</button>
+    </div>
+  {/if}
   <div class="pestanas" role="tablist">
     {#each [['dia', 'El día'], ['menu', 'Mi menú'], ['recetas', 'Recetas'], ['equiv', 'Equivalencias']] as [v, l]}
       <button role="tab" aria-selected={sub === v} class:on={sub === v} onclick={() => (sub = v)}>{l}</button>

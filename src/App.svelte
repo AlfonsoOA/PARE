@@ -29,6 +29,7 @@
   import EditorReceta from './pantallas/EditorReceta.svelte';
   import Wod from './pantallas/Wod.svelte';
   import Encuesta from './pantallas/Encuesta.svelte';
+  import Guia from './pantallas/Guia.svelte';
   import ProgresoWod from './pantallas/ProgresoWod.svelte';
 
   let error = $state(null);
@@ -39,11 +40,20 @@
   const VISTAS = {
     test: Test, plan: TuPlan, sesion: Sesion, fin: FinSesion, editor: EditorRutina, ficha: FichaEjercicio,
     progresoEj: ProgresoEjercicio, midieta: MiDieta, archivo: Archivo, deportistas: Deportistas,
-    deportista: Deportista, cambios: Cambios, ajustes: Ajustes, perfil: Perfil, instalar: Instalar, editorReceta: EditorReceta, wod: Wod, progresoWod: ProgresoWod, encuesta: Encuesta,
+    deportista: Deportista, cambios: Cambios, ajustes: Ajustes, perfil: Perfil, instalar: Instalar, editorReceta: EditorReceta, wod: Wod, progresoWod: ProgresoWod, encuesta: Encuesta, guia: Guia,
   };
   const TABS = { hoy: Hoy, entrenar: Entrenar, comer: Comer, progreso: Progreso, yo: Yo };
   const SIN_BARRA = new Set(['test', 'plan', 'sesion', 'fin', 'bienvenida', 'editorReceta', 'wod', 'encuesta']);
 
+  // Enlace directo a la guía: …/PARE/#guia
+  function abrirGuiaSiToca() {
+    if (app.listo && location.hash === '#guia') {
+      app.vista = { nombre: 'guia', acento: 'yo' };
+      try { history.replaceState(history.state, '', location.pathname + location.search); } catch { /* da igual */ }
+    }
+  }
+  $effect(() => { if (app.listo) abrirGuiaSiToca(); });
+  $effect(() => { window.addEventListener('hashchange', abrirGuiaSiToca); return () => window.removeEventListener('hashchange', abrirGuiaSiToca); });
   const nuevo = $derived(app.listo && !app.datos.rutina && !app.datos.perfil.test);
   const Vista = $derived(app.vista && VISTAS[app.vista.nombre]);
   const Tab = $derived(TABS[app.tab] ?? Hoy);

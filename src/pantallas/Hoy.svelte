@@ -72,6 +72,17 @@
     </div>
   {/each}
 
+  {#if !d.guiaVista && (Date.now() - Date.parse(d.creado || 0)) < 8 * 864e5}
+    <div class="aviso-l">
+      <Icono n="info" tam={20} />
+      <div class="col" style="gap:4px">
+        <p><b>¿Primera vez con PARE?</b> Mira cómo se usa en 2 minutos: apuntar una sesión, la dieta por raciones, tu progreso.</p>
+        <button class="enlace" style="align-self:flex-start;padding:4px 0" onclick={() => (app.vista = { nombre: 'guia', acento: 'yo' })}>Ver cómo se usa</button>
+      </div>
+      <button class="x" onclick={() => (d.guiaVista = true)} aria-label="Ya me apaño, quitar">×</button>
+    </div>
+  {/if}
+
   {#if !app.sesionActiva && encuestaPendiente(d)}
     <div class="tarjeta">
       <span class="etiqueta acento">Revisión quincenal</span>
