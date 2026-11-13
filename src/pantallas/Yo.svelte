@@ -45,6 +45,7 @@
   <div class="acerca">
     <Logo tam={48} />
     <p class="sec peq">PARE · Pain and Reward · v0.1 (pruebas). Ejercicios: free-exercise-db (dominio público). Alimentos: USDA FoodData Central. Actividad: 2024 Adult Compendium of Physical Activities.</p>
+    <p class="sec peq">Privacidad: tus entrenos, dieta, peso y encuestas no salen nunca del móvil. PARE solo cuenta de forma anónima, sin cookies, cuántos móviles la usan.</p>
     <p class="sec peq">PARE da criterios generales de entrenamiento y alimentación; no hace diagnósticos médicos. Ante dolor que empeora o dura más de 2-3 semanas, consulta con un profesional sanitario.</p>
   </div>
 </div>

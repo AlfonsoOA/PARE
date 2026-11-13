@@ -8,7 +8,9 @@ import { mount } from 'svelte';
 import App from './App.svelte';
 
 import { vigilarInstalacion } from './lib/instalar.js';
+import { contarArranque } from './lib/contador.js';
 vigilarInstalacion();
+contarArranque();
 const raiz = document.getElementById('app');
 raiz.textContent = ''; // quita la pantalla de arranque de index.html
 mount(App, { target: raiz });
