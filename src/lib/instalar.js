@@ -1,7 +1,7 @@
 // Instalación como app (PWA) y enlace para compartir PARE.
 export const URL_PARE = 'https://alfonsooa.github.io/PARE/';
 // Formulario de opiniones (Google Forms de la cuenta de PARE). Vacío = el botón no se enseña.
-export const URL_OPINION = '';
+export const URL_OPINION = 'https://forms.gle/A8E7SkMVsfASQ5wA9';
 
 let aviso = null; // evento beforeinstallprompt (Chrome/Android): permite ofrecer un botón «Instalar»
 const oyentes = new Set();
