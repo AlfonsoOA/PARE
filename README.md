@@ -37,3 +37,17 @@ Svelte 5 + Vite. Datos en IndexedDB (`idb-keyval`). El service worker (`scripts/
 Cada `push` a `main` construye y publica en GitHub Pages (`.github/workflows/pages.yml`). Hace falta activarlo una vez en *Settings → Pages → Source: GitHub Actions*.
 
 PARE da criterios generales de entrenamiento y alimentación; no hace diagnósticos médicos.
+
+## Licencia
+
+Copyright (C) 2026 Alfonso Olaya Abril.
+
+PARE es software libre: puedes redistribuirlo y modificarlo bajo los términos de la **GNU Affero General Public License v3.0** o posterior (`AGPL-3.0-or-later`), tal como la publica la Free Software Foundation. Ver [`LICENSE`](LICENSE).
+
+En la práctica: cualquier copia o versión modificada de PARE que se distribuya **o se ofrezca a otros a través de la red** (web o app) tiene que publicar su código completo con esta misma licencia. Se distribuye SIN NINGUNA GARANTÍA.
+
+El nombre «PARE», el lema «Earn your reward» y el logo no forman parte de la licencia del código: no se pueden usar para identificar versiones modificadas sin permiso del autor.
+
+Los datos de terceros conservan su licencia: free-exercise-db (Unlicense, dominio público), USDA FoodData Central (dominio público), 2024 Adult Compendium of Physical Activities (citar la fuente) e imágenes de Wikimedia Commons (cada una con su licencia y autoría).
+
+Hasta el 17 de noviembre de 2026 el repositorio estuvo publicado bajo licencia MIT; las versiones publicadas desde esa fecha se rigen por la AGPL-3.0.
