@@ -4,6 +4,11 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
 const c = JSON.parse(readFileSync('datos/catalogo_pare.json', 'utf8'));
+// El recetario que ven todos vive en datos/recetas.json (lo mantiene scripts/recetario-maestro.mjs con los Excel subidos).
+if (existsSync('datos/recetas.json')) {
+  const r = JSON.parse(readFileSync('datos/recetas.json', 'utf8'));
+  c.recetas = r.recetas; c.receta_ingredientes = r.receta_ingredientes;
+}
 const activos = c.ejercicios.filter((e) => e.activo === 'SI');
 const ids = new Set(activos.map((e) => e.id_ejercicio));
 const fichas = Object.fromEntries(c.fichas_tecnicas.map((f) => [f.id_ejercicio, f]));
@@ -81,7 +86,7 @@ const salida = {
     hc: r.hidratos_porcion, g: r.grasa_porcion, cuenta: r.cuenta_como, momento: r.momento,
     alerg: r.alergenos, notas: r.notas, etq: r.etiquetas,
     tipo: r.tipo || 'lote', tiempo: r.tiempo_min ? +r.tiempo_min : null, coste: r.coste_porcion ? +r.coste_porcion : null,
-    estilo: r.estilo || null,
+    estilo: r.estilo || null, pesoFinal: r.peso_final_g ? +r.peso_final_g : null,
     momentos: String(r.momento || '').split(';').map((x) => x.trim()).filter(Boolean),
     pasos: r.pasos ? String(r.pasos).split('|').map((x) => x.trim()).filter(Boolean) : [],
     ingredientes: c.receta_ingredientes.filter((i) => i.id_receta === r.id_receta)

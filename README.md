@@ -17,6 +17,8 @@ Las reglas están en el documento *PARE — Especificación funcional y algoritm
 
 ## Datos
 
+**Recetario (el que ven todos).** Vive en `datos/recetas.json`. Para cambiarlo sin tocar código: descargar el recetario en Excel (desde la app o `datos/recetario/recetario_maestro.xlsx`), editarlo y subirlo a `datos/recetario/entrada/` desde GitHub (*Add file → Upload files*). La publicación (`scripts/recetario-maestro.mjs`) lo aplica, estima precios con `datos/precios_alimentos.json`, recalcula macros y publica. Ver `datos/recetario/entrada/LEEME.md`.
+
 Los datos de la app (`public/data/pare.json`) salen de `datos/catalogo_pare.json`, que es la exportación del Excel maestro (`PARE_catalogo_maestro.xlsx`) hecha con `pare_catalogo.py`. Para actualizarlos: exportar de nuevo el JSON, copiarlo en `datos/` y subirlo; la publicación regenera el resto.
 
 Fuentes: ejercicios e imágenes de free-exercise-db (dominio público); alimentos de USDA FoodData Central (dominio público) y valores típicos de etiqueta; actividad del 2024 Adult Compendium of Physical Activities.

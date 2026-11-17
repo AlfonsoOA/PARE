@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 concurrency:
@@ -21,6 +21,18 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Recetario maestro: si se ha subido un Excel a datos/recetario/entrada, se aplica y se guarda en el repositorio
+      - name: Recetario maestro
+        run: node scripts/recetario-maestro.mjs
+      - name: Guardar el recetario actualizado
+        run: |
+          if [ -n "$(git status --porcelain datos)" ]; then
+            git config user.name "PARE (recetario)"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A datos
+            git commit -m "Recetario maestro actualizado desde el Excel subido"
+            git push
+          fi
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:

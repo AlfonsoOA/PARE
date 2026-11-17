@@ -36,39 +36,44 @@ async function leerZip(buf) {
   };
 }
 
-const xml = (t) => new DOMParser().parseFromString(t, 'application/xml');
+// XML por expresiones regulares (sirve igual en el navegador y en Node, sin DOMParser)
+const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" };
+const desc = (t) => t.replace(/&(#x?[0-9a-f]+|\w+);/gi, (m, e) => (e[0] === '#' ? String.fromCodePoint(e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : +e.slice(1)) : ENT[e] ?? m));
+const attr = (tag, n) => tag.match(new RegExp(`\\s${n}="([^"]*)"`))?.[1] ?? null;
+const textos = (frag) => [...frag.matchAll(/<(?:\w+:)?t(?:\s[^>]*)?>([\s\S]*?)<\/(?:\w+:)?t>|<(?:\w+:)?t\s*\/>/g)].map((m) => desc(m[1] ?? '')).join('');
 const col = (ref) => { let c = 0; for (const ch of ref.replace(/\d+/g, '')) c = c * 26 + (ch.charCodeAt(0) - 64); return c - 1; };
 
 export async function leerXlsx(buf) {
   const zip = await leerZip(buf);
   const comp = (await zip.texto('xl/sharedStrings.xml')) ?? '';
-  const compartidas = comp ? [...xml(comp).getElementsByTagName('si')].map((si) => [...si.getElementsByTagName('t')].map((t) => t.textContent).join('')) : [];
-  const libro = xml(await zip.texto('xl/workbook.xml'));
-  const rels = xml((await zip.texto('xl/_rels/workbook.xml.rels')) ?? '<r/>');
+  const compartidas = [...comp.matchAll(/<(?:\w+:)?si>([\s\S]*?)<\/(?:\w+:)?si>/g)].map((m) => textos(m[1]));
+  const libro = (await zip.texto('xl/workbook.xml')) ?? '';
+  const rels = (await zip.texto('xl/_rels/workbook.xml.rels')) ?? '';
   const destino = {};
-  for (const r of rels.getElementsByTagName('Relationship')) destino[r.getAttribute('Id')] = r.getAttribute('Target');
+  for (const m of rels.matchAll(/<Relationship\b[^>]*>/g)) destino[attr(m[0], 'Id')] = attr(m[0], 'Target');
   const hojas = {};
-  for (const s of libro.getElementsByTagName('sheet')) {
-    const rid = s.getAttribute('r:id') ?? s.getAttributeNS('http://schemas.openxmlformats.org/officeDocument/2006/relationships', 'id');
+  for (const m of libro.matchAll(/<(?:\w+:)?sheet\b[^>]*>/g)) {
+    const rid = attr(m[0], 'r:id');
     let ruta = destino[rid] ?? '';
     ruta = ruta.startsWith('/') ? ruta.slice(1) : 'xl/' + ruta.replace(/^\.\//, '');
     const t = await zip.texto(ruta);
     if (!t) continue;
     const filas = [];
-    for (const row of xml(t).getElementsByTagName('row')) {
+    for (const fr of t.matchAll(/<(?:\w+:)?row\b([^>]*)>([\s\S]*?)<\/(?:\w+:)?row>/g)) {
       const fila = [];
-      for (const c of row.getElementsByTagName('c')) {
-        const tipo = c.getAttribute('t'), vEl = c.getElementsByTagName('v')[0];
+      for (const c of fr[2].matchAll(/<(?:\w+:)?c\b([^>]*?)(?:\/>|>([\s\S]*?)<\/(?:\w+:)?c>)/g)) {
+        const a = c[1], dentro = c[2] ?? '';
+        const tipo = attr(a, 't'), v = dentro.match(/<(?:\w+:)?v>([\s\S]*?)<\/(?:\w+:)?v>/)?.[1];
         let val = null;
-        if (tipo === 's') val = compartidas[+vEl?.textContent] ?? '';
-        else if (tipo === 'inlineStr') val = [...c.getElementsByTagName('t')].map((x) => x.textContent).join('');
-        else if (tipo === 'b') val = vEl?.textContent === '1';
-        else if (vEl) val = tipo === 'str' || tipo === 'e' ? vEl.textContent : Number(vEl.textContent);
-        fila[col(c.getAttribute('r') ?? 'A')] = val;
+        if (tipo === 's') val = compartidas[+v] ?? '';
+        else if (tipo === 'inlineStr') val = textos(dentro);
+        else if (tipo === 'b') val = v === '1';
+        else if (v != null) val = tipo === 'str' || tipo === 'e' ? desc(v) : Number(v);
+        fila[col(attr(a, 'r') ?? 'A')] = val;
       }
-      filas[(+row.getAttribute('r') || filas.length + 1) - 1] = fila;
+      filas[(+attr(fr[1], 'r') || filas.length + 1) - 1] = fila;
     }
-    hojas[s.getAttribute('name')] = Array.from(filas, (f) => f ?? []);
+    hojas[desc(attr(m[0], 'name') ?? 'Hoja')] = Array.from(filas, (f) => Array.from(f ?? [], (x) => (x === undefined ? null : x)));
   }
   return { hojas };
 }

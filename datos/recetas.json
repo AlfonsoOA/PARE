@@ -1,0 +1,5951 @@
+{
+ "nota": "Recetario de PARE (el que ven todos). Se actualiza subiendo un Excel a datos/recetario/entrada.",
+ "recetas": [
+  {
+   "id_receta": "RE001",
+   "nombre_es": "Pan de avena PRO",
+   "porciones": 12,
+   "peso_total_g": 913,
+   "kcal_porcion": 163,
+   "proteina_porcion": 9,
+   "hidratos_porcion": 14.3,
+   "grasa_porcion": 6.7,
+   "fibra_porcion": 3.3,
+   "cuenta_como": "2 rebanadas sustituyen la ración de hidratos y la de grasa del desayuno",
+   "momento": "desayuno",
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "Recetas de Alfonso (plan de Pedro)",
+   "notas": "Receta de Alfonso; su desayuno habitual. Agua 250-300 ml en total (los macros, con 275 ml). Una rebanada fina (40-50 g) es la tostada del desayuno.",
+   "tipo": "lote",
+   "tiempo_min": null,
+   "coste_porcion": null,
+   "pasos": "Además: especias al gusto (cúrcuma, pimienta, orégano…). Molde alargado de unos 25 cm. | El gel (el paso más importante): mezcla el lino y la chía con 150 ml de agua tibia y deja reposar 10-15 min. Tiene que quedar un gel espeso, como una clara de huevo densa. Si sigue líquido, espera más; si está seco, falta agua. | Mezcla líquida: bate los 4 huevos y añade el gel y el resto del agua (100-150 ml) hasta tener una mezcla homogénea. | Mezcla seca: añade la avena (la molida y los copos), la proteína, la levadura, la sal y las especias. Mezcla bien. | Ajuste de textura (decide si sale bien): la masa debe ser espesa, tipo masilla, y costar moverla; una cuchara clavada se queda algo de pie. Ni líquida como un bizcocho ni seca como una masa de pan duro. Si está seca, añade agua poco a poco; si está líquida, un poco más de avena. | Pipas: mézclalas en la masa, dejando algunas para la superficie si quieres. | Horneado: horno precalentado a 180 ºC, 45-55 min. A los 35-40 min, pincha con un cuchillo: si sale húmedo, le falta; si sale seco, está listo. Si se dora mucho por fuera y sigue crudo por dentro, tápalo con papel de aluminio y sigue. | Enfriado (no te lo saltes): al menos 30-60 min fuera del horno antes de cortarlo. En caliente se rompe y parece crudo. | Resultado esperado: consistente pero jugoso, no seco, fácil de cortar y sin desmoronarse. | Errores típicos: con la masa demasiado líquida queda apelmazado; con la masa demasiado seca, tipo ladrillo.",
+   "estilo": "casera"
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_es": "Carrot cake proteica con frosting de queso",
+   "porciones": 8,
+   "peso_total_g": 953,
+   "kcal_porcion": 149,
+   "proteina_porcion": 11.7,
+   "hidratos_porcion": 10.7,
+   "grasa_porcion": 5.6,
+   "fibra_porcion": 2.4,
+   "cuenta_como": "1 porción sustituye la fruta y media ración de grasa",
+   "momento": "postre",
+   "alergenos": [
+    "frutos_cascara",
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "Recetas de Alfonso (plan de Pedro)",
+   "notas": "La receta original ponía 120 g de harina de avena, ajustada a 80 g para compensar la humedad de la zanahoria; los macros van con 80 g.",
+   "tipo": "lote",
+   "tiempo_min": null,
+   "coste_porcion": null,
+   "pasos": "Además: vainilla concentrada (8 gotas), sacarina líquida (12 gotas en la masa y 6 en el frosting, o 40 g de eritritol + 6 gotas), 1 pellizco de sal (~0,5 g), ralladura de 1 naranja entera (masa) y de 1 limón entero (frosting). Opcional: 1/4 de cucharada de postre de jengibre y otro de nuez moscada. | Zanahoria: rállala muy fina y escúrrela bien; si va con su agua, la masa queda húmeda. | Base líquida y aromas: en un bol, bate los huevos, las claras, los 120 g de yogur griego, la vainilla, la sacarina, la sal y la ralladura de naranja. | Secos: incorpora la harina de avena, los 30 g de whey, la canela (y las especias opcionales) y la levadura. Mezcla bien. | Integrar: añade la zanahoria escurrida y las nueces picadas. | Horneado: 175 ºC durante 35-40 min, hasta que el palillo salga limpio. Deja enfriar completamente a temperatura ambiente. | Frosting: mezcla el queso fresco batido, los 30 g de yogur griego, los 15 g de whey, la sacarina y la ralladura de limón. Guárdalo en la nevera. | Montaje: solo con el bizcocho 100 % frío, extiende la cobertura. Conserva en la nevera.",
+   "estilo": "casera"
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_es": "Brownie proteico de chocolate",
+   "porciones": 8,
+   "peso_total_g": 616,
+   "kcal_porcion": 107,
+   "proteina_porcion": 10.3,
+   "hidratos_porcion": 6,
+   "grasa_porcion": 3.8,
+   "fibra_porcion": 1.9,
+   "cuenta_como": "1 porción sustituye la fruta y media ración de grasa",
+   "momento": "postre",
+   "alergenos": [
+    "cacahuete",
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "Recetas de Alfonso (plan de Pedro)",
+   "notas": "Sin queso fresco batido: 130 g de yogur griego + 20 ml de leche proteica. Con nueces, unas 110 kcal por porción.",
+   "tipo": "lote",
+   "tiempo_min": null,
+   "coste_porcion": null,
+   "pasos": "Además: vainilla concentrada (8-10 gotas), 3-4 gotas de sacarina líquida (con el eritritol) y 1 g generoso de sal. Opcional: 15 g de nueces troceadas. Molde con papel vegetal. | Base: bate los huevos, las claras, el queso fresco batido, la crema de frutos secos, el eritritol, la sacarina, la vainilla y la sal hasta integrar la crema. La crema de frutos secos es la clave: anula la astringencia del cacao. | Secos: añade la avena, la whey, el cacao y la levadura. Mezcla suavemente hasta que no queden grumos. | Toque crujiente: incorpora el chocolate negro picado a cuchillo (y, si quieres, las nueces). | Horneado: vierte en el molde y hornea a 175-180 ºC durante 18-20 min. | Punto ideal: sácalo cuando el palillo salga del centro con migas húmedas pegadas. Si sale limpio, ya se ha secado.",
+   "estilo": "casera"
+  },
+  {
+   "id_receta": "RE004",
+   "nombre_es": "Cheesecake proteica XXL",
+   "porciones": 10,
+   "peso_total_g": 1442,
+   "kcal_porcion": 148,
+   "proteina_porcion": 14.5,
+   "hidratos_porcion": 8.7,
+   "grasa_porcion": 5.7,
+   "fibra_porcion": 0.8,
+   "cuenta_como": "1 porción sustituye la fruta y media ración de grasa",
+   "momento": "postre",
+   "alergenos": [
+    "frutos_cascara",
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "Recetas de Alfonso (plan de Pedro)",
+   "notas": "Con quark en lugar de queso fresco batido también sale. Si se corta en 8 porciones, unas 185 kcal cada una.",
+   "tipo": "lote",
+   "tiempo_min": null,
+   "coste_porcion": null,
+   "pasos": "Además: 8-10 gotas de sacarina líquida (con el eritritol del relleno), vainilla concentrada (14-16 gotas) y ralladura de 1 limón entero. Molde de 22-24 cm. | Base: mezcla la harina de avena, la almendra, la canela, los 8 g de eritritol y el yogur (o un chorrito de leche proteica) hasta tener una pasta. Compáctala en el fondo del molde y hornea 6-8 min a 170-180 ºC. Reserva. | Relleno: bate suavemente los 3 huevos con el queso fresco batido y el yogur griego. | Integrar: añade la proteína, la maicena, el eritritol, la sacarina, la vainilla y la ralladura. Integra a velocidad baja, sin meter demasiado aire. La maicena es indispensable: amarra el suero y evita que la tarta lo suelte. | Horneado: vierte sobre la base y hornea a 165-170 ºC durante 45-55 min. | Punto ideal: los bordes firmes y el centro con un ligero temblor tipo flan. | Reposo: apaga el horno, deja la puerta entreabierta 15 min y pásala a la nevera mínimo 4-6 h (ideal de un día para otro).",
+   "estilo": "casera"
+  },
+  {
+   "id_receta": "RE005",
+   "nombre_es": "Bizcocho de manzana y canela",
+   "porciones": 8,
+   "peso_total_g": 763,
+   "kcal_porcion": 118,
+   "proteina_porcion": 7.9,
+   "hidratos_porcion": 10.6,
+   "grasa_porcion": 4.2,
+   "fibra_porcion": 2,
+   "cuenta_como": "1 porción sustituye la fruta y media ración de grasa",
+   "momento": "postre",
+   "alergenos": [
+    "frutos_cascara",
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "Recetas de Alfonso (plan de Pedro)",
+   "notas": null,
+   "tipo": "lote",
+   "tiempo_min": null,
+   "coste_porcion": null,
+   "pasos": "Además: vainilla concentrada (6-8 gotas), sacarina líquida (8-10 gotas, o 40 g de eritritol + 4 gotas), ralladura de medio limón y canela extra para espolvorear. | Manzana: pélala y córtala en dos partes: 200 g en dados (van dentro) y 100 g en láminas finas (van encima). | Base líquida: bate los huevos, las claras, el yogur, la vainilla, el edulcorante y la ralladura de limón. | Secos: añade la harina de avena, la whey, la levadura y la canela. | Integrar: incorpora los 200 g de manzana en dados. | Montaje: vierte en el molde, coloca las láminas de manzana por la superficie, añade las nueces picadas y espolvorea canela por encima. | Horneado: 175 ºC durante 35-40 min.",
+   "estilo": "casera"
+  },
+  {
+   "id_receta": "RE006",
+   "nombre_es": "Tarta de limón proteica",
+   "porciones": 6,
+   "peso_total_g": 655,
+   "kcal_porcion": 122,
+   "proteina_porcion": 11.5,
+   "hidratos_porcion": 7.4,
+   "grasa_porcion": 4.9,
+   "fibra_porcion": 0.6,
+   "cuenta_como": "1 porción sustituye la fruta y media ración de grasa",
+   "momento": "postre",
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "Recetas de Alfonso (plan de Pedro)",
+   "notas": "La original daba 15-16 g de proteína por porción; con yogur griego normal salen unos 11-12 g. Para llegar a 15 g, usa yogur griego 0 % o cambia el yogur por más queso fresco batido.",
+   "tipo": "lote",
+   "tiempo_min": null,
+   "coste_porcion": null,
+   "pasos": "Además: ralladura de 2 limones enteros (más un poco para servir), vainilla concentrada (6 gotas) y sacarina líquida (8-10 gotas, o 40 g de eritritol + 4 gotas). Molde pequeño forrado con papel vegetal. | Mezcla: bate todos los ingredientes, con el zumo de limón filtrado, hasta conseguir una crema fina y homogénea, sin grumos. | Horneado: vierte en el molde y hornea a 170 ºC durante 30-35 min. | Reposo en el horno: apágalo y deja la tarta dentro 10 min más con la puerta entreabierta. | Frío: deja enfriar a temperatura ambiente y después reposar en la nevera mínimo 3-4 h. | Servir con ralladura fresca de limón por encima.",
+   "estilo": "casera"
+  },
+  {
+   "id_receta": "RE007",
+   "nombre_es": "Tostadas con tomate y huevos revueltos",
+   "porciones": 1,
+   "peso_total_g": 332,
+   "kcal_porcion": 424,
+   "proteina_porcion": 30.7,
+   "hidratos_porcion": 26.9,
+   "grasa_porcion": 19.1,
+   "fibra_porcion": 4.2,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "desayuno;merienda",
+   "alergenos": [
+    "gluten",
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_lactosa",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "8",
+   "coste_porcion": "1.2",
+   "pasos": "Tuesta el pan y úntalo con el tomate rallado y el aceite. | Bate los huevos con las claras y una pizca de sal. | Cuájalos a fuego medio sin dejar de remover, que queden jugosos. | Sírvelos encima de las tostadas o al lado.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE008",
+   "nombre_es": "Gachas de avena con plátano y canela",
+   "porciones": 1,
+   "peso_total_g": 372,
+   "kcal_porcion": 470,
+   "proteina_porcion": 29.3,
+   "hidratos_porcion": 62.5,
+   "grasa_porcion": 8.3,
+   "fibra_porcion": 7.8,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "desayuno",
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "También en microondas: 2 minutos, remover y 1 minuto más.",
+   "tipo": "plato",
+   "tiempo_min": "7",
+   "coste_porcion": "1.18",
+   "pasos": "Pon la avena con la leche en un cazo a fuego medio. | Remueve 4-5 minutos hasta que espese. | Fuera del fuego, mezcla la proteína en polvo (si la usas) con un chorrito de leche. | Sirve con el plátano en rodajas y canela.",
+   "estilo": "internacional"
+  },
+  {
+   "id_receta": "RE009",
+   "nombre_es": "Tortitas de avena y plátano",
+   "porciones": 1,
+   "peso_total_g": 288,
+   "kcal_porcion": 404,
+   "proteina_porcion": 25.9,
+   "hidratos_porcion": 41.1,
+   "grasa_porcion": 11.9,
+   "fibra_porcion": 6.6,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "desayuno;merienda",
+   "alergenos": [
+    "gluten",
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_lactosa",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "12",
+   "coste_porcion": "1.04",
+   "pasos": "Tritura la avena, el plátano, el huevo, las claras y la canela hasta tener una masa. | Calienta una sartén antiadherente con unas gotas de aceite. | Echa la masa en porciones pequeñas y dales la vuelta cuando salgan burbujas. | Sirve con un yogur natural o fruta.",
+   "estilo": "internacional"
+  },
+  {
+   "id_receta": "RE010",
+   "nombre_es": "Bol de skyr con avena, manzana y nueces",
+   "porciones": 1,
+   "peso_total_g": 426,
+   "kcal_porcion": 479,
+   "proteina_porcion": 35.2,
+   "hidratos_porcion": 49.8,
+   "grasa_porcion": 13.4,
+   "fibra_porcion": 7.9,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "desayuno;merienda",
+   "alergenos": [
+    "frutos_cascara",
+    "gluten",
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "3",
+   "coste_porcion": "1.63",
+   "pasos": "Pon el skyr en un bol. | Añade la avena, la manzana troceada y las nueces. | Canela al gusto. Si lo preparas la noche antes, la avena se ablanda.",
+   "estilo": "internacional"
+  },
+  {
+   "id_receta": "RE011",
+   "nombre_es": "Bocadillo de atún con tomate",
+   "porciones": 1,
+   "peso_total_g": 247,
+   "kcal_porcion": 362,
+   "proteina_porcion": 28.4,
+   "hidratos_porcion": 43.2,
+   "grasa_porcion": 7.4,
+   "fibra_porcion": 2.9,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "desayuno;merienda;cena",
+   "alergenos": [
+    "gluten",
+    "pescado"
+   ],
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "5",
+   "coste_porcion": "2.15",
+   "pasos": "Abre el pan y úntalo con el tomate y el aceite. | Escurre bien el atún y repártelo. | Cierra y listo; aguanta bien en el tupper.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE012",
+   "nombre_es": "Batido de leche, plátano, avena y proteína",
+   "porciones": 1,
+   "peso_total_g": 405,
+   "kcal_porcion": 433,
+   "proteina_porcion": 32,
+   "hidratos_porcion": 53.1,
+   "grasa_porcion": 8.3,
+   "fibra_porcion": 4.7,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "desayuno;merienda",
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Útil para después de entrenar o cuando no hay tiempo de cocinar.",
+   "tipo": "plato",
+   "tiempo_min": "3",
+   "coste_porcion": "1.28",
+   "pasos": "Echa todo en la batidora o vaso de túrmix. | Bate 30 segundos. | Si lo quieres frío, añade hielo.",
+   "estilo": "internacional"
+  },
+  {
+   "id_receta": "RE013",
+   "nombre_es": "Tostada de queso batido con tomate",
+   "porciones": 1,
+   "peso_total_g": 296,
+   "kcal_porcion": 285,
+   "proteina_porcion": 20.3,
+   "hidratos_porcion": 30.6,
+   "grasa_porcion": 7.6,
+   "fibra_porcion": 4.3,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "desayuno;merienda",
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "4",
+   "coste_porcion": "0.93",
+   "pasos": "Tuesta el pan. | Unta el queso batido con una pizca de sal y pimienta. | Pon encima el tomate en rodajas y un hilo de aceite.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE014",
+   "nombre_es": "Lentejas estofadas con verduras y huevo duro",
+   "porciones": 1,
+   "peso_total_g": 382,
+   "kcal_porcion": 581,
+   "proteina_porcion": 33.2,
+   "hidratos_porcion": 49.6,
+   "grasa_porcion": 23.7,
+   "fibra_porcion": 12.1,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida",
+   "alergenos": [
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Cunde mucho hacer 4-6 raciones de golpe; congeladas aguantan meses.",
+   "tipo": "plato",
+   "tiempo_min": "35",
+   "coste_porcion": "1.12",
+   "pasos": "Sofríe en el aceite la cebolla, la zanahoria, el pimiento y el ajo, picados, 5 minutos. | Añade el pimentón, el tomate y las lentejas lavadas; cubre con agua (el triple de volumen). | Cuece a fuego suave 30-35 minutos (10 en olla rápida) hasta que estén tiernas. | Mientras, cuece los huevos 10 minutos; sírvelos troceados por encima.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE015",
+   "nombre_es": "Garbanzos salteados con espinacas y huevo",
+   "porciones": 1,
+   "peso_total_g": 442,
+   "kcal_porcion": 516,
+   "proteina_porcion": 30.4,
+   "hidratos_porcion": 26.2,
+   "grasa_porcion": 27.7,
+   "fibra_porcion": 13.4,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "15",
+   "coste_porcion": "1.67",
+   "pasos": "Dora el ajo laminado en el aceite. | Añade las espinacas y saltéalas 2-3 minutos. | Incorpora los garbanzos escurridos y el pimentón; 3 minutos más. | Haz un hueco y cuaja los huevos, o sírvelos a la plancha encima.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE016",
+   "nombre_es": "Arroz salteado con pollo y verduras",
+   "porciones": 1,
+   "peso_total_g": 354,
+   "kcal_porcion": 528,
+   "proteina_porcion": 37.4,
+   "hidratos_porcion": 57.9,
+   "grasa_porcion": 13.8,
+   "fibra_porcion": 4.6,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Un chorrito de salsa de soja le va bien (contiene soja y gluten).",
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.55",
+   "pasos": "Cuece el arroz (o usa el que sobró de otro día, queda mejor). | Dora el pollo en tiras con la mitad del aceite y sal. | Saltea las verduras congeladas a fuego fuerte con el resto del aceite y el ajo. | Junta todo 2 minutos en la sartén.",
+   "estilo": "asiática"
+  },
+  {
+   "id_receta": "RE017",
+   "nombre_es": "Pasta con atún y tomate",
+   "porciones": 1,
+   "peso_total_g": 393,
+   "kcal_porcion": 516,
+   "proteina_porcion": 34.4,
+   "hidratos_porcion": 59.8,
+   "grasa_porcion": 13,
+   "fibra_porcion": 6.7,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "gluten",
+    "pescado"
+   ],
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "15",
+   "coste_porcion": "2.29",
+   "pasos": "Cuece la pasta en agua con sal. | Mientras, sofríe la cebolla picada en el aceite, añade el tomate y deja 8 minutos. | Añade el atún escurrido al final, solo para calentarlo. | Mezcla con la pasta escurrida.",
+   "estilo": "italiana"
+  },
+  {
+   "id_receta": "RE018",
+   "nombre_es": "Pollo al horno con patatas y cebolla",
+   "porciones": 1,
+   "peso_total_g": 476,
+   "kcal_porcion": 547,
+   "proteina_porcion": 34.6,
+   "hidratos_porcion": 46.4,
+   "grasa_porcion": 23.2,
+   "fibra_porcion": 5.2,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida",
+   "alergenos": [],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Se puede hacer la bandeja para 3-4 días de una vez.",
+   "tipo": "plato",
+   "tiempo_min": "45",
+   "coste_porcion": "1.54",
+   "pasos": "Precalienta el horno a 200 °C. | Corta las patatas en rodajas finas y la cebolla en juliana; ponlas en la bandeja con la mitad del aceite y sal. | Hornea 15 minutos, añade el pollo con ajo, pimentón y el resto del aceite. | Hornea 25-30 minutos más, dando la vuelta al pollo a mitad.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE019",
+   "nombre_es": "Merluza en papillote con patata y calabacín",
+   "porciones": 1,
+   "peso_total_g": 551,
+   "kcal_porcion": 440,
+   "proteina_porcion": 36.7,
+   "hidratos_porcion": 38.7,
+   "grasa_porcion": 14.3,
+   "fibra_porcion": 4.3,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "pescado"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "25",
+   "coste_porcion": "2.09",
+   "pasos": "Corta la patata en rodajas finas y cuécela 5 minutos en el microondas (tapada, con un poco de agua). | Sobre papel de horno, pon la patata, el calabacín y la cebolla en láminas, y la merluza encima con sal y el aceite. | Cierra el paquete y hornea 15 minutos a 200 °C (o 6-7 en el microondas, en recipiente tapado).",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE020",
+   "nombre_es": "Tortilla de patatas ligera",
+   "porciones": 1,
+   "peso_total_g": 497,
+   "kcal_porcion": 499,
+   "proteina_porcion": 31.5,
+   "hidratos_porcion": 38.4,
+   "grasa_porcion": 22.7,
+   "fibra_porcion": 3.5,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Sin freír la patata en aceite: misma tortilla, una ración de grasa en vez de cuatro.",
+   "tipo": "plato",
+   "tiempo_min": "25",
+   "coste_porcion": "1.4",
+   "pasos": "Corta la patata y la cebolla finas y hazlas en el microondas 8-10 minutos tapadas, con la mitad del aceite y sal, removiendo a mitad. | Bate los huevos con las claras y mezcla con la patata. | Cuaja en sartén antiadherente con el resto del aceite, 3-4 minutos por lado.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE021",
+   "nombre_es": "Revuelto de calabacín y champiñones con pan",
+   "porciones": 1,
+   "peso_total_g": 538,
+   "kcal_porcion": 500,
+   "proteina_porcion": 36.8,
+   "hidratos_porcion": 31.9,
+   "grasa_porcion": 22.6,
+   "fibra_porcion": 6.5,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena",
+   "alergenos": [
+    "gluten",
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_lactosa",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "15",
+   "coste_porcion": "1.87",
+   "pasos": "Saltea el calabacín en dados y los champiñones laminados con el ajo y el aceite, 6-7 minutos. | Añade los huevos batidos con las claras y sal. | Remueve hasta que cuajen y sirve con el pan.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE022",
+   "nombre_es": "Chili de pavo con alubias y arroz",
+   "porciones": 1,
+   "peso_total_g": 552,
+   "kcal_porcion": 643,
+   "proteina_porcion": 36.6,
+   "hidratos_porcion": 61.9,
+   "grasa_porcion": 23.3,
+   "fibra_porcion": 12.7,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida",
+   "alergenos": [],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Si no encuentras pavo picado, ternera picada magra (90 %).",
+   "tipo": "plato",
+   "tiempo_min": "25",
+   "coste_porcion": "2.09",
+   "pasos": "Sofríe la cebolla y el pimiento picados en el aceite. | Añade el pavo picado y dóralo; sazona con pimentón y comino si tienes. | Agrega el tomate y las alubias escurridas; 10 minutos a fuego suave. | Sirve con el arroz cocido.",
+   "estilo": "mexicana"
+  },
+  {
+   "id_receta": "RE023",
+   "nombre_es": "Lomo de cerdo con pimientos y arroz",
+   "porciones": 1,
+   "peso_total_g": 401,
+   "kcal_porcion": 589,
+   "proteina_porcion": 33.2,
+   "hidratos_porcion": 58.2,
+   "grasa_porcion": 23.1,
+   "fibra_porcion": 2.5,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.53",
+   "pasos": "Cuece el arroz. | Haz los pimientos y la cebolla en tiras a fuego medio con la mitad del aceite, 10 minutos. | Haz el lomo a la plancha con el resto del aceite y sal, 2-3 minutos por lado. | Sirve todo junto.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE024",
+   "nombre_es": "Ensalada de garbanzos con atún y huevo",
+   "porciones": 1,
+   "peso_total_g": 525,
+   "kcal_porcion": 486,
+   "proteina_porcion": 30.7,
+   "hidratos_porcion": 31.3,
+   "grasa_porcion": 21.9,
+   "fibra_porcion": 12.5,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "huevo",
+    "pescado"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Perfecta para el tupper: aliña justo antes de comer.",
+   "tipo": "plato",
+   "tiempo_min": "10",
+   "coste_porcion": "2.3",
+   "pasos": "Escurre y enjuaga los garbanzos. | Trocea el tomate, el pepino, el pimiento y la cebolla. | Mezcla con el atún escurrido y el huevo cocido en trozos. | Aliña con aceite, sal y vinagre o limón.",
+   "estilo": "mediterránea"
+  },
+  {
+   "id_receta": "RE025",
+   "nombre_es": "Ensalada de pasta con pollo",
+   "porciones": 1,
+   "peso_total_g": 391,
+   "kcal_porcion": 509,
+   "proteina_porcion": 38.8,
+   "hidratos_porcion": 51.3,
+   "grasa_porcion": 14.8,
+   "fibra_porcion": 5.6,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "gluten"
+   ],
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.65",
+   "pasos": "Cuece la pasta y enfríala con agua. | Haz la pechuga a la plancha y córtala en tiras. | Mezcla con el tomate, el maíz y la lechuga. | Aliña con aceite y sal.",
+   "estilo": "mediterránea"
+  },
+  {
+   "id_receta": "RE026",
+   "nombre_es": "Wraps de pollo con salsa de yogur",
+   "porciones": 1,
+   "peso_total_g": 367,
+   "kcal_porcion": 466,
+   "proteina_porcion": 39.2,
+   "hidratos_porcion": 42.7,
+   "grasa_porcion": 13.8,
+   "fibra_porcion": 3.8,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena",
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "15",
+   "coste_porcion": "1.83",
+   "pasos": "Haz el pollo en tiras a la plancha con sal y pimentón. | Mezcla el queso batido con una pizca de sal, ajo en polvo o limón: es la salsa. | Calienta las tortillas 20 segundos en la sartén. | Rellena con lechuga, tomate, pollo y salsa, y enrolla.",
+   "estilo": "mexicana"
+  },
+  {
+   "id_receta": "RE027",
+   "nombre_es": "Crema de calabacín y tortilla francesa",
+   "porciones": 1,
+   "peso_total_g": 977,
+   "kcal_porcion": 554,
+   "proteina_porcion": 34.8,
+   "hidratos_porcion": 44.4,
+   "grasa_porcion": 24.1,
+   "fibra_porcion": 6.6,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena",
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "La crema sale mejor en cantidad: hazla para 3-4 cenas y guárdala en la nevera.",
+   "tipo": "plato",
+   "tiempo_min": "25",
+   "coste_porcion": "2.21",
+   "pasos": "Cuece el calabacín, la cebolla y la patata troceados en el caldo, 15 minutos. | Tritura con el queso batido y la mitad del aceite. | Haz una tortilla francesa con los huevos y las claras y el resto del aceite. | Sirve con el pan.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE028",
+   "nombre_es": "Caballa con tomate y pan",
+   "porciones": 1,
+   "peso_total_g": 361,
+   "kcal_porcion": 460,
+   "proteina_porcion": 36.6,
+   "hidratos_porcion": 29.5,
+   "grasa_porcion": 19.5,
+   "fibra_porcion": 5.6,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena",
+   "alergenos": [
+    "gluten",
+    "pescado"
+   ],
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Pescado azul en lata: barato, sin cocinar y con omega-3. Vale igual con sardinas.",
+   "tipo": "plato",
+   "tiempo_min": "5",
+   "coste_porcion": "2.72",
+   "pasos": "Corta el tomate y la cebolla. | Pon encima la caballa escurrida. | Acompaña con el pan tostado.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE029",
+   "nombre_es": "Huevos a la flamenca con guisantes",
+   "porciones": 1,
+   "peso_total_g": 505,
+   "kcal_porcion": 568,
+   "proteina_porcion": 33.3,
+   "hidratos_porcion": 38.9,
+   "grasa_porcion": 28.6,
+   "fibra_porcion": 6.9,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "gluten",
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_lactosa",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.52",
+   "pasos": "Sofríe la cebolla picada en el aceite. | Añade el tomate, el pimentón y los guisantes; 8 minutos. | Casca los huevos encima, tapa y deja que cuajen 4-5 minutos (o al horno). | Moja con el pan.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE030",
+   "nombre_es": "Patata asada rellena de atún",
+   "porciones": 1,
+   "peso_total_g": 448,
+   "kcal_porcion": 384,
+   "proteina_porcion": 33.4,
+   "hidratos_porcion": 44.1,
+   "grasa_porcion": 7.1,
+   "fibra_porcion": 3.2,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena",
+   "alergenos": [
+    "leche",
+    "pescado"
+   ],
+   "etiquetas": [
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "12",
+   "coste_porcion": "2.44",
+   "pasos": "Pincha la patata y hazla en el microondas 7-9 minutos, dándole la vuelta a mitad. | Ábrela y mezcla la pulpa con el atún, el queso batido, sal y pimienta. | Rellena y termina con un hilo de aceite.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE031",
+   "nombre_es": "Pollo al limón con arroz y brócoli",
+   "porciones": 1,
+   "peso_total_g": 379,
+   "kcal_porcion": 521,
+   "proteina_porcion": 39.9,
+   "hidratos_porcion": 55.8,
+   "grasa_porcion": 13.8,
+   "fibra_porcion": 3.8,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.73",
+   "pasos": "Cuece el arroz y, los últimos 5 minutos, el brócoli en la misma olla (o al vapor). | Dora la pechuga en dados con el ajo y el aceite. | Añade el zumo de limón y deja reducir 1 minuto. | Sirve todo junto.",
+   "estilo": "mediterránea"
+  },
+  {
+   "id_receta": "RE032",
+   "nombre_es": "Macarrones integrales a la boloñesa de pavo",
+   "porciones": 1,
+   "peso_total_g": 459,
+   "kcal_porcion": 629,
+   "proteina_porcion": 36.2,
+   "hidratos_porcion": 59.4,
+   "grasa_porcion": 23.2,
+   "fibra_porcion": 11.5,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida",
+   "alergenos": [
+    "gluten"
+   ],
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "25",
+   "coste_porcion": "1.68",
+   "pasos": "Sofríe la cebolla y la zanahoria picadas en el aceite. | Añade el pavo picado y dóralo. | Agrega el tomate y deja a fuego suave 10 minutos. | Mezcla con la pasta cocida.",
+   "estilo": "italiana"
+  },
+  {
+   "id_receta": "RE033",
+   "nombre_es": "Cuscús con verduras y pollo",
+   "porciones": 1,
+   "peso_total_g": 421,
+   "kcal_porcion": 531,
+   "proteina_porcion": 40.9,
+   "hidratos_porcion": 55.6,
+   "grasa_porcion": 13.7,
+   "fibra_porcion": 7.5,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "gluten"
+   ],
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "15",
+   "coste_porcion": "1.7",
+   "pasos": "Calienta el caldo; viértelo sobre el cuscús, tapa y espera 5 minutos. | Saltea el pollo en dados con el aceite y las verduras congeladas. | Suelta el cuscús con un tenedor y mézclalo con todo.",
+   "estilo": "árabe"
+  },
+  {
+   "id_receta": "RE034",
+   "nombre_es": "Alubias blancas salteadas con atún",
+   "porciones": 1,
+   "peso_total_g": 426,
+   "kcal_porcion": 404,
+   "proteina_porcion": 34.4,
+   "hidratos_porcion": 26.5,
+   "grasa_porcion": 13.3,
+   "fibra_porcion": 11.7,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "pescado"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "10",
+   "coste_porcion": "2.74",
+   "pasos": "Sofríe el ajo y el pimiento en el aceite. | Añade las alubias escurridas y el tomate; 4-5 minutos. | Fuera del fuego, mezcla el atún.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE035",
+   "nombre_es": "Arroz con tomate y huevo",
+   "porciones": 1,
+   "peso_total_g": 345,
+   "kcal_porcion": 557,
+   "proteina_porcion": 29.6,
+   "hidratos_porcion": 55.4,
+   "grasa_porcion": 22.5,
+   "fibra_porcion": 1.1,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Un clásico barato. Con un plátano a la plancha, a la cubana.",
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.24",
+   "pasos": "Cuece el arroz. | Haz los huevos a la plancha o fritos con el aceite (o revueltos con las claras). | Sirve el arroz con el tomate frito y los huevos encima.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE036",
+   "nombre_es": "Gachas de avena con cacao y crema de cacahuete",
+   "porciones": 1,
+   "peso_total_g": 363,
+   "kcal_porcion": 513,
+   "proteina_porcion": 32.8,
+   "hidratos_porcion": 57.3,
+   "grasa_porcion": 13.7,
+   "fibra_porcion": 9,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "desayuno;merienda",
+   "alergenos": [
+    "cacahuete",
+    "gluten",
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Versión «overnight»: sin fuego y lista al levantarte.",
+   "tipo": "plato",
+   "tiempo_min": "3",
+   "coste_porcion": "1.24",
+   "pasos": "La noche antes, mezcla en un tarro la avena, la leche, el cacao y la proteína. | Tápalo y a la nevera. | Por la mañana, plátano en rodajas y la crema de cacahuete por encima.",
+   "estilo": "internacional"
+  },
+  {
+   "id_receta": "RE037",
+   "nombre_es": "Tostada de aguacate con huevo",
+   "porciones": 1,
+   "peso_total_g": 292,
+   "kcal_porcion": 461,
+   "proteina_porcion": 29.1,
+   "hidratos_porcion": 29.2,
+   "grasa_porcion": 24,
+   "fibra_porcion": 3.6,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "desayuno;merienda",
+   "alergenos": [
+    "gluten",
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_lactosa",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "8",
+   "coste_porcion": "1.18",
+   "pasos": "Tuesta el pan. | Machaca el aguacate con sal y unas gotas de limón y úntalo. | Pon encima los huevos a la plancha o escalfados.",
+   "estilo": "internacional"
+  },
+  {
+   "id_receta": "RE038",
+   "nombre_es": "Yogur griego con fresas y cacahuetes",
+   "porciones": 1,
+   "peso_total_g": 440,
+   "kcal_porcion": 357,
+   "proteina_porcion": 20.9,
+   "hidratos_porcion": 21.9,
+   "grasa_porcion": 19.4,
+   "fibra_porcion": 4.2,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "merienda;desayuno",
+   "alergenos": [
+    "cacahuete",
+    "leche"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "3",
+   "coste_porcion": "1.59",
+   "pasos": "Pon el yogur y el queso batido en un bol y mézclalos. | Añade las fresas troceadas y los cacahuetes.",
+   "estilo": "internacional"
+  },
+  {
+   "id_receta": "RE039",
+   "nombre_es": "Hummus con crudités y pan de pita",
+   "porciones": 1,
+   "peso_total_g": 374,
+   "kcal_porcion": 460,
+   "proteina_porcion": 17.8,
+   "hidratos_porcion": 61.4,
+   "grasa_porcion": 11.5,
+   "fibra_porcion": 13,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "merienda;cena",
+   "alergenos": [
+    "gluten",
+    "sesamo"
+   ],
+   "etiquetas": [
+    "sin_lactosa",
+    "vegano",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Sale mejor hecho para varios días: aguanta 4 en la nevera.",
+   "tipo": "plato",
+   "tiempo_min": "10",
+   "coste_porcion": "1.1",
+   "pasos": "Tritura los garbanzos con el tahini, el limón, el ajo, el comino, sal y un chorrito de agua hasta que quede cremoso. | Corta la zanahoria y el pepino en bastones. | Acompaña con el pan de pita tostado.",
+   "estilo": "árabe"
+  },
+  {
+   "id_receta": "RE040",
+   "nombre_es": "Curry de garbanzos y espinacas con arroz",
+   "porciones": 1,
+   "peso_total_g": 563,
+   "kcal_porcion": 585,
+   "proteina_porcion": 21.3,
+   "hidratos_porcion": 76.1,
+   "grasa_porcion": 16.4,
+   "fibra_porcion": 16.7,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa",
+    "vegano",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Para más proteína, añade tofu en dados o pechuga de pollo.",
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.65",
+   "pasos": "Sofríe la cebolla y el ajo en el aceite; añade el curry y remueve 30 segundos. | Agrega el tomate y la leche de coco; 5 minutos. | Incorpora los garbanzos y las espinacas hasta que se ablanden. | Sirve con el arroz cocido.",
+   "estilo": "india"
+  },
+  {
+   "id_receta": "RE041",
+   "nombre_es": "Tofu salteado con verduras y arroz",
+   "porciones": 1,
+   "peso_total_g": 466,
+   "kcal_porcion": 657,
+   "proteina_porcion": 38.5,
+   "hidratos_porcion": 65.4,
+   "grasa_porcion": 24.9,
+   "fibra_porcion": 9,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "gluten",
+    "soja"
+   ],
+   "etiquetas": [
+    "sin_lactosa",
+    "vegano",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "15",
+   "coste_porcion": "2.03",
+   "pasos": "Corta el tofu en dados, sécalo y dóralo en la mitad del aceite. | Saltea las verduras a fuego fuerte con el resto. | Junta todo con la salsa de soja 1 minuto. | Sirve con el arroz.",
+   "estilo": "asiática"
+  },
+  {
+   "id_receta": "RE042",
+   "nombre_es": "Espaguetis a la boloñesa de soja texturizada",
+   "porciones": 1,
+   "peso_total_g": 405,
+   "kcal_porcion": 581,
+   "proteina_porcion": 36.5,
+   "hidratos_porcion": 71.8,
+   "grasa_porcion": 11,
+   "fibra_porcion": 17.4,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida",
+   "alergenos": [
+    "gluten",
+    "soja"
+   ],
+   "etiquetas": [
+    "sin_lactosa",
+    "vegano",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Proteína vegetal barata: nadie nota que no es carne.",
+   "tipo": "plato",
+   "tiempo_min": "25",
+   "coste_porcion": "0.97",
+   "pasos": "Hidrata la soja 10 minutos en agua caliente y escúrrela. | Sofríe la cebolla y la zanahoria picadas en el aceite. | Añade la soja, el tomate y el orégano; 10 minutos a fuego suave. | Mezcla con la pasta cocida.",
+   "estilo": "italiana"
+  },
+  {
+   "id_receta": "RE043",
+   "nombre_es": "Tacos de alubias negras con aguacate",
+   "porciones": 1,
+   "peso_total_g": 426,
+   "kcal_porcion": 577,
+   "proteina_porcion": 29.1,
+   "hidratos_porcion": 65.1,
+   "grasa_porcion": 15.6,
+   "fibra_porcion": 21.5,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena;comida",
+   "alergenos": [
+    "soja"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa",
+    "vegano",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "15",
+   "coste_porcion": "1.75",
+   "pasos": "Calienta las alubias con la soja hidratada, el comino, el pimentón y un poco de agua; aplasta un poco. | Calienta las tortillas en la sartén. | Rellena con las alubias, el maíz, el tomate en dados y el aguacate.",
+   "estilo": "mexicana"
+  },
+  {
+   "id_receta": "RE044",
+   "nombre_es": "Ensalada de quinoa con garbanzos y feta",
+   "porciones": 1,
+   "peso_total_g": 427,
+   "kcal_porcion": 540,
+   "proteina_porcion": 24.8,
+   "hidratos_porcion": 54.6,
+   "grasa_porcion": 20,
+   "fibra_porcion": 13.4,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "leche"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Aguanta 3 días en la nevera: ideal para el tupper.",
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.6",
+   "pasos": "Cuece la quinoa lavada 15 minutos y enfríala. | Mezcla con los garbanzos, el tomate, el pepino y la cebolla. | Desmenuza el feta por encima y aliña con aceite, limón y orégano.",
+   "estilo": "mediterránea"
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_es": "Shakshuka con pan de pita",
+   "porciones": 1,
+   "peso_total_g": 588,
+   "kcal_porcion": 624,
+   "proteina_porcion": 32,
+   "hidratos_porcion": 55.8,
+   "grasa_porcion": 27.5,
+   "fibra_porcion": 7.8,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena;desayuno",
+   "alergenos": [
+    "gluten",
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_lactosa",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.81",
+   "pasos": "Sofríe la cebolla y el pimiento en el aceite. | Añade el ajo, el comino, el pimentón y el tomate; 8 minutos. | Haz huecos, casca los huevos y tapa hasta que cuajen. | Perejil por encima y moja con el pan.",
+   "estilo": "árabe"
+  },
+  {
+   "id_receta": "RE046",
+   "nombre_es": "Pisto con huevo y pan",
+   "porciones": 1,
+   "peso_total_g": 727,
+   "kcal_porcion": 569,
+   "proteina_porcion": 33.2,
+   "hidratos_porcion": 45.4,
+   "grasa_porcion": 24.8,
+   "fibra_porcion": 11.4,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena;comida",
+   "alergenos": [
+    "gluten",
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_lactosa",
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Haz el pisto para 3-4 días: se congela muy bien.",
+   "tipo": "plato",
+   "tiempo_min": "30",
+   "coste_porcion": "1.98",
+   "pasos": "Pica la cebolla, el pimiento, el calabacín y la berenjena. | Pocha todo en el aceite a fuego medio 15 minutos. | Añade el tomate y deja 10 minutos más. | Sirve con los huevos a la plancha o cuajados encima, y el pan.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE047",
+   "nombre_es": "Pad thai sencillo de pollo",
+   "porciones": 1,
+   "peso_total_g": 401,
+   "kcal_porcion": 627,
+   "proteina_porcion": 44.4,
+   "hidratos_porcion": 59.2,
+   "grasa_porcion": 21.4,
+   "fibra_porcion": 5.5,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "cacahuete",
+    "gluten",
+    "huevo",
+    "soja"
+   ],
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.99",
+   "pasos": "Hidrata los fideos 5 minutos en agua caliente. | Dora el pollo en tiras con el aceite; aparta. | Saltea las verduras, añade el huevo batido y remueve. | Junta los fideos, el pollo, la salsa de soja y el limón; cacahuetes picados por encima.",
+   "estilo": "asiática"
+  },
+  {
+   "id_receta": "RE048",
+   "nombre_es": "Arroz frito con gambas y guisantes",
+   "porciones": 1,
+   "peso_total_g": 394,
+   "kcal_porcion": 568,
+   "proteina_porcion": 37.2,
+   "hidratos_porcion": 63.9,
+   "grasa_porcion": 16.4,
+   "fibra_porcion": 1,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "crustaceos",
+    "gluten",
+    "huevo",
+    "soja"
+   ],
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "15",
+   "coste_porcion": "2.12",
+   "pasos": "Usa arroz cocido del día anterior (o cuécelo y enfríalo). | Saltea las gambas con el ajo y la mitad del aceite; aparta. | Saltea los guisantes y la cebolla, añade el arroz y el huevo batido, y remueve. | Junta las gambas y la salsa de soja.",
+   "estilo": "asiática"
+  },
+  {
+   "id_receta": "RE049",
+   "nombre_es": "Pollo teriyaki rápido con arroz y brócoli",
+   "porciones": 1,
+   "peso_total_g": 386,
+   "kcal_porcion": 532,
+   "proteina_porcion": 41.4,
+   "hidratos_porcion": 60.9,
+   "grasa_porcion": 11.8,
+   "fibra_porcion": 3.9,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "gluten",
+    "soja"
+   ],
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.8",
+   "pasos": "Cuece el arroz y el brócoli. | Dora el pollo en dados con el aceite. | Añade la soja, el azúcar y 2 cucharadas de agua; reduce 2 minutos hasta que brille. | Sirve sobre el arroz con el brócoli.",
+   "estilo": "asiática"
+  },
+  {
+   "id_receta": "RE050",
+   "nombre_es": "Fajitas de pollo con pimientos",
+   "porciones": 1,
+   "peso_total_g": 472,
+   "kcal_porcion": 570,
+   "proteina_porcion": 42.4,
+   "hidratos_porcion": 55.4,
+   "grasa_porcion": 17.9,
+   "fibra_porcion": 5.6,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena;comida",
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "2.2",
+   "pasos": "Corta el pollo, los pimientos y la cebolla en tiras. | Saltéalos con el aceite, el comino, el pimentón y sal. | Calienta las tortillas y rellénalas; añade el queso batido como salsa.",
+   "estilo": "mexicana"
+  },
+  {
+   "id_receta": "RE051",
+   "nombre_es": "Burrito bowl de pavo",
+   "porciones": 1,
+   "peso_total_g": 419,
+   "kcal_porcion": 647,
+   "proteina_porcion": 32.6,
+   "hidratos_porcion": 61.2,
+   "grasa_porcion": 27.6,
+   "fibra_porcion": 8.6,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida",
+   "alergenos": [],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.98",
+   "pasos": "Cuece el arroz. | Dora el pavo picado con el comino, el pimentón y sal. | Calienta las alubias y el maíz. | Monta el bol: arroz, pavo, alubias, maíz, tomate y aguacate.",
+   "estilo": "mexicana"
+  },
+  {
+   "id_receta": "RE052",
+   "nombre_es": "Quesadillas de pollo y queso",
+   "porciones": 1,
+   "peso_total_g": 292,
+   "kcal_porcion": 546,
+   "proteina_porcion": 42.1,
+   "hidratos_porcion": 48.1,
+   "grasa_porcion": 18.9,
+   "fibra_porcion": 3.3,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena",
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "15",
+   "coste_porcion": "1.82",
+   "pasos": "Haz el pollo a la plancha en tiras con pimentón. | Sobre una tortilla, pon la mozzarella, el pollo y el pimiento; tapa con la otra. | Dora en sartén sin aceite 2-3 minutos por lado. | Corta en triángulos.",
+   "estilo": "mexicana"
+  },
+  {
+   "id_receta": "RE053",
+   "nombre_es": "Pizza de tortilla con pollo y champiñones",
+   "porciones": 1,
+   "peso_total_g": 391,
+   "kcal_porcion": 628,
+   "proteina_porcion": 47.1,
+   "hidratos_porcion": 53.1,
+   "grasa_porcion": 23.3,
+   "fibra_porcion": 5.2,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena",
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Base fina y crujiente sin amasar. Vale con la tortilla de maíz si no tomas gluten.",
+   "tipo": "plato",
+   "tiempo_min": "15",
+   "coste_porcion": "2.27",
+   "pasos": "Precalienta el horno a 220 °C (o usa la sartén tapada). | Unta la tortilla con el tomate frito y el orégano. | Pon el pollo desmenuzado, los champiñones laminados y la mozzarella. | Hornea 8-10 minutos hasta que se dore.",
+   "estilo": "italiana"
+  },
+  {
+   "id_receta": "RE054",
+   "nombre_es": "Espaguetis con gambas y ajo",
+   "porciones": 1,
+   "peso_total_g": 242,
+   "kcal_porcion": 472,
+   "proteina_porcion": 34.5,
+   "hidratos_porcion": 51,
+   "grasa_porcion": 12.6,
+   "fibra_porcion": 3.3,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "crustaceos",
+    "gluten"
+   ],
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "15",
+   "coste_porcion": "1.78",
+   "pasos": "Cuece la pasta. | Dora el ajo laminado en el aceite sin que se queme; añade una pizca de guindilla si te gusta. | Saltea las gambas 2 minutos. | Mezcla con la pasta, un poco de su agua y perejil.",
+   "estilo": "italiana"
+  },
+  {
+   "id_receta": "RE055",
+   "nombre_es": "Pasta cremosa de pollo y champiñones",
+   "porciones": 1,
+   "peso_total_g": 410,
+   "kcal_porcion": 570,
+   "proteina_porcion": 50,
+   "hidratos_porcion": 55.9,
+   "grasa_porcion": 14.4,
+   "fibra_porcion": 5.1,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Cremosa sin nata: el queso batido hace de salsa.",
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.98",
+   "pasos": "Cuece la pasta. | Dora el pollo en dados y los champiñones con el ajo y el aceite. | Fuera del fuego, añade el queso batido con un poco del agua de la pasta y el parmesano. | Mezcla con la pasta.",
+   "estilo": "italiana"
+  },
+  {
+   "id_receta": "RE056",
+   "nombre_es": "Salmón al horno con boniato",
+   "porciones": 1,
+   "peso_total_g": 466,
+   "kcal_porcion": 505,
+   "proteina_porcion": 32,
+   "hidratos_porcion": 34.6,
+   "grasa_porcion": 23.2,
+   "fibra_porcion": 9.6,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "pescado"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Más caro que el resto, pero el salmón congelado baja bastante el precio.",
+   "tipo": "plato",
+   "tiempo_min": "30",
+   "coste_porcion": "2.58",
+   "pasos": "Corta el boniato en gajos y hornéalo 15 minutos a 200 °C con la mitad del aceite. | Añade el salmón con sal y limón y los espárragos o judías. | Hornea 12 minutos más.",
+   "estilo": "mediterránea"
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_es": "Bacalao con tomate y patata",
+   "porciones": 1,
+   "peso_total_g": 651,
+   "kcal_porcion": 455,
+   "proteina_porcion": 36.5,
+   "hidratos_porcion": 46.4,
+   "grasa_porcion": 12.8,
+   "fibra_porcion": 6.9,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "pescado"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "25",
+   "coste_porcion": "2.6",
+   "pasos": "Cuece la patata en rodajas 10 minutos en el microondas tapada. | Sofríe la cebolla y el pimiento en el aceite; añade el tomate y 5 minutos. | Pon el bacalao encima de la salsa, tapa y cocina 6-8 minutos. | Sirve con la patata.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE058",
+   "nombre_es": "Albóndigas de pavo en salsa de tomate con arroz",
+   "porciones": 1,
+   "peso_total_g": 444,
+   "kcal_porcion": 631,
+   "proteina_porcion": 34.6,
+   "hidratos_porcion": 56.5,
+   "grasa_porcion": 27.7,
+   "fibra_porcion": 4.1,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida",
+   "alergenos": [
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Haz el doble y congela la mitad.",
+   "tipo": "plato",
+   "tiempo_min": "35",
+   "coste_porcion": "1.86",
+   "pasos": "Mezcla el pavo picado con el huevo, el ajo picado, perejil y sal; forma bolitas. | Dóralas en la mitad del aceite. | Haz la salsa con la cebolla, el resto del aceite y el tomate; mete las albóndigas 10 minutos. | Sirve con el arroz.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE059",
+   "nombre_es": "Ensaladilla ligera",
+   "porciones": 1,
+   "peso_total_g": 551,
+   "kcal_porcion": 512,
+   "proteina_porcion": 38.6,
+   "hidratos_porcion": 50.3,
+   "grasa_porcion": 15.4,
+   "fibra_porcion": 4.5,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [
+    "huevo",
+    "leche",
+    "pescado"
+   ],
+   "etiquetas": [
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Media mayonesa y media de yogur: igual de rica con la cuarta parte de grasa.",
+   "tipo": "plato",
+   "tiempo_min": "25",
+   "coste_porcion": "2.68",
+   "pasos": "Cuece la patata y la zanahoria en dados (o en el microondas tapadas, 8 minutos) y el huevo 10 minutos. | Mezcla la mayonesa con el yogur. | Junta todo con el atún, los guisantes y el huevo picado. | Fría, mejor.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE060",
+   "nombre_es": "Crema de calabaza con huevo y pipas",
+   "porciones": 1,
+   "peso_total_g": 903,
+   "kcal_porcion": 547,
+   "proteina_porcion": 30.3,
+   "hidratos_porcion": 50.5,
+   "grasa_porcion": 23,
+   "fibra_porcion": 8.9,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena",
+   "alergenos": [
+    "huevo"
+   ],
+   "etiquetas": [
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "25",
+   "coste_porcion": "2",
+   "pasos": "Cuece la calabaza, la cebolla y la patata troceadas en el caldo, 15 minutos. | Tritura con la mitad del aceite. | Sirve con los huevos cocidos troceados y las pipas por encima.",
+   "estilo": "española"
+  },
+  {
+   "id_receta": "RE061",
+   "nombre_es": "Bandeja de pollo y verduras al horno",
+   "porciones": 1,
+   "peso_total_g": 604,
+   "kcal_porcion": 475,
+   "proteina_porcion": 38.8,
+   "hidratos_porcion": 44.4,
+   "grasa_porcion": 14.1,
+   "fibra_porcion": 6.6,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "comida;cena",
+   "alergenos": [],
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": "Una bandeja grande da para 3 días.",
+   "tipo": "plato",
+   "tiempo_min": "40",
+   "coste_porcion": "2.03",
+   "pasos": "Precalienta el horno a 200 °C. | Trocea la patata, el pimiento, el calabacín y la cebolla; mézclalos con el aceite, sal, pimentón y orégano. | Hornea 20 minutos, añade el pollo en dados y 20 más.",
+   "estilo": "mediterránea"
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_es": "Kebab casero de pollo en pan de pita",
+   "porciones": 1,
+   "peso_total_g": 410,
+   "kcal_porcion": 445,
+   "proteina_porcion": 40,
+   "hidratos_porcion": 46,
+   "grasa_porcion": 9.1,
+   "fibra_porcion": 3.7,
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "momento": "cena;comida",
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "PARE (recetario básico)",
+   "notas": null,
+   "tipo": "plato",
+   "tiempo_min": "20",
+   "coste_porcion": "1.79",
+   "pasos": "Corta el pollo en tiras y saltéalo con el comino, el pimentón, el ajo y el aceite. | Mezcla el yogur con sal, limón y una pizca de ajo: es la salsa. | Abre el pan de pita y rellena con lechuga, tomate, cebolla, el pollo y la salsa.",
+   "estilo": "árabe"
+  }
+ ],
+ "receta_ingredientes": [
+  {
+   "id_receta": "RE001",
+   "nombre_receta": "Pan de avena PRO",
+   "orden": 1,
+   "id_alimento": "AL0063",
+   "nombre_alimento": "Copos de avena",
+   "gramos": 125,
+   "nota": null
+  },
+  {
+   "id_receta": "RE001",
+   "nombre_receta": "Pan de avena PRO",
+   "orden": 2,
+   "id_alimento": "AL0064",
+   "nombre_alimento": "Harina de avena",
+   "gramos": 125,
+   "nota": "molida en casa"
+  },
+  {
+   "id_receta": "RE001",
+   "nombre_receta": "Pan de avena PRO",
+   "orden": 3,
+   "id_alimento": "AL0170",
+   "nombre_alimento": "Semillas de lino molidas",
+   "gramos": 50,
+   "nota": "lino dorado triturado"
+  },
+  {
+   "id_receta": "RE001",
+   "nombre_receta": "Pan de avena PRO",
+   "orden": 4,
+   "id_alimento": "AL0171",
+   "nombre_alimento": "Semillas de chía",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE001",
+   "nombre_receta": "Pan de avena PRO",
+   "orden": 5,
+   "id_alimento": "AL0172",
+   "nombre_alimento": "Pipas de calabaza peladas",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE001",
+   "nombre_receta": "Pan de avena PRO",
+   "orden": 6,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 232,
+   "nota": "4 huevos L"
+  },
+  {
+   "id_receta": "RE001",
+   "nombre_receta": "Pan de avena PRO",
+   "orden": 7,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 30,
+   "nota": "whey de chocolate"
+  },
+  {
+   "id_receta": "RE001",
+   "nombre_receta": "Pan de avena PRO",
+   "orden": 8,
+   "id_alimento": "AL0200",
+   "nombre_alimento": "Agua",
+   "gramos": 275,
+   "nota": null
+  },
+  {
+   "id_receta": "RE001",
+   "nombre_receta": "Pan de avena PRO",
+   "orden": 9,
+   "id_alimento": "AL0199",
+   "nombre_alimento": "Levadura química (impulsor)",
+   "gramos": 16,
+   "nota": null
+  },
+  {
+   "id_receta": "RE001",
+   "nombre_receta": "Pan de avena PRO",
+   "orden": 10,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_receta": "Carrot cake proteica con frosting de queso",
+   "orden": 1,
+   "id_alimento": "AL0139",
+   "nombre_alimento": "Zanahoria",
+   "gramos": 250,
+   "nota": "rallada y escurrida"
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_receta": "Carrot cake proteica con frosting de queso",
+   "orden": 2,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 100,
+   "nota": "2 huevos M"
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_receta": "Carrot cake proteica con frosting de queso",
+   "orden": 3,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_receta": "Carrot cake proteica con frosting de queso",
+   "orden": 4,
+   "id_alimento": "AL0187",
+   "nombre_alimento": "Yogur griego natural (español, 10 % grasa)",
+   "gramos": 150,
+   "nota": "120 g en la masa y 30 g en el frosting"
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_receta": "Carrot cake proteica con frosting de queso",
+   "orden": 5,
+   "id_alimento": "AL0064",
+   "nombre_alimento": "Harina de avena",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_receta": "Carrot cake proteica con frosting de queso",
+   "orden": 6,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 45,
+   "nota": "30 g en la masa y 15 g en el frosting"
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_receta": "Carrot cake proteica con frosting de queso",
+   "orden": 7,
+   "id_alimento": "AL0160",
+   "nombre_alimento": "Nueces",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_receta": "Carrot cake proteica con frosting de queso",
+   "orden": 8,
+   "id_alimento": "AL0199",
+   "nombre_alimento": "Levadura química (impulsor)",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_receta": "Carrot cake proteica con frosting de queso",
+   "orden": 9,
+   "id_alimento": "AL0202",
+   "nombre_alimento": "Canela molida",
+   "gramos": 4,
+   "nota": null
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_receta": "Carrot cake proteica con frosting de queso",
+   "orden": 10,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 150,
+   "nota": "frosting"
+  },
+  {
+   "id_receta": "RE002",
+   "nombre_receta": "Carrot cake proteica con frosting de queso",
+   "orden": 11,
+   "id_alimento": "AL0198",
+   "nombre_alimento": "Sacarina líquida",
+   "gramos": 1,
+   "nota": "unas 18 gotas"
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_receta": "Brownie proteico de chocolate",
+   "orden": 1,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 100,
+   "nota": "2 huevos M"
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_receta": "Brownie proteico de chocolate",
+   "orden": 2,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 180,
+   "nota": null
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_receta": "Brownie proteico de chocolate",
+   "orden": 3,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_receta": "Brownie proteico de chocolate",
+   "orden": 4,
+   "id_alimento": "AL0166",
+   "nombre_alimento": "Crema de cacahuete",
+   "gramos": 15,
+   "nota": "o de almendra o avellana"
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_receta": "Brownie proteico de chocolate",
+   "orden": 5,
+   "id_alimento": "AL0064",
+   "nombre_alimento": "Harina de avena",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_receta": "Brownie proteico de chocolate",
+   "orden": 6,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 30,
+   "nota": "whey de chocolate"
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_receta": "Brownie proteico de chocolate",
+   "orden": 7,
+   "id_alimento": "AL0195",
+   "nombre_alimento": "Cacao puro desgrasado en polvo",
+   "gramos": 25,
+   "nota": null
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_receta": "Brownie proteico de chocolate",
+   "orden": 8,
+   "id_alimento": "AL0196",
+   "nombre_alimento": "Chocolate negro 85 %",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_receta": "Brownie proteico de chocolate",
+   "orden": 9,
+   "id_alimento": "AL0199",
+   "nombre_alimento": "Levadura química (impulsor)",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_receta": "Brownie proteico de chocolate",
+   "orden": 10,
+   "id_alimento": "AL0197",
+   "nombre_alimento": "Eritritol",
+   "gramos": 47,
+   "nota": null
+  },
+  {
+   "id_receta": "RE003",
+   "nombre_receta": "Brownie proteico de chocolate",
+   "orden": 11,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE004",
+   "nombre_receta": "Cheesecake proteica XXL",
+   "orden": 1,
+   "id_alimento": "AL0064",
+   "nombre_alimento": "Harina de avena",
+   "gramos": 50,
+   "nota": "base"
+  },
+  {
+   "id_receta": "RE004",
+   "nombre_receta": "Cheesecake proteica XXL",
+   "orden": 2,
+   "id_alimento": "AL0169",
+   "nombre_alimento": "Almendra molida / harina de almendra",
+   "gramos": 15,
+   "nota": "base"
+  },
+  {
+   "id_receta": "RE004",
+   "nombre_receta": "Cheesecake proteica XXL",
+   "orden": 3,
+   "id_alimento": "AL0187",
+   "nombre_alimento": "Yogur griego natural (español, 10 % grasa)",
+   "gramos": 272,
+   "nota": "22 g en la base y 250 g en el relleno"
+  },
+  {
+   "id_receta": "RE004",
+   "nombre_receta": "Cheesecake proteica XXL",
+   "orden": 4,
+   "id_alimento": "AL0197",
+   "nombre_alimento": "Eritritol",
+   "gramos": 83,
+   "nota": "8 g en la base y 75 g en el relleno"
+  },
+  {
+   "id_receta": "RE004",
+   "nombre_receta": "Cheesecake proteica XXL",
+   "orden": 5,
+   "id_alimento": "AL0202",
+   "nombre_alimento": "Canela molida",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE004",
+   "nombre_receta": "Cheesecake proteica XXL",
+   "orden": 6,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 800,
+   "nota": null
+  },
+  {
+   "id_receta": "RE004",
+   "nombre_receta": "Cheesecake proteica XXL",
+   "orden": 7,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 150,
+   "nota": "3 huevos M"
+  },
+  {
+   "id_receta": "RE004",
+   "nombre_receta": "Cheesecake proteica XXL",
+   "orden": 8,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 55,
+   "nota": "whey de vainilla"
+  },
+  {
+   "id_receta": "RE004",
+   "nombre_receta": "Cheesecake proteica XXL",
+   "orden": 9,
+   "id_alimento": "AL0077",
+   "nombre_alimento": "Harina de maíz (maicena)",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE005",
+   "nombre_receta": "Bizcocho de manzana y canela",
+   "orden": 1,
+   "id_alimento": "AL0101",
+   "nombre_alimento": "Manzana",
+   "gramos": 300,
+   "nota": "pelada"
+  },
+  {
+   "id_receta": "RE005",
+   "nombre_receta": "Bizcocho de manzana y canela",
+   "orden": 2,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 100,
+   "nota": "2 huevos M"
+  },
+  {
+   "id_receta": "RE005",
+   "nombre_receta": "Bizcocho de manzana y canela",
+   "orden": 3,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE005",
+   "nombre_receta": "Bizcocho de manzana y canela",
+   "orden": 4,
+   "id_alimento": "AL0187",
+   "nombre_alimento": "Yogur griego natural (español, 10 % grasa)",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE005",
+   "nombre_receta": "Bizcocho de manzana y canela",
+   "orden": 5,
+   "id_alimento": "AL0064",
+   "nombre_alimento": "Harina de avena",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE005",
+   "nombre_receta": "Bizcocho de manzana y canela",
+   "orden": 6,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 30,
+   "nota": "whey de vainilla"
+  },
+  {
+   "id_receta": "RE005",
+   "nombre_receta": "Bizcocho de manzana y canela",
+   "orden": 7,
+   "id_alimento": "AL0160",
+   "nombre_alimento": "Nueces",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE005",
+   "nombre_receta": "Bizcocho de manzana y canela",
+   "orden": 8,
+   "id_alimento": "AL0199",
+   "nombre_alimento": "Levadura química (impulsor)",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE005",
+   "nombre_receta": "Bizcocho de manzana y canela",
+   "orden": 9,
+   "id_alimento": "AL0202",
+   "nombre_alimento": "Canela molida",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE006",
+   "nombre_receta": "Tarta de limón proteica",
+   "orden": 1,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 300,
+   "nota": null
+  },
+  {
+   "id_receta": "RE006",
+   "nombre_receta": "Tarta de limón proteica",
+   "orden": 2,
+   "id_alimento": "AL0187",
+   "nombre_alimento": "Yogur griego natural (español, 10 % grasa)",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE006",
+   "nombre_receta": "Tarta de limón proteica",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 100,
+   "nota": "2 huevos M"
+  },
+  {
+   "id_receta": "RE006",
+   "nombre_receta": "Tarta de limón proteica",
+   "orden": 4,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 30,
+   "nota": "whey de vainilla"
+  },
+  {
+   "id_receta": "RE006",
+   "nombre_receta": "Tarta de limón proteica",
+   "orden": 5,
+   "id_alimento": "AL0064",
+   "nombre_alimento": "Harina de avena",
+   "gramos": 30,
+   "nota": null
+  },
+  {
+   "id_receta": "RE006",
+   "nombre_receta": "Tarta de limón proteica",
+   "orden": 6,
+   "id_alimento": "AL0077",
+   "nombre_alimento": "Harina de maíz (maicena)",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE006",
+   "nombre_receta": "Tarta de limón proteica",
+   "orden": 7,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 40,
+   "nota": "zumo de 1 limón"
+  },
+  {
+   "id_receta": "RE007",
+   "nombre_receta": "Tostadas con tomate y huevos revueltos",
+   "orden": 1,
+   "id_alimento": "AL0080",
+   "nombre_alimento": "Pan integral (molde)",
+   "gramos": 60,
+   "nota": "2 rebanadas"
+  },
+  {
+   "id_receta": "RE007",
+   "nombre_receta": "Tostadas con tomate y huevos revueltos",
+   "orden": 2,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 70,
+   "nota": "rallado"
+  },
+  {
+   "id_receta": "RE007",
+   "nombre_receta": "Tostadas con tomate y huevos revueltos",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE007",
+   "nombre_receta": "Tostadas con tomate y huevos revueltos",
+   "orden": 4,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 116,
+   "nota": "2 huevos"
+  },
+  {
+   "id_receta": "RE007",
+   "nombre_receta": "Tostadas con tomate y huevos revueltos",
+   "orden": 5,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE007",
+   "nombre_receta": "Tostadas con tomate y huevos revueltos",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE008",
+   "nombre_receta": "Gachas de avena con plátano y canela",
+   "orden": 1,
+   "id_alimento": "AL0063",
+   "nombre_alimento": "Copos de avena",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE008",
+   "nombre_receta": "Gachas de avena con plátano y canela",
+   "orden": 2,
+   "id_alimento": "AL0047",
+   "nombre_alimento": "Leche semidesnatada (2 %)",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE008",
+   "nombre_receta": "Gachas de avena con plátano y canela",
+   "orden": 3,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 20,
+   "nota": "opcional; sin ella, añade un skyr al lado"
+  },
+  {
+   "id_receta": "RE008",
+   "nombre_receta": "Gachas de avena con plátano y canela",
+   "orden": 4,
+   "id_alimento": "AL0103",
+   "nombre_alimento": "Plátano",
+   "gramos": 100,
+   "nota": "1 plátano"
+  },
+  {
+   "id_receta": "RE008",
+   "nombre_receta": "Gachas de avena con plátano y canela",
+   "orden": 5,
+   "id_alimento": "AL0202",
+   "nombre_alimento": "Canela molida",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE009",
+   "nombre_receta": "Tortitas de avena y plátano",
+   "orden": 1,
+   "id_alimento": "AL0063",
+   "nombre_alimento": "Copos de avena",
+   "gramos": 45,
+   "nota": null
+  },
+  {
+   "id_receta": "RE009",
+   "nombre_receta": "Tortitas de avena y plátano",
+   "orden": 2,
+   "id_alimento": "AL0103",
+   "nombre_alimento": "Plátano",
+   "gramos": 60,
+   "nota": "medio plátano maduro"
+  },
+  {
+   "id_receta": "RE009",
+   "nombre_receta": "Tortitas de avena y plátano",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 58,
+   "nota": "1 huevo"
+  },
+  {
+   "id_receta": "RE009",
+   "nombre_receta": "Tortitas de avena y plátano",
+   "orden": 4,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE009",
+   "nombre_receta": "Tortitas de avena y plátano",
+   "orden": 5,
+   "id_alimento": "AL0202",
+   "nombre_alimento": "Canela molida",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE009",
+   "nombre_receta": "Tortitas de avena y plátano",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE010",
+   "nombre_receta": "Bol de skyr con avena, manzana y nueces",
+   "orden": 1,
+   "id_alimento": "AL0185",
+   "nombre_alimento": "Skyr natural",
+   "gramos": 250,
+   "nota": "1 tarrina grande"
+  },
+  {
+   "id_receta": "RE010",
+   "nombre_receta": "Bol de skyr con avena, manzana y nueces",
+   "orden": 2,
+   "id_alimento": "AL0063",
+   "nombre_alimento": "Copos de avena",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE010",
+   "nombre_receta": "Bol de skyr con avena, manzana y nueces",
+   "orden": 3,
+   "id_alimento": "AL0101",
+   "nombre_alimento": "Manzana",
+   "gramos": 120,
+   "nota": "1 manzana"
+  },
+  {
+   "id_receta": "RE010",
+   "nombre_receta": "Bol de skyr con avena, manzana y nueces",
+   "orden": 4,
+   "id_alimento": "AL0160",
+   "nombre_alimento": "Nueces",
+   "gramos": 15,
+   "nota": "3-4 nueces"
+  },
+  {
+   "id_receta": "RE010",
+   "nombre_receta": "Bol de skyr con avena, manzana y nueces",
+   "orden": 5,
+   "id_alimento": "AL0202",
+   "nombre_alimento": "Canela molida",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE011",
+   "nombre_receta": "Bocadillo de atún con tomate",
+   "orden": 1,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 80,
+   "nota": "medio pan de barra pequeño"
+  },
+  {
+   "id_receta": "RE011",
+   "nombre_receta": "Bocadillo de atún con tomate",
+   "orden": 2,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE011",
+   "nombre_receta": "Bocadillo de atún con tomate",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE011",
+   "nombre_receta": "Bocadillo de atún con tomate",
+   "orden": 4,
+   "id_alimento": "AL0034",
+   "nombre_alimento": "Atún claro en lata al natural, escurrido",
+   "gramos": 112,
+   "nota": "2 latas pequeñas"
+  },
+  {
+   "id_receta": "RE012",
+   "nombre_receta": "Batido de leche, plátano, avena y proteína",
+   "orden": 1,
+   "id_alimento": "AL0047",
+   "nombre_alimento": "Leche semidesnatada (2 %)",
+   "gramos": 250,
+   "nota": "1 vaso grande"
+  },
+  {
+   "id_receta": "RE012",
+   "nombre_receta": "Batido de leche, plátano, avena y proteína",
+   "orden": 2,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 25,
+   "nota": "1 cacito"
+  },
+  {
+   "id_receta": "RE012",
+   "nombre_receta": "Batido de leche, plátano, avena y proteína",
+   "orden": 3,
+   "id_alimento": "AL0103",
+   "nombre_alimento": "Plátano",
+   "gramos": 100,
+   "nota": "1 plátano"
+  },
+  {
+   "id_receta": "RE012",
+   "nombre_receta": "Batido de leche, plátano, avena y proteína",
+   "orden": 4,
+   "id_alimento": "AL0063",
+   "nombre_alimento": "Copos de avena",
+   "gramos": 30,
+   "nota": null
+  },
+  {
+   "id_receta": "RE013",
+   "nombre_receta": "Tostada de queso batido con tomate",
+   "orden": 1,
+   "id_alimento": "AL0080",
+   "nombre_alimento": "Pan integral (molde)",
+   "gramos": 60,
+   "nota": "2 rebanadas"
+  },
+  {
+   "id_receta": "RE013",
+   "nombre_receta": "Tostada de queso batido con tomate",
+   "orden": 2,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE013",
+   "nombre_receta": "Tostada de queso batido con tomate",
+   "orden": 3,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE013",
+   "nombre_receta": "Tostada de queso batido con tomate",
+   "orden": 4,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE013",
+   "nombre_receta": "Tostada de queso batido con tomate",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE014",
+   "nombre_receta": "Lentejas estofadas con verduras y huevo duro",
+   "orden": 1,
+   "id_alimento": "AL0088",
+   "nombre_alimento": "Lentejas",
+   "gramos": 70,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE014",
+   "nombre_receta": "Lentejas estofadas con verduras y huevo duro",
+   "orden": 2,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE014",
+   "nombre_receta": "Lentejas estofadas con verduras y huevo duro",
+   "orden": 3,
+   "id_alimento": "AL0139",
+   "nombre_alimento": "Zanahoria",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE014",
+   "nombre_receta": "Lentejas estofadas con verduras y huevo duro",
+   "orden": 4,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 30,
+   "nota": null
+  },
+  {
+   "id_receta": "RE014",
+   "nombre_receta": "Lentejas estofadas con verduras y huevo duro",
+   "orden": 5,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": "1 diente"
+  },
+  {
+   "id_receta": "RE014",
+   "nombre_receta": "Lentejas estofadas con verduras y huevo duro",
+   "orden": 6,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE014",
+   "nombre_receta": "Lentejas estofadas con verduras y huevo duro",
+   "orden": 7,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE014",
+   "nombre_receta": "Lentejas estofadas con verduras y huevo duro",
+   "orden": 8,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE014",
+   "nombre_receta": "Lentejas estofadas con verduras y huevo duro",
+   "orden": 9,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 116,
+   "nota": "2 huevos"
+  },
+  {
+   "id_receta": "RE014",
+   "nombre_receta": "Lentejas estofadas con verduras y huevo duro",
+   "orden": 10,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE015",
+   "nombre_receta": "Garbanzos salteados con espinacas y huevo",
+   "orden": 1,
+   "id_alimento": "AL0091",
+   "nombre_alimento": "Garbanzos cocidos (bote), escurridos",
+   "gramos": 160,
+   "nota": "medio bote"
+  },
+  {
+   "id_receta": "RE015",
+   "nombre_receta": "Garbanzos salteados con espinacas y huevo",
+   "orden": 2,
+   "id_alimento": "AL0144",
+   "nombre_alimento": "Espinacas",
+   "gramos": 150,
+   "nota": "frescas o congeladas"
+  },
+  {
+   "id_receta": "RE015",
+   "nombre_receta": "Garbanzos salteados con espinacas y huevo",
+   "orden": 3,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE015",
+   "nombre_receta": "Garbanzos salteados con espinacas y huevo",
+   "orden": 4,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE015",
+   "nombre_receta": "Garbanzos salteados con espinacas y huevo",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE015",
+   "nombre_receta": "Garbanzos salteados con espinacas y huevo",
+   "orden": 6,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 116,
+   "nota": "2 huevos"
+  },
+  {
+   "id_receta": "RE015",
+   "nombre_receta": "Garbanzos salteados con espinacas y huevo",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE016",
+   "nombre_receta": "Arroz salteado con pollo y verduras",
+   "orden": 1,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 60,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE016",
+   "nombre_receta": "Arroz salteado con pollo y verduras",
+   "orden": 2,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 130,
+   "nota": null
+  },
+  {
+   "id_receta": "RE016",
+   "nombre_receta": "Arroz salteado con pollo y verduras",
+   "orden": 3,
+   "id_alimento": "AL0210",
+   "nombre_alimento": "Verduras congeladas para saltear",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE016",
+   "nombre_receta": "Arroz salteado con pollo y verduras",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE016",
+   "nombre_receta": "Arroz salteado con pollo y verduras",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE016",
+   "nombre_receta": "Arroz salteado con pollo y verduras",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE017",
+   "nombre_receta": "Pasta con atún y tomate",
+   "orden": 1,
+   "id_alimento": "AL0068",
+   "nombre_alimento": "Pasta seca (espaguetis)",
+   "gramos": 70,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE017",
+   "nombre_receta": "Pasta con atún y tomate",
+   "orden": 2,
+   "id_alimento": "AL0034",
+   "nombre_alimento": "Atún claro en lata al natural, escurrido",
+   "gramos": 112,
+   "nota": "2 latas pequeñas"
+  },
+  {
+   "id_receta": "RE017",
+   "nombre_receta": "Pasta con atún y tomate",
+   "orden": 3,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE017",
+   "nombre_receta": "Pasta con atún y tomate",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE017",
+   "nombre_receta": "Pasta con atún y tomate",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE017",
+   "nombre_receta": "Pasta con atún y tomate",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE018",
+   "nombre_receta": "Pollo al horno con patatas y cebolla",
+   "orden": 1,
+   "id_alimento": "AL0002",
+   "nombre_alimento": "Muslo de pollo deshuesado sin piel",
+   "gramos": 150,
+   "nota": "muslo deshuesado"
+  },
+  {
+   "id_receta": "RE018",
+   "nombre_receta": "Pollo al horno con patatas y cebolla",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 250,
+   "nota": "1 patata grande"
+  },
+  {
+   "id_receta": "RE018",
+   "nombre_receta": "Pollo al horno con patatas y cebolla",
+   "orden": 3,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE018",
+   "nombre_receta": "Pollo al horno con patatas y cebolla",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE018",
+   "nombre_receta": "Pollo al horno con patatas y cebolla",
+   "orden": 5,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE018",
+   "nombre_receta": "Pollo al horno con patatas y cebolla",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE018",
+   "nombre_receta": "Pollo al horno con patatas y cebolla",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE019",
+   "nombre_receta": "Merluza en papillote con patata y calabacín",
+   "orden": 1,
+   "id_alimento": "AL0192",
+   "nombre_alimento": "Merluza",
+   "gramos": 180,
+   "nota": "congelada sirve"
+  },
+  {
+   "id_receta": "RE019",
+   "nombre_receta": "Merluza en papillote con patata y calabacín",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE019",
+   "nombre_receta": "Merluza en papillote con patata y calabacín",
+   "orden": 3,
+   "id_alimento": "AL0131",
+   "nombre_alimento": "Calabacín",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE019",
+   "nombre_receta": "Merluza en papillote con patata y calabacín",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE019",
+   "nombre_receta": "Merluza en papillote con patata y calabacín",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE019",
+   "nombre_receta": "Merluza en papillote con patata y calabacín",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE020",
+   "nombre_receta": "Tortilla de patatas ligera",
+   "orden": 1,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE020",
+   "nombre_receta": "Tortilla de patatas ligera",
+   "orden": 2,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE020",
+   "nombre_receta": "Tortilla de patatas ligera",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 116,
+   "nota": "2 huevos"
+  },
+  {
+   "id_receta": "RE020",
+   "nombre_receta": "Tortilla de patatas ligera",
+   "orden": 4,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE020",
+   "nombre_receta": "Tortilla de patatas ligera",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE020",
+   "nombre_receta": "Tortilla de patatas ligera",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE021",
+   "nombre_receta": "Revuelto de calabacín y champiñones con pan",
+   "orden": 1,
+   "id_alimento": "AL0131",
+   "nombre_alimento": "Calabacín",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE021",
+   "nombre_receta": "Revuelto de calabacín y champiñones con pan",
+   "orden": 2,
+   "id_alimento": "AL0149",
+   "nombre_alimento": "Champiñones",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE021",
+   "nombre_receta": "Revuelto de calabacín y champiñones con pan",
+   "orden": 3,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE021",
+   "nombre_receta": "Revuelto de calabacín y champiñones con pan",
+   "orden": 4,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE021",
+   "nombre_receta": "Revuelto de calabacín y champiñones con pan",
+   "orden": 5,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 116,
+   "nota": "2 huevos"
+  },
+  {
+   "id_receta": "RE021",
+   "nombre_receta": "Revuelto de calabacín y champiñones con pan",
+   "orden": 6,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE021",
+   "nombre_receta": "Revuelto de calabacín y champiñones con pan",
+   "orden": 7,
+   "id_alimento": "AL0080",
+   "nombre_alimento": "Pan integral (molde)",
+   "gramos": 60,
+   "nota": "2 rebanadas"
+  },
+  {
+   "id_receta": "RE021",
+   "nombre_receta": "Revuelto de calabacín y champiñones con pan",
+   "orden": 8,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE022",
+   "nombre_receta": "Chili de pavo con alubias y arroz",
+   "orden": 1,
+   "id_alimento": "AL0004",
+   "nombre_alimento": "Carne picada de pavo (93 % magra)",
+   "gramos": 130,
+   "nota": null
+  },
+  {
+   "id_receta": "RE022",
+   "nombre_receta": "Chili de pavo con alubias y arroz",
+   "orden": 2,
+   "id_alimento": "AL0094",
+   "nombre_alimento": "Alubias rojas cocidas (bote), escurridas",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE022",
+   "nombre_receta": "Chili de pavo con alubias y arroz",
+   "orden": 3,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE022",
+   "nombre_receta": "Chili de pavo con alubias y arroz",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE022",
+   "nombre_receta": "Chili de pavo con alubias y arroz",
+   "orden": 5,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE022",
+   "nombre_receta": "Chili de pavo con alubias y arroz",
+   "orden": 6,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE022",
+   "nombre_receta": "Chili de pavo con alubias y arroz",
+   "orden": 7,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 40,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE022",
+   "nombre_receta": "Chili de pavo con alubias y arroz",
+   "orden": 8,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE022",
+   "nombre_receta": "Chili de pavo con alubias y arroz",
+   "orden": 9,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE023",
+   "nombre_receta": "Lomo de cerdo con pimientos y arroz",
+   "orden": 1,
+   "id_alimento": "AL0015",
+   "nombre_alimento": "Cerdo, cinta de lomo",
+   "gramos": 130,
+   "nota": "2 filetes"
+  },
+  {
+   "id_receta": "RE023",
+   "nombre_receta": "Lomo de cerdo con pimientos y arroz",
+   "orden": 2,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE023",
+   "nombre_receta": "Lomo de cerdo con pimientos y arroz",
+   "orden": 3,
+   "id_alimento": "AL0135",
+   "nombre_alimento": "Pimiento verde",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE023",
+   "nombre_receta": "Lomo de cerdo con pimientos y arroz",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE023",
+   "nombre_receta": "Lomo de cerdo con pimientos y arroz",
+   "orden": 5,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 60,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE023",
+   "nombre_receta": "Lomo de cerdo con pimientos y arroz",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE023",
+   "nombre_receta": "Lomo de cerdo con pimientos y arroz",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE024",
+   "nombre_receta": "Ensalada de garbanzos con atún y huevo",
+   "orden": 1,
+   "id_alimento": "AL0091",
+   "nombre_alimento": "Garbanzos cocidos (bote), escurridos",
+   "gramos": 160,
+   "nota": "medio bote"
+  },
+  {
+   "id_receta": "RE024",
+   "nombre_receta": "Ensalada de garbanzos con atún y huevo",
+   "orden": 2,
+   "id_alimento": "AL0034",
+   "nombre_alimento": "Atún claro en lata al natural, escurrido",
+   "gramos": 56,
+   "nota": "1 lata pequeña"
+  },
+  {
+   "id_receta": "RE024",
+   "nombre_receta": "Ensalada de garbanzos con atún y huevo",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 58,
+   "nota": "1 huevo"
+  },
+  {
+   "id_receta": "RE024",
+   "nombre_receta": "Ensalada de garbanzos con atún y huevo",
+   "orden": 4,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE024",
+   "nombre_receta": "Ensalada de garbanzos con atún y huevo",
+   "orden": 5,
+   "id_alimento": "AL0138",
+   "nombre_alimento": "Pepino",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE024",
+   "nombre_receta": "Ensalada de garbanzos con atún y huevo",
+   "orden": 6,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE024",
+   "nombre_receta": "Ensalada de garbanzos con atún y huevo",
+   "orden": 7,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 20,
+   "nota": null
+  },
+  {
+   "id_receta": "RE024",
+   "nombre_receta": "Ensalada de garbanzos con atún y huevo",
+   "orden": 8,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE024",
+   "nombre_receta": "Ensalada de garbanzos con atún y huevo",
+   "orden": 9,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE025",
+   "nombre_receta": "Ensalada de pasta con pollo",
+   "orden": 1,
+   "id_alimento": "AL0068",
+   "nombre_alimento": "Pasta seca (espaguetis)",
+   "gramos": 60,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE025",
+   "nombre_receta": "Ensalada de pasta con pollo",
+   "orden": 2,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE025",
+   "nombre_receta": "Ensalada de pasta con pollo",
+   "orden": 3,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE025",
+   "nombre_receta": "Ensalada de pasta con pollo",
+   "orden": 4,
+   "id_alimento": "AL0086",
+   "nombre_alimento": "Maíz dulce",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE025",
+   "nombre_receta": "Ensalada de pasta con pollo",
+   "orden": 5,
+   "id_alimento": "AL0145",
+   "nombre_alimento": "Lechuga romana",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE025",
+   "nombre_receta": "Ensalada de pasta con pollo",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE025",
+   "nombre_receta": "Ensalada de pasta con pollo",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE026",
+   "nombre_receta": "Wraps de pollo con salsa de yogur",
+   "orden": 1,
+   "id_alimento": "AL0082",
+   "nombre_alimento": "Tortilla de trigo",
+   "gramos": 80,
+   "nota": "2 tortillas"
+  },
+  {
+   "id_receta": "RE026",
+   "nombre_receta": "Wraps de pollo con salsa de yogur",
+   "orden": 2,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE026",
+   "nombre_receta": "Wraps de pollo con salsa de yogur",
+   "orden": 3,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE026",
+   "nombre_receta": "Wraps de pollo con salsa de yogur",
+   "orden": 4,
+   "id_alimento": "AL0145",
+   "nombre_alimento": "Lechuga romana",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE026",
+   "nombre_receta": "Wraps de pollo con salsa de yogur",
+   "orden": 5,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE026",
+   "nombre_receta": "Wraps de pollo con salsa de yogur",
+   "orden": 6,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE026",
+   "nombre_receta": "Wraps de pollo con salsa de yogur",
+   "orden": 7,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE026",
+   "nombre_receta": "Wraps de pollo con salsa de yogur",
+   "orden": 8,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE027",
+   "nombre_receta": "Crema de calabacín y tortilla francesa",
+   "orden": 1,
+   "id_alimento": "AL0131",
+   "nombre_alimento": "Calabacín",
+   "gramos": 300,
+   "nota": null
+  },
+  {
+   "id_receta": "RE027",
+   "nombre_receta": "Crema de calabacín y tortilla francesa",
+   "orden": 2,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE027",
+   "nombre_receta": "Crema de calabacín y tortilla francesa",
+   "orden": 3,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE027",
+   "nombre_receta": "Crema de calabacín y tortilla francesa",
+   "orden": 4,
+   "id_alimento": "AL0214",
+   "nombre_alimento": "Caldo de verduras o de pollo (brick)",
+   "gramos": 250,
+   "nota": null
+  },
+  {
+   "id_receta": "RE027",
+   "nombre_receta": "Crema de calabacín y tortilla francesa",
+   "orden": 5,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE027",
+   "nombre_receta": "Crema de calabacín y tortilla francesa",
+   "orden": 6,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 116,
+   "nota": "2 huevos"
+  },
+  {
+   "id_receta": "RE027",
+   "nombre_receta": "Crema de calabacín y tortilla francesa",
+   "orden": 7,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE027",
+   "nombre_receta": "Crema de calabacín y tortilla francesa",
+   "orden": 8,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE027",
+   "nombre_receta": "Crema de calabacín y tortilla francesa",
+   "orden": 9,
+   "id_alimento": "AL0080",
+   "nombre_alimento": "Pan integral (molde)",
+   "gramos": 30,
+   "nota": "1 rebanada"
+  },
+  {
+   "id_receta": "RE027",
+   "nombre_receta": "Crema de calabacín y tortilla francesa",
+   "orden": 10,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE028",
+   "nombre_receta": "Caballa con tomate y pan",
+   "orden": 1,
+   "id_alimento": "AL0208",
+   "nombre_alimento": "Caballa en aceite, escurrida",
+   "gramos": 120,
+   "nota": "1 lata grande o 2 pequeñas"
+  },
+  {
+   "id_receta": "RE028",
+   "nombre_receta": "Caballa con tomate y pan",
+   "orden": 2,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE028",
+   "nombre_receta": "Caballa con tomate y pan",
+   "orden": 3,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 30,
+   "nota": null
+  },
+  {
+   "id_receta": "RE028",
+   "nombre_receta": "Caballa con tomate y pan",
+   "orden": 4,
+   "id_alimento": "AL0080",
+   "nombre_alimento": "Pan integral (molde)",
+   "gramos": 60,
+   "nota": "2 rebanadas"
+  },
+  {
+   "id_receta": "RE028",
+   "nombre_receta": "Caballa con tomate y pan",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE029",
+   "nombre_receta": "Huevos a la flamenca con guisantes",
+   "orden": 1,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 174,
+   "nota": "3 huevos"
+  },
+  {
+   "id_receta": "RE029",
+   "nombre_receta": "Huevos a la flamenca con guisantes",
+   "orden": 2,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE029",
+   "nombre_receta": "Huevos a la flamenca con guisantes",
+   "orden": 3,
+   "id_alimento": "AL0087",
+   "nombre_alimento": "Guisantes en conserva, escurridos",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE029",
+   "nombre_receta": "Huevos a la flamenca con guisantes",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE029",
+   "nombre_receta": "Huevos a la flamenca con guisantes",
+   "orden": 5,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE029",
+   "nombre_receta": "Huevos a la flamenca con guisantes",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE029",
+   "nombre_receta": "Huevos a la flamenca con guisantes",
+   "orden": 7,
+   "id_alimento": "AL0080",
+   "nombre_alimento": "Pan integral (molde)",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE029",
+   "nombre_receta": "Huevos a la flamenca con guisantes",
+   "orden": 8,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE030",
+   "nombre_receta": "Patata asada rellena de atún",
+   "orden": 1,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 250,
+   "nota": "1 patata grande"
+  },
+  {
+   "id_receta": "RE030",
+   "nombre_receta": "Patata asada rellena de atún",
+   "orden": 2,
+   "id_alimento": "AL0034",
+   "nombre_alimento": "Atún claro en lata al natural, escurrido",
+   "gramos": 112,
+   "nota": "2 latas pequeñas"
+  },
+  {
+   "id_receta": "RE030",
+   "nombre_receta": "Patata asada rellena de atún",
+   "orden": 3,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE030",
+   "nombre_receta": "Patata asada rellena de atún",
+   "orden": 4,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE030",
+   "nombre_receta": "Patata asada rellena de atún",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE031",
+   "nombre_receta": "Pollo al limón con arroz y brócoli",
+   "orden": 1,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 140,
+   "nota": null
+  },
+  {
+   "id_receta": "RE031",
+   "nombre_receta": "Pollo al limón con arroz y brócoli",
+   "orden": 2,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 60,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE031",
+   "nombre_receta": "Pollo al limón con arroz y brócoli",
+   "orden": 3,
+   "id_alimento": "AL0125",
+   "nombre_alimento": "Brócoli",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE031",
+   "nombre_receta": "Pollo al limón con arroz y brócoli",
+   "orden": 4,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 15,
+   "nota": "medio limón"
+  },
+  {
+   "id_receta": "RE031",
+   "nombre_receta": "Pollo al limón con arroz y brócoli",
+   "orden": 5,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE031",
+   "nombre_receta": "Pollo al limón con arroz y brócoli",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE031",
+   "nombre_receta": "Pollo al limón con arroz y brócoli",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE032",
+   "nombre_receta": "Macarrones integrales a la boloñesa de pavo",
+   "orden": 1,
+   "id_alimento": "AL0069",
+   "nombre_alimento": "Pasta integral seca",
+   "gramos": 70,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE032",
+   "nombre_receta": "Macarrones integrales a la boloñesa de pavo",
+   "orden": 2,
+   "id_alimento": "AL0004",
+   "nombre_alimento": "Carne picada de pavo (93 % magra)",
+   "gramos": 130,
+   "nota": null
+  },
+  {
+   "id_receta": "RE032",
+   "nombre_receta": "Macarrones integrales a la boloñesa de pavo",
+   "orden": 3,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE032",
+   "nombre_receta": "Macarrones integrales a la boloñesa de pavo",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE032",
+   "nombre_receta": "Macarrones integrales a la boloñesa de pavo",
+   "orden": 5,
+   "id_alimento": "AL0139",
+   "nombre_alimento": "Zanahoria",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE032",
+   "nombre_receta": "Macarrones integrales a la boloñesa de pavo",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE032",
+   "nombre_receta": "Macarrones integrales a la boloñesa de pavo",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE033",
+   "nombre_receta": "Cuscús con verduras y pollo",
+   "orden": 1,
+   "id_alimento": "AL0213",
+   "nombre_alimento": "Cuscús (seco)",
+   "gramos": 60,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE033",
+   "nombre_receta": "Cuscús con verduras y pollo",
+   "orden": 2,
+   "id_alimento": "AL0214",
+   "nombre_alimento": "Caldo de verduras o de pollo (brick)",
+   "gramos": 70,
+   "nota": null
+  },
+  {
+   "id_receta": "RE033",
+   "nombre_receta": "Cuscús con verduras y pollo",
+   "orden": 3,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 130,
+   "nota": null
+  },
+  {
+   "id_receta": "RE033",
+   "nombre_receta": "Cuscús con verduras y pollo",
+   "orden": 4,
+   "id_alimento": "AL0210",
+   "nombre_alimento": "Verduras congeladas para saltear",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE033",
+   "nombre_receta": "Cuscús con verduras y pollo",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE033",
+   "nombre_receta": "Cuscús con verduras y pollo",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE034",
+   "nombre_receta": "Alubias blancas salteadas con atún",
+   "orden": 1,
+   "id_alimento": "AL0092",
+   "nombre_alimento": "Alubias blancas cocidas (bote), escurridas",
+   "gramos": 160,
+   "nota": "medio bote"
+  },
+  {
+   "id_receta": "RE034",
+   "nombre_receta": "Alubias blancas salteadas con atún",
+   "orden": 2,
+   "id_alimento": "AL0034",
+   "nombre_alimento": "Atún claro en lata al natural, escurrido",
+   "gramos": 112,
+   "nota": "2 latas pequeñas"
+  },
+  {
+   "id_receta": "RE034",
+   "nombre_receta": "Alubias blancas salteadas con atún",
+   "orden": 3,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE034",
+   "nombre_receta": "Alubias blancas salteadas con atún",
+   "orden": 4,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE034",
+   "nombre_receta": "Alubias blancas salteadas con atún",
+   "orden": 5,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE034",
+   "nombre_receta": "Alubias blancas salteadas con atún",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE034",
+   "nombre_receta": "Alubias blancas salteadas con atún",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE035",
+   "nombre_receta": "Arroz con tomate y huevo",
+   "orden": 1,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 60,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE035",
+   "nombre_receta": "Arroz con tomate y huevo",
+   "orden": 2,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 116,
+   "nota": "2 huevos"
+  },
+  {
+   "id_receta": "RE035",
+   "nombre_receta": "Arroz con tomate y huevo",
+   "orden": 3,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE035",
+   "nombre_receta": "Arroz con tomate y huevo",
+   "orden": 4,
+   "id_alimento": "AL0211",
+   "nombre_alimento": "Tomate frito (bote)",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE035",
+   "nombre_receta": "Arroz con tomate y huevo",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE035",
+   "nombre_receta": "Arroz con tomate y huevo",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE036",
+   "nombre_receta": "Gachas de avena con cacao y crema de cacahuete",
+   "orden": 1,
+   "id_alimento": "AL0063",
+   "nombre_alimento": "Copos de avena",
+   "gramos": 45,
+   "nota": null
+  },
+  {
+   "id_receta": "RE036",
+   "nombre_receta": "Gachas de avena con cacao y crema de cacahuete",
+   "orden": 2,
+   "id_alimento": "AL0047",
+   "nombre_alimento": "Leche semidesnatada (2 %)",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE036",
+   "nombre_receta": "Gachas de avena con cacao y crema de cacahuete",
+   "orden": 3,
+   "id_alimento": "AL0195",
+   "nombre_alimento": "Cacao puro desgrasado en polvo",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE036",
+   "nombre_receta": "Gachas de avena con cacao y crema de cacahuete",
+   "orden": 4,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 20,
+   "nota": null
+  },
+  {
+   "id_receta": "RE036",
+   "nombre_receta": "Gachas de avena con cacao y crema de cacahuete",
+   "orden": 5,
+   "id_alimento": "AL0103",
+   "nombre_alimento": "Plátano",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE036",
+   "nombre_receta": "Gachas de avena con cacao y crema de cacahuete",
+   "orden": 6,
+   "id_alimento": "AL0166",
+   "nombre_alimento": "Crema de cacahuete",
+   "gramos": 10,
+   "nota": "1 cucharadita colmada"
+  },
+  {
+   "id_receta": "RE037",
+   "nombre_receta": "Tostada de aguacate con huevo",
+   "orden": 1,
+   "id_alimento": "AL0080",
+   "nombre_alimento": "Pan integral (molde)",
+   "gramos": 60,
+   "nota": "2 rebanadas"
+  },
+  {
+   "id_receta": "RE037",
+   "nombre_receta": "Tostada de aguacate con huevo",
+   "orden": 2,
+   "id_alimento": "AL0123",
+   "nombre_alimento": "Aguacate",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE037",
+   "nombre_receta": "Tostada de aguacate con huevo",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 116,
+   "nota": "2 huevos"
+  },
+  {
+   "id_receta": "RE037",
+   "nombre_receta": "Tostada de aguacate con huevo",
+   "orden": 4,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE037",
+   "nombre_receta": "Tostada de aguacate con huevo",
+   "orden": 5,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE037",
+   "nombre_receta": "Tostada de aguacate con huevo",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE038",
+   "nombre_receta": "Yogur griego con fresas y cacahuetes",
+   "orden": 1,
+   "id_alimento": "AL0187",
+   "nombre_alimento": "Yogur griego natural (español, 10 % grasa)",
+   "gramos": 125,
+   "nota": "1 yogur"
+  },
+  {
+   "id_receta": "RE038",
+   "nombre_receta": "Yogur griego con fresas y cacahuetes",
+   "orden": 2,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE038",
+   "nombre_receta": "Yogur griego con fresas y cacahuetes",
+   "orden": 3,
+   "id_alimento": "AL0106",
+   "nombre_alimento": "Fresas",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE038",
+   "nombre_receta": "Yogur griego con fresas y cacahuetes",
+   "orden": 4,
+   "id_alimento": "AL0165",
+   "nombre_alimento": "Cacahuetes",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE039",
+   "nombre_receta": "Hummus con crudités y pan de pita",
+   "orden": 1,
+   "id_alimento": "AL0091",
+   "nombre_alimento": "Garbanzos cocidos (bote), escurridos",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE039",
+   "nombre_receta": "Hummus con crudités y pan de pita",
+   "orden": 2,
+   "id_alimento": "AL0168",
+   "nombre_alimento": "Tahini (crema de sésamo)",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE039",
+   "nombre_receta": "Hummus con crudités y pan de pita",
+   "orden": 3,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE039",
+   "nombre_receta": "Hummus con crudités y pan de pita",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE039",
+   "nombre_receta": "Hummus con crudités y pan de pita",
+   "orden": 5,
+   "id_alimento": "AL0220",
+   "nombre_alimento": "Comino molido",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE039",
+   "nombre_receta": "Hummus con crudités y pan de pita",
+   "orden": 6,
+   "id_alimento": "AL0139",
+   "nombre_alimento": "Zanahoria",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE039",
+   "nombre_receta": "Hummus con crudités y pan de pita",
+   "orden": 7,
+   "id_alimento": "AL0138",
+   "nombre_alimento": "Pepino",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE039",
+   "nombre_receta": "Hummus con crudités y pan de pita",
+   "orden": 8,
+   "id_alimento": "AL0224",
+   "nombre_alimento": "Pan de pita",
+   "gramos": 65,
+   "nota": "1 pan de pita"
+  },
+  {
+   "id_receta": "RE039",
+   "nombre_receta": "Hummus con crudités y pan de pita",
+   "orden": 9,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE040",
+   "nombre_receta": "Curry de garbanzos y espinacas con arroz",
+   "orden": 1,
+   "id_alimento": "AL0091",
+   "nombre_alimento": "Garbanzos cocidos (bote), escurridos",
+   "gramos": 160,
+   "nota": "medio bote"
+  },
+  {
+   "id_receta": "RE040",
+   "nombre_receta": "Curry de garbanzos y espinacas con arroz",
+   "orden": 2,
+   "id_alimento": "AL0144",
+   "nombre_alimento": "Espinacas",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE040",
+   "nombre_receta": "Curry de garbanzos y espinacas con arroz",
+   "orden": 3,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE040",
+   "nombre_receta": "Curry de garbanzos y espinacas con arroz",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE040",
+   "nombre_receta": "Curry de garbanzos y espinacas con arroz",
+   "orden": 5,
+   "id_alimento": "AL0219",
+   "nombre_alimento": "Curry en polvo",
+   "gramos": 4,
+   "nota": null
+  },
+  {
+   "id_receta": "RE040",
+   "nombre_receta": "Curry de garbanzos y espinacas con arroz",
+   "orden": 6,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE040",
+   "nombre_receta": "Curry de garbanzos y espinacas con arroz",
+   "orden": 7,
+   "id_alimento": "AL0218",
+   "nombre_alimento": "Leche de coco light",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE040",
+   "nombre_receta": "Curry de garbanzos y espinacas con arroz",
+   "orden": 8,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 50,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE040",
+   "nombre_receta": "Curry de garbanzos y espinacas con arroz",
+   "orden": 9,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE040",
+   "nombre_receta": "Curry de garbanzos y espinacas con arroz",
+   "orden": 10,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE041",
+   "nombre_receta": "Tofu salteado con verduras y arroz",
+   "orden": 1,
+   "id_alimento": "AL0215",
+   "nombre_alimento": "Tofu firme",
+   "gramos": 180,
+   "nota": null
+  },
+  {
+   "id_receta": "RE041",
+   "nombre_receta": "Tofu salteado con verduras y arroz",
+   "orden": 2,
+   "id_alimento": "AL0210",
+   "nombre_alimento": "Verduras congeladas para saltear",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE041",
+   "nombre_receta": "Tofu salteado con verduras y arroz",
+   "orden": 3,
+   "id_alimento": "AL0217",
+   "nombre_alimento": "Salsa de soja",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE041",
+   "nombre_receta": "Tofu salteado con verduras y arroz",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE041",
+   "nombre_receta": "Tofu salteado con verduras y arroz",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE041",
+   "nombre_receta": "Tofu salteado con verduras y arroz",
+   "orden": 6,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 60,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE042",
+   "nombre_receta": "Espaguetis a la boloñesa de soja texturizada",
+   "orden": 1,
+   "id_alimento": "AL0216",
+   "nombre_alimento": "Soja texturizada (seca)",
+   "gramos": 45,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE042",
+   "nombre_receta": "Espaguetis a la boloñesa de soja texturizada",
+   "orden": 2,
+   "id_alimento": "AL0068",
+   "nombre_alimento": "Pasta seca (espaguetis)",
+   "gramos": 70,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE042",
+   "nombre_receta": "Espaguetis a la boloñesa de soja texturizada",
+   "orden": 3,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 180,
+   "nota": null
+  },
+  {
+   "id_receta": "RE042",
+   "nombre_receta": "Espaguetis a la boloñesa de soja texturizada",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE042",
+   "nombre_receta": "Espaguetis a la boloñesa de soja texturizada",
+   "orden": 5,
+   "id_alimento": "AL0139",
+   "nombre_alimento": "Zanahoria",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE042",
+   "nombre_receta": "Espaguetis a la boloñesa de soja texturizada",
+   "orden": 6,
+   "id_alimento": "AL0221",
+   "nombre_alimento": "Orégano seco",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE042",
+   "nombre_receta": "Espaguetis a la boloñesa de soja texturizada",
+   "orden": 7,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE042",
+   "nombre_receta": "Espaguetis a la boloñesa de soja texturizada",
+   "orden": 8,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE043",
+   "nombre_receta": "Tacos de alubias negras con aguacate",
+   "orden": 1,
+   "id_alimento": "AL0083",
+   "nombre_alimento": "Tortilla de maíz",
+   "gramos": 78,
+   "nota": "3 tortillas"
+  },
+  {
+   "id_receta": "RE043",
+   "nombre_receta": "Tacos de alubias negras con aguacate",
+   "orden": 2,
+   "id_alimento": "AL0093",
+   "nombre_alimento": "Alubias negras cocidas (bote), escurridas",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE043",
+   "nombre_receta": "Tacos de alubias negras con aguacate",
+   "orden": 3,
+   "id_alimento": "AL0216",
+   "nombre_alimento": "Soja texturizada (seca)",
+   "gramos": 25,
+   "nota": "hidratada"
+  },
+  {
+   "id_receta": "RE043",
+   "nombre_receta": "Tacos de alubias negras con aguacate",
+   "orden": 4,
+   "id_alimento": "AL0086",
+   "nombre_alimento": "Maíz dulce",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE043",
+   "nombre_receta": "Tacos de alubias negras con aguacate",
+   "orden": 5,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE043",
+   "nombre_receta": "Tacos de alubias negras con aguacate",
+   "orden": 6,
+   "id_alimento": "AL0123",
+   "nombre_alimento": "Aguacate",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE043",
+   "nombre_receta": "Tacos de alubias negras con aguacate",
+   "orden": 7,
+   "id_alimento": "AL0220",
+   "nombre_alimento": "Comino molido",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE043",
+   "nombre_receta": "Tacos de alubias negras con aguacate",
+   "orden": 8,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE043",
+   "nombre_receta": "Tacos de alubias negras con aguacate",
+   "orden": 9,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE044",
+   "nombre_receta": "Ensalada de quinoa con garbanzos y feta",
+   "orden": 1,
+   "id_alimento": "AL0222",
+   "nombre_alimento": "Quinoa (en grano, seca)",
+   "gramos": 50,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE044",
+   "nombre_receta": "Ensalada de quinoa con garbanzos y feta",
+   "orden": 2,
+   "id_alimento": "AL0091",
+   "nombre_alimento": "Garbanzos cocidos (bote), escurridos",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE044",
+   "nombre_receta": "Ensalada de quinoa con garbanzos y feta",
+   "orden": 3,
+   "id_alimento": "AL0059",
+   "nombre_alimento": "Queso feta",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE044",
+   "nombre_receta": "Ensalada de quinoa con garbanzos y feta",
+   "orden": 4,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE044",
+   "nombre_receta": "Ensalada de quinoa con garbanzos y feta",
+   "orden": 5,
+   "id_alimento": "AL0138",
+   "nombre_alimento": "Pepino",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE044",
+   "nombre_receta": "Ensalada de quinoa con garbanzos y feta",
+   "orden": 6,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 20,
+   "nota": null
+  },
+  {
+   "id_receta": "RE044",
+   "nombre_receta": "Ensalada de quinoa con garbanzos y feta",
+   "orden": 7,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE044",
+   "nombre_receta": "Ensalada de quinoa con garbanzos y feta",
+   "orden": 8,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE044",
+   "nombre_receta": "Ensalada de quinoa con garbanzos y feta",
+   "orden": 9,
+   "id_alimento": "AL0221",
+   "nombre_alimento": "Orégano seco",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE044",
+   "nombre_receta": "Ensalada de quinoa con garbanzos y feta",
+   "orden": 10,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_receta": "Shakshuka con pan de pita",
+   "orden": 1,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 174,
+   "nota": "3 huevos"
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_receta": "Shakshuka con pan de pita",
+   "orden": 2,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_receta": "Shakshuka con pan de pita",
+   "orden": 3,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_receta": "Shakshuka con pan de pita",
+   "orden": 4,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_receta": "Shakshuka con pan de pita",
+   "orden": 5,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_receta": "Shakshuka con pan de pita",
+   "orden": 6,
+   "id_alimento": "AL0220",
+   "nombre_alimento": "Comino molido",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_receta": "Shakshuka con pan de pita",
+   "orden": 7,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_receta": "Shakshuka con pan de pita",
+   "orden": 8,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_receta": "Shakshuka con pan de pita",
+   "orden": 9,
+   "id_alimento": "AL0224",
+   "nombre_alimento": "Pan de pita",
+   "gramos": 65,
+   "nota": "1 pan de pita"
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_receta": "Shakshuka con pan de pita",
+   "orden": 10,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE045",
+   "nombre_receta": "Shakshuka con pan de pita",
+   "orden": 11,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE046",
+   "nombre_receta": "Pisto con huevo y pan",
+   "orden": 1,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE046",
+   "nombre_receta": "Pisto con huevo y pan",
+   "orden": 2,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE046",
+   "nombre_receta": "Pisto con huevo y pan",
+   "orden": 3,
+   "id_alimento": "AL0131",
+   "nombre_alimento": "Calabacín",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE046",
+   "nombre_receta": "Pisto con huevo y pan",
+   "orden": 4,
+   "id_alimento": "AL0132",
+   "nombre_alimento": "Berenjena",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE046",
+   "nombre_receta": "Pisto con huevo y pan",
+   "orden": 5,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE046",
+   "nombre_receta": "Pisto con huevo y pan",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE046",
+   "nombre_receta": "Pisto con huevo y pan",
+   "orden": 7,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 116,
+   "nota": "2 huevos"
+  },
+  {
+   "id_receta": "RE046",
+   "nombre_receta": "Pisto con huevo y pan",
+   "orden": 8,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE046",
+   "nombre_receta": "Pisto con huevo y pan",
+   "orden": 9,
+   "id_alimento": "AL0080",
+   "nombre_alimento": "Pan integral (molde)",
+   "gramos": 60,
+   "nota": "2 rebanadas"
+  },
+  {
+   "id_receta": "RE046",
+   "nombre_receta": "Pisto con huevo y pan",
+   "orden": 10,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE047",
+   "nombre_receta": "Pad thai sencillo de pollo",
+   "orden": 1,
+   "id_alimento": "AL0223",
+   "nombre_alimento": "Fideos de arroz (secos)",
+   "gramos": 60,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE047",
+   "nombre_receta": "Pad thai sencillo de pollo",
+   "orden": 2,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE047",
+   "nombre_receta": "Pad thai sencillo de pollo",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 58,
+   "nota": "1 huevo"
+  },
+  {
+   "id_receta": "RE047",
+   "nombre_receta": "Pad thai sencillo de pollo",
+   "orden": 4,
+   "id_alimento": "AL0210",
+   "nombre_alimento": "Verduras congeladas para saltear",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE047",
+   "nombre_receta": "Pad thai sencillo de pollo",
+   "orden": 5,
+   "id_alimento": "AL0217",
+   "nombre_alimento": "Salsa de soja",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE047",
+   "nombre_receta": "Pad thai sencillo de pollo",
+   "orden": 6,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE047",
+   "nombre_receta": "Pad thai sencillo de pollo",
+   "orden": 7,
+   "id_alimento": "AL0165",
+   "nombre_alimento": "Cacahuetes",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE047",
+   "nombre_receta": "Pad thai sencillo de pollo",
+   "orden": 8,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE048",
+   "nombre_receta": "Arroz frito con gambas y guisantes",
+   "orden": 1,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 60,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE048",
+   "nombre_receta": "Arroz frito con gambas y guisantes",
+   "orden": 2,
+   "id_alimento": "AL0038",
+   "nombre_alimento": "Gambas / langostinos",
+   "gramos": 130,
+   "nota": "congeladas sirven"
+  },
+  {
+   "id_receta": "RE048",
+   "nombre_receta": "Arroz frito con gambas y guisantes",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 58,
+   "nota": "1 huevo"
+  },
+  {
+   "id_receta": "RE048",
+   "nombre_receta": "Arroz frito con gambas y guisantes",
+   "orden": 4,
+   "id_alimento": "AL0087",
+   "nombre_alimento": "Guisantes en conserva, escurridos",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE048",
+   "nombre_receta": "Arroz frito con gambas y guisantes",
+   "orden": 5,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE048",
+   "nombre_receta": "Arroz frito con gambas y guisantes",
+   "orden": 6,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE048",
+   "nombre_receta": "Arroz frito con gambas y guisantes",
+   "orden": 7,
+   "id_alimento": "AL0217",
+   "nombre_alimento": "Salsa de soja",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE048",
+   "nombre_receta": "Arroz frito con gambas y guisantes",
+   "orden": 8,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE049",
+   "nombre_receta": "Pollo teriyaki rápido con arroz y brócoli",
+   "orden": 1,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 140,
+   "nota": null
+  },
+  {
+   "id_receta": "RE049",
+   "nombre_receta": "Pollo teriyaki rápido con arroz y brócoli",
+   "orden": 2,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 60,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE049",
+   "nombre_receta": "Pollo teriyaki rápido con arroz y brócoli",
+   "orden": 3,
+   "id_alimento": "AL0125",
+   "nombre_alimento": "Brócoli",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE049",
+   "nombre_receta": "Pollo teriyaki rápido con arroz y brócoli",
+   "orden": 4,
+   "id_alimento": "AL0217",
+   "nombre_alimento": "Salsa de soja",
+   "gramos": 20,
+   "nota": null
+  },
+  {
+   "id_receta": "RE049",
+   "nombre_receta": "Pollo teriyaki rápido con arroz y brócoli",
+   "orden": 5,
+   "id_alimento": "AL0178",
+   "nombre_alimento": "Azúcar",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE049",
+   "nombre_receta": "Pollo teriyaki rápido con arroz y brócoli",
+   "orden": 6,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE049",
+   "nombre_receta": "Pollo teriyaki rápido con arroz y brócoli",
+   "orden": 7,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE050",
+   "nombre_receta": "Fajitas de pollo con pimientos",
+   "orden": 1,
+   "id_alimento": "AL0082",
+   "nombre_alimento": "Tortilla de trigo",
+   "gramos": 90,
+   "nota": "2 tortillas"
+  },
+  {
+   "id_receta": "RE050",
+   "nombre_receta": "Fajitas de pollo con pimientos",
+   "orden": 2,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 130,
+   "nota": null
+  },
+  {
+   "id_receta": "RE050",
+   "nombre_receta": "Fajitas de pollo con pimientos",
+   "orden": 3,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE050",
+   "nombre_receta": "Fajitas de pollo con pimientos",
+   "orden": 4,
+   "id_alimento": "AL0135",
+   "nombre_alimento": "Pimiento verde",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE050",
+   "nombre_receta": "Fajitas de pollo con pimientos",
+   "orden": 5,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE050",
+   "nombre_receta": "Fajitas de pollo con pimientos",
+   "orden": 6,
+   "id_alimento": "AL0220",
+   "nombre_alimento": "Comino molido",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE050",
+   "nombre_receta": "Fajitas de pollo con pimientos",
+   "orden": 7,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE050",
+   "nombre_receta": "Fajitas de pollo con pimientos",
+   "orden": 8,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE050",
+   "nombre_receta": "Fajitas de pollo con pimientos",
+   "orden": 9,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE050",
+   "nombre_receta": "Fajitas de pollo con pimientos",
+   "orden": 10,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE051",
+   "nombre_receta": "Burrito bowl de pavo",
+   "orden": 1,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 50,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE051",
+   "nombre_receta": "Burrito bowl de pavo",
+   "orden": 2,
+   "id_alimento": "AL0004",
+   "nombre_alimento": "Carne picada de pavo (93 % magra)",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE051",
+   "nombre_receta": "Burrito bowl de pavo",
+   "orden": 3,
+   "id_alimento": "AL0093",
+   "nombre_alimento": "Alubias negras cocidas (bote), escurridas",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE051",
+   "nombre_receta": "Burrito bowl de pavo",
+   "orden": 4,
+   "id_alimento": "AL0086",
+   "nombre_alimento": "Maíz dulce",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE051",
+   "nombre_receta": "Burrito bowl de pavo",
+   "orden": 5,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE051",
+   "nombre_receta": "Burrito bowl de pavo",
+   "orden": 6,
+   "id_alimento": "AL0123",
+   "nombre_alimento": "Aguacate",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE051",
+   "nombre_receta": "Burrito bowl de pavo",
+   "orden": 7,
+   "id_alimento": "AL0220",
+   "nombre_alimento": "Comino molido",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE051",
+   "nombre_receta": "Burrito bowl de pavo",
+   "orden": 8,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE051",
+   "nombre_receta": "Burrito bowl de pavo",
+   "orden": 9,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE051",
+   "nombre_receta": "Burrito bowl de pavo",
+   "orden": 10,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE052",
+   "nombre_receta": "Quesadillas de pollo y queso",
+   "orden": 1,
+   "id_alimento": "AL0082",
+   "nombre_alimento": "Tortilla de trigo",
+   "gramos": 90,
+   "nota": "2 tortillas"
+  },
+  {
+   "id_receta": "RE052",
+   "nombre_receta": "Quesadillas de pollo y queso",
+   "orden": 2,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE052",
+   "nombre_receta": "Quesadillas de pollo y queso",
+   "orden": 3,
+   "id_alimento": "AL0056",
+   "nombre_alimento": "Mozzarella semidesnatada",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE052",
+   "nombre_receta": "Quesadillas de pollo y queso",
+   "orden": 4,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE052",
+   "nombre_receta": "Quesadillas de pollo y queso",
+   "orden": 5,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE052",
+   "nombre_receta": "Quesadillas de pollo y queso",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE053",
+   "nombre_receta": "Pizza de tortilla con pollo y champiñones",
+   "orden": 1,
+   "id_alimento": "AL0082",
+   "nombre_alimento": "Tortilla de trigo",
+   "gramos": 90,
+   "nota": "2 tortillas grandes"
+  },
+  {
+   "id_receta": "RE053",
+   "nombre_receta": "Pizza de tortilla con pollo y champiñones",
+   "orden": 2,
+   "id_alimento": "AL0211",
+   "nombre_alimento": "Tomate frito (bote)",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE053",
+   "nombre_receta": "Pizza de tortilla con pollo y champiñones",
+   "orden": 3,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 100,
+   "nota": "cocido"
+  },
+  {
+   "id_receta": "RE053",
+   "nombre_receta": "Pizza de tortilla con pollo y champiñones",
+   "orden": 4,
+   "id_alimento": "AL0149",
+   "nombre_alimento": "Champiñones",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE053",
+   "nombre_receta": "Pizza de tortilla con pollo y champiñones",
+   "orden": 5,
+   "id_alimento": "AL0056",
+   "nombre_alimento": "Mozzarella semidesnatada",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE053",
+   "nombre_receta": "Pizza de tortilla con pollo y champiñones",
+   "orden": 6,
+   "id_alimento": "AL0221",
+   "nombre_alimento": "Orégano seco",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE054",
+   "nombre_receta": "Espaguetis con gambas y ajo",
+   "orden": 1,
+   "id_alimento": "AL0068",
+   "nombre_alimento": "Pasta seca (espaguetis)",
+   "gramos": 70,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE054",
+   "nombre_receta": "Espaguetis con gambas y ajo",
+   "orden": 2,
+   "id_alimento": "AL0038",
+   "nombre_alimento": "Gambas / langostinos",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE054",
+   "nombre_receta": "Espaguetis con gambas y ajo",
+   "orden": 3,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 6,
+   "nota": "2 dientes"
+  },
+  {
+   "id_receta": "RE054",
+   "nombre_receta": "Espaguetis con gambas y ajo",
+   "orden": 4,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE054",
+   "nombre_receta": "Espaguetis con gambas y ajo",
+   "orden": 5,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE054",
+   "nombre_receta": "Espaguetis con gambas y ajo",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE055",
+   "nombre_receta": "Pasta cremosa de pollo y champiñones",
+   "orden": 1,
+   "id_alimento": "AL0068",
+   "nombre_alimento": "Pasta seca (espaguetis)",
+   "gramos": 70,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE055",
+   "nombre_receta": "Pasta cremosa de pollo y champiñones",
+   "orden": 2,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE055",
+   "nombre_receta": "Pasta cremosa de pollo y champiñones",
+   "orden": 3,
+   "id_alimento": "AL0149",
+   "nombre_alimento": "Champiñones",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE055",
+   "nombre_receta": "Pasta cremosa de pollo y champiñones",
+   "orden": 4,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE055",
+   "nombre_receta": "Pasta cremosa de pollo y champiñones",
+   "orden": 5,
+   "id_alimento": "AL0058",
+   "nombre_alimento": "Queso parmesano rallado",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE055",
+   "nombre_receta": "Pasta cremosa de pollo y champiñones",
+   "orden": 6,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE055",
+   "nombre_receta": "Pasta cremosa de pollo y champiñones",
+   "orden": 7,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE055",
+   "nombre_receta": "Pasta cremosa de pollo y champiñones",
+   "orden": 8,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE056",
+   "nombre_receta": "Salmón al horno con boniato",
+   "orden": 1,
+   "id_alimento": "AL0035",
+   "nombre_alimento": "Salmón de piscifactoría",
+   "gramos": 130,
+   "nota": "1 lomo"
+  },
+  {
+   "id_receta": "RE056",
+   "nombre_receta": "Salmón al horno con boniato",
+   "orden": 2,
+   "id_alimento": "AL0085",
+   "nombre_alimento": "Boniato",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE056",
+   "nombre_receta": "Salmón al horno con boniato",
+   "orden": 3,
+   "id_alimento": "AL0130",
+   "nombre_alimento": "Judías verdes",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE056",
+   "nombre_receta": "Salmón al horno con boniato",
+   "orden": 4,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE056",
+   "nombre_receta": "Salmón al horno con boniato",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE056",
+   "nombre_receta": "Salmón al horno con boniato",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 1,
+   "id_alimento": "AL0026",
+   "nombre_alimento": "Bacalao fresco",
+   "gramos": 180,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 3,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 5,
+   "id_alimento": "AL0135",
+   "nombre_alimento": "Pimiento verde",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE058",
+   "nombre_receta": "Albóndigas de pavo en salsa de tomate con arroz",
+   "orden": 1,
+   "id_alimento": "AL0004",
+   "nombre_alimento": "Carne picada de pavo (93 % magra)",
+   "gramos": 140,
+   "nota": null
+  },
+  {
+   "id_receta": "RE058",
+   "nombre_receta": "Albóndigas de pavo en salsa de tomate con arroz",
+   "orden": 2,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 30,
+   "nota": "medio huevo"
+  },
+  {
+   "id_receta": "RE058",
+   "nombre_receta": "Albóndigas de pavo en salsa de tomate con arroz",
+   "orden": 3,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE058",
+   "nombre_receta": "Albóndigas de pavo en salsa de tomate con arroz",
+   "orden": 4,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE058",
+   "nombre_receta": "Albóndigas de pavo en salsa de tomate con arroz",
+   "orden": 5,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE058",
+   "nombre_receta": "Albóndigas de pavo en salsa de tomate con arroz",
+   "orden": 6,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE058",
+   "nombre_receta": "Albóndigas de pavo en salsa de tomate con arroz",
+   "orden": 7,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE058",
+   "nombre_receta": "Albóndigas de pavo en salsa de tomate con arroz",
+   "orden": 8,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 55,
+   "nota": "en seco"
+  },
+  {
+   "id_receta": "RE058",
+   "nombre_receta": "Albóndigas de pavo en salsa de tomate con arroz",
+   "orden": 9,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE059",
+   "nombre_receta": "Ensaladilla ligera",
+   "orden": 1,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE059",
+   "nombre_receta": "Ensaladilla ligera",
+   "orden": 2,
+   "id_alimento": "AL0139",
+   "nombre_alimento": "Zanahoria",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE059",
+   "nombre_receta": "Ensaladilla ligera",
+   "orden": 3,
+   "id_alimento": "AL0087",
+   "nombre_alimento": "Guisantes en conserva, escurridos",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE059",
+   "nombre_receta": "Ensaladilla ligera",
+   "orden": 4,
+   "id_alimento": "AL0034",
+   "nombre_alimento": "Atún claro en lata al natural, escurrido",
+   "gramos": 112,
+   "nota": "2 latas pequeñas"
+  },
+  {
+   "id_receta": "RE059",
+   "nombre_receta": "Ensaladilla ligera",
+   "orden": 5,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 58,
+   "nota": "1 huevo"
+  },
+  {
+   "id_receta": "RE059",
+   "nombre_receta": "Ensaladilla ligera",
+   "orden": 6,
+   "id_alimento": "AL0174",
+   "nombre_alimento": "Mayonesa",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE059",
+   "nombre_receta": "Ensaladilla ligera",
+   "orden": 7,
+   "id_alimento": "AL0049",
+   "nombre_alimento": "Yogur natural desnatado",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE059",
+   "nombre_receta": "Ensaladilla ligera",
+   "orden": 8,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE060",
+   "nombre_receta": "Crema de calabaza con huevo y pipas",
+   "orden": 1,
+   "id_alimento": "AL0133",
+   "nombre_alimento": "Calabaza",
+   "gramos": 300,
+   "nota": null
+  },
+  {
+   "id_receta": "RE060",
+   "nombre_receta": "Crema de calabaza con huevo y pipas",
+   "orden": 2,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE060",
+   "nombre_receta": "Crema de calabaza con huevo y pipas",
+   "orden": 3,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE060",
+   "nombre_receta": "Crema de calabaza con huevo y pipas",
+   "orden": 4,
+   "id_alimento": "AL0214",
+   "nombre_alimento": "Caldo de verduras o de pollo (brick)",
+   "gramos": 250,
+   "nota": null
+  },
+  {
+   "id_receta": "RE060",
+   "nombre_receta": "Crema de calabaza con huevo y pipas",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 6,
+   "nota": null
+  },
+  {
+   "id_receta": "RE060",
+   "nombre_receta": "Crema de calabaza con huevo y pipas",
+   "orden": 6,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 116,
+   "nota": "2 huevos"
+  },
+  {
+   "id_receta": "RE060",
+   "nombre_receta": "Crema de calabaza con huevo y pipas",
+   "orden": 7,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE060",
+   "nombre_receta": "Crema de calabaza con huevo y pipas",
+   "orden": 8,
+   "id_alimento": "AL0172",
+   "nombre_alimento": "Pipas de calabaza peladas",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE060",
+   "nombre_receta": "Crema de calabaza con huevo y pipas",
+   "orden": 9,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE061",
+   "nombre_receta": "Bandeja de pollo y verduras al horno",
+   "orden": 1,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 140,
+   "nota": null
+  },
+  {
+   "id_receta": "RE061",
+   "nombre_receta": "Bandeja de pollo y verduras al horno",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE061",
+   "nombre_receta": "Bandeja de pollo y verduras al horno",
+   "orden": 3,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE061",
+   "nombre_receta": "Bandeja de pollo y verduras al horno",
+   "orden": 4,
+   "id_alimento": "AL0131",
+   "nombre_alimento": "Calabacín",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE061",
+   "nombre_receta": "Bandeja de pollo y verduras al horno",
+   "orden": 5,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE061",
+   "nombre_receta": "Bandeja de pollo y verduras al horno",
+   "orden": 6,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE061",
+   "nombre_receta": "Bandeja de pollo y verduras al horno",
+   "orden": 7,
+   "id_alimento": "AL0221",
+   "nombre_alimento": "Orégano seco",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE061",
+   "nombre_receta": "Bandeja de pollo y verduras al horno",
+   "orden": 8,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE061",
+   "nombre_receta": "Bandeja de pollo y verduras al horno",
+   "orden": 9,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 1,
+   "id_alimento": "AL0224",
+   "nombre_alimento": "Pan de pita",
+   "gramos": 65,
+   "nota": "1 pan de pita"
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 2,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 130,
+   "nota": null
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 3,
+   "id_alimento": "AL0049",
+   "nombre_alimento": "Yogur natural desnatado",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 4,
+   "id_alimento": "AL0145",
+   "nombre_alimento": "Lechuga romana",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 5,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 6,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 20,
+   "nota": null
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 7,
+   "id_alimento": "AL0220",
+   "nombre_alimento": "Comino molido",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 8,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 9,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 10,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 11,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE062",
+   "nombre_receta": "Kebab casero de pollo en pan de pita",
+   "orden": 12,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  }
+ ]
+}

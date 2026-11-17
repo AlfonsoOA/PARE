@@ -6,8 +6,8 @@ import { app } from './estado.svelte.js';
 
 const BASE = { P: ['p', 25], HC: ['hc', 40], G: ['g', 10] };
 export const MOMENTO_DE_COMIDA = { desayuno: 'desayuno', media: 'merienda', comida: 'comida', merienda: 'merienda', cena: 'cena' };
-export const ESTILOS = [['española', 'Española'], ['mediterránea', 'Mediterránea'], ['italiana', 'Italiana'], ['asiática', 'Asiática'], ['mexicana', 'Mexicana'], ['árabe', 'Árabe e india'], ['internacional', 'Desayunos del mundo']];
-export const ESTILO_DE = { india: 'árabe' };
+import { ESTILOS, ESTILO_DE } from './recetarioFormato.js';
+export { ESTILOS, ESTILO_DE };
 export const NOMBRE_MOMENTO = { desayuno: 'Desayuno', comida: 'Comida', cena: 'Cena', merienda: 'Merienda', postre: 'Postres y dulces' };
 
 /** Raciones de proteína, hidratos y grasa que aportan unos ingredientes [{aid, g}]. */

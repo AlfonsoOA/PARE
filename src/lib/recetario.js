@@ -3,55 +3,16 @@
 // Las de PARE no se tocan: si alguien cambia una, se guarda como receta suya («mi versión»).
 import { cat, normalizar } from './catalogo.js';
 import { app, uuid, hoyISO } from './estado.svelte.js';
-import { todasRecetas, calcularReceta, momentosDe, ESTILOS, ESTILO_DE } from './recetas.js';
+import { todasRecetas, calcularReceta, momentosDe } from './recetas.js';
+import { ESTILOS, MOMENTOS, DIETA, libroRecetario } from './recetarioFormato.js';
 import { emparejar } from './plantillas.js';
 import { crearXlsx } from './xlsxEscribir.js';
 
 const alimento = (id) => cat.alimentoPorId.get(id) ?? app.datos.productosPropios?.find((a) => a.id === id);
-const MOMENTOS = ['desayuno', 'comida', 'merienda', 'cena', 'postre'];
-const DIETA = (r) => ((r.etq || []).includes('vegano') ? 'Vegana' : (r.etq || []).includes('vegetariano') ? 'Vegetariana' : 'Omnívora');
-const CAB_REC = ['ID', 'Origen', 'Nombre', 'Tipo', 'Porciones', 'Momento', 'Tiempo (min)', 'Estilo', 'Dieta', 'Peso final cocinado (g)', 'Notas', 'Protocolo', 'Borrar'];
-const CAB_ING = ['Receta (ID o nombre)', 'Ingrediente', 'Gramos', 'Nota'];
-
-const INSTRUCCIONES = [
-  'PARE · Recetario en Excel',
-  'Este archivo es tu recetario: trae todas las recetas de PARE y las tuyas. Edítalo y súbelo en PARE: Yo → Archivo PARE → Importar (o Comer → Recetas → Recetario en Excel).',
-  '',
-  'CÓMO SE ACTUALIZA:',
-  'Cada receta tiene un ID. Si cambias una fila con ID, se actualiza esa receta. Una fila sin ID es una receta nueva.',
-  'Nada se borra por no estar en el archivo. Para quitar una receta tuya, pon «sí» en la columna Borrar. Una receta de PARE no se borra: se oculta para ti.',
-  'Las recetas de PARE (Origen = PARE) no se modifican para todos: si cambias una, se guarda como receta tuya («mi versión»). Si crees que debería cambiar para todos, pásale el archivo a quien mantiene PARE.',
-  '',
-  'HOJA «RECETAS» (una fila por receta):',
-  'Tipo: «Plato» = un plato para una persona; PARE ajusta las cantidades a tu comida. «Lote» = se hace entero (un pan, una tarta) y se come por porciones.',
-  'Porciones: en un lote, en cuántas porciones se divide. En un plato, 1.',
-  'Momento: desayuno, comida, merienda, cena o postre; varios separados por punto y coma (comida; cena).',
-  'Dieta: Omnívora, Vegetariana o Vegana. Los alérgenos los calcula PARE con los ingredientes.',
-  'Peso final cocinado (g): opcional. Lo que pesa el plato o el lote ya hecho. Con él, PARE da los macros por 100 g de lo cocinado; sin él, por 100 g de la mezcla en crudo.',
-  'Protocolo: un paso por línea dentro de la celda (Alt+Intro en Excel; Ctrl+Intro en Google Sheets). Si empiezas un paso con «Título: …», el título sale en negrita en la app.',
-  '',
-  'HOJA «INGREDIENTES» (una fila por ingrediente):',
-  'Receta: el ID o el nombre exacto de la receta. Ingrediente: cópialo de la hoja «Alimentos» o elígelo en el desplegable; si escribes otro, PARE busca el más parecido y te deja corregirlo.',
-  'Gramos: en crudo. Nota: «escurrida», «molida en casa», «4 huevos L»…',
-  '',
-  'Las calorías, los macros por porción y por 100 g y los alérgenos los calcula PARE. No hace falta ponerlos.',
-];
-
 /** El recetario completo como .xlsx (sirve de plantilla y de base de datos). */
 export function recetarioXlsx() {
-  const recetas = todasRecetas();
-  const filasRec = [CAB_REC, ...recetas.map((r) => [r.id, r.propia ? 'Mía' : 'PARE', r.n, r.tipo === 'lote' ? 'Lote' : 'Plato', +r.porciones || 1,
-    momentosDe(r).join('; '), r.tiempo ?? null, ESTILOS.find(([v]) => v === (ESTILO_DE[r.estilo] ?? r.estilo))?.[1] ?? (r.estilo === 'casera' ? 'Casera' : r.estilo ?? ''),
-    DIETA(r), r.pesoFinal ?? null, r.notas ?? '', (r.pasos || []).join('\n'), ''])];
-  const filasIng = [CAB_ING, ...recetas.flatMap((r) => r.ingredientes.map((i) => [r.id, alimento(i.id)?.n ?? i.n ?? i.id, i.g, i.nota ?? '']))];
-  const ali = [...(app.datos.productosPropios ?? []), ...cat.alimentos].map((a) => a.n).sort((a, b) => a.localeCompare(b, 'es'));
-  return crearXlsx([
-    { nombre: 'Instrucciones', filas: INSTRUCCIONES.map((l) => [l]), anchos: [110], cabecera: false },
-    { nombre: 'Recetas', filas: filasRec, anchos: [14, 8, 40, 8, 10, 18, 11, 14, 12, 12, 30, 60, 8],
-      desplegables: [{ rango: 'D2:D2000', lista: '"Plato,Lote"' }, { rango: 'I2:I2000', lista: '"Omnívora,Vegetariana,Vegana"' }, { rango: 'M2:M2000', lista: '"sí,no"' }] },
-    { nombre: 'Ingredientes', filas: filasIng, anchos: [16, 46, 9, 30], desplegables: [{ rango: 'B2:B5000', lista: `Alimentos!$A$2:$A$${ali.length + 1}` }] },
-    { nombre: 'Alimentos', filas: [['Alimento'], ...ali.map((n) => [n])], anchos: [56] },
-  ], 1);
+  const lista = [...(app.datos.productosPropios ?? []), ...cat.alimentos];
+  return crearXlsx(libroRecetario(todasRecetas(), { nombreAlimento: (id) => alimento(id)?.n, alimentos: lista.map((a) => a.n) }), 1);
 }
 export const nombreRecetario = () => `PARE_recetario_${hoyISO()}.xlsx`;
 
