@@ -4,6 +4,20 @@
   import Logo from '../componentes/Logo.svelte';
   import { URL_OPINION } from '../lib/instalar.js';
   let d = $derived(app.datos);
+  const PUBLICADA = typeof __PUBLICADA__ !== 'undefined' ? __PUBLICADA__ : 'desarrollo';
+  let buscando = $state('');
+  // Busca una versión nueva: si la hay, el service worker la instala y la app se recarga sola (main.js).
+  async function buscarVersion() {
+    buscando = 'Buscando…';
+    try {
+      const reg = await navigator.serviceWorker?.getRegistration();
+      if (!reg) { location.reload(); return; }
+      await reg.update();
+      const nueva = reg.installing || reg.waiting;
+      if (nueva) { buscando = 'Hay una versión nueva: instalando…'; setTimeout(() => location.reload(), 4000); }
+      else buscando = 'Ya tienes la última versión.';
+    } catch { buscando = 'Sin conexión: inténtalo con cobertura.'; }
+  }
   const ir = (nombre, extra = {}) => (app.vista = { nombre, acento: 'yo', ...extra });
   const filas = $derived([
     ['perfil', 'Perfil', `${d.perfil.nombre || 'Sin nombre'} · nivel ${d.perfil.nivel}`],
@@ -46,6 +60,7 @@
   <div class="acerca">
     <Logo tam={48} />
     <p class="sec peq">© 2026 Alfonso Olaya Abril. Software libre con licencia AGPL-3.0: cualquier copia o versión modificada tiene que publicar su código igual de abierto.</p>
+    <p class="sec peq">Versión publicada el {PUBLICADA}. <button class="enlace" onclick={buscarVersion}>Buscar actualización</button>{buscando ? ` ${buscando}` : ''}</p>
     <p class="sec peq">PARE · Pain and Reward · v0.1 (pruebas). Ejercicios: free-exercise-db (dominio público). Alimentos: USDA FoodData Central. Actividad: 2024 Adult Compendium of Physical Activities.</p>
     <p class="sec peq">Privacidad: tus entrenos, dieta, peso y encuestas no salen nunca del móvil. PARE solo cuenta de forma anónima, sin cookies, cuántos móviles la usan.</p>
     <p class="sec peq">PARE da criterios generales de entrenamiento y alimentación; no hace diagnósticos médicos. Ante dolor que empeora o dura más de 2-3 semanas, consulta con un profesional sanitario.</p>
