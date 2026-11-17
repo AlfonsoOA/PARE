@@ -83,6 +83,16 @@
   const sumaMenu = (dia, c) => sumar(menuDe(dia, c));
 </script>
 
+{#snippet lineaEditable(e)}
+  {#if e.tipo === 'alimento'}
+    <span class="linea-ed"><span>{alimento(e.aid)?.n ?? '¿?'}</span> <span class="nowrap"><input class="gr" type="number" inputmode="decimal" min="0" step="5" bind:value={e.g} aria-label="Gramos de {alimento(e.aid)?.n}" /> g <span class="sec">· {fmtNum(aporte(e).kcal)} kcal</span></span></span>
+  {:else if e.tipo === 'receta'}
+    <span class="linea-ed"><span>{receta(e.rid)?.n}</span> <span class="nowrap"><input class="gr" type="number" inputmode="decimal" min="0" step="0.5" bind:value={e.porciones} aria-label="Porciones de {receta(e.rid)?.n}" /> porc. <span class="sec">· {fmtNum(aporte(e).kcal)} kcal</span></span></span>
+  {:else}
+    <span>{etiquetaEntrada(e)} <span class="sec">({fmtNum(aporte(e).kcal)} kcal)</span></span>
+  {/if}
+{/snippet}
+
 <div class="pantalla">
   <div class="cabecera"><h1>Comer</h1>{#if d.dieta}<button class="enlace" onclick={() => (app.vista = { nombre: 'midieta', acento: 'comer' })}>Mi dieta</button>{/if}</div>
 
@@ -156,7 +166,7 @@
         {/each}
         {#if c.verdura}<p class="sec peq">+ verdura libre</p>{/if}
         {#each deComida(c.id).filter((e) => e.tipo !== 'racion') as e (e.id)}
-          <div class="fila entre peq">{#if e.tipo === 'plato' && receta(e.rid)}<button class="enlace-l" onclick={() => (recetaAbierta = { r: receta(e.rid), comida: c.id })}>{etiquetaEntrada(e)} <span class="sec">({fmtNum(aporte(e).kcal)} kcal) · ver receta</span></button>{:else}<span>{etiquetaEntrada(e)} <span class="sec">({fmtNum(aporte(e).kcal)} kcal)</span></span>{/if}<button class="icono-b" style="width:36px;height:36px" onclick={() => quitar(fecha, e.id)} aria-label="Quitar"><Icono n="cerrar" tam={18} /></button></div>
+          <div class="fila entre peq">{#if e.tipo === 'plato' && receta(e.rid)}<button class="enlace-l" onclick={() => (recetaAbierta = { r: receta(e.rid), comida: c.id })}>{etiquetaEntrada(e)} <span class="sec">({fmtNum(aporte(e).kcal)} kcal) · ver receta</span></button>{:else}{@render lineaEditable(e)}{/if}<button class="icono-b" style="width:36px;height:36px" onclick={() => quitar(fecha, e.id)} aria-label="Quitar"><Icono n="cerrar" tam={18} /></button></div>
         {/each}
         <button class="enlace" style="align-self:flex-start" onclick={() => (anadirEn = { comida: c.id })}>+ Añadir alimento o receta</button>
       </div>
@@ -164,7 +174,7 @@
     <p class="sec peq">Toca una ficha para marcar una ración tomada; pesa solo si quieres. La dieta va por fecha: si un día se tuerce, al siguiente toca la del siguiente.</p>
 
   {:else if sub === 'menu'}
-    <p class="sec peq">Concreta qué comes en cada comida de cada día, a partir de tus raciones. Es opcional: quien no quiera, va por raciones.</p>
+    <p class="sec peq">Concreta qué comes en cada comida de cada día, a partir de tus raciones. Es opcional: quien no quiera, va por raciones. Cambia los gramos de cualquier alimento y las kcal se recalculan al momento.</p>
     {#if confirmarMenu}
       <div class="tarjeta"><p>Se sustituye el menú de toda la semana.</p><div class="fila"><button class="boton" style="flex:1" onclick={generarMenu}>Sí, proponer</button><button class="boton sec2" style="flex:1" onclick={() => (confirmarMenu = false)}>Cancelar</button></div></div>
     {:else}
@@ -178,7 +188,7 @@
       <div class="tarjeta">
         <div class="fila entre"><h3>{c.nombre}</h3><span class="sec peq">pauta: {GRUPOS_RACION.filter((g) => c.raciones[g] > 0).map((g) => `${c.raciones[g]} ${g}`).join(', ')}</span></div>
         {#each menuDe(diaMenu, c.id) as e, k}
-          <div class="fila entre peq">{#if e.tipo === 'plato' && receta(e.rid)}<button class="enlace-l" onclick={() => (recetaAbierta = { r: receta(e.rid), comida: c.id })}>{etiquetaEntrada(e)} <span class="sec">· ver receta</span></button>{:else}<span>{etiquetaEntrada(e)}</span>{/if}<button class="icono-b" style="width:36px;height:36px" onclick={() => d.dieta.menu[diaMenu][c.id].splice(k, 1)} aria-label="Quitar"><Icono n="cerrar" tam={18} /></button></div>
+          <div class="fila entre peq">{#if e.tipo === 'plato' && receta(e.rid)}<button class="enlace-l" onclick={() => (recetaAbierta = { r: receta(e.rid), comida: c.id })}>{etiquetaEntrada(e)} <span class="sec">({fmtNum(aporte(e).kcal)} kcal) · ver receta</span></button>{:else}{@render lineaEditable(e)}{/if}<button class="icono-b" style="width:36px;height:36px" onclick={() => d.dieta.menu[diaMenu][c.id].splice(k, 1)} aria-label="Quitar"><Icono n="cerrar" tam={18} /></button></div>
         {/each}
         {#if menuDe(diaMenu, c.id).length}
           {@const real = sumar(menuDe(diaMenu, c.id))}
@@ -244,6 +254,9 @@
 {/if}
 
 <style>
+  .linea-ed { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; min-width: 0; flex: 1; }
+  .nowrap { white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; }
+  .gr { width: 72px; min-height: 36px; padding: 4px 8px; text-align: right; }
   .pestanas { display: flex; gap: 4px; background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; padding: 4px; }
   .pestanas button { flex: 1; background: none; border: 0; border-radius: 9px; min-height: 40px; color: var(--texto2); font-size: 13px; cursor: pointer; }
   .pestanas button.on { background: var(--elevada); color: var(--acento); font-weight: 600; }
