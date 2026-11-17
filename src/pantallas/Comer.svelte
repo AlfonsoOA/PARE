@@ -69,8 +69,10 @@
   <div class="cabecera"><h1>Comer</h1>{#if d.dieta}<button class="enlace" onclick={() => (app.vista = { nombre: 'midieta', acento: 'comer' })}>Mi dieta</button>{/if}</div>
 
   {#if !d.dieta}
-    <div class="tarjeta"><p>Aún no tienes pauta. Haz el test de inicio y PARE te la calcula.</p>
-      <button class="boton ancho" onclick={() => (app.vista = { nombre: 'test' })}>Hacer el test</button></div>
+    <div class="tarjeta"><p>Aún no tienes pauta de dieta.</p>
+      <p class="sec peq">Con unas preguntas sobre ti, tu objetivo, tu actividad y tus comidas (2 minutos), PARE te la calcula. Tu rutina no se toca.</p>
+      <button class="boton ancho" onclick={() => (app.vista = { nombre: 'test', soloDieta: true, acento: 'comer' })}>Calcular mi dieta</button>
+      <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'archivo', acento: 'yo' })}>Tengo mi dieta en un archivo PARE</button></div>
   {:else}
   {#if !d.ayudas?.comer}
     <div class="aviso-l"><Icono n="info" tam={20} />

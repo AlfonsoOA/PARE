@@ -2,7 +2,7 @@
   import { resumenWod } from '../lib/wods.js';
   import { app, ir, hoyISO, aviso } from '../lib/estado.svelte.js';
   import { GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
-  import { duracionSesion, volumenSemana, volumenPlanificado, lunes, BANDA } from '../lib/entreno.js';
+  import { duracionSesion, volumenSemana, volumenPlanificado, lunes, BANDA, banda } from '../lib/entreno.js';
   import { sesionPropuesta, iniciarSesion, retomarDesdeElPrincipio } from '../lib/sesiones.js';
   import { avisosDeHoy, descartar } from '../lib/avisos.js';
   import { delDia, sumar, objetivoDelDia, tipoDeDia, GRUPOS_RACION, redondear } from '../lib/dieta.js';
@@ -131,12 +131,14 @@
     <div class="tarjeta">
       <div class="fila entre"><span class="etiqueta">Series esta semana</span><span class="sec peq">hechas / previstas</span></div>
       {#each GRUPOS.filter((g) => plan[g] > 0 || vol[g] > 0) as g}
+        {@const bg = banda(g, d.perfil.diasSemana)}
+        {@const tope = Math.max(bg.max * 1.25, plan[g] * 1.1, vol[g] * 1.05)}
         <button class="grupo" onclick={() => (app.tab = 'progreso', app.vista = null, (app.subProgreso = 'volumen'))}>
-          <div class="fila entre peq"><span>{NOMBRE_GRUPO[g]}</span><span class="sec">{fmtNum(vol[g], 1)} / {fmtNum(plan[g], 1)}</span></div>
-          <div class="barra-p"><i style="width: {Math.min(100, (vol[g] / Math.max(plan[g], 1)) * 100)}%"></i></div>
+          <div class="fila entre peq"><span>{NOMBRE_GRUPO[g]}</span><span class="sec">{fmtNum(vol[g], 1)} / {fmtNum(plan[g], 1)} <span class="peq">(banda {bg.min}-{bg.max})</span></span></div>
+          <div class="barra-p"><i style="width: {Math.min(100, (vol[g] / tope) * 100)}%"></i>{#if bg.min}<b style="left:{(bg.min / tope) * 100}%"></b>{/if}<b style="left:{(bg.max / tope) * 100}%"></b>{#if plan[g] > 0}<b class="plan" style="left:{(plan[g] / tope) * 100}%"></b>{/if}</div>
         </button>
       {/each}
-      <p class="sec peq">Banda recomendada: {BANDA.min}-{BANDA.max} series a la semana por grupo (piernas, 16-40).</p>
+      <p class="sec peq">Relleno: series hechas. Línea blanca: las que trae tu rutina. Marcas grises: la banda recomendada por grupo. Conteo fraccional: principal 1, secundario 0,5.</p>
     </div>
   {/if}
 

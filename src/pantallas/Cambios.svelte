@@ -1,5 +1,5 @@
 <script>
-  import { app, aviso, ir } from '../lib/estado.svelte.js';
+  import { app, aviso, ir , ajustarDiasSinTest} from '../lib/estado.svelte.js';
   import { ej } from '../lib/catalogo.js';
   import { fmt, fmtFecha } from '../lib/unidades.js';
   import Icono from '../componentes/Icono.svelte';
@@ -15,6 +15,7 @@
       const nueva = JSON.parse(JSON.stringify(c.rutina));
       for (const s of nueva.sesiones) for (const it of s.items) if (it.carga == null && cargas[it.ej] != null) it.carga = cargas[it.ej];
       d.rutina = { ...nueva, version: (d.rutina?.version ?? 0) + 1, de: c.de?.nombre };
+      ajustarDiasSinTest(d);
       d.secuencia.saltos = {};
       const n = d.rutina.sesiones.length;
       if ((d.secuencia.siguiente ?? 0) >= n) d.secuencia.siguiente = 0;

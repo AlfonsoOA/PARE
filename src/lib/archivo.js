@@ -134,6 +134,28 @@ export function archivoWod(w) {
   return cabecera('wod', { datos: { wod: JSON.parse(JSON.stringify(w)) } });
 }
 
+const esIOS = () => /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+/**
+ * Copia automática: descarga el archivo de copia a la carpeta de descargas del móvil, sin preguntar.
+ * Solo dentro de un toque de la persona (si no, el navegador lo bloquea) y no en iPhone, donde abre una vista previa.
+ * Devuelve true si la ha guardado.
+ */
+export function copiaAutomatica() {
+  const d = app.datos;
+  if (d.ajustes.copiaAuto === false || esIOS()) return false;
+  const ult = d.ajustes.ultimaCopia;
+  if (ult && (Date.now() - new Date(ult)) / 864e5 < 6) return false;
+  try {
+    const texto = JSON.stringify(archivoCopia());
+    const url = URL.createObjectURL(new Blob([texto], { type: 'application/json' }));
+    const a = document.createElement('a');
+    a.href = url; a.download = `PARE_copia_${hoyISO()}.json`; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+    d.ajustes.ultimaCopia = new Date().toISOString();
+    return true;
+  } catch { return false; }
+}
+
 export async function hacerCopia() {
   const r = await compartir(archivoCopia(), app.datos.perfil.nombre);
   if (r !== 'cancelado') { app.datos.ajustes.ultimaCopia = new Date().toISOString(); aviso('Copia de seguridad hecha'); }

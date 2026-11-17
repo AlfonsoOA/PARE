@@ -85,6 +85,9 @@ label.campo { display: flex; flex-direction: column; gap: 6px; font-size: 14px; 
 .barra-p { height: 8px; background: var(--borde); border-radius: 4px; overflow: hidden; position: relative; }
 .barra-p > i { position: absolute; inset: 0 auto 0 0; background: var(--acento); border-radius: 4px; }
 .barra-p > b { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--texto2); }
+.barra-p > b.plan { width: 3px; background: var(--texto); margin-left: -1px; }
+.barra-p { overflow: visible; }
+.barra-p > i { max-width: 100%; }
 
 .vacio { text-align: center; padding: 30px 10px; color: var(--texto2); }
 .oculto { display: none !important; }

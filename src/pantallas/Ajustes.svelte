@@ -29,7 +29,9 @@
   </div>
   <div class="tarjeta">
     <span class="etiqueta">Copia de seguridad</span>
+    <label class="fila entre"><span>Copia automática semanal al terminar una sesión <span class="sec peq">— se guarda en Descargas</span></span><input type="checkbox" bind:checked={a.copiaAuto} style="width:26px;height:26px" /></label>
     <label class="fila entre"><span>Recordármela cada (días)</span><input type="number" inputmode="numeric" bind:value={a.recordatorioCopiaDias} style="max-width:90px;text-align:center" /></label>
+    <p class="sec peq">Tus datos viven en el navegador del móvil. Si borras el historial marcando «cookies y datos de sitios», PARE se queda vacía. Para recuperarla: abre PARE → «Tengo un archivo PARE» → elige la última copia de Descargas.</p>
   </div>
   <button class="boton peligro ancho" onclick={() => (borrar = true)}>Borrar todos mis datos</button>
 </div>

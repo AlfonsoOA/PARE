@@ -3,6 +3,7 @@
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
   import { historialEjercicio, novedades, volumenSesionHecha, cargaEfectiva, usaPesoCorporal } from '../lib/entreno.js';
   import { propuestasPara, pesoEnFecha } from '../lib/sesiones.js';
+  import { copiaAutomatica } from '../lib/archivo.js';
   import { fmt, fmtMin, fmtNum, mostrar, guardar, ud, fmtReloj } from '../lib/unidades.js';
   import Icono from '../componentes/Icono.svelte';
 
@@ -38,7 +39,7 @@
         else { const f = cs.map((c, k) => c ?? cs.slice(0, k).reverse().find((y) => y != null) ?? cs.find((y) => y != null)); it.cargas = f; it.carga = Math.max(...f); }
       }
     }
-    aviso('Guardado. Earn your reward.');
+    aviso(copiaAutomatica() ? 'Guardado, y copia de seguridad en Descargas.' : 'Guardado. Earn your reward.');
     ir('hoy');
   }
 </script>

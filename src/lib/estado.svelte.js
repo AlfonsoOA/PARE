@@ -27,7 +27,8 @@ export function datosVacios() {
       segPorSerie: 40,
       pantallaEncendida: true,
       ultimaCopia: null,
-      recordatorioCopiaDias: 14,
+      recordatorioCopiaDias: 7,
+      copiaAuto: true, // al terminar una sesión, guarda una copia en el móvil si la última tiene más de 6 días
     },
     perfil: {
       id: uuid(), nombre: '', sexo: '', edad: null, altura: null, nivel: 'principiante', objetivo: '',
@@ -80,8 +81,10 @@ export async function cargarDatos() {
     if (guardado?.datos) {
       app.datos = { ...datosVacios(), ...guardado.datos };
       app.datos.ajustes = { ...datosVacios().ajustes, ...guardado.datos.ajustes };
+      if (app.datos.ajustes.recordatorioCopiaDias === 14) app.datos.ajustes.recordatorioCopiaDias = 7; // antes eran 14
       app.datos.perfil = { ...datosVacios().perfil, ...guardado.datos.perfil };
       app.sesionActiva = guardado.sesionActiva ?? null;
+      ajustarDiasSinTest(app.datos);
     }
   } catch (e) {
     console.warn('No se pudieron leer los datos guardados', e);
@@ -95,6 +98,13 @@ export async function cargarDatos() {
   });
   // Pide al navegador que no borre los datos si le falta espacio.
   navigator.storage?.persist?.().catch(() => {});
+}
+
+/** Sin test, los días de entreno salen de la rutina (si no, quedaba el 3 por defecto y el volumen previsto salía corto). */
+export function ajustarDiasSinTest(d) {
+  if (d.perfil.test || !d.rutina?.sesiones?.length) return;
+  const n = d.rutina.sesiones.filter((s) => s.tipo !== 'wod').length;
+  if (n) d.perfil.diasSemana = Math.min(7, n);
 }
 
 export function ir(tab, vista = null) {

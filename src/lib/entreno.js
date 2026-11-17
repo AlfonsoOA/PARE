@@ -341,8 +341,8 @@ export function proponerSiguiente(item, hecho, ajustes) {
   prop.cargas = series.map((z) => z.carga ?? 0);
   prop.carga = cargaHoy;
   const completas = series.length >= item.series && series.every((z) => (z.reps || 0) >= item.repMax);
-  if (!completas) return { prop, motivo: `Aún no has llegado a ${item.repMax} repeticiones en todas las series: mismos pesos.` };
   if (usaPesoCorporal(e) && !(cargaHoy > 0)) {
+    if (!completas) return { prop, motivo: `Aún no has llegado a ${item.repMax} repeticiones en todas las series: mismo planteamiento.` };
     if (item.repMax < 20) {
       prop.repMin = item.repMin + 2; prop.repMax = item.repMax + 2;
       return { prop, motivo: `Todas las series a ${item.repMax}: sube el rango a ${prop.repMin}-${prop.repMax} (o añade lastre).` };
@@ -351,10 +351,17 @@ export function proponerSiguiente(item, hecho, ajustes) {
     prop.carga = incremento(item.ej, ajustes);
     return { prop, motivo: 'Rango alto completado: empieza a añadir lastre.' };
   }
+  // Doble progresión SERIE A SERIE: sube solo la serie que llegó al tope de repeticiones (en una pirámide,
+  // las series ligeras suben antes que la pesada; si empezaste con poco peso, se corrige solo).
   const inc = incremento(item.ej, ajustes);
-  prop.cargas = prop.cargas.map((c) => c + inc);
-  prop.carga = cargaHoy + inc;
-  return { prop, motivo: `Todas las series a ${item.repMax}: sube el peso de cada serie y vuelve a ${item.repMin} repeticiones.`, sube: true };
+  const suben = series.map((z, k) => ((z.reps || 0) >= item.repMax ? k : -1)).filter((k) => k >= 0);
+  if (!suben.length) return { prop, motivo: `Ninguna serie llegó a ${item.repMax} repeticiones: mismos pesos.` };
+  prop.cargas = prop.cargas.map((c, k) => (suben.includes(k) ? c + inc : c));
+  prop.carga = Math.max(...prop.cargas);
+  if (suben.length === series.length) return { prop, motivo: `Todas las series a ${item.repMax}: sube el peso de cada una y vuelve a ${item.repMin} repeticiones.`, sube: true };
+  const nombres = suben.map((k) => k + 1);
+  const lista = nombres.length === 1 ? `la serie ${nombres[0]}` : `las series ${nombres.slice(0, -1).join(', ')} y ${nombres.at(-1)}`;
+  return { prop, motivo: `Sube solo ${lista}, que llegaron a ${item.repMax} repeticiones; las demás, con el mismo peso.`, sube: true };
 }
 
 // ---------- Nivel ----------

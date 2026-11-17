@@ -2,7 +2,7 @@
   import { wodsHechos, mejoresWod, resumenWod, textoResultado, ESCALAS } from '../lib/wods.js';
   import { app, hoyISO } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
-  import { volumenSemana, lunes, BANDA, banda, mejorSerie, usaPesoCorporal, deltoidesSemana, MIN_CABEZA } from '../lib/entreno.js';
+  import { volumenSemana, volumenPlanificado, lunes, BANDA, banda, mejorSerie, usaPesoCorporal, deltoidesSemana, MIN_CABEZA } from '../lib/entreno.js';
   import { estadosEjercicios } from '../lib/avisos.js';
   import { grasaNavy } from '../lib/plan.js';
   import { sumar } from '../lib/dieta.js';
@@ -20,6 +20,7 @@
   let sub = $state(app.subProgreso || 'ejercicios');
   const wods = $derived(wodsHechos(d.sesiones));
   let detalle = $state(null);
+  const planVol = $derived(volumenPlanificado(d.rutina, d.perfil.diasSemana));
   let medir = $state(false);
 
   const ESTADO = { progresando: ['Progresando', 'bien'], estable: ['Estable', ''], estancado: ['Estancado', 'aviso'], bajando: ['Bajando', 'mal'], mantiene: ['Mantiene en déficit', 'bien'], nuevo: ['Pocos datos', ''] };
@@ -78,15 +79,16 @@
       <span class="etiqueta">Esta semana · series por grupo</span>
       {#each GRUPOS as g}
         {@const v = semanas[0].v[g]}
-        {@const bg = banda(g)}
-        {@const tope = bg.max * 1.25}
+        {@const bg = banda(g, d.perfil.diasSemana)}
+        {@const pl = planVol[g] || 0}
+        {@const tope = Math.max(bg.max * 1.25, pl * 1.1, v * 1.05)}
         <div class="col" style="gap:4px">
-          <div class="fila entre peq"><span>{NOMBRE_GRUPO[g]}</span><span class="sec">{fmtNum(v, 1)}</span></div>
-          <div class="barra-p"><i style="width:{Math.min(100, (v / tope) * 100)}%"></i>{#if bg.min}<b style="left:{(bg.min / tope) * 100}%"></b>{/if}<b style="left:{(bg.max / tope) * 100}%"></b></div>
+          <div class="fila entre peq"><span>{NOMBRE_GRUPO[g]}</span><span class="sec">{fmtNum(v, 1)}{#if pl}{` de ${fmtNum(pl, 1)} previstas`}{/if}</span></div>
+          <div class="barra-p"><i style="width:{Math.min(100, (v / tope) * 100)}%"></i>{#if bg.min}<b style="left:{(bg.min / tope) * 100}%"></b>{/if}<b style="left:{(bg.max / tope) * 100}%"></b>{#if pl}<b class="plan" style="left:{(pl / tope) * 100}%"></b>{/if}</div>
           {#if g === 'hombros' && v > 0}<div class="fila peq sec" style="gap:12px;justify-content:flex-end">{#each ['anterior', 'lateral', 'posterior'] as c}<span>{c} {fmtNum(semanas[0].delt[c], 1)}</span>{/each}</div>{/if}
         </div>
       {/each}
-      <p class="sec peq">Las marcas señalan la banda recomendada ({BANDA.min}-{BANDA.max}; piernas {banda('piernas').min}-{banda('piernas').max}). Conteo fraccional: principal 1, secundario 0,5.</p>
+      <p class="sec peq">La línea blanca son las series que trae tu rutina; las marcas grises, la banda recomendada ({BANDA.min}-{BANDA.max}; piernas {banda('piernas').min}-{banda('piernas').max}). Conteo fraccional: principal 1, secundario 0,5.</p>
     </div>
     <div class="tarjeta">
       <span class="etiqueta">Últimas 8 semanas</span>
@@ -197,8 +199,8 @@
 
 <style>
   .marca { margin-right: 12px; }
-  .pestanas { display: flex; gap: 4px; background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; padding: 4px; }
-  .pestanas button { flex: 1; background: none; border: 0; border-radius: 9px; min-height: 40px; color: var(--texto2); font-size: 14px; cursor: pointer; }
+  .pestanas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; padding: 4px; }
+  .pestanas button { padding: 0 6px; white-space: nowrap; background: none; border: 0; border-radius: 9px; min-height: 40px; color: var(--texto2); font-size: 13px; cursor: pointer; }
   .pestanas button.on { background: var(--elevada); color: var(--acento); font-weight: 600; }
   .pulsable { text-align: left; cursor: pointer; width: 100%; }
   .tabla { overflow-x: auto; }

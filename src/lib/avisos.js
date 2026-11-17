@@ -45,8 +45,8 @@ export function avisosDeHoy() {
   }
   const ult = d.ajustes.ultimaCopia;
   const diasCopia = ult ? (Date.now() - new Date(ult)) / 864e5 : null;
-  if (d.sesiones.length >= 3 && (diasCopia == null || diasCopia > (d.ajustes.recordatorioCopiaDias || 14))) {
-    out.push({ id: `copia-${hoyISO()}`, tipo: 'accion', texto: diasCopia == null ? 'Aún no has hecho ninguna copia de seguridad. Si pierdes el móvil, pierdes esto.' : `Hace ${Math.floor(diasCopia)} días de tu última copia. Si pierdes el móvil, pierdes esto.`, accion: { nombre: 'archivo', acento: 'yo' } });
+  if (d.sesiones.length >= 1 && (diasCopia == null || diasCopia > (d.ajustes.recordatorioCopiaDias || 7))) {
+    out.push({ id: `copia-${hoyISO()}`, tipo: 'accion', texto: diasCopia == null ? 'Aún no tienes ninguna copia. Si borras los datos del navegador o pierdes el móvil, se pierde todo: haz una ahora.' : `Hace ${Math.floor(diasCopia)} días de tu última copia. Si borras los datos del navegador o pierdes el móvil, se pierde lo de después.`, accion: { nombre: 'archivo', acento: 'yo' } });
   }
   return out.filter((a) => !d.avisosDescartados[a.id]);
 }

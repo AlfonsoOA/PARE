@@ -1,5 +1,7 @@
 <script>
-  import { app, hoyISO } from '../lib/estado.svelte.js';
+  import { tick } from 'svelte';
+  import { app, hoyISO, aviso } from '../lib/estado.svelte.js';
+  let { soloDieta = false } = $props();
   import { ZONAS } from '../lib/catalogo.js';
   import { generarRutina, generarDieta, faseDeObjetivo, repartosPara, REPARTO_POR_DEFECTO } from '../lib/plan.js';
   import { nivelActual } from '../lib/entreno.js';
@@ -45,12 +47,43 @@
   });
   const parqSi = $derived(t.parq.some((x) => x === true));
 
+  // Al cambiar de bloque, arriba del todo (el botón pulsado conservaba el foco y el navegador mantenía la página abajo).
+  async function arriba() {
+    document.activeElement?.blur?.();
+    await tick();
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+  }
+  // Solo la dieta (quien ya tiene rutina): sobre ti, objetivo, tu día y comida.
+  const ORDEN = soloDieta ? [0, 2, 4, 5] : BLOQUES.map((_, i) => i);
+  if (!ORDEN.includes(t.paso)) t.paso = ORDEN[0];
+  if (soloDieta && app.datos.rutina) t.diasSemana = app.datos.rutina.sesiones.filter((s) => s.tipo !== 'wod').length || t.diasSemana;
+  const pos = $derived(ORDEN.indexOf(t.paso));
   function siguiente() {
-    if (t.paso < BLOQUES.length - 1) { t.paso++; window.scrollTo(0, 0); return; }
-    terminar();
+    if (pos < ORDEN.length - 1) { t.paso = ORDEN[pos + 1]; arriba(); return; }
+    soloDieta ? terminarDieta() : terminar();
   }
   function atras() {
-    if (t.paso > 0) { t.paso--; window.scrollTo(0, 0); } else app.vista = null;
+    if (pos > 0) { t.paso = ORDEN[pos - 1]; arriba(); } else app.vista = null;
+  }
+  function terminarDieta() {
+    const perfil = app.datos.perfil;
+    Object.assign(perfil, {
+      nombre: t.nombre.trim() || perfil.nombre, sexo: t.sexo, edad: +t.edad, altura: +t.altura, objetivo: t.objetivo, alergenos: [...t.alergenos],
+      horaEntreno: t.horaEntreno || perfil.horaEntreno || 'varia',
+      cocina: { tiempo: t.cocinaTiempo || 'normal', presupuesto: t.presupuesto || 'normal', dieta: t.tipoDieta || 'omnivora' },
+    });
+    const hoy = hoyISO();
+    const m = app.datos.medidas.find((x) => x.fecha === hoy);
+    const med = { fecha: hoy, peso: +t.peso, cintura: t.cintura ? +t.cintura : null, cuello: t.cuello ? +t.cuello : null, cadera: t.cadera ? +t.cadera : null };
+    if (m) Object.assign(m, med); else app.datos.medidas.push(med);
+    const dieta = generarDieta({ ...t, peso: +t.peso, altura: +t.altura, edad: +t.edad, cintura: +t.cintura || null, cuello: +t.cuello || null, cadera: +t.cadera || null });
+    dieta.menu = proponerMenu(dieta, perfil);
+    app.datos.dieta = dieta;
+    perfil.faseDieta = faseDeObjetivo(t.objetivo, dieta);
+    delete perfil.borradorTest;
+    aviso(`Dieta lista: ${dieta.kcal.toLocaleString('es-ES')} kcal`);
+    app.vista = null; app.tab = 'comer';
   }
   function terminar() {
     const perfil = app.datos.perfil;
@@ -81,9 +114,9 @@
 <div class="pantalla">
   <div class="fila entre">
     <button class="icono-b" data-atras onclick={atras} aria-label="Atrás"><Icono n="atras" /></button>
-    <span class="sec peq">Bloque {t.paso + 1} de {BLOQUES.length}</span>
+    <span class="sec peq">{soloDieta ? 'Tu dieta · ' : ''}Bloque {pos + 1} de {ORDEN.length}</span>
   </div>
-  <div class="avance" aria-hidden="true"><i style="width: {((t.paso + 1) / BLOQUES.length) * 100}%"></i></div>
+  <div class="avance" aria-hidden="true"><i style="width: {((pos + 1) / ORDEN.length) * 100}%"></i></div>
   <h1>{BLOQUES[t.paso]}</h1>
 
   {#if t.paso === 0}
@@ -213,7 +246,7 @@
     <p class="sec">Con esto, PARE te monta la rutina y la dieta. Lo verás antes de empezar y podrás ajustarlo.</p>
   {/if}
 
-  <button class="boton ancho" disabled={!valido} onclick={siguiente}>{t.paso < BLOQUES.length - 1 ? 'Siguiente' : 'Ver mi plan'}</button>
+  <button class="boton ancho" disabled={!valido} onclick={siguiente}>{pos < ORDEN.length - 1 ? 'Siguiente' : soloDieta ? 'Calcular mi dieta' : 'Ver mi plan'}</button>
 </div>
 
 <style>
