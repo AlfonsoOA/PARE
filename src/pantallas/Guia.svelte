@@ -42,11 +42,13 @@
       'Top set: la serie más pesada del ejercicio, la primera tras calentar, a RPE alto. En la sesión sale marcada con TOP. Las demás son back-off: algo menos de peso (un 10-15 %) y alguna repetición más.',
       'Si tu rutina los lleva, los ves en negrita encima de las series de cada ejercicio. Se cambian en Editar rutina, en cada ejercicio.',
     ]],
-    ['importar', 'Pasar tu rutina o tu dieta desde Excel', [
+    ['importar', 'Pasar tu rutina, tu dieta o tus recetas desde Excel', [
       'Yo → Archivo PARE → Importar rutina o dieta. Ahí descargas la plantilla de rutina o la de dieta.',
       'Rellénala en Excel, Google Sheets o la app de hojas de cálculo del móvil. Tiene una hoja de instrucciones, un ejemplo y la lista de ejercicios o alimentos de PARE para copiar los nombres.',
       'Guárdala como .xlsx (en Google Sheets: Archivo → Descargar → Microsoft Excel) y súbela en la misma pantalla.',
       'PARE reconoce los nombres. Los dudosos salen con «¿?» y los que no reconoce, en rojo: tócalos para elegir el bueno. Después revisas y aceptas.',
+      'Recetas: en la misma pantalla (o en Comer → Recetas → Recetario en Excel) descargas el recetario completo, con todas las recetas de PARE y las tuyas. Cambia o añade filas y vuelve a subirlo: las filas con ID actualizan esa receta, las filas sin ID son recetas nuevas y nada se borra salvo que pongas «sí» en Borrar.',
+      'Si cambias una receta de PARE, se guarda como tuya («mi versión»). PARE calcula solo las kcal, los macros por porción y por 100 g (de lo cocinado si pones el peso final) y los alérgenos.',
     ]],
     ['wod', 'CrossFit (WOD)', [
       'Desde Entrenar → WOD suelto, o en el día de WOD de tu rutina.',

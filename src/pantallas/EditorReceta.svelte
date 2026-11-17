@@ -63,6 +63,7 @@
     <span class="etiqueta">Cuándo se come</span>
     <div class="fila envolver">{#each ['desayuno', 'comida', 'cena', 'merienda', 'postre'] as m}<button class="chip" class:on={r.momentos.includes(m)} onclick={() => toggle(m)}>{NOMBRE_MOMENTO[m]}</button>{/each}</div>
     <label class="campo">Tiempo (minutos)<input type="number" inputmode="numeric" bind:value={r.tiempo} /></label>
+    <label class="campo">Peso final cocinado (g, opcional)<input type="number" inputmode="numeric" bind:value={r.pesoFinal} placeholder="—" /></label>
   </div>
 
   <div class="tarjeta">

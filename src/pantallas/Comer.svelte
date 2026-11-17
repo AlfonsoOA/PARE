@@ -179,6 +179,7 @@
     <div class="desliza">{#each [['vegetariano', 'Vegetarianas'], ['vegano', 'Veganas'], ['sin_gluten', 'Sin gluten'], ['sin_lactosa', 'Sin lactosa']] as [v, l]}<button class="chip mini" class:on={dietaRecetas.includes(v)} onclick={() => toggleDieta(v)}>{l}</button>{/each}</div>
     <div class="desliza"><button class="chip mini" class:on={!estiloRecetas} onclick={() => (estiloRecetas = null)}>Cualquier cocina</button>{#each ESTILOS as [v, l]}<button class="chip mini" class:on={estiloRecetas === v} onclick={() => (estiloRecetas = estiloRecetas === v ? null : v)}>{l}</button>{/each}</div>
     <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'editorReceta', acento: 'comer' })}><Icono n="mas" /> Crear mi receta</button>
+    <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'importar', acento: 'comer' })}>Recetario en Excel (descargar o subir)</button>
     {#if !recetasFiltradas.length}<p class="vacio">Ninguna receta con esos filtros.</p>{/if}
     {#if filtroRecetas === 'parati'}<p class="sec peq">Las que mejor encajan con tu objetivo{ctxRecetas.exigente ? ', con el entreno fuerte de hoy' : ''}, tu tiempo, tu presupuesto y lo que te gusta. Cámbialo en Mi dieta; marca «Me gusta» o «No me gusta» dentro de cada receta.</p>{/if}
     {#each recetasFiltradas as x (x.r.id)}

@@ -42,9 +42,9 @@
   </div>
 
   <div class="tarjeta">
-    <h2>Importar desde Excel</h2>
-    <p class="sec peq">¿Tienes tu rutina o tu dieta en papel o en una hoja de cálculo? Descarga la plantilla, rellénala y súbela: PARE la convierte.</p>
-    <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'importar', acento: 'yo', volver: { nombre: 'archivo', acento: 'yo' } })}>Importar rutina o dieta</button>
+    <h2>Excel: rutina, dieta y recetas</h2>
+    <p class="sec peq">¿Tienes tu rutina, tu dieta o tus recetas en papel o en una hoja de cálculo? Descarga la plantilla (o el recetario completo), rellénala y súbela: PARE la convierte.</p>
+    <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'importar', acento: 'yo', volver: { nombre: 'archivo', acento: 'yo' } })}>Importar o descargar plantillas</button>
   </div>
 
   <div class="tarjeta">

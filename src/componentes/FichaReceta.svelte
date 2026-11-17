@@ -1,4 +1,5 @@
 <script>
+  import { por100 } from '../lib/recetario.js';
   // Ficha de una receta: ingredientes ajustados a la comida elegida, pasos y botones para anotarla o ponerla en el menú.
   import { app, hoyISO, aviso } from '../lib/estado.svelte.js';
   import { anotar, pautaComida, alimento, aporte, sumar, diaSemana, DIAS_SEMANA, NOMBRE_RACION, objetivoComidaGramos } from '../lib/dieta.js';
@@ -25,6 +26,7 @@
     cuadrarComida([plato], objetivoComidaGramos(d.dieta, { raciones: objetivo }));
     return { ...a, items: plato.items };
   });
+  const c100 = $derived(por100(r));
   const total = $derived(r.tipo === 'plato' ? sumar(aj.items.map((it) => ({ tipo: 'alimento', aid: it.aid, g: it.g }))) : aporte({ tipo: 'receta', rid: r.id, porciones: 1 }));
   const apta = recetaApta(r, d.perfil);
   const entrada = () => (r.tipo === 'plato' ? { tipo: 'plato', rid: r.id, items: aj.items.map(({ aid, g }) => ({ aid, g })) } : { tipo: 'receta', rid: r.id, porciones: 1 });
@@ -94,6 +96,7 @@
       <div class="fila entre peq" style="gap:10px"><span>{a?.n ?? it.aid}{#if it.nota}<span class="sec ml">· {it.nota}</span>{/if}</span><span class="cant"><b>{fmtNum(it.g)} g</b>{#if enCasero(it)}<span class="sec ml">{enCasero(it)}</span>{/if}</span></div>
     {/each}
     <p class="sec peq">{fmtNum(total.kcal)} kcal · {fmtNum(total.p)} g proteína · {fmtNum(total.hc)} g hidratos · {fmtNum(total.g)} g grasa{r.tipo === 'lote' ? ' por porción' : ''}</p>
+    {#if c100}<p class="sec peq">Por 100 g {c100.cocinado ? 'de lo cocinado' : 'de la mezcla en crudo'}: {fmtNum(c100.kcal)} kcal · {fmtNum(c100.p, 1)} g proteína · {fmtNum(c100.hc, 1)} g hidratos · {fmtNum(c100.g, 1)} g grasa{c100.cocinado ? ` (pesa ${fmtNum(c100.total)} g hecho)` : ''}</p>{/if}
     {#if r.tipo === 'plato' && objetivo}
       <p class="sec peq">Ajustada a tu {c.nombre.toLowerCase()}: {['P', 'HC', 'G'].filter((g) => objetivo[g] > 0).map((g) => `${fmtNum(objetivo[g], 1)} ${NOMBRE_RACION[g].toLowerCase()}`).join(' · ')}. Verdura y especias, igual. Se cuentan todos los macros de cada ingrediente.</p>
       {#each Object.entries(aj.faltan) as [g, n]}
