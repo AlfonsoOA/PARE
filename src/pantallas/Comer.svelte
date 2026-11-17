@@ -30,6 +30,8 @@
   const VACIAS_REC = new Set(['de', 'del', 'la', 'el', 'los', 'las', 'con', 'en', 'al', 'y', 'o', 'para', 'por', 'un', 'una', 'sin']);
   const palabrasBusqueda = $derived(normalizar(buscarRecetas).split(/[^a-z0-9ñ]+/).filter((w) => w.length > 1 && !VACIAS_REC.has(w)).map((w) => (w.length > 4 ? w.replace(/(es|s)$/, '') : w)));
   const nombreAli = (id) => (cat.alimentoPorId.get(id) ?? d.productosPropios?.find((a) => a.id === id))?.n ?? '';
+  // recetas que encajan con la búsqueda pero quedan fuera por los filtros Vegetarianas / Sin gluten…
+  const ocultasPorFiltro = $derived(palabrasBusqueda.length && dietaRecetas.length ? todasRecetas().filter((r) => puntoBusqueda(r, palabrasBusqueda) > 0 && !dietaRecetas.every((x) => (r.etq || []).includes(x))).length : 0);
   function puntoBusqueda(r, ws) {
     const nom = normalizar(r.n), resto = normalizar([...(r.ingredientes || []).map((i) => nombreAli(i.id)), r.estilo, r.notas].join(' '));
     let p = 0;
@@ -194,6 +196,7 @@
     <input type="search" class="buscar-rec" placeholder="Buscar: paella, sepia, tortitas, avena…" bind:value={buscarRecetas} aria-label="Buscar receta por nombre o ingrediente" />
     {#if palabrasBusqueda.length}
       <p class="sec peq">{recetasFiltradas.length ? `${recetasFiltradas.length} ${recetasFiltradas.length === 1 ? 'receta' : 'recetas'} con «${buscarRecetas.trim()}» en el nombre o los ingredientes.` : ''}</p>
+      {#if ocultasPorFiltro}<button class="boton sec2 ancho" onclick={() => dietaRecetas.splice(0)}>{ocultasPorFiltro} {ocultasPorFiltro === 1 ? 'receta oculta' : 'recetas ocultas'} por el filtro {dietaRecetas.map((x) => ({ vegetariano: 'Vegetarianas', vegano: 'Veganas', sin_gluten: 'Sin gluten', sin_lactosa: 'Sin lactosa' })[x]).join(' + ')}: quitarlo</button>{/if}
     {:else}
     <div class="desliza">{#each [['parati', 'Para ti'], ['comida', 'Comida'], ['cena', 'Cena'], ['desayuno', 'Desayuno'], ['merienda', 'Merienda'], ['postre', 'Postres'], ...((d.recetasPropias || []).length ? [['mias', 'Mías']] : []), ['todas', 'Todas']] as [v, l]}<button class="chip" class:on={filtroRecetas === v} onclick={() => (filtroRecetas = v)}>{l}</button>{/each}</div>
     {/if}
