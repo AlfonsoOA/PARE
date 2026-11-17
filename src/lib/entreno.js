@@ -367,11 +367,13 @@ export function proponerSiguiente(item, hecho, ajustes, tope = null) {
     prop.carga = Math.max(...prop.cargas);
     if (topadas.length === suben.length) {
       if (!completas) return { prop, motivo: `Al tope de la máquina: mismo peso hasta que todas las series lleguen a ${item.repMax} repeticiones.` };
-      if (item.repMax < 20) {
-        prop.repMin = item.repMin + 2; prop.repMax = item.repMax + 2;
+      // techo de repeticiones: 20 en aislamiento; 15 en multiarticulares (a 20, una hack o un remo pesado son más ahogo que músculo)
+      const techo = e?.mec === 'compuesto' ? 15 : 20;
+      if (item.repMax < techo) {
+        prop.repMax = Math.min(techo, item.repMax + 2); prop.repMin = Math.min(item.repMin + 2, prop.repMax);
         return { prop, motivo: `Al tope de la máquina: en vez de peso, sube repeticiones (rango ${prop.repMin}-${prop.repMax}). Haz la bajada lenta, en 3 segundos.`, sube: true };
       }
-      return { prop, motivo: 'Al tope de la máquina y ya llegas a 20 repeticiones: cámbialo por una variante más dura (a una mano, con pausa de 2 s arriba u otro ejercicio). En la sesión: ··· → Sustituir por otro.', cambiar: true };
+      return { prop, motivo: `Al tope de la máquina y ya llegas a ${techo} repeticiones: cámbialo por una variante más dura (a una mano o una pierna, con pausa de 2 s u otro ejercicio). En la sesión: ··· → Sustituir por otro.`, cambiar: true };
     }
     suben = suben.filter((k) => !topadas.includes(k)); // las que ya están al tope no suben
   }

@@ -29,7 +29,7 @@
     bajando: 'Bajando: tus últimas tres sesiones están por debajo de tu mejor marca.',
     mantiene: 'Estás en déficit y mantienes la fuerza: eso es ganar.',
     nuevo: 'Pocos datos todavía: hacen falta al menos tres sesiones.',
-    tope: 'Al tope de la máquina: no estás estancado, es que no hay más peso. PARE te sube las repeticiones; cuando llegues a 20, cámbialo por una variante más dura (a una mano, con pausa u otro ejercicio).',
+    tope: 'Al tope de la máquina: no estás estancado, es que no hay más peso. PARE te sube las repeticiones; cuando llegues a 20 (15 en ejercicios multiarticulares), cámbialo por una variante más dura (a una mano, con pausa u otro ejercicio).',
   };
 </script>
 
