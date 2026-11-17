@@ -303,8 +303,10 @@ export function novedades(hist) {
 export const PLAZO_ESTANCAMIENTO = { principiante: 17, intermedio: 35, avanzado: 70 }; // días (2,5 / 5 / 10 semanas)
 
 /** Estado de un ejercicio: progresando, estable, estancado o bajando (en déficit, mantener cuenta como bien). */
-export function estadoEjercicio(hist, nivel, faseDieta, hoy) {
+export function estadoEjercicio(hist, nivel, faseDieta, hoy, tope = null) {
   if (hist.length < 3) return { estado: 'nuevo' };
+  // al tope de la máquina: no es un estancamiento tuyo, es que no hay más peso
+  const alTope = tope != null && Math.max(...hist.at(-1).series.map((z) => z.carga ?? 0)) >= tope - 0.01;
   let mejor = 0, ultimaMejora = hist[0].fecha;
   const recs = {};
   for (const h of hist) {
@@ -322,6 +324,7 @@ export function estadoEjercicio(hist, nivel, faseDieta, hoy) {
   const ultimas = hist.slice(-3).map((h) => mejorSerie(h.series).e1rm);
   const bajando = ultimas.every((v) => v < mejor * 0.95);
   if (bajando) return { estado: 'bajando', dias };
+  if (alTope && dias >= 14) return { estado: 'tope', dias };
   const plazo = PLAZO_ESTANCAMIENTO[nivel] ?? 35;
   if (dias > plazo) {
     if (faseDieta === 'deficit') return { estado: 'mantiene', dias };
@@ -331,7 +334,7 @@ export function estadoEjercicio(hist, nivel, faseDieta, hoy) {
 }
 
 /** Doble progresión: propuesta para la próxima vez a partir de lo hecho hoy. */
-export function proponerSiguiente(item, hecho, ajustes) {
+export function proponerSiguiente(item, hecho, ajustes, tope = null) {
   const e = ej(item.ej);
   const series = (hecho?.series || []).filter((z) => z.hecha);
   const prop = { ...item };
@@ -354,14 +357,29 @@ export function proponerSiguiente(item, hecho, ajustes) {
   // Doble progresión SERIE A SERIE: sube solo la serie que llegó al tope de repeticiones (en una pirámide,
   // las series ligeras suben antes que la pesada; si empezaste con poco peso, se corrige solo).
   const inc = incremento(item.ej, ajustes);
-  const suben = series.map((z, k) => ((z.reps || 0) >= item.repMax ? k : -1)).filter((k) => k >= 0);
+  let suben = series.map((z, k) => ((z.reps || 0) >= item.repMax ? k : -1)).filter((k) => k >= 0);
   if (!suben.length) return { prop, motivo: `Ninguna serie llegó a ${item.repMax} repeticiones: mismos pesos.` };
   prop.cargas = prop.cargas.map((c, k) => (suben.includes(k) ? c + inc : c));
+  // Tope de la máquina: el peso no pasa del máximo; cuando ya no puede subir, se progresa en repeticiones
+  if (tope != null) {
+    const topadas = suben.filter((k) => series[k].carga >= tope - 0.01);
+    prop.cargas = prop.cargas.map((c) => Math.min(c, tope));
+    prop.carga = Math.max(...prop.cargas);
+    if (topadas.length === suben.length) {
+      if (!completas) return { prop, motivo: `Al tope de la máquina: mismo peso hasta que todas las series lleguen a ${item.repMax} repeticiones.` };
+      if (item.repMax < 20) {
+        prop.repMin = item.repMin + 2; prop.repMax = item.repMax + 2;
+        return { prop, motivo: `Al tope de la máquina: en vez de peso, sube repeticiones (rango ${prop.repMin}-${prop.repMax}). Haz la bajada lenta, en 3 segundos.`, sube: true };
+      }
+      return { prop, motivo: 'Al tope de la máquina y ya llegas a 20 repeticiones: cámbialo por una variante más dura (a una mano, con pausa de 2 s arriba u otro ejercicio). En la sesión: ··· → Sustituir por otro.', cambiar: true };
+    }
+    suben = suben.filter((k) => !topadas.includes(k)); // las que ya están al tope no suben
+  }
   prop.carga = Math.max(...prop.cargas);
   if (suben.length === series.length) return { prop, motivo: `Todas las series a ${item.repMax}: sube el peso de cada una y vuelve a ${item.repMin} repeticiones.`, sube: true };
   const nombres = suben.map((k) => k + 1);
   const lista = nombres.length === 1 ? `la serie ${nombres[0]}` : `las series ${nombres.slice(0, -1).join(', ')} y ${nombres.at(-1)}`;
-  return { prop, motivo: `Sube solo ${lista}, que llegaron a ${item.repMax} repeticiones; las demás, con el mismo peso.`, sube: true };
+  return { prop, motivo: `Sube solo ${lista}, que ${nombres.length === 1 ? 'llegó' : 'llegaron'} a ${item.repMax} repeticiones; las demás, con el mismo peso.`, sube: true };
 }
 
 // ---------- Nivel ----------

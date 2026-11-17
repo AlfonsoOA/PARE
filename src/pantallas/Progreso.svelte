@@ -23,7 +23,7 @@
   const planVol = $derived(volumenPlanificado(d.rutina, d.perfil.diasSemana));
   let medir = $state(false);
 
-  const ESTADO = { progresando: ['Progresando', 'bien'], estable: ['Estable', ''], estancado: ['Estancado', 'aviso'], bajando: ['Bajando', 'mal'], mantiene: ['Mantiene en déficit', 'bien'], nuevo: ['Pocos datos', ''] };
+  const ESTADO = { progresando: ['Progresando', 'bien'], estable: ['Estable', ''], estancado: ['Estancado', 'aviso'], tope: ['Al tope de la máquina', ''], bajando: ['Bajando', 'mal'], mantiene: ['Mantiene en déficit', 'bien'], nuevo: ['Pocos datos', ''] };
   const estados = $derived(Object.entries(estadosEjercicios(d)).filter(([, e]) => e.hist.length)
     .sort((a, b) => b[1].hist.at(-1).fecha.localeCompare(a[1].hist.at(-1).fecha)));
 

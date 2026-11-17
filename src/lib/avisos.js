@@ -10,7 +10,7 @@ export function estadosEjercicios(d = app.datos) {
   const out = {};
   for (const id of ids) {
     const h = historialEjercicio(d.sesiones, id, (f) => pesoEnFecha(f, d));
-    out[id] = { hist: h, ...estadoEjercicio(h, d.perfil.nivel, d.perfil.faseDieta, hoyISO()) };
+    out[id] = { hist: h, ...estadoEjercicio(h, d.perfil.nivel, d.perfil.faseDieta, hoyISO(), d.topes?.[id]) };
   }
   return out;
 }

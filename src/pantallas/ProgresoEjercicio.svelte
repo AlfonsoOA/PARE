@@ -12,7 +12,8 @@
   const e = ej(id);
   const hist = historialEjercicio(d.sesiones, id, (f) => pesoEnFecha(f, d));
   const rec = recordsReps(hist);
-  const est = estadoEjercicio(hist, d.perfil.nivel, d.perfil.faseDieta, new Date().toISOString().slice(0, 10));
+  const tope = $derived(d.topes?.[id] ?? null);
+  const est = $derived(estadoEjercicio(hist, d.perfil.nivel, d.perfil.faseDieta, new Date().toISOString().slice(0, 10), tope));
   const item = d.rutina?.sesiones.flatMap((s) => s.items).find((x) => x.ej === id);
   const e1 = hist.map((h) => ({ f: h.fecha, v: Math.round(mostrar(mejorSerie(h.series).e1rm) * 10) / 10 }));
   const pcEj = usaPesoCorporal(e);
@@ -28,6 +29,7 @@
     bajando: 'Bajando: tus últimas tres sesiones están por debajo de tu mejor marca.',
     mantiene: 'Estás en déficit y mantienes la fuerza: eso es ganar.',
     nuevo: 'Pocos datos todavía: hacen falta al menos tres sesiones.',
+    tope: 'Al tope de la máquina: no estás estancado, es que no hay más peso. PARE te sube las repeticiones; cuando llegues a 20, cámbialo por una variante más dura (a una mano, con pausa u otro ejercicio).',
   };
 </script>
 
@@ -36,6 +38,7 @@
   <h1>{e?.n ?? id}</h1>
   <button class="enlace" style="align-self:flex-start;padding:0;min-height:32px" onclick={() => (app.vista = { nombre: 'ficha', id, acento: 'progreso', volver: aqui })}>Ver ficha técnica</button>
   <div class="tarjeta"><p>{TXT[est.estado]}</p>
+    {#if tope != null}<p class="sec peq">Tope de la máquina: {fmt(tope)}.{#if !datos} <button class="enlace" style="padding:0 4px;min-height:32px" onclick={() => delete d.topes[id]}>Quitar</button>{/if}</p>{/if}
     {#if item}<p class="sec peq">Próxima vez: {item.series} × {item.repMin}-{item.repMax} con {item.carga != null ? fmtCarga(item.carga, pcEj) : 'la carga del último día'}.</p>{/if}
   </div>
   <div class="tarjeta">

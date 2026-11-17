@@ -142,13 +142,25 @@ export function cancelarSesion() {
 }
 
 /** Propuestas "para la próxima" de una sesión hecha, ítem a ítem de la rutina. */
+/** ¿Parece que este ejercicio está al tope de la máquina? Mismo peso máximo en las 3 últimas sesiones
+ *  aunque en las anteriores ya llegaba al tope de repeticiones (le tocaba subir y no subió). */
+export function sospechaTope(it, hecho) {
+  if (!hecho || usaPesoCorporal(ej(it.ej))) return false;
+  const previas = app.datos.sesiones.filter((s) => s.ejercicios.some((x) => x.ej === it.ej && x.series.some((z) => z.hecha))).sort((a, b) => a.fecha.localeCompare(b.fecha)).slice(-3);
+  if (previas.length < 3) return false;
+  const datos = previas.map((s) => { const x = s.ejercicios.find((y) => y.ej === it.ej); const hs = x.series.filter((z) => z.hecha); return { max: Math.max(...hs.map((z) => z.carga ?? 0)), llega: hs.some((z) => (z.reps || 0) >= (x.objetivo?.repMax ?? it.repMax)) }; });
+  return datos[0].max > 0 && datos.every((x) => Math.abs(x.max - datos[0].max) < 0.01) && datos.slice(0, -1).every((x) => x.llega);
+}
+/** Recalcula la propuesta de un ejercicio (p. ej., al marcar o quitar el tope de la máquina). */
+export function propuestaDe(sesionHecha, uid) { return propuestasPara(sesionHecha).find((p) => p.uid === uid); }
 export function propuestasPara(sesionHecha) {
   const r = app.datos.rutina;
   const ses = r?.sesiones.find((s) => s.id === sesionHecha.sesionId);
   if (!ses) return [];
   return ses.items.map((it) => {
     const hecho = sesionHecha.ejercicios.find((x) => x.uid === it.uid) ?? sesionHecha.ejercicios.find((x) => x.ej === it.ej);
-    const { prop, motivo, sube } = proponerSiguiente(it, hecho, app.datos.ajustes);
-    return { uid: it.uid, ej: it.ej, prop: { ...prop }, motivo, sube, bw: usaPesoCorporal(ej(it.ej)) };
+    const tope = app.datos.topes?.[it.ej] ?? null;
+    const { prop, motivo, sube, cambiar } = proponerSiguiente(it, hecho, app.datos.ajustes, tope);
+    return { uid: it.uid, ej: it.ej, prop: { ...prop }, motivo, sube, cambiar, tope, sospechaTope: !tope && sospechaTope(it, hecho), bw: usaPesoCorporal(ej(it.ej)) };
   });
 }
