@@ -1856,6 +1856,357 @@
     "sulfitos"
    ],
    "coste_porcion": 2.42
+  },
+  {
+   "id_receta": "RE067",
+   "nombre_es": "Alioli de batuta",
+   "tipo": "lote",
+   "porciones": 15,
+   "momento": "comida;cena",
+   "tiempo_min": 5,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "Quita el germen verde del ajo si no quieres que repita. El limón o vinagre corta lo pesado del aceite y ayuda a fijar la emulsión. Porción: una cucharada (unos 20 g).",
+   "pasos": "El orden en el vaso: echa primero el huevo, luego los ajos troceados, la sal y la cucharadita de limón o vinagre. | El aceite: vierte el aceite de girasol por encima (unos dos dedos por encima de las cuchillas). | Posición de ataque: apoya el pie de la batidora totalmente plano en el fondo del vaso, cubriendo el huevo y el ajo. | Emulsionar sin mover: arranca a velocidad media-alta y NO muevas la batidora del fondo durante los primeros 10-15 segundos. Verás salir una crema blanca y densa por los lados. | Subida progresiva: cuando abajo ya haya una emulsión firme, sube la batidora muy despacio, incorporando el aceite de la superficie hasta que quede todo espeso y homogéneo. | El toque de AOVE: con 100 % girasol queda muy neutro. Al final, añade un hilillo de AOVE y bate un par de segundos más: color amarillento y sabor más redondo. | Si queda muy denso: un chorrito de caldo de la propia paella o unas gotas de limón lo aligeran y lo dejan sedoso.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "15 porciones; cada una: 0 P · 0 HC · 1.4 G",
+   "kcal_porcion": 131,
+   "proteina_porcion": 0.5,
+   "hidratos_porcion": 0.2,
+   "grasa_porcion": 14.4,
+   "fibra_porcion": 0,
+   "peso_total_g": 289,
+   "alergenos": [
+    "huevo"
+   ],
+   "coste_porcion": 0.05
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_es": "Arroz negro con sepia y gambas",
+   "tipo": "lote",
+   "porciones": 5,
+   "momento": "comida",
+   "tiempo_min": 50,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "Paellera de 50 cm. Con alioli al lado pasa a matrícula de honor.",
+   "pasos": "Dorar la sepia (fuego vivo): aceite generoso en la paellera a fuego alto. Añade la sepia bien seca y salada y dórala hasta que coja un tono tostado y se evapore su agua: necesita fuego vivo al principio para no quedarse correosa. Si usas gambas enteras para decorar, dóralas 30 segundos y resérvalas. | Sofrito marino: baja a fuego medio. Ajo picado 30 segundos, luego la cebolla, el pimiento (y el calabacín). Sofríe despacio hasta que esté bien tierno. Añade el tomate rallado y sofríe 10 minutos hasta que espese y oscurezca. | Vino y tinta: vierte el vino blanco y deja hervir 1-2 minutos para evaporar el alcohol y despegar lo tostado del fondo. Disuelve la tinta en un cacito de caldo caliente y viértela. Remueve hasta que todo quede negro intenso y deja 2-3 minutos. | Nacarar: añade el arroz en cruz y rehógalo 1-2 minutos con la sepia, el sofrito y la tinta para que el grano empape la grasa y los aromas. | Marisco y fumet: reparte las gambas peladas sobre el arroz. Vierte el fumet caliente hasta los remaches de las asas. Sala el caldo: tiene que estar alegre de sal, el arroz absorbe mucha. | Cocción: minutos 0 a 8, fuego medio-alto (hervor vivo). Minutos 8 a 16, fuego medio-bajo. Las gambas enteras reservadas, por encima hacia el minuto 12-13. | Socarrat y reposo: el último minuto, fuego al máximo para tostar la base (que huela a tostado, no a quemado). Apaga, cubre con un paño limpio y reposa 5 minutos.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "5 porciones; cada una: 1.3 P · 1.8 HC · 1.1 G",
+   "kcal_porcion": 552,
+   "proteina_porcion": 32,
+   "hidratos_porcion": 73.5,
+   "grasa_porcion": 11,
+   "fibra_porcion": 1.8,
+   "peso_total_g": 3247,
+   "alergenos": [
+    "crustaceos",
+    "moluscos",
+    "pescado",
+    "sulfitos"
+   ],
+   "coste_porcion": 2.9
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_es": "Paella de pollo",
+   "tipo": "lote",
+   "porciones": 5,
+   "momento": "comida",
+   "tiempo_min": 60,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "Paellera de 50 cm y rosco de 3 aros. Opcional: judía verde o garrofó. El resto del tercio, para el cocinero.",
+   "pasos": "Caldo exprés (mientras preparas todo): en un cazo con unos 2 litros de agua, 2-3 caparazones o huesos de pollo, un trozo de puerro o media cebolla, una zanahoria pequeña y una pizca de sal. Hierve a fuego medio 30-45 minutos, cuela y mantenlo caliente al lado de la paellera. | Preparación: trocea, sala y seca muy bien el pollo con papel de cocina (no salpica y dora mejor). Pica los ajos, corta los pimientos en tiras y tritura la cebolla con el tomate (así no quedan trozos para los niños). | Dorar la carne: fuego alto, buen fondo de AOVE. Dora el pollo por todos lados hasta que esté tostado. Truco: sácalo y resérvalo para que no se seque mientras haces el sofrito. | Sofrito: fuego medio, en el mismo aceite. Ajo 30 segundos-1 minuto sin que se queme; luego cebolla, pimientos y calabacín hasta que ablanden. Añade el tomate triturado y sofríe 10-12 minutos hasta que quede una pasta espesa y oscura. | El baño de cerveza: vuelve a meter la carne, remueve y vierte el tercio de cerveza. Fuego medio-bajo, chup-chup 15-20 minutos hasta que reduzca casi del todo: aquí la fibra del pollo se rompe y queda súper tierna. | Nacarar: cuando solo quede el aceite y el sofrito concentrado, añade el arroz en cruz, nivélalo y rehógalo 1-2 minutos. | Cocción: caldo caliente hasta los remaches de las asas (o un dedo por encima de la carne), sal y azafrán o colorante. Minutos 0 a 8, fuego medio-alto; 8 a 16, medio-bajo. Si pide líquido, un chorrito de caldo caliente. No remuevas al final. | Socarrat y reposo: el último minuto, fuego a tope para tostar la base. Apaga y reposa 5 minutos tapada con un paño limpio. | Limpieza de la paellera: agua caliente 10 minutos, nana de acero si hay restos, sécala al fuego 1-2 minutos y pásale un papel con un poco de aceite por dentro y por fuera contra el óxido.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "5 porciones; cada una: 1.9 P · 2.1 HC · 4.3 G",
+   "kcal_porcion": 962,
+   "proteina_porcion": 48.4,
+   "hidratos_porcion": 84.8,
+   "grasa_porcion": 43.1,
+   "fibra_porcion": 3.6,
+   "peso_total_g": 4928,
+   "alergenos": [
+    "gluten"
+   ],
+   "coste_porcion": 2.27
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_es": "Paella ibérica",
+   "tipo": "lote",
+   "porciones": 5,
+   "momento": "comida",
+   "tiempo_min": 50,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "La receta original no da cantidades de carne: 600 g de presa es una estimación para 5. Ajústalo a lo que pongas.",
+   "pasos": "Dorar el ibérico (fuego vivo): sella bien por fuera los trozos de carne (y el chorizo). Retíralos si sueltan demasiado jugo, o déjalos a un lado de la paellera. | Sofrito cargado: ajo, cebolla, pimiento rojo y calabacín, 10-12 minutos. | Chup-chup corto: vuelve a meter la carne, vierte la cerveza y deja que borbotee 8-10 minutos para que la malta ablande la carne y se funda con la grasa del cerdo. | Nacarar: añade el arroz en cruz y rehoga 1-2 minutos para que el grano chupe la grasa ibérica. | Caldo y cocción: caldo hasta los remaches y 16-18 minutos como la paella de pollo (fuerte los 8 primeros, medio-bajo después). Socarrat el último minuto y reposo 5 minutos.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "5 porciones; cada una: 1.3 P · 1.9 HC · 3.7 G",
+   "kcal_porcion": 793,
+   "proteina_porcion": 32.3,
+   "hidratos_porcion": 75.4,
+   "grasa_porcion": 36.9,
+   "fibra_porcion": 2,
+   "peso_total_g": 3378,
+   "alergenos": [
+    "gluten"
+   ],
+   "coste_porcion": 3.23
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_es": "Pizza Fit Pro de burrata y rúcula",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "cena;comida",
+   "tiempo_min": 30,
+   "estilo": "italiana",
+   "peso_final_g": null,
+   "notas": "No escatimes en la burrata, pero tampoco hace falta una bola entera: 50 g dan la cremosidad. El pollo y la mozzarella light suben la proteína sin disparar las calorías. Las cantidades de tomate, mozzarella, pollo y rúcula son estimadas.",
+   "pasos": "Masa: mezcla la harina, el agua, la levadura y la sal. Amasa unos minutos y deja fermentar hasta que crezca. Para más sabor, varias horas en la nevera. | Prehorneado: estira la masa fina y hornéala 4-5 minutos a 240-250 °C, con el horno precalentado. | Base: extiende el tomate y añade la mozzarella, los cherry y el pollo ya cocinado. | Horneado final: 6-9 minutos más, hasta que los bordes estén dorados. | El toque de burrata: al sacarla, desgarra los 50 g de burrata por encima y termina con la rúcula, pimienta, orégano y el aceite medido.",
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 769,
+   "proteina_porcion": 50.2,
+   "hidratos_porcion": 74.8,
+   "grasa_porcion": 28.1,
+   "fibra_porcion": 5.9,
+   "peso_total_g": 494,
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "coste_porcion": 2.75
+  },
+  {
+   "id_receta": "RE072",
+   "nombre_es": "Hogaza de avena y chocolate",
+   "tipo": "lote",
+   "porciones": 12,
+   "momento": "desayuno;merienda",
+   "tiempo_min": 1500,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "No es el Pan de Avena PRO (huevos, semillas, levadura química): esto es pan de verdad, con fermentación, y la masa es mucho más húmeda. Si tienes gluten de trigo, 10-20 g ayudan. El tiempo incluye la noche en la nevera.",
+   "pasos": "Mezcla: en un bol grande, la harina de trigo, la de avena, los copos y la whey. Añade 350-375 ml de agua y mezcla con cuchara hasta que no queden zonas secas. No amases ni añadas harina aunque se pegue. Reposa media hora: la avena absorbe agua. | Sal y textura: añade la sal. Si está muy seca, el agua restante poco a poco. Buscas una masa húmeda y pegajosa pero cohesionada: ni sopa ni pelota seca. | Pliegues: con las manos húmedas, levanta un lado de la masa, estíralo y llévalo al centro; gira el bol y repite 3-4 veces. Reposa 20-30 minutos. Una segunda ronda igual y, si ya tiene estructura, para. | Frío: tapa el bol y a la nevera hasta el día siguiente (por ejemplo, el domingo después del Pan de Avena PRO). | Formado: vuelca la masa sobre la encimera ligeramente enharinada, recoge los bordes hacia el centro, dale la vuelta y tensa la superficie haciéndola rodar suavemente. Si se desparrama, hornéala en una cazuela con paredes. | Horneado: reposa una hora (algo más si está muy fría) mientras el horno se calienta a 230 °C. En cazuela con tapa: 20 minutos tapada a 230 °C y 25-35 minutos destapada a 200 °C. Sin cazuela: en bandeja, con otra bandeja abajo a la que echas agua caliente para hacer vapor. | Enfriar: lo que más cuesta. Espera al menos hora y media, mejor dos: recién hecho, la miga con avena y whey parece apelmazada aunque esté bien.",
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "12 porciones; cada una: 0.3 P · 0.7 HC · 0.2 G",
+   "kcal_porcion": 167,
+   "proteina_porcion": 7.4,
+   "hidratos_porcion": 27.7,
+   "grasa_porcion": 1.8,
+   "fibra_porcion": 2.9,
+   "peso_total_g": 920,
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "coste_porcion": 0.16
+  },
+  {
+   "id_receta": "RE073",
+   "nombre_es": "Bacalao al ajillo con langostinos y champiñones",
+   "tipo": "lote",
+   "porciones": 3,
+   "momento": "comida;cena",
+   "tiempo_min": 25,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "Sal con moderación: el bacalao ya es salado. Con arroz blanco, patatas asadas o pan para mojar.",
+   "pasos": "Preparar el bacalao: sécalo con papel de cocina. Si los filetes son gruesos, córtalos en trozos grandes para que se hagan igual. | Sofreír el ajo: aceite en una sartén grande a fuego medio-bajo. Ajo laminado y chile (opcional) hasta que estén dorados y aromáticos, sin que se quemen. | Cocinar el bacalao: con la piel hacia abajo, 2-3 minutos por lado, hasta que esté hecho y jugoso. Retíralo y resérvalo. | Champiñones y langostinos: en la misma sartén, champiñones a fuego medio-alto hasta que suelten el agua y se doren. Añade los langostinos 1-2 minutos, hasta que se pongan rosados. | Desglasar (opcional): un chorrito de vino blanco o caldo de pescado, y deja reducir unos segundos. | Terminar: vuelve el bacalao a la sartén, espolvorea perejil y remueve con suavidad para que se impregne de la salsa. Ajusta la sazón.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "3 porciones; cada una: 1.6 P · 0.1 HC · 1.7 G",
+   "kcal_porcion": 342,
+   "proteina_porcion": 39.9,
+   "hidratos_porcion": 4.4,
+   "grasa_porcion": 16.7,
+   "fibra_porcion": 1.4,
+   "peso_total_g": 973,
+   "alergenos": [
+    "crustaceos",
+    "pescado",
+    "sulfitos"
+   ],
+   "coste_porcion": 3.3
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_es": "Fideuá con sepia y gambas",
+   "tipo": "lote",
+   "porciones": 4,
+   "momento": "comida",
+   "tiempo_min": 40,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "Usa caldo de pescado casero si puedes.",
+   "pasos": "Sofrito: en una paellera o sartén amplia, aceite, ajo y cebolla hasta que estén blandos. | Sepia: a fuego medio-alto, hasta que suelte su jugo y empiece a dorarse. | Tomate: añádelo y cocina unos minutos hasta que reduzca y quede concentrado. | Dorar los fideos: agrégalos y remueve para que se impregnen. Tuéstalos hasta que estén dorados: es lo que da el sabor. | Pimentón y caldo: pimentón, mezcla rápido y vierte el caldo caliente. Ajusta de sal y pimienta. | Cocción: 10-12 minutos a fuego medio, sin remover demasiado (así sale el socarrat). | Gambas: por encima en los últimos 3-4 minutos, hasta que se pongan rosadas. | Reposo: fuera del fuego 5 minutos, perejil por encima y un toque de limón si quieres. Con alioli, mejor.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "4 porciones; cada una: 1.4 P · 1.5 HC · 1.3 G",
+   "kcal_porcion": 507,
+   "proteina_porcion": 34.2,
+   "hidratos_porcion": 58.1,
+   "grasa_porcion": 13.3,
+   "fibra_porcion": 4.6,
+   "peso_total_g": 2000,
+   "alergenos": [
+    "crustaceos",
+    "gluten",
+    "moluscos",
+    "pescado"
+   ],
+   "coste_porcion": 2.17
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_es": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida",
+   "tiempo_min": 35,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "Para tu día de legumbre. Si los garbanzos son secos, ponlos a remojo la noche antes y cuécelos antes de empezar.",
+   "pasos": "El sofrito limpio: en una olla, un chorrito mínimo de agua o el pulverizador de AOVE; pocha la cebolla, el pimiento y el ajo muy picados. Cuando estén tiernos, el tomate rallado y el pimentón (solo una vuelta rápida, que no se queme). | El guiso: echa la sepia en trozos pequeños para que coja color. Añade los garbanzos y cubre con agua o caldo de pescado limpio. | El chup-chup: a fuego lento 20-25 minutos. Sumergida en el caldo con el ácido del tomate, el colágeno de la sepia se rompe y queda tierna como mantequilla. | El verde al final: en los últimos 5 minutos, el puñado de espinacas. Rectifica de sal y listo.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 485,
+   "proteina_porcion": 52.2,
+   "hidratos_porcion": 40,
+   "grasa_porcion": 9.2,
+   "fibra_porcion": 11.4,
+   "peso_total_g": 999,
+   "alergenos": [
+    "crustaceos",
+    "moluscos",
+    "pescado"
+   ],
+   "coste_porcion": 4.01
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_es": "Callos de Ley de la Selva",
+   "tipo": "lote",
+   "porciones": 16,
+   "momento": "comida",
+   "tiempo_min": 510,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "Las cantidades de careta, rabo, manitas y jamón son estimadas (la receta va por piezas). 2-3 cayenas al gusto. Para días libres de verdad.",
+   "pasos": "Hora 0, blanqueado: en una olla aparte con agua hirviendo, todas las carnes (manitas, rabo, careta, corteza y jamón) 5-10 minutos. Escurre y limpia bajo el grifo: caldo limpio, sin espumas grises. | Hora 0, el perol: carnes limpias en el perol de acero, cubiertas con agua fría (5-6 litros, que sobren 4-5 dedos). Una cebolla pelada entera, la cabeza de ajos con un corte transversal y el laurel. Fuego fuerte de leña hasta que hierva. | Garbanzos secos (si no son de bote): 12-16 horas a remojo en agua mineral templada con sal; escúrrelos y échalos cuando la carne ya hierva. Chupan más: añade siempre agua hirviendo. | Horas 1 a 4, fusión de gelatinas: retira los leños grandes y deja solo brasas potentes, hervor muy suave, perol tapado al 80 %. Si baja mucho el agua, añade agua caliente. Hacia la hora 4 la carne se pone tierna y la corteza empieza a desaparecer, espesando. | Hora 5, sofrito de color: en una sartén con AOVE, la otra cebolla muy fina hasta que esté transparente. Cayenas y, fuera del fuego, el pimentón dulce y picante; remueve rápido para que no amargue. Al perol: pasa de blanquecino a rojo intenso. | Hora 6, el majado maestro: en el mortero, 3-4 ajos (fritos o asados en la brasa), la rebanada de pan frita en AOVE, los cominos y dos cucharadas de garbanzos. Machaca hasta una pasta densa, deslíela con caldo y al perol. Desde aquí, remueve cada 15 minutos con cuchara de madera: el majado se va al fondo. | Hora 7, el encuentro final: los 4 chorizos (pinchados para que suelten la grasa roja) y los garbanzos escurridos. Prueba de sal y de picante. | Hora 8, reposo: deja que ligue hasta que el caldo sea una salsa que brilla y pega los labios. Fuera del fuego, reposo de 30 minutos como mínimo; mejor de un día para otro. | Consejos del maestro del perol: retira los huesos limpios de la pata antes de servir. En las 2 últimas horas, solo brasas, o se quema el fondo. Si a la hora 7 hay mucho caldo, destapa del todo; si está seco, un cazo de agua caliente.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "16 porciones; cada una: 1.8 P · 0.4 HC · 4.4 G",
+   "kcal_porcion": 663,
+   "proteina_porcion": 44.5,
+   "hidratos_porcion": 15.2,
+   "grasa_porcion": 44.4,
+   "fibra_porcion": 5.8,
+   "peso_total_g": 5166,
+   "alergenos": [
+    "gluten"
+   ],
+   "coste_porcion": 1.82
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_es": "Potaje de garbanzos y bacalao",
+   "tipo": "lote",
+   "porciones": 4,
+   "momento": "comida",
+   "tiempo_min": 40,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "Mucho mejor reposado unas horas o de un día para otro. Bacalao salado: desálalo 24-48 horas en la nevera, cambiando el agua cada 8 horas.",
+   "pasos": "Preparar la base: si los garbanzos son secos, a remojo 12 horas antes; si son de bote, lávalos bien. En una olla con un chorrito de aceite, sofríe la cebolla muy fina y 2 ajos. | Pimentón: cuando estén transparentes, el pimentón, remueve rápido para que no se queme e incorpora enseguida los garbanzos. | Cocción: cubre con el caldo o agua. Garbanzos crudos, 45-60 minutos (olla exprés 15-20); de bote, 10 minutos para que cojan sabor. Añade las espinacas: reducen en un minuto. | El secreto, el majado: en el mortero, un diente de ajo crudo, el pan frito y una yema de huevo duro. Deslíelo con caldo y a la olla: traba el caldo y le da cuerpo. | El toque final: el bacalao desalado, 4-5 minutos para que quede jugoso. Prueba de sal (el bacalao ya sala) y sirve con el resto del huevo duro picado por encima.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "4 porciones; cada una: 1.3 P · 0.7 HC · 1.4 G",
+   "kcal_porcion": 393,
+   "proteina_porcion": 31.7,
+   "hidratos_porcion": 28,
+   "grasa_porcion": 13.7,
+   "fibra_porcion": 10.5,
+   "peso_total_g": 2441,
+   "alergenos": [
+    "crustaceos",
+    "gluten",
+    "huevo",
+    "pescado"
+   ],
+   "coste_porcion": 2.62
+  },
+  {
+   "id_receta": "RE078",
+   "nombre_es": "Tortitas esponjosas de avena y claras (sin whey)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "desayuno;merienda",
+   "tiempo_min": 20,
+   "estilo": "internacional",
+   "peso_final_g": null,
+   "notas": "Las claras de brick montan peor: mejor frescas. Encima, frutos rojos y un poco de yogur o skyr; un hilo de crema de cacahuete si te caben las grasas.",
+   "pasos": "Secos: en un bol, la harina de avena, la levadura, la canela y la pizca de sal. Si usas copos, tritúralos antes hasta que sean harina. | Húmedos: en otro bol, la yema, el queso batido, la vainilla y el edulcorante. Mezcla y une con los secos sin batir de más. Deja reposar 5 minutos: la avena se hidrata y la masa coge cuerpo. | Montar las claras: las 4 claras (la del huevo y las 3) a punto de nieve firme. Este es el truco de la esponjosidad: sin whey, el aire lo ponen las claras. | Incorporar: añade las claras a la masa en dos veces, con espátula y movimientos envolventes de abajo arriba, sin bajarlas. Quedará una masa espesa y aireada. | Cuajar tapadas: sartén antiadherente a fuego medio-bajo, pulveriza aceite y echa un cazo de masa sin extenderla mucho (salen 3 gruesas de 10 cm o 5-6 pequeñas). Tapa la sartén 2-3 minutos, hasta que salgan burbujas arriba y los bordes estén cuajados. | La vuelta: dales la vuelta con cuidado y 1 minuto más destapadas. No las aplastes con la espátula o pierden el aire. Sírvelas al momento.",
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 444,
+   "proteina_porcion": 34.1,
+   "hidratos_porcion": 42.8,
+   "grasa_porcion": 11.9,
+   "fibra_porcion": 6.8,
+   "peso_total_g": 329,
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 1.36
   }
  ],
  "receta_ingredientes": [
@@ -6331,6 +6682,1176 @@
    "nombre_alimento": "Pimienta negra molida",
    "gramos": 0.5,
    "nota": null
+  },
+  {
+   "id_receta": "RE067",
+   "nombre_receta": "Alioli de batuta",
+   "orden": 1,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "1 huevo, a temperatura ambiente"
+  },
+  {
+   "id_receta": "RE067",
+   "nombre_receta": "Alioli de batuta",
+   "orden": 2,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 10,
+   "nota": "2 dientes; 3 si lo quieres potente"
+  },
+  {
+   "id_receta": "RE067",
+   "nombre_receta": "Alioli de batuta",
+   "orden": 3,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 3.5,
+   "nota": "1 pellizco generoso"
+  },
+  {
+   "id_receta": "RE067",
+   "nombre_receta": "Alioli de batuta",
+   "orden": 4,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 5,
+   "nota": "1 cucharadita; o vinagre"
+  },
+  {
+   "id_receta": "RE067",
+   "nombre_receta": "Alioli de batuta",
+   "orden": 5,
+   "id_alimento": "AL0157",
+   "nombre_alimento": "Aceite de girasol",
+   "gramos": 200,
+   "nota": "unos 220 ml; o 80 % girasol y 20 % AOVE"
+  },
+  {
+   "id_receta": "RE067",
+   "nombre_receta": "Alioli de batuta",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": "el hilillo final, opcional"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 1,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 400,
+   "nota": "bomba"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 2,
+   "id_alimento": "AL0231",
+   "nombre_alimento": "Sepia",
+   "gramos": 450,
+   "nota": "o calamar, limpia, en dados medianos"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 3,
+   "id_alimento": "AL0038",
+   "nombre_alimento": "Gambas / langostinos",
+   "gramos": 250,
+   "nota": "pelados; algunos enteros para decorar"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 15,
+   "nota": "3-4 dientes, picados"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 5,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 200,
+   "nota": "1 grande, picada muy fina"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 6,
+   "id_alimento": "AL0135",
+   "nombre_alimento": "Pimiento verde",
+   "gramos": 120,
+   "nota": "1 italiano, picado muy fino"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 7,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 250,
+   "nota": "2 maduros, rallados"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 8,
+   "id_alimento": "AL0131",
+   "nombre_alimento": "Calabacín",
+   "gramos": 100,
+   "nota": "opcional, rallado muy fino"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 9,
+   "id_alimento": "AL0232",
+   "nombre_alimento": "Tinta de calamar (sobres)",
+   "gramos": 16,
+   "nota": "3-4 sobres; mejor tinta fresca de sepia"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 10,
+   "id_alimento": "AL0228",
+   "nombre_alimento": "Vino blanco seco",
+   "gramos": 100,
+   "nota": "para desglasar"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 11,
+   "id_alimento": "AL0233",
+   "nombre_alimento": "Caldo de pescado (fumet, brick)",
+   "gramos": 1300,
+   "nota": "1,2-1,4 l, caliente; 3 veces el volumen de arroz"
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 12,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE068",
+   "nombre_receta": "Arroz negro con sepia y gambas",
+   "orden": 13,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 6,
+   "nota": null
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 1,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 425,
+   "nota": "bomba; o 380-400 g de redondo tipo SOS"
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 2,
+   "id_alimento": "AL0242",
+   "nombre_alimento": "Pollo troceado con piel (con hueso)",
+   "gramos": 1500,
+   "nota": "1 pollo, salpimentado y bien seco"
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 3,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 300,
+   "nota": "2-3 maduros, rallados"
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 400,
+   "nota": "2 grandes, trituradas con el tomate"
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 5,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 20,
+   "nota": "4-5 dientes, picados o en láminas"
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 6,
+   "id_alimento": "AL0135",
+   "nombre_alimento": "Pimiento verde",
+   "gramos": 250,
+   "nota": "2-3, en tiras"
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 7,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 200,
+   "nota": "1, en tiras"
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 8,
+   "id_alimento": "AL0131",
+   "nombre_alimento": "Calabacín",
+   "gramos": 250,
+   "nota": "1"
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 9,
+   "id_alimento": "AL0206",
+   "nombre_alimento": "Cerveza",
+   "gramos": 225,
+   "nota": "1 tercio, tipo Mahou o Cruzcampo"
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 10,
+   "id_alimento": "AL0214",
+   "nombre_alimento": "Caldo de verduras o de pollo (brick)",
+   "gramos": 1300,
+   "nota": "mejor el caldo exprés de caparazones; 1,2-1,4 l"
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 11,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 50,
+   "nota": "generoso"
+  },
+  {
+   "id_receta": "RE069",
+   "nombre_receta": "Paella de pollo",
+   "orden": 12,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_receta": "Paella ibérica",
+   "orden": 1,
+   "id_alimento": "AL0065",
+   "nombre_alimento": "Arroz blanco",
+   "gramos": 400,
+   "nota": "bomba"
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_receta": "Paella ibérica",
+   "orden": 2,
+   "id_alimento": "AL0234",
+   "nombre_alimento": "Cerdo ibérico, presa",
+   "gramos": 600,
+   "nota": "trozos hermosos de presa, lagarto o pluma"
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_receta": "Paella ibérica",
+   "orden": 3,
+   "id_alimento": "AL0024",
+   "nombre_alimento": "Chorizo de cerdo, cocinado",
+   "gramos": 100,
+   "nota": "opcional, en rodajas"
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_receta": "Paella ibérica",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_receta": "Paella ibérica",
+   "orden": 5,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 250,
+   "nota": null
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_receta": "Paella ibérica",
+   "orden": 6,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_receta": "Paella ibérica",
+   "orden": 7,
+   "id_alimento": "AL0131",
+   "nombre_alimento": "Calabacín",
+   "gramos": 250,
+   "nota": "con la grasa del ibérico hace una emulsión cremosa"
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_receta": "Paella ibérica",
+   "orden": 8,
+   "id_alimento": "AL0206",
+   "nombre_alimento": "Cerveza",
+   "gramos": 225,
+   "nota": "1 tercio"
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_receta": "Paella ibérica",
+   "orden": 9,
+   "id_alimento": "AL0214",
+   "nombre_alimento": "Caldo de verduras o de pollo (brick)",
+   "gramos": 1300,
+   "nota": "suave: el ibérico ya da potencia"
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_receta": "Paella ibérica",
+   "orden": 10,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 30,
+   "nota": null
+  },
+  {
+   "id_receta": "RE070",
+   "nombre_receta": "Paella ibérica",
+   "orden": 11,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 1,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 90,
+   "nota": null
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 2,
+   "id_alimento": "AL0200",
+   "nombre_alimento": "Agua",
+   "gramos": 57,
+   "nota": "55-60 ml"
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 3,
+   "id_alimento": "AL0240",
+   "nombre_alimento": "Levadura seca de panadero",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 4,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1.5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 3,
+   "nota": "para el final"
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 6,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 60,
+   "nota": "para la base"
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 7,
+   "id_alimento": "AL0056",
+   "nombre_alimento": "Mozzarella semidesnatada",
+   "gramos": 50,
+   "nota": "light"
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 8,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 80,
+   "nota": "pesada en crudo; cocinada antes"
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 9,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 80,
+   "nota": "cherry"
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 10,
+   "id_alimento": "AL0241",
+   "nombre_alimento": "Burrata",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 11,
+   "id_alimento": "AL0147",
+   "nombre_alimento": "Rúcula",
+   "gramos": 20,
+   "nota": null
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 12,
+   "id_alimento": "AL0221",
+   "nombre_alimento": "Orégano seco",
+   "gramos": 0.5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE071",
+   "nombre_receta": "Pizza Fit Pro de burrata y rúcula",
+   "orden": 13,
+   "id_alimento": "AL0229",
+   "nombre_alimento": "Pimienta negra molida",
+   "gramos": 0.3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE072",
+   "nombre_receta": "Hogaza de avena y chocolate",
+   "orden": 1,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 250,
+   "nota": "de fuerza"
+  },
+  {
+   "id_receta": "RE072",
+   "nombre_receta": "Hogaza de avena y chocolate",
+   "orden": 2,
+   "id_alimento": "AL0064",
+   "nombre_alimento": "Harina de avena",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE072",
+   "nombre_receta": "Hogaza de avena y chocolate",
+   "orden": 3,
+   "id_alimento": "AL0063",
+   "nombre_alimento": "Copos de avena",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE072",
+   "nombre_receta": "Hogaza de avena y chocolate",
+   "orden": 4,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 30,
+   "nota": "sabor chocolate"
+  },
+  {
+   "id_receta": "RE072",
+   "nombre_receta": "Hogaza de avena y chocolate",
+   "orden": 5,
+   "id_alimento": "AL0240",
+   "nombre_alimento": "Levadura seca de panadero",
+   "gramos": 7,
+   "nota": null
+  },
+  {
+   "id_receta": "RE072",
+   "nombre_receta": "Hogaza de avena y chocolate",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE072",
+   "nombre_receta": "Hogaza de avena y chocolate",
+   "orden": 7,
+   "id_alimento": "AL0200",
+   "nombre_alimento": "Agua",
+   "gramos": 375,
+   "nota": "350-400 ml"
+  },
+  {
+   "id_receta": "RE073",
+   "nombre_receta": "Bacalao al ajillo con langostinos y champiñones",
+   "orden": 1,
+   "id_alimento": "AL0235",
+   "nombre_alimento": "Bacalao desalado",
+   "gramos": 450,
+   "nota": "2-3 filetes"
+  },
+  {
+   "id_receta": "RE073",
+   "nombre_receta": "Bacalao al ajillo con langostinos y champiñones",
+   "orden": 2,
+   "id_alimento": "AL0038",
+   "nombre_alimento": "Gambas / langostinos",
+   "gramos": 200,
+   "nota": "crudos, pelados"
+  },
+  {
+   "id_receta": "RE073",
+   "nombre_receta": "Bacalao al ajillo con langostinos y champiñones",
+   "orden": 3,
+   "id_alimento": "AL0149",
+   "nombre_alimento": "Champiñones",
+   "gramos": 200,
+   "nota": "laminados"
+  },
+  {
+   "id_receta": "RE073",
+   "nombre_receta": "Bacalao al ajillo con langostinos y champiñones",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 22,
+   "nota": "4-5 dientes, laminados"
+  },
+  {
+   "id_receta": "RE073",
+   "nombre_receta": "Bacalao al ajillo con langostinos y champiñones",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 45,
+   "nota": "4-5 cucharadas"
+  },
+  {
+   "id_receta": "RE073",
+   "nombre_receta": "Bacalao al ajillo con langostinos y champiñones",
+   "orden": 6,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 5,
+   "nota": "perejil, 1 cucharada picada"
+  },
+  {
+   "id_receta": "RE073",
+   "nombre_receta": "Bacalao al ajillo con langostinos y champiñones",
+   "orden": 7,
+   "id_alimento": "AL0228",
+   "nombre_alimento": "Vino blanco seco",
+   "gramos": 50,
+   "nota": "opcional, un chorrito; o caldo de pescado"
+  },
+  {
+   "id_receta": "RE073",
+   "nombre_receta": "Bacalao al ajillo con langostinos y champiñones",
+   "orden": 8,
+   "id_alimento": "AL0229",
+   "nombre_alimento": "Pimienta negra molida",
+   "gramos": 0.5,
+   "nota": "opcional"
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 1,
+   "id_alimento": "AL0068",
+   "nombre_alimento": "Pasta seca (espaguetis)",
+   "gramos": 300,
+   "nota": "fideos de fideuá o fideo fino nº 2"
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 2,
+   "id_alimento": "AL0231",
+   "nombre_alimento": "Sepia",
+   "gramos": 300,
+   "nota": "limpia, en trozos"
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 3,
+   "id_alimento": "AL0038",
+   "nombre_alimento": "Gambas / langostinos",
+   "gramos": 200,
+   "nota": "pelados"
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 4,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 250,
+   "nota": "2 maduros, rallados"
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 5,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 12,
+   "nota": "2-3 dientes, picados"
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 6,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 75,
+   "nota": "1/2, opcional"
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 7,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 40,
+   "nota": "4 cucharadas"
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 8,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 3,
+   "nota": "dulce, 1 cucharadita"
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 9,
+   "id_alimento": "AL0233",
+   "nombre_alimento": "Caldo de pescado (fumet, brick)",
+   "gramos": 800,
+   "nota": "caliente"
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 10,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 5,
+   "nota": "perejil"
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 11,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 4,
+   "nota": null
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 12,
+   "id_alimento": "AL0229",
+   "nombre_alimento": "Pimienta negra molida",
+   "gramos": 0.5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE074",
+   "nombre_receta": "Fideuá con sepia y gambas",
+   "orden": 13,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 10,
+   "nota": "opcional, para servir"
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_receta": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "orden": 1,
+   "id_alimento": "AL0089",
+   "nombre_alimento": "Garbanzos",
+   "gramos": 50,
+   "nota": "en crudo; o 125 g de bote, enjuagados"
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_receta": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "orden": 2,
+   "id_alimento": "AL0231",
+   "nombre_alimento": "Sepia",
+   "gramos": 200,
+   "nota": "pesada descongelada y escurrida; o 100 g de sepia y 100 g de bacalao desalado"
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_receta": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "orden": 3,
+   "id_alimento": "AL0144",
+   "nombre_alimento": "Espinacas",
+   "gramos": 100,
+   "nota": "frescas, un buen manojo"
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_receta": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 60,
+   "nota": "media"
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_receta": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "orden": 5,
+   "id_alimento": "AL0135",
+   "nombre_alimento": "Pimiento verde",
+   "gramos": 60,
+   "nota": "medio"
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_receta": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "orden": 6,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 120,
+   "nota": "1 maduro, rallado"
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_receta": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "orden": 7,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 4,
+   "nota": "1 diente"
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_receta": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "orden": 8,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 2,
+   "nota": "dulce, 1 cucharadita"
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_receta": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "orden": 9,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 2,
+   "nota": "pulverizador"
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_receta": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "orden": 10,
+   "id_alimento": "AL0233",
+   "nombre_alimento": "Caldo de pescado (fumet, brick)",
+   "gramos": 400,
+   "nota": "o agua, para cubrir"
+  },
+  {
+   "id_receta": "RE075",
+   "nombre_receta": "Potaje de garbanzos y sepia «Rescate Pro»",
+   "orden": 11,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 1,
+   "id_alimento": "AL0236",
+   "nombre_alimento": "Manitas de cerdo (con hueso)",
+   "gramos": 750,
+   "nota": "2-3, partidas a lo largo"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 2,
+   "id_alimento": "AL0237",
+   "nombre_alimento": "Careta de cerdo (con orejas)",
+   "gramos": 1200,
+   "nota": "1 completa"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 3,
+   "id_alimento": "AL0238",
+   "nombre_alimento": "Rabo de cerdo (con hueso)",
+   "gramos": 500,
+   "nota": "1, troceado"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 4,
+   "id_alimento": "AL0239",
+   "nombre_alimento": "Corteza de cerdo natural (cruda)",
+   "gramos": 150,
+   "nota": "en trozos medianos"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 5,
+   "id_alimento": "AL0193",
+   "nombre_alimento": "Jamón serrano",
+   "gramos": 400,
+   "nota": "la carne de 1 punta o hueso de jamón, en 2-3 trozos"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 6,
+   "id_alimento": "AL0024",
+   "nombre_alimento": "Chorizo de cerdo, cocinado",
+   "gramos": 400,
+   "nota": "4 chorizos ahumados, enteros"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 7,
+   "id_alimento": "AL0091",
+   "nombre_alimento": "Garbanzos cocidos (bote), escurridos",
+   "gramos": 1200,
+   "nota": "3 botes, extra pedrosillanos"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 8,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 400,
+   "nota": "2 grandes"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 9,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 60,
+   "nota": "1 cabeza para el caldo + 3-4 dientes para el majado"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 10,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 16,
+   "nota": "2 cdas. de dulce + 1 cdta. de picante"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 11,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 40,
+   "nota": "1 rebanada de hogaza del día anterior"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 12,
+   "id_alimento": "AL0220",
+   "nombre_alimento": "Comino molido",
+   "gramos": 1,
+   "nota": "en grano, una pizca generosa"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 13,
+   "id_alimento": "AL0230",
+   "nombre_alimento": "Hierbas secas (romero, tomillo, laurel)",
+   "gramos": 1,
+   "nota": "2 hojas de laurel"
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 14,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE076",
+   "nombre_receta": "Callos de Ley de la Selva",
+   "orden": 15,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 8,
+   "nota": "al final: el jamón ya sala"
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_receta": "Potaje de garbanzos y bacalao",
+   "orden": 1,
+   "id_alimento": "AL0091",
+   "nombre_alimento": "Garbanzos cocidos (bote), escurridos",
+   "gramos": 500,
+   "nota": "o 220 g en seco, a remojo 12 h"
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_receta": "Potaje de garbanzos y bacalao",
+   "orden": 2,
+   "id_alimento": "AL0235",
+   "nombre_alimento": "Bacalao desalado",
+   "gramos": 300,
+   "nota": "en migas o lomos"
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_receta": "Potaje de garbanzos y bacalao",
+   "orden": 3,
+   "id_alimento": "AL0144",
+   "nombre_alimento": "Espinacas",
+   "gramos": 250,
+   "nota": "frescas"
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_receta": "Potaje de garbanzos y bacalao",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 200,
+   "nota": "1 grande"
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_receta": "Potaje de garbanzos y bacalao",
+   "orden": 5,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 15,
+   "nota": "3 dientes"
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_receta": "Potaje de garbanzos y bacalao",
+   "orden": 6,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 120,
+   "nota": "2 huevos duros"
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_receta": "Potaje de garbanzos y bacalao",
+   "orden": 7,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 3,
+   "nota": "dulce, 1 cucharadita"
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_receta": "Potaje de garbanzos y bacalao",
+   "orden": 8,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 30,
+   "nota": "1 rebanada frita, para el majado"
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_receta": "Potaje de garbanzos y bacalao",
+   "orden": 9,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 20,
+   "nota": "un chorrito + freír el pan"
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_receta": "Potaje de garbanzos y bacalao",
+   "orden": 10,
+   "id_alimento": "AL0233",
+   "nombre_alimento": "Caldo de pescado (fumet, brick)",
+   "gramos": 1000,
+   "nota": "o agua"
+  },
+  {
+   "id_receta": "RE077",
+   "nombre_receta": "Potaje de garbanzos y bacalao",
+   "orden": 11,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE078",
+   "nombre_receta": "Tortitas esponjosas de avena y claras (sin whey)",
+   "orden": 1,
+   "id_alimento": "AL0064",
+   "nombre_alimento": "Harina de avena",
+   "gramos": 60,
+   "nota": "o copos triturados muy finos"
+  },
+  {
+   "id_receta": "RE078",
+   "nombre_receta": "Tortitas esponjosas de avena y claras (sin whey)",
+   "orden": 2,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "1, separando yema y clara"
+  },
+  {
+   "id_receta": "RE078",
+   "nombre_receta": "Tortitas esponjosas de avena y claras (sin whey)",
+   "orden": 3,
+   "id_alimento": "AL0043",
+   "nombre_alimento": "Clara de huevo",
+   "gramos": 100,
+   "nota": "3 claras frescas"
+  },
+  {
+   "id_receta": "RE078",
+   "nombre_receta": "Tortitas esponjosas de avena y claras (sin whey)",
+   "orden": 4,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 100,
+   "nota": "o skyr natural"
+  },
+  {
+   "id_receta": "RE078",
+   "nombre_receta": "Tortitas esponjosas de avena y claras (sin whey)",
+   "orden": 5,
+   "id_alimento": "AL0199",
+   "nombre_alimento": "Levadura química (impulsor)",
+   "gramos": 4,
+   "nota": "1 cucharadita rasa"
+  },
+  {
+   "id_receta": "RE078",
+   "nombre_receta": "Tortitas esponjosas de avena y claras (sin whey)",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 0.5,
+   "nota": "1 pizca"
+  },
+  {
+   "id_receta": "RE078",
+   "nombre_receta": "Tortitas esponjosas de avena y claras (sin whey)",
+   "orden": 7,
+   "id_alimento": "AL0202",
+   "nombre_alimento": "Canela molida",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE078",
+   "nombre_receta": "Tortitas esponjosas de avena y claras (sin whey)",
+   "orden": 8,
+   "id_alimento": "AL0204",
+   "nombre_alimento": "Aroma de vainilla",
+   "gramos": 0.5,
+   "nota": "unas gotas"
+  },
+  {
+   "id_receta": "RE078",
+   "nombre_receta": "Tortitas esponjosas de avena y claras (sin whey)",
+   "orden": 9,
+   "id_alimento": "AL0198",
+   "nombre_alimento": "Sacarina líquida",
+   "gramos": 0.5,
+   "nota": "6-8 gotas; o 10 g de eritritol"
+  },
+  {
+   "id_receta": "RE078",
+   "nombre_receta": "Tortitas esponjosas de avena y claras (sin whey)",
+   "orden": 10,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 2,
+   "nota": "pulverizado en la sartén"
   }
  ]
 }
