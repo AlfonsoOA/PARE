@@ -1,4 +1,5 @@
 <script>
+  import PorQue from '../componentes/PorQue.svelte';
   import { app, ir, aviso } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
   import { historialEjercicio, novedades, volumenSesionHecha, cargaEfectiva, usaPesoCorporal } from '../lib/entreno.js';
@@ -92,7 +93,7 @@
       {@const e = ej(p.ej)}
       <div class="tarjeta">
         <div class="fila entre"><b>{e?.n}</b>{#if p.cambiar}<span class="insignia aviso">Cámbialo</span>{:else if p.sube}<span class="insignia bien">Sube</span>{/if}</div>
-        <p class="sec peq">{p.motivo}</p>
+        <p class="sec peq">{p.motivo}{#if p.tope != null} <PorQue id="tope" />{/if}</p>
         {#if !p.bw}
           {#if p.sospechaTope}<p class="peq aviso">Llevas 3 sesiones con el mismo peso aunque te tocaba subir. ¿Es el máximo de la máquina?</p>{/if}
           <label class="fila tope"><input type="checkbox" checked={p.tope != null} onchange={(ev) => cambiarTope(p, ev.currentTarget.checked)} /> <span class="peq">Es el máximo de la máquina{p.tope != null ? ` (${fmt(p.tope)})` : ''}</span></label>

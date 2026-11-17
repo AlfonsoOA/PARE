@@ -30,6 +30,7 @@
   import Wod from './pantallas/Wod.svelte';
   import Encuesta from './pantallas/Encuesta.svelte';
   import Guia from './pantallas/Guia.svelte';
+  import Fundamentos from './pantallas/Fundamentos.svelte';
   import Importar from './pantallas/Importar.svelte';
   import ProgresoWod from './pantallas/ProgresoWod.svelte';
 
@@ -41,7 +42,7 @@
   const VISTAS = {
     test: Test, plan: TuPlan, sesion: Sesion, fin: FinSesion, editor: EditorRutina, ficha: FichaEjercicio,
     progresoEj: ProgresoEjercicio, midieta: MiDieta, archivo: Archivo, deportistas: Deportistas,
-    deportista: Deportista, cambios: Cambios, ajustes: Ajustes, perfil: Perfil, instalar: Instalar, editorReceta: EditorReceta, wod: Wod, progresoWod: ProgresoWod, encuesta: Encuesta, guia: Guia, importar: Importar,
+    deportista: Deportista, cambios: Cambios, ajustes: Ajustes, perfil: Perfil, instalar: Instalar, editorReceta: EditorReceta, wod: Wod, progresoWod: ProgresoWod, encuesta: Encuesta, guia: Guia, fundamentos: Fundamentos, importar: Importar,
   };
   const TABS = { hoy: Hoy, entrenar: Entrenar, comer: Comer, progreso: Progreso, yo: Yo };
   const SIN_BARRA = new Set(['test', 'plan', 'sesion', 'fin', 'bienvenida', 'editorReceta', 'wod', 'encuesta']);

@@ -1,4 +1,5 @@
 <script>
+  import PorQue from '../componentes/PorQue.svelte';
   import { wodsHechos, mejoresWod, resumenWod, textoResultado, ESCALAS } from '../lib/wods.js';
   import { app, hoyISO } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
@@ -88,7 +89,7 @@
           {#if g === 'hombros' && v > 0}<div class="fila peq sec" style="gap:12px;justify-content:flex-end">{#each ['anterior', 'lateral', 'posterior'] as c}<span>{c} {fmtNum(semanas[0].delt[c], 1)}</span>{/each}</div>{/if}
         </div>
       {/each}
-      <p class="sec peq">La línea blanca son las series que trae tu rutina; las marcas grises, la banda recomendada ({BANDA.min}-{BANDA.max}; piernas {banda('piernas').min}-{banda('piernas').max}). Conteo fraccional: principal 1, secundario 0,5.</p>
+      <p class="sec peq">La línea blanca son las series que trae tu rutina; las marcas grises, la banda recomendada ({BANDA.min}-{BANDA.max}; piernas {banda('piernas').min}-{banda('piernas').max}). Conteo fraccional: principal 1, secundario 0,5. <PorQue id="medias" /></p>
     </div>
     <div class="tarjeta">
       <span class="etiqueta">Últimas 8 semanas</span>
@@ -120,6 +121,7 @@
   {:else if sub === 'adherencia'}
     {@const enc = d.encuestas ?? []}
     {@const ult = enc.at(-1)}
+    <p class="sec peq">Preguntas adaptadas de cuestionarios validados de adherencia y hábito. <PorQue id="adherencia" texto="De dónde salen" /></p>
     {#if !enc.length}
       <p class="sec peq">Cada dos semanas aparece en Hoy una revisión de menos de un minuto. Con ella, aquí verás cómo evoluciona tu adherencia a la dieta y al entreno.</p>
     {:else}

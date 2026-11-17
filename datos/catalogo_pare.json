@@ -87425,6 +87425,70 @@
    "doi_url": "https://doi.org/10.1017/S0007114516003949",
    "uso_en_pare": "Hidratos en entrenamiento de fuerza (3-7 g/kg/día y su discusión); base de la opción \"días de más hidratos\".",
    "verificado": "SI (PubMed; autores por confirmar)"
+  },
+  {
+   "id_referencia": "REF19",
+   "referencia": "Škarabot J, Cronin N, Strojnik V, Avela J (2016). Bilateral deficit in maximal force production. Eur J Appl Physiol 116(11-12):2057-2084.",
+   "tipo": "Revisión",
+   "doi_url": "https://doi.org/10.1007/s00421-016-3458-z",
+   "uso_en_pare": "Explicación del déficit bilateral (a una pierna o un brazo se mueve más de la mitad).",
+   "verificado": "SI (título y revista comprobados, nov. 2026)"
+  },
+  {
+   "id_referencia": "REF20",
+   "referencia": "Schoenfeld BJ, Grgic J, Ogborn D, Krieger JW (2017). Strength and hypertrophy adaptations between low- vs. high-load resistance training: a systematic review and meta-analysis. J Strength Cond Res 31(12):3508-3523.",
+   "tipo": "Meta-análisis",
+   "doi_url": "https://doi.org/10.1519/JSC.0000000000002200",
+   "uso_en_pare": "Hipertrofia similar con cargas bajas y altas cerca del fallo: progresar en repeticiones al tope de la máquina.",
+   "verificado": "SI (título y revista comprobados, nov. 2026)"
+  },
+  {
+   "id_referencia": "REF21",
+   "referencia": "Morton RW, Murphy KT, McKellar SR, et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults. Br J Sports Med 52(6):376-384.",
+   "tipo": "Meta-análisis",
+   "doi_url": "https://doi.org/10.1136/bjsports-2017-097608",
+   "uso_en_pare": "Proteína diaria (meseta en torno a 1,6 g/kg; IC hasta 2,2): PARE usa 1,8 g/kg.",
+   "verificado": "SI (título y revista comprobados, nov. 2026)"
+  },
+  {
+   "id_referencia": "REF22",
+   "referencia": "Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO (1990). A new predictive equation for resting energy expenditure in healthy individuals. Am J Clin Nutr 51(2):241-247.",
+   "tipo": "Ecuación",
+   "doi_url": "https://doi.org/10.1093/ajcn/51.2.241",
+   "uso_en_pare": "Metabolismo basal en el cálculo de calorías.",
+   "verificado": "SI (título y revista comprobados, nov. 2026)"
+  },
+  {
+   "id_referencia": "REF23",
+   "referencia": "Hall KD (2008). What is the required energy deficit per unit weight loss? Int J Obes 32(3):573-576.",
+   "tipo": "Artículo",
+   "doi_url": "https://doi.org/10.1038/sj.ijo.0803720",
+   "uso_en_pare": "Límites de la regla de 7700 kcal por kg en el contraste con la báscula.",
+   "verificado": "SI (título y revista comprobados, nov. 2026)"
+  },
+  {
+   "id_referencia": "REF24",
+   "referencia": "Asaad G, Sadegian M, Lau R, et al. (2015). The reliability and validity of the Perceived Dietary Adherence Questionnaire for people with type 2 diabetes. Nutrients 7(7):5484-5496.",
+   "tipo": "Validación de cuestionario",
+   "doi_url": "https://doi.org/10.3390/nu7075231",
+   "uso_en_pare": "Idea de la pregunta de adherencia a la dieta (adaptada).",
+   "verificado": "SI (título y revista comprobados, nov. 2026)"
+  },
+  {
+   "id_referencia": "REF25",
+   "referencia": "Newman-Beinart NA, Norton S, Dowling D, et al. (2017). The development and initial psychometric evaluation of a measure assessing adherence to prescribed exercise: the Exercise Adherence Rating Scale (EARS). Physiotherapy 103(2):180-185.",
+   "tipo": "Validación de cuestionario",
+   "doi_url": "https://doi.org/10.1016/j.physio.2016.11.001",
+   "uso_en_pare": "Preguntas de adherencia al entrenamiento (adaptadas).",
+   "verificado": "SI (título y revista comprobados, nov. 2026)"
+  },
+  {
+   "id_referencia": "REF26",
+   "referencia": "Gardner B, Abraham C, Lally P, de Bruijn GJ (2012). Towards parsimony in habit measurement: testing the convergent and predictive validity of an automaticity subscale of the Self-Report Habit Index. Int J Behav Nutr Phys Act 9:102.",
+   "tipo": "Validación de cuestionario",
+   "doi_url": "https://doi.org/10.1186/1479-5868-9-102",
+   "uso_en_pare": "Preguntas de hábito (automaticidad) de la revisión quincenal (adaptadas).",
+   "verificado": "SI (título y revista comprobados, nov. 2026)"
   }
  ],
  "recomendaciones": [

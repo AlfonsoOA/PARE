@@ -1,4 +1,5 @@
 <script>
+  import PorQue from '../componentes/PorQue.svelte';
   import { resumenWod } from '../lib/wods.js';
   import { app, ir, hoyISO, aviso } from '../lib/estado.svelte.js';
   import { GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
@@ -138,7 +139,7 @@
           <div class="barra-p"><i style="width: {Math.min(100, (vol[g] / tope) * 100)}%"></i>{#if bg.min}<b style="left:{(bg.min / tope) * 100}%"></b>{/if}<b style="left:{(bg.max / tope) * 100}%"></b>{#if plan[g] > 0}<b class="plan" style="left:{(plan[g] / tope) * 100}%"></b>{/if}</div>
         </button>
       {/each}
-      <p class="sec peq">Relleno: series hechas. Línea blanca: las que trae tu rutina. Marcas grises: la banda recomendada por grupo. Conteo fraccional: principal 1, secundario 0,5.</p>
+      <p class="sec peq">Relleno: series hechas. Línea blanca: las que trae tu rutina. Marcas grises: la banda recomendada por grupo. Conteo fraccional: principal 1, secundario 0,5. <PorQue id="volumen" /></p>
     </div>
   {/if}
 

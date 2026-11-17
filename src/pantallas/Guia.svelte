@@ -1,4 +1,5 @@
 <script>
+  import PorQue from '../componentes/PorQue.svelte';
   // «Cómo se usa»: guía dentro de la app, por tareas. Se abre desde Yo, desde Hoy (primera semana) o con el enlace …/PARE/#guia.
   import { app } from '../lib/estado.svelte.js';
   import { URL_PARE, URL_OPINION } from '../lib/instalar.js';
@@ -83,6 +84,7 @@
     ['problemas', 'Si algo no va', [
       'No ves los cambios nuevos o se queda en blanco: cierra la app del todo y vuelve a abrirla. Si a los 12 segundos sigue sin cargar, pulsa «Reparar y recargar»: no borra tus datos.',
       'Funciona sin cobertura, salvo la primera vez que la abres.',
+      'Por qué PARE hace cada cosa (media serie para los secundarios, la progresión, las calorías…), con los estudios detrás: Yo → En qué se basa PARE.',
       'PARE da criterios generales; no es consejo médico. Si un dolor empeora o dura más de 2-3 semanas, consulta con un profesional.',
     ]],
   ];
@@ -110,6 +112,7 @@
     <p class="sec peq">Cuéntanoslo: lo que no se entiende es lo primero que arreglamos.</p>
     {#if URL_OPINION}<button class="boton sec2 ancho" onclick={() => window.open(URL_OPINION, '_blank', 'noopener')}>Danos tu opinión</button>{/if}
     <p class="sec peq">Para pasar esta guía a alguien: {URL_PARE}#guia</p>
+    <p class="sec peq">¿Por qué PARE cuenta media serie para los secundarios, o sube el peso así? <PorQue id="volumen" texto="En qué se basa PARE" /></p>
   </div>
 </div>
 

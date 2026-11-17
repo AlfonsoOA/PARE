@@ -63,6 +63,8 @@ for (const v of c.variantes) {
 const salida = {
   esquema: 1,
   generado: c.generado,
+  // bibliografía en la que se apoya PARE (pantalla «En qué se basa PARE»)
+  refs: Object.fromEntries((c.referencias || []).map((r) => [r.id_referencia, { t: r.referencia, url: r.doi_url || null }])),
   ejercicios,
   etiquetas,
   grupoDeMusculo,

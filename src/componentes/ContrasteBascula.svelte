@@ -1,4 +1,5 @@
 <script>
+  import PorQue from '../componentes/PorQue.svelte';
   // Contraste: cambio de peso esperado por lo que se come (anotado o pautado) frente al real de la báscula.
   import { contrasteBascula } from '../lib/adherencia.js';
   import { fmtNum, fmtFecha, mostrar, ud } from '../lib/unidades.js';
@@ -12,7 +13,7 @@
 <div class="tarjeta" style="gap:8px">
   <span class="etiqueta">La báscula frente a lo que comes</span>
   {#if !c.ok}
-    <p class="sec peq">{c.motivo}</p>
+    <p class="sec peq">{c.motivo} <PorQue id="bascula" /></p>
   {:else}
     <div class="fila entre envolver" style="gap:12px">
       <div><p class="cifra">{kgSem(c.esperado)}</p><p class="sec peq">esperado con {comes}</p></div>
