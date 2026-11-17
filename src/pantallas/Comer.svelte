@@ -72,6 +72,7 @@
     <div class="tarjeta"><p>Aún no tienes pauta de dieta.</p>
       <p class="sec peq">Con unas preguntas sobre ti, tu objetivo, tu actividad y tus comidas (2 minutos), PARE te la calcula. Tu rutina no se toca.</p>
       <button class="boton ancho" onclick={() => (app.vista = { nombre: 'test', soloDieta: true, acento: 'comer' })}>Calcular mi dieta</button>
+      <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'importar', acento: 'comer' })}>Tengo mi dieta en papel o en Excel</button>
       <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'archivo', acento: 'yo' })}>Tengo mi dieta en un archivo PARE</button></div>
   {:else}
   {#if !d.ayudas?.comer}

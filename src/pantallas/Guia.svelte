@@ -36,6 +36,18 @@
       'Para siempre: Entrenar → Editar rutina. Cambias ejercicios, series, repeticiones, pesos, descansos o el reparto entero. Nada se guarda hasta que pulsas Guardar.',
       'Si te molesta una articulación, apúntalo en Yo → Molestias: los ejercicios a evitar salen marcados.',
     ]],
+    ['intensidad', 'RPE, RIR y top set', [
+      'RPE es el esfuerzo de una serie, de 1 a 10. RPE 10 = fallo, no sale ni una más. RPE 9 = te quedaba 1 repetición. RPE 8 = te quedaban 2.',
+      'RIR son las repeticiones que te quedaban en reserva. Es lo mismo contado al revés: RIR 1 = RPE 9; RIR 2 = RPE 8.',
+      'Top set: la serie más pesada del ejercicio, la primera tras calentar, a RPE alto. En la sesión sale marcada con TOP. Las demás son back-off: algo menos de peso (un 10-15 %) y alguna repetición más.',
+      'Si tu rutina los lleva, los ves en negrita encima de las series de cada ejercicio. Se cambian en Editar rutina, en cada ejercicio.',
+    ]],
+    ['importar', 'Pasar tu rutina o tu dieta desde Excel', [
+      'Yo → Archivo PARE → Importar rutina o dieta. Ahí descargas la plantilla de rutina o la de dieta.',
+      'Rellénala en Excel, Google Sheets o la app de hojas de cálculo del móvil. Tiene una hoja de instrucciones, un ejemplo y la lista de ejercicios o alimentos de PARE para copiar los nombres.',
+      'Guárdala como .xlsx (en Google Sheets: Archivo → Descargar → Microsoft Excel) y súbela en la misma pantalla.',
+      'PARE reconoce los nombres. Los dudosos salen con «¿?» y los que no reconoce, en rojo: tócalos para elegir el bueno. Después revisas y aceptas.',
+    ]],
     ['wod', 'CrossFit (WOD)', [
       'Desde Entrenar → WOD suelto, o en el día de WOD de tu rutina.',
       'Escribe el de la pizarra o elige uno de la biblioteca (Fran, Grace, Murph…). Elige la escala: RX, escalado o personalizado.',

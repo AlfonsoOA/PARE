@@ -4,8 +4,8 @@
   import { cat, GRUPOS, NOMBRE_GRUPO, normalizar, etiqueta, palabras, coincide } from '../lib/catalogo.js';
   import { restriccion } from '../lib/entreno.js';
   import Hoja from './Hoja.svelte';
-  let { cerrar, elegir, titulo = 'Añadir ejercicio', ids = null } = $props();
-  let q = $state('');
+  let { cerrar, elegir, titulo = 'Añadir ejercicio', ids = null, inicial = '' } = $props();
+  let q = $state(inicial);
   let grupo = $state('');
   let eq = $state('');
   const EQ = [['barra', 'Barra'], ['mancuerna', 'Mancuernas'], ['maquina', 'Máquina'], ['polea', 'Polea'], ['peso_corporal', 'Peso corporal'], ['kettlebell', 'Kettlebell']];

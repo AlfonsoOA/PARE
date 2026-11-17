@@ -42,6 +42,12 @@
   </div>
 
   <div class="tarjeta">
+    <h2>Importar desde Excel</h2>
+    <p class="sec peq">¿Tienes tu rutina o tu dieta en papel o en una hoja de cálculo? Descarga la plantilla, rellénala y súbela: PARE la convierte.</p>
+    <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'importar', acento: 'yo', volver: { nombre: 'archivo', acento: 'yo' } })}>Importar rutina o dieta</button>
+  </div>
+
+  <div class="tarjeta">
     <h2>Abrir un archivo</h2>
     <p class="sec peq">Los cambios que te manda tu entrenador, el archivo de un deportista (modo entrenador) o una copia de seguridad.</p>
     <button class="boton sec2 ancho" onclick={() => entrada.click()}>Elegir archivo</button>

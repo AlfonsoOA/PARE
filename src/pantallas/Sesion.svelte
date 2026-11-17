@@ -208,6 +208,7 @@
               {/if}
               {#if prev}<button class="enlace mprog" onclick={() => (app.vista = { nombre: 'progresoEj', id: x.ej, acento: 'progreso', volver: { nombre: 'sesion', acento: 'entrenar' } })}><Icono n="progreso" tam={18} /> Mi progreso</button>{/if}
             </div>
+            {#if x.objetivo.rpe || x.objetivo.rir || x.objetivo.topSet}<p class="peq intensidad">{[x.objetivo.topSet ? 'Serie 1: top set; el resto, back-off' : null, x.objetivo.rpe ? `RPE ${x.objetivo.rpe}` : null, x.objetivo.rir ? `RIR ${x.objetivo.rir}` : null].filter(Boolean).join(' · ')}</p>{/if}
             {#if x.nota}<p class="peq nota">{x.nota}</p>{/if}
             {#if r && r.nivel !== 'recomendado'}<div class="aviso-l peq"><Icono n="aviso" tam={18} /><p><b>{r.zona}:</b> {r.motivo}</p></div>{/if}
             {#if usaPesoCorporal(e)}<p class="sec peq">PC = tu peso corporal{pc ? ` (${fmt(pc)})` : ''}. Toca una serie para indicar lastre o asistencia.</p>{/if}
@@ -218,7 +219,7 @@
             {#each x.series as z, k}
               <div class="serie" class:hecha={z.hecha}>
                 <button class="datos" onclick={() => abrirSerie(i, k)} aria-label="Editar serie {k + 1}">
-                  <span class="n">{k + 1}</span>
+                  <span class="n">{k + 1}{#if x.objetivo.topSet && k === 0}<span class="top">TOP</span>{/if}</span>
                   <span class="carga">{desc(z, e)}</span>
                   <span class="por">×</span>
                   <span class="reps">{z.reps ?? '—'}</span>
@@ -359,10 +360,12 @@
   .img { display: flex; align-items: center; gap: 10px; background: none; border: 0; padding: 0; cursor: pointer; color: inherit; }
   .guia { color: var(--progreso); }
   .nota { color: var(--progreso); }
+  .intensidad { color: var(--texto); font-weight: 600; }
+  .top { display: block; font-size: 10px; line-height: 1; font-weight: 700; letter-spacing: 0.5px; color: var(--acento); }
   .serie { display: flex; gap: 8px; align-items: stretch; }
   .datos { flex: 1; display: flex; align-items: baseline; gap: 8px; background: var(--elevada); border: 1px solid var(--borde); border-radius: 12px; padding: 10px 12px; min-height: 60px; cursor: pointer; text-align: left; flex-wrap: wrap; }
   .serie.hecha .datos { border-color: #1f4a30; }
-  .n { color: var(--texto2); font-size: 14px; width: 16px; }
+  .n { color: var(--texto2); font-size: 14px; min-width: 16px; white-space: nowrap; }
   .carga, .reps { font-family: var(--titulos); font-weight: 800; font-size: 26px; line-height: 1; }
   .por { color: var(--texto2); }
   .ant { color: var(--texto2); font-size: 12px; margin-left: auto; align-self: center; }

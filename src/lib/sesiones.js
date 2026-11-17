@@ -104,7 +104,7 @@ export function iniciarSesion(idx, items = null, nombre = null) {
       const previa = ultimaVez(it.ej);
       return {
         uid: it.uid ?? uuid(), ej: it.ej, unir: !!it.unir, descanso: it.descanso, nota: it.nota ?? '',
-        objetivo: { series: it.series, repMin: it.repMin, repMax: it.repMax, carga: it.carga },
+        objetivo: { series: it.series, repMin: it.repMin, repMax: it.repMax, carga: it.carga, rpe: it.rpe ?? null, rir: it.rir ?? null, topSet: !!it.topSet },
         series: Array.from({ length: it.series }, (_, k) => nuevaSerie(it, previa, k)),
       };
     }),

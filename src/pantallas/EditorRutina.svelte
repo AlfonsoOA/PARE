@@ -168,7 +168,12 @@
               <label class="campo">Desc. (s)<input type="number" inputmode="numeric" step="15" bind:value={it.descanso} /></label>
             </div>
             {#if it.cargas?.length > 1 && new Set(it.cargas).size > 1 && guardar(it._carga) === it.carga}<p class="sec peq">Por serie: {it.cargas.map((c) => fmtNum(mostrar(c))).join(' · ')} {ud()}. Si cambias el peso de arriba, todas las series pasan a ese peso.</p>{/if}
-            <input type="text" bind:value={it.nota} placeholder="Nota (RPE, técnica…), opcional" aria-label="Nota del ejercicio" style="min-height:40px;font-size:14px" />
+            <div class="fila" style="gap:8px;align-items:flex-end">
+              <label class="campo" style="flex:1">RPE<input type="text" inputmode="decimal" bind:value={it.rpe} placeholder="p. ej. 9" /></label>
+              <label class="campo" style="flex:1">RIR<input type="text" inputmode="decimal" bind:value={it.rir} placeholder="p. ej. 1" /></label>
+              <label class="fila" style="gap:6px;min-height:44px;flex:1"><input type="checkbox" bind:checked={it.topSet} style="width:22px;height:22px" /> <span class="peq">Top set</span></label>
+            </div>
+            <input type="text" bind:value={it.nota} placeholder="Nota (técnica, banco…), opcional" aria-label="Nota del ejercicio" style="min-height:40px;font-size:14px" />
             <div class="fila acciones">
               <button class="icono-b" onclick={() => moverI(s, k, -1)} aria-label="Subir"><Icono n="arriba" /></button>
               <button class="icono-b" onclick={() => moverI(s, k, 1)} aria-label="Bajar"><Icono n="abajo" /></button>
