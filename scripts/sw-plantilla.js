@@ -2,8 +2,10 @@
 const CACHE = 'pare-__VERSION__';
 const ARCHIVOS = __ARCHIVOS__;
 
+// cache: 'reload' = pedir a la red, no a la caché HTTP del navegador, los archivos que cambian sin cambiar de nombre
+// (data/pare.json, plantillas…); si no, podían quedarse viejos. assets/ lleva hash en el nombre e img/ casi no cambia.
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ARCHIVOS)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ARCHIVOS.map((u) => (/^\.\/(assets|img)\//.test(u) ? u : new Request(u, { cache: 'reload' }))))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (e) => {

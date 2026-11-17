@@ -63,8 +63,6 @@ for (const v of c.variantes) {
 const salida = {
   esquema: 1,
   generado: c.generado,
-  // bibliografía en la que se apoya PARE (pantalla «En qué se basa PARE»)
-  refs: Object.fromEntries((c.referencias || []).map((r) => [r.id_referencia, { t: r.referencia, url: r.doi_url || null }])),
   ejercicios,
   etiquetas,
   grupoDeMusculo,
@@ -102,3 +100,7 @@ const salida = {
 writeFileSync('public/data/pare.json', JSON.stringify(salida));
 console.log(`pare.json: ${ejercicios.length} ejercicios, ${salida.alimentos.length} alimentos, ` +
   `${salida.recetas.length} recetas, ${(JSON.stringify(salida).length / 1024).toFixed(0)} KB`);
+
+// Bibliografía (APA 7) como módulo de la app: va dentro del código, así nunca falta aunque pare.json venga de caché.
+const REFS = Object.fromEntries((c.referencias || []).map((r) => [r.id_referencia, { apa: r.apa7 || r.referencia, url: r.doi_url || null }]));
+writeFileSync('src/lib/referencias.gen.js', `// Generado por scripts/preparar-datos.mjs desde datos/catalogo_pare.json (referencias). No editar a mano.\nexport const REFS = ${JSON.stringify(REFS, null, 1)};\n`);

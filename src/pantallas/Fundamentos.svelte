@@ -2,7 +2,7 @@
   // «En qué se basa PARE»: las decisiones de la app con su explicación y su bibliografía. Se abre desde Yo, la guía
   // o los «¿Por qué?» de cada pantalla (con `abrir` = id del apartado).
   import { app } from '../lib/estado.svelte.js';
-  import { cat } from '../lib/catalogo.js';
+  import { REFS } from '../lib/referencias.gen.js';
   import { FUNDAMENTOS } from '../lib/fundamentos.js';
   import Icono from '../componentes/Icono.svelte';
   let { volver = null, abrir = null } = $props();
@@ -28,12 +28,13 @@
             <p>{f.x}</p>
             {#if f.criterio}<p class="sec peq"><b>Criterio de PARE:</b> {f.criterio}</p>{/if}
             {#if f.refs?.length}
-              <ol class="refs">
+              <span class="etiqueta">Referencias</span>
+              <ul class="refs">
                 {#each f.refs as r}
-                  {@const ref = cat.refs?.[r]}
-                  {#if ref}<li class="peq">{ref.t}{#if ref.url}{" "}<a href={ref.url} target="_blank" rel="noopener">Ver</a>{/if}</li>{/if}
+                  {@const ref = REFS[r]}
+                  {#if ref}<li class="peq">{#each ref.apa.split('*') as trozo, k}{#if k % 2}<i>{trozo}</i>{:else}{trozo}{/if}{/each}{#if ref.url}{' '}<a href={ref.url} target="_blank" rel="noopener">{ref.url}</a>{/if}</li>{/if}
                 {/each}
-              </ol>
+              </ul>
             {/if}
           </div>
         {/if}
@@ -51,6 +52,7 @@
   .flecha.abierta { transform: rotate(90deg); }
   .cuerpo { padding: 0 16px 16px; display: flex; flex-direction: column; gap: 10px; line-height: 1.45; }
   .cuerpo p { margin: 0; }
-  .refs { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; color: var(--texto2); }
-  .refs a { color: var(--acento); font-weight: 600; }
+  .refs { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; color: var(--texto2); }
+  .refs li { padding-left: 1.4em; text-indent: -1.4em; overflow-wrap: anywhere; } /* sangría francesa, como en APA */
+  .refs a { color: var(--acento); }
 </style>
