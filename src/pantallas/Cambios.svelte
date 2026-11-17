@@ -1,4 +1,5 @@
 <script>
+  import { mifflin, factorActividad } from '../lib/plan.js';
   import { app, aviso, ir , ajustarDiasSinTest} from '../lib/estado.svelte.js';
   import { ej } from '../lib/catalogo.js';
   import { fmt, fmtFecha } from '../lib/unidades.js';
@@ -25,7 +26,15 @@
     c.rutina = null; cerrarSiVacio();
   }
   function dieta(si) {
-    if (si) { d.dieta = { ...d.dieta, ...c.dieta }; aviso('Dieta actualizada'); }
+    if (si) {
+      d.dieta = { ...d.dieta, ...c.dieta };
+      // Una dieta que viene de fuera puede no traer el gasto estimado: se calcula con el perfil, si lo hay.
+      const pf = d.perfil, peso = d.medidas.filter((m) => m.peso).at(-1)?.peso;
+      if (!d.dieta.tdee && pf.sexo && pf.edad && pf.altura && peso) {
+        d.dieta.tdee = Math.round(mifflin({ sexo: pf.sexo, edad: pf.edad, altura: pf.altura, peso }) * factorActividad({ trabajo: pf.test?.trabajo, pasos: pf.test?.pasos, diasSemana: pf.diasSemana, otrosDeportes: pf.test?.otrosDeportes }));
+      }
+      aviso('Dieta actualizada');
+    }
     c.dieta = null; cerrarSiVacio();
   }
   function cerrarSiVacio() { if (!c.rutina && !c.dieta) { d.cambiosPropuestos = null; ir('hoy'); } }
