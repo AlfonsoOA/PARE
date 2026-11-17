@@ -6,7 +6,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync, unlinkSync, mkdirSync } from 'node:fs';
 import { leerXlsx } from '../src/lib/xlsx.js';
 import { crearXlsx } from '../src/lib/xlsxEscribir.js';
-import { libroRecetario, ESTILOS, ESTILO_DE, MOMENTOS } from '../src/lib/recetarioFormato.js';
+import { libroRecetario, ESTILOS, ESTILO_DE, MOMENTOS, leerCeldaIngredientes, parecidos } from '../src/lib/recetarioFormato.js';
 
 const ENTRADA = 'datos/recetario/entrada', MAESTRO = 'datos/recetario/recetario_maestro.xlsx', RECETAS = 'datos/recetas.json';
 const cat = JSON.parse(readFileSync('datos/catalogo_pare.json', 'utf8'));
@@ -77,11 +77,12 @@ function calcular(r, lista) {
 
 async function procesar(archivo) {
   const { hojas } = await leerXlsx(readFileSync(archivo).buffer.slice(0));
-  const tr = tabla(hojas, ['nombre', 'momento']), ti = tabla(hojas, ['receta', 'ingrediente', 'gramos']);
-  if (!tr || !ti) { errores.push(`${archivo}: no encuentro las hojas «Recetas» e «Ingredientes». Usa el recetario que descarga la app.`); return; }
+  const tr = tabla(hojas, ['nombre', 'momento']), ti = tabla(hojas, ['receta', 'ingrediente', 'gramos']); // la hoja «Ingredientes» solo en archivos antiguos
+  if (!tr) { errores.push(`${archivo}: no encuentro la hoja «Recetas». Usa el recetario que descarga la app o recetario_maestro.xlsx.`); return; }
   const h = tr.h, c = { id: ind(h, 'id'), or: ind(h, 'origen'), n: ind(h, 'nombre'), tipo: ind(h, 'tipo'), por: ind(h, 'porciones'), mom: ind(h, 'momento'), t: ind(h, 'tiempo'), est: ind(h, 'estilo'),
-    dieta: ind(h, 'dieta'), peso: ind(h, 'peso final'), notas: ind(h, 'notas'), pasos: ind(h, 'protocolo', 'pasos'), borrar: ind(h, 'borrar'), base: ind(h, 'basada') };
-  const hi = ti.h, ci = { rec: ind(hi, 'receta'), al: ind(hi, 'ingrediente'), g: ind(hi, 'gramos'), nota: ind(hi, 'nota') };
+    dieta: ind(h, 'dieta'), peso: ind(h, 'peso final'), ing: ind(h, 'ingredientes'), notas: ind(h, 'notas'), pasos: ind(h, 'protocolo', 'pasos'), borrar: ind(h, 'borrar'), base: ind(h, 'basada') };
+  const hi = ti?.h ?? [], ci = { rec: ind(hi, 'receta'), al: ind(hi, 'ingrediente'), g: ind(hi, 'gramos'), nota: ind(hi, 'nota') };
+  const nombresAl = alimentos.map((a) => a.nombre_es), existe = (n) => porNombre.has(norm(n));
   for (const { f, fila } of tr.filas) {
     const nombre = txt(f[c.n]);
     if (!nombre) continue;
@@ -90,17 +91,21 @@ async function procesar(archivo) {
     let r = recetas.find((x) => x.id_receta === idArchivo) ?? (baseId ? recetas.find((x) => x.id_receta === baseId) : null)
       ?? recetas.find((x) => norm(x.nombre_es) === norm(nombre.replace(/\s*\(mi version\)$/i, '').replace(/\s*\(mi versión\)$/i, '')));
     if (/^(s|si|x|1|true)/i.test(norm(f[c.borrar]))) { if (r && r.activo === 'SI') { r.activo = 'NO'; resumen.retiradas.push(r.nombre_es); } continue; }
-    const lista = ti.filas.filter(({ f: g }) => { const k = txt(g[ci.rec]); return k && (k === idArchivo || norm(k) === norm(nombre)); });
+    // ingredientes: de la columna «Ingredientes» (un ingrediente por línea) o, en archivos antiguos, de la hoja «Ingredientes»
+    const celda = c.ing >= 0 ? txt(f[c.ing]) : '';
+    const lista = celda
+      ? leerCeldaIngredientes(celda, existe).map((x) => ({ ...x, donde: `Recetas, fila ${fila} («${nombre}»)` }))
+      : (ti?.filas ?? []).filter(({ f: g }) => { const k = txt(g[ci.rec]); return k && (k === idArchivo || norm(k) === norm(nombre)); })
+        .map(({ f: g, fila: fi }) => ({ nombre: txt(g[ci.al]), g: num(g[ci.g]), nota: txt(g[ci.nota]), texto: txt(g[ci.al]), donde: `Ingredientes, fila ${fi} («${nombre}»)` })).filter((x) => x.nombre);
     const nuevos = [];
-    for (const { f: g, fila: fi } of lista) {
-      const n = txt(g[ci.al]); if (!n) continue;
-      const a = porNombre.get(norm(n));
-      if (!a) { errores.push(`Ingredientes, fila ${fi} («${nombre}»): «${n}» no está en la lista de alimentos. Cópialo de la hoja «Alimentos».`); continue; }
-      const gr = num(g[ci.g]);
-      if (!gr) { errores.push(`Ingredientes, fila ${fi} («${nombre}»): faltan los gramos de «${n}».`); continue; }
-      nuevos.push({ id_alimento: a.id_alimento, nombre_alimento: a.nombre_es, gramos: gr, nota: txt(g[ci.nota]) || null });
+    for (const x of lista) {
+      const a = porNombre.get(norm(x.nombre));
+      if (!x.g && !a) { const p = parecidos(x.nombre.replace(/^[\d.,]+\s*/, ''), nombresAl, 1); errores.push(`${x.donde}: en «${x.texto}» faltan los gramos. Escríbelo con los gramos delante y el nombre de la hoja «Alimentos»${p.length ? `, por ejemplo: «60 g ${p[0]}»` : ': «300 g Plátano»'}.`); continue; }
+      if (!a) { const p = parecidos(x.nombre, nombresAl); errores.push(`${x.donde}: «${x.nombre}» no está en la lista de alimentos.${p.length ? ` ¿Quisiste decir «${p.join('» o «')}»?` : ' Cópialo de la hoja «Alimentos» o pide que se añada.'}`); continue; }
+      if (!x.g) { errores.push(`${x.donde}: faltan los gramos en «${x.texto}». Escríbelo así: «300 g ${a.nombre_es}».`); continue; }
+      nuevos.push({ id_alimento: a.id_alimento, nombre_alimento: a.nombre_es, gramos: x.g, nota: x.nota || null });
     }
-    if (!lista.length) { errores.push(`Recetas, fila ${fila} («${nombre}»): no tiene ingredientes en la hoja «Ingredientes».`); continue; }
+    if (!lista.length) { errores.push(`Recetas, fila ${fila} («${nombre}»): no tiene ingredientes. Ponlos en la columna «Ingredientes», uno por línea: «300 g Plátano».`); continue; }
     const momentos = txt(f[c.mom]).split(/[;,/]+/).map((m) => norm(m)).map((m) => MOMENTOS.find((x) => m.startsWith(x.slice(0, 4)))).filter(Boolean);
     const estT = norm(f[c.est]);
     const estilo = ESTILOS.find(([v, l]) => norm(l).startsWith(estT.slice(0, 5)) || norm(v) === estT)?.[0] ?? (estT.startsWith('caser') ? 'casera' : r?.estilo ?? 'española');

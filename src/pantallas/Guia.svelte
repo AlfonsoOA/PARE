@@ -47,7 +47,7 @@
       'Rellénala en Excel, Google Sheets o la app de hojas de cálculo del móvil. Tiene una hoja de instrucciones, un ejemplo y la lista de ejercicios o alimentos de PARE para copiar los nombres.',
       'Guárdala como .xlsx (en Google Sheets: Archivo → Descargar → Microsoft Excel) y súbela en la misma pantalla.',
       'PARE reconoce los nombres. Los dudosos salen con «¿?» y los que no reconoce, en rojo: tócalos para elegir el bueno. Después revisas y aceptas.',
-      'Recetas: en la misma pantalla (o en Comer → Recetas → Recetario en Excel) descargas el recetario completo, con todas las recetas de PARE y las tuyas. Cambia o añade filas y vuelve a subirlo: las filas con ID actualizan esa receta, las filas sin ID son recetas nuevas y nada se borra salvo que pongas «sí» en Borrar.',
+      'Recetas: en la misma pantalla (o en Comer → Recetas → Recetario en Excel) descargas el recetario completo, con todas las recetas de PARE y las tuyas. Una fila por receta: en «Ingredientes», uno por línea con sus gramos («300 g Plátano»), y en «Protocolo», los pasos. Cambia o añade filas y vuelve a subirlo: las filas con ID actualizan esa receta, las filas sin ID son recetas nuevas y nada se borra salvo que pongas «sí» en Borrar.',
       'Si cambias una receta de PARE, se guarda como tuya («mi versión»). PARE calcula solo las kcal, los macros por porción y por 100 g (de lo cocinado si pones el peso final) y los alérgenos.',
     ]],
     ['wod', 'CrossFit (WOD)', [

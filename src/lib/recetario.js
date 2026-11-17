@@ -4,7 +4,7 @@
 import { cat, normalizar } from './catalogo.js';
 import { app, uuid, hoyISO } from './estado.svelte.js';
 import { todasRecetas, calcularReceta, momentosDe } from './recetas.js';
-import { ESTILOS, MOMENTOS, DIETA, libroRecetario } from './recetarioFormato.js';
+import { ESTILOS, MOMENTOS, DIETA, libroRecetario, leerCeldaIngredientes } from './recetarioFormato.js';
 import { emparejar } from './plantillas.js';
 import { crearXlsx } from './xlsxEscribir.js';
 
@@ -32,18 +32,19 @@ function tabla(hojas, requeridas) {
   return null;
 }
 const ind = (h, ...ns) => h.findIndex((x) => ns.some((n) => x.startsWith(n)));
-export const esRecetario = (hojas) => !!(tabla(hojas, ['nombre', 'momento']) && tabla(hojas, ['receta', 'ingrediente', 'gramos']));
+export const esRecetario = (hojas) => { const t = tabla(hojas, ['nombre', 'momento']); return !!(t && (t.cabecera.some((x) => x.startsWith('ingredientes')) || tabla(hojas, ['receta', 'ingrediente', 'gramos']))); };
 
 export function leerRecetario(hojas) {
   const tr = tabla(hojas, ['nombre', 'momento']), ti = tabla(hojas, ['receta', 'ingrediente', 'gramos']);
-  if (!tr || !ti) return null;
+  if (!tr) return null; // la hoja «Ingredientes» (ti) solo existe en archivos antiguos
   const h = tr.cabecera;
   const c = { id: ind(h, 'id'), n: ind(h, 'nombre'), tipo: ind(h, 'tipo'), por: ind(h, 'porciones'), mom: ind(h, 'momento'), t: ind(h, 'tiempo'), est: ind(h, 'estilo'),
-    dieta: ind(h, 'dieta'), peso: ind(h, 'peso final'), notas: ind(h, 'notas'), pasos: ind(h, 'protocolo', 'pasos'), borrar: ind(h, 'borrar') };
-  const hi = ti.cabecera;
+    dieta: ind(h, 'dieta'), peso: ind(h, 'peso final'), ing: ind(h, 'ingredientes'), notas: ind(h, 'notas'), pasos: ind(h, 'protocolo', 'pasos'), borrar: ind(h, 'borrar') };
+  const hi = ti?.cabecera ?? [];
   const ci = { rec: ind(hi, 'receta'), al: ind(hi, 'ingrediente'), g: ind(hi, 'gramos'), nota: ind(hi, 'nota') };
   const lista = [...(app.datos.productosPropios ?? []), ...cat.alimentos];
   const recetas = [];
+  const existe = (n) => lista.some((a) => normalizar(a.n) === normalizar(n));
   for (const f of tr.filas) {
     const n = texto(f[c.n]);
     if (!n) continue;
@@ -55,14 +56,15 @@ export function leerRecetario(hojas) {
       idArchivo: texto(f[c.id]), n, tipo: lote ? 'lote' : 'plato', porciones: lote ? Math.max(1, Math.round(num(f[c.por]) ?? 1)) : 1,
       momentos: momentos.length ? [...new Set(momentos)] : ['comida'], tiempo: num(f[c.t]), estilo,
       dieta: normalizar(texto(f[c.dieta])), pesoFinal: num(f[c.peso]), notas: texto(f[c.notas]),
-      pasos: texto(f[c.pasos]).split(/\r?\n/).map((x) => x.trim()).filter(Boolean), borrar: /^(s|si|sí|x|1|true)/i.test(texto(f[c.borrar])), ingredientes: [],
+      pasos: texto(f[c.pasos]).split(/\r?\n/).map((x) => x.trim()).filter(Boolean), borrar: /^(s|si|sí|x|1|true)/i.test(texto(f[c.borrar])), deCelda: c.ing >= 0 && !!texto(f[c.ing]),
+      ingredientes: c.ing >= 0 ? leerCeldaIngredientes(texto(f[c.ing]), existe).map((x) => ({ texto: x.texto, ...emparejar(x.nombre, lista), g: x.g ?? 0, nota: x.nota })) : [],
     });
   }
-  for (const f of ti.filas) {
+  for (const f of ti?.filas ?? []) {
     const clave = texto(f[ci.rec]), nombre = texto(f[ci.al]);
     if (!clave || !nombre) continue;
     const r = recetas.find((x) => x.idArchivo && x.idArchivo === clave) ?? recetas.find((x) => normalizar(x.n) === normalizar(clave));
-    if (!r) continue;
+    if (!r || r.deCelda) continue;
     r.ingredientes.push({ texto: nombre, ...emparejar(nombre, lista), g: num(f[ci.g]) ?? 0, nota: texto(f[ci.nota]) });
   }
   for (const r of recetas) r.estado = estadoDe(r);

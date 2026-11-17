@@ -28,7 +28,7 @@
       const { hojas } = await leerHojaDeCalculo(f);
       const tipo = esRecetario(hojas) ? 'recetas' : detectar(hojas);
       lectura = tipo === 'recetas' ? leerRecetario(hojas) : tipo === 'rutina' ? leerRutina(hojas) : tipo === 'dieta' ? leerDieta(hojas) : null;
-      if (!lectura) error = 'No encuentro la tabla. Usa la plantilla de PARE: la rutina necesita la columna «Ejercicio»; la dieta, «Alimento» y «Gramos»; el recetario, las hojas «Recetas» e «Ingredientes».';
+      if (!lectura) error = 'No encuentro la tabla. Usa la plantilla de PARE: la rutina necesita la columna «Ejercicio»; la dieta, «Alimento» y «Gramos»; el recetario, la hoja «Recetas» con las columnas «Nombre», «Momento» e «Ingredientes».';
       if (lectura?.tipo === 'rutina') nombre = f.name.replace(/\.(xlsx|csv)$/i, '').replace(/^PARE_plantilla_/, '').replace(/[_-]+/g, ' ') || 'Mi rutina';
     } catch (e) {
       error = 'No he podido leer el archivo. Guárdalo como .xlsx (Excel o Google Sheets → Descargar → Microsoft Excel) o como .csv.';
