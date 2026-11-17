@@ -1741,6 +1741,121 @@
    "coste_porcion": "1.79",
    "pasos": "Corta el pollo en tiras y saltéalo con el comino, el pimentón, el ajo y el aceite. | Mezcla el yogur con sal, limón y una pizca de ajo: es la salsa. | Abre el pan de pita y rellena con lechuga, tomate, cebolla, el pollo y la salsa.",
    "estilo": "árabe"
+  },
+  {
+   "id_receta": "RE063",
+   "nombre_es": "Helado proteico de chocolate",
+   "tipo": "lote",
+   "porciones": 2,
+   "momento": "postre;merienda",
+   "tiempo_min": 25,
+   "estilo": "mediterránea",
+   "peso_final_g": 440,
+   "notas": "Opcional: 1/2 cdta. de goma xantana si lo vas a congelar después, para que no haga cristales.",
+   "pasos": "Atempera el plátano congelado 5 minutos fuera del congelador para proteger las cuchillas. | Tritura el plátano junto con el queso fresco batido 0% a golpes cortos hasta lograr una crema densa y homogénea. | Añade la proteína whey, el cacao puro, la pizca de sal y el edulcorante. Mezcla a velocidad baja o con espátula sin sobrebatir para no meter aire en exceso. | Vierte la mezcla en la cubeta previamente congelada de la heladera y manteca durante 15-20 minutos hasta alcanzar textura cremosa. | Sirve al momento o guarda en táper hermético (sacar 10-15 min antes de consumir si se congela por completo).",
+   "etiquetas": [
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "2 porciones; cada una: 0.7 P · 0.9 HC · 0.2 G",
+   "kcal_porcion": 257,
+   "proteina_porcion": 18,
+   "hidratos_porcion": 35.6,
+   "grasa_porcion": 2.5,
+   "fibra_porcion": 5.7,
+   "peso_total_g": 432,
+   "alergenos": [
+    "leche"
+   ],
+   "coste_porcion": 1.06
+  },
+  {
+   "id_receta": "RE064",
+   "nombre_es": "Mug Cake proteico de vainilla y pepitas",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "desayuno;merienda;postre",
+   "tiempo_min": 5,
+   "estilo": "internacional",
+   "peso_final_g": 150,
+   "notas": "El queso batido es la clave para que no quede seco. Taza de 250-300 ml como mínimo para que no rebose.",
+   "pasos": "En una taza apta para microondas (mínimo 250-300 ml para que no rebose), mezcla los secos (whey, harina de coco y 1/2 cdta. de levadura) con un tenedor hasta quitar grumos. | Añade el huevo, las 3 cdas. de leche, el queso fresco batido, la sacarina y el aroma de vainilla. Bate bien con el tenedor hasta lograr una masa homogénea y cremosa (si queda muy densa por la harina de coco, añade 1 cda. más de leche). | Reparte las pepitas de chocolate por encima (hunde un par ligeramente en el centro). | Cocina en el microondas a máxima potencia (800 W) durante 50-60 segundos. No esperes a que el centro parezca completamente seco o la whey quedará gomosa; debe quedar cuajado por los bordes y ligeramente húmedo en el medio. Si le falta, dale tandas cortas de 10 segundos. | Deja reposar 1 minuto fuera antes de comer para que el calor residual termine de asentarlo.",
+   "etiquetas": [
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 338,
+   "proteina_porcion": 36.3,
+   "hidratos_porcion": 10.7,
+   "grasa_porcion": 15.3,
+   "fibra_porcion": 5.5,
+   "peso_total_g": 181,
+   "alergenos": [
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 1.67
+  },
+  {
+   "id_receta": "RE065",
+   "nombre_es": "Omelette de claras, espinacas y queso feta",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "cena;desayuno",
+   "tiempo_min": 10,
+   "estilo": "mediterránea",
+   "peso_final_g": 300,
+   "notas": "Cuidado con la sal: el feta ya es muy salado.",
+   "pasos": "Bate en un bol los 2 huevos enteros junto con las 5 claras, pimienta negra y una pizca de ajo en polvo u orégano (sin sobrebatir para que no haga demasiada espuma). | Pulveriza 2 plufs de AOVE en una sartén antiadherente a fuego medio, añade las espinacas frescas y saltéalas 30-40 segundos hasta que reduzcan volumen y evaporen su agua. | Baja el fuego a medio-bajo, vierte la mezcla de huevos sobre las espinacas y reparte por encima el queso feta desmenuzado. | Tapa la sartén durante 2-3 minutos para que el vapor cuaje la parte superior de forma jugosa sin resecar la base. | Dobla la omelette por la mitad con ayuda de una espátula y sirve al momento.",
+   "etiquetas": [
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 380,
+   "proteina_porcion": 39.8,
+   "hidratos_porcion": 7.7,
+   "grasa_porcion": 20,
+   "fibra_porcion": 1.1,
+   "peso_total_g": 363,
+   "alergenos": [
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 1.66
+  },
+  {
+   "id_receta": "RE066",
+   "nombre_es": "Conejo al ajillo aromático con hierbas y vino blanco",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida",
+   "tiempo_min": 30,
+   "estilo": "española",
+   "peso_final_g": 210,
+   "notas": "Ideal con 70 g de arroz o 250 g de patata cocida.",
+   "pasos": "Salpimienta bien los trozos de conejo y espolvorea un poco de tomillo. | Calienta la cucharadita de AOVE en una sartén profunda o cazuela a fuego medio-alto. Dora los ajos laminados (o machacados con piel) durante 1 minuto sin que se quemen y retíralos a un plato para que no amarguen. | Sube el fuego y sella el conejo 3-4 minutos por todas sus caras hasta que quede bien dorado por fuera. | Baja el fuego al mínimo, añade el pimentón de la Vera, remueve rápido 5 segundos para que no se queme y vierte inmediatamente el vino blanco. Sube el fuego 2 minutos para que evapore todo el alcohol. | Incorpora los ajos dorados reservados, el laurel, el romero y el caldo de pollo (o agua). Tapa la cazuela y deja cocinar a fuego medio-bajo durante 15-18 minutos hasta que la carne esté tierna y la salsa haya reducido y ligado. Rectifica de sal y sirve.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 429,
+   "proteina_porcion": 41.7,
+   "hidratos_porcion": 7,
+   "grasa_porcion": 16.6,
+   "fibra_porcion": 1.4,
+   "peso_total_g": 420,
+   "alergenos": [
+    "sulfitos"
+   ],
+   "coste_porcion": 2.42
   }
  ],
  "receta_ingredientes": [
@@ -5945,6 +6060,276 @@
    "id_alimento": "AL0201",
    "nombre_alimento": "Sal",
    "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE063",
+   "nombre_receta": "Helado proteico de chocolate",
+   "orden": 1,
+   "id_alimento": "AL0103",
+   "nombre_alimento": "Plátano",
+   "gramos": 300,
+   "nota": "maduro, congelado en rodajas"
+  },
+  {
+   "id_receta": "RE063",
+   "nombre_receta": "Helado proteico de chocolate",
+   "orden": 2,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE063",
+   "nombre_receta": "Helado proteico de chocolate",
+   "orden": 3,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 30,
+   "nota": "sabor chocolate"
+  },
+  {
+   "id_receta": "RE063",
+   "nombre_receta": "Helado proteico de chocolate",
+   "orden": 4,
+   "id_alimento": "AL0195",
+   "nombre_alimento": "Cacao puro desgrasado en polvo",
+   "gramos": 20,
+   "nota": null
+  },
+  {
+   "id_receta": "RE063",
+   "nombre_receta": "Helado proteico de chocolate",
+   "orden": 5,
+   "id_alimento": "AL0198",
+   "nombre_alimento": "Sacarina líquida",
+   "gramos": 1,
+   "nota": "10-12 gotas"
+  },
+  {
+   "id_receta": "RE063",
+   "nombre_receta": "Helado proteico de chocolate",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 0.5,
+   "nota": "1 pizca"
+  },
+  {
+   "id_receta": "RE064",
+   "nombre_receta": "Mug Cake proteico de vainilla y pepitas",
+   "orden": 1,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 30,
+   "nota": "sabor vainilla"
+  },
+  {
+   "id_receta": "RE064",
+   "nombre_receta": "Mug Cake proteico de vainilla y pepitas",
+   "orden": 2,
+   "id_alimento": "AL0227",
+   "nombre_alimento": "Harina de coco",
+   "gramos": 10,
+   "nota": "1 cda. sopera rasa"
+  },
+  {
+   "id_receta": "RE064",
+   "nombre_receta": "Mug Cake proteico de vainilla y pepitas",
+   "orden": 3,
+   "id_alimento": "AL0199",
+   "nombre_alimento": "Levadura química (impulsor)",
+   "gramos": 3,
+   "nota": "1/2 cdta., NO el sobre entero"
+  },
+  {
+   "id_receta": "RE064",
+   "nombre_receta": "Mug Cake proteico de vainilla y pepitas",
+   "orden": 4,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "1 huevo L"
+  },
+  {
+   "id_receta": "RE064",
+   "nombre_receta": "Mug Cake proteico de vainilla y pepitas",
+   "orden": 5,
+   "id_alimento": "AL0046",
+   "nombre_alimento": "Leche desnatada",
+   "gramos": 45,
+   "nota": "3 cdas.; o leche con proteínas"
+  },
+  {
+   "id_receta": "RE064",
+   "nombre_receta": "Mug Cake proteico de vainilla y pepitas",
+   "orden": 6,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 20,
+   "nota": "1 cda. sopera"
+  },
+  {
+   "id_receta": "RE064",
+   "nombre_receta": "Mug Cake proteico de vainilla y pepitas",
+   "orden": 7,
+   "id_alimento": "AL0198",
+   "nombre_alimento": "Sacarina líquida",
+   "gramos": 0.5,
+   "nota": "6 gotas"
+  },
+  {
+   "id_receta": "RE064",
+   "nombre_receta": "Mug Cake proteico de vainilla y pepitas",
+   "orden": 8,
+   "id_alimento": "AL0204",
+   "nombre_alimento": "Aroma de vainilla",
+   "gramos": 0.5,
+   "nota": "4 gotas"
+  },
+  {
+   "id_receta": "RE064",
+   "nombre_receta": "Mug Cake proteico de vainilla y pepitas",
+   "orden": 9,
+   "id_alimento": "AL0196",
+   "nombre_alimento": "Chocolate negro 85 %",
+   "gramos": 12,
+   "nota": "en pepitas, 1 cda."
+  },
+  {
+   "id_receta": "RE065",
+   "nombre_receta": "Omelette de claras, espinacas y queso feta",
+   "orden": 1,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 120,
+   "nota": "2 huevos L"
+  },
+  {
+   "id_receta": "RE065",
+   "nombre_receta": "Omelette de claras, espinacas y queso feta",
+   "orden": 2,
+   "id_alimento": "AL0043",
+   "nombre_alimento": "Clara de huevo",
+   "gramos": 165,
+   "nota": "5 claras o 160-175 ml de claras pasteurizadas"
+  },
+  {
+   "id_receta": "RE065",
+   "nombre_receta": "Omelette de claras, espinacas y queso feta",
+   "orden": 3,
+   "id_alimento": "AL0144",
+   "nombre_alimento": "Espinacas",
+   "gramos": 45,
+   "nota": "frescas, 1 puñado grande"
+  },
+  {
+   "id_receta": "RE065",
+   "nombre_receta": "Omelette de claras, espinacas y queso feta",
+   "orden": 4,
+   "id_alimento": "AL0059",
+   "nombre_alimento": "Queso feta",
+   "gramos": 30,
+   "nota": "desmenuzado"
+  },
+  {
+   "id_receta": "RE065",
+   "nombre_receta": "Omelette de claras, espinacas y queso feta",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 2,
+   "nota": "2 pulverizaciones"
+  },
+  {
+   "id_receta": "RE065",
+   "nombre_receta": "Omelette de claras, espinacas y queso feta",
+   "orden": 6,
+   "id_alimento": "AL0229",
+   "nombre_alimento": "Pimienta negra molida",
+   "gramos": 0.5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE065",
+   "nombre_receta": "Omelette de claras, espinacas y queso feta",
+   "orden": 7,
+   "id_alimento": "AL0221",
+   "nombre_alimento": "Orégano seco",
+   "gramos": 0.5,
+   "nota": "o ajo en polvo"
+  },
+  {
+   "id_receta": "RE066",
+   "nombre_receta": "Conejo al ajillo aromático con hierbas y vino blanco",
+   "orden": 1,
+   "id_alimento": "AL0226",
+   "nombre_alimento": "Conejo (carne limpia, sin hueso)",
+   "gramos": 200,
+   "nota": "o 250 g troceado con hueso"
+  },
+  {
+   "id_receta": "RE066",
+   "nombre_receta": "Conejo al ajillo aromático con hierbas y vino blanco",
+   "orden": 2,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 12,
+   "nota": "3-4 dientes, laminados o machacados"
+  },
+  {
+   "id_receta": "RE066",
+   "nombre_receta": "Conejo al ajillo aromático con hierbas y vino blanco",
+   "orden": 3,
+   "id_alimento": "AL0228",
+   "nombre_alimento": "Vino blanco seco",
+   "gramos": 100,
+   "nota": "1/2 vaso; Montilla-Moriles o similar"
+  },
+  {
+   "id_receta": "RE066",
+   "nombre_receta": "Conejo al ajillo aromático con hierbas y vino blanco",
+   "orden": 4,
+   "id_alimento": "AL0214",
+   "nombre_alimento": "Caldo de verduras o de pollo (brick)",
+   "gramos": 100,
+   "nota": "de pollo desgrasado, o agua"
+  },
+  {
+   "id_receta": "RE066",
+   "nombre_receta": "Conejo al ajillo aromático con hierbas y vino blanco",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": "1 cucharadita"
+  },
+  {
+   "id_receta": "RE066",
+   "nombre_receta": "Conejo al ajillo aromático con hierbas y vino blanco",
+   "orden": 6,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 1,
+   "nota": "dulce de la Vera, 1/2 cdta."
+  },
+  {
+   "id_receta": "RE066",
+   "nombre_receta": "Conejo al ajillo aromático con hierbas y vino blanco",
+   "orden": 7,
+   "id_alimento": "AL0230",
+   "nombre_alimento": "Hierbas secas (romero, tomillo, laurel)",
+   "gramos": 1.5,
+   "nota": "1 ramita de romero, 1/2 cdta. de tomillo, 1 hoja de laurel"
+  },
+  {
+   "id_receta": "RE066",
+   "nombre_receta": "Conejo al ajillo aromático con hierbas y vino blanco",
+   "orden": 8,
+   "id_alimento": "AL0229",
+   "nombre_alimento": "Pimienta negra molida",
+   "gramos": 0.5,
    "nota": null
   }
  ]
