@@ -1,6 +1,6 @@
 <script>
   import { app, hoyISO } from '../lib/estado.svelte.js';
-  import { cat } from '../lib/catalogo.js';
+  import { cat, normalizar } from '../lib/catalogo.js';
   import { delDia, sumar, anotar, quitar, objetivoDelDia, pautaComida, tipoDeDia, aporte, alimento, receta, GRUPOS_RACION, NOMBRE_RACION, DEF_RACION, redondear, diaSemana, DIAS_SEMANA, comidaHidratosExtra, objetivoComidaGramos } from '../lib/dieta.js';
   import { fmtNum, fmtFecha } from '../lib/unidades.js';
   import Icono from '../componentes/Icono.svelte';
@@ -25,12 +25,28 @@
   $effect(() => { app.filtroRecetas = filtroRecetas; });
   let estiloRecetas = $state(null);
   let dietaRecetas = $state([]);
+  let buscarRecetas = $state('');
+  // Buscador por palabras: nombre, ingredientes, cocina y notas. Todas las palabras tienen que aparecer (sin tildes; «tortitas» encuentra «tortita»).
+  const VACIAS_REC = new Set(['de', 'del', 'la', 'el', 'los', 'las', 'con', 'en', 'al', 'y', 'o', 'para', 'por', 'un', 'una', 'sin']);
+  const palabrasBusqueda = $derived(normalizar(buscarRecetas).split(/[^a-z0-9ñ]+/).filter((w) => w.length > 1 && !VACIAS_REC.has(w)).map((w) => (w.length > 4 ? w.replace(/(es|s)$/, '') : w)));
+  const nombreAli = (id) => (cat.alimentoPorId.get(id) ?? d.productosPropios?.find((a) => a.id === id))?.n ?? '';
+  function puntoBusqueda(r, ws) {
+    const nom = normalizar(r.n), resto = normalizar([...(r.ingredientes || []).map((i) => nombreAli(i.id)), r.estilo, r.notas].join(' '));
+    let p = 0;
+    for (const w of ws) { if (nom.includes(w)) p += 2; else if (resto.includes(w)) p += 1; else return 0; }
+    return p;
+  }
   const toggleDieta = (x) => { const i = dietaRecetas.indexOf(x); if (i >= 0) dietaRecetas.splice(i, 1); else dietaRecetas.push(x); };
   // Orden personal: objetivo, día de hoy (si toca sesión exigente), tiempo, presupuesto y gustos.
   const ctxRecetas = $derived({ momentoPost: d.dieta ? MOMENTO_DE_COMIDA[comidaHidratosExtra(d).id] ?? 'comida' : 'comida', perfil: d.perfil, gustos: d.gustosRecetas || {}, usos: usosRecetas(d.comidas), exigente: tipoDeDia(hoyISO()) === true || !!d.rutina?.sesiones.find((s) => s.id === app.sesionActiva?.sesionId)?.exigente });
   const recetasFiltradas = $derived.by(() => {
     const f = filtroRecetas;
     const est = estiloRecetas, die = dietaRecetas;
+    const ws = palabrasBusqueda;
+    if (ws.length) { // al buscar, entre todas las recetas (respetando vegetariana, sin gluten…)
+      const punt = new Map(todasRecetas().filter((r) => die.every((x) => (r.etq || []).includes(x))).map((r) => [r, puntoBusqueda(r, ws)]).filter(([, p]) => p > 0));
+      return recetasOrdenadas([...punt.keys()], ctxRecetas).sort((a, b) => punt.get(b.r) - punt.get(a.r));
+    }
     const lista = todasRecetas().filter((r) => (f === 'todas' ? true : f === 'parati' ? r.tipo === 'plato' : f === 'mias' ? r.propia : momentosDe(r).includes(f))
       && (!est || (ESTILO_DE[r.estilo] ?? r.estilo) === est)
       && die.every((x) => (r.etq || []).includes(x)));
@@ -175,13 +191,20 @@
 
   {:else if sub === 'recetas'}
     <p class="sec peq">Platos sencillos y baratos. Al abrir uno, las cantidades se ajustan a las raciones de tu comida.</p>
+    <input type="search" class="buscar-rec" placeholder="Buscar: paella, sepia, tortitas, avena…" bind:value={buscarRecetas} aria-label="Buscar receta por nombre o ingrediente" />
+    {#if palabrasBusqueda.length}
+      <p class="sec peq">{recetasFiltradas.length ? `${recetasFiltradas.length} ${recetasFiltradas.length === 1 ? 'receta' : 'recetas'} con «${buscarRecetas.trim()}» en el nombre o los ingredientes.` : ''}</p>
+    {:else}
     <div class="desliza">{#each [['parati', 'Para ti'], ['comida', 'Comida'], ['cena', 'Cena'], ['desayuno', 'Desayuno'], ['merienda', 'Merienda'], ['postre', 'Postres'], ...((d.recetasPropias || []).length ? [['mias', 'Mías']] : []), ['todas', 'Todas']] as [v, l]}<button class="chip" class:on={filtroRecetas === v} onclick={() => (filtroRecetas = v)}>{l}</button>{/each}</div>
+    {/if}
     <div class="desliza">{#each [['vegetariano', 'Vegetarianas'], ['vegano', 'Veganas'], ['sin_gluten', 'Sin gluten'], ['sin_lactosa', 'Sin lactosa']] as [v, l]}<button class="chip mini" class:on={dietaRecetas.includes(v)} onclick={() => toggleDieta(v)}>{l}</button>{/each}</div>
+    {#if !palabrasBusqueda.length}
     <div class="desliza"><button class="chip mini" class:on={!estiloRecetas} onclick={() => (estiloRecetas = null)}>Cualquier cocina</button>{#each ESTILOS as [v, l]}<button class="chip mini" class:on={estiloRecetas === v} onclick={() => (estiloRecetas = estiloRecetas === v ? null : v)}>{l}</button>{/each}</div>
     <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'editorReceta', acento: 'comer' })}><Icono n="mas" /> Crear mi receta</button>
     <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'importar', acento: 'comer' })}>Recetario en Excel (descargar o subir)</button>
-    {#if !recetasFiltradas.length}<p class="vacio">Ninguna receta con esos filtros.</p>{/if}
-    {#if filtroRecetas === 'parati'}<p class="sec peq">Las que mejor encajan con tu objetivo{ctxRecetas.exigente ? ', con el entreno fuerte de hoy' : ''}, tu tiempo, tu presupuesto y lo que te gusta. Cámbialo en Mi dieta; marca «Me gusta» o «No me gusta» dentro de cada receta.</p>{/if}
+    {/if}
+    {#if !recetasFiltradas.length}<p class="vacio">{palabrasBusqueda.length ? `Ninguna receta con «${buscarRecetas.trim()}».` : 'Ninguna receta con esos filtros.'}</p>{/if}
+    {#if filtroRecetas === 'parati' && !palabrasBusqueda.length}<p class="sec peq">Las que mejor encajan con tu objetivo{ctxRecetas.exigente ? ', con el entreno fuerte de hoy' : ''}, tu tiempo, tu presupuesto y lo que te gusta. Cámbialo en Mi dieta; marca «Me gusta» o «No me gusta» dentro de cada receta.</p>{/if}
     {#each recetasFiltradas as x (x.r.id)}
       {@const r = x.r}
       <button class="tarjeta pulsable receta" class:noapta={x.vetada} onclick={() => (recetaAbierta = { r })}>
