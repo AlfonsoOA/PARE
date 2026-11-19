@@ -62,7 +62,8 @@
       'Comer → El día: cada comida tiene sus fichas de raciones. Toca una cuando la tomes. Si prefieres pesar, «+ Añadir alimento o receta».',
       'Comer → Mi menú: qué comer cada día de la semana, con las kcal y la proteína de cada comida. Cámbialo a tu gusto: toca los gramos de un alimento para cambiarlos y verás sus kcal y las de la comida al momento; con ✕ lo quitas y con «+ Añadir» pones otro. Si comes lo del menú, en El día pulsa «Tomado tal cual».',
       'Comer → Recetas: arriba tienes un buscador por palabras, que mira el nombre y los ingredientes («paella», «sepia», «avena»). Al abrir una, las cantidades se ajustan a tu comida y trae su protocolo con los trucos. Me gusta / No me gusta enseña a PARE qué proponerte.',
-      'Comer → Equivalencias: cuánto es una ración de cada alimento.',
+      'Comer → Raciones: cuánto es una ración de cada alimento.',
+      'Comer → Suplementos: cuáles tienen respaldo (proteína, creatina) y cuáles solo según tu caso (cafeína, fibra, omega-3, sales, beta-alanina), con cuánto, cuándo, cómo, pros, contras y los estudios.',
       'Tu pauta, la hora a la que entrenas y si quieres más hidratos los días fuertes: Yo → Mi dieta.',
     ]],
     ['progreso', 'Ver tu progreso', [

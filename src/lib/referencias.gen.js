@@ -127,5 +127,57 @@ export const REFS = {
  "REF32": {
   "apa": "National Institute for Health and Care Excellence. (2025). *Overweight and obesity management* (NICE guideline NG246).",
   "url": "https://www.nice.org.uk/guidance/ng246"
+ },
+ "REF33": {
+  "apa": "Jäger, R., Kerksick, C. M., Campbell, B. I., Cribb, P. J., Wells, S. D., Skwiat, T. M., Purpura, M., Ziegenfuss, T. N., Ferrando, A. A., Arent, S. M., Smith-Ryan, A. E., Stout, J. R., Arciero, P. J., Ormsbee, M. J., Taylor, L. W., Wilborn, C. D., Kalman, D. S., Kreider, R. B., Willoughby, D. S., . . . Antonio, J. (2017). International Society of Sports Nutrition position stand: Protein and exercise. *Journal of the International Society of Sports Nutrition, 14*, Artículo 20.",
+  "url": "https://doi.org/10.1186/s12970-017-0177-8"
+ },
+ "REF34": {
+  "apa": "Antonio, J., Candow, D. G., Forbes, S. C., Gualano, B., Jagim, A. R., Kreider, R. B., Rawson, E. S., Smith-Ryan, A. E., VanDusseldorp, T. A., Willoughby, D. S., & Ziegenfuss, T. N. (2021). Common questions and misconceptions about creatine supplementation: What does the scientific evidence really show? *Journal of the International Society of Sports Nutrition, 18*, Artículo 13.",
+  "url": "https://doi.org/10.1186/s12970-021-00412-w"
+ },
+ "REF35": {
+  "apa": "Maughan, R. J., Burke, L. M., Dvorak, J., Larson-Meyer, D. E., Peeling, P., Phillips, S. M., Rawson, E. S., Walsh, N. P., Garthe, I., Geyer, H., Meeusen, R., van Loon, L. J. C., Shirreffs, S. M., Spriet, L. L., Stuart, M., Vernec, A., Currell, K., Ali, V. M., Budgett, R. G., . . . Engebretsen, L. (2018). IOC consensus statement: Dietary supplements and the high-performance athlete. *British Journal of Sports Medicine, 52*(7), 439–455.",
+  "url": "https://doi.org/10.1136/bjsports-2018-099027"
+ },
+ "REF36": {
+  "apa": "Guest, N. S., VanDusseldorp, T. A., Nelson, M. T., Grgic, J., Schoenfeld, B. J., Jenkins, N. D. M., Arent, S. M., Antonio, J., Stout, J. R., Trexler, E. T., Smith-Ryan, A. E., Goldstein, E. R., Kalman, D. S., & Campbell, B. I. (2021). International Society of Sports Nutrition position stand: Caffeine and exercise performance. *Journal of the International Society of Sports Nutrition, 18*, Artículo 1.",
+  "url": "https://doi.org/10.1186/s12970-020-00383-4"
+ },
+ "REF37": {
+  "apa": "EFSA Panel on Dietetic Products, Nutrition and Allergies. (2015). Scientific opinion on the safety of caffeine. *EFSA Journal, 13*(5), Artículo 4102.",
+  "url": "https://doi.org/10.2903/j.efsa.2015.4102"
+ },
+ "REF38": {
+  "apa": "EFSA Panel on Dietetic Products, Nutrition and Allergies. (2010). Scientific opinion on dietary reference values for carbohydrates and dietary fibre. *EFSA Journal, 8*(3), Artículo 1462.",
+  "url": "https://doi.org/10.2903/j.efsa.2010.1462"
+ },
+ "REF39": {
+  "apa": "Reynolds, A., Mann, J., Cummings, J., Winter, N., Mete, E., & Te Morenga, L. (2019). Carbohydrate quality and human health: A series of systematic reviews and meta-analyses. *The Lancet, 393*(10170), 434–445.",
+  "url": "https://doi.org/10.1016/S0140-6736(18)31809-9"
+ },
+ "REF40": {
+  "apa": "McRorie, J. W., Jr., & McKeown, N. M. (2017). Understanding the physics of functional fibers in the gastrointestinal tract: An evidence-based approach to resolving enduring misconceptions about insoluble and soluble fiber. *Journal of the Academy of Nutrition and Dietetics, 117*(2), 251–264.",
+  "url": "https://doi.org/10.1016/j.jand.2016.09.021"
+ },
+ "REF41": {
+  "apa": "EFSA Panel on Dietetic Products, Nutrition and Allergies. (2010). Scientific opinion on dietary reference values for fats, including saturated fatty acids, polyunsaturated fatty acids, monounsaturated fatty acids, trans fatty acids, and cholesterol. *EFSA Journal, 8*(3), Artículo 1461.",
+  "url": "https://doi.org/10.2903/j.efsa.2010.1461"
+ },
+ "REF42": {
+  "apa": "Sawka, M. N., Burke, L. M., Eichner, E. R., Maughan, R. J., Montain, S. J., & Stachenfeld, N. S. (2007). American College of Sports Medicine position stand: Exercise and fluid replacement. *Medicine & Science in Sports & Exercise, 39*(2), 377–390.",
+  "url": "https://doi.org/10.1249/mss.0b013e31802ca597"
+ },
+ "REF43": {
+  "apa": "Saunders, B., Elliott-Sale, K., Artioli, G. G., Swinton, P. A., Dolan, E., Roschel, H., Sale, C., & Gualano, B. (2017). β-alanine supplementation to improve exercise capacity and performance: A systematic review and meta-analysis. *British Journal of Sports Medicine, 51*(8), 658–669.",
+  "url": "https://doi.org/10.1136/bjsports-2016-096396"
+ },
+ "REF44": {
+  "apa": "Pooyandjoo, M., Nouhi, M., Shab-Bidar, S., Djafarian, K., & Olyaeemanesh, A. (2016). The effect of (L-)carnitine on weight loss in adults: A systematic review and meta-analysis of randomized controlled trials. *Obesity Reviews, 17*(10), 970–976.",
+  "url": "https://doi.org/10.1111/obr.12436"
+ },
+ "REF45": {
+  "apa": "Wolfe, R. R. (2017). Branched-chain amino acids and muscle protein synthesis in humans: Myth or reality? *Journal of the International Society of Sports Nutrition, 14*, Artículo 30.",
+  "url": "https://doi.org/10.1186/s12970-017-0184-9"
  }
 };

@@ -1,4 +1,5 @@
 <script>
+  import Suplementos from '../componentes/Suplementos.svelte';
   import { app, hoyISO } from '../lib/estado.svelte.js';
   import { cat, normalizar } from '../lib/catalogo.js';
   import { delDia, sumar, anotar, quitar, objetivoDelDia, pautaComida, tipoDeDia, aporte, alimento, receta, GRUPOS_RACION, NOMBRE_RACION, DEF_RACION, redondear, diaSemana, DIAS_SEMANA, comidaHidratosExtra, objetivoComidaGramos } from '../lib/dieta.js';
@@ -113,7 +114,7 @@
     </div>
   {/if}
   <div class="pestanas" role="tablist">
-    {#each [['dia', 'El día'], ['menu', 'Mi menú'], ['recetas', 'Recetas'], ['equiv', 'Equivalencias']] as [v, l]}
+    {#each [['dia', 'El día'], ['menu', 'Mi menú'], ['recetas', 'Recetas'], ['equiv', 'Raciones'], ['supl', 'Suplementos']] as [v, l]}
       <button role="tab" aria-selected={sub === v} class:on={sub === v} onclick={() => (sub = v)}>{l}</button>
     {/each}
   </div>
@@ -231,6 +232,9 @@
       </button>
     {/each}
 
+  {:else if sub === 'supl'}
+    <Suplementos />
+
   {:else}
     {#each GRUPOS_RACION as g}
       {@const l = cat.alimentos.filter((a) => a.cc === g && a.rac && a.gm !== 0).slice(0, 60)}
@@ -257,8 +261,8 @@
   .linea-ed { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; min-width: 0; flex: 1; }
   .nowrap { white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; }
   .gr { width: 72px; min-height: 36px; padding: 4px 8px; text-align: right; }
-  .pestanas { display: flex; gap: 4px; background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; padding: 4px; }
-  .pestanas button { flex: 1; background: none; border: 0; border-radius: 9px; min-height: 40px; color: var(--texto2); font-size: 13px; cursor: pointer; }
+  .pestanas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; padding: 4px; }
+  .pestanas button { white-space: nowrap; padding: 0 6px; background: none; border: 0; border-radius: 9px; min-height: 40px; color: var(--texto2); font-size: 13px; cursor: pointer; }
   .pestanas button.on { background: var(--elevada); color: var(--acento); font-weight: 600; }
   .grupo { width: 76px; flex-shrink: 0; font-size: 14px; color: var(--texto2); }
   .fichita { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--borde); background: transparent; cursor: pointer; }
