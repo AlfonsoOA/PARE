@@ -2,6 +2,7 @@
 // y contraste entre lo que se come (anotado o pautado) y lo que dice la báscula.
 import { app, hoyISO } from './estado.svelte.js';
 import { sumar } from './dieta.js';
+import { mifflin } from './plan.js';
 
 export const CADA_DIAS = 14;
 const dia = 864e5;
@@ -171,5 +172,14 @@ export function contrasteBascula(d = app.datos, ventana = 28) {
   if (Math.abs(difKcal) < 150) lectura = 'cuadra';
   else if (difKcal > 0) lectura = 'por_encima';
   else lectura = 'por_debajo';
-  return { ok: true, modo, kcal: Math.round(kcal), tdee: d.dieta.tdee, esperado, real, difKcal, gastoReal, lectura, desde: ini, hasta: fin, pesadas: ps.length, diasAnotados: anot.length };
+  // ¿Es creíble ese «gasto real»? Por debajo del metabolismo basal no lo es: lo más probable es que la dieta de PARE
+  // no sea lo que comes (dieta antigua, de otra fase, o extras sin contar). Entonces no se presenta como gasto real.
+  const pf = d.perfil ?? {};
+  const basal = pf.altura && pf.edad && pf.sexo ? mifflin({ peso: my, altura: +pf.altura, edad: +pf.edad, sexo: pf.sexo }) : null;
+  const creible = !(basal ? gastoReal < basal * 1.1 : gastoReal < 1400);
+  // la fase (Yo → Perfil) frente a la dieta: mantenimiento con una dieta de déficit claro, o al revés
+  const fase = pf.faseDieta || 'mantenimiento';
+  const balance = d.dieta.kcal - d.dieta.tdee;
+  const choque = modo === 'plan' && ((fase === 'mantenimiento' && Math.abs(balance) > 300) || (fase === 'deficit' && balance > 0) || (fase === 'superavit' && balance < 0));
+  return { ok: true, modo, kcal: Math.round(kcal), tdee: d.dieta.tdee, esperado, real, difKcal, gastoReal, lectura, creible, basal: basal && Math.round(basal / 10) * 10, fase, balance: Math.round(balance / 10) * 10, choque, desde: ini, hasta: fin, pesadas: ps.length, diasAnotados: anot.length };
 }
