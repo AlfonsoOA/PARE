@@ -1,5 +1,5 @@
 // Formato del recetario en Excel, sin dependencias de la app: lo usan la app (exportar) y el script del recetario maestro (Node).
-export const ESTILOS = [['española', 'Española'], ['mediterránea', 'Mediterránea'], ['italiana', 'Italiana'], ['asiática', 'Asiática'], ['mexicana', 'Mexicana'], ['árabe', 'Árabe e india'], ['internacional', 'Desayunos del mundo']];
+export const ESTILOS = [['española', 'Española'], ['mediterránea', 'Mediterránea'], ['italiana', 'Italiana'], ['asiática', 'Asiática'], ['mexicana', 'Mexicana'], ['árabe', 'Árabe e india'], ['internacional', 'Desayunos del mundo'], ['fit', 'Saludable / Fitness']];
 export const ESTILO_DE = { india: 'árabe' };
 export const MOMENTOS = ['desayuno', 'comida', 'merienda', 'cena', 'postre'];
 export const DIETA = (r) => ((r.etq || []).includes('vegano') ? 'Vegana' : (r.etq || []).includes('vegetariano') ? 'Vegetariana' : 'Omnívora');

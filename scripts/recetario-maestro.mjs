@@ -97,6 +97,11 @@ async function procesar(archivo) {
       ? leerCeldaIngredientes(celda, existe).map((x) => ({ ...x, donde: `Recetas, fila ${fila} («${nombre}»)` }))
       : (ti?.filas ?? []).filter(({ f: g }) => { const k = txt(g[ci.rec]); return k && (k === idArchivo || norm(k) === norm(nombre)); })
         .map(({ f: g, fila: fi }) => ({ nombre: txt(g[ci.al]), g: num(g[ci.g]), nota: txt(g[ci.nota]), texto: txt(g[ci.al]), donde: `Ingredientes, fila ${fi} («${nombre}»)` })).filter((x) => x.nombre);
+    // ¿Los ingredientes vienen en un párrafo (todo en una línea, separado por comas)? Se avisa con claridad.
+    if (celda && !/\n/.test(celda.trim()) && (celda.match(/,/g) ?? []).length >= 2) {
+      errores.push(`Recetas, fila ${fila} («${nombre}»): los ingredientes están en un párrafo. Pon un ingrediente por línea dentro de la celda (Alt+Intro en Excel), con los gramos delante y el nombre de la hoja «Alimentos»: «300 g Plátano». Los macros aproximados y los opcionales van en «Notas».`);
+      continue;
+    }
     const nuevos = [];
     for (const x of lista) {
       const a = porNombre.get(norm(x.nombre));
