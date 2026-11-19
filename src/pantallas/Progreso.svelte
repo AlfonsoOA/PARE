@@ -48,12 +48,11 @@
   const cinturas = $derived(d.medidas.filter((m) => m.cintura).map((m) => ({ f: m.fecha, v: m.cintura })));
   // Otras medidas: la grasa estimada con cintura y cuello (Marina de EE. UU.) en cada fecha, perímetros y báscula
   const OTRAS = $derived([
-    ['navy', 'Grasa (cintura y cuello)', '%', d.medidas.filter((m) => m.cintura && m.cuello && d.perfil.altura).map((m) => ({ f: m.fecha, v: +grasaNavy({ sexo: d.perfil.sexo, altura: d.perfil.altura, cintura: m.cintura, cuello: m.cuello, cadera: m.cadera }).toFixed(1) })).filter((p) => isFinite(p.v))],
     ['cuello', 'Cuello', 'cm', d.medidas.filter((m) => m.cuello).map((m) => ({ f: m.fecha, v: m.cuello }))],
-    ...MEDIDAS_EXTRA.map(([k, n, u]) => [k, n, u, d.medidas.filter((m) => m[k] != null).map((m) => ({ f: m.fecha, v: m[k] }))]),
+    ...MEDIDAS_EXTRA.filter(([k]) => !/Bascula|visceral/.test(k)).map(([k, n, u]) => [k, n, u, d.medidas.filter((m) => m[k] != null).map((m) => ({ f: m.fecha, v: m[k] }))]),
+    ['navy', 'Grasa estimada (cintura y cuello)', '%', d.medidas.filter((m) => m.cintura && m.cuello && d.perfil.altura).map((m) => ({ f: m.fecha, v: +grasaNavy({ sexo: d.perfil.sexo, altura: d.perfil.altura, cintura: m.cintura, cuello: m.cuello, cadera: m.cadera }).toFixed(1) })).filter((p) => isFinite(p.v))],
+    ...MEDIDAS_EXTRA.filter(([k]) => /Bascula|visceral/.test(k)).map(([k, n, u]) => [k, n, u, d.medidas.filter((m) => m[k] != null).map((m) => ({ f: m.fecha, v: m[k] }))]),
   ].filter((x) => x[3].length));
-  let otra = $state(null);
-  const otraSel = $derived(OTRAS.find((x) => x[0] === otra) ?? OTRAS[0]);
   const grasa = $derived.by(() => {
     const ult = [...d.medidas].reverse().find((m) => m.cintura && m.cuello);
     if (!ult || !d.perfil.altura) return null;
@@ -123,17 +122,16 @@
     <div class="tarjeta">
       <span class="etiqueta">Cintura (cm)</span>
       <Grafica puntos={cinturas} unidad="cm" />
-      {#if grasa != null}<p class="peq">Grasa corporal estimada (fórmula de la Marina de EE. UU.): <b>{fmtNum(grasa, 1)} %</b></p>{/if}
     </div>
-    {#if OTRAS.length}
+    {#each OTRAS as [k, n, u, pts] (k)}
       <div class="tarjeta">
-        <span class="etiqueta">Otras medidas</span>
-        <div class="desliza">{#each OTRAS as [k, n]}<button class="chip mini" class:on={otraSel?.[0] === k} onclick={() => (otra = k)}>{n}</button>{/each}</div>
-        <Grafica puntos={otraSel[3]} unidad={otraSel[2]} />
-        {#if otraSel[3].length > 1}{@const ab = [otraSel[3][0], otraSel[3].at(-1)]}<p class="peq">{fmtFecha(ab[0].f)}: {fmtNum(ab[0].v, 1)} → {fmtFecha(ab[1].f)}: <b>{fmtNum(ab[1].v, 1)} {otraSel[2]}</b> ({ab[1].v - ab[0].v > 0 ? '+' : ''}{fmtNum(ab[1].v - ab[0].v, 1)})</p>{/if}
-        {#if otraSel[0] === 'grasaBascula' || otraSel[0] === 'musculoBascula'}<p class="sec peq">La bioimpedancia depende mucho de lo hidratado que estés: mira la tendencia de varias semanas, no un día suelto.</p>{/if}
+        <span class="etiqueta">{n} ({u})</span>
+        <Grafica puntos={pts} unidad={u} alto={140} />
+        {#if pts.length > 1}<p class="peq">{fmtFecha(pts[0].f)}: {fmtNum(pts[0].v, 1)} → {fmtFecha(pts.at(-1).f)}: <b>{fmtNum(pts.at(-1).v, 1)} {u}</b> ({pts.at(-1).v - pts[0].v > 0 ? '+' : ''}{fmtNum(pts.at(-1).v - pts[0].v, 1)})</p>{:else if pts.length === 1}<p class="peq">{fmtFecha(pts[0].f)}: <b>{fmtNum(pts[0].v, 1)} {u}</b></p>{/if}
+        {#if k === 'grasaBascula' || k === 'musculoBascula'}<p class="sec peq">La bioimpedancia depende mucho de lo hidratado que estés: mira la tendencia de varias semanas, no un día suelto.</p>{/if}
+        {#if k === 'navy'}<p class="sec peq">Fórmula de la Marina de EE. UU. con tu altura, cintura y cuello. Un cambio de 1 cm en el cuello la mueve casi un punto: mídelo siempre igual.</p>{/if}
       </div>
-    {/if}
+    {/each}
     <ContrasteBascula datos={d} />
 
   {:else if sub === 'adherencia'}
