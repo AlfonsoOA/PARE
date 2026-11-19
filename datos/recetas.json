@@ -2207,6 +2207,325 @@
     "leche"
    ],
    "coste_porcion": 1.36
+  },
+  {
+   "id_receta": "RE079",
+   "nombre_es": "Flan proteico de vainilla en air fryer",
+   "tipo": "lote",
+   "porciones": 2,
+   "momento": "postre;merienda",
+   "tiempo_min": 25,
+   "estilo": "fit",
+   "peso_final_g": 420,
+   "notas": "Opcional: 1 cdta. de café soluble disuelto en unas gotas de agua en el fondo del molde, para simular caramelo sin calorías. Macros aprox. por ración: ~195 kcal | ~25,5 g de proteína.",
+   "pasos": "Mezcla sin aire: bate suavemente a mano los huevos, la leche proteica, la whey, la sacarina, la vainilla y la pizca de sal hasta integrar sin grumos ni espuma (si sale espuma, retírala con cuchara). | Moldes tapados: reparte en 2 flaneras individuales aptas para air fryer (con unas gotas de café disuelto en el fondo si buscas toque caramelo) y tápalas herméticamente con papel de aluminio para evitar que el aire seque la superficie. | Cocción suave: cocina en la air fryer a 135 °C durante 16-20 minutos (si el mínimo de tu freidora es 140 °C, revisa a los 14-15 min). | Punto y reposo: destapa y comprueba que los bordes estén firmes y el centro tenga un ligero temblor. Deja atemperar 15 minutos y refrigera mínimo 3-4 horas antes de desmoldar.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "2 porciones; cada una: 1.1 P · 0.2 HC · 0.7 G",
+   "kcal_porcion": 222,
+   "proteina_porcion": 27.4,
+   "hidratos_porcion": 9.3,
+   "grasa_porcion": 7.2,
+   "fibra_porcion": 0,
+   "peso_total_g": 448,
+   "alergenos": [
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 0.96
+  },
+  {
+   "id_receta": "RE080",
+   "nombre_es": "Nube de gelatina proteica de vainilla",
+   "tipo": "lote",
+   "porciones": 4,
+   "momento": "postre;merienda",
+   "tiempo_min": 10,
+   "estilo": "fit",
+   "peso_final_g": 1000,
+   "notas": "Macros del lote entero: ~220 kcal | ~35 g de proteína.",
+   "pasos": "Disolución: pon a hervir 500 ml de agua, retira del fuego y disuelve completamente el sobre de gelatina 0% removiendo sin parar. | Integración láctea y proteica: añade el yogur griego ligero y la proteína whey de vainilla. Remueve con varillas enérgicamente hasta que no quede ni un solo grumo. | Volumen y frío: añade los otros 500 ml de agua fría, mezcla bien, vierte en un recipiente amplio (o moldes individuales) y lleva a la nevera unas horas hasta que cuaje por completo con textura cremosa.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "4 porciones; cada una: 0.4 P · 0 HC · 0.1 G",
+   "kcal_porcion": 52,
+   "proteina_porcion": 10.1,
+   "hidratos_porcion": 1.5,
+   "grasa_porcion": 0.6,
+   "fibra_porcion": 0,
+   "peso_total_g": 1139,
+   "alergenos": [
+    "leche"
+   ],
+   "coste_porcion": 0.42
+  },
+  {
+   "id_receta": "RE081",
+   "nombre_es": "Croquetas rústicas fit de patata, jamón y mozzarella con huevos",
+   "tipo": "lote",
+   "porciones": 2,
+   "momento": "comida;cena",
+   "tiempo_min": 25,
+   "estilo": "española",
+   "peso_final_g": 680,
+   "notas": "Macros del plato completo: ~695 kcal | ~45 g de proteína (unas 350 kcal y 22,5 g de proteína por ración).",
+   "pasos": "Mezcla base: vierte en un bol el bote de patatas cocidas bien escurridas, la mozzarella rallada y el jamón cocido troceado o picado. | Machacado: machaca todo con un tenedor o pasapurés hasta conseguir una masa homogénea, compacta y bien integrada; salpimienta al gusto. | Formado y air fryer: forma pelotas o croquetas grandes con las manos, rocíalas con AOVE en spray y llévalas a la air fryer a 180 °C durante unos 20 minutos hasta que queden doradas y crujientes por fuera. | Acompañamiento: mientras se hornean las pelotas en la freidora de aire, haz los 2 huevos a la plancha para servir al lado.",
+   "etiquetas": [
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "2 porciones; cada una: 1 P · 0.9 HC · 1.3 G",
+   "kcal_porcion": 358,
+   "proteina_porcion": 24,
+   "hidratos_porcion": 34.5,
+   "grasa_porcion": 12.7,
+   "fibra_porcion": 2.7,
+   "peso_total_g": 654,
+   "alergenos": [
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 1.27
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_es": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida",
+   "tiempo_min": 15,
+   "estilo": "fit",
+   "peso_final_g": 550,
+   "notas": "Macros aprox.: ~510 kcal | ~42 g de proteína.",
+   "pasos": "Salsa cremosa: en una picadora o vaso batidor, echa el aguacate, la cebolla morada, los cherrys, la albahaca, los pimientos del piquillo, el yogur griego ligero, el pimentón de la Vera y la sal; tritura todo hasta conseguir una salsa fina y homogénea. | Cocción: cuece la pasta de lentejas rojas en agua hirviendo con sal el tiempo que indique el fabricante (suele ser rápido, unos 6-8 min) para que quede al dente; escúrrela y enfríala ligeramente. | Montaje: en un bol amplio, coloca una base de lechugas, añade la pasta de lentejas, los langostinos cocidos y vierte por encima toda la salsa cremosa de aguacate y piquillos. Mezcla bien y disfruta.",
+   "etiquetas": [
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 564,
+   "proteina_porcion": 42.3,
+   "hidratos_porcion": 47.2,
+   "grasa_porcion": 21.5,
+   "fibra_porcion": 9.6,
+   "peso_total_g": 615,
+   "alergenos": [
+    "crustaceos",
+    "leche"
+   ],
+   "coste_porcion": 3.49
+  },
+  {
+   "id_receta": "RE083",
+   "nombre_es": "Mousse nube proteica batida de galleta (Gelatina + Whey)",
+   "tipo": "lote",
+   "porciones": 4,
+   "momento": "postre;merienda",
+   "tiempo_min": 20,
+   "estilo": "fit",
+   "peso_final_g": 1050,
+   "notas": "Macros aprox. por ración: ~60 kcal | ~10 g de proteína.",
+   "pasos": "Cuajado base: pon a hervir 500 ml de agua, disuelve el sobre de gelatina 0 % sin grumos, añade los otros 500 ml de agua fría, mezcla bien y llévalo a la nevera hasta que cuaje por completo en un recipiente ancho. | Montaje en procesadora: saca el bloque de gelatina ya cuajada de la nevera, échalo en la procesadora o batidora de vaso, añade los 30 g de proteína whey y los 100 g de yogur griego ligero. | Batido aéreo: procesa y bate enérgicamente durante unos minutos hasta que la gelatina rompa y emulsione con el yogur y la proteína, creando una textura de mousse o nube con un volumen brutal. Reparte en recipientes y refrigera.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "4 porciones; cada una: 0.4 P · 0 HC · 0.1 G",
+   "kcal_porcion": 52,
+   "proteina_porcion": 10.1,
+   "hidratos_porcion": 1.5,
+   "grasa_porcion": 0.6,
+   "fibra_porcion": 0,
+   "peso_total_g": 1139,
+   "alergenos": [
+    "leche"
+   ],
+   "coste_porcion": 0.42
+  },
+  {
+   "id_receta": "RE084",
+   "nombre_es": "Crema fría saciante de avena, café y chocolate (Proats de nevera)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "desayuno;merienda",
+   "tiempo_min": 10,
+   "estilo": "fit",
+   "peso_final_g": 350,
+   "notas": "Macros aprox.: ~370 kcal | ~41 g de proteína (la creatina es opcional y no aporta calorías).",
+   "pasos": "Mezcla en recipiente: vierte en un bol o táper apto para nevera el café solo, el yogur griego ligero, los 30 g de proteína de café caramelo y, si decides incluirla, la creatina opcional. Remueve bien para integrar los líquidos. | Avena y cacao: añade los 40 g de copos de avena y los 5 g de cacao puro desgrasado; vuelve a mezclar todo enérgicamente hasta conseguir una crema homogénea sin grumos secos. | Reposo en frío: tápalo y llévalo a la nevera un rato (o déjalo reposar toda la noche) para que la avena hidrate, absorba los sabores y adquiera una textura densa y cremosa tipo postre. ¡A disfrutar!",
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 380,
+   "proteina_porcion": 44.7,
+   "hidratos_porcion": 31.8,
+   "grasa_porcion": 5.3,
+   "fibra_porcion": 5.6,
+   "peso_total_g": 330,
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "coste_porcion": 1.89
+  },
+  {
+   "id_receta": "RE085",
+   "nombre_es": "Batido-crema fit de plátano, cacao y cacahuete estilo heladería",
+   "tipo": "lote",
+   "porciones": 1,
+   "momento": "merienda;postre",
+   "tiempo_min": 5,
+   "estilo": "fit",
+   "peso_final_g": 500,
+   "notas": "Macros aprox.: ~540 kcal | ~44 g de proteína.",
+   "pasos": "Líquidos primero: echa en el vaso de la batidora los 300 g de queso fresco batido 0 %, los 300 ml de leche o bebida de soja y el toque de esencia de vainilla (poner los líquidos abajo evita que las cuchillas se atasquen con los sólidos). | Sólidos: añade los 40 g de copos de avena, la cucharada de crema de cacahuete, los 10 g de cacao puro desgrasado y el plátano maduro pelado. | Triturado potente: tritura todo a máxima potencia durante 1 minuto exacto hasta que la avena se integre por completo y consigas una textura espesa, cremosa y tipo heladería.",
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "1 porciones; cada una: 1.9 P · 1.7 HC · 1.8 G",
+   "kcal_porcion": 643,
+   "proteina_porcion": 46.8,
+   "hidratos_porcion": 66.7,
+   "grasa_porcion": 17.8,
+   "fibra_porcion": 10.1,
+   "peso_total_g": 786,
+   "alergenos": [
+    "cacahuete",
+    "gluten",
+    "leche",
+    "soja"
+   ],
+   "coste_porcion": 2.09
+  },
+  {
+   "id_receta": "RE086",
+   "nombre_es": "Cachopo fit de pollo y jamón con empanado crujiente de tortitas de maíz (Air Fryer)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 25,
+   "estilo": "española",
+   "peso_final_g": 350,
+   "notas": "Macros aprox.: ~420 kcal | ~52 g de proteína.",
+   "pasos": "Montaje del cachopo: coloca un filete fino de pollo, pon encima una capa de jamón cocido, el queso mozzarella y otra capa de jamón cocido; tapa con el segundo filete de pollo haciendo un sándwich bien sellado. | Empanado crujiente: tritura las 5 tortitas de maíz hasta dejarlas como polvo/migas finas. Bate el huevo en un plato hondo. Pasa el cachopo primero por el huevo batido y después rebójalo bien con las tortitas de maíz trituradas presionando para que se adhieran. | Cocción en Air Fryer u horno: colócalo en la freidora de aire o bandeja de horno, rocía ligeramente con AOVE en spray por encima y hornea a 180 °C durante unos 20 minutos hasta que el rebozado esté dorado y crujiente y el interior bien cocinado.",
+   "etiquetas": [
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 582,
+   "proteina_porcion": 66.7,
+   "hidratos_porcion": 34.7,
+   "grasa_porcion": 17.8,
+   "fibra_porcion": 0.5,
+   "peso_total_g": 363,
+   "alergenos": [
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 2.77
+  },
+  {
+   "id_receta": "RE087",
+   "nombre_es": "Pizza fit de base de pollo",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "cena;comida",
+   "tiempo_min": 35,
+   "estilo": "italiana",
+   "peso_final_g": null,
+   "notas": "La más proteica y la que más sacia. Para comer con la mano, que quede bien dorada por debajo. Versión día libre: al sacarla, 50 g de burrata desgarrada por encima y un hilo de AOVE (5 g): unas 175 kcal más.",
+   "pasos": "Base: pica la pechuga muy fina en la picadora, bien fría de la nevera (si se calienta, se apelmaza). Sécala con papel de cocina y mézclala con la clara, el parmesano, el ajo en polvo, el orégano y la sal hasta que quede una pasta pegajosa. | Estirar: pon la pasta entre dos papeles de horno y pásale el rodillo hasta dejar un círculo de unos 26 cm y 3-4 mm de grosor, con los bordes algo más finos que el centro. Quita el papel de arriba. | Prehornear, el paso clave: 200 °C, calor arriba y abajo, 12-15 minutos en la altura media. A los 8 minutos, si ha soltado jugo, sécalo con papel. Para que cruja de verdad: pon otro papel encima, dale la vuelta, quita el papel de abajo y 3-4 minutos más. | Champiñones sin agua: saltéalos 3-4 minutos en una sartén sin aceite hasta que suelten el agua, o lamínalos muy finos. Si van crudos y gruesos, encharcan la base. | Montar: poco tomate y bien extendido (que no empape), la mozzarella escurrida y troceada, y los champiñones. | Gratinar: 5-6 minutos a 220 °C o con el grill, hasta que el queso burbujee. Al sacarla, la rúcula. Déjala reposar 1 minuto antes de cortarla: así se asienta y no se rompe.",
+   "etiquetas": [
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 550,
+   "proteina_porcion": 69.4,
+   "hidratos_porcion": 11.4,
+   "grasa_porcion": 23.5,
+   "fibra_porcion": 3,
+   "peso_total_g": 447,
+   "alergenos": [
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 2.99
+  },
+  {
+   "id_receta": "RE088",
+   "nombre_es": "Pizza fit de base de claras y avena",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "cena;comida",
+   "tiempo_min": 35,
+   "estilo": "italiana",
+   "peso_final_g": null,
+   "notas": "La más equilibrada: lleva algo de hidratos, así que encaja bien como cena de día de piernas. Primo hermano salado del Pan de Avena PRO. Versión día libre: al sacarla, 50 g de burrata desgarrada por encima y un hilo de AOVE (5 g): unas 175 kcal más.",
+   "pasos": "Masa: tritura las claras, la harina de avena, el queso batido, la levadura, la sal y el orégano hasta que no queden grumos. Déjala reposar 5 minutos: la avena se hidrata y la masa coge cuerpo. | Molde: papel vegetal con un toque de spray de AOVE (si no, se pega) sobre un molde redondo de 24-26 cm o la bandeja. Vierte la masa y extiéndela en una capa uniforme de menos de 1 cm. | Prehornear: 200 °C, 10-12 minutos, hasta que la superficie esté seca y no se pegue al tocarla. Si la quieres más firme para cogerla con la mano, dale la vuelta sobre otro papel y 3 minutos más. | Relleno preparado: el pollo, ya hecho a la plancha con sal y especias (crudo soltaría agua); el pimiento asado, bien escurrido y secado con papel. | Montar: tomate, mozzarella troceada, el pollo o el atún y el pimiento. | Gratinar: 6-7 minutos a 220 °C, hasta que el queso se dore. Reposa 1-2 minutos antes de cortar.",
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 619,
+   "proteina_porcion": 62.3,
+   "hidratos_porcion": 39.3,
+   "grasa_porcion": 20.4,
+   "fibra_porcion": 7,
+   "peso_total_g": 515,
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 2.49
+  },
+  {
+   "id_receta": "RE089",
+   "nombre_es": "Pizza fit exprés de wrap",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "cena;comida",
+   "tiempo_min": 12,
+   "estilo": "italiana",
+   "peso_final_g": null,
+   "notas": "La más rápida: 12 minutos de principio a fin. El jamón cocido es salado: no añadas sal. Versión día libre: al sacarla, 50 g de burrata desgarrada por encima y un hilo de AOVE (5 g): unas 175 kcal más.",
+   "pasos": "Tostar la tortilla sola primero: 2 minutos en la air fryer a 190 °C, o en la sartén a fuego medio por las dos caras. Es el truco para que quede crujiente y no blanda. | Montar con poco tomate: una capa fina, sin llegar al borde; con más, la tortilla se ablanda. | Encima, la mozzarella, el jamón o el pavo y los champiñones muy finos. | Air fryer: 5-6 minutos a 190 °C. Si el aire levanta los ingredientes, pon la mozzarella la última para que lo sujete todo. Horno: 7-8 minutos a 220 °C, directamente sobre la rejilla. Sartén: fuego medio-bajo y tapada, 5-6 minutos. | Sácala cuando los bordes estén tostados y el queso fundido.",
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 524,
+   "proteina_porcion": 40.2,
+   "hidratos_porcion": 35.9,
+   "grasa_porcion": 22.8,
+   "fibra_porcion": 3.6,
+   "peso_total_g": 331,
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "coste_porcion": 2.42
   }
  ],
  "receta_ingredientes": [
@@ -7852,6 +8171,726 @@
    "nombre_alimento": "Aceite de oliva virgen extra",
    "gramos": 2,
    "nota": "pulverizado en la sartén"
+  },
+  {
+   "id_receta": "RE079",
+   "nombre_receta": "Flan proteico de vainilla en air fryer",
+   "orden": 1,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 116,
+   "nota": "2 huevos L"
+  },
+  {
+   "id_receta": "RE079",
+   "nombre_receta": "Flan proteico de vainilla en air fryer",
+   "orden": 2,
+   "id_alimento": "AL0179",
+   "nombre_alimento": "Leche desnatada con proteínas (+proteínas)",
+   "gramos": 300,
+   "nota": "300 ml"
+  },
+  {
+   "id_receta": "RE079",
+   "nombre_receta": "Flan proteico de vainilla en air fryer",
+   "orden": 3,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 30,
+   "nota": "vainilla o neutra"
+  },
+  {
+   "id_receta": "RE079",
+   "nombre_receta": "Flan proteico de vainilla en air fryer",
+   "orden": 4,
+   "id_alimento": "AL0198",
+   "nombre_alimento": "Sacarina líquida",
+   "gramos": 1,
+   "nota": "10-12 gotas"
+  },
+  {
+   "id_receta": "RE079",
+   "nombre_receta": "Flan proteico de vainilla en air fryer",
+   "orden": 5,
+   "id_alimento": "AL0204",
+   "nombre_alimento": "Aroma de vainilla",
+   "gramos": 0.5,
+   "nota": "6-8 gotas"
+  },
+  {
+   "id_receta": "RE079",
+   "nombre_receta": "Flan proteico de vainilla en air fryer",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 0.5,
+   "nota": "1 pizca"
+  },
+  {
+   "id_receta": "RE080",
+   "nombre_receta": "Nube de gelatina proteica de vainilla",
+   "orden": 1,
+   "id_alimento": "AL0243",
+   "nombre_alimento": "Gelatina neutra en polvo",
+   "gramos": 9,
+   "nota": "1 sobre, neutra o sabor 0 %"
+  },
+  {
+   "id_receta": "RE080",
+   "nombre_receta": "Nube de gelatina proteica de vainilla",
+   "orden": 2,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 30,
+   "nota": "vainilla"
+  },
+  {
+   "id_receta": "RE080",
+   "nombre_receta": "Nube de gelatina proteica de vainilla",
+   "orden": 3,
+   "id_alimento": "AL0051",
+   "nombre_alimento": "Yogur tipo griego 0 % (estilo americano)",
+   "gramos": 100,
+   "nota": "ligero; o queso fresco batido 0 %"
+  },
+  {
+   "id_receta": "RE080",
+   "nombre_receta": "Nube de gelatina proteica de vainilla",
+   "orden": 4,
+   "id_alimento": "AL0200",
+   "nombre_alimento": "Agua",
+   "gramos": 500,
+   "nota": "caliente"
+  },
+  {
+   "id_receta": "RE080",
+   "nombre_receta": "Nube de gelatina proteica de vainilla",
+   "orden": 5,
+   "id_alimento": "AL0200",
+   "nombre_alimento": "Agua",
+   "gramos": 500,
+   "nota": "fría"
+  },
+  {
+   "id_receta": "RE081",
+   "nombre_receta": "Croquetas rústicas fit de patata, jamón y mozzarella con huevos",
+   "orden": 1,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 400,
+   "nota": "cocida, 1 bote estándar escurrido"
+  },
+  {
+   "id_receta": "RE081",
+   "nombre_receta": "Croquetas rústicas fit de patata, jamón y mozzarella con huevos",
+   "orden": 2,
+   "id_alimento": "AL0056",
+   "nombre_alimento": "Mozzarella semidesnatada",
+   "gramos": 30,
+   "nota": "rallada"
+  },
+  {
+   "id_receta": "RE081",
+   "nombre_receta": "Croquetas rústicas fit de patata, jamón y mozzarella con huevos",
+   "orden": 3,
+   "id_alimento": "AL0022",
+   "nombre_alimento": "Jamón cocido extra (96 % magro)",
+   "gramos": 100,
+   "nota": "troceado o picado"
+  },
+  {
+   "id_receta": "RE081",
+   "nombre_receta": "Croquetas rústicas fit de patata, jamón y mozzarella con huevos",
+   "orden": 4,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 120,
+   "nota": "2 huevos, a la plancha para acompañar"
+  },
+  {
+   "id_receta": "RE081",
+   "nombre_receta": "Croquetas rústicas fit de patata, jamón y mozzarella con huevos",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 2,
+   "nota": "en spray"
+  },
+  {
+   "id_receta": "RE081",
+   "nombre_receta": "Croquetas rústicas fit de patata, jamón y mozzarella con huevos",
+   "orden": 6,
+   "id_alimento": "AL0229",
+   "nombre_alimento": "Pimienta negra molida",
+   "gramos": 0.5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE081",
+   "nombre_receta": "Croquetas rústicas fit de patata, jamón y mozzarella con huevos",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_receta": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "orden": 1,
+   "id_alimento": "AL0244",
+   "nombre_alimento": "Pasta de lentejas rojas",
+   "gramos": 50,
+   "nota": "en crudo"
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_receta": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "orden": 2,
+   "id_alimento": "AL0038",
+   "nombre_alimento": "Gambas / langostinos",
+   "gramos": 100,
+   "nota": "langostinos cocidos y pelados"
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_receta": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "orden": 3,
+   "id_alimento": "AL0145",
+   "nombre_alimento": "Lechuga romana",
+   "gramos": 60,
+   "nota": "lechuga variada, al gusto"
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_receta": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "orden": 4,
+   "id_alimento": "AL0051",
+   "nombre_alimento": "Yogur tipo griego 0 % (estilo americano)",
+   "gramos": 100,
+   "nota": "ligero"
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_receta": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "orden": 5,
+   "id_alimento": "AL0123",
+   "nombre_alimento": "Aguacate",
+   "gramos": 90,
+   "nota": "medio"
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_receta": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "orden": 6,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 50,
+   "nota": "cherry"
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_receta": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "orden": 7,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 60,
+   "nota": "media, morada"
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_receta": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "orden": 8,
+   "id_alimento": "AL0245",
+   "nombre_alimento": "Pimientos del piquillo (conserva)",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_receta": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "orden": 9,
+   "id_alimento": "AL0247",
+   "nombre_alimento": "Albahaca fresca",
+   "gramos": 3,
+   "nota": "unas hojas"
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_receta": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "orden": 10,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 1,
+   "nota": "de la Vera"
+  },
+  {
+   "id_receta": "RE082",
+   "nombre_receta": "Ensalada fit de pasta de lentejas rojas, langostinos y crema de aguacate y piquillos",
+   "orden": 11,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE083",
+   "nombre_receta": "Mousse nube proteica batida de galleta (Gelatina + Whey)",
+   "orden": 1,
+   "id_alimento": "AL0243",
+   "nombre_alimento": "Gelatina neutra en polvo",
+   "gramos": 9,
+   "nota": "1 sobre, neutra o 0 %"
+  },
+  {
+   "id_receta": "RE083",
+   "nombre_receta": "Mousse nube proteica batida de galleta (Gelatina + Whey)",
+   "orden": 2,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 30,
+   "nota": "sabor galleta/Lotus o vainilla"
+  },
+  {
+   "id_receta": "RE083",
+   "nombre_receta": "Mousse nube proteica batida de galleta (Gelatina + Whey)",
+   "orden": 3,
+   "id_alimento": "AL0051",
+   "nombre_alimento": "Yogur tipo griego 0 % (estilo americano)",
+   "gramos": 100,
+   "nota": "ligero"
+  },
+  {
+   "id_receta": "RE083",
+   "nombre_receta": "Mousse nube proteica batida de galleta (Gelatina + Whey)",
+   "orden": 4,
+   "id_alimento": "AL0200",
+   "nombre_alimento": "Agua",
+   "gramos": 500,
+   "nota": "caliente"
+  },
+  {
+   "id_receta": "RE083",
+   "nombre_receta": "Mousse nube proteica batida de galleta (Gelatina + Whey)",
+   "orden": 5,
+   "id_alimento": "AL0200",
+   "nombre_alimento": "Agua",
+   "gramos": 500,
+   "nota": "fría"
+  },
+  {
+   "id_receta": "RE084",
+   "nombre_receta": "Crema fría saciante de avena, café y chocolate (Proats de nevera)",
+   "orden": 1,
+   "id_alimento": "AL0188",
+   "nombre_alimento": "Proteína de suero (whey concentrada)",
+   "gramos": 30,
+   "nota": "sabor café caramelo"
+  },
+  {
+   "id_receta": "RE084",
+   "nombre_receta": "Crema fría saciante de avena, café y chocolate (Proats de nevera)",
+   "orden": 2,
+   "id_alimento": "AL0246",
+   "nombre_alimento": "Café solo",
+   "gramos": 100,
+   "nota": "100 ml"
+  },
+  {
+   "id_receta": "RE084",
+   "nombre_receta": "Crema fría saciante de avena, café y chocolate (Proats de nevera)",
+   "orden": 3,
+   "id_alimento": "AL0051",
+   "nombre_alimento": "Yogur tipo griego 0 % (estilo americano)",
+   "gramos": 150,
+   "nota": "ligero"
+  },
+  {
+   "id_receta": "RE084",
+   "nombre_receta": "Crema fría saciante de avena, café y chocolate (Proats de nevera)",
+   "orden": 4,
+   "id_alimento": "AL0063",
+   "nombre_alimento": "Copos de avena",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE084",
+   "nombre_receta": "Crema fría saciante de avena, café y chocolate (Proats de nevera)",
+   "orden": 5,
+   "id_alimento": "AL0195",
+   "nombre_alimento": "Cacao puro desgrasado en polvo",
+   "gramos": 5,
+   "nota": "sin azúcar"
+  },
+  {
+   "id_receta": "RE084",
+   "nombre_receta": "Crema fría saciante de avena, café y chocolate (Proats de nevera)",
+   "orden": 6,
+   "id_alimento": "AL0191",
+   "nombre_alimento": "Creatina monohidrato",
+   "gramos": 5,
+   "nota": "opcional"
+  },
+  {
+   "id_receta": "RE085",
+   "nombre_receta": "Batido-crema fit de plátano, cacao y cacahuete estilo heladería",
+   "orden": 1,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 300,
+   "nota": null
+  },
+  {
+   "id_receta": "RE085",
+   "nombre_receta": "Batido-crema fit de plátano, cacao y cacahuete estilo heladería",
+   "orden": 2,
+   "id_alimento": "AL0098",
+   "nombre_alimento": "Bebida de soja sin azúcar",
+   "gramos": 300,
+   "nota": "300 ml; o leche"
+  },
+  {
+   "id_receta": "RE085",
+   "nombre_receta": "Batido-crema fit de plátano, cacao y cacahuete estilo heladería",
+   "orden": 3,
+   "id_alimento": "AL0063",
+   "nombre_alimento": "Copos de avena",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE085",
+   "nombre_receta": "Batido-crema fit de plátano, cacao y cacahuete estilo heladería",
+   "orden": 4,
+   "id_alimento": "AL0103",
+   "nombre_alimento": "Plátano",
+   "gramos": 120,
+   "nota": "1 maduro, pelado"
+  },
+  {
+   "id_receta": "RE085",
+   "nombre_receta": "Batido-crema fit de plátano, cacao y cacahuete estilo heladería",
+   "orden": 5,
+   "id_alimento": "AL0166",
+   "nombre_alimento": "Crema de cacahuete",
+   "gramos": 15,
+   "nota": "1 cucharada sopera, 100 % natural"
+  },
+  {
+   "id_receta": "RE085",
+   "nombre_receta": "Batido-crema fit de plátano, cacao y cacahuete estilo heladería",
+   "orden": 6,
+   "id_alimento": "AL0195",
+   "nombre_alimento": "Cacao puro desgrasado en polvo",
+   "gramos": 10,
+   "nota": "sin azúcar"
+  },
+  {
+   "id_receta": "RE085",
+   "nombre_receta": "Batido-crema fit de plátano, cacao y cacahuete estilo heladería",
+   "orden": 7,
+   "id_alimento": "AL0204",
+   "nombre_alimento": "Aroma de vainilla",
+   "gramos": 0.5,
+   "nota": "un toque"
+  },
+  {
+   "id_receta": "RE086",
+   "nombre_receta": "Cachopo fit de pollo y jamón con empanado crujiente de tortitas de maíz (Air Fryer)",
+   "orden": 1,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 200,
+   "nota": "2 filetes finos"
+  },
+  {
+   "id_receta": "RE086",
+   "nombre_receta": "Cachopo fit de pollo y jamón con empanado crujiente de tortitas de maíz (Air Fryer)",
+   "orden": 2,
+   "id_alimento": "AL0022",
+   "nombre_alimento": "Jamón cocido extra (96 % magro)",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE086",
+   "nombre_receta": "Cachopo fit de pollo y jamón con empanado crujiente de tortitas de maíz (Air Fryer)",
+   "orden": 3,
+   "id_alimento": "AL0056",
+   "nombre_alimento": "Mozzarella semidesnatada",
+   "gramos": 20,
+   "nota": "rallada o en loncha fina"
+  },
+  {
+   "id_receta": "RE086",
+   "nombre_receta": "Cachopo fit de pollo y jamón con empanado crujiente de tortitas de maíz (Air Fryer)",
+   "orden": 4,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "1 huevo L, para rebozar"
+  },
+  {
+   "id_receta": "RE086",
+   "nombre_receta": "Cachopo fit de pollo y jamón con empanado crujiente de tortitas de maíz (Air Fryer)",
+   "orden": 5,
+   "id_alimento": "AL0067",
+   "nombre_alimento": "Tortitas / arroz inflado",
+   "gramos": 40,
+   "nota": "5 tortitas de maíz, trituradas"
+  },
+  {
+   "id_receta": "RE086",
+   "nombre_receta": "Cachopo fit de pollo y jamón con empanado crujiente de tortitas de maíz (Air Fryer)",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 2,
+   "nota": "en spray"
+  },
+  {
+   "id_receta": "RE086",
+   "nombre_receta": "Cachopo fit de pollo y jamón con empanado crujiente de tortitas de maíz (Air Fryer)",
+   "orden": 7,
+   "id_alimento": "AL0229",
+   "nombre_alimento": "Pimienta negra molida",
+   "gramos": 0.3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE086",
+   "nombre_receta": "Cachopo fit de pollo y jamón con empanado crujiente de tortitas de maíz (Air Fryer)",
+   "orden": 8,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 0.5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE087",
+   "nombre_receta": "Pizza fit de base de pollo",
+   "orden": 1,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 180,
+   "nota": "picada muy fina, bien fría"
+  },
+  {
+   "id_receta": "RE087",
+   "nombre_receta": "Pizza fit de base de pollo",
+   "orden": 2,
+   "id_alimento": "AL0043",
+   "nombre_alimento": "Clara de huevo",
+   "gramos": 35,
+   "nota": "1 clara"
+  },
+  {
+   "id_receta": "RE087",
+   "nombre_receta": "Pizza fit de base de pollo",
+   "orden": 3,
+   "id_alimento": "AL0058",
+   "nombre_alimento": "Queso parmesano rallado",
+   "gramos": 15,
+   "nota": "o queso curado rallado"
+  },
+  {
+   "id_receta": "RE087",
+   "nombre_receta": "Pizza fit de base de pollo",
+   "orden": 4,
+   "id_alimento": "AL0221",
+   "nombre_alimento": "Orégano seco",
+   "gramos": 1,
+   "nota": "y ajo en polvo al gusto"
+  },
+  {
+   "id_receta": "RE087",
+   "nombre_receta": "Pizza fit de base de pollo",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": "1 pizca"
+  },
+  {
+   "id_receta": "RE087",
+   "nombre_receta": "Pizza fit de base de pollo",
+   "orden": 6,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 60,
+   "nota": "espeso, con orégano"
+  },
+  {
+   "id_receta": "RE087",
+   "nombre_receta": "Pizza fit de base de pollo",
+   "orden": 7,
+   "id_alimento": "AL0056",
+   "nombre_alimento": "Mozzarella semidesnatada",
+   "gramos": 75,
+   "nota": "light, bien escurrida"
+  },
+  {
+   "id_receta": "RE087",
+   "nombre_receta": "Pizza fit de base de pollo",
+   "orden": 8,
+   "id_alimento": "AL0149",
+   "nombre_alimento": "Champiñones",
+   "gramos": 60,
+   "nota": "laminados muy finos"
+  },
+  {
+   "id_receta": "RE087",
+   "nombre_receta": "Pizza fit de base de pollo",
+   "orden": 9,
+   "id_alimento": "AL0147",
+   "nombre_alimento": "Rúcula",
+   "gramos": 20,
+   "nota": "al final"
+  },
+  {
+   "id_receta": "RE088",
+   "nombre_receta": "Pizza fit de base de claras y avena",
+   "orden": 1,
+   "id_alimento": "AL0044",
+   "nombre_alimento": "Claras de huevo pasteurizadas (brick)",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE088",
+   "nombre_receta": "Pizza fit de base de claras y avena",
+   "orden": 2,
+   "id_alimento": "AL0064",
+   "nombre_alimento": "Harina de avena",
+   "gramos": 45,
+   "nota": "o copos triturados muy finos"
+  },
+  {
+   "id_receta": "RE088",
+   "nombre_receta": "Pizza fit de base de claras y avena",
+   "orden": 3,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE088",
+   "nombre_receta": "Pizza fit de base de claras y avena",
+   "orden": 4,
+   "id_alimento": "AL0199",
+   "nombre_alimento": "Levadura química (impulsor)",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE088",
+   "nombre_receta": "Pizza fit de base de claras y avena",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE088",
+   "nombre_receta": "Pizza fit de base de claras y avena",
+   "orden": 6,
+   "id_alimento": "AL0221",
+   "nombre_alimento": "Orégano seco",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE088",
+   "nombre_receta": "Pizza fit de base de claras y avena",
+   "orden": 7,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 70,
+   "nota": null
+  },
+  {
+   "id_receta": "RE088",
+   "nombre_receta": "Pizza fit de base de claras y avena",
+   "orden": 8,
+   "id_alimento": "AL0056",
+   "nombre_alimento": "Mozzarella semidesnatada",
+   "gramos": 75,
+   "nota": "light"
+  },
+  {
+   "id_receta": "RE088",
+   "nombre_receta": "Pizza fit de base de claras y avena",
+   "orden": 9,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 80,
+   "nota": "hecha a la plancha y en tiras; o 1 lata de atún al natural escurrido"
+  },
+  {
+   "id_receta": "RE088",
+   "nombre_receta": "Pizza fit de base de claras y avena",
+   "orden": 10,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 40,
+   "nota": "asado, en tiras y bien escurrido"
+  },
+  {
+   "id_receta": "RE089",
+   "nombre_receta": "Pizza fit exprés de wrap",
+   "orden": 1,
+   "id_alimento": "AL0082",
+   "nombre_alimento": "Tortilla de trigo",
+   "gramos": 60,
+   "nota": "1 grande, integral o proteica"
+  },
+  {
+   "id_receta": "RE089",
+   "nombre_receta": "Pizza fit exprés de wrap",
+   "orden": 2,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 50,
+   "nota": "con orégano"
+  },
+  {
+   "id_receta": "RE089",
+   "nombre_receta": "Pizza fit exprés de wrap",
+   "orden": 3,
+   "id_alimento": "AL0056",
+   "nombre_alimento": "Mozzarella semidesnatada",
+   "gramos": 70,
+   "nota": "light"
+  },
+  {
+   "id_receta": "RE089",
+   "nombre_receta": "Pizza fit exprés de wrap",
+   "orden": 4,
+   "id_alimento": "AL0022",
+   "nombre_alimento": "Jamón cocido extra (96 % magro)",
+   "gramos": 100,
+   "nota": "o pechuga de pavo en tiras"
+  },
+  {
+   "id_receta": "RE089",
+   "nombre_receta": "Pizza fit exprés de wrap",
+   "orden": 5,
+   "id_alimento": "AL0149",
+   "nombre_alimento": "Champiñones",
+   "gramos": 50,
+   "nota": "laminados muy finos"
+  },
+  {
+   "id_receta": "RE089",
+   "nombre_receta": "Pizza fit exprés de wrap",
+   "orden": 6,
+   "id_alimento": "AL0221",
+   "nombre_alimento": "Orégano seco",
+   "gramos": 0.5,
+   "nota": null
   }
  ]
 }
