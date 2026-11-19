@@ -1,4 +1,5 @@
 <script>
+  import MapaMuscular from '../componentes/MapaMuscular.svelte';
   import { app } from '../lib/estado.svelte.js';
   import { ej, cat, etiqueta, NOMBRE_GRUPO } from '../lib/catalogo.js';
   import { restriccion } from '../lib/entreno.js';
@@ -24,6 +25,7 @@
       {:else}<p class="sec peq">Tu progreso en este ejercicio aparecerá aquí cuando lo hagas por primera vez.</p>{/if}
     {/if}
     {#if e.img}<Animacion {id} />{:else}<div class="tarjeta"><p class="sec">Imagen pendiente: este ejercicio se grabará.</p></div>{/if}
+    {#if e.mp?.length}<MapaMuscular principales={e.mp} secundarios={e.ms ?? []} />{/if}
     {#if r}
       <div class="aviso-l"><Icono n="aviso" tam={20} /><p><b>{r.nivel === 'evitar' ? 'Evitar' : r.nivel === 'precaucion' ? 'Precaución' : 'Recomendado'} por tu {r.zona}.</b> {r.motivo}</p></div>
     {/if}

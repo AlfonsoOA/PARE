@@ -107,7 +107,7 @@ export const FUNDAMENTOS = [
   ['Datos', [
     {
       id: 'datos', t: 'De dónde salen los ejercicios y los alimentos',
-      x: 'Ejercicios: base abierta free-exercise-db (dominio público), revisada y traducida. Alimentos: USDA FoodData Central y etiquetas típicas. Gasto de actividades: Compendio de Actividades Físicas 2024.',
+      x: 'Ejercicios: base abierta free-exercise-db (dominio público), revisada y traducida. Alimentos: USDA FoodData Central y etiquetas típicas. Gasto de actividades: Compendio de Actividades Físicas 2024. Dibujo del mapa muscular: react-body-highlighter (licencia MIT).',
       refs: ['REF10', 'REF17', 'REF16'],
     },
   ]],
