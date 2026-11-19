@@ -12,6 +12,12 @@ const MEDIA = {
   fruta: { kcal: 60, p: 0.5, hc: 15, g: 0 }, lacteo: { kcal: 110, p: 8, hc: 11, g: 4 },
 };
 
+// Raciones equivalentes según los macros (25 g de proteína, 40 g de hidratos, 10 g de grasa): así cuadran siempre con las kcal,
+// aunque un alimento mezcle macros (lácteos, legumbres, carnes grasas…) o no tenga ración definida.
+export const racionesDeMacros = (t) => ({ P: (t.p || 0) / 25, HC: (t.hc || 0) / 40, G: (t.g || 0) / 10 });
+/** La pauta en esas mismas unidades: la fruta y los lácteos se reparten en hidratos, proteína y grasa. */
+export const pautaEnMacros = (o) => ({ P: (o?.P || 0) + (o?.lacteo || 0) * 8 / 25, HC: (o?.HC || 0) + (o?.fruta || 0) * 15 / 40 + (o?.lacteo || 0) * 11 / 40, G: (o?.G || 0) + (o?.lacteo || 0) * 4 / 10 });
+
 export const alimento = (id) => cat.alimentoPorId.get(id) ?? app.datos.productosPropios.find((a) => a.id === id);
 export const receta = (id) => cat.recetaPorId.get(id) ?? app.datos.recetasPropias?.find((r) => r.id === id);
 

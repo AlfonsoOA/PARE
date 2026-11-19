@@ -2,7 +2,7 @@
   import Suplementos from '../componentes/Suplementos.svelte';
   import { app, hoyISO } from '../lib/estado.svelte.js';
   import { cat, normalizar } from '../lib/catalogo.js';
-  import { delDia, sumar, anotar, quitar, objetivoDelDia, pautaComida, tipoDeDia, aporte, alimento, receta, GRUPOS_RACION, NOMBRE_RACION, DEF_RACION, redondear, diaSemana, DIAS_SEMANA, comidaHidratosExtra, objetivoComidaGramos } from '../lib/dieta.js';
+  import { delDia, sumar, anotar, quitar, objetivoDelDia, pautaComida, tipoDeDia, aporte, alimento, receta, racionesDeMacros, pautaEnMacros, GRUPOS_RACION, NOMBRE_RACION, DEF_RACION, redondear, diaSemana, DIAS_SEMANA, comidaHidratosExtra, objetivoComidaGramos } from '../lib/dieta.js';
   import { fmtNum, fmtFecha } from '../lib/unidades.js';
   import Icono from '../componentes/Icono.svelte';
   import Hoja from '../componentes/Hoja.svelte';
@@ -149,14 +149,23 @@
       <div class="fila entre envolver">
         <div><p class="cifra">{fmtNum(tot.kcal)}</p><p class="sec peq">de {fmtNum(kcalObj)} kcal</p></div>
         <div><p class="cifra">{fmtNum(tot.p)}</p><p class="sec peq">de {d.dieta.p} g prot.</p></div>
-        <div><p class="cifra">{fmtNum(tot.hc)}</p><p class="sec peq">g hidratos</p></div>
-        <div><p class="cifra">{fmtNum(tot.g)}</p><p class="sec peq">g grasa</p></div>
+        <div><p class="cifra">{fmtNum(tot.hc)}</p><p class="sec peq">{d.dieta.hc ? `de ${d.dieta.hc} g hidratos` : 'g hidratos'}</p></div>
+        <div><p class="cifra">{fmtNum(tot.g)}</p><p class="sec peq">{d.dieta.g ? `de ${d.dieta.g} g grasa` : 'g grasa'}</p></div>
       </div>
-      <div class="fila envolver" style="gap:12px">
-        {#each GRUPOS_RACION.filter((g) => (obj?.[g] ?? 0) > 0) as g}
-          <span class="peq"><b>{NOMBRE_RACION[g]}</b> {fmtNum(redondear(tot[g]), 1)}/{fmtNum(obj[g], 1)}</span>
-        {/each}
-      </div>
+      {#if reg.some((e) => e.tipo !== 'racion')}
+        {@const rm = racionesDeMacros(tot)}
+        {@const om = pautaEnMacros(obj)}
+        <div class="fila envolver" style="gap:12px">
+          {#each ['P', 'HC', 'G'].filter((g) => om[g] > 0) as g}<span class="peq"><b>{NOMBRE_RACION[g]}</b> {fmtNum(redondear(rm[g]), 1)}/{fmtNum(redondear(om[g]), 1)}</span>{/each}
+        </div>
+        <p class="sec peq" style="margin:0">Raciones según los macros de lo anotado (1 ración = 25 g de proteína, 40 g de hidratos o 10 g de grasa).</p>
+      {:else}
+        <div class="fila envolver" style="gap:12px">
+          {#each GRUPOS_RACION.filter((g) => (obj?.[g] ?? 0) > 0) as g}
+            <span class="peq"><b>{NOMBRE_RACION[g]}</b> {fmtNum(redondear(tot[g]), 1)}/{fmtNum(obj[g], 1)}</span>
+          {/each}
+        </div>
+      {/if}
     </div>
 
     {#each d.dieta.comidas as c (c.id)}
@@ -183,7 +192,8 @@
         {/if}
         {#if anotadas.length}
           <!-- Si apuntas alimentos, las raciones salen de lo anotado: un resumen en vez de las fichas -->
-          <p class="peq raciones-auto">{#each GRUPOS_RACION.filter((g) => pauta[g] > 0) as g, i}{i ? ' · ' : ''}<b>{NOMBRE_RACION[g]}</b> {fmtNum(redondear(sub_[g]), 1)}/{fmtNum(pauta[g], 1)}{/each} <span class="sec">raciones, calculadas de lo anotado</span></p>
+          {@const rmc = racionesDeMacros(sub_)}{@const omc = pautaEnMacros(pauta)}
+          <p class="peq raciones-auto">{#each ['P', 'HC', 'G'].filter((g) => omc[g] > 0) as g, i}{i ? ' · ' : ''}<b>{NOMBRE_RACION[g]}</b> {fmtNum(redondear(rmc[g]), 1)}/{fmtNum(redondear(omc[g]), 1)}{/each} <span class="sec">raciones, según los macros de lo anotado</span></p>
         {:else}
           {#each GRUPOS_RACION.filter((g) => pauta[g] > 0) as g}
             {@const hechas = racionesHechas(c.id, g)}
