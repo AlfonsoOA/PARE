@@ -2,7 +2,7 @@
   import { onDestroy, onMount } from 'svelte';
   import { app, uuid } from '../lib/estado.svelte.js';
   import { ej, cat, NOMBRE_GRUPO } from '../lib/catalogo.js';
-  import { bloques, etiquetasBloque, avisosSuperseries, restriccion, incremento, usaPesoCorporal, duracionSesion, descansoPorDefecto, DESCANSO_ENTRE_SUPERSERIE } from '../lib/entreno.js';
+  import { bloques, etiquetasBloque, avisosSuperseries, restriccion, incremento, usaPesoCorporal, duracionSesion, descansoPorDefecto, DESCANSO_ENTRE_SUPERSERIE, alternativasDe } from '../lib/entreno.js';
   import { terminarSesion, cancelarSesion, nuevaSerie, ultimaVez } from '../lib/sesiones.js';
   import { fmt, fmtReloj, fmtMin, mostrar, guardar, ud } from '../lib/unidades.js';
   import Hoja from '../componentes/Hoja.svelte';
@@ -139,12 +139,7 @@
     x.series.forEach((z) => { if (!z.hecha) z.carga = null; });
     hoja = null;
   }
-  const alternativas = (i) => {
-    const e = ej(sa.ejercicios[i].ej);
-    const fam = e?.fam ? cat.variantes[e.fam] || [] : [];
-    const mismoPatron = cat.ejercicios.filter((y) => y.pat === e?.pat).map((y) => y.id);
-    return [...new Set([...fam, ...mismoPatron])].filter((id) => id !== e?.id && restriccion(id, app.datos.perfil.molestias)?.nivel !== 'evitar');
-  };
+  const alternativas = (i) => alternativasDe(sa.ejercicios[i].ej, app.datos.perfil.molestias);
   const pendientes = $derived(totales - hechas);
   const desc = (z, e) => (usaPesoCorporal(e) ? (z.carga ? (z.carga > 0 ? `PC + ${fmt(z.carga, false)}` : `PC − ${fmt(-z.carga, false)}`) : 'PC') : z.carga == null ? '¿peso?' : fmt(z.carga, false));
 </script>

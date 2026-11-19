@@ -8,10 +8,11 @@
   let q = $state(inicial);
   let grupo = $state('');
   let eq = $state('');
+  let todos = $state(false); // con alternativas (ids), poder buscar en todo el catálogo
   const EQ = [['barra', 'Barra'], ['mancuerna', 'Mancuernas'], ['maquina', 'Máquina'], ['polea', 'Polea'], ['peso_corporal', 'Peso corporal'], ['kettlebell', 'Kettlebell']];
   const lista = $derived.by(() => {
     const n = normalizar(q.trim());
-    let l = ids ? ids.map((i) => cat.porId.get(i)).filter(Boolean) : cat.ejercicios;
+    let l = ids && !todos ? ids.map((i) => cat.porId.get(i)).filter(Boolean) : cat.ejercicios;
     if (grupo) l = l.filter((e) => e.gp?.includes(grupo));
     if (eq) l = l.filter((e) => e.eq === eq);
     if (n) { const ws = palabras(q); l = l.filter((e) => coincide(ws, e.n, e.en, (e.gp || []).map((g) => NOMBRE_GRUPO[g]).join(' '), e.ficha?.recomendaciones));
@@ -24,7 +25,10 @@
 
 <Hoja {titulo} {cerrar}>
   <input type="search" placeholder="Buscar (press, remo, curl…)" bind:value={q} aria-label="Buscar ejercicio" />
-  {#if !ids}
+  {#if ids}
+    <button class="enlace" style="align-self:flex-start;padding:2px 0" onclick={() => (todos = !todos)}>{todos ? 'Ver solo las alternativas parecidas' : 'Buscar en todos los ejercicios'}</button>
+  {/if}
+  {#if !ids || todos}
     <div class="desliza">
       <button class="chip" class:on={!grupo} onclick={() => (grupo = '')}>Todos</button>
       {#each GRUPOS as g}<button class="chip" class:on={grupo === g} onclick={() => (grupo = grupo === g ? '' : g)}>{NOMBRE_GRUPO[g]}</button>{/each}

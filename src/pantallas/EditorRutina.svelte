@@ -1,7 +1,7 @@
 <script>
   import { app, uuid, aviso } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
-  import { duracionSesion, etiquetasBloque, bloques, avisosSuperseries, restriccion, volumenPlanificado, BANDA, banda, deltoidesPlanificado, MIN_CABEZA } from '../lib/entreno.js';
+  import { duracionSesion, etiquetasBloque, bloques, avisosSuperseries, restriccion, volumenPlanificado, BANDA, banda, deltoidesPlanificado, MIN_CABEZA, alternativasDe } from '../lib/entreno.js';
   import { nuevoItem, generarRutina, repartosPara, REPARTO_POR_DEFECTO } from '../lib/plan.js';
   import Hoja from '../componentes/Hoja.svelte';
   import { fmtMin, fmtNum, mostrar, guardar, ud } from '../lib/unidades.js';
@@ -71,6 +71,13 @@
     return out;
   });
 
+  // Sustituir un ejercicio en su sitio: conserva series, repeticiones, descanso, superserie, RPE/RIR y nota; el peso se pone a cero
+  let sustituirEn = $state(null); // el item a sustituir
+  function sustituir(id) {
+    const it = sustituirEn;
+    it.ej = id; it.carga = null; it._carga = ''; delete it.cargas;
+    sustituirEn = null;
+  }
   function anadir(id) {
     const it = { ...nuevoItem(id, r.objetivo), _carga: '' };
     r.sesiones[buscar].items.push(it);
@@ -178,7 +185,8 @@
               <button class="icono-b" onclick={() => moverI(s, k, -1)} aria-label="Subir"><Icono n="arriba" /></button>
               <button class="icono-b" onclick={() => moverI(s, k, 1)} aria-label="Bajar"><Icono n="abajo" /></button>
               {#if k < s.items.length - 1}<button class="chip" class:on={it.unir} onclick={() => (it.unir = !it.unir)}>{it.unir ? 'Unido al siguiente' : 'Unir con el siguiente'}</button>{/if}
-              <button class="icono-b" style="margin-left:auto" onclick={() => s.items.splice(k, 1)} aria-label="Quitar ejercicio"><Icono n="papelera" /></button>
+              <button class="chip" style="margin-left:auto" onclick={() => (sustituirEn = it)}>Sustituir</button>
+              <button class="icono-b" onclick={() => s.items.splice(k, 1)} aria-label="Quitar ejercicio"><Icono n="papelera" /></button>
             </div>
           </div>
         {/each}
@@ -215,6 +223,7 @@
 </div>
 
 {#if buscar != null}<Buscador cerrar={() => (buscar = null)} elegir={anadir} />{/if}
+{#if sustituirEn}<Buscador titulo="Sustituir {ej(sustituirEn.ej)?.n ?? ''}" ids={alternativasDe(sustituirEn.ej, perfil.molestias)} cerrar={() => (sustituirEn = null)} elegir={sustituir} />{/if}
 {#if reparto}
   <Hoja titulo="Cambiar reparto" cerrar={() => (reparto = null)}>
     <span class="sec peq">Días por semana</span>

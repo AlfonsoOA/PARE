@@ -35,7 +35,7 @@
     ]],
     ['rutina', 'Cambiar tu rutina', [
       'Para un día: en la sesión, menú ··· del ejercicio → «Sustituir por otro». PARE te propone alternativas que respetan tus molestias.',
-      'Para siempre: Entrenar → Editar rutina. Cambias ejercicios, series, repeticiones, pesos, descansos o el reparto entero. Nada se guarda hasta que pulsas Guardar.',
+      'Para siempre: Entrenar → Editar rutina. Cambias ejercicios (con «Sustituir» se cambia uno por otro en su sitio, sin descolocar las superseries), series, repeticiones, pesos, descansos o el reparto entero. También puedes sustituirlo desde su ficha técnica, con «Sustituir en mi rutina». Nada se guarda hasta que pulsas Guardar.',
       'Si te molesta una articulación, apúntalo en Yo → Molestias: los ejercicios a evitar salen marcados.',
     ]],
     ['intensidad', 'RPE, RIR y top set', [

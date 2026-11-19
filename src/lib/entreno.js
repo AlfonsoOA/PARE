@@ -396,3 +396,11 @@ export function nivelActual(perfil, sesiones) {
   }
   return meses < 9 ? 'principiante' : meses < 48 ? 'intermedio' : 'avanzado';
 }
+
+/** Ejercicios que pueden sustituir a uno: sus variantes y los del mismo patrón de movimiento, sin los que debas evitar. */
+export function alternativasDe(id, molestias) {
+  const e = cat.porId.get(id);
+  const fam = e?.fam ? cat.variantes[e.fam] || [] : [];
+  const mismoPatron = cat.ejercicios.filter((y) => y.pat === e?.pat).map((y) => y.id);
+  return [...new Set([...fam, ...mismoPatron])].filter((x) => x !== id && restriccion(x, molestias)?.nivel !== 'evitar');
+}
