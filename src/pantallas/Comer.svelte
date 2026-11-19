@@ -75,11 +75,20 @@
   }
   const etiquetaEntrada = (e) => e.tipo === 'alimento' ? `${alimento(e.aid)?.n ?? '¿?'} · ${fmtNum(e.g)} g` : e.tipo === 'receta' ? `${receta(e.rid)?.n} · ${fmtNum(e.porciones, 1)} porción` : e.tipo === 'plato' ? `${receta(e.rid)?.n ?? 'Plato'}` : null;
   const menuDe = (dia, c) => d.dieta?.menu?.[dia]?.[c] ?? [];
-  function anotarMenu(c) { for (const e of menuDe(diaSemana(fecha), c)) anotar(fecha, { ...e, comida: c, id: undefined }); }
+  // «Tomado tal cual»: anota el menú de esa comida una sola vez (las entradas llevan la marca delMenu para poder deshacerlo)
+  const menuTomado = (c) => (d.comidas[fecha] ?? []).some((e) => e.comida === c && e.delMenu);
+  function anotarMenu(c) {
+    if (menuTomado(c)) return;
+    for (const e of menuDe(diaSemana(fecha), c)) anotar(fecha, { ...e, comida: c, id: undefined, delMenu: true });
+    aviso('Anotado: tu menú de esta comida');
+  }
+  function deshacerMenu(c) { for (const e of (d.comidas[fecha] ?? []).filter((x) => x.comida === c && x.delMenu)) quitar(fecha, e.id); }
   function agregarAlMenu(dia, c, entrada) {
     d.dieta.menu ||= {};
     d.dieta.menu[dia] ||= {};
-    (d.dieta.menu[dia][c] ||= []).push(entrada);
+    // ojo: (x ||= []).push() empuja al array sin proxy y se pierde; se asigna y luego se lee del estado
+    if (!d.dieta.menu[dia][c]) d.dieta.menu[dia][c] = [];
+    d.dieta.menu[dia][c].push(entrada);
   }
   const sumaMenu = (dia, c) => sumar(menuDe(dia, c));
 </script>
@@ -152,7 +161,11 @@
         <div class="fila entre"><h2>{c.nombre}</h2><span class="sec peq">{c.hora}</span></div>
         {#if menu.length}
           <div class="menu"><span class="sec peq">Tu menú: {menu.map(etiquetaEntrada).join(' · ')}</span>
-            <button class="enlace" style="align-self:flex-start;padding:2px 0" onclick={() => anotarMenu(c.id)}>Tomado tal cual</button></div>
+            {#if menuTomado(c.id)}
+              <span class="fila tomado"><span class="hecho">✓ Tomado tal cual</span><button class="enlace" style="padding:2px 0" onclick={() => deshacerMenu(c.id)}>Deshacer</button></span>
+            {:else}
+              <button class="enlace" style="align-self:flex-start;padding:2px 0" onclick={() => anotarMenu(c.id)}>Tomado tal cual</button>
+            {/if}</div>
         {/if}
         {#each GRUPOS_RACION.filter((g) => pauta[g] > 0) as g}
           {@const hechas = racionesHechas(c.id, g)}
@@ -258,6 +271,8 @@
 {/if}
 
 <style>
+  .tomado { gap: 14px; align-items: center; }
+  .hecho { color: var(--comer); font-weight: 700; }
   .linea-ed { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; min-width: 0; flex: 1; }
   .nowrap { white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; }
   .gr { width: 72px; min-height: 36px; padding: 4px 8px; text-align: right; }

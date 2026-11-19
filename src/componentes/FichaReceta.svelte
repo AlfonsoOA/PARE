@@ -58,7 +58,7 @@
     d.dieta.menu[dia] ||= {};
     // el plato sustituye a lo que hubiera en esa comida; un dulce o un lote se añade
     if (r.tipo === 'plato') d.dieta.menu[dia][comida] = [entrada()];
-    else (d.dieta.menu[dia][comida] ||= []).push(entrada());
+    else { if (!d.dieta.menu[dia][comida]) d.dieta.menu[dia][comida] = []; d.dieta.menu[dia][comida].push(entrada()); }
     aviso(`En tu menú: ${DIAS_SEMANA[dia].toLowerCase()}, ${c?.nombre.toLowerCase()}`);
     cerrar();
   }

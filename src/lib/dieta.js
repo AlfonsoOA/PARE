@@ -49,7 +49,9 @@ export function sumar(entradas) {
 }
 export const delDia = (fecha) => app.datos.comidas[fecha] ?? [];
 export function anotar(fecha, entrada) {
-  (app.datos.comidas[fecha] ||= []).push({ ...entrada, id: uuid() });
+  // (x ||= []).push() empujaría al array sin proxy (el primer registro del día se perdía): se asigna y se lee del estado
+  if (!app.datos.comidas[fecha]) app.datos.comidas[fecha] = [];
+  app.datos.comidas[fecha].push({ ...entrada, id: uuid() });
 }
 export function quitar(fecha, id) {
   const l = app.datos.comidas[fecha];
