@@ -96835,7 +96835,35 @@
    "activo": "SI",
    "fuente": "Etiqueta típica (valor orientativo)",
    "id_fuente": null,
-   "notas": "En crudo. Corte graso, como el secreto; valores orientativos (estudio ASICI de cortes ibéricos)"
+   "notas": "En crudo. Corte graso, como el secreto; valores orientativos (estudio ASICI de cortes ibéricos). Si es cerdo blanco, usa «Lagarto de cerdo (cordón de lomo)»"
+  },
+  {
+   "id_alimento": "AL0249",
+   "nombre_es": "Lagarto de cerdo (cordón de lomo)",
+   "nombre_en": null,
+   "grupo": "proteina",
+   "cuenta_como": "P",
+   "estado": "crudo",
+   "kcal_100g": 152,
+   "proteina_100g": 18,
+   "hidratos_100g": 0,
+   "azucares_100g": 0,
+   "fibra_100g": 0,
+   "grasa_100g": 8.9,
+   "grasa_saturada_100g": 3.2,
+   "sal_100g": 0.15,
+   "racion_g": 140,
+   "medida_casera": null,
+   "g_medida": null,
+   "alergenos": [],
+   "etiquetas": [
+    "sin_lactosa",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Etiqueta (Mercadona, cerdo blanco)",
+   "id_fuente": null,
+   "notas": "En crudo. Cerdo blanco; el ibérico es bastante más graso"
   }
  ],
  "recetas": [
