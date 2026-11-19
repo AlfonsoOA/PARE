@@ -39,7 +39,7 @@
       setTimeout(function () {
         var t = document.getElementById('arranque-txt');
         if (!t) return; // la app ya está montada
-        t.innerHTML = 'PARE no ha terminado de cargar. Pulsa el botón para descargar la versión nueva (tus datos no se borran).';
+        t.innerHTML = navigator.onLine === false ? 'PARE no ha terminado de cargar y no tienes conexión. Conéctate (datos móviles o una wifi que funcione) y pulsa el botón: tus datos no se borran.' : 'PARE no ha terminado de cargar. Pulsa el botón para descargar la versión nueva (tus datos no se borran). Si la wifi no tiene internet, cambia a datos móviles antes.';
         var b = document.createElement('button'); b.textContent = 'Reparar y recargar'; b.onclick = window.__pareReparar;
         t.parentNode.appendChild(b);
         if (errores.length) { var c = document.createElement('code'); c.textContent = errores.slice(0, 3).join(' · ') + ' · ' + navigator.userAgent; t.parentNode.appendChild(c); }
