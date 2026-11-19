@@ -181,17 +181,22 @@
             {/if}
           </div>
         {/if}
-        {#each GRUPOS_RACION.filter((g) => pauta[g] > 0) as g}
-          {@const hechas = racionesHechas(c.id, g)}
-          <div class="fila">
-            <span class="grupo">{NOMBRE_RACION[g]}</span>
-            <div class="fila envolver" style="gap:6px">
-              {#each Array(Math.max(Math.ceil(pauta[g]), hechas)) as _, k}
-                <button class="fichita" class:on={k < hechas} onclick={() => ficha(c.id, g, k)} aria-label="{NOMBRE_RACION[g]}, ración {k + 1} {k < hechas ? 'tomada' : 'sin tomar'}" aria-pressed={k < hechas}></button>
-              {/each}
+        {#if anotadas.length}
+          <!-- Si apuntas alimentos, las raciones salen de lo anotado: un resumen en vez de las fichas -->
+          <p class="peq raciones-auto">{#each GRUPOS_RACION.filter((g) => pauta[g] > 0) as g, i}{i ? ' · ' : ''}<b>{NOMBRE_RACION[g]}</b> {fmtNum(redondear(sub_[g]), 1)}/{fmtNum(pauta[g], 1)}{/each} <span class="sec">raciones, calculadas de lo anotado</span></p>
+        {:else}
+          {#each GRUPOS_RACION.filter((g) => pauta[g] > 0) as g}
+            {@const hechas = racionesHechas(c.id, g)}
+            <div class="fila">
+              <span class="grupo">{NOMBRE_RACION[g]}</span>
+              <div class="fila envolver" style="gap:6px">
+                {#each Array(Math.max(Math.ceil(pauta[g]), hechas)) as _, k}
+                  <button class="fichita" class:on={k < hechas} onclick={() => ficha(c.id, g, k)} aria-label="{NOMBRE_RACION[g]}, ración {k + 1} {k < hechas ? 'tomada' : 'sin tomar'}" aria-pressed={k < hechas}></button>
+                {/each}
+              </div>
             </div>
-          </div>
-        {/each}
+          {/each}
+        {/if}
         {#if c.verdura}<p class="sec peq">+ verdura libre</p>{/if}
         {#each deComida(c.id).filter((e) => e.tipo !== 'racion') as e (e.id)}
           <div class="fila entre peq">{#if e.tipo === 'plato' && receta(e.rid)}<button class="enlace-l" onclick={() => (recetaAbierta = { r: receta(e.rid), comida: c.id })}>{etiquetaEntrada(e)} <span class="sec">({fmtNum(aporte(e).kcal)} kcal) · ver receta</span></button>{:else}{@render lineaEditable(e)}{/if}<button class="icono-b" style="width:36px;height:36px" onclick={() => quitar(fecha, e.id)} aria-label="Quitar"><Icono n="cerrar" tam={18} /></button></div>
@@ -199,7 +204,7 @@
         <button class="enlace" style="align-self:flex-start" onclick={() => (anadirEn = { comida: c.id })}>+ Añadir alimento o receta</button>
       </div>
     {/each}
-    <p class="sec peq">Toca una ficha para marcar una ración tomada; pesa solo si quieres. La dieta va por fecha: si un día se tuerce, al siguiente toca la del siguiente.</p>
+    <p class="sec peq">Dos formas de apuntar, la que prefieras: tocar una ficha por cada ración tomada (sin pesar), o añadir lo que has comido (o «Tomado tal cual»), y entonces las raciones se calculan solas. La dieta va por fecha: si un día se tuerce, al siguiente toca la del siguiente.</p>
 
   {:else if sub === 'menu'}
     <p class="sec peq">Concreta qué comes en cada comida de cada día, a partir de tus raciones. Es opcional: quien no quiera, va por raciones. Cambia los gramos de cualquier alimento y las kcal se recalculan al momento.</p>
@@ -285,6 +290,7 @@
 {/if}
 
 <style>
+  .raciones-auto { margin: 0; line-height: 1.5; }
   .tomado { gap: 14px; align-items: center; }
   .hecho { color: var(--comer); font-weight: 700; }
   .linea-ed { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; min-width: 0; flex: 1; }
