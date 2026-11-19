@@ -1,5 +1,16 @@
 // «En qué se basa PARE»: cada decisión de la app, explicada en llano y con su bibliografía (ids de datos/catalogo_pare.json → referencias).
 // «criterio» = lo que es decisión práctica de PARE y no sale tal cual de los estudios.
+import { SUPLEMENTOS, NIVELES } from './suplementos.js';
+
+// Resumen de cada suplemento (la guía completa está en Comer → Suplementos)
+const NIVEL_TXT = Object.fromEntries(NIVELES.map(([k, t]) => [k, t]));
+const SUPL = SUPLEMENTOS.map((s) => ({
+  id: 'supl-' + s.id, t: s.n,
+  x: `${s.cond ? `Solo si: ${s.cond.charAt(0).toLowerCase()}${s.cond.slice(1)} ` : ''}${s.para}${s.dosis ? ` Cuánto: ${s.dosis.charAt(0).toLowerCase()}${s.dosis.slice(1)}` : ''}${s.cuando ? ` Cuándo: ${s.cuando.charAt(0).toLowerCase()}${s.cuando.slice(1)}` : ''}`,
+  etiqueta: 'Nivel', criterio: `${NIVEL_TXT[s.nivel]}. En contra: ${s.contras.map((c) => c.charAt(0).toLowerCase() + c.slice(1).replace(/\.$/, '')).join('; ')}. Guía completa: Comer → Suplementos.`,
+  refs: s.refs,
+}));
+
 export const FUNDAMENTOS = [
   ['Entrenamiento', [
     {
@@ -92,6 +103,7 @@ export const FUNDAMENTOS = [
       refs: ['REF24', 'REF25', 'REF26'],
     },
   ]],
+  ['Suplementos', SUPL],
   ['Datos', [
     {
       id: 'datos', t: 'De dónde salen los ejercicios y los alimentos',

@@ -26,7 +26,7 @@
         {#if abierto === f.id}
           <div class="cuerpo">
             <p>{f.x}</p>
-            {#if f.criterio}<p class="sec peq"><b>Criterio de PARE:</b> {f.criterio}</p>{/if}
+            {#if f.criterio}<p class="sec peq"><b>{f.etiqueta ?? 'Criterio de PARE'}:</b> {f.criterio}</p>{/if}
             {#if f.refs?.length}
               <span class="etiqueta">Referencias</span>
               <ul class="refs">

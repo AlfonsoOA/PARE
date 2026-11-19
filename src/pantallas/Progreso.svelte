@@ -13,6 +13,7 @@
   import Grafica from '../componentes/Grafica.svelte';
   import Hoja from '../componentes/Hoja.svelte';
   import AnotarMedida from '../componentes/AnotarMedida.svelte';
+  import GuiaMedidas from '../componentes/GuiaMedidas.svelte';
   import ContrasteBascula from '../componentes/ContrasteBascula.svelte';
   import { barrerasFrecuentes, NOMBRE_BARRERA, pautasDe, nivel, P_ESTADO } from '../lib/adherencia.js';
 
@@ -25,6 +26,7 @@
   let detalle = $state(null);
   const planVol = $derived(volumenPlanificado(d.rutina, d.perfil.diasSemana));
   let medir = $state(false);
+  let comoMedir = $state(false);
 
   const ESTADO = { progresando: ['Progresando', 'bien'], estable: ['Estable', ''], estancado: ['Estancado', 'aviso'], tope: ['Al tope de la máquina', ''], bajando: ['Bajando', 'mal'], mantiene: ['Mantiene en déficit', 'bien'], nuevo: ['Pocos datos', ''] };
   const estados = $derived(Object.entries(estadosEjercicios(d)).filter(([, e]) => e.hist.length)
@@ -125,7 +127,7 @@
       <p class="sec peq">Lectura orientativa: tendencias de varias semanas, no días sueltos. <PorQue id="medidas" texto="Cómo lo calcula PARE" /></p>
     </div>
     <div class="tarjeta">
-      <div class="fila entre"><span class="etiqueta">Peso ({ud()})</span>{#if !lectura}<button class="enlace" onclick={() => (medir = true)}>Anotar</button>{/if}</div>
+      <div class="fila entre"><span class="etiqueta">Peso ({ud()})</span>{#if !lectura}<span class="fila" style="gap:16px"><button class="enlace" onclick={() => (comoMedir = true)}>Cómo medir</button><button class="enlace" onclick={() => (medir = true)}>Anotar</button></span>{/if}</div>
       <Grafica puntos={pesos} media={mediaMovil} unidad={ud()} />
       <p class="sec peq">Línea continua: el peso de cada día. Discontinua: la media de 7 días, que es la que cuenta.</p>
     </div>
@@ -233,6 +235,7 @@
   </Hoja>
 {/if}
 {#if medir}<AnotarMedida cerrar={() => (medir = false)} />{/if}
+{#if comoMedir}<Hoja titulo="Cómo y dónde medir" cerrar={() => (comoMedir = false)}><GuiaMedidas /></Hoja>{/if}
 
 <style>
   .lectura { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; line-height: 1.45; }
