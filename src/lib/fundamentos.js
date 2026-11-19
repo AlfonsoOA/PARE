@@ -56,8 +56,9 @@ export const FUNDAMENTOS = [
     },
     {
       id: 'e1rm', t: 'El 1RM estimado',
-      x: 'Para comparar series con pesos y repeticiones distintos, PARE estima tu máximo a una repetición con la fórmula de Epley. Es una estimación: pierde precisión por encima de unas 10 repeticiones.',
-      refs: ['REF12'],
+      x: 'Para comparar series con pesos y repeticiones distintos, PARE estima tu máximo a una repetición con la fórmula de Epley. Es una estimación: las ecuaciones de 1RM aciertan razonablemente en ejercicios como el press de banca o la sentadilla, pero ninguna es exacta en todos los ejercicios ni para todo el mundo, y pierden precisión por encima de unas 10 repeticiones.',
+      criterio: 'PARE usa el 1RM estimado para comparar tus series entre sí (si progresas), no como tu máximo real.',
+      refs: ['REF12', 'REF46'],
     },
     {
       id: 'pc', t: 'Ejercicios con tu peso corporal',

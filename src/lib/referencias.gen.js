@@ -179,5 +179,9 @@ export const REFS = {
  "REF45": {
   "apa": "Wolfe, R. R. (2017). Branched-chain amino acids and muscle protein synthesis in humans: Myth or reality? *Journal of the International Society of Sports Nutrition, 14*, Artículo 30.",
   "url": "https://doi.org/10.1186/s12970-017-0184-9"
+ },
+ "REF46": {
+  "apa": "Ribeiro, A., da Silva, J. A., Nascimento, M., Martinho, D., dos Santos, L., de Salles, B., Mayhew, J., & Cyrino, E. S. (2024). Accuracy of 1RM prediction equations before and after resistance training in three different lifts. *International Journal of Strength and Conditioning, 4*(1).",
+  "url": "https://doi.org/10.47206/ijsc.v4i1.327"
  }
 };
