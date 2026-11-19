@@ -96808,6 +96808,34 @@
    "fuente": "Etiqueta típica (valor orientativo)",
    "id_fuente": null,
    "notas": null
+  },
+  {
+   "id_alimento": "AL0248",
+   "nombre_es": "Cerdo ibérico, lagarto",
+   "nombre_en": null,
+   "grupo": "grasa",
+   "cuenta_como": "G",
+   "estado": "crudo",
+   "kcal_100g": 260,
+   "proteina_100g": 17,
+   "hidratos_100g": 0,
+   "azucares_100g": 0,
+   "fibra_100g": 0,
+   "grasa_100g": 21.5,
+   "grasa_saturada_100g": 7.5,
+   "sal_100g": 0.15,
+   "racion_g": null,
+   "medida_casera": null,
+   "g_medida": null,
+   "alergenos": [],
+   "etiquetas": [
+    "sin_lactosa",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Etiqueta típica (valor orientativo)",
+   "id_fuente": null,
+   "notas": "En crudo. Corte graso, como el secreto; valores orientativos (estudio ASICI de cortes ibéricos)"
   }
  ],
  "recetas": [
