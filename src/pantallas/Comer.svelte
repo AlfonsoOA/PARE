@@ -82,6 +82,11 @@
     for (const e of menuDe(diaSemana(fecha), c)) anotar(fecha, { ...e, comida: c, id: undefined, delMenu: true });
     aviso('Anotado: tu menú de esta comida');
   }
+  // Usar el menú en lugar de lo anotado a mano en esa comida (para no duplicar)
+  function sustituirPorMenu(c) {
+    for (const e of (d.comidas[fecha] ?? []).filter((x) => x.comida === c && x.tipo !== 'racion')) quitar(fecha, e.id);
+    anotarMenu(c);
+  }
   function deshacerMenu(c) { for (const e of (d.comidas[fecha] ?? []).filter((x) => x.comida === c && x.delMenu)) quitar(fecha, e.id); }
   function agregarAlMenu(dia, c, entrada) {
     d.dieta.menu ||= {};
@@ -157,15 +162,24 @@
     {#each d.dieta.comidas as c (c.id)}
       {@const pauta = pautaComida(c, fecha)}
       {@const menu = menuDe(diaSemana(fecha), c.id)}
+      {@const sub_ = sumar(deComida(c.id))}
+      {@const anotadas = deComida(c.id).filter((e) => e.tipo !== 'racion')}
       <div class="tarjeta">
-        <div class="fila entre"><h2>{c.nombre}</h2><span class="sec peq">{c.hora}</span></div>
+        <div class="fila entre"><h2>{c.nombre}</h2><span class="sec peq">{sub_.kcal > 0 ? `${fmtNum(sub_.kcal)} kcal · ` : ''}{c.hora}</span></div>
         {#if menu.length}
-          <div class="menu"><span class="sec peq">Tu menú: {menu.map(etiquetaEntrada).join(' · ')}</span>
+          <div class="menu">
             {#if menuTomado(c.id)}
+              <span class="sec peq">Tu menú: {menu.map(etiquetaEntrada).join(' · ')}</span>
               <span class="fila tomado"><span class="hecho">✓ Tomado tal cual</span><button class="enlace" style="padding:2px 0" onclick={() => deshacerMenu(c.id)}>Deshacer</button></span>
+            {:else if anotadas.length}
+              <span class="sec peq">Tu menú (no se suma: cuenta lo que has anotado abajo): {menu.map(etiquetaEntrada).join(' · ')}</span>
+              <button class="enlace" style="align-self:flex-start;padding:2px 0" onclick={() => sustituirPorMenu(c.id)}>Cambiar lo anotado por mi menú</button>
             {:else}
+              <span class="sec peq">Tu menú: {menu.map(etiquetaEntrada).join(' · ')} <b>· {fmtNum(sumar(menu).kcal)} kcal</b></span>
+              <span class="sec peq">No se suma hasta que lo anotas: si lo has comido tal cual, pulsa el botón; si no, añade abajo lo que hayas comido.</span>
               <button class="enlace" style="align-self:flex-start;padding:2px 0" onclick={() => anotarMenu(c.id)}>Tomado tal cual</button>
-            {/if}</div>
+            {/if}
+          </div>
         {/if}
         {#each GRUPOS_RACION.filter((g) => pauta[g] > 0) as g}
           {@const hechas = racionesHechas(c.id, g)}
