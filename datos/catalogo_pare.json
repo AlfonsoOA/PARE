@@ -87515,6 +87515,60 @@
    "uso_en_pare": "Preguntas de hábito (automaticidad) de la revisión quincenal (adaptadas).",
    "verificado": "SI (título y revista comprobados, nov. 2026)",
    "apa7": "Gardner, B., Abraham, C., Lally, P., & de Bruijn, G.-J. (2012). Towards parsimony in habit measurement: Testing the convergent and predictive validity of an automaticity subscale of the Self-Report Habit Index. *International Journal of Behavioral Nutrition and Physical Activity, 9*, Artículo 102."
+  },
+  {
+   "id_referencia": "REF27",
+   "referencia": "Helms, E. R., Aragon, A. A., & Fitschen, P. J. (2014). Evidence-based recommendations for natural bodybuilding contest preparation: Nutrition and supplementation. Journal of the International Society of Sports Nutrition, 11, Artículo 20.",
+   "tipo": "Artículo",
+   "doi_url": "https://doi.org/10.1186/1550-2783-11-20",
+   "uso_en_pare": "Ritmo de pérdida de peso del 0,5-1 % semanal para conservar el músculo.",
+   "verificado": "SI (título y revista comprobados, nov. 2026)",
+   "apa7": "Helms, E. R., Aragon, A. A., & Fitschen, P. J. (2014). Evidence-based recommendations for natural bodybuilding contest preparation: Nutrition and supplementation. *Journal of the International Society of Sports Nutrition, 11*, Artículo 20."
+  },
+  {
+   "id_referencia": "REF28",
+   "referencia": "Garthe, I., Raastad, T., Refsnes, P. E., Koivisto, A., & Sundgot-Borgen, J. (2011). Effect of two different weight-loss rates on body composition and strength and power-related performance in elite athletes. International Journal of Sport Nutrition and Exercise Metabolism, 21(2), 97–104.",
+   "tipo": "Artículo",
+   "doi_url": "https://doi.org/10.1123/ijsnem.21.2.97",
+   "uso_en_pare": "Perder peso más despacio conserva mejor la masa magra y la fuerza.",
+   "verificado": "SI (título y revista comprobados, nov. 2026)",
+   "apa7": "Garthe, I., Raastad, T., Refsnes, P. E., Koivisto, A., & Sundgot-Borgen, J. (2011). Effect of two different weight-loss rates on body composition and strength and power-related performance in elite athletes. *International Journal of Sport Nutrition and Exercise Metabolism, 21*(2), 97–104."
+  },
+  {
+   "id_referencia": "REF29",
+   "referencia": "Iraki, J., Fitschen, P., Espinar, S., & Helms, E. (2019). Nutrition recommendations for bodybuilders in the off-season: A narrative review. Sports, 7(7), Artículo 154.",
+   "tipo": "Artículo",
+   "doi_url": "https://doi.org/10.3390/sports7070154",
+   "uso_en_pare": "Ritmo de ganancia de peso del 0,25-0,5 % semanal en fase de volumen.",
+   "verificado": "SI (título y revista comprobados, nov. 2026)",
+   "apa7": "Iraki, J., Fitschen, P., Espinar, S., & Helms, E. (2019). Nutrition recommendations for bodybuilders in the off-season: A narrative review. *Sports, 7*(7), Artículo 154."
+  },
+  {
+   "id_referencia": "REF30",
+   "referencia": "Barakat, C., Pearson, J., Escalante, G., Campbell, B., & De Souza, E. O. (2020). Body recomposition: Can trained individuals build muscle and lose fat at the same time? Strength and Conditioning Journal, 42(5), 7–21.",
+   "tipo": "Artículo",
+   "doi_url": "https://doi.org/10.1519/SSC.0000000000000584",
+   "uso_en_pare": "Recomposición corporal en personas entrenadas: peso estable con menos grasa y más músculo.",
+   "verificado": "SI (título y revista comprobados, nov. 2026)",
+   "apa7": "Barakat, C., Pearson, J., Escalante, G., Campbell, B., & De Souza, E. O. (2020). Body recomposition: Can trained individuals build muscle and lose fat at the same time? *Strength and Conditioning Journal, 42*(5), 7–21."
+  },
+  {
+   "id_referencia": "REF31",
+   "referencia": "Ashwell, M., Gunn, P., & Gibson, S. (2012). Waist-to-height ratio is a better screening tool than waist circumference and BMI for adult cardiometabolic risk factors: Systematic review and meta-analysis. Obesity Reviews, 13(3), 275–286.",
+   "tipo": "Artículo",
+   "doi_url": "https://doi.org/10.1111/j.1467-789X.2011.00952.x",
+   "uso_en_pare": "Relación cintura/altura y su umbral de 0,5.",
+   "verificado": "SI (título y revista comprobados, nov. 2026)",
+   "apa7": "Ashwell, M., Gunn, P., & Gibson, S. (2012). Waist-to-height ratio is a better screening tool than waist circumference and BMI for adult cardiometabolic risk factors: Systematic review and meta-analysis. *Obesity Reviews, 13*(3), 275–286."
+  },
+  {
+   "id_referencia": "REF32",
+   "referencia": "National Institute for Health and Care Excellence. (2025). Overweight and obesity management (NICE guideline NG246).",
+   "tipo": "Artículo",
+   "doi_url": "https://www.nice.org.uk/guidance/ng246",
+   "uso_en_pare": "Categorías de la relación cintura/altura (0,4-0,49; 0,5-0,59; 0,6 o más).",
+   "verificado": "SI (título y revista comprobados, nov. 2026)",
+   "apa7": "National Institute for Health and Care Excellence. (2025). *Overweight and obesity management* (NICE guideline NG246)."
   }
  ],
  "recomendaciones": [

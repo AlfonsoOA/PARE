@@ -103,5 +103,29 @@ export const REFS = {
  "REF26": {
   "apa": "Gardner, B., Abraham, C., Lally, P., & de Bruijn, G.-J. (2012). Towards parsimony in habit measurement: Testing the convergent and predictive validity of an automaticity subscale of the Self-Report Habit Index. *International Journal of Behavioral Nutrition and Physical Activity, 9*, Artículo 102.",
   "url": "https://doi.org/10.1186/1479-5868-9-102"
+ },
+ "REF27": {
+  "apa": "Helms, E. R., Aragon, A. A., & Fitschen, P. J. (2014). Evidence-based recommendations for natural bodybuilding contest preparation: Nutrition and supplementation. *Journal of the International Society of Sports Nutrition, 11*, Artículo 20.",
+  "url": "https://doi.org/10.1186/1550-2783-11-20"
+ },
+ "REF28": {
+  "apa": "Garthe, I., Raastad, T., Refsnes, P. E., Koivisto, A., & Sundgot-Borgen, J. (2011). Effect of two different weight-loss rates on body composition and strength and power-related performance in elite athletes. *International Journal of Sport Nutrition and Exercise Metabolism, 21*(2), 97–104.",
+  "url": "https://doi.org/10.1123/ijsnem.21.2.97"
+ },
+ "REF29": {
+  "apa": "Iraki, J., Fitschen, P., Espinar, S., & Helms, E. (2019). Nutrition recommendations for bodybuilders in the off-season: A narrative review. *Sports, 7*(7), Artículo 154.",
+  "url": "https://doi.org/10.3390/sports7070154"
+ },
+ "REF30": {
+  "apa": "Barakat, C., Pearson, J., Escalante, G., Campbell, B., & De Souza, E. O. (2020). Body recomposition: Can trained individuals build muscle and lose fat at the same time? *Strength and Conditioning Journal, 42*(5), 7–21.",
+  "url": "https://doi.org/10.1519/SSC.0000000000000584"
+ },
+ "REF31": {
+  "apa": "Ashwell, M., Gunn, P., & Gibson, S. (2012). Waist-to-height ratio is a better screening tool than waist circumference and BMI for adult cardiometabolic risk factors: Systematic review and meta-analysis. *Obesity Reviews, 13*(3), 275–286.",
+  "url": "https://doi.org/10.1111/j.1467-789X.2011.00952.x"
+ },
+ "REF32": {
+  "apa": "National Institute for Health and Care Excellence. (2025). *Overweight and obesity management* (NICE guideline NG246).",
+  "url": "https://www.nice.org.uk/guidance/ng246"
  }
 };

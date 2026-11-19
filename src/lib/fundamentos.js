@@ -80,6 +80,12 @@ export const FUNDAMENTOS = [
   ]],
   ['Seguimiento', [
     {
+      id: 'medidas', t: 'Cómo lee PARE tus medidas',
+      x: 'Mira la tendencia del peso de las últimas 4 semanas (regresión, no días sueltos), el cambio de cintura en 3-9 semanas y si tu fuerza sube o baja, y lo compara con tu fase. En déficit, el ritmo recomendado para perder grasa conservando el músculo es del 0,5-1 % del peso a la semana; más rápido se pierde más masa magra. En superávit, del 0,25-0,5 % semanal (algo menos si llevas años entrenando). En mantenimiento, el peso estable con la cintura bajando y la fuerza subiendo es la señal de recomposición. La relación cintura/altura por debajo de 0,5 es la referencia de grasa abdominal saludable.',
+      criterio: 'Los umbrales de «estable» (±0,25 % semanal) y de error de la cinta (1 cm) son de PARE. Es una lectura orientativa, no un diagnóstico.',
+      refs: ['REF27', 'REF28', 'REF29', 'REF30', 'REF31', 'REF32'],
+    },
+    {
       id: 'adherencia', t: 'La revisión de cada dos semanas',
       x: 'Las preguntas están adaptadas de tres cuestionarios validados: el de adherencia percibida a la dieta (PDAQ), el de adherencia al ejercicio prescrito (EARS) y el de automaticidad del hábito (SRBAI). Se han acortado y pasado a respuestas de tocar.',
       criterio: 'Al adaptarlas, la validación original no se traslada tal cual. El reparto de la nota de entreno (60 % sesiones hechas, 40 % respuestas) es criterio de PARE: pesa más lo que se mide que lo que se recuerda.',

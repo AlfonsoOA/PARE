@@ -7,6 +7,7 @@
   import { estadosEjercicios } from '../lib/avisos.js';
   import { grasaNavy } from '../lib/plan.js';
   import { MEDIDAS_EXTRA } from '../lib/medidas.js';
+  import { interpretarMedidas } from '../lib/interpretacion.js';
   import { sumar } from '../lib/dieta.js';
   import { fmt, fmtCarga, fmtNum, fmtFecha, fmtMin, mostrar, ud } from '../lib/unidades.js';
   import Grafica from '../componentes/Grafica.svelte';
@@ -114,6 +115,15 @@
     </div>
 
   {:else if sub === 'cuerpo'}
+    {@const lectura_ = interpretarMedidas(d, hoyISO())}
+    <div class="tarjeta">
+      <span class="etiqueta">Qué dicen tus medidas</span>
+      <p class="sec peq">Fase: <b>{({ deficit: 'déficit', mantenimiento: 'mantenimiento', superavit: 'superávit' })[d.perfil.faseDieta || 'mantenimiento']}</b>{lectura ? '' : ' (se cambia en Yo → Perfil)'}.</p>
+      <ul class="lectura">
+        {#each lectura_ as l}<li class={l.tipo}><span class="punto"></span><span>{l.t}</span></li>{/each}
+      </ul>
+      <p class="sec peq">Lectura orientativa: tendencias de varias semanas, no días sueltos. <PorQue id="medidas" texto="Cómo lo calcula PARE" /></p>
+    </div>
     <div class="tarjeta">
       <div class="fila entre"><span class="etiqueta">Peso ({ud()})</span>{#if !lectura}<button class="enlace" onclick={() => (medir = true)}>Anotar</button>{/if}</div>
       <Grafica puntos={pesos} media={mediaMovil} unidad={ud()} />
@@ -225,6 +235,11 @@
 {#if medir}<AnotarMedida cerrar={() => (medir = false)} />{/if}
 
 <style>
+  .lectura { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; line-height: 1.45; }
+  .lectura li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+  .lectura .punto { width: 10px; height: 10px; border-radius: 50%; flex: none; margin-top: 6px; background: var(--texto2); }
+  .lectura .bien .punto { background: var(--comer); }
+  .lectura .aviso .punto { background: var(--aviso); }
   .marca { margin-right: 12px; }
   .pestanas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; padding: 4px; }
   .pestanas button { padding: 0 6px; white-space: nowrap; background: none; border: 0; border-radius: 9px; min-height: 40px; color: var(--texto2); font-size: 13px; cursor: pointer; }
