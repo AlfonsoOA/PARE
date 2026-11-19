@@ -1,8 +1,8 @@
 // Generado por scripts/preparar-datos.mjs desde datos/catalogo_pare.json (referencias). No editar a mano.
 export const REFS = {
  "REF01": {
-  "apa": "Pelland, J. C., Remmert, J. F., Robinson, Z. P., Hinson, S. R., & Zourdos, M. C. (2024). The resistance training dose response: Meta-regressions exploring the effects of weekly volume and frequency on muscle hypertrophy and strength gains [Preprint]. *SportRxiv*.",
-  "url": "https://sportrxiv.org/index.php/server/preprint/view/460"
+  "apa": "Pelland, J. C., Remmert, J. F., Robinson, Z. P., Hinson, S. R., & Zourdos, M. C. (2026). The resistance training dose response: Meta-regressions exploring the effects of weekly volume and frequency on muscle hypertrophy and strength gains. *Sports Medicine, 56*(2), 481–505.",
+  "url": "https://doi.org/10.1007/s40279-025-02344-w"
  },
  "REF02": {
   "apa": "Schoenfeld, B. J., Ogborn, D., & Krieger, J. W. (2017). Dose-response relationship between weekly resistance training volume and increases in muscle mass: A systematic review and meta-analysis. *Journal of Sports Sciences, 35*(11), 1073–1082.",
