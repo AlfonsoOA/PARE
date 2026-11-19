@@ -69,6 +69,7 @@
       'Pésate 1-2 veces por semana, en ayunas: toca la tarjeta del peso en Hoy.',
       'Progreso → Ejercicios: si cada ejercicio progresa, está estable o estancado, con su gráfica y tus récords. También desde el propio ejercicio, con «Mi progreso».',
       'Progreso → Volumen: las series por grupo muscular de la semana, frente a la banda recomendada.',
+      'Al anotar el peso, en «Más medidas» puedes apuntar cadera, pecho, brazo, muslo y lo que da tu báscula (grasa, músculo, visceral). Salen en Progreso → Cuerpo → Otras medidas, junto con la grasa estimada con cintura y cuello.',
       'Progreso → Cuerpo: peso, cintura y «La báscula frente a lo que comes», que compara lo que deberías estar cambiando de peso con lo que marca la báscula.',
     ]],
     ['revision', 'La revisión de cada dos semanas', [

@@ -2,6 +2,7 @@
 // tipo 'copia' = copia de seguridad completa · 'deportista' = lo que el deportista manda a su entrenador
 // · 'cambios' = lo que el entrenador devuelve (rutina o dieta propuestas).
 import { app, aviso, reemplazarDatos, hoyISO, ESQUEMA, ir } from './estado.svelte.js';
+import { fundirMedidas } from './medidas.js';
 
 export const INCLUYE = [['rutina', 'Rutina'], ['dieta', 'Dieta'], ['progreso', 'Progreso (sesiones, medidas y adherencia)'], ['test', 'Test de inicio']];
 
@@ -117,6 +118,15 @@ export async function abrirArchivo(file) {
     aviso(nuevas.length === 1 ? `Receta añadida: ${nuevas[0].n}` : `${nuevas.length} recetas añadidas`);
     app.subComer = 'recetas'; app.filtroRecetas = 'mias';
     app.vista = null; app.tab = 'comer';
+    return;
+  }
+  if (obj.tipo === 'medidas') {
+    // historial de pesadas y medidas (de antes de usar PARE, de otra app o de la báscula): se junta por fecha
+    const n = fundirMedidas(d.medidas, obj.datos?.medidas);
+    if (obj.datos?.altura && !d.perfil.altura) d.perfil.altura = +obj.datos.altura;
+    if (!n) { aviso('El archivo no trae medidas.'); return; }
+    aviso(`${n} ${n === 1 ? 'día' : 'días'} de medidas añadidos a tu progreso`);
+    app.subProgreso = 'cuerpo'; app.vista = null; app.tab = 'progreso';
     return;
   }
   aviso('Tipo de archivo PARE desconocido.');
