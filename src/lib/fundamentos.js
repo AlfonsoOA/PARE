@@ -55,6 +55,12 @@ export const FUNDAMENTOS = [
       refs: ['REF05', 'REF06', 'REF07'],
     },
     {
+      id: 'wod', t: 'Los WOD de la biblioteca',
+      x: 'Los entrenamientos de referencia (Fran, Grace, Murph, Cindy…) y sus estándares RX vienen de la metodología CrossFit, recogida en su guía oficial de nivel 1. Escalar es ajustar el peso, las repeticiones o el movimiento manteniendo el estímulo del entrenamiento. Repetir el mismo WOD y comparar tu tiempo o tus rondas es la forma de ver si mejoras.',
+      criterio: 'Las versiones escaladas que propone PARE son criterio propio.',
+      refs: ['REF11'],
+    },
+    {
       id: 'e1rm', t: 'El 1RM estimado',
       x: 'Para comparar series con pesos y repeticiones distintos, PARE estima tu máximo a una repetición con la fórmula de Epley. Es una estimación: las ecuaciones de 1RM aciertan razonablemente en ejercicios como el press de banca o la sentadilla, pero ninguna es exacta en todos los ejercicios ni para todo el mundo, y pierden precisión por encima de unas 10 repeticiones.',
       criterio: 'PARE usa el 1RM estimado para comparar tus series entre sí (si progresas), no como tu máximo real.',

@@ -87374,12 +87374,12 @@
   },
   {
    "id_referencia": "REF11",
-   "referencia": "CrossFit, Inc. CrossFit Level 1 Training Guide.",
-   "tipo": "Guía técnica",
-   "doi_url": "https://www.crossfit.com",
+   "referencia": "CrossFit, LLC. (2020). CrossFit level 1 training guide (3.ª ed.). CrossFit, LLC.",
+   "tipo": "Guía",
+   "doi_url": "https://library.crossfit.com/free/pdf/CFJ_English_Level1_TrainingGuide.pdf",
    "uso_en_pare": "Definiciones de formatos y estándares de movimiento.",
-   "verificado": "Pendiente de concretar edición",
-   "apa7": "CrossFit, Inc. (s. f.). *CrossFit Level 1 training guide*."
+   "verificado": "SI (3.ª edición, © 2002–2020, comprobada nov. 2026)",
+   "apa7": "CrossFit, LLC. (2020). *CrossFit level 1 training guide* (3.ª ed.). CrossFit, LLC."
   },
   {
    "id_referencia": "REF13",

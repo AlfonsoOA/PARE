@@ -41,8 +41,8 @@ export const REFS = {
   "url": "https://github.com/yuhonas/free-exercise-db"
  },
  "REF11": {
-  "apa": "CrossFit, Inc. (s. f.). *CrossFit Level 1 training guide*.",
-  "url": "https://www.crossfit.com"
+  "apa": "CrossFit, LLC. (2020). *CrossFit level 1 training guide* (3.ª ed.). CrossFit, LLC.",
+  "url": "https://library.crossfit.com/free/pdf/CFJ_English_Level1_TrainingGuide.pdf"
  },
  "REF13": {
   "apa": "Wurm, B., VanderZanden, T., Spadavecchia, M., Durocher, J., Bickham, C., Petushek, E., & Ebben, W. (2010). Kinetic analysis of several variations of push-ups. *ISBS Conference Proceedings Archive, 28*.",
