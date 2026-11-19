@@ -61,6 +61,7 @@
       'La dieta va por raciones, sin tener que pesar. Una ración de proteína (P) son 25 g de proteína, unos 120 g de pollo. Una de hidratos (HC) son 40 g, unos 55 g de arroz en crudo o 80 g de pan. Una de grasa (G) son 10 g, una cucharada de aceite.',
       'Comer → El día: cada comida tiene sus fichas de raciones. Toca una cuando la tomes. Si prefieres pesar, «+ Añadir alimento o receta».',
       'Comer → Mi menú: qué comer cada día de la semana, con las kcal y la proteína de cada comida. Cámbialo a tu gusto: toca los gramos de un alimento para cambiarlos y verás sus kcal y las de la comida al momento; con ✕ lo quitas y con «+ Añadir» pones otro. Si comes lo del menú, en El día pulsa «Tomado tal cual».',
+      'Comer → El día: toca una cifra del «Total del día» (kcal, proteína, hidratos o grasa) para ver de dónde sale, ordenado de más a menos, en ese día o en la media de los últimos 7. Las recetas se abren para ver qué aporta cada ingrediente. Así sabes qué recortar.',
       'Comer → Recetas: arriba tienes un buscador por palabras, que mira el nombre y los ingredientes («paella», «sepia», «avena»). Al abrir una, las cantidades se ajustan a tu comida y trae su protocolo con los trucos. Me gusta / No me gusta enseña a PARE qué proponerte.',
       'Comer → Raciones: cuánto es una ración de cada alimento.',
       'Comer → Suplementos: cuáles tienen respaldo (proteína, creatina) y cuáles solo según tu caso (cafeína, fibra, omega-3, sales, beta-alanina), con cuánto, cuándo, cómo, pros, contras y los estudios.',

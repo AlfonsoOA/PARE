@@ -8,6 +8,8 @@
   import Hoja from '../componentes/Hoja.svelte';
   import AnadirAlimento from '../componentes/AnadirAlimento.svelte';
   import FichaReceta from '../componentes/FichaReceta.svelte';
+  import DesgloseMacros from '../componentes/DesgloseMacros.svelte';
+  let desgloseMacro = $state(null); // 'kcal' | 'p' | 'hc' | 'g'
   import { momentosDe, NOMBRE_MOMENTO, recetasOrdenadas, usosRecetas, MOMENTO_DE_COMIDA, todasRecetas, ESTILOS, ESTILO_DE } from '../lib/recetas.js';
   import { proponerMenu } from '../lib/menu.js';
   import { aviso } from '../lib/estado.svelte.js';
@@ -147,11 +149,12 @@
     <div class="tarjeta">
       <div class="fila entre"><span class="etiqueta">Total del día</span>{#if d.dieta.hidratosExtra && tipoDeDia(fecha) === true}<span class="insignia bien">Día de más hidratos</span>{/if}</div>
       <div class="fila entre envolver">
-        <div><p class="cifra">{fmtNum(tot.kcal)}</p><p class="sec peq">de {fmtNum(kcalObj)} kcal</p></div>
-        <div><p class="cifra">{fmtNum(tot.p)}</p><p class="sec peq">de {d.dieta.p} g prot.</p></div>
-        <div><p class="cifra">{fmtNum(tot.hc)}</p><p class="sec peq">{d.dieta.hc ? `de ${d.dieta.hc} g hidratos` : 'g hidratos'}</p></div>
-        <div><p class="cifra">{fmtNum(tot.g)}</p><p class="sec peq">{d.dieta.g ? `de ${d.dieta.g} g grasa` : 'g grasa'}</p></div>
+        <button class="macro" onclick={() => (desgloseMacro = 'kcal')} disabled={!reg.length}><span class="cifra">{fmtNum(tot.kcal)}</span><span class="sec peq">de {fmtNum(kcalObj)} kcal</span></button>
+        <button class="macro" onclick={() => (desgloseMacro = 'p')} disabled={!reg.length}><span class="cifra">{fmtNum(tot.p)}</span><span class="sec peq">de {d.dieta.p} g prot.</span></button>
+        <button class="macro" onclick={() => (desgloseMacro = 'hc')} disabled={!reg.length}><span class="cifra">{fmtNum(tot.hc)}</span><span class="sec peq">{d.dieta.hc ? `de ${d.dieta.hc} g hidratos` : 'g hidratos'}</span></button>
+        <button class="macro" onclick={() => (desgloseMacro = 'g')} disabled={!reg.length}><span class="cifra">{fmtNum(tot.g)}</span><span class="sec peq">{d.dieta.g ? `de ${d.dieta.g} g grasa` : 'g grasa'}</span></button>
       </div>
+      {#if reg.length}<p class="sec peq" style="margin:0">Toca una cifra para ver de dónde sale.</p>{/if}
       {#if reg.some((e) => e.tipo !== 'racion')}
         {@const rm = racionesDeMacros(tot)}
         {@const om = pautaEnMacros(obj)}
@@ -299,7 +302,12 @@
   <FichaReceta receta={recetaAbierta.r} comidaInicial={recetaAbierta.comida ?? null} cerrar={() => (recetaAbierta = null)} />
 {/if}
 
+{#if desgloseMacro}<Hoja titulo="De dónde sale" cerrar={() => (desgloseMacro = null)}><DesgloseMacros {fecha} bind:macro={desgloseMacro} /></Hoja>{/if}
+
 <style>
+  .macro { background: none; border: 0; padding: 4px 2px; color: inherit; text-align: left; font: inherit; cursor: pointer; border-radius: 8px; }
+  .macro:not(:disabled) .cifra { text-decoration: underline dotted var(--texto2); text-underline-offset: 5px; text-decoration-thickness: 2px; }
+  .macro span { display: block; }
   .raciones-auto { margin: 0; line-height: 1.5; }
   .tomado { gap: 14px; align-items: center; }
   .hecho { color: var(--comer); font-weight: 700; }

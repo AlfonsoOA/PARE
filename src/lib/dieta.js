@@ -131,3 +131,51 @@ export function objetivoComidaGramos(dieta, c) {
   const kcalMacros = 4 * dieta.p + 4 * dieta.hc + 9 * dieta.g || 1;
   return { p, hc, g, kcal: ((4 * p + 4 * hc + 9 * g) * dieta.kcal) / kcalMacros };
 }
+
+// ── De dónde sale cada macro ──
+const MACRO_NOMBRE = { kcal: 'Calorías', p: 'Proteína', hc: 'Hidratos', g: 'Grasa' };
+export { MACRO_NOMBRE };
+/** Partes de una entrada: [{clave, nombre, m: {kcal,p,hc,g}, hijos?}] (las recetas, con sus ingredientes). */
+function partes(e) {
+  const m = (x) => ({ kcal: x.kcal, p: x.p, hc: x.hc, g: x.g });
+  if (e.tipo === 'racion') return { clave: 'r:' + e.grupo, nombre: `Ración de ${NOMBRE_RACION[e.grupo].toLowerCase()} (sin pesar)`, m: m(aporte(e)) };
+  if (e.tipo === 'alimento') return { clave: 'a:' + e.aid, nombre: alimento(e.aid)?.n ?? 'Alimento', m: m(aporte(e)) };
+  const x = receta(e.rid);
+  const total = m(aporte(e));
+  let hijos = [];
+  if (e.tipo === 'plato') hijos = (e.items || []).map((it) => ({ clave: 'a:' + it.aid, nombre: alimento(it.aid)?.n ?? '¿?', m: m(aporte({ tipo: 'alimento', aid: it.aid, g: it.g })) }));
+  else if (x?.ingredientes?.length) {
+    const n = x.tipo === 'lote' ? Math.max(1, +x.porciones || 1) : 1;
+    hijos = x.ingredientes.map((i) => ({ clave: 'a:' + i.id, nombre: alimento(i.id)?.n ?? i.n ?? '¿?', m: m(aporte({ tipo: 'alimento', aid: i.id, g: (i.g * e.porciones) / n })) }));
+    // se reescalan para que sumen lo mismo que la receta (que puede llevar sus macros ya calculados)
+    for (const k of ['kcal', 'p', 'hc', 'g']) { const s = hijos.reduce((a, h) => a + h.m[k], 0); if (s > 0) for (const h of hijos) h.m[k] *= total[k] / s; }
+  }
+  return { clave: 'x:' + e.rid, nombre: x?.n ?? 'Receta', m: total, hijos };
+}
+/**
+ * Desglose de lo anotado en varios días: agrupa por alimento o receta y suma (los ingredientes de las recetas, también).
+ * Devuelve { dias, lineas: [{clave, nombre, comidas:Set, veces, m, hijos:[…]}] } con m en total (divide entre dias para la media).
+ */
+export function desglose(fechas) {
+  const mapa = new Map();
+  let dias = 0;
+  const sumarM = (a, b) => { for (const k of ['kcal', 'p', 'hc', 'g']) a[k] += b[k]; };
+  for (const f of fechas) {
+    const reg = delDia(f);
+    if (!reg.length) continue;
+    dias++;
+    for (const e of reg) {
+      const p = partes(e);
+      let l = mapa.get(p.clave);
+      if (!l) mapa.set(p.clave, (l = { clave: p.clave, nombre: p.nombre, comidas: new Set(), dias: new Set(), m: { kcal: 0, p: 0, hc: 0, g: 0 }, hijos: new Map() }));
+      l.comidas.add(e.comida); l.dias.add(f);
+      sumarM(l.m, p.m);
+      for (const h of p.hijos || []) {
+        let y = l.hijos.get(h.clave);
+        if (!y) l.hijos.set(h.clave, (y = { nombre: h.nombre, m: { kcal: 0, p: 0, hc: 0, g: 0 } }));
+        sumarM(y.m, h.m);
+      }
+    }
+  }
+  return { dias, lineas: [...mapa.values()].map((l) => ({ ...l, hijos: [...l.hijos.values()] })) };
+}
