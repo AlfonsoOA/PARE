@@ -2526,6 +2526,122 @@
     "leche"
    ],
    "coste_porcion": 2.42
+  },
+  {
+   "id_receta": "RE090",
+   "nombre_es": "Mousse de chocolate proteica",
+   "tipo": "lote",
+   "porciones": 2,
+   "momento": "postre;merienda",
+   "tiempo_min": 5,
+   "estilo": "fit",
+   "peso_final_g": 301,
+   "notas": "Por ración: unas 130 kcal y 25 g de proteína (unas 5 kcal por gramo de proteína). Versión crujiente: 5 g de chocolate 85 % rallado por encima (+30 kcal). Si te gusta más densa, tipo trufa, cámbiale la mitad del queso batido por skyr.",
+   "pasos": "Tamizar: pasa el cacao y la whey por un colador fino sobre el queso batido. Así no quedan grumos secos, que es lo que estropea estas mousses. | Batir: con varillas eléctricas, 1-2 minutos, empezando despacio y subiendo. Al final, la pizca de sal: no se nota, pero hace que el chocolate sepa a chocolate. | Reposar: reparte en 2 vasitos y 30 minutos de nevera. Espesa y queda más cremosa.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "2 porciones; cada una: 1 P · 0.1 HC · 0.1 G",
+   "kcal_porcion": 131,
+   "proteina_porcion": 24.4,
+   "hidratos_porcion": 5.1,
+   "grasa_porcion": 0.8,
+   "fibra_porcion": 1.6,
+   "peso_total_g": 301,
+   "alergenos": [
+    "leche"
+   ],
+   "coste_porcion": 1.08
+  },
+  {
+   "id_receta": "RE091",
+   "nombre_es": "Flan de chocolate proteico",
+   "tipo": "lote",
+   "porciones": 4,
+   "momento": "postre;merienda",
+   "tiempo_min": 15,
+   "estilo": "fit",
+   "peso_final_g": 577,
+   "notas": "Por ración: unas 115 kcal y 17 g de proteína (unas 7 kcal por gramo, como tus natillas, pero de textura más firme, tipo flan). Si lo quieres más tipo natilla, usa solo 6 g de gelatina.",
+   "pasos": "Hidratar: espolvorea la gelatina sobre 100 ml de la leche fría y déjala 5 minutos, hasta que se hinche. | Calentar: el resto de la leche con el cacao y el eritritol, removiendo con varillas, hasta que humee. Sin que llegue a hervir. | Disolver: fuera del fuego, añade la gelatina hidratada y remueve hasta que no quede ningún grano. | La whey, en templado: espera a que baje a unos 50-60 °C (se puede meter el dedo sin quemarse) y añade la whey y la vainilla batiendo fuerte. En caliente, la whey se corta y hace grumos. | Cuajar: reparte en 4 flaneras o vasitos y al menos 4 horas de nevera.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "4 porciones; cada una: 0.7 P · 0.2 HC · 0.1 G",
+   "kcal_porcion": 114,
+   "proteina_porcion": 17.2,
+   "hidratos_porcion": 6.8,
+   "grasa_porcion": 0.9,
+   "fibra_porcion": 1.2,
+   "peso_total_g": 577,
+   "alergenos": [
+    "leche"
+   ],
+   "coste_porcion": 0.7
+  },
+  {
+   "id_receta": "RE092",
+   "nombre_es": "Helado nice cream de chocolate y plátano",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "postre;merienda",
+   "tiempo_min": 5,
+   "estilo": "fit",
+   "peso_final_g": null,
+   "notas": "Por ración: unas 270 kcal, 28 g de proteína y 30 g de hidratos: mejor después de entrenar. Es el que no se hace ladrillo, porque se come recién hecho: el plátano congelado hace de base cremosa. Variantes: con 10 g de crema de cacahuete (+60 kcal) o con fresas congeladas en lugar de la mitad del plátano.",
+   "pasos": "La víspera: pela el plátano muy maduro (con motas), córtalo en rodajas y congélalo extendido en un táper o en una bolsa. En rodajas se tritura bien; entero, no. | Triturar: en el vaso de la batidora, las rodajas recién sacadas, la whey, el cacao y la mitad de la leche. Tritura a golpes, parando a bajar lo de las paredes con una espátula. Añade el resto de la leche solo si no gira. | Servir al momento: sale con textura de helado suave. Si lo quieres más firme, 15-20 minutos al congelador, no más.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 268,
+   "proteina_porcion": 28.4,
+   "hidratos_porcion": 29.9,
+   "grasa_porcion": 1.7,
+   "fibra_porcion": 4.5,
+   "peso_total_g": 213,
+   "alergenos": [
+    "leche"
+   ],
+   "coste_porcion": 1.33
+  },
+  {
+   "id_receta": "RE093",
+   "nombre_es": "Helado de yogur y chocolate (en cubitera)",
+   "tipo": "lote",
+   "porciones": 2,
+   "momento": "postre;merienda",
+   "tiempo_min": 10,
+   "estilo": "fit",
+   "peso_final_g": 443,
+   "notas": "Por ración: unas 190 kcal y 34 g de proteína (unas 6 kcal por gramo). Por qué los otros quedan como ladrillo: el agua de la mezcla se congela en cristales grandes y no hay grasa ni azúcar que lo impidan. Aquí se evita congelando en trozos pequeños y triturando al servir. Si lo tienes, 1 g de goma xantana en la mezcla lo deja más cremoso.",
+   "pasos": "Mezclar: tritura el skyr, la whey, el cacao, el eritritol, la sal y 60 g de la leche hasta que quede liso. | Congelar en cubitos, el truco: reparte la mezcla en una cubitera y congela al menos 4 horas. En cubitos pequeños no se forma el bloque de hielo de un táper. | Al comer: saca los cubitos de una ración, déjalos 5 minutos fuera y tritúralos a golpes con los otros 20 g de leche hasta que quede cremoso, como un helado de bola. | Guardar: los cubitos aguantan semanas en una bolsa de congelación. Puedes hacer un lote grande y sacar solo los de una ración.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "2 porciones; cada una: 1.3 P · 0.2 HC · 0.1 G",
+   "kcal_porcion": 192,
+   "proteina_porcion": 33.6,
+   "hidratos_porcion": 9,
+   "grasa_porcion": 1.2,
+   "fibra_porcion": 1.9,
+   "peso_total_g": 443,
+   "alergenos": [
+    "leche"
+   ],
+   "coste_porcion": 1.45
   }
  ],
  "receta_ingredientes": [
@@ -8891,6 +9007,195 @@
    "nombre_alimento": "Orégano seco",
    "gramos": 0.5,
    "nota": null
+  },
+  {
+   "id_receta": "RE090",
+   "nombre_receta": "Mousse de chocolate proteica",
+   "orden": 1,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 250,
+   "nota": "bien frío"
+  },
+  {
+   "id_receta": "RE090",
+   "nombre_receta": "Mousse de chocolate proteica",
+   "orden": 2,
+   "id_alimento": "AL0189",
+   "nombre_alimento": "Proteína de suero (whey aislada)",
+   "gramos": 30,
+   "nota": "de chocolate"
+  },
+  {
+   "id_receta": "RE090",
+   "nombre_receta": "Mousse de chocolate proteica",
+   "orden": 3,
+   "id_alimento": "AL0195",
+   "nombre_alimento": "Cacao puro desgrasado en polvo",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE090",
+   "nombre_receta": "Mousse de chocolate proteica",
+   "orden": 4,
+   "id_alimento": "AL0197",
+   "nombre_alimento": "Eritritol",
+   "gramos": 10,
+   "nota": "o el edulcorante que uses, al gusto"
+  },
+  {
+   "id_receta": "RE090",
+   "nombre_receta": "Mousse de chocolate proteica",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": "1 pizca"
+  },
+  {
+   "id_receta": "RE091",
+   "nombre_receta": "Flan de chocolate proteico",
+   "orden": 1,
+   "id_alimento": "AL0179",
+   "nombre_alimento": "Leche desnatada con proteínas (+proteínas)",
+   "gramos": 500,
+   "nota": null
+  },
+  {
+   "id_receta": "RE091",
+   "nombre_receta": "Flan de chocolate proteico",
+   "orden": 2,
+   "id_alimento": "AL0243",
+   "nombre_alimento": "Gelatina neutra en polvo",
+   "gramos": 10,
+   "nota": "unos 2 sobres; la neutra, no la de sabores"
+  },
+  {
+   "id_receta": "RE091",
+   "nombre_receta": "Flan de chocolate proteico",
+   "orden": 3,
+   "id_alimento": "AL0195",
+   "nombre_alimento": "Cacao puro desgrasado en polvo",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE091",
+   "nombre_receta": "Flan de chocolate proteico",
+   "orden": 4,
+   "id_alimento": "AL0189",
+   "nombre_alimento": "Proteína de suero (whey aislada)",
+   "gramos": 30,
+   "nota": "de chocolate o de vainilla"
+  },
+  {
+   "id_receta": "RE091",
+   "nombre_receta": "Flan de chocolate proteico",
+   "orden": 5,
+   "id_alimento": "AL0197",
+   "nombre_alimento": "Eritritol",
+   "gramos": 20,
+   "nota": "al gusto"
+  },
+  {
+   "id_receta": "RE091",
+   "nombre_receta": "Flan de chocolate proteico",
+   "orden": 6,
+   "id_alimento": "AL0204",
+   "nombre_alimento": "Aroma de vainilla",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE092",
+   "nombre_receta": "Helado nice cream de chocolate y plátano",
+   "orden": 1,
+   "id_alimento": "AL0103",
+   "nombre_alimento": "Plátano",
+   "gramos": 120,
+   "nota": "1 mediano y maduro, troceado y congelado"
+  },
+  {
+   "id_receta": "RE092",
+   "nombre_receta": "Helado nice cream de chocolate y plátano",
+   "orden": 2,
+   "id_alimento": "AL0189",
+   "nombre_alimento": "Proteína de suero (whey aislada)",
+   "gramos": 25,
+   "nota": "de chocolate"
+  },
+  {
+   "id_receta": "RE092",
+   "nombre_receta": "Helado nice cream de chocolate y plátano",
+   "orden": 3,
+   "id_alimento": "AL0195",
+   "nombre_alimento": "Cacao puro desgrasado en polvo",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE092",
+   "nombre_receta": "Helado nice cream de chocolate y plátano",
+   "orden": 4,
+   "id_alimento": "AL0179",
+   "nombre_alimento": "Leche desnatada con proteínas (+proteínas)",
+   "gramos": 60,
+   "nota": "muy fría; añádela poco a poco"
+  },
+  {
+   "id_receta": "RE093",
+   "nombre_receta": "Helado de yogur y chocolate (en cubitera)",
+   "orden": 1,
+   "id_alimento": "AL0185",
+   "nombre_alimento": "Skyr natural",
+   "gramos": 300,
+   "nota": null
+  },
+  {
+   "id_receta": "RE093",
+   "nombre_receta": "Helado de yogur y chocolate (en cubitera)",
+   "orden": 2,
+   "id_alimento": "AL0189",
+   "nombre_alimento": "Proteína de suero (whey aislada)",
+   "gramos": 30,
+   "nota": "de chocolate"
+  },
+  {
+   "id_receta": "RE093",
+   "nombre_receta": "Helado de yogur y chocolate (en cubitera)",
+   "orden": 3,
+   "id_alimento": "AL0195",
+   "nombre_alimento": "Cacao puro desgrasado en polvo",
+   "gramos": 12,
+   "nota": null
+  },
+  {
+   "id_receta": "RE093",
+   "nombre_receta": "Helado de yogur y chocolate (en cubitera)",
+   "orden": 4,
+   "id_alimento": "AL0197",
+   "nombre_alimento": "Eritritol",
+   "gramos": 20,
+   "nota": "al gusto"
+  },
+  {
+   "id_receta": "RE093",
+   "nombre_receta": "Helado de yogur y chocolate (en cubitera)",
+   "orden": 5,
+   "id_alimento": "AL0179",
+   "nombre_alimento": "Leche desnatada con proteínas (+proteínas)",
+   "gramos": 80,
+   "nota": "60 g en la mezcla y 20 g al triturar"
+  },
+  {
+   "id_receta": "RE093",
+   "nombre_receta": "Helado de yogur y chocolate (en cubitera)",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": "1 pizca"
   }
  ]
 }
