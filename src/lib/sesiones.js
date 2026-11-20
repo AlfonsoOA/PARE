@@ -1,7 +1,7 @@
 // Secuencia de sesiones, sesión en curso y cierre de sesión.
 import { app, uuid, hoyISO } from './estado.svelte.js';
 import { ej } from './catalogo.js';
-import { duracionSesion, proponerSiguiente, usaPesoCorporal } from './entreno.js';
+import { duracionSesion, proponerSiguiente, usaPesoCorporal, esMovilidad } from './entreno.js';
 
 // ---------- Secuencia: lo que toca ----------
 export function sesionPropuesta(d = app.datos) {
@@ -157,7 +157,7 @@ export function propuestasPara(sesionHecha) {
   const r = app.datos.rutina;
   const ses = r?.sesiones.find((s) => s.id === sesionHecha.sesionId);
   if (!ses) return [];
-  return ses.items.map((it) => {
+  return ses.items.filter((it) => !esMovilidad(ej(it.ej))).map((it) => {
     const hecho = sesionHecha.ejercicios.find((x) => x.uid === it.uid) ?? sesionHecha.ejercicios.find((x) => x.ej === it.ej);
     const tope = app.datos.topes?.[it.ej] ?? null;
     const { prop, motivo, sube, cambiar } = proponerSiguiente(it, hecho, app.datos.ajustes, tope);

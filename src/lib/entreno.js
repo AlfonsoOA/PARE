@@ -38,9 +38,13 @@ export const esBasico = (e) => !!e && e.mec === 'compuesto' && COMPUESTO_PESADO.
 export function esExigente(e) {
   return esBasico(e) && (e.carga === 'externa' || e.carga === 'peso_corporal');
 }
+/** Estiramientos y automasaje: se anotan por segundos, no cuentan en el volumen ni tienen progresión. */
+export const esMovilidad = (e) => e?.tipo === 'estiramiento' || e?.tipo === 'automasaje';
+
 export function descansoPorDefecto(idEj, objetivo) {
   const e = ej(idEj);
   if (!e) return 90;
+  if (esMovilidad(e)) return 15;
   if (e.pat === 'levantamiento_olimpico') return 180;
   if (e.pat === 'salto') return 90;
   if (e.pat === 'locomocion_cardio' || e.ud !== 'repeticiones') return 60;
@@ -336,6 +340,7 @@ export function estadoEjercicio(hist, nivel, faseDieta, hoy, tope = null) {
 /** Doble progresión: propuesta para la próxima vez a partir de lo hecho hoy. */
 export function proponerSiguiente(item, hecho, ajustes, tope = null) {
   const e = ej(item.ej);
+  if (esMovilidad(e)) return { prop: { ...item }, motivo: 'Estiramiento: se mantiene igual.' };
   const series = (hecho?.series || []).filter((z) => z.hecha);
   const prop = { ...item };
   if (!series.length) return { prop, motivo: 'Sin series hechas: se mantiene.' };

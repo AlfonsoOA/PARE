@@ -183,5 +183,21 @@ export const REFS = {
  "REF46": {
   "apa": "Ribeiro, A., da Silva, J. A., Nascimento, M., Martinho, D., dos Santos, L., de Salles, B., Mayhew, J., & Cyrino, E. S. (2024). Accuracy of 1RM prediction equations before and after resistance training in three different lifts. *International Journal of Strength and Conditioning, 4*(1).",
   "url": "https://doi.org/10.47206/ijsc.v4i1.327"
+ },
+ "REF47": {
+  "apa": "Behm, D. G., Blazevich, A. J., Kay, A. D., & McHugh, M. (2016). Acute effects of muscle stretching on physical performance, range of motion, and injury incidence in healthy active individuals: A systematic review. *Applied Physiology, Nutrition, and Metabolism, 41*(1), 1–11.",
+  "url": "https://doi.org/10.1139/apnm-2015-0235"
+ },
+ "REF48": {
+  "apa": "Afonso, J., Clemente, F. M., Nakamura, F. Y., Morouço, P., Sarmento, H., Inman, R. A., & Ramirez-Campillo, R. (2021). The effectiveness of post-exercise stretching in short-term and delayed recovery of strength, range of motion and delayed onset muscle soreness: A systematic review and meta-analysis of randomized controlled trials. *Frontiers in Physiology, 12*, Article 677581.",
+  "url": "https://doi.org/10.3389/fphys.2021.677581"
+ },
+ "REF49": {
+  "apa": "Afonso, J., Ramirez-Campillo, R., Moscão, J., Rocha, T., Zacca, R., Martins, A., Milheiro, A. A., Ferreira, J., Sarmento, H., & Clemente, F. M. (2021). Strength training versus stretching for improving range of motion: A systematic review and meta-analysis. *Healthcare, 9*(4), Article 427.",
+  "url": "https://doi.org/10.3390/healthcare9040427"
+ },
+ "REF50": {
+  "apa": "Wiewelhove, T., Döweling, A., Schneider, C., Hottenrott, L., Meyer, T., Kellmann, M., Pfeiffer, M., & Ferrauti, A. (2019). A meta-analysis of the effects of foam rolling on performance and recovery. *Frontiers in Physiology, 10*, Article 376.",
+  "url": "https://doi.org/10.3389/fphys.2019.00376"
  }
 };

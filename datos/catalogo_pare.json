@@ -790,9 +790,9 @@
   },
   {
    "id_ejercicio": "EJ0022",
-   "nombre_es": "Estiramiento tobillo sobre rodilla",
+   "nombre_es": "Estiramiento de glúteo en figura 4",
    "nombre_en": "Ankle On The Knee",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -805,21 +805,23 @@
    "musculos_principales": [
     "gluteos"
    ],
-   "musculos_secundarios": [],
+   "musculos_secundarios": [
+    "lumbares"
+   ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
    "fraccion_peso_corporal": null,
    "fuente_fraccion": null,
    "mecanica": null,
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
+   "lateralidad": "unilateral",
    "nivel": "principiante",
    "equipamiento_principal": "ninguno",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Ankle_On_The_Knee",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -5330,7 +5332,7 @@
    "id_ejercicio": "EJ0140",
    "nombre_es": "Estiramiento de gemelos con manos en la pared",
    "nombre_en": "Calf Stretch Hands Against Wall",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -5350,14 +5352,14 @@
    "fuente_fraccion": null,
    "mecanica": "aislamiento",
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
+   "lateralidad": "unilateral",
    "nivel": "principiante",
    "equipamiento_principal": "ninguno",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Calf_Stretch_Hands_Against_Wall",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -5520,9 +5522,9 @@
   },
   {
    "id_ejercicio": "EJ0145",
-   "nombre_es": "Estiramiento del gato",
+   "nombre_es": "Gato-vaca",
    "nombre_en": "Cat Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -5533,11 +5535,11 @@
    ],
    "grupos_secundarios": [],
    "musculos_principales": [
-    "lumbares"
+    "lumbares",
+    "espalda_media"
    ],
    "musculos_secundarios": [
-    "espalda_media",
-    "trapecio"
+    "abdominales"
    ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
@@ -5552,7 +5554,7 @@
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Cat_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -5709,9 +5711,9 @@
   },
   {
    "id_ejercicio": "EJ0150",
-   "nombre_es": "Estiramiento lumbar en silla",
+   "nombre_es": "Inclinación lateral sentado",
    "nombre_en": "Chair Lower Back Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -5722,10 +5724,11 @@
    ],
    "grupos_secundarios": [],
    "musculos_principales": [
-    "dorsal_ancho"
+    "lumbares"
    ],
    "musculos_secundarios": [
-    "lumbares"
+    "dorsal_ancho",
+    "abdominales"
    ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
@@ -5733,14 +5736,14 @@
    "fuente_fraccion": null,
    "mecanica": "aislamiento",
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
+   "lateralidad": "unilateral",
    "nivel": "principiante",
-   "equipamiento_principal": "ninguno",
+   "equipamiento_principal": "banco",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Chair_Lower_Back_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -5823,9 +5826,9 @@
   },
   {
    "id_ejercicio": "EJ0153",
-   "nombre_es": "Estiramiento de pecho y hombro anterior",
+   "nombre_es": "Estiramiento de pecho y hombros con pica",
    "nombre_en": "Chest And Front Of Shoulder Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -5836,9 +5839,12 @@
    ],
    "grupos_secundarios": [],
    "musculos_principales": [
-    "pectoral"
+    "pectoral",
+    "deltoides_anterior"
    ],
-   "musculos_secundarios": [],
+   "musculos_secundarios": [
+    "biceps"
+   ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
    "fraccion_peso_corporal": null,
@@ -5852,7 +5858,7 @@
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Chest_And_Front_Of_Shoulder_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -6061,7 +6067,7 @@
    "id_ejercicio": "EJ0159",
    "nombre_es": "Postura del niño",
    "nombre_en": "Child's Pose",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -6070,15 +6076,13 @@
    "grupos_principales": [
     "espalda"
    ],
-   "grupos_secundarios": [
-    "piernas"
-   ],
+   "grupos_secundarios": [],
    "musculos_principales": [
-    "lumbares"
+    "lumbares",
+    "dorsal_ancho"
    ],
    "musculos_secundarios": [
-    "gluteos",
-    "espalda_media"
+    "gluteos"
    ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
@@ -6093,7 +6097,7 @@
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Childs_Pose",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -11956,9 +11960,9 @@
   },
   {
    "id_ejercicio": "EJ0312",
-   "nombre_es": "Estiramiento de isquiotibiales",
+   "nombre_es": "Estiramiento de isquiotibiales tumbado con cinta",
    "nombre_en": "Hamstring Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -11971,21 +11975,23 @@
    "musculos_principales": [
     "isquiotibiales"
    ],
-   "musculos_secundarios": [],
+   "musculos_secundarios": [
+    "gemelos_soleo"
+   ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
    "fraccion_peso_corporal": null,
    "fuente_fraccion": null,
    "mecanica": "aislamiento",
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
+   "lateralidad": "unilateral",
    "nivel": "principiante",
-   "equipamiento_principal": "ninguno",
+   "equipamiento_principal": "otro",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Hamstring_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -12634,7 +12640,7 @@
    "id_ejercicio": "EJ0329",
    "nombre_es": "Rodillas al pecho tumbado",
    "nombre_en": "Hug Knees To Chest",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -12643,9 +12649,7 @@
    "grupos_principales": [
     "espalda"
    ],
-   "grupos_secundarios": [
-    "piernas"
-   ],
+   "grupos_secundarios": [],
    "musculos_principales": [
     "lumbares"
    ],
@@ -12665,7 +12669,7 @@
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Hug_Knees_To_Chest",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -13557,9 +13561,9 @@
   },
   {
    "id_ejercicio": "EJ0353",
-   "nombre_es": "Estiramiento de ingle intermedio",
+   "nombre_es": "Estiramiento de aductores tumbado con cinta",
    "nombre_en": "Intermediate Groin Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -13570,23 +13574,25 @@
    ],
    "grupos_secundarios": [],
    "musculos_principales": [
+    "aductores"
+   ],
+   "musculos_secundarios": [
     "isquiotibiales"
    ],
-   "musculos_secundarios": [],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
    "fraccion_peso_corporal": null,
    "fuente_fraccion": null,
    "mecanica": "aislamiento",
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
-   "nivel": "intermedio",
+   "lateralidad": "unilateral",
+   "nivel": "principiante",
    "equipamiento_principal": "otro",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Intermediate_Groin_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -15073,26 +15079,24 @@
   },
   {
    "id_ejercicio": "EJ0391",
-   "nombre_es": "Estiramiento rodilla cruzada",
+   "nombre_es": "Rotación lumbar tumbado (rodilla cruzada)",
    "nombre_en": "Knee Across The Body",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
    "patron_movimiento": "movilidad",
    "familia_variantes": null,
    "grupos_principales": [
-    "piernas"
-   ],
-   "grupos_secundarios": [
     "espalda"
    ],
+   "grupos_secundarios": [],
    "musculos_principales": [
+    "lumbares",
     "gluteos"
    ],
    "musculos_secundarios": [
-    "abductores",
-    "lumbares"
+    "pectoral"
    ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
@@ -15100,14 +15104,14 @@
    "fuente_fraccion": null,
    "mecanica": null,
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
+   "lateralidad": "unilateral",
    "nivel": "principiante",
    "equipamiento_principal": "ninguno",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Knee_Across_The_Body",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -15404,9 +15408,9 @@
   },
   {
    "id_ejercicio": "EJ0400",
-   "nombre_es": "Estiramiento de flexor de cadera de rodillas",
+   "nombre_es": "Caballero: flexor de cadera y psoas",
    "nombre_en": "Kneeling Hip Flexor",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -15420,7 +15424,7 @@
     "cuadriceps"
    ],
    "musculos_secundarios": [
-    "cuadriceps"
+    "gluteos"
    ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
@@ -15428,14 +15432,14 @@
    "fuente_fraccion": null,
    "mecanica": "aislamiento",
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
+   "lateralidad": "unilateral",
    "nivel": "principiante",
    "equipamiento_principal": "ninguno",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Kneeling_Hip_Flexor",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -15805,13 +15809,13 @@
   },
   {
    "id_ejercicio": "EJ0410",
-   "nombre_es": "Automasaje del dorsal ancho",
+   "nombre_es": "Automasaje del dorsal con rodillo",
    "nombre_en": "Latissimus Dorsi-SMR",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "automasaje",
    "dominio_crossfit": null,
-   "patron_movimiento": "automasaje",
+   "patron_movimiento": "movilidad",
    "familia_variantes": null,
    "grupos_principales": [
     "espalda"
@@ -15827,14 +15831,14 @@
    "fuente_fraccion": null,
    "mecanica": "aislamiento",
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
+   "lateralidad": "unilateral",
    "nivel": "principiante",
    "equipamiento_principal": "rodillo_espuma",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Latissimus_Dorsi-SMR",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -19545,9 +19549,9 @@
   },
   {
    "id_ejercicio": "EJ0509",
-   "nombre_es": "Estiramiento a un brazo contra la pared",
+   "nombre_es": "Estiramiento de dorsal en la pared",
    "nombre_en": "One Arm Against Wall",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -19560,7 +19564,9 @@
    "musculos_principales": [
     "dorsal_ancho"
    ],
-   "musculos_secundarios": [],
+   "musculos_secundarios": [
+    "triceps"
+   ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
    "fraccion_peso_corporal": null,
@@ -19574,7 +19580,7 @@
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "One_Arm_Against_Wall",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -19887,9 +19893,9 @@
   },
   {
    "id_ejercicio": "EJ0518",
-   "nombre_es": "Colgado a una mano",
+   "nombre_es": "Colgado a una mano (descompresión)",
    "nombre_en": "One Handed Hang",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -19898,14 +19904,13 @@
    "grupos_principales": [
     "espalda"
    ],
-   "grupos_secundarios": [
-    "biceps"
-   ],
+   "grupos_secundarios": [],
    "musculos_principales": [
-    "dorsal_ancho"
+    "dorsal_ancho",
+    "antebrazos"
    ],
    "musculos_secundarios": [
-    "biceps"
+    "lumbares"
    ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
@@ -19915,12 +19920,12 @@
    "tipo_fuerza": "estatico",
    "lateralidad": "unilateral",
    "nivel": "principiante",
-   "equipamiento_principal": "otro",
+   "equipamiento_principal": "barra_dominadas",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "One_Handed_Hang",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -20582,7 +20587,7 @@
    "id_ejercicio": "EJ0536",
    "nombre_es": "Basculación pélvica a puente",
    "nombre_en": "Pelvic Tilt Into Bridge",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -20593,9 +20598,12 @@
    ],
    "grupos_secundarios": [],
    "musculos_principales": [
-    "lumbares"
+    "lumbares",
+    "gluteos"
    ],
-   "musculos_secundarios": [],
+   "musculos_secundarios": [
+    "abdominales"
+   ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
    "fraccion_peso_corporal": null,
@@ -20603,13 +20611,13 @@
    "mecanica": "compuesto",
    "tipo_fuerza": "estatico",
    "lateralidad": "bilateral",
-   "nivel": "intermedio",
+   "nivel": "principiante",
    "equipamiento_principal": "ninguno",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Pelvic_Tilt_Into_Bridge",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -20763,13 +20771,13 @@
   },
   {
    "id_ejercicio": "EJ0541",
-   "nombre_es": "Automasaje del piriforme",
+   "nombre_es": "Automasaje de glúteo y piriforme con rodillo",
    "nombre_en": "Piriformis-SMR",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "automasaje",
    "dominio_crossfit": null,
-   "patron_movimiento": "automasaje",
+   "patron_movimiento": "movilidad",
    "familia_variantes": null,
    "grupos_principales": [
     "piernas"
@@ -20785,14 +20793,14 @@
    "fuente_fraccion": null,
    "mecanica": "aislamiento",
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
-   "nivel": "intermedio",
+   "lateralidad": "unilateral",
+   "nivel": "principiante",
    "equipamiento_principal": "rodillo_espuma",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Piriformis-SMR",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -22091,13 +22099,13 @@
   },
   {
    "id_ejercicio": "EJ0575",
-   "nombre_es": "Automasaje de cuádriceps",
+   "nombre_es": "Automasaje de cuádriceps con rodillo",
    "nombre_en": "Quadriceps-SMR",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "automasaje",
    "dominio_crossfit": null,
-   "patron_movimiento": "automasaje",
+   "patron_movimiento": "movilidad",
    "familia_variantes": null,
    "grupos_principales": [
     "piernas"
@@ -22113,14 +22121,14 @@
    "fuente_fraccion": null,
    "mecanica": "aislamiento",
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
-   "nivel": "intermedio",
+   "lateralidad": "unilateral",
+   "nivel": "principiante",
    "equipamiento_principal": "rodillo_espuma",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Quadriceps-SMR",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -23073,24 +23081,23 @@
   },
   {
    "id_ejercicio": "EJ0600",
-   "nombre_es": "Automasaje de romboides",
+   "nombre_es": "Automasaje de espalda alta con rodillo",
    "nombre_en": "Rhomboids-SMR",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "automasaje",
    "dominio_crossfit": null,
-   "patron_movimiento": "automasaje",
+   "patron_movimiento": "movilidad",
    "familia_variantes": null,
    "grupos_principales": [
     "espalda"
    ],
    "grupos_secundarios": [],
    "musculos_principales": [
-    "espalda_media"
-   ],
-   "musculos_secundarios": [
+    "espalda_media",
     "trapecio"
    ],
+   "musculos_secundarios": [],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
    "fraccion_peso_corporal": null,
@@ -23098,13 +23105,13 @@
    "mecanica": null,
    "tipo_fuerza": "estatico",
    "lateralidad": "bilateral",
-   "nivel": "intermedio",
+   "nivel": "principiante",
    "equipamiento_principal": "rodillo_espuma",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Rhomboids-SMR",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -25422,9 +25429,9 @@
   },
   {
    "id_ejercicio": "EJ0663",
-   "nombre_es": "Estiramiento de hombro",
+   "nombre_es": "Estiramiento de hombro cruzado",
    "nombre_en": "Shoulder Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -25435,23 +25442,25 @@
    ],
    "grupos_secundarios": [],
    "musculos_principales": [
-    "deltoides_anterior"
+    "deltoides_posterior"
    ],
-   "musculos_secundarios": [],
+   "musculos_secundarios": [
+    "espalda_media"
+   ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
    "fraccion_peso_corporal": null,
    "fuente_fraccion": null,
    "mecanica": null,
    "tipo_fuerza": "traccion",
-   "lateralidad": "bilateral",
+   "lateralidad": "unilateral",
    "nivel": "principiante",
    "equipamiento_principal": "ninguno",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Shoulder_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -25741,7 +25750,7 @@
    "id_ejercicio": "EJ0672",
    "nombre_es": "Estiramiento lateral de cuello",
    "nombre_en": "Side Neck Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -25752,7 +25761,8 @@
    ],
    "grupos_secundarios": [],
    "musculos_principales": [
-    "cuello"
+    "cuello",
+    "trapecio"
    ],
    "musculos_secundarios": [],
    "tipo_carga": "sin_carga",
@@ -25761,14 +25771,14 @@
    "fuente_fraccion": null,
    "mecanica": "aislamiento",
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
+   "lateralidad": "unilateral",
    "nivel": "principiante",
    "equipamiento_principal": "ninguno",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Side_Neck_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -28109,9 +28119,9 @@
   },
   {
    "id_ejercicio": "EJ0731",
-   "nombre_es": "Estiramiento espinal",
+   "nombre_es": "Rotación de espalda sentado",
    "nombre_en": "Spinal Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -28120,17 +28130,12 @@
    "grupos_principales": [
     "espalda"
    ],
-   "grupos_secundarios": [
-    "cuello"
-   ],
+   "grupos_secundarios": [],
    "musculos_principales": [
     "espalda_media"
    ],
    "musculos_secundarios": [
-    "dorsal_ancho",
-    "lumbares",
-    "cuello",
-    "trapecio"
+    "lumbares"
    ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
@@ -28140,12 +28145,12 @@
    "tipo_fuerza": "estatico",
    "lateralidad": "bilateral",
    "nivel": "principiante",
-   "equipamiento_principal": "ninguno",
+   "equipamiento_principal": "banco",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Spinal_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -29345,7 +29350,7 @@
    "id_ejercicio": "EJ0763",
    "nombre_es": "Estiramiento de cuádriceps de pie con pie elevado",
    "nombre_en": "Standing Elevated Quad Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -29365,14 +29370,14 @@
    "fuente_fraccion": null,
    "mecanica": null,
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
+   "lateralidad": "unilateral",
    "nivel": "principiante",
-   "equipamiento_principal": "otro",
+   "equipamiento_principal": "banco",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Standing_Elevated_Quad_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -31927,7 +31932,7 @@
    "id_ejercicio": "EJ0831",
    "nombre_es": "Estiramiento de tríceps",
    "nombre_en": "Triceps Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -31936,9 +31941,7 @@
    "grupos_principales": [
     "triceps"
    ],
-   "grupos_secundarios": [
-    "espalda"
-   ],
+   "grupos_secundarios": [],
    "musculos_principales": [
     "triceps"
    ],
@@ -31951,14 +31954,14 @@
    "fuente_fraccion": null,
    "mecanica": "aislamiento",
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
+   "lateralidad": "unilateral",
    "nivel": "principiante",
    "equipamiento_principal": "ninguno",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Triceps_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -32277,7 +32280,7 @@
    "id_ejercicio": "EJ0840",
    "nombre_es": "Estiramiento de espalda alta",
    "nombre_en": "Upper Back Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -32288,10 +32291,11 @@
    ],
    "grupos_secundarios": [],
    "musculos_principales": [
-    "espalda_media"
+    "espalda_media",
+    "trapecio"
    ],
    "musculos_secundarios": [
-    "espalda_media"
+    "dorsal_ancho"
    ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
@@ -32306,7 +32310,7 @@
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Upper_Back_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -33406,7 +33410,7 @@
    "id_ejercicio": "EJ0869",
    "nombre_es": "El mejor estiramiento del mundo",
    "nombre_en": "World's Greatest Stretch",
-   "activo": "NO",
+   "activo": "SI",
    "modalidad": "AMBAS",
    "tipo_ejercicio": "estiramiento",
    "dominio_crossfit": null,
@@ -33417,12 +33421,12 @@
    ],
    "grupos_secundarios": [],
    "musculos_principales": [
+    "cuadriceps",
     "isquiotibiales"
    ],
    "musculos_secundarios": [
-    "gemelos_soleo",
     "gluteos",
-    "cuadriceps"
+    "espalda_media"
    ],
    "tipo_carga": "sin_carga",
    "unidad_registro": "tiempo",
@@ -33430,14 +33434,14 @@
    "fuente_fraccion": null,
    "mecanica": null,
    "tipo_fuerza": "estatico",
-   "lateralidad": "bilateral",
-   "nivel": "intermedio",
+   "lateralidad": "unilateral",
+   "nivel": "principiante",
    "equipamiento_principal": "ninguno",
    "equipamiento_adicional": [],
    "computa_volumen_muscular": "NO",
    "origen": "FEDB",
    "id_fuente": "Worlds_Greatest_Stretch",
-   "estado_revision": "pendiente",
+   "estado_revision": "revisado",
    "notas": null
   },
   {
@@ -36647,6 +36651,42 @@
    "id_fuente": null,
    "estado_revision": "revisado",
    "notas": "Añadido por PARE (11/11/2026): barra de agarres paralelos"
+  },
+  {
+   "id_ejercicio": "EJ0947",
+   "nombre_es": "Caballero lateral: aductores y psoas",
+   "nombre_en": "Lateral Kneeling Hip Flexor and Adductor",
+   "activo": "SI",
+   "modalidad": "AMBAS",
+   "tipo_ejercicio": "estiramiento",
+   "dominio_crossfit": null,
+   "patron_movimiento": "movilidad",
+   "familia_variantes": null,
+   "grupos_principales": [
+    "piernas"
+   ],
+   "grupos_secundarios": [],
+   "musculos_principales": [
+    "aductores"
+   ],
+   "musculos_secundarios": [
+    "cuadriceps"
+   ],
+   "tipo_carga": "sin_carga",
+   "unidad_registro": "tiempo",
+   "fraccion_peso_corporal": null,
+   "fuente_fraccion": null,
+   "mecanica": "aislamiento",
+   "tipo_fuerza": "estatico",
+   "lateralidad": "unilateral",
+   "nivel": "principiante",
+   "equipamiento_principal": "ninguno",
+   "equipamiento_adicional": [],
+   "computa_volumen_muscular": "NO",
+   "origen": "PARE",
+   "id_fuente": null,
+   "estado_revision": "revisado",
+   "notas": null
   }
  ],
  "musculos_ejercicio": [
@@ -37062,14 +37102,6 @@
    "id_ejercicio": "EJ0021",
    "nombre_es": "Círculos de tobillo",
    "musculo": "gemelos_soleo",
-   "grupo": "piernas",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0022",
-   "nombre_es": "Estiramiento tobillo sobre rodilla",
-   "musculo": "gluteos",
    "grupo": "piernas",
    "rol": "principal",
    "ponderacion": 1.0
@@ -39819,14 +39851,6 @@
    "ponderacion": 1.0
   },
   {
-   "id_ejercicio": "EJ0140",
-   "nombre_es": "Estiramiento de gemelos con manos en la pared",
-   "musculo": "gemelos_soleo",
-   "grupo": "piernas",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
    "id_ejercicio": "EJ0141",
    "nombre_es": "Automasaje de gemelos",
    "musculo": "gemelos_soleo",
@@ -39955,30 +39979,6 @@
    "ponderacion": 0.5
   },
   {
-   "id_ejercicio": "EJ0145",
-   "nombre_es": "Estiramiento del gato",
-   "musculo": "lumbares",
-   "grupo": "espalda",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0145",
-   "nombre_es": "Estiramiento del gato",
-   "musculo": "espalda_media",
-   "grupo": "espalda",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0145",
-   "nombre_es": "Estiramiento del gato",
-   "musculo": "trapecio",
-   "grupo": "espalda",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
    "id_ejercicio": "EJ0146",
    "nombre_es": "Recepción y lanzamiento por encima de la cabeza",
    "musculo": "dorsal_ancho",
@@ -40059,22 +40059,6 @@
    "ponderacion": 0.5
   },
   {
-   "id_ejercicio": "EJ0150",
-   "nombre_es": "Estiramiento lumbar en silla",
-   "musculo": "dorsal_ancho",
-   "grupo": "espalda",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0150",
-   "nombre_es": "Estiramiento lumbar en silla",
-   "musculo": "lumbares",
-   "grupo": "espalda",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
    "id_ejercicio": "EJ0151",
    "nombre_es": "Sentadilla a silla",
    "musculo": "cuadriceps",
@@ -40129,14 +40113,6 @@
    "grupo": "pecho",
    "rol": "secundario",
    "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0153",
-   "nombre_es": "Estiramiento de pecho y hombro anterior",
-   "musculo": "pectoral",
-   "grupo": "pecho",
-   "rol": "principal",
-   "ponderacion": 1.0
   },
   {
    "id_ejercicio": "EJ0154",
@@ -40273,30 +40249,6 @@
    "grupo": "pecho",
    "rol": "principal",
    "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0159",
-   "nombre_es": "Postura del niño",
-   "musculo": "lumbares",
-   "grupo": "espalda",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0159",
-   "nombre_es": "Postura del niño",
-   "musculo": "gluteos",
-   "grupo": "piernas",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0159",
-   "nombre_es": "Postura del niño",
-   "musculo": "espalda_media",
-   "grupo": "espalda",
-   "rol": "secundario",
-   "ponderacion": 0.5
   },
   {
    "id_ejercicio": "EJ0160",
@@ -43931,14 +43883,6 @@
    "ponderacion": 1.0
   },
   {
-   "id_ejercicio": "EJ0312",
-   "nombre_es": "Estiramiento de isquiotibiales",
-   "musculo": "isquiotibiales",
-   "grupo": "piernas",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
    "id_ejercicio": "EJ0313",
    "nombre_es": "Flexión en pino (HSPU)",
    "musculo": "deltoides_anterior",
@@ -44451,22 +44395,6 @@
    "ponderacion": 0.5
   },
   {
-   "id_ejercicio": "EJ0329",
-   "nombre_es": "Rodillas al pecho tumbado",
-   "musculo": "lumbares",
-   "grupo": "espalda",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0329",
-   "nombre_es": "Rodillas al pecho tumbado",
-   "musculo": "gluteos",
-   "grupo": "piernas",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
    "id_ejercicio": "EJ0330",
    "nombre_es": "Saltos de vallas",
    "musculo": "isquiotibiales",
@@ -44929,14 +44857,6 @@
    "grupo": "hombros",
    "rol": "secundario",
    "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0353",
-   "nombre_es": "Estiramiento de ingle intermedio",
-   "musculo": "isquiotibiales",
-   "grupo": "piernas",
-   "rol": "principal",
-   "ponderacion": 1.0
   },
   {
    "id_ejercicio": "EJ0354",
@@ -46067,30 +45987,6 @@
    "ponderacion": 0.5
   },
   {
-   "id_ejercicio": "EJ0391",
-   "nombre_es": "Estiramiento rodilla cruzada",
-   "musculo": "gluteos",
-   "grupo": "piernas",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0391",
-   "nombre_es": "Estiramiento rodilla cruzada",
-   "musculo": "abductores",
-   "grupo": "piernas",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0391",
-   "nombre_es": "Estiramiento rodilla cruzada",
-   "musculo": "lumbares",
-   "grupo": "espalda",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
    "id_ejercicio": "EJ0392",
    "nombre_es": "Círculos de rodilla",
    "musculo": "gemelos_soleo",
@@ -46233,14 +46129,6 @@
    "grupo": "espalda",
    "rol": "secundario",
    "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0400",
-   "nombre_es": "Estiramiento de flexor de cadera de rodillas",
-   "musculo": "cuadriceps",
-   "grupo": "piernas",
-   "rol": "principal",
-   "ponderacion": 1.0
   },
   {
    "id_ejercicio": "EJ0401",
@@ -46567,14 +46455,6 @@
    "nombre_es": "Elevación lateral con bandas",
    "musculo": "deltoides_lateral",
    "grupo": "hombros",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0410",
-   "nombre_es": "Automasaje del dorsal ancho",
-   "musculo": "dorsal_ancho",
-   "grupo": "espalda",
    "rol": "principal",
    "ponderacion": 1.0
   },
@@ -48691,14 +48571,6 @@
    "ponderacion": 0.5
   },
   {
-   "id_ejercicio": "EJ0509",
-   "nombre_es": "Estiramiento a un brazo contra la pared",
-   "musculo": "dorsal_ancho",
-   "grupo": "espalda",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
    "id_ejercicio": "EJ0510",
    "nombre_es": "Dominada supina a una mano",
    "musculo": "espalda_media",
@@ -48855,22 +48727,6 @@
    "nombre_es": "Media langosta (estiramiento)",
    "musculo": "pectoral",
    "grupo": "pecho",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0518",
-   "nombre_es": "Colgado a una mano",
-   "musculo": "dorsal_ancho",
-   "grupo": "espalda",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0518",
-   "nombre_es": "Colgado a una mano",
-   "musculo": "biceps",
-   "grupo": "biceps",
    "rol": "secundario",
    "ponderacion": 0.5
   },
@@ -49227,14 +49083,6 @@
    "ponderacion": 0.5
   },
   {
-   "id_ejercicio": "EJ0536",
-   "nombre_es": "Basculación pélvica a puente",
-   "musculo": "lumbares",
-   "grupo": "espalda",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
    "id_ejercicio": "EJ0537",
    "nombre_es": "Automasaje de peroneos",
    "musculo": "gemelos_soleo",
@@ -49313,14 +49161,6 @@
    "grupo": "hombros",
    "rol": "secundario",
    "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0541",
-   "nombre_es": "Automasaje del piriforme",
-   "musculo": "gluteos",
-   "grupo": "piernas",
-   "rol": "principal",
-   "ponderacion": 1.0
   },
   {
    "id_ejercicio": "EJ0542",
@@ -50187,14 +50027,6 @@
    "ponderacion": 1.0
   },
   {
-   "id_ejercicio": "EJ0575",
-   "nombre_es": "Automasaje de cuádriceps",
-   "musculo": "cuadriceps",
-   "grupo": "piernas",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
    "id_ejercicio": "EJ0576",
    "nombre_es": "Salto rápido",
    "musculo": "cuadriceps",
@@ -50871,22 +50703,6 @@
    "nombre_es": "Press de banca inverso para tríceps",
    "musculo": "deltoides_anterior",
    "grupo": "hombros",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0600",
-   "nombre_es": "Automasaje de romboides",
-   "musculo": "espalda_media",
-   "grupo": "espalda",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0600",
-   "nombre_es": "Automasaje de romboides",
-   "musculo": "trapecio",
-   "grupo": "espalda",
    "rol": "secundario",
    "ponderacion": 0.5
   },
@@ -52091,14 +51907,6 @@
    "ponderacion": 0.5
   },
   {
-   "id_ejercicio": "EJ0663",
-   "nombre_es": "Estiramiento de hombro",
-   "musculo": "deltoides_anterior",
-   "grupo": "hombros",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
    "id_ejercicio": "EJ0664",
    "nombre_es": "Estiramiento tumbado de lado en el suelo",
    "musculo": "dorsal_ancho",
@@ -52209,14 +52017,6 @@
    "grupo": "piernas",
    "rol": "secundario",
    "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0672",
-   "nombre_es": "Estiramiento lateral de cuello",
-   "musculo": "cuello",
-   "grupo": "cuello",
-   "rol": "principal",
-   "ponderacion": 1.0
   },
   {
    "id_ejercicio": "EJ0673",
@@ -53867,46 +53667,6 @@
    "ponderacion": 1.0
   },
   {
-   "id_ejercicio": "EJ0731",
-   "nombre_es": "Estiramiento espinal",
-   "musculo": "espalda_media",
-   "grupo": "espalda",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0731",
-   "nombre_es": "Estiramiento espinal",
-   "musculo": "dorsal_ancho",
-   "grupo": "espalda",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0731",
-   "nombre_es": "Estiramiento espinal",
-   "musculo": "lumbares",
-   "grupo": "espalda",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0731",
-   "nombre_es": "Estiramiento espinal",
-   "musculo": "cuello",
-   "grupo": "cuello",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0731",
-   "nombre_es": "Estiramiento espinal",
-   "musculo": "trapecio",
-   "grupo": "espalda",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
    "id_ejercicio": "EJ0732",
    "nombre_es": "Cargada en tijera",
    "musculo": "cuadriceps",
@@ -54705,14 +54465,6 @@
    "grupo": "hombros",
    "rol": "secundario",
    "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0763",
-   "nombre_es": "Estiramiento de cuádriceps de pie con pie elevado",
-   "musculo": "cuadriceps",
-   "grupo": "piernas",
-   "rol": "principal",
-   "ponderacion": 1.0
   },
   {
    "id_ejercicio": "EJ0764",
@@ -56179,22 +55931,6 @@
    "ponderacion": 1.0
   },
   {
-   "id_ejercicio": "EJ0831",
-   "nombre_es": "Estiramiento de tríceps",
-   "musculo": "triceps",
-   "grupo": "triceps",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0831",
-   "nombre_es": "Estiramiento de tríceps",
-   "musculo": "dorsal_ancho",
-   "grupo": "espalda",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
    "id_ejercicio": "EJ0832",
    "nombre_es": "Crunch encogido (tuck crunch)",
    "musculo": "abdominales",
@@ -56409,14 +56145,6 @@
    "grupo": "espalda",
    "rol": "secundario",
    "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0840",
-   "nombre_es": "Estiramiento de espalda alta",
-   "musculo": "espalda_media",
-   "grupo": "espalda",
-   "rol": "principal",
-   "ponderacion": 1.0
   },
   {
    "id_ejercicio": "EJ0841",
@@ -57103,38 +56831,6 @@
    "nombre_es": "Molinos",
    "musculo": "lumbares",
    "grupo": "espalda",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0869",
-   "nombre_es": "El mejor estiramiento del mundo",
-   "musculo": "isquiotibiales",
-   "grupo": "piernas",
-   "rol": "principal",
-   "ponderacion": 1.0
-  },
-  {
-   "id_ejercicio": "EJ0869",
-   "nombre_es": "El mejor estiramiento del mundo",
-   "musculo": "gemelos_soleo",
-   "grupo": "piernas",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0869",
-   "nombre_es": "El mejor estiramiento del mundo",
-   "musculo": "gluteos",
-   "grupo": "piernas",
-   "rol": "secundario",
-   "ponderacion": 0.5
-  },
-  {
-   "id_ejercicio": "EJ0869",
-   "nombre_es": "El mejor estiramiento del mundo",
-   "musculo": "cuadriceps",
-   "grupo": "piernas",
    "rol": "secundario",
    "ponderacion": 0.5
   },
@@ -59825,6 +59521,462 @@
    "grupo": "hombros",
    "rol": "secundario",
    "ponderacion": 0.5
+  },
+  {
+   "id_ejercicio": "EJ0400",
+   "nombre_es": "Caballero: flexor de cadera y psoas",
+   "musculo": "cuadriceps",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0400",
+   "nombre_es": "Caballero: flexor de cadera y psoas",
+   "musculo": "gluteos",
+   "grupo": "piernas",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0947",
+   "nombre_es": "Caballero lateral: aductores y psoas",
+   "musculo": "aductores",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0947",
+   "nombre_es": "Caballero lateral: aductores y psoas",
+   "musculo": "cuadriceps",
+   "grupo": "piernas",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0869",
+   "nombre_es": "El mejor estiramiento del mundo",
+   "musculo": "cuadriceps",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0869",
+   "nombre_es": "El mejor estiramiento del mundo",
+   "musculo": "isquiotibiales",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0869",
+   "nombre_es": "El mejor estiramiento del mundo",
+   "musculo": "gluteos",
+   "grupo": "piernas",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0869",
+   "nombre_es": "El mejor estiramiento del mundo",
+   "musculo": "espalda_media",
+   "grupo": "espalda",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0312",
+   "nombre_es": "Estiramiento de isquiotibiales tumbado con cinta",
+   "musculo": "isquiotibiales",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0312",
+   "nombre_es": "Estiramiento de isquiotibiales tumbado con cinta",
+   "musculo": "gemelos_soleo",
+   "grupo": "piernas",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0763",
+   "nombre_es": "Estiramiento de cuádriceps de pie con pie elevado",
+   "musculo": "cuadriceps",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0391",
+   "nombre_es": "Rotación lumbar tumbado (rodilla cruzada)",
+   "musculo": "lumbares",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0391",
+   "nombre_es": "Rotación lumbar tumbado (rodilla cruzada)",
+   "musculo": "gluteos",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0391",
+   "nombre_es": "Rotación lumbar tumbado (rodilla cruzada)",
+   "musculo": "pectoral",
+   "grupo": "pecho",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0022",
+   "nombre_es": "Estiramiento de glúteo en figura 4",
+   "musculo": "gluteos",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0022",
+   "nombre_es": "Estiramiento de glúteo en figura 4",
+   "musculo": "lumbares",
+   "grupo": "espalda",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0353",
+   "nombre_es": "Estiramiento de aductores tumbado con cinta",
+   "musculo": "aductores",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0353",
+   "nombre_es": "Estiramiento de aductores tumbado con cinta",
+   "musculo": "isquiotibiales",
+   "grupo": "piernas",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0140",
+   "nombre_es": "Estiramiento de gemelos con manos en la pared",
+   "musculo": "gemelos_soleo",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0145",
+   "nombre_es": "Gato-vaca",
+   "musculo": "lumbares",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0145",
+   "nombre_es": "Gato-vaca",
+   "musculo": "espalda_media",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0145",
+   "nombre_es": "Gato-vaca",
+   "musculo": "abdominales",
+   "grupo": "core",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0159",
+   "nombre_es": "Postura del niño",
+   "musculo": "lumbares",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0159",
+   "nombre_es": "Postura del niño",
+   "musculo": "dorsal_ancho",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0159",
+   "nombre_es": "Postura del niño",
+   "musculo": "gluteos",
+   "grupo": "piernas",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0329",
+   "nombre_es": "Rodillas al pecho tumbado",
+   "musculo": "lumbares",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0329",
+   "nombre_es": "Rodillas al pecho tumbado",
+   "musculo": "gluteos",
+   "grupo": "piernas",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0731",
+   "nombre_es": "Rotación de espalda sentado",
+   "musculo": "espalda_media",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0731",
+   "nombre_es": "Rotación de espalda sentado",
+   "musculo": "lumbares",
+   "grupo": "espalda",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0840",
+   "nombre_es": "Estiramiento de espalda alta",
+   "musculo": "espalda_media",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0840",
+   "nombre_es": "Estiramiento de espalda alta",
+   "musculo": "trapecio",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0840",
+   "nombre_es": "Estiramiento de espalda alta",
+   "musculo": "dorsal_ancho",
+   "grupo": "espalda",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0536",
+   "nombre_es": "Basculación pélvica a puente",
+   "musculo": "lumbares",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0536",
+   "nombre_es": "Basculación pélvica a puente",
+   "musculo": "gluteos",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0536",
+   "nombre_es": "Basculación pélvica a puente",
+   "musculo": "abdominales",
+   "grupo": "core",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0509",
+   "nombre_es": "Estiramiento de dorsal en la pared",
+   "musculo": "dorsal_ancho",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0509",
+   "nombre_es": "Estiramiento de dorsal en la pared",
+   "musculo": "triceps",
+   "grupo": "triceps",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0518",
+   "nombre_es": "Colgado a una mano (descompresión)",
+   "musculo": "dorsal_ancho",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0518",
+   "nombre_es": "Colgado a una mano (descompresión)",
+   "musculo": "antebrazos",
+   "grupo": "antebrazos",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0518",
+   "nombre_es": "Colgado a una mano (descompresión)",
+   "musculo": "lumbares",
+   "grupo": "espalda",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0150",
+   "nombre_es": "Inclinación lateral sentado",
+   "musculo": "lumbares",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0150",
+   "nombre_es": "Inclinación lateral sentado",
+   "musculo": "dorsal_ancho",
+   "grupo": "espalda",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0150",
+   "nombre_es": "Inclinación lateral sentado",
+   "musculo": "abdominales",
+   "grupo": "core",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0153",
+   "nombre_es": "Estiramiento de pecho y hombros con pica",
+   "musculo": "pectoral",
+   "grupo": "pecho",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0153",
+   "nombre_es": "Estiramiento de pecho y hombros con pica",
+   "musculo": "deltoides_anterior",
+   "grupo": "hombros",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0153",
+   "nombre_es": "Estiramiento de pecho y hombros con pica",
+   "musculo": "biceps",
+   "grupo": "biceps",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0663",
+   "nombre_es": "Estiramiento de hombro cruzado",
+   "musculo": "deltoides_posterior",
+   "grupo": "hombros",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0663",
+   "nombre_es": "Estiramiento de hombro cruzado",
+   "musculo": "espalda_media",
+   "grupo": "espalda",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0831",
+   "nombre_es": "Estiramiento de tríceps",
+   "musculo": "triceps",
+   "grupo": "triceps",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0831",
+   "nombre_es": "Estiramiento de tríceps",
+   "musculo": "dorsal_ancho",
+   "grupo": "espalda",
+   "rol": "secundario",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0672",
+   "nombre_es": "Estiramiento lateral de cuello",
+   "musculo": "cuello",
+   "grupo": "cuello",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0672",
+   "nombre_es": "Estiramiento lateral de cuello",
+   "musculo": "trapecio",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0575",
+   "nombre_es": "Automasaje de cuádriceps con rodillo",
+   "musculo": "cuadriceps",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0410",
+   "nombre_es": "Automasaje del dorsal con rodillo",
+   "musculo": "dorsal_ancho",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0541",
+   "nombre_es": "Automasaje de glúteo y piriforme con rodillo",
+   "musculo": "gluteos",
+   "grupo": "piernas",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0600",
+   "nombre_es": "Automasaje de espalda alta con rodillo",
+   "musculo": "espalda_media",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
+  },
+  {
+   "id_ejercicio": "EJ0600",
+   "nombre_es": "Automasaje de espalda alta con rodillo",
+   "musculo": "trapecio",
+   "grupo": "espalda",
+   "rol": "principal",
+   "ponderacion": 0.0
   }
  ],
  "variantes": [
@@ -66665,17 +66817,17 @@
   },
   {
    "id_ejercicio": "EJ0022",
-   "nombre_es": "Estiramiento tobillo sobre rodilla",
+   "nombre_es": "Estiramiento de glúteo en figura 4",
    "nombre_en": "Ankle On The Knee",
-   "ejecucion_es": null,
+   "ejecucion_es": "Tumbado boca arriba, con las rodillas flexionadas y los pies en el suelo. Apoya el tobillo de una pierna sobre la rodilla contraria, formando un 4. Agarra el muslo de la pierna de abajo y acércalo al pecho hasta notar el estiramiento en el glúteo de la pierna cruzada. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Estira glúteo y piriforme. Para más intensidad, empuja suavemente con el codo la rodilla de la pierna cruzada hacia fuera.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Levantar la cabeza y los hombros del suelo para llegar. Dejar que el pie de la pierna cruzada se doble hacia dentro (mantenlo flexionado, con la punta hacia ti).",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Si molesta la rodilla de la pierna cruzada, sujeta por detrás del muslo en lugar de por la espinilla.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. From a lying position, bend your knees and keep your feet on the floor.\n2. Place your ankle of one foot on your opposite knee.\n3. Grasp the thigh or knee of the bottom leg and pull both of your legs into the chest. Relax your neck and shoulders. Hold for 10-20 seconds and then switch sides.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Ankle_On_The_Knee/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Ankle_On_The_Knee/1.jpg",
@@ -69027,15 +69179,15 @@
    "id_ejercicio": "EJ0140",
    "nombre_es": "Estiramiento de gemelos con manos en la pared",
    "nombre_en": "Calf Stretch Hands Against Wall",
-   "ejecucion_es": null,
+   "ejecucion_es": "De frente a una pared, con las manos apoyadas a la altura del pecho. Lleva un pie atrás con la pierna estirada y el talón en el suelo, y el otro pie adelantado con la rodilla flexionada. Inclínate hacia la pared manteniendo el talón de atrás apoyado y el cuerpo en línea, hasta notar el estiramiento en la pantorrilla. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Para el sóleo (la parte baja de la pantorrilla), repite con la rodilla de atrás un poco flexionada.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Levantar el talón de atrás. Dejar que el pie de atrás apunte hacia fuera: debe mirar hacia la pared.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Ninguna específica.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Stand facing a wall from several feet away. Stagger your stance, placing one foot forward.\n2. Lean forward and rest your hands on the wall, keeping your heel, hip and head in a straight line.\n3. Attempt to keep your heel on the ground. Hold for 10-20 seconds and then switch sides.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Calf_Stretch_Hands_Against_Wall/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Calf_Stretch_Hands_Against_Wall/1.jpg",
@@ -69125,17 +69277,17 @@
   },
   {
    "id_ejercicio": "EJ0145",
-   "nombre_es": "Estiramiento del gato",
+   "nombre_es": "Gato-vaca",
    "nombre_en": "Cat Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "A cuatro patas, con las manos bajo los hombros y las rodillas bajo las caderas. Al soltar el aire, mete el ombligo, redondea toda la espalda hacia el techo y deja caer la cabeza (gato). Al coger aire, haz lo contrario: lleva el pecho hacia delante y la pelvis hacia atrás, arqueando suavemente la espalda y mirando al frente (vaca). Haz 8-10 ciclos lentos, siguiendo la respiración.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Moviliza toda la columna vértebra a vértebra. Va muy bien al terminar una sesión con mucha carga en la espalda o como primer ejercicio del día.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Mover solo el cuello o solo la zona lumbar en vez de toda la espalda. Ir deprisa.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Con dolor lumbar, quédate en un rango pequeño y sin dolor.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Position yourself on the floor on your hands and knees.\n2. Pull your belly in and round your spine, lower back, shoulders, and neck, letting your head drop.\n3. Hold for 15 seconds.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cat_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Cat_Stretch/1.jpg",
@@ -69225,17 +69377,17 @@
   },
   {
    "id_ejercicio": "EJ0150",
-   "nombre_es": "Estiramiento lumbar en silla",
+   "nombre_es": "Inclinación lateral sentado",
    "nombre_en": "Chair Lower Back Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "Sentado en un banco o silla, con la espalda recta. Sube un brazo por encima de la cabeza e inclina el tronco hacia el lado contrario, sujetándote con la otra mano en el asiento. Nota el estiramiento en el costado, desde la cadera hasta la axila. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Estira el cuadrado lumbar y el oblicuo, que trabajan mucho en ejercicios a una mano o con carga en un lado.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Echar el tronco hacia delante o hacia atrás en vez de inclinarlo de lado. Despegar el glúteo del asiento.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Ninguna específica.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Sit upright on a chair.\n2. Bend to one side with your arm over your head. You can hold onto the chair with your free hand.\n3. Hold for 10 seconds, and repeat for your other side.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chair_Lower_Back_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chair_Lower_Back_Stretch/1.jpg",
@@ -69285,17 +69437,17 @@
   },
   {
    "id_ejercicio": "EJ0153",
-   "nombre_es": "Estiramiento de pecho y hombro anterior",
+   "nombre_es": "Estiramiento de pecho y hombros con pica",
    "nombre_en": "Chest And Front Of Shoulder Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "De pie, agarra una pica, una barra ligera o un palo de escoba con las manos bastante más abiertas que los hombros. Con los brazos estirados, súbelo despacio por delante de la cabeza y llévalo hacia atrás hasta donde llegues sin dolor. Vuelve igual. Haz 8-10 repeticiones lentas.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Cuanto más abiertas las manos, más fácil. Ve cerrando el agarre a medida que ganes movilidad. Muy útil tras sesiones de press.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Arquear la zona lumbar para llevar la pica más atrás. Doblar los codos.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Si notas pinchazo en el hombro, abre más el agarre o reduce el recorrido.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Start off by standing with your legs together, holding a bodybar or a broomstick.\n2. Take a slightly wider than shoulder width grip on the pole and hold it in front of you with your palms facing down.\n3. Carefully lift the pole up and behind your head.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_And_Front_Of_Shoulder_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Chest_And_Front_Of_Shoulder_Stretch/1.jpg",
@@ -69407,15 +69559,15 @@
    "id_ejercicio": "EJ0159",
    "nombre_es": "Postura del niño",
    "nombre_en": "Child's Pose",
-   "ejecucion_es": null,
+   "ejecucion_es": "De rodillas, con los dedos gordos de los pies juntos y las rodillas algo separadas. Lleva el culo hacia los talones y estira los brazos hacia delante en el suelo, dejando caer el pecho entre los muslos y la frente en el suelo. Respira hondo, notando cómo se expande la espalda. Mantén 30-60 s.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Para estirar más el dorsal, lleva las dos manos hacia un lado y luego hacia el otro. Es buena posición para terminar la sesión y bajar pulsaciones.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Tensar los hombros hacia las orejas. Forzar que el culo llegue a los talones.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Si te molestan las rodillas, pon un cojín entre los gemelos y los muslos, o no bajes tanto.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Get on your hands and knees, walk your hands in front of you.\n2. Lower your buttocks down to sit on your heels. Let your arms drag along the floor as you sit back to stretch your entire spine.\n3. Once you settle onto your heels, bring your hands next to your feet and relax. \"breathe\" into your back. Rest your forehead on the floor. Avoid this position if you have knee problems.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Childs_Pose/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Childs_Pose/1.jpg",
@@ -72465,17 +72617,17 @@
   },
   {
    "id_ejercicio": "EJ0312",
-   "nombre_es": "Estiramiento de isquiotibiales",
+   "nombre_es": "Estiramiento de isquiotibiales tumbado con cinta",
    "nombre_en": "Hamstring Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "Tumbado boca arriba, con una pierna estirada en el suelo (o flexionada si te tira la espalda). Pasa una cinta, toalla o goma por la planta del otro pie y sube esa pierna estirada hacia el techo. Tira suavemente de la cinta hasta notar la tensión detrás del muslo. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Es la forma más amable con la espalda de estirar los isquios: la zona lumbar queda apoyada en el suelo. Si flexionas un poco la rodilla, el estiramiento se nota más arriba, cerca del glúteo.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Despegar la cadera o la zona lumbar del suelo. Tirar tan fuerte que la pierna tiemble.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Si aparece hormigueo o tirón por la pierna abajo (no tensión muscular), afloja: puede ser tensión del nervio ciático.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Lie on your back with one leg extended above you, with the hip at ninety degrees. Keep the other leg flat on the floor.\n2. Loop a belt, band, or rope over the ball of your foot. This will be your starting position.\n3. Pull on the belt to create tension in the calves and hamstrings. Hold this stretch for 10-30 seconds, and repeat with the other leg.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hamstring_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hamstring_Stretch/1.jpg",
@@ -72807,15 +72959,15 @@
    "id_ejercicio": "EJ0329",
    "nombre_es": "Rodillas al pecho tumbado",
    "nombre_en": "Hug Knees To Chest",
-   "ejecucion_es": null,
+   "ejecucion_es": "Tumbado boca arriba, lleva las dos rodillas al pecho y abrázalas por detrás de los muslos (no por encima de las rodillas). Acércalas suavemente hacia los hombros hasta notar que la zona lumbar se estira y se apoya en el suelo. Puedes balancearte un poco de lado a lado. Mantén 30 s.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Alivia la espalda baja después de sentadilla, peso muerto o mucho rato de pie.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Agarrar por encima de las rodillas, que las carga. Levantar la cabeza del suelo.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Ninguna específica.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Lie down on your back and pull both knees up to your chest.\n2. Hold your arms under the knees, not over (that would put to much pressure on your knee joints).\n3. Slowly pull the knees toward your shoulders. This also stretches your buttocks muscles.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hug_Knees_To_Chest/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Hug_Knees_To_Chest/1.jpg",
@@ -73285,17 +73437,17 @@
   },
   {
    "id_ejercicio": "EJ0353",
-   "nombre_es": "Estiramiento de ingle intermedio",
+   "nombre_es": "Estiramiento de aductores tumbado con cinta",
    "nombre_en": "Intermediate Groin Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "Tumbado boca arriba con las piernas estiradas. Pasa una cinta o goma por la planta de un pie, sube esa pierna estirada y llévala hacia el lado, lejos del cuerpo, manteniendo la otra pierna y la cadera pegadas al suelo. Tira de la cinta hasta notar el estiramiento en la cara interna del muslo. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "La cinta te deja controlar cuánto estiras sin cargar la espalda. Si no tienes cinta, sirve una toalla o el cinturón.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Girar la cadera y despegarla del suelo al abrir la pierna. Doblar la rodilla de la pierna que estiras.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Si notas dolor en la ingle (pinchazo, no tirantez), reduce la apertura.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Lie on your back with your legs extended. Loop a belt, rope, or band around one of your feet, and swing that leg as far to the side as you can. This will be your starting position.\n2. Pull gently on the belt to create tension in your groin and hamstring muscles. Hold for 10-20 seconds, and repeat on the other side.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Intermediate_Groin_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Intermediate_Groin_Stretch/1.jpg",
@@ -74045,17 +74197,17 @@
   },
   {
    "id_ejercicio": "EJ0391",
-   "nombre_es": "Estiramiento rodilla cruzada",
+   "nombre_es": "Rotación lumbar tumbado (rodilla cruzada)",
    "nombre_en": "Knee Across The Body",
-   "ejecucion_es": null,
+   "ejecucion_es": "Tumbado boca arriba con las piernas estiradas. Flexiona una rodilla y crúzala por encima del cuerpo hacia el lado contrario, sujetándola con la mano de ese lado. El otro brazo, abierto en cruz, y la mirada hacia ese brazo. Deja que la rodilla baje hacia el suelo sin forzar y respira hondo. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Uno de los más agradables para la espalda baja después de pierna o de peso muerto. No hace falta que la rodilla toque el suelo.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Despegar el hombro contrario del suelo para llegar más lejos. Empujar la rodilla con fuerza.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Con hernia discal o dolor que baja por la pierna, haz solo el rango cómodo o consulta antes.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Lie down on the floor with your right leg straight. Bend your left leg and lower it across your body, holding the knee down toward the floor with your right hand. (The knee doesn't need to touch the floor if you're tight.)\n2. Place your left arm comfortably beside you and turn your head to the left. Imagine you have a weight tied to your tailbone. let your tailbone fall back toward the floor as your chest reaches in the opposite direction to stretch your lower back. Switch sides.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Knee_Across_The_Body/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Knee_Across_The_Body/1.jpg",
@@ -74225,17 +74377,17 @@
   },
   {
    "id_ejercicio": "EJ0400",
-   "nombre_es": "Estiramiento de flexor de cadera de rodillas",
+   "nombre_es": "Caballero: flexor de cadera y psoas",
    "nombre_en": "Kneeling Hip Flexor",
-   "ejecucion_es": null,
+   "ejecucion_es": "Rodilla trasera apoyada en el suelo (sobre una esterilla o un cojín) y pie delantero adelantado, con la rodilla delantera a 90°. Aprieta el glúteo de la pierna de atrás y mete la pelvis hacia dentro, como si llevaras el cóccix hacia delante; desde ahí, lleva la cadera un poco hacia delante hasta notar el estiramiento en la parte delantera de la cadera y del muslo de atrás. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Para llegar más al psoas, sube el brazo del lado de atrás por encima de la cabeza e inclina un poco el tronco hacia el lado contrario. Muy útil si pasas muchas horas sentado.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Arquear la zona lumbar en vez de bascular la pelvis: se estira la espalda y no la cadera. Adelantar tanto la cadera que la rodilla delantera pase mucho de la punta del pie.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Si la rodilla de apoyo molesta, ponle algo blando debajo. Con dolor lumbar, haz el gesto suave y prioriza la basculación de la pelvis sobre el avance.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Kneel on a mat and bring your right knee up so the bottom of your foot is on the floor and extend your left leg out behind you so the top of your foot is on the floor.\n2. Shift your weight forward until you feel a stretch in your hip. Hold for 15 seconds, then repeat for your other side.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Kneeling_Hip_Flexor/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Kneeling_Hip_Flexor/1.jpg",
@@ -74425,17 +74577,17 @@
   },
   {
    "id_ejercicio": "EJ0410",
-   "nombre_es": "Automasaje del dorsal ancho",
+   "nombre_es": "Automasaje del dorsal con rodillo",
    "nombre_en": "Latissimus Dorsi-SMR",
-   "ejecucion_es": null,
+   "ejecucion_es": "Tumbado de lado, con el rodillo bajo la axila y el brazo de abajo estirado por encima de la cabeza. Gira un poco el cuerpo hacia el techo y desplázate para que el rodillo recorra el costado, desde la axila hasta mitad de la espalda. Quédate 10-20 segundos en los puntos más cargados. Unos 30-60 s por lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Ideal tras sesiones de dominadas y remo. Combínalo con el estiramiento de dorsal en la pared.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Rodar sobre las costillas de lado. Ir demasiado rápido.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Debe ser una molestia tolerable, no dolor.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. While lying on the floor, place a foam roll under your back and to one side, just behind your arm pit. This will be your starting position.\n2. Keep the arm of the side being stretched behind and to the side of you as you shift your weight onto your lats, keeping your upper body off of the ground. Hold for 10-30 seconds, and switch sides.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Latissimus_Dorsi-SMR/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Latissimus_Dorsi-SMR/1.jpg",
@@ -76405,17 +76557,17 @@
   },
   {
    "id_ejercicio": "EJ0509",
-   "nombre_es": "Estiramiento a un brazo contra la pared",
+   "nombre_es": "Estiramiento de dorsal en la pared",
    "nombre_en": "One Arm Against Wall",
-   "ejecucion_es": null,
+   "ejecucion_es": "De pie de lado a una pared o un poste, apoya el antebrazo por encima de la cabeza, con el codo flexionado. Lleva la cadera hacia fuera y el tronco hacia la pared, como dejándote caer, hasta notar el estiramiento en el costado, desde la axila hasta la cintura. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "También se puede hacer agarrado a un poste con el brazo estirado y la cadera hacia atrás. Muy recomendable tras sesiones de dominadas o jalones.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Encoger el hombro hacia la oreja. Girar el tronco en vez de inclinarlo.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Si te pinza el hombro, baja la altura del apoyo.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. From a standing position, place a bent arm against a wall or doorway.\n2. Slowly lean toward your arm until you feel a stretch in your lats.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One_Arm_Against_Wall/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One_Arm_Against_Wall/1.jpg",
@@ -76585,17 +76737,17 @@
   },
   {
    "id_ejercicio": "EJ0518",
-   "nombre_es": "Colgado a una mano",
+   "nombre_es": "Colgado a una mano (descompresión)",
    "nombre_en": "One Handed Hang",
-   "ejecucion_es": null,
+   "ejecucion_es": "Agárrate con una mano a una barra de dominadas, con los pies apoyados en el suelo o en un cajón. Deja caer parte de tu peso colgando de esa mano, con el hombro relajado y el cuerpo suelto, hasta notar el estiramiento en el costado y la espalda. Mantén 20-30 s y cambia de mano.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Colgado a dos manos y con los pies en el suelo también sirve para descomprimir la espalda tras cargar peso. Cuanto más peso dejes caer, más intenso.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Soltar el hombro del todo con todo el peso colgando sin control. Balancearse.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Con molestias de hombro, cuelga a dos manos o con más peso en los pies.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Grab onto a chinup bar with one hand, using a pronated grip. Keep your feet on the floor or a step. Allow the majority of your weight to hang from that hand, while keeping your feet on the ground. Hold for 10-20 seconds and switch sides.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One_Handed_Hang/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/One_Handed_Hang/1.jpg",
@@ -76947,15 +77099,15 @@
    "id_ejercicio": "EJ0536",
    "nombre_es": "Basculación pélvica a puente",
    "nombre_en": "Pelvic Tilt Into Bridge",
-   "ejecucion_es": null,
+   "ejecucion_es": "Tumbado boca arriba, con las rodillas flexionadas y los talones bajo las rodillas. Aprieta el abdomen y aplana la zona lumbar contra el suelo basculando la pelvis. Desde ahí, despega del suelo primero el coxis y luego la espalda, vértebra a vértebra, hasta quedar en puente. Baja igual, vértebra a vértebra. Haz 8-10 repeticiones lentas.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Moviliza la columna lumbar y activa los glúteos: buena opción para la espalda baja, tanto al terminar como antes de pierna.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Subir de golpe con toda la espalda en bloque. Arquear la zona lumbar arriba en vez de empujar con los glúteos.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Ninguna específica.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Lie down with your feet on the floor, heels directly under your knees.\n2. Lift only your tailbone to the ceiling to stretch your lower back. (Don't lift the entire spine yet.) Pull in your stomach.\n3. To go into a bridge, lift the entire spine except the neck.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pelvic_Tilt_Into_Bridge/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pelvic_Tilt_Into_Bridge/1.jpg",
@@ -77045,17 +77197,17 @@
   },
   {
    "id_ejercicio": "EJ0541",
-   "nombre_es": "Automasaje del piriforme",
+   "nombre_es": "Automasaje de glúteo y piriforme con rodillo",
    "nombre_en": "Piriformis-SMR",
-   "ejecucion_es": null,
+   "ejecucion_es": "Sentado sobre el rodillo, con las manos apoyadas detrás. Cruza un tobillo sobre la rodilla contraria (figura 4) e inclínate hacia el lado de la pierna cruzada, de modo que el rodillo quede bajo ese glúteo. Rueda despacio y quédate 10-20 segundos en los puntos más cargados. Unos 30-60 s por lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Útil tras sesiones de pierna o si pasas muchas horas sentado. Una pelota de tenis o de masaje llega más al fondo que el rodillo.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Rodar sobre el hueso de la cadera. Hacerlo deprisa.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Si notas un dolor que baja por la pierna (no molestia local), para: puedes estar presionando el nervio ciático.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Sit with your buttocks on top of a foam roll. Bend your knees, and then cross one leg so that the ankle is over the knee. This will be your starting position.\n2. Shift your weight to the side of the crossed leg, rolling over the buttocks until you feel tension in your upper glute. You may assist the stretch by using one hand to pull the bent knee towards your chest. Hold this position for 10-30 seconds, and then switch sides.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Piriformis-SMR/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Piriformis-SMR/1.jpg",
@@ -77725,17 +77877,17 @@
   },
   {
    "id_ejercicio": "EJ0575",
-   "nombre_es": "Automasaje de cuádriceps",
+   "nombre_es": "Automasaje de cuádriceps con rodillo",
    "nombre_en": "Quadriceps-SMR",
-   "ejecucion_es": null,
+   "ejecucion_es": "Boca abajo, apoyado en los antebrazos, con el rodillo bajo un muslo. Desplázate lentamente para que el rodillo recorra el muslo desde encima de la rodilla hasta debajo de la cadera. Cuando encuentres un punto más cargado, quédate en él 10-20 segundos respirando. Unos 30-60 s por pierna.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Para más presión, cruza la otra pierna por encima; para menos, apoya más peso en los brazos y en la otra pierna.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Pasar el rodillo deprisa. Rodar sobre la rótula.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Debe ser una molestia tolerable, no dolor. No lo uses sobre una zona con un golpe reciente, varices o inflamación.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Lay facedown on the floor with your weight supported by your hands or forearms. Place a foam roll underneath one leg on the quadriceps, and keep the foot off of the ground. Make sure to relax the leg as much as possible. This will be your starting position.\n2. Shifting as much weight onto the leg to be stretched as is tolerable, roll over the foam from above the knee to below the hip, holding points of tension for 10-30 seconds. Switch sides.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Quadriceps-SMR/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Quadriceps-SMR/1.jpg",
@@ -78225,17 +78377,17 @@
   },
   {
    "id_ejercicio": "EJ0600",
-   "nombre_es": "Automasaje de romboides",
+   "nombre_es": "Automasaje de espalda alta con rodillo",
    "nombre_en": "Rhomboids-SMR",
-   "ejecucion_es": null,
+   "ejecucion_es": "Tumbado boca arriba, con el rodillo bajo la espalda alta, a la altura de los omóplatos. Cruza los brazos sobre el pecho, apoya los pies y levanta la cadera. Rueda despacio desde la parte baja de los omóplatos hasta la base del cuello, y quédate 10-20 segundos en los puntos más cargados. Unos 60 s.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Si con los brazos cruzados te inclinas un poco hacia un lado, se trabaja mejor la zona entre la columna y el omóplato. También puedes extender la espalda sobre el rodillo para movilizarla.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Bajar el rodillo hasta la zona lumbar. Sujetarte la cabeza tirando del cuello.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "No uses el rodillo en la zona lumbar: allí no hay costillas que protejan y suele empeorar las molestias.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Lay down with your back on the floor. Place a foam roll underneath your upper back, and cross your arms in front of you, protracting your shoulders. This will be your starting position.\n2. Raise your hips off of the ground, placing your weight onto the foam roll. Shift your weight to one side at a time, rolling over your middle and upper back. Pause at points of tension for 10-30 seconds.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Rhomboids-SMR/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Rhomboids-SMR/1.jpg",
@@ -79485,17 +79637,17 @@
   },
   {
    "id_ejercicio": "EJ0663",
-   "nombre_es": "Estiramiento de hombro",
+   "nombre_es": "Estiramiento de hombro cruzado",
    "nombre_en": "Shoulder Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "Lleva un brazo estirado por delante del pecho hacia el lado contrario y sujétalo con la otra mano por encima del codo. Acércalo al pecho hasta notar el estiramiento en la parte de atrás del hombro. Mantén el hombro bajo, lejos de la oreja. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Estira el deltoides posterior y la zona entre las escápulas. Útil tras remos y press.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Tirar del codo o de la muñeca en lugar de por encima del codo. Girar el tronco.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Ninguna específica.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Reach your left arm across your body and hold it straight.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Shoulder_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Shoulder_Stretch/1.jpg",
@@ -79667,15 +79819,15 @@
    "id_ejercicio": "EJ0672",
    "nombre_es": "Estiramiento lateral de cuello",
    "nombre_en": "Side Neck Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "Sentado o de pie, con los hombros relajados. Inclina la cabeza hacia un hombro, acercando la oreja, sin girarla. Puedes ayudarte con la mano del mismo lado apoyada suavemente sobre la cabeza. Para notar más el estiramiento, baja el hombro contrario o agarra el asiento con esa mano. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Alivia la tensión del trapecio tras encogimientos, peso muerto o muchas horas de ordenador.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Tirar de la cabeza con fuerza. Subir el hombro del lado que estiras.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Hazlo siempre suave. Si aparece mareo, hormigueo en el brazo o dolor, para.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Start with your shoulders relaxed, gently tilt your head towards your shoulder.\n2. Assist stretch with a gentle pull on the side of the head.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Side_Neck_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Side_Neck_Stretch/1.jpg",
@@ -80845,17 +80997,17 @@
   },
   {
    "id_ejercicio": "EJ0731",
-   "nombre_es": "Estiramiento espinal",
+   "nombre_es": "Rotación de espalda sentado",
    "nombre_en": "Spinal Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "Sentado en un banco o una silla, con la espalda recta y los pies apoyados. Entrelaza las manos detrás de la cabeza con los codos abiertos. Gira el tronco hacia un lado todo lo que puedas sin mover la cadera, mantén 2-3 segundos y vuelve. Haz 5-6 giros lentos hacia cada lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Moviliza la espalda alta y media, que con el trabajo de ordenador tiende a quedarse rígida.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Girar arrastrando la cadera. Hacer el giro con impulso.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Si tienes molestias de cuello, cruza los brazos sobre el pecho en vez de llevar las manos a la cabeza.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Sit in a chair so your back is straight and your feet planted on the floor.\n2. Interlace your fingers behind your head, elbows out and your chin down.\n3. Twist your upper body to one side about 3 times as far as you can. Then lean forward and twist your torso to reach your elbow to the floor on the inside of your knee.\n4. Return to upright position and then repeat for your other side.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Spinal_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Spinal_Stretch/1.jpg",
@@ -81487,15 +81639,15 @@
    "id_ejercicio": "EJ0763",
    "nombre_es": "Estiramiento de cuádriceps de pie con pie elevado",
    "nombre_en": "Standing Elevated Quad Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "De espaldas a un banco o un escalón, a un paso largo de él. Apoya el empeine de un pie en el banco y flexiona ligeramente la rodilla de la pierna de apoyo. Aprieta el glúteo de la pierna de atrás y mete la pelvis hacia dentro hasta notar el estiramiento en la parte delantera del muslo. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Más intenso que el clásico de pie agarrando el tobillo. Si te sobra, baja un poco la rodilla de apoyo; si te falta, acércate al banco.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Arquear la espalda para aguantar. Dejar que la rodilla de apoyo se vaya hacia dentro.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Agárrate a algo si pierdes el equilibrio. Con molestias de rodilla, usa un apoyo más bajo.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Start by standing with your back about two to three feet away from a bench or step.\n2. Lift one leg behind you and rest your foot on the step,either on your instep or the ball of your foot, whichever you find most comfortable.\n3. Keep your supporting knee slightly bent and avoid letting that knee extend out beyond your toes. Switch sides.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Standing_Elevated_Quad_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Standing_Elevated_Quad_Stretch/1.jpg",
@@ -82847,15 +82999,15 @@
    "id_ejercicio": "EJ0831",
    "nombre_es": "Estiramiento de tríceps",
    "nombre_en": "Triceps Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "Sube un brazo y flexiona el codo, llevando la mano hacia la espalda entre los omóplatos. Con la otra mano, empuja suavemente el codo hacia atrás y hacia la cabeza hasta notar el estiramiento en la parte de atrás del brazo. Mantén 30 s y cambia de lado.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Si inclinas un poco el tronco hacia el lado contrario, se estira también el dorsal.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Echar la cabeza hacia delante. Arquear la zona lumbar.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Ninguna específica.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Reach your hand behind your head, grasp your elbow and gently pull. Hold for 10 to 20 seconds, then switch sides.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Triceps_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Triceps_Stretch/1.jpg",
@@ -83027,15 +83179,15 @@
    "id_ejercicio": "EJ0840",
    "nombre_es": "Estiramiento de espalda alta",
    "nombre_en": "Upper Back Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "De pie o sentado, entrelaza los dedos con las palmas hacia fuera y estira los brazos al frente. Redondea la espalda alta y separa las escápulas, como si abrazaras un barril, dejando caer la cabeza entre los brazos. Mantén 30 s respirando hondo.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Muy útil al terminar sesiones de remo o de pecho, y en pausas del trabajo de ordenador.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Encoger los hombros hacia las orejas. Redondear la zona lumbar en lugar de la espalda alta.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Ninguna específica.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. Clasp fingers together with your thumbs pointing down, round your shoulders as you reach your hands forward.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Upper_Back_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Upper_Back_Stretch/1.jpg",
@@ -83607,15 +83759,15 @@
    "id_ejercicio": "EJ0869",
    "nombre_es": "El mejor estiramiento del mundo",
    "nombre_en": "World's Greatest Stretch",
-   "ejecucion_es": null,
+   "ejecucion_es": "Zancada larga hacia delante, con la rodilla de atrás cerca del suelo. Apoya en el suelo la mano del lado de la pierna adelantada, por dentro del pie, y baja ese codo hacia el tobillo. Después abre el otro brazo hacia el techo girando el tronco y siguiendo la mano con la mirada. Vuelve, estira la pierna de delante llevando la cadera atrás y cambia de lado. Haz 3-5 repeticiones lentas por lado, o mantén cada posición unos segundos.",
    "ejecucion_en": null,
-   "recomendaciones_es": null,
+   "recomendaciones_es": "Trabaja de una vez flexores de cadera, isquios, glúteo y la rotación de la espalda alta. Sirve como vuelta a la calma y también como calentamiento antes de pierna.",
    "recomendaciones_en": null,
-   "errores_es": null,
+   "errores_es": "Hacerlo con prisa y rebotes. Girar desde la zona lumbar en vez de desde la espalda alta.",
    "errores_en": null,
-   "precauciones_es": null,
+   "precauciones_es": "Si te cuesta el equilibrio, apoya la rodilla de atrás en el suelo.",
    "precauciones_en": null,
-   "estado_ficha": "pendiente",
+   "estado_ficha": "completa",
    "instrucciones_fuente_en": "1. This is a three-part stretch. Begin by lunging forward, with your front foot flat on the ground and on the toes of your back foot. With your knees bent, squat down until your knee is almost touching the ground. Keep your torso erect, and hold this position for 10-20 seconds.\n2. Now, place the arm on the same side as your front leg on the ground, with the elbow next to the foot. Your other hand should be placed on the ground, parallel to your lead leg, to help support you during this portion of the stretch.\n3. After 10-20 seconds, place your hands on either side of your front foot. Raise the toes of the front foot off of the ground, and straighten your leg. You may need to reposition your rear leg to do so. Hold for 10-20 seconds, and then repeat the entire sequence for the other side.",
    "imagen_inicio": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Worlds_Greatest_Stretch/0.jpg",
    "imagen_final": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Worlds_Greatest_Stretch/1.jpg",
@@ -85160,6 +85312,26 @@
    "imagen_inicio": null,
    "imagen_final": null,
    "estado_imagen": "pendiente_grabar",
+   "fuente_imagen": null,
+   "licencia_imagen": null
+  },
+  {
+   "id_ejercicio": "EJ0947",
+   "nombre_es": "Caballero lateral: aductores y psoas",
+   "nombre_en": "Lateral Kneeling Hip Flexor and Adductor",
+   "ejecucion_es": "Desde la posición del caballero, saca el pie delantero hacia un lado (en lugar de hacia delante), con la punta mirando en la misma dirección que la rodilla. Mantén la rodilla de atrás apoyada y el tronco erguido. Desplaza el peso hacia el pie que has sacado, flexionando esa rodilla, hasta notar el estiramiento en la cara interna del muslo de la pierna estirada y en la parte delantera de la cadera. Mantén 30 s y cambia de lado.",
+   "ejecucion_en": null,
+   "recomendaciones_es": "Combina bien con el caballero clásico: primero el frontal y luego este. Puedes apoyar las manos en el suelo o en un banco para ajustar la intensidad.",
+   "recomendaciones_en": null,
+   "errores_es": "Dejar que la rodilla de la pierna que avanza caiga hacia dentro. Encorvar la espalda para llegar más lejos.",
+   "errores_en": null,
+   "precauciones_es": "Si notas pinchazo en la ingle (no tirantez), reduce la apertura.",
+   "precauciones_en": null,
+   "estado_ficha": "completa",
+   "instrucciones_fuente_en": null,
+   "imagen_inicio": null,
+   "imagen_final": null,
+   "estado_imagen": "sin_imagen",
    "fuente_imagen": null,
    "licencia_imagen": null
   }
@@ -87695,6 +87867,42 @@
    "uso_en_pare": "Precisión de las ecuaciones de 1RM estimado: útiles, con error, y distinta según ejercicio y sexo.",
    "verificado": "SI (comprobado, nov. 2026)",
    "apa7": "Ribeiro, A., da Silva, J. A., Nascimento, M., Martinho, D., dos Santos, L., de Salles, B., Mayhew, J., & Cyrino, E. S. (2024). Accuracy of 1RM prediction equations before and after resistance training in three different lifts. *International Journal of Strength and Conditioning, 4*(1)."
+  },
+  {
+   "id_referencia": "REF47",
+   "referencia": "Behm, D. G., Blazevich, A. J., Kay, A. D., & McHugh, M. (2016). Acute effects of muscle stretching on physical performance, range of motion, and injury incidence in healthy active individuals: A systematic review. Applied Physiology, Nutrition, and Metabolism, 41(1), 1–11.",
+   "tipo": "Artículo",
+   "doi_url": "https://doi.org/10.1139/apnm-2015-0235",
+   "uso_en_pare": "Estiramientos: el estático largo baja algo el rendimiento inmediato, el dinámico va mejor antes de entrenar; no hay efecto claro sobre las lesiones.",
+   "verificado": "SI (comprobado, nov. 2026)",
+   "apa7": "Behm, D. G., Blazevich, A. J., Kay, A. D., & McHugh, M. (2016). Acute effects of muscle stretching on physical performance, range of motion, and injury incidence in healthy active individuals: A systematic review. *Applied Physiology, Nutrition, and Metabolism, 41*(1), 1–11."
+  },
+  {
+   "id_referencia": "REF48",
+   "referencia": "Afonso, J., Clemente, F. M., Nakamura, F. Y., Morouço, P., Sarmento, H., Inman, R. A., & Ramirez-Campillo, R. (2021). The effectiveness of post-exercise stretching in short-term and delayed recovery of strength, range of motion and delayed onset muscle soreness: A systematic review and meta-analysis of randomized controlled trials. Frontiers in Physiology, 12, 677581.",
+   "tipo": "Artículo",
+   "doi_url": "https://doi.org/10.3389/fphys.2021.677581",
+   "uso_en_pare": "Estirar después de entrenar no recupera antes la fuerza ni quita las agujetas.",
+   "verificado": "SI (comprobado, nov. 2026)",
+   "apa7": "Afonso, J., Clemente, F. M., Nakamura, F. Y., Morouço, P., Sarmento, H., Inman, R. A., & Ramirez-Campillo, R. (2021). The effectiveness of post-exercise stretching in short-term and delayed recovery of strength, range of motion and delayed onset muscle soreness: A systematic review and meta-analysis of randomized controlled trials. *Frontiers in Physiology, 12*, Article 677581."
+  },
+  {
+   "id_referencia": "REF49",
+   "referencia": "Afonso, J., Ramirez-Campillo, R., Moscão, J., Rocha, T., Zacca, R., Martins, A., Milheiro, A. A., Ferreira, J., Sarmento, H., & Clemente, F. M. (2021). Strength training versus stretching for improving range of motion: A systematic review and meta-analysis. Healthcare, 9(4), 427.",
+   "tipo": "Artículo",
+   "doi_url": "https://doi.org/10.3390/healthcare9040427",
+   "uso_en_pare": "El entrenamiento de fuerza con recorrido completo mejora la movilidad tanto como estirar.",
+   "verificado": "SI (comprobado, nov. 2026)",
+   "apa7": "Afonso, J., Ramirez-Campillo, R., Moscão, J., Rocha, T., Zacca, R., Martins, A., Milheiro, A. A., Ferreira, J., Sarmento, H., & Clemente, F. M. (2021). Strength training versus stretching for improving range of motion: A systematic review and meta-analysis. *Healthcare, 9*(4), Article 427."
+  },
+  {
+   "id_referencia": "REF50",
+   "referencia": "Wiewelhove, T., Döweling, A., Schneider, C., Hottenrott, L., Meyer, T., Kellmann, M., Pfeiffer, M., & Ferrauti, A. (2019). A meta-analysis of the effects of foam rolling on performance and recovery. Frontiers in Physiology, 10, 376.",
+   "tipo": "Artículo",
+   "doi_url": "https://doi.org/10.3389/fphys.2019.00376",
+   "uso_en_pare": "Rodillo de espuma: efectos pequeños; algo de flexibilidad y menos dolor muscular percibido.",
+   "verificado": "SI (comprobado, nov. 2026)",
+   "apa7": "Wiewelhove, T., Döweling, A., Schneider, C., Hottenrott, L., Meyer, T., Kellmann, M., Pfeiffer, M., & Ferrauti, A. (2019). A meta-analysis of the effects of foam rolling on performance and recovery. *Frontiers in Physiology, 10*, Article 376."
   }
  ],
  "recomendaciones": [

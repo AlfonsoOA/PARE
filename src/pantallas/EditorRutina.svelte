@@ -170,12 +170,12 @@
             </div>
             <div class="rej">
               <label class="campo">Series<input type="number" inputmode="numeric" bind:value={it.series} /></label>
-              <label class="campo">Reps<span class="fila" style="gap:4px"><input type="number" inputmode="numeric" bind:value={it.repMin} aria-label="Repeticiones mínimas" /><input type="number" inputmode="numeric" bind:value={it.repMax} aria-label="Repeticiones máximas" /></span></label>
-              <label class="campo">{ud()}<input type="number" inputmode="decimal" step="0.25" bind:value={it._carga} placeholder="—" /></label>
+              <label class="campo">{e?.ud === 'tiempo' ? 'Seg.' : 'Reps'}<span class="fila" style="gap:4px"><input type="number" inputmode="numeric" bind:value={it.repMin} aria-label="Repeticiones mínimas" /><input type="number" inputmode="numeric" bind:value={it.repMax} aria-label="Repeticiones máximas" /></span></label>
+              {#if e?.carga !== 'sin_carga'}<label class="campo">{ud()}<input type="number" inputmode="decimal" step="0.25" bind:value={it._carga} placeholder="—" /></label>{/if}
               <label class="campo">Desc. (s)<input type="number" inputmode="numeric" step="15" bind:value={it.descanso} /></label>
             </div>
             {#if it.cargas?.length > 1 && new Set(it.cargas).size > 1 && guardar(it._carga) === it.carga}<p class="sec peq">Por serie: {it.cargas.map((c) => fmtNum(mostrar(c))).join(' · ')} {ud()}. Si cambias el peso de arriba, todas las series pasan a ese peso.</p>{/if}
-            <div class="fila" style="gap:8px;align-items:flex-end">
+            <div class="fila" style="gap:8px;align-items:flex-end" hidden={e?.carga === 'sin_carga'}>
               <label class="campo" style="flex:1">RPE<input type="text" inputmode="decimal" bind:value={it.rpe} placeholder="p. ej. 9" /></label>
               <label class="campo" style="flex:1">RIR<input type="text" inputmode="decimal" bind:value={it.rir} placeholder="p. ej. 1" /></label>
               <label class="fila" style="gap:6px;min-height:44px;flex:1"><input type="checkbox" bind:checked={it.topSet} style="width:22px;height:22px" /> <span class="peq">Top set</span></label>

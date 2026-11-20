@@ -141,7 +141,7 @@
   }
   const alternativas = (i) => alternativasDe(sa.ejercicios[i].ej, app.datos.perfil.molestias);
   const pendientes = $derived(totales - hechas);
-  const desc = (z, e) => (usaPesoCorporal(e) ? (z.carga ? (z.carga > 0 ? `PC + ${fmt(z.carga, false)}` : `PC − ${fmt(-z.carga, false)}`) : 'PC') : z.carga == null ? '¿peso?' : fmt(z.carga, false));
+  const desc = (z, e) => (e?.carga === 'sin_carga' ? '' : usaPesoCorporal(e) ? (z.carga ? (z.carga > 0 ? `PC + ${fmt(z.carga, false)}` : `PC − ${fmt(-z.carga, false)}`) : 'PC') : z.carga == null ? '¿peso?' : fmt(z.carga, false));
 </script>
 
 {#if !sa}
@@ -183,7 +183,7 @@
             {#if et[i]}<span class="ssl">{et[i]}</span>{/if}
             <span class="col" style="gap:0;min-width:0;align-items:flex-start">
               <b>{e?.n ?? x.ej}</b>
-              <span class="sec peq">{hechasX}/{x.series.length} series · {x.objetivo.repMin}-{x.objetivo.repMax}{e?.ud === 'tiempo' ? ' s' : ' reps'} · descanso {fmtReloj(x.descanso)}</span>
+              <span class="sec peq">{hechasX}/{x.series.length} series · {x.objetivo.repMin === x.objetivo.repMax ? x.objetivo.repMin : `${x.objetivo.repMin}-${x.objetivo.repMax}`}{e?.ud === 'tiempo' ? ' s' : ' reps'} · descanso {fmtReloj(x.descanso)}</span>
             </span>
             {#if hechasX === x.series.length}<span class="ok"><Icono n="check" tam={20} /></span>{/if}
           </button>
@@ -207,7 +207,7 @@
             {#if x.nota}<p class="peq nota">{x.nota}</p>{/if}
             {#if r && r.nivel !== 'recomendado'}<div class="aviso-l peq"><Icono n="aviso" tam={18} /><p><b>{r.zona}:</b> {r.motivo}</p></div>{/if}
             {#if usaPesoCorporal(e)}<p class="sec peq">PC = tu peso corporal{pc ? ` (${fmt(pc)})` : ''}. Toca una serie para indicar lastre o asistencia.</p>{/if}
-            {#if x.objetivo.carga == null && !usaPesoCorporal(e) && !prev}
+            {#if x.objetivo.carga == null && !usaPesoCorporal(e) && e?.carga !== 'sin_carga' && !prev}
               <p class="guia peq">Primer día: elige un peso con el que te sobren 2-3 repeticiones y apúntalo.</p>
             {/if}
 
@@ -215,10 +215,14 @@
               <div class="serie" class:hecha={z.hecha}>
                 <button class="datos" onclick={() => abrirSerie(i, k)} aria-label="Editar serie {k + 1}">
                   <span class="n">{k + 1}{#if x.objetivo.topSet && k === 0}<span class="top">TOP</span>{/if}</span>
-                  <span class="carga">{desc(z, e)}</span>
-                  <span class="por">×</span>
-                  <span class="reps">{z.reps ?? '—'}</span>
-                  {#if prev?.series[k]}<span class="ant">antes {desc(prev.series[k], e)}×{prev.series[k].reps}</span>{/if}
+                  {#if e?.carga === 'sin_carga'}
+                    <span class="carga">{z.reps ?? '—'} {e?.ud === 'tiempo' ? 's' : 'reps'}</span>
+                  {:else}
+                    <span class="carga">{desc(z, e)}</span>
+                    <span class="por">×</span>
+                    <span class="reps">{z.reps ?? '—'}</span>
+                    {#if prev?.series[k]}<span class="ant">antes {desc(prev.series[k], e)}×{prev.series[k].reps}</span>{/if}
+                  {/if}
                 </button>
                 <button class="check" class:on={z.hecha} onclick={() => casilla(i, k)} aria-label={z.hecha ? 'Desmarcar serie' : 'Marcar serie como hecha'} aria-pressed={z.hecha}>
                   <Icono n="check" tam={26} />
@@ -252,7 +256,7 @@
   {@const x = sa.ejercicios[hoja.i]}
   {@const e = ej(x.ej)}
   <Hoja titulo="Serie {hoja.k + 1} · {e?.n}" cerrar={() => (hoja = null)}>
-    <div class="ajuste">
+    <div class="ajuste" hidden={e?.carga === 'sin_carga'}>
       {#if ed.modo}
         <div class="fila envolver" role="group" aria-label="Tipo de carga">
           {#each [['pc', 'Solo peso corporal'], ['lastre', 'Con lastre'], ['asistencia', 'Con asistencia']] as [m, l]}
@@ -279,7 +283,7 @@
         <button class="icono-b grande" onclick={() => (ed.reps = +ed.reps + (e?.ud === 'tiempo' ? 5 : 1))} aria-label="Más"><Icono n="mas" /></button>
       </div>
     </div>
-    <details><summary class="sec">Repeticiones en reserva (RIR), opcional</summary>
+    <details hidden={e?.carga === 'sin_carga'}><summary class="sec">Repeticiones en reserva (RIR), opcional</summary>
       <div class="fila envolver" style="margin-top:8px">{#each [0, 1, 2, 3, 4] as v}<button class="chip" class:on={ed.rir === v} onclick={() => (ed.rir = ed.rir === v ? null : v)}>{v === 4 ? '4+' : v}</button>{/each}</div>
     </details>
     <button class="boton ancho" onclick={() => guardarSerie(true)}>Hecha</button>

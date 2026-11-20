@@ -1,7 +1,7 @@
 // Avisos del día (pantalla Hoy). Tono: el dato primero y, cuando cabe, la gracia; en salud, nada de bromas.
 import { app, hoyISO } from './estado.svelte.js';
 import { ej, GRUPOS, NOMBRE_GRUPO } from './catalogo.js';
-import { estadoEjercicio, historialEjercicio, volumenPlanificado, banda, deltoidesPlanificado, MIN_CABEZA } from './entreno.js';
+import { esMovilidad, estadoEjercicio, historialEjercicio, volumenPlanificado, banda, deltoidesPlanificado, MIN_CABEZA } from './entreno.js';
 import { sesionEsquivada, pesoEnFecha, diasSinEntrenar } from './sesiones.js';
 
 export function estadosEjercicios(d = app.datos) {
@@ -9,6 +9,7 @@ export function estadosEjercicios(d = app.datos) {
   for (const s of d.sesiones) for (const x of s.ejercicios) ids.add(x.ej);
   const out = {};
   for (const id of ids) {
+    if (esMovilidad(ej(id))) continue;
     const h = historialEjercicio(d.sesiones, id, (f) => pesoEnFecha(f, d));
     out[id] = { hist: h, ...estadoEjercicio(h, d.perfil.nivel, d.perfil.faseDieta, hoyISO(), d.topes?.[id]) };
   }

@@ -63,7 +63,7 @@
               {#if et[k]}<span class="ss">{et[k]}</span>{/if}
               <span class="col" style="gap:1px;min-width:0;align-items:flex-start">
                 <span class="nom">{e?.n ?? it.ej}</span>
-                <span class="sec peq">{it.series} × {it.repMin === it.repMax ? it.repMin : `${it.repMin}-${it.repMax}`}{e?.ud === 'tiempo' ? ' s' : ''} · {it.carga != null ? fmt(it.carga) : 'carga el primer día'} · descanso {fmtReloj(it.descanso)}</span>
+                <span class="sec peq">{it.series} × {it.repMin === it.repMax ? it.repMin : `${it.repMin}-${it.repMax}`}{e?.ud === 'tiempo' ? ' s' : ''} · {e?.carga === 'sin_carga' ? (e.tipo === 'estiramiento' || e.tipo === 'automasaje' ? 'estiramiento' : 'sin carga') : it.carga != null ? fmt(it.carga) : 'carga el primer día'} · descanso {fmtReloj(it.descanso)}</span>
                 {#if it.nota}<span class="sec peq nota">{it.nota}</span>{/if}
               </span>
               {#if r?.nivel === 'precaucion'}<span class="insignia aviso">!</span>{/if}

@@ -92,3 +92,5 @@ label.campo { display: flex; flex-direction: column; gap: 6px; font-size: 14px; 
 .vacio { text-align: center; padding: 30px 10px; color: var(--texto2); }
 .oculto { display: none !important; }
 hr { border: 0; border-top: 1px solid var(--borde); margin: 4px 0; width: 100%; }
+
+[hidden] { display: none !important; }

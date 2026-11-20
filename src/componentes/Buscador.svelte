@@ -2,17 +2,19 @@
   // Hoja para elegir un ejercicio del catálogo (editor de rutina y sesión en curso).
   import { app } from '../lib/estado.svelte.js';
   import { cat, GRUPOS, NOMBRE_GRUPO, normalizar, etiqueta, palabras, coincide } from '../lib/catalogo.js';
-  import { restriccion } from '../lib/entreno.js';
+  import { restriccion, esMovilidad } from '../lib/entreno.js';
   import Hoja from './Hoja.svelte';
   let { cerrar, elegir, titulo = 'Añadir ejercicio', ids = null, inicial = '' } = $props();
   let q = $state(inicial);
   let grupo = $state('');
   let eq = $state('');
+  let movilidad = $state(false); // solo estiramientos y automasaje
   let todos = $state(false); // con alternativas (ids), poder buscar en todo el catálogo
   const EQ = [['barra', 'Barra'], ['mancuerna', 'Mancuernas'], ['maquina', 'Máquina'], ['polea', 'Polea'], ['peso_corporal', 'Peso corporal'], ['kettlebell', 'Kettlebell']];
   const lista = $derived.by(() => {
     const n = normalizar(q.trim());
     let l = ids && !todos ? ids.map((i) => cat.porId.get(i)).filter(Boolean) : cat.ejercicios;
+    if (movilidad) l = l.filter(esMovilidad);
     if (grupo) l = l.filter((e) => e.gp?.includes(grupo));
     if (eq) l = l.filter((e) => e.eq === eq);
     if (n) { const ws = palabras(q); l = l.filter((e) => coincide(ws, e.n, e.en, (e.gp || []).map((g) => NOMBRE_GRUPO[g]).join(' '), e.ficha?.recomendaciones));
@@ -30,7 +32,8 @@
   {/if}
   {#if !ids || todos}
     <div class="desliza">
-      <button class="chip" class:on={!grupo} onclick={() => (grupo = '')}>Todos</button>
+      <button class="chip" class:on={!grupo && !movilidad} onclick={() => { grupo = ''; movilidad = false; }}>Todos</button>
+      <button class="chip" class:on={movilidad} onclick={() => (movilidad = !movilidad)}>Estiramientos</button>
       {#each GRUPOS as g}<button class="chip" class:on={grupo === g} onclick={() => (grupo = grupo === g ? '' : g)}>{NOMBRE_GRUPO[g]}</button>{/each}
     </div>
     <div class="desliza">

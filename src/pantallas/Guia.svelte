@@ -21,6 +21,7 @@
       'Cada serie ya trae el peso que hiciste en esa misma serie la última vez, también si haces pirámide. Si cambias el peso de una serie, las siguientes se ajustan solas.',
       'Debajo de cada serie ves «antes 60 kg × 10»: lo que hiciste la vez anterior. La idea es igualarlo o mejorarlo.',
       'El primer día de un ejercicio, elige un peso con el que te sobren 2-3 repeticiones.',
+      'Estiramientos: en Editar rutina, «Añadir ejercicio» → «Estiramientos» (o busca «caballero», «espalda», «rodillo»…). Se anotan por segundos, no cuentan en tus series semanales y no tienen progresión. Ponlos al final de la sesión.',
       'Al acabar, Terminar → «Terminar y guardar». En «Para la próxima» PARE te propone los pesos: si completaste todas las series en el tope de repeticiones, sube cada serie un escalón.',
       'Si un ejercicio llega al máximo de la máquina (no hay más placas), márcalo al terminar: «Es el máximo de la máquina». PARE deja de subir el peso y te sube las repeticiones; cuando llegues a 20 (15 en los multiarticulares, como una hack o un remo), te propone cambiarlo por una variante más dura. Si llevas 3 sesiones con el mismo peso aunque te tocaba subir, PARE te lo pregunta.',
       'El botón atrás del móvil no borra nada: la sesión sigue abierta y la retomas desde Hoy.',

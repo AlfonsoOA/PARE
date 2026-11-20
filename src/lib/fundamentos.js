@@ -67,6 +67,12 @@ export const FUNDAMENTOS = [
       refs: ['REF12', 'REF46'],
     },
     {
+      id: 'estiramientos', t: 'Estiramientos y rodillo: para qué sirven (y para qué no)',
+      x: 'Estirar de forma regular mejora la flexibilidad, y eso es lo que justifica hacerlo. Lo que no hace, según las revisiones, es recuperarte antes: después de entrenar no devuelve antes la fuerza ni quita las agujetas, y tampoco reduce las lesiones de forma clara. Antes de entrenar, el estiramiento estático largo baja algo el rendimiento inmediato; para calentar es mejor el movimiento dinámico. El rodillo de espuma tiene efectos pequeños: algo más de flexibilidad y algo menos de dolor percibido. Y entrenar fuerza con recorrido completo mejora la movilidad tanto como estirar.',
+      criterio: 'Por eso en PARE los estiramientos se anotan por segundos (30 s por lado, por defecto), no cuentan en tus series semanales ni tienen progresión. Si te sientan bien, al final de la sesión o en casa, adelante.',
+      refs: ['REF48', 'REF47', 'REF49', 'REF50'],
+    },
+    {
       id: 'pc', t: 'Ejercicios con tu peso corporal',
       x: 'En dominadas, fondos o flexiones mueves una parte de tu peso, más el lastre o menos la asistencia. Para las flexiones se usan fracciones medidas en plataforma de fuerzas (unos 2/3 del peso corporal en la flexión estándar).',
       refs: ['REF13'],

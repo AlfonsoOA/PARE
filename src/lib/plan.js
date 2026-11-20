@@ -105,6 +105,7 @@ const puntos = (e, nivel) => (e.img ? 3 : 0) + ((RANGO_NIVEL[e.niv] ?? 0) <= niv
 
 /** Series y repeticiones según objetivo y papel. */
 export function prescripcion(objetivo, papel, e) {
+  if (e?.tipo === 'estiramiento' || e?.tipo === 'automasaje') return { series: 2, repMin: 30, repMax: 30 };
   if (e?.ud === 'tiempo' || e?.carga === 'isometrico_peso_corporal') return { series: 3, repMin: 30, repMax: 45 };
   if (objetivo === 'fuerza') return papel === 'P' ? { series: 4, repMin: 4, repMax: 6 } : { series: 3, repMin: 6, repMax: 10 };
   if (objetivo === 'salud') return papel === 'P' ? { series: 3, repMin: 10, repMax: 12 } : { series: 2, repMin: 12, repMax: 15 };
