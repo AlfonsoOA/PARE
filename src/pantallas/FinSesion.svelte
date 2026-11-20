@@ -19,7 +19,16 @@
     return n.map((z) => ({ ...z, ej: x.ej }));
   }) : [];
   // Para la próxima: editable (en unidades de pantalla)
-  let prox = $state(s ? propuestasPara(s).map((p) => ({ ...p, cargas: (p.prop.cargas?.length ? p.prop.cargas : [p.prop.carga]).map((c) => mostrar(c) ?? '') })) : []);
+  // Si durante la sesión añadiste o quitaste series de la lista, se toma ese número para la rutina (cambio hecho a propósito);
+  // una serie que se queda sin marcar no cuenta como quitada. Se avisa y se puede volver a lo de la rutina.
+  const deHoy = (p) => s.ejercicios.find((y) => y.uid === p.uid) ?? s.ejercicios.find((y) => y.ej === p.ej);
+  let prox = $state(s ? propuestasPara(s).map((p) => {
+    const x = deHoy(p);
+    const hoy = x?.series.length ?? null, rut = x?.objetivo?.series ?? +p.prop.series;
+    const q = { ...p, rutSeries: rut, hoySeries: hoy, cargas: (p.prop.cargas?.length ? p.prop.cargas : [p.prop.carga]).map((c) => mostrar(c) ?? '') };
+    if (hoy && hoy !== rut) q.prop = { ...p.prop, series: hoy };
+    return q;
+  }) : []);
   // una casilla de peso por serie (si se cambia el número de series, se repite el último peso)
   const casillas = (p) => Array.from({ length: Math.max(1, +p.prop.series || 1) }, (_, k) => k);
   const valorSerie = (p, k) => p.cargas[k] ?? p.cargas.at(-1) ?? '';
@@ -98,6 +107,10 @@
           {#if p.sospechaTope}<p class="peq aviso">Llevas 3 sesiones con el mismo peso aunque te tocaba subir. ¿Es el máximo de la máquina?</p>{/if}
           <label class="fila tope"><input type="checkbox" checked={p.tope != null} onchange={(ev) => cambiarTope(p, ev.currentTarget.checked)} /> <span class="peq">Es el máximo de la máquina{p.tope != null ? ` (${fmt(p.tope)})` : ''}</span></label>
         {/if}
+        {#if p.hoySeries && p.hoySeries !== p.rutSeries}
+          <p class="peq cambio">Hoy pusiste {p.hoySeries} series y tu rutina tenía {p.rutSeries}: {+p.prop.series === p.hoySeries ? 'se guardan las de hoy.' : `se mantienen ${p.prop.series}.`}
+            {#if +p.prop.series === p.hoySeries}<button class="enlace" onclick={() => (p.prop.series = p.rutSeries)}>Mantener {p.rutSeries}</button>{:else}<button class="enlace" onclick={() => (p.prop.series = p.hoySeries)}>Usar las de hoy ({p.hoySeries})</button>{/if}</p>
+        {/if}
         <div class="rej">
           <label class="campo">Series<input type="number" inputmode="numeric" bind:value={p.prop.series} /></label>
           <label class="campo">Reps mín.<input type="number" inputmode="numeric" bind:value={p.prop.repMin} /></label>
@@ -126,6 +139,8 @@
 <style>
   .rej { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
   .rej input { text-align: center; padding: 0 6px; }
+  .cambio { margin: 0; padding: 8px 10px; border-radius: 10px; background: var(--elevada); }
+  .cambio .enlace { padding: 0; margin-left: 4px; }
   .series { display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 8px; }
   .series input { text-align: center; padding: 0 6px; }
   .tope { gap: 10px; align-items: center; min-height: 40px; }

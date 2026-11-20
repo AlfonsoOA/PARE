@@ -128,6 +128,8 @@ export function terminarSesion() {
   const ses = app.datos.rutina?.sesiones.find((y) => y.id === sa.sesionId);
   if (ses) for (const x of hecha.ejercicios) {
     const it = ses.items.find((y) => y.uid === x.uid);
+    // Series añadidas o quitadas de la lista durante la sesión: cambio a propósito, se queda en la rutina (las que solo quedan sin marcar, no)
+    if (it && x.series.length && x.objetivo?.series != null && x.series.length !== x.objetivo.series) it.series = x.series.length;
     const hechas = x.series.filter((z) => z.hecha && z.carga != null);
     if (!it || !hechas.length) continue;
     it.cargas = hechas.map((z) => z.carga);
