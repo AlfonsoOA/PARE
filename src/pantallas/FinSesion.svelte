@@ -3,7 +3,7 @@
   import { app, ir, aviso } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
   import { historialEjercicio, novedades, volumenSesionHecha, cargaEfectiva, usaPesoCorporal } from '../lib/entreno.js';
-  import { propuestasPara, propuestaDe, pesoEnFecha } from '../lib/sesiones.js';
+  import { propuestasPara, propuestaDe, pesoEnFecha, alternarCambioRutina } from '../lib/sesiones.js';
   import { copiaAutomatica } from '../lib/archivo.js';
   import { fmt, fmtMin, fmtNum, mostrar, guardar, ud, fmtReloj } from '../lib/unidades.js';
   import Icono from '../componentes/Icono.svelte';
@@ -50,7 +50,7 @@
     if (ses) {
       for (const p of prox) {
         const it = ses.items.find((y) => y.uid === p.uid);
-        if (!it) continue;
+        if (!it || it.ej !== p.ej) continue; // deshiciste el cambio de ejercicio: no se le aplica la propuesta
         it.series = +p.prop.series; it.repMin = +p.prop.repMin; it.repMax = +p.prop.repMax;
         it.descanso = +p.prop.descanso;
         const cs = casillas(p).map((k) => valorSerie(p, k)).map((v) => (v === '' || v == null ? null : guardar(v)));
@@ -94,6 +94,25 @@
       {#each GRUPOS.filter((g) => vol[g] > 0) as g}<span class="peq"><b>{NOMBRE_GRUPO[g]}</b> +{fmtNum(vol[g], 1)}</span>{/each}
     </div>
   </div>
+
+  {#if s.cambiosRutina?.length}
+    <h2>Cambios en tu rutina</h2>
+    <p class="sec peq">Lo que cambiaste hoy en los ejercicios se queda en tu rutina. Si fue solo por hoy, deshazlo aquí.</p>
+    <div class="tarjeta col" style="gap:10px">
+      {#each s.cambiosRutina as c (c.uid + c.tipo)}
+        <div class="fila entre" style="gap:10px;align-items:flex-start">
+          <p class="peq" style="margin:0;min-width:0">
+            {#if c.tipo === 'sustituido'}{#if !c.deshecho}<b>{ej(c.a)?.n}</b> sustituye a {ej(c.de)?.n}.{:else}Sigue {ej(c.de)?.n} (sin sustituir).{/if}
+            {:else if c.tipo === 'anadido'}{#if !c.deshecho}<b>{ej(c.a)?.n}</b>: añadido a la rutina.{:else}{ej(c.a)?.n}: solo por hoy.{/if}
+            {:else}{#if !c.deshecho}Hoy no hiciste <b>{ej(c.de)?.n}</b>: sigue en tu rutina.{:else}<b>{ej(c.de)?.n}</b>: quitado de la rutina.{/if}{/if}
+          </p>
+          <button class="enlace" style="padding:0;flex-shrink:0" onclick={() => alternarCambioRutina(s, c)}>
+            {c.tipo === 'quitado' ? (c.deshecho ? 'Volver a ponerlo' : 'Quitarlo de la rutina') : c.deshecho ? 'Rehacer' : 'Deshacer'}
+          </button>
+        </div>
+      {/each}
+    </div>
+  {/if}
 
   {#if prox.length}
     <h2>Para la próxima</h2>

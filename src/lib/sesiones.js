@@ -118,7 +118,7 @@ export function terminarSesion() {
   const hecha = {
     id: sa.id, fecha: sa.fecha, inicio: new Date(sa.inicio).toISOString(), duracion: Math.round((Date.now() - sa.inicio) / 1000),
     estimada: sa.estimada, sesionId: sa.sesionId, nombre: sa.nombre, rutinaVersion: sa.rutinaVersion,
-    ejercicios: sa.ejercicios.map((x) => ({ uid: x.uid, ej: x.ej, unir: x.unir, objetivo: x.objetivo, series: x.series.map((z) => ({ ...z })) })),
+    ejercicios: sa.ejercicios.map((x) => ({ uid: x.uid, ej: x.ej, unir: x.unir, descanso: x.descanso, objetivo: x.objetivo, series: x.series.map((z) => ({ ...z })) })),
     nota: '', sensacion: null,
   };
   app.datos.sesiones.push(hecha);
@@ -126,6 +126,7 @@ export function terminarSesion() {
   if (sa.sesionIdx != null && app.datos.rutina) marcarHecha(sa.sesionIdx);
   // Los pesos de cada serie pasan a la rutina tal cual se hicieron (pirámides incluidas), aunque luego no se pulse «Guardar».
   const ses = app.datos.rutina?.sesiones.find((y) => y.id === sa.sesionId);
+  if (ses) hecha.cambiosRutina = cambiosDeEjercicios(ses, hecha.ejercicios);
   if (ses) for (const x of hecha.ejercicios) {
     const it = ses.items.find((y) => y.uid === x.uid);
     // Series añadidas o quitadas de la lista durante la sesión: cambio a propósito, se queda en la rutina (las que solo quedan sin marcar, no)
@@ -137,6 +138,46 @@ export function terminarSesion() {
   }
   app.sesionActiva = null;
   app.vista = { nombre: 'fin', id: hecha.id, acento: 'entrenar' };
+}
+/**
+ * Ejercicios añadidos o sustituidos durante la sesión: pasan a la rutina (cambio hecho a propósito).
+ * Los quitados de la sesión no se quitan de la rutina (puede ser solo por hoy): se apuntan para ofrecerlo al terminar.
+ * Devuelve la lista de cambios, con lo que hace falta para deshacerlos.
+ */
+function cambiosDeEjercicios(ses, ejercicios) {
+  const cambios = [];
+  for (const [k, x] of ejercicios.entries()) {
+    const it = ses.items.find((y) => y.uid === x.uid);
+    if (it && it.ej !== x.ej) {
+      cambios.push({ tipo: 'sustituido', uid: it.uid, de: it.ej, a: x.ej, antes: JSON.parse(JSON.stringify(it)) });
+      it.ej = x.ej; it.carga = null; it.cargas = undefined;
+    } else if (!it) {
+      const nuevo = { uid: x.uid, ej: x.ej, series: x.series.length || 3, repMin: x.objetivo?.repMin ?? 8, repMax: x.objetivo?.repMax ?? 12, carga: null, descanso: x.descanso ?? 90, unir: false };
+      // se coloca detrás del ejercicio que lo precedía en la sesión
+      const prev = ejercicios.slice(0, k).reverse().map((y) => ses.items.findIndex((z) => z.uid === y.uid)).find((j) => j >= 0);
+      ses.items.splice(prev != null ? prev + 1 : ses.items.length, 0, nuevo);
+      cambios.push({ tipo: 'anadido', uid: x.uid, a: x.ej });
+    }
+  }
+  for (const it of ses.items) if (!ejercicios.some((x) => x.uid === it.uid)) cambios.push({ tipo: 'quitado', uid: it.uid, de: it.ej });
+  return cambios;
+}
+/** Deshace (o, si es un ejercicio quitado hoy, aplica) un cambio de la rutina hecho al terminar la sesión. */
+export function alternarCambioRutina(hecha, c) {
+  const ses = app.datos.rutina?.sesiones.find((y) => y.id === hecha.sesionId);
+  if (!ses) return;
+  const i = ses.items.findIndex((y) => y.uid === c.uid);
+  if (c.tipo === 'sustituido') {
+    if (!c.deshecho && i >= 0) { c.despues = JSON.parse(JSON.stringify(ses.items[i])); ses.items[i] = JSON.parse(JSON.stringify(c.antes)); }
+    else if (c.deshecho && i >= 0 && c.despues) ses.items[i] = JSON.parse(JSON.stringify(c.despues));
+  } else if (c.tipo === 'anadido') {
+    if (!c.deshecho && i >= 0) { c.item = ses.items.splice(i, 1)[0]; c.pos = i; }
+    else if (c.deshecho && c.item) ses.items.splice(Math.min(c.pos ?? ses.items.length, ses.items.length), 0, c.item);
+  } else if (c.tipo === 'quitado') {
+    if (!c.deshecho && i >= 0) { c.item = ses.items.splice(i, 1)[0]; c.pos = i; }
+    else if (c.deshecho && c.item) ses.items.splice(Math.min(c.pos ?? ses.items.length, ses.items.length), 0, c.item);
+  }
+  c.deshecho = !c.deshecho;
 }
 export function cancelarSesion() {
   app.sesionActiva = null;
