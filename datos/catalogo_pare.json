@@ -97075,7 +97075,7 @@
   },
   {
    "id_alimento": "AL0250",
-   "nombre_es": "Boquerón (fresco, limpio)",
+   "nombre_es": "Boquerón",
    "nombre_en": null,
    "grupo": "proteina",
    "cuenta_como": "P",
@@ -97105,7 +97105,7 @@
   },
   {
    "id_alimento": "AL0251",
-   "nombre_es": "Codillo de cerdo (carne y piel)",
+   "nombre_es": "Codillo de cerdo",
    "nombre_en": null,
    "grupo": "proteina",
    "cuenta_como": "P",
@@ -97128,11 +97128,11 @@
    "activo": "SI",
    "fuente": "Etiqueta Hacendado (codillo de cerdo), vía FatSecret",
    "id_fuente": null,
-   "notas": "Carne y piel sin hueso. Saturadas estimadas (proporción típica del cerdo)."
+   "notas": "Carne y piel, sin hueso. Saturadas estimadas (proporción típica del cerdo)."
   },
   {
    "id_alimento": "AL0252",
-   "nombre_es": "Rabo de toro (carne)",
+   "nombre_es": "Rabo de toro",
    "nombre_en": null,
    "grupo": "proteina",
    "cuenta_como": "P",
@@ -97160,7 +97160,7 @@
   },
   {
    "id_alimento": "AL0253",
-   "nombre_es": "Carrillada de cerdo",
+   "nombre_es": "Cerdo, carrillada",
    "nombre_en": null,
    "grupo": "proteina",
    "cuenta_como": "P",
@@ -97188,7 +97188,7 @@
   },
   {
    "id_alimento": "AL0254",
-   "nombre_es": "Cerdo, chuleta con su grasa (ibérica o de aguja)",
+   "nombre_es": "Cerdo, chuleta con su grasa",
    "nombre_en": null,
    "grupo": "proteina",
    "cuenta_como": "P",

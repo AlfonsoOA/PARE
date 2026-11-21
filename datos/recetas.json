@@ -1583,10 +1583,10 @@
    "nombre_es": "Bacalao con tomate y patata",
    "porciones": 1,
    "peso_total_g": 651,
-   "kcal_porcion": 455,
-   "proteina_porcion": 36.5,
+   "kcal_porcion": 470,
+   "proteina_porcion": 39.9,
    "hidratos_porcion": 46.4,
-   "grasa_porcion": 12.8,
+   "grasa_porcion": 12.6,
    "fibra_porcion": 6.9,
    "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
    "momento": "comida;cena",
@@ -1601,10 +1601,11 @@
    "fuente": "PARE (recetario básico)",
    "notas": null,
    "tipo": "plato",
-   "tiempo_min": "25",
-   "coste_porcion": "2.6",
+   "tiempo_min": 25,
+   "coste_porcion": 3.32,
    "pasos": "Cuece la patata en rodajas 10 minutos en el microondas tapada. | Sofríe la cebolla y el pimiento en el aceite; añade el tomate y 5 minutos. | Pon el bacalao encima de la salsa, tapa y cocina 6-8 minutos. | Sirve con la patata.",
-   "estilo": "española"
+   "estilo": "española",
+   "peso_final_g": null
   },
   {
    "id_receta": "RE058",
@@ -2642,6 +2643,865 @@
     "leche"
    ],
    "coste_porcion": 1.45
+  },
+  {
+   "id_receta": "RE094",
+   "nombre_es": "Ensalada César de restaurante",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "mediterránea",
+   "peso_final_g": 380,
+   "notas": "Ración típica de carta. Si quieres aligerarla fuera, pide la salsa aparte.",
+   "pasos": "Base: lava y trocea la lechuga romana en un bol amplio. | Pollo y crujiente: cocina la pechuga de pollo marcada y córtala en tiras; añade los picatostes y las lascas de parmesano. | Aliño: mezcla la mayonesa con las anchoas picadas e incorpora la salsa César justo antes de servir.",
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 675,
+   "proteina_porcion": 44.8,
+   "hidratos_porcion": 25.5,
+   "grasa_porcion": 42.4,
+   "fibra_porcion": 3.1,
+   "peso_total_g": 365,
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "leche",
+    "pescado"
+   ],
+   "coste_porcion": 2.24
+  },
+  {
+   "id_receta": "RE095",
+   "nombre_es": "Revuelto de setas y gambas",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": 320,
+   "notas": "Opción muy limpia y alta en proteína cuando comes fuera.",
+   "pasos": "Salteado: lamina los ajos y dóralos en AOVE; añade las setas troceadas y saltea a fuego vivo hasta que pierdan su agua. | Gambas: incorpora las gambas peladas y saltea 1 minuto hasta que cambien de color. | Cuajado: baja el fuego, añade los huevos ligeramente batidos con sal y remueve suavemente hasta que queden jugosos.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 580,
+   "proteina_porcion": 42.8,
+   "hidratos_porcion": 10.5,
+   "grasa_porcion": 39.1,
+   "fibra_porcion": 4.6,
+   "peso_total_g": 460,
+   "alergenos": [
+    "crustaceos",
+    "huevo"
+   ],
+   "coste_porcion": 2.9
+  },
+  {
+   "id_receta": "RE096",
+   "nombre_es": "Parrillada de verduras a la plancha",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 20,
+   "estilo": "mediterránea",
+   "peso_final_g": 350,
+   "notas": "Guarnición o entrante ligero ideal para compartir.",
+   "pasos": "Corte: corta todas las verduras en láminas o bastones de grosor uniforme. | Plancha: asa sobre plancha bien caliente pincelada con AOVE hasta marcar por ambos lados y termina con sal en escamas.",
+   "etiquetas": [
+    "vegano",
+    "vegetariano",
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 278,
+   "proteina_porcion": 4.2,
+   "hidratos_porcion": 16.5,
+   "grasa_porcion": 20.6,
+   "fibra_porcion": 6.9,
+   "peso_total_g": 442,
+   "alergenos": [],
+   "coste_porcion": 1.39
+  },
+  {
+   "id_receta": "RE097",
+   "nombre_es": "Revuelto de espárragos trigueros con jamón ibérico",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": 300,
+   "notas": "No te pases con la sal porque el jamón ibérico aporta bastante al calentarse.",
+   "pasos": "Espárragos: trocea los espárragos desechando la parte dura del tallo y saltéalos en AOVE 5-6 minutos hasta que estén tiernos pero al dente. | Jamón y huevo: añade el jamón ibérico (solo vuelta y vuelta para que no quede salado) y cuaja con los huevos batidos a fuego suave.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 580,
+   "proteina_porcion": 43,
+   "hidratos_porcion": 6.6,
+   "grasa_porcion": 41.1,
+   "fibra_porcion": 2.8,
+   "peso_total_g": 406,
+   "alergenos": [
+    "huevo"
+   ],
+   "coste_porcion": 3.01
+  },
+  {
+   "id_receta": "RE098",
+   "nombre_es": "Croquetas cremosas de jamón ibérico (ración)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 30,
+   "estilo": "española",
+   "peso_final_g": 280,
+   "notas": "Calculado para una ración estándar de bar de 8 unidades.",
+   "pasos": "Bechamel: rehoga el jamón en mantequilla, tuesta la harina, incorpora la leche caliente sin parar de remover y cuece 15 minutos hasta que espese; enfría en nevera. | Boleado y fritura: forma 8 croquetas, pásalas por huevo batido y pan rallado, y fríe en aceite bien caliente hasta dorar.",
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 1123,
+   "proteina_porcion": 45.2,
+   "hidratos_porcion": 59.2,
+   "grasa_porcion": 78.1,
+   "fibra_porcion": 2.3,
+   "peso_total_g": 515,
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 2.44
+  },
+  {
+   "id_receta": "RE099",
+   "nombre_es": "Croquetas de rabo de toro (ración)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 35,
+   "estilo": "española",
+   "peso_final_g": 290,
+   "notas": "Calculado para una ración estándar de bar de 8 unidades.",
+   "pasos": "Relleno: desmiga la carne de rabo de toro guisado e intégrala en una bechamel ligada con parte de su propia salsa reducida; deja enfriar por completo. | Fritura: bolea 8 unidades, empana en huevo y pan rallado, y fríe en aceite abundante caliente hasta dejar crujientes por fuera.",
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 909,
+   "proteina_porcion": 35.7,
+   "hidratos_porcion": 29.1,
+   "grasa_porcion": 72.2,
+   "fibra_porcion": 1,
+   "peso_total_g": 460,
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 2.36
+  },
+  {
+   "id_receta": "RE100",
+   "nombre_es": "Croquetas de bacalao (ración)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 30,
+   "estilo": "española",
+   "peso_final_g": 280,
+   "notas": "Calculado para una ración estándar de bar de 8 unidades.",
+   "pasos": "Masa: sofríe ajo y perejil en AOVE, añade el bacalao desmigado, liga con la bechamel y deja enfriar varias horas. | Fritura: da forma a 8 croquetas, empana con huevo y pan rallado, y fríe en aceite caliente hasta que doren.",
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 1039,
+   "proteina_porcion": 40.1,
+   "hidratos_porcion": 60.1,
+   "grasa_porcion": 70.8,
+   "fibra_porcion": 2.5,
+   "peso_total_g": 539,
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "leche",
+    "pescado"
+   ],
+   "coste_porcion": 2.29
+  },
+  {
+   "id_receta": "RE101",
+   "nombre_es": "Flamenquín cordobés de jamón ibérico con patatas",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 25,
+   "estilo": "española",
+   "peso_final_g": 420,
+   "notas": "Pieza completa de restaurante con su guarnición habitual de patatas.",
+   "pasos": "Enrollado: extiende el filete de lomo fino, cubre con lonchas de jamón ibérico y enrolla bien apretado formando un cilindro. | Empanado: pasa por huevo batido y pan rallado dos veces para sellar bien los extremos. | Fritura: fríe en aceite caliente a fuego medio-alto para que se haga por dentro sin quemarse y acompaña con las patatas fritas.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 978,
+   "proteina_porcion": 66,
+   "hidratos_porcion": 41.2,
+   "grasa_porcion": 60.1,
+   "fibra_porcion": 2.8,
+   "peso_total_g": 470,
+   "alergenos": [
+    "gluten",
+    "huevo"
+   ],
+   "coste_porcion": 3.02
+  },
+  {
+   "id_receta": "RE102",
+   "nombre_es": "Cachopín cordobés de jamón ibérico, queso y pimientos",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 25,
+   "estilo": "española",
+   "peso_final_g": 450,
+   "notas": "Bomba calórica de día libre: casi 1.200 kcal la pieza con guarnición.",
+   "pasos": "Montaje: rellena un filete de lomo con jamón ibérico, queso y tiras de pimiento; tapa con el otro filete sellando bien los bordes. | Fritura: empana en huevo y pan rallado, y fríe en aceite caliente hasta dorar por fuera y fundir el queso interior; sirve con patatas fritas.",
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 1116,
+   "proteina_porcion": 76.8,
+   "hidratos_porcion": 44.6,
+   "grasa_porcion": 68.9,
+   "fibra_porcion": 3.1,
+   "peso_total_g": 550,
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 3.4
+  },
+  {
+   "id_receta": "RE103",
+   "nombre_es": "Patatas bravas de bar",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 25,
+   "estilo": "española",
+   "peso_final_g": 360,
+   "notas": "Ración completa de bar; si la compartes al centro, ajusta porción.",
+   "pasos": "Patatas: fríe los gajos de patata en abundante aceite (primero a temperatura media para confitar y luego fuerte para dorar) y escurre sobre papel. | Salsa: napa con la salsa brava caliente por encima justo antes de llevar a la mesa.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 662,
+   "proteina_porcion": 9.3,
+   "hidratos_porcion": 63.9,
+   "grasa_porcion": 40.5,
+   "fibra_porcion": 6.5,
+   "peso_total_g": 445,
+   "alergenos": [
+    "huevo"
+   ],
+   "coste_porcion": 0.98
+  },
+  {
+   "id_receta": "RE104",
+   "nombre_es": "Berenjenas fritas a la miel de caña",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 20,
+   "estilo": "española",
+   "peso_final_g": 280,
+   "notas": "La berenjena absorbe mucho aceite en fritura más el azúcar de la miel.",
+   "pasos": "Fritura: pasa la berenjena seca por harina sacudiendo el exceso y fríe en aceite bien caliente hasta que quede muy crujiente; escurre bien. | Acabado: riega con hilos de miel de caña por encima en el momento de servir.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 644,
+   "proteina_porcion": 7.1,
+   "hidratos_porcion": 71,
+   "grasa_porcion": 36,
+   "fibra_porcion": 7.5,
+   "peso_total_g": 362,
+   "alergenos": [
+    "gluten"
+   ],
+   "coste_porcion": 0.89
+  },
+  {
+   "id_receta": "RE105",
+   "nombre_es": "Patatas fritas con huevos fritos y jamón (Huevos rotos)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 20,
+   "estilo": "española",
+   "peso_final_g": 450,
+   "notas": "Plato clásico de taberna; ronda las 950 kcal por ración entera.",
+   "pasos": "Fritura: fríe las patatas en aceite caliente hasta dorar y colócalas de base en la fuente. | Remate: fríe los huevos en aceite muy caliente para hacer puntilla, ponlos sobre las patatas, cubre con las lonchas de jamón para que atemperen con el calor y rompe las yemas.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 1028,
+   "proteina_porcion": 44.6,
+   "hidratos_porcion": 59,
+   "grasa_porcion": 67.5,
+   "fibra_porcion": 4.5,
+   "peso_total_g": 587,
+   "alergenos": [
+    "huevo"
+   ],
+   "coste_porcion": 2.78
+  },
+  {
+   "id_receta": "RE106",
+   "nombre_es": "Bacalao frito rebozado (ración)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": 260,
+   "notas": "Buena carga proteica (unos 42 g), penalizada solo por el aceite del rebozado.",
+   "pasos": "Rebozado: seca muy bien los tajos de bacalao desalado, pásalos por harina y huevo. | Fritura: fríe en aceite caliente 3-4 minutos hasta que el exterior quede dorado y crujiente y las lascas interiores jugosas.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 546,
+   "proteina_porcion": 43.3,
+   "hidratos_porcion": 25.4,
+   "grasa_porcion": 30.1,
+   "fibra_porcion": 1,
+   "peso_total_g": 310,
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "pescado"
+   ],
+   "coste_porcion": 2.59
+  },
+  {
+   "id_receta": "RE107",
+   "nombre_es": "Boquerones fritos al limón",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": 240,
+   "notas": "Pescado azul con ~44 g de proteína por ración.",
+   "pasos": "Enharinado: sala los boquerones limpios y secos, pásalos por harina sacudiendo muy bien el sobrante. | Fritura rápida: fríe en aceite muy caliente en tandas cortas de 1,5-2 minutos hasta que queden sueltos y crujientes; sirve con limón.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 901,
+   "proteina_porcion": 61.8,
+   "hidratos_porcion": 26.1,
+   "grasa_porcion": 60.6,
+   "fibra_porcion": 1.1,
+   "peso_total_g": 327,
+   "alergenos": [
+    "gluten",
+    "pescado"
+   ],
+   "coste_porcion": 4.79
+  },
+  {
+   "id_receta": "RE108",
+   "nombre_es": "Calamares fritos a la andaluza",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": 240,
+   "notas": "Ración típica de fritura andaluza .",
+   "pasos": "Enharinado: seca bien las anillas de calamar, sálalas y rebózalas en harina fina. | Fritura: fríe en aceite muy caliente durante 1,5-2 minutos máximo para que queden tiernos por dentro y crujientes por fuera.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 479,
+   "proteina_porcion": 26.9,
+   "hidratos_porcion": 31.9,
+   "grasa_porcion": 27.2,
+   "fibra_porcion": 1.2,
+   "peso_total_g": 332,
+   "alergenos": [
+    "gluten",
+    "moluscos"
+   ],
+   "coste_porcion": 2.8
+  },
+  {
+   "id_receta": "RE109",
+   "nombre_es": "Choco frito en tiras",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": 250,
+   "notas": "Muy alto en proteína  dentro de las opciones de fritura.",
+   "pasos": "Preparación: corta el choco limpio en tiras gruesas, sécalo con papel y enharina ligeramente. | Fritura: fríe en aceite muy caliente unos 2 minutos hasta dorar; escurre sobre papel absorbente.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 571,
+   "proteina_porcion": 46.9,
+   "hidratos_porcion": 30.7,
+   "grasa_porcion": 27.5,
+   "fibra_porcion": 1.2,
+   "peso_total_g": 327,
+   "alergenos": [
+    "gluten",
+    "moluscos"
+   ],
+   "coste_porcion": 2.87
+  },
+  {
+   "id_receta": "RE110",
+   "nombre_es": "Calamares a la plancha con ajo y perejil",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 12,
+   "estilo": "mediterránea",
+   "peso_final_g": 220,
+   "notas": "De las mejores opciones de carta en relación calorías/proteína",
+   "pasos": "Plancha: marca el calamar bien seco sobre plancha muy caliente con unas gotas de AOVE 1,5-2 minutos por lado. | Majado: aliña al final con un majado crudo de AOVE, ajo muy picado y perejil fresco.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 269,
+   "proteina_porcion": 25.3,
+   "hidratos_porcion": 4.7,
+   "grasa_porcion": 16.8,
+   "fibra_porcion": 0.4,
+   "peso_total_g": 310,
+   "alergenos": [
+    "moluscos"
+   ],
+   "coste_porcion": 3.03
+  },
+  {
+   "id_receta": "RE111",
+   "nombre_es": "Pijotas fritas de Málaga/Cádiz",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": 240,
+   "notas": "Pescado blanco magro rebozado .",
+   "pasos": "Enharinado: sala las pijotas limpias y pásalas por harina sacudiendo el exceso. | Fritura: fríe en aceite bien caliente unos 2-3 minutos hasta que la piel esté dorada y crujiente.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 571,
+   "proteina_porcion": 48.4,
+   "hidratos_porcion": 25.1,
+   "grasa_porcion": 30.3,
+   "fibra_porcion": 1,
+   "peso_total_g": 322,
+   "alergenos": [
+    "gluten",
+    "pescado"
+   ],
+   "coste_porcion": 2.34
+  },
+  {
+   "id_receta": "RE112",
+   "nombre_es": "Crujientes de langostinos (5 unidades)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": 200,
+   "notas": "Ración exacta de 5 piezas de la carta.",
+   "pasos": "Envoltura: envuelve cada langostino pelado (dejando la cola fuera) en pasta brick o rebozado crujiente. | Fritura: fríe en aceite caliente 2 minutos hasta que la cobertura quede dorada y muy crujiente.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 462,
+   "proteina_porcion": 26.4,
+   "hidratos_porcion": 24.8,
+   "grasa_porcion": 27.7,
+   "fibra_porcion": 1.3,
+   "peso_total_g": 220,
+   "alergenos": [
+    "crustaceos",
+    "gluten",
+    "huevo"
+   ],
+   "coste_porcion": 1.76
+  },
+  {
+   "id_receta": "RE113",
+   "nombre_es": "Pez de espada a la plancha",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 12,
+   "estilo": "mediterránea",
+   "peso_final_g": 230,
+   "notas": "Plancha limpia con ~50 g de proteína.",
+   "pasos": "Plancha: cocina el filete de pez espada a fuego fuerte sobre plancha engrasada con AOVE 2-3 minutos por cada lado para que no se seque. | Acabado: termina con ajo picado, perejil y unas gotas de limón.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 522,
+   "proteina_porcion": 48.5,
+   "hidratos_porcion": 3.1,
+   "grasa_porcion": 35.3,
+   "fibra_porcion": 0.3,
+   "peso_total_g": 286,
+   "alergenos": [
+    "pescado"
+   ],
+   "coste_porcion": 4.23
+  },
+  {
+   "id_receta": "RE114",
+   "nombre_es": "Lubina a la plancha",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "mediterránea",
+   "peso_final_g": 240,
+   "notas": "Opción impecable de pescado a la plancha .",
+   "pasos": "Plancha: cocina los lomos primero con la piel hacia abajo a fuego medio-alto 4 minutos hasta que quede crujiente y 1-2 minutos por el lado de la carne. | Refrito: riega por encima con un refrito suave de ajo laminado y AOVE.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 380,
+   "proteina_porcion": 54.5,
+   "hidratos_porcion": 3.2,
+   "grasa_porcion": 16.6,
+   "fibra_porcion": 0.4,
+   "peso_total_g": 290,
+   "alergenos": [
+    "pescado"
+   ],
+   "coste_porcion": 4.39
+  },
+  {
+   "id_receta": "RE115",
+   "nombre_es": "Salmón a la plancha con salsa de naranja",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "mediterránea",
+   "peso_final_g": 260,
+   "notas": "Aporta grasas saludables omega-3 además de ~44 g de proteína.",
+   "pasos": "Salmón: marca el lomo de salmón a la plancha 3 minutos por el lado de la piel y 2 minutos por el otro. | Glaseado: reduce el zumo de naranja con una pizca de azúcar hasta obtener una salsa brillante y salsea por encima.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 634,
+   "proteina_porcion": 45.3,
+   "hidratos_porcion": 13,
+   "grasa_porcion": 44.2,
+   "fibra_porcion": 0,
+   "peso_total_g": 322,
+   "alergenos": [
+    "pescado"
+   ],
+   "coste_porcion": 3.2
+  },
+  {
+   "id_receta": "RE116",
+   "nombre_es": "Presa ibérica 100 % a la brasa/plancha con guarnición",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 20,
+   "estilo": "española",
+   "peso_final_g": 360,
+   "notas": "Corte noble ibérico con alta infiltración grasa .",
+   "pasos": "Sellado: atempera la presa ibérica y márcala a fuego muy fuerte en plancha o brasa 3-4 minutos por cada lado dejándola jugosa y rosada al corte. | Servicio: sirve con sal en escamas y las patatas de guarnición.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 968,
+   "proteina_porcion": 47,
+   "hidratos_porcion": 19.8,
+   "grasa_porcion": 77.5,
+   "fibra_porcion": 1.6,
+   "peso_total_g": 407,
+   "alergenos": [],
+   "coste_porcion": 5.06
+  },
+  {
+   "id_receta": "RE117",
+   "nombre_es": "Solomillo ibérico 100 % a la plancha con guarnición",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 18,
+   "estilo": "española",
+   "peso_final_g": 350,
+   "notas": "El corte más magro del ibérico .",
+   "pasos": "Plancha: sella los medallones de solomillo a fuego vivo 2-3 minutos por cara para mantener toda su jugosidad. | Servicio: acompaña con las patatas de guarnición.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 587,
+   "proteina_porcion": 56.8,
+   "hidratos_porcion": 19.8,
+   "grasa_porcion": 30.2,
+   "fibra_porcion": 1.6,
+   "peso_total_g": 392,
+   "alergenos": [],
+   "coste_porcion": 2.84
+  },
+  {
+   "id_receta": "RE118",
+   "nombre_es": "Pechuga de pollo a la plancha con guarnición",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": 340,
+   "notas": "Si cambias las patatas por ensalada o verdura te queda un plato de definición.",
+   "pasos": "Plancha: cocina los filetes de pechuga salpimentados a fuego medio-alto en plancha engrasada con AOVE 2-3 minutos por lado. | Servicio: sirve con patatas de guarnición.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 520,
+   "proteina_porcion": 52.3,
+   "hidratos_porcion": 19.8,
+   "grasa_porcion": 24.7,
+   "fibra_porcion": 1.6,
+   "peso_total_g": 362,
+   "alergenos": [],
+   "coste_porcion": 1.99
+  },
+  {
+   "id_receta": "RE119",
+   "nombre_es": "Carrillada de cerdo ibérico estofada",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 90,
+   "estilo": "española",
+   "peso_final_g": 380,
+   "notas": "Ración melosa de guiso tradicional .",
+   "pasos": "Estofado: sella las carrilladas salpimentadas en AOVE, pocha la verdura, desglasa con vino y guisa a fuego lento 1,5 horas hasta que se deshagan en su salsa ligada. | Guarnición: sirve acompañada de patatas fritas en dados.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 846,
+   "proteina_porcion": 56,
+   "hidratos_porcion": 27.5,
+   "grasa_porcion": 49.6,
+   "fibra_porcion": 3.9,
+   "peso_total_g": 580,
+   "alergenos": [
+    "sulfitos"
+   ],
+   "coste_porcion": 3.51
+  },
+  {
+   "id_receta": "RE120",
+   "nombre_es": "Rabo de toro estofado a la cordobesa",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 180,
+   "estilo": "española",
+   "peso_final_g": 400,
+   "notas": "Clásico cordobés gelatinoso y potente .",
+   "pasos": "Guiso tradicional: dora los trozos de rabo enharinados ligeramente, sofríe la bresa de verduras, cubre con vino y agua y cuece 2,5-3 horas hasta que la carne se separe sola del hueso. | Salsa y servicio: tritura la salsa hasta que quede brillante y acompaña con patatas fritas.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 909,
+   "proteina_porcion": 49.7,
+   "hidratos_porcion": 37.6,
+   "grasa_porcion": 51.8,
+   "fibra_porcion": 5,
+   "peso_total_g": 640,
+   "alergenos": [
+    "gluten",
+    "sulfitos"
+   ],
+   "coste_porcion": 4.66
+  },
+  {
+   "id_receta": "RE121",
+   "nombre_es": "Entrecot de ternera a la brasa/plancha con guarnición",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": 420,
+   "notas": "Pieza generosa con ~64 g de proteína y ~980 kcal con patatas.",
+   "pasos": "Plancha: sella el entrecot atemperado sobre plancha humeante 2-3 minutos por cara al punto deseado. | Reposo: deja reposar 2 minutos antes de servir con sal en escamas y patatas.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 1062,
+   "proteina_porcion": 62.6,
+   "hidratos_porcion": 19.8,
+   "grasa_porcion": 79.5,
+   "fibra_porcion": 1.6,
+   "peso_total_g": 457,
+   "alergenos": [],
+   "coste_porcion": 7.33
+  },
+  {
+   "id_receta": "RE122",
+   "nombre_es": "Codillo de cerdo asado con patatas",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 120,
+   "estilo": "española",
+   "peso_final_g": 550,
+   "notas": "El rey de los excesos de la carta .",
+   "pasos": "Asado lento: hornea el codillo a temperatura suave (160 °C) durante casi 2 horas bañándolo en su propio jugo. | Crujiente: sube a 220 °C los últimos 15 minutos para dejar la piel crujiente y sirve sobre cama de patatas.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 857,
+   "proteina_porcion": 54.6,
+   "hidratos_porcion": 25.3,
+   "grasa_porcion": 54.7,
+   "fibra_porcion": 2.7,
+   "peso_total_g": 469,
+   "alergenos": [],
+   "coste_porcion": 2.79
+  },
+  {
+   "id_receta": "RE123",
+   "nombre_es": "Chuletas de cerdo ibérico con patatas",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 18,
+   "estilo": "española",
+   "peso_final_g": 380,
+   "notas": "Ración completa de chuletas ibéricas",
+   "pasos": "Plancha/brasa: asa las chuletas ibéricas (chuleta con su grasa) a fuego vivo 3-4 minutos por cada lado para dorar la grasa exterior manteniendo el interior jugoso. | Servicio: sirve con sal gruesa y patatas fritas.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 1190,
+   "proteina_porcion": 45.9,
+   "hidratos_porcion": 19.8,
+   "grasa_porcion": 103.1,
+   "fibra_porcion": 1.6,
+   "peso_total_g": 422,
+   "alergenos": [],
+   "coste_porcion": 3.7
   }
  ],
  "receta_ingredientes": [
@@ -6363,69 +7223,6 @@
    "nota": null
   },
   {
-   "id_receta": "RE057",
-   "nombre_receta": "Bacalao con tomate y patata",
-   "orden": 1,
-   "id_alimento": "AL0026",
-   "nombre_alimento": "Bacalao fresco",
-   "gramos": 180,
-   "nota": null
-  },
-  {
-   "id_receta": "RE057",
-   "nombre_receta": "Bacalao con tomate y patata",
-   "orden": 2,
-   "id_alimento": "AL0084",
-   "nombre_alimento": "Patata",
-   "gramos": 200,
-   "nota": null
-  },
-  {
-   "id_receta": "RE057",
-   "nombre_receta": "Bacalao con tomate y patata",
-   "orden": 3,
-   "id_alimento": "AL0137",
-   "nombre_alimento": "Tomate triturado en conserva",
-   "gramos": 150,
-   "nota": null
-  },
-  {
-   "id_receta": "RE057",
-   "nombre_receta": "Bacalao con tomate y patata",
-   "orden": 4,
-   "id_alimento": "AL0140",
-   "nombre_alimento": "Cebolla",
-   "gramos": 50,
-   "nota": null
-  },
-  {
-   "id_receta": "RE057",
-   "nombre_receta": "Bacalao con tomate y patata",
-   "orden": 5,
-   "id_alimento": "AL0135",
-   "nombre_alimento": "Pimiento verde",
-   "gramos": 60,
-   "nota": null
-  },
-  {
-   "id_receta": "RE057",
-   "nombre_receta": "Bacalao con tomate y patata",
-   "orden": 6,
-   "id_alimento": "AL0156",
-   "nombre_alimento": "Aceite de oliva virgen extra",
-   "gramos": 10,
-   "nota": null
-  },
-  {
-   "id_receta": "RE057",
-   "nombre_receta": "Bacalao con tomate y patata",
-   "orden": 7,
-   "id_alimento": "AL0201",
-   "nombre_alimento": "Sal",
-   "gramos": 1,
-   "nota": null
-  },
-  {
    "id_receta": "RE058",
    "nombre_receta": "Albóndigas de pavo en salsa de tomate con arroz",
    "orden": 1,
@@ -9196,6 +9993,1563 @@
    "nombre_alimento": "Sal",
    "gramos": 1,
    "nota": "1 pizca"
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 1,
+   "id_alimento": "AL0235",
+   "nombre_alimento": "Bacalao desalado",
+   "gramos": 180,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 3,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 50,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 5,
+   "id_alimento": "AL0135",
+   "nombre_alimento": "Pimiento verde",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE057",
+   "nombre_receta": "Bacalao con tomate y patata",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE094",
+   "nombre_receta": "Ensalada César de restaurante",
+   "orden": 1,
+   "id_alimento": "AL0145",
+   "nombre_alimento": "Lechuga romana",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE094",
+   "nombre_receta": "Ensalada César de restaurante",
+   "orden": 2,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 140,
+   "nota": "a la plancha o crujiente"
+  },
+  {
+   "id_receta": "RE094",
+   "nombre_receta": "Ensalada César de restaurante",
+   "orden": 3,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 30,
+   "nota": "picatostes tostados o fritos"
+  },
+  {
+   "id_receta": "RE094",
+   "nombre_receta": "Ensalada César de restaurante",
+   "orden": 4,
+   "id_alimento": "AL0058",
+   "nombre_alimento": "Queso parmesano rallado",
+   "gramos": 25,
+   "nota": "en lascas"
+  },
+  {
+   "id_receta": "RE094",
+   "nombre_receta": "Ensalada César de restaurante",
+   "orden": 5,
+   "id_alimento": "AL0174",
+   "nombre_alimento": "Mayonesa",
+   "gramos": 45,
+   "nota": "base de salsa César"
+  },
+  {
+   "id_receta": "RE094",
+   "nombre_receta": "Ensalada César de restaurante",
+   "orden": 6,
+   "id_alimento": "AL0037",
+   "nombre_alimento": "Anchoas en aceite, escurridas",
+   "gramos": 5,
+   "nota": "para la salsa"
+  },
+  {
+   "id_receta": "RE095",
+   "nombre_receta": "Revuelto de setas y gambas",
+   "orden": 1,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 180,
+   "nota": "3 huevos L"
+  },
+  {
+   "id_receta": "RE095",
+   "nombre_receta": "Revuelto de setas y gambas",
+   "orden": 2,
+   "id_alimento": "AL0150",
+   "nombre_alimento": "Setas de cardo / ostra",
+   "gramos": 150,
+   "nota": "variadas, troceadas"
+  },
+  {
+   "id_receta": "RE095",
+   "nombre_receta": "Revuelto de setas y gambas",
+   "orden": 3,
+   "id_alimento": "AL0038",
+   "nombre_alimento": "Gambas / langostinos",
+   "gramos": 100,
+   "nota": "pelados"
+  },
+  {
+   "id_receta": "RE095",
+   "nombre_receta": "Revuelto de setas y gambas",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 8,
+   "nota": "2 dientes, laminados"
+  },
+  {
+   "id_receta": "RE095",
+   "nombre_receta": "Revuelto de setas y gambas",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 20,
+   "nota": null
+  },
+  {
+   "id_receta": "RE095",
+   "nombre_receta": "Revuelto de setas y gambas",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE096",
+   "nombre_receta": "Parrillada de verduras a la plancha",
+   "orden": 1,
+   "id_alimento": "AL0131",
+   "nombre_alimento": "Calabacín",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE096",
+   "nombre_receta": "Parrillada de verduras a la plancha",
+   "orden": 2,
+   "id_alimento": "AL0132",
+   "nombre_alimento": "Berenjena",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE096",
+   "nombre_receta": "Parrillada de verduras a la plancha",
+   "orden": 3,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE096",
+   "nombre_receta": "Parrillada de verduras a la plancha",
+   "orden": 4,
+   "id_alimento": "AL0143",
+   "nombre_alimento": "Espárragos verdes",
+   "gramos": 80,
+   "nota": null
+  },
+  {
+   "id_receta": "RE096",
+   "nombre_receta": "Parrillada de verduras a la plancha",
+   "orden": 5,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE096",
+   "nombre_receta": "Parrillada de verduras a la plancha",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 20,
+   "nota": null
+  },
+  {
+   "id_receta": "RE096",
+   "nombre_receta": "Parrillada de verduras a la plancha",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE097",
+   "nombre_receta": "Revuelto de espárragos trigueros con jamón ibérico",
+   "orden": 1,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 180,
+   "nota": "3 huevos L"
+  },
+  {
+   "id_receta": "RE097",
+   "nombre_receta": "Revuelto de espárragos trigueros con jamón ibérico",
+   "orden": 2,
+   "id_alimento": "AL0143",
+   "nombre_alimento": "Espárragos verdes",
+   "gramos": 150,
+   "nota": "trigueros"
+  },
+  {
+   "id_receta": "RE097",
+   "nombre_receta": "Revuelto de espárragos trigueros con jamón ibérico",
+   "orden": 3,
+   "id_alimento": "AL0193",
+   "nombre_alimento": "Jamón serrano",
+   "gramos": 60,
+   "nota": "ibérico en taquitos o virutas"
+  },
+  {
+   "id_receta": "RE097",
+   "nombre_receta": "Revuelto de espárragos trigueros con jamón ibérico",
+   "orden": 4,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE097",
+   "nombre_receta": "Revuelto de espárragos trigueros con jamón ibérico",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": "poca, el jamón ya sala"
+  },
+  {
+   "id_receta": "RE098",
+   "nombre_receta": "Croquetas cremosas de jamón ibérico (ración)",
+   "orden": 1,
+   "id_alimento": "AL0062",
+   "nombre_alimento": "Mantequilla",
+   "gramos": 35,
+   "nota": null
+  },
+  {
+   "id_receta": "RE098",
+   "nombre_receta": "Croquetas cremosas de jamón ibérico (ración)",
+   "orden": 2,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 40,
+   "nota": "para la bechamel"
+  },
+  {
+   "id_receta": "RE098",
+   "nombre_receta": "Croquetas cremosas de jamón ibérico (ración)",
+   "orden": 3,
+   "id_alimento": "AL0048",
+   "nombre_alimento": "Leche entera",
+   "gramos": 250,
+   "nota": null
+  },
+  {
+   "id_receta": "RE098",
+   "nombre_receta": "Croquetas cremosas de jamón ibérico (ración)",
+   "orden": 4,
+   "id_alimento": "AL0193",
+   "nombre_alimento": "Jamón serrano",
+   "gramos": 70,
+   "nota": "ibérico picado"
+  },
+  {
+   "id_receta": "RE098",
+   "nombre_receta": "Croquetas cremosas de jamón ibérico (ración)",
+   "orden": 5,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "1 huevo para rebozar"
+  },
+  {
+   "id_receta": "RE098",
+   "nombre_receta": "Croquetas cremosas de jamón ibérico (ración)",
+   "orden": 6,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 35,
+   "nota": "rallado para rebozar"
+  },
+  {
+   "id_receta": "RE098",
+   "nombre_receta": "Croquetas cremosas de jamón ibérico (ración)",
+   "orden": 7,
+   "id_alimento": "AL0157",
+   "nombre_alimento": "Aceite de girasol",
+   "gramos": 25,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE099",
+   "nombre_receta": "Croquetas de rabo de toro (ración)",
+   "orden": 1,
+   "id_alimento": "AL0062",
+   "nombre_alimento": "Mantequilla",
+   "gramos": 30,
+   "nota": null
+  },
+  {
+   "id_receta": "RE099",
+   "nombre_receta": "Croquetas de rabo de toro (ración)",
+   "orden": 2,
+   "id_alimento": "AL0048",
+   "nombre_alimento": "Leche entera",
+   "gramos": 220,
+   "nota": null
+  },
+  {
+   "id_receta": "RE099",
+   "nombre_receta": "Croquetas de rabo de toro (ración)",
+   "orden": 3,
+   "id_alimento": "AL0252",
+   "nombre_alimento": "Rabo de toro",
+   "gramos": 90,
+   "nota": "deshilachado, del rabo guisado"
+  },
+  {
+   "id_receta": "RE099",
+   "nombre_receta": "Croquetas de rabo de toro (ración)",
+   "orden": 4,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "1 huevo para rebozar"
+  },
+  {
+   "id_receta": "RE099",
+   "nombre_receta": "Croquetas de rabo de toro (ración)",
+   "orden": 5,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 35,
+   "nota": "rallado para rebozar"
+  },
+  {
+   "id_receta": "RE099",
+   "nombre_receta": "Croquetas de rabo de toro (ración)",
+   "orden": 6,
+   "id_alimento": "AL0157",
+   "nombre_alimento": "Aceite de girasol",
+   "gramos": 25,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE100",
+   "nombre_receta": "Croquetas de bacalao (ración)",
+   "orden": 1,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 30,
+   "nota": "para la bechamel"
+  },
+  {
+   "id_receta": "RE100",
+   "nombre_receta": "Croquetas de bacalao (ración)",
+   "orden": 2,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE100",
+   "nombre_receta": "Croquetas de bacalao (ración)",
+   "orden": 3,
+   "id_alimento": "AL0048",
+   "nombre_alimento": "Leche entera",
+   "gramos": 250,
+   "nota": null
+  },
+  {
+   "id_receta": "RE100",
+   "nombre_receta": "Croquetas de bacalao (ración)",
+   "orden": 4,
+   "id_alimento": "AL0235",
+   "nombre_alimento": "Bacalao desalado",
+   "gramos": 90,
+   "nota": "desalado y desmigado"
+  },
+  {
+   "id_receta": "RE100",
+   "nombre_receta": "Croquetas de bacalao (ración)",
+   "orden": 5,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 4,
+   "nota": "1 diente"
+  },
+  {
+   "id_receta": "RE100",
+   "nombre_receta": "Croquetas de bacalao (ración)",
+   "orden": 6,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE100",
+   "nombre_receta": "Croquetas de bacalao (ración)",
+   "orden": 7,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "para rebozar"
+  },
+  {
+   "id_receta": "RE100",
+   "nombre_receta": "Croquetas de bacalao (ración)",
+   "orden": 8,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 35,
+   "nota": "rallado"
+  },
+  {
+   "id_receta": "RE100",
+   "nombre_receta": "Croquetas de bacalao (ración)",
+   "orden": 9,
+   "id_alimento": "AL0157",
+   "nombre_alimento": "Aceite de girasol",
+   "gramos": 25,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE101",
+   "nombre_receta": "Flamenquín cordobés de jamón ibérico con patatas",
+   "orden": 1,
+   "id_alimento": "AL0015",
+   "nombre_alimento": "Cerdo, cinta de lomo",
+   "gramos": 160,
+   "nota": "espalmada"
+  },
+  {
+   "id_receta": "RE101",
+   "nombre_receta": "Flamenquín cordobés de jamón ibérico con patatas",
+   "orden": 2,
+   "id_alimento": "AL0193",
+   "nombre_alimento": "Jamón serrano",
+   "gramos": 60,
+   "nota": "ibérico en lonchas"
+  },
+  {
+   "id_receta": "RE101",
+   "nombre_receta": "Flamenquín cordobés de jamón ibérico con patatas",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "1 huevo para empanar"
+  },
+  {
+   "id_receta": "RE101",
+   "nombre_receta": "Flamenquín cordobés de jamón ibérico con patatas",
+   "orden": 4,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 40,
+   "nota": "rallado para empanar"
+  },
+  {
+   "id_receta": "RE101",
+   "nombre_receta": "Flamenquín cordobés de jamón ibérico con patatas",
+   "orden": 5,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 120,
+   "nota": "guarnición frita"
+  },
+  {
+   "id_receta": "RE101",
+   "nombre_receta": "Flamenquín cordobés de jamón ibérico con patatas",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 30,
+   "nota": "absorbido en fritura de flamenquín y patatas"
+  },
+  {
+   "id_receta": "RE102",
+   "nombre_receta": "Cachopín cordobés de jamón ibérico, queso y pimientos",
+   "orden": 1,
+   "id_alimento": "AL0015",
+   "nombre_alimento": "Cerdo, cinta de lomo",
+   "gramos": 180,
+   "nota": "en dos filetes finos"
+  },
+  {
+   "id_receta": "RE102",
+   "nombre_receta": "Cachopín cordobés de jamón ibérico, queso y pimientos",
+   "orden": 2,
+   "id_alimento": "AL0193",
+   "nombre_alimento": "Jamón serrano",
+   "gramos": 50,
+   "nota": "ibérico"
+  },
+  {
+   "id_receta": "RE102",
+   "nombre_receta": "Cachopín cordobés de jamón ibérico, queso y pimientos",
+   "orden": 3,
+   "id_alimento": "AL0056",
+   "nombre_alimento": "Mozzarella semidesnatada",
+   "gramos": 40,
+   "nota": "queso fundente"
+  },
+  {
+   "id_receta": "RE102",
+   "nombre_receta": "Cachopín cordobés de jamón ibérico, queso y pimientos",
+   "orden": 4,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 30,
+   "nota": "asado en tiras"
+  },
+  {
+   "id_receta": "RE102",
+   "nombre_receta": "Cachopín cordobés de jamón ibérico, queso y pimientos",
+   "orden": 5,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "para empanar"
+  },
+  {
+   "id_receta": "RE102",
+   "nombre_receta": "Cachopín cordobés de jamón ibérico, queso y pimientos",
+   "orden": 6,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 40,
+   "nota": "rallado"
+  },
+  {
+   "id_receta": "RE102",
+   "nombre_receta": "Cachopín cordobés de jamón ibérico, queso y pimientos",
+   "orden": 7,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 120,
+   "nota": "guarnición frita"
+  },
+  {
+   "id_receta": "RE102",
+   "nombre_receta": "Cachopín cordobés de jamón ibérico, queso y pimientos",
+   "orden": 8,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 30,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE103",
+   "nombre_receta": "Patatas bravas de bar",
+   "orden": 1,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 350,
+   "nota": "cortadas en gajos o dados"
+  },
+  {
+   "id_receta": "RE103",
+   "nombre_receta": "Patatas bravas de bar",
+   "orden": 2,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 30,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE103",
+   "nombre_receta": "Patatas bravas de bar",
+   "orden": 3,
+   "id_alimento": "AL0211",
+   "nombre_alimento": "Tomate frito (bote)",
+   "gramos": 50,
+   "nota": "base de salsa brava"
+  },
+  {
+   "id_receta": "RE103",
+   "nombre_receta": "Patatas bravas de bar",
+   "orden": 4,
+   "id_alimento": "AL0174",
+   "nombre_alimento": "Mayonesa",
+   "gramos": 10,
+   "nota": "o alioli de toque"
+  },
+  {
+   "id_receta": "RE103",
+   "nombre_receta": "Patatas bravas de bar",
+   "orden": 5,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 3,
+   "nota": "picante"
+  },
+  {
+   "id_receta": "RE103",
+   "nombre_receta": "Patatas bravas de bar",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE104",
+   "nombre_receta": "Berenjenas fritas a la miel de caña",
+   "orden": 1,
+   "id_alimento": "AL0132",
+   "nombre_alimento": "Berenjena",
+   "gramos": 250,
+   "nota": "en bastones o rodajas finas"
+  },
+  {
+   "id_receta": "RE104",
+   "nombre_receta": "Berenjenas fritas a la miel de caña",
+   "orden": 2,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 40,
+   "nota": "para enharinar"
+  },
+  {
+   "id_receta": "RE104",
+   "nombre_receta": "Berenjenas fritas a la miel de caña",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 35,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE104",
+   "nombre_receta": "Berenjenas fritas a la miel de caña",
+   "orden": 4,
+   "id_alimento": "AL0178",
+   "nombre_alimento": "Azúcar",
+   "gramos": 35,
+   "nota": "equivalente calórico de la miel de caña"
+  },
+  {
+   "id_receta": "RE104",
+   "nombre_receta": "Berenjenas fritas a la miel de caña",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE105",
+   "nombre_receta": "Patatas fritas con huevos fritos y jamón (Huevos rotos)",
+   "orden": 1,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 350,
+   "nota": "para freír"
+  },
+  {
+   "id_receta": "RE105",
+   "nombre_receta": "Patatas fritas con huevos fritos y jamón (Huevos rotos)",
+   "orden": 2,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 120,
+   "nota": "2 huevos L fritos"
+  },
+  {
+   "id_receta": "RE105",
+   "nombre_receta": "Patatas fritas con huevos fritos y jamón (Huevos rotos)",
+   "orden": 3,
+   "id_alimento": "AL0193",
+   "nombre_alimento": "Jamón serrano",
+   "gramos": 70,
+   "nota": "ibérico en lonchas"
+  },
+  {
+   "id_receta": "RE105",
+   "nombre_receta": "Patatas fritas con huevos fritos y jamón (Huevos rotos)",
+   "orden": 4,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 45,
+   "nota": "absorbido entre patatas y huevos fritos"
+  },
+  {
+   "id_receta": "RE105",
+   "nombre_receta": "Patatas fritas con huevos fritos y jamón (Huevos rotos)",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE106",
+   "nombre_receta": "Bacalao frito rebozado (ración)",
+   "orden": 1,
+   "id_alimento": "AL0026",
+   "nombre_alimento": "Bacalao fresco",
+   "gramos": 220,
+   "nota": "lomo desalado"
+  },
+  {
+   "id_receta": "RE106",
+   "nombre_receta": "Bacalao frito rebozado (ración)",
+   "orden": 2,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 35,
+   "nota": "de fritura"
+  },
+  {
+   "id_receta": "RE106",
+   "nombre_receta": "Bacalao frito rebozado (ración)",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 30,
+   "nota": "1/2 huevo para rebozar"
+  },
+  {
+   "id_receta": "RE106",
+   "nombre_receta": "Bacalao frito rebozado (ración)",
+   "orden": 4,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 25,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE107",
+   "nombre_receta": "Boquerones fritos al limón",
+   "orden": 1,
+   "id_alimento": "AL0208",
+   "nombre_alimento": "Caballa en aceite, escurrida",
+   "gramos": 250,
+   "nota": "equivalente nutricional a boquerones limpios"
+  },
+  {
+   "id_receta": "RE107",
+   "nombre_receta": "Boquerones fritos al limón",
+   "orden": 2,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 35,
+   "nota": "de fritura"
+  },
+  {
+   "id_receta": "RE107",
+   "nombre_receta": "Boquerones fritos al limón",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 25,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE107",
+   "nombre_receta": "Boquerones fritos al limón",
+   "orden": 4,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE107",
+   "nombre_receta": "Boquerones fritos al limón",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE108",
+   "nombre_receta": "Calamares fritos a la andaluza",
+   "orden": 1,
+   "id_alimento": "AL0039",
+   "nombre_alimento": "Calamar",
+   "gramos": 250,
+   "nota": "limpio en anillas"
+  },
+  {
+   "id_receta": "RE108",
+   "nombre_receta": "Calamares fritos a la andaluza",
+   "orden": 2,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 40,
+   "nota": "de fritura"
+  },
+  {
+   "id_receta": "RE108",
+   "nombre_receta": "Calamares fritos a la andaluza",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 25,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE108",
+   "nombre_receta": "Calamares fritos a la andaluza",
+   "orden": 4,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE108",
+   "nombre_receta": "Calamares fritos a la andaluza",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE109",
+   "nombre_receta": "Choco frito en tiras",
+   "orden": 1,
+   "id_alimento": "AL0231",
+   "nombre_alimento": "Sepia",
+   "gramos": 260,
+   "nota": "choco/sepia/calamar limpia en tiras"
+  },
+  {
+   "id_receta": "RE109",
+   "nombre_receta": "Choco frito en tiras",
+   "orden": 2,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 40,
+   "nota": "de fritura"
+  },
+  {
+   "id_receta": "RE109",
+   "nombre_receta": "Choco frito en tiras",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 25,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE109",
+   "nombre_receta": "Choco frito en tiras",
+   "orden": 4,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE110",
+   "nombre_receta": "Calamares a la plancha con ajo y perejil",
+   "orden": 1,
+   "id_alimento": "AL0039",
+   "nombre_alimento": "Calamar",
+   "gramos": 280,
+   "nota": "limpio entero o en anillas"
+  },
+  {
+   "id_receta": "RE110",
+   "nombre_receta": "Calamares a la plancha con ajo y perejil",
+   "orden": 2,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE110",
+   "nombre_receta": "Calamares a la plancha con ajo y perejil",
+   "orden": 3,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 8,
+   "nota": "2 dientes, muy picados"
+  },
+  {
+   "id_receta": "RE110",
+   "nombre_receta": "Calamares a la plancha con ajo y perejil",
+   "orden": 4,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 5,
+   "nota": "perejil"
+  },
+  {
+   "id_receta": "RE110",
+   "nombre_receta": "Calamares a la plancha con ajo y perejil",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE111",
+   "nombre_receta": "Pijotas fritas de Málaga/Cádiz",
+   "orden": 1,
+   "id_alimento": "AL0192",
+   "nombre_alimento": "Merluza",
+   "gramos": 260,
+   "nota": "pijotas limpias enteras"
+  },
+  {
+   "id_receta": "RE111",
+   "nombre_receta": "Pijotas fritas de Málaga/Cádiz",
+   "orden": 2,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 35,
+   "nota": "de fritura"
+  },
+  {
+   "id_receta": "RE111",
+   "nombre_receta": "Pijotas fritas de Málaga/Cádiz",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 25,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE111",
+   "nombre_receta": "Pijotas fritas de Málaga/Cádiz",
+   "orden": 4,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE112",
+   "nombre_receta": "Crujientes de langostinos (5 unidades)",
+   "orden": 1,
+   "id_alimento": "AL0038",
+   "nombre_alimento": "Gambas / langostinos",
+   "gramos": 120,
+   "nota": "5 langostinos pelados"
+  },
+  {
+   "id_receta": "RE112",
+   "nombre_receta": "Crujientes de langostinos (5 unidades)",
+   "orden": 2,
+   "id_alimento": "AL0082",
+   "nombre_alimento": "Tortilla de trigo",
+   "gramos": 50,
+   "nota": "pasta filo/brick para envolver"
+  },
+  {
+   "id_receta": "RE112",
+   "nombre_receta": "Crujientes de langostinos (5 unidades)",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 30,
+   "nota": "1/2 huevo"
+  },
+  {
+   "id_receta": "RE112",
+   "nombre_receta": "Crujientes de langostinos (5 unidades)",
+   "orden": 4,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 20,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE113",
+   "nombre_receta": "Pez de espada a la plancha",
+   "orden": 1,
+   "id_alimento": "AL0032",
+   "nombre_alimento": "Pez espada",
+   "gramos": 250,
+   "nota": "filete"
+  },
+  {
+   "id_receta": "RE113",
+   "nombre_receta": "Pez de espada a la plancha",
+   "orden": 2,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE113",
+   "nombre_receta": "Pez de espada a la plancha",
+   "orden": 3,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 4,
+   "nota": "1 diente"
+  },
+  {
+   "id_receta": "RE113",
+   "nombre_receta": "Pez de espada a la plancha",
+   "orden": 4,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE113",
+   "nombre_receta": "Pez de espada a la plancha",
+   "orden": 5,
+   "id_alimento": "AL0203",
+   "nombre_alimento": "Zumo de limón",
+   "gramos": 10,
+   "nota": null
+  },
+  {
+   "id_receta": "RE113",
+   "nombre_receta": "Pez de espada a la plancha",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE114",
+   "nombre_receta": "Lubina a la plancha",
+   "orden": 1,
+   "id_alimento": "AL0031",
+   "nombre_alimento": "Pargo",
+   "gramos": 260,
+   "nota": "equivalente nutricional a lomos de lubina limpia"
+  },
+  {
+   "id_receta": "RE114",
+   "nombre_receta": "Lubina a la plancha",
+   "orden": 2,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE114",
+   "nombre_receta": "Lubina a la plancha",
+   "orden": 3,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 8,
+   "nota": "2 dientes laminados"
+  },
+  {
+   "id_receta": "RE114",
+   "nombre_receta": "Lubina a la plancha",
+   "orden": 4,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE114",
+   "nombre_receta": "Lubina a la plancha",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE115",
+   "nombre_receta": "Salmón a la plancha con salsa de naranja",
+   "orden": 1,
+   "id_alimento": "AL0035",
+   "nombre_alimento": "Salmón de piscifactoría",
+   "gramos": 220,
+   "nota": "lomo fresco"
+  },
+  {
+   "id_receta": "RE115",
+   "nombre_receta": "Salmón a la plancha con salsa de naranja",
+   "orden": 2,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE115",
+   "nombre_receta": "Salmón a la plancha con salsa de naranja",
+   "orden": 3,
+   "id_alimento": "AL0122",
+   "nombre_alimento": "Zumo de naranja exprimido",
+   "gramos": 80,
+   "nota": "de 1 naranja"
+  },
+  {
+   "id_receta": "RE115",
+   "nombre_receta": "Salmón a la plancha con salsa de naranja",
+   "orden": 4,
+   "id_alimento": "AL0178",
+   "nombre_alimento": "Azúcar",
+   "gramos": 5,
+   "nota": "1 cucharadita para glasear"
+  },
+  {
+   "id_receta": "RE115",
+   "nombre_receta": "Salmón a la plancha con salsa de naranja",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE116",
+   "nombre_receta": "Presa ibérica 100 % a la brasa/plancha con guarnición",
+   "orden": 1,
+   "id_alimento": "AL0234",
+   "nombre_alimento": "Cerdo ibérico, presa",
+   "gramos": 260,
+   "nota": "presa ibérica 100 % con infiltración"
+  },
+  {
+   "id_receta": "RE116",
+   "nombre_receta": "Presa ibérica 100 % a la brasa/plancha con guarnición",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 120,
+   "nota": "guarnición frita o panadera"
+  },
+  {
+   "id_receta": "RE116",
+   "nombre_receta": "Presa ibérica 100 % a la brasa/plancha con guarnición",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 25,
+   "nota": "grasa extra de infiltración ibérica + fritura patatas"
+  },
+  {
+   "id_receta": "RE116",
+   "nombre_receta": "Presa ibérica 100 % a la brasa/plancha con guarnición",
+   "orden": 4,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": "en escamas"
+  },
+  {
+   "id_receta": "RE117",
+   "nombre_receta": "Solomillo ibérico 100 % a la plancha con guarnición",
+   "orden": 1,
+   "id_alimento": "AL0014",
+   "nombre_alimento": "Cerdo, solomillo",
+   "gramos": 250,
+   "nota": "medallones de solomillo ibérico 100 %"
+  },
+  {
+   "id_receta": "RE117",
+   "nombre_receta": "Solomillo ibérico 100 % a la plancha con guarnición",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 120,
+   "nota": "guarnición frita"
+  },
+  {
+   "id_receta": "RE117",
+   "nombre_receta": "Solomillo ibérico 100 % a la plancha con guarnición",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 20,
+   "nota": "plancha + fritura patatas"
+  },
+  {
+   "id_receta": "RE117",
+   "nombre_receta": "Solomillo ibérico 100 % a la plancha con guarnición",
+   "orden": 4,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE118",
+   "nombre_receta": "Pechuga de pollo a la plancha con guarnición",
+   "orden": 1,
+   "id_alimento": "AL0001",
+   "nombre_alimento": "Pechuga de pollo sin piel",
+   "gramos": 220,
+   "nota": "fileteada"
+  },
+  {
+   "id_receta": "RE118",
+   "nombre_receta": "Pechuga de pollo a la plancha con guarnición",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 120,
+   "nota": "guarnición frita"
+  },
+  {
+   "id_receta": "RE118",
+   "nombre_receta": "Pechuga de pollo a la plancha con guarnición",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 20,
+   "nota": "plancha + fritura patatas"
+  },
+  {
+   "id_receta": "RE118",
+   "nombre_receta": "Pechuga de pollo a la plancha con guarnición",
+   "orden": 4,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE119",
+   "nombre_receta": "Carrillada de cerdo ibérico estofada",
+   "orden": 1,
+   "id_alimento": "AL0253",
+   "nombre_alimento": "Cerdo, carrillada",
+   "gramos": 260,
+   "nota": "de cerdo ibérico limpia"
+  },
+  {
+   "id_receta": "RE119",
+   "nombre_receta": "Carrillada de cerdo ibérico estofada",
+   "orden": 2,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE119",
+   "nombre_receta": "Carrillada de cerdo ibérico estofada",
+   "orden": 3,
+   "id_alimento": "AL0139",
+   "nombre_alimento": "Zanahoria",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE119",
+   "nombre_receta": "Carrillada de cerdo ibérico estofada",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 8,
+   "nota": "2 dientes"
+  },
+  {
+   "id_receta": "RE119",
+   "nombre_receta": "Carrillada de cerdo ibérico estofada",
+   "orden": 5,
+   "id_alimento": "AL0207",
+   "nombre_alimento": "Vino tinto",
+   "gramos": 80,
+   "nota": "o vino oloroso"
+  },
+  {
+   "id_receta": "RE119",
+   "nombre_receta": "Carrillada de cerdo ibérico estofada",
+   "orden": 6,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 100,
+   "nota": "frita en dados"
+  },
+  {
+   "id_receta": "RE119",
+   "nombre_receta": "Carrillada de cerdo ibérico estofada",
+   "orden": 7,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 30,
+   "nota": "estofado + fritura patatas"
+  },
+  {
+   "id_receta": "RE119",
+   "nombre_receta": "Carrillada de cerdo ibérico estofada",
+   "orden": 8,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE120",
+   "nombre_receta": "Rabo de toro estofado a la cordobesa",
+   "orden": 1,
+   "id_alimento": "AL0008",
+   "nombre_alimento": "Ternera, falda (flank steak)",
+   "gramos": 220,
+   "nota": "carne limpia deshuesada de ~350 g de rabo con hueso"
+  },
+  {
+   "id_receta": "RE120",
+   "nombre_receta": "Rabo de toro estofado a la cordobesa",
+   "orden": 2,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 70,
+   "nota": null
+  },
+  {
+   "id_receta": "RE120",
+   "nombre_receta": "Rabo de toro estofado a la cordobesa",
+   "orden": 3,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 60,
+   "nota": null
+  },
+  {
+   "id_receta": "RE120",
+   "nombre_receta": "Rabo de toro estofado a la cordobesa",
+   "orden": 4,
+   "id_alimento": "AL0139",
+   "nombre_alimento": "Zanahoria",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE120",
+   "nombre_receta": "Rabo de toro estofado a la cordobesa",
+   "orden": 5,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 8,
+   "nota": "2 dientes"
+  },
+  {
+   "id_receta": "RE120",
+   "nombre_receta": "Rabo de toro estofado a la cordobesa",
+   "orden": 6,
+   "id_alimento": "AL0207",
+   "nombre_alimento": "Vino tinto",
+   "gramos": 100,
+   "nota": "o Montilla-Moriles"
+  },
+  {
+   "id_receta": "RE120",
+   "nombre_receta": "Rabo de toro estofado a la cordobesa",
+   "orden": 7,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 10,
+   "nota": "para enharinar"
+  },
+  {
+   "id_receta": "RE120",
+   "nombre_receta": "Rabo de toro estofado a la cordobesa",
+   "orden": 8,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 100,
+   "nota": "frita"
+  },
+  {
+   "id_receta": "RE120",
+   "nombre_receta": "Rabo de toro estofado a la cordobesa",
+   "orden": 9,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 30,
+   "nota": "guiso + patatas"
+  },
+  {
+   "id_receta": "RE120",
+   "nombre_receta": "Rabo de toro estofado a la cordobesa",
+   "orden": 10,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE121",
+   "nombre_receta": "Entrecot de ternera a la brasa/plancha con guarnición",
+   "orden": 1,
+   "id_alimento": "AL0013",
+   "nombre_alimento": "Ternera, entrecot (ribeye)",
+   "gramos": 320,
+   "nota": "pieza de restaurante"
+  },
+  {
+   "id_receta": "RE121",
+   "nombre_receta": "Entrecot de ternera a la brasa/plancha con guarnición",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 120,
+   "nota": "guarnición frita"
+  },
+  {
+   "id_receta": "RE121",
+   "nombre_receta": "Entrecot de ternera a la brasa/plancha con guarnición",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": "plancha + fritura patatas"
+  },
+  {
+   "id_receta": "RE121",
+   "nombre_receta": "Entrecot de ternera a la brasa/plancha con guarnición",
+   "orden": 4,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": "gruesa o en escamas"
+  },
+  {
+   "id_receta": "RE122",
+   "nombre_receta": "Codillo de cerdo asado con patatas",
+   "orden": 1,
+   "id_alimento": "AL0251",
+   "nombre_alimento": "Codillo de cerdo",
+   "gramos": 300,
+   "nota": null
+  },
+  {
+   "id_receta": "RE122",
+   "nombre_receta": "Codillo de cerdo asado con patatas",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 150,
+   "nota": "asada o panadera"
+  },
+  {
+   "id_receta": "RE122",
+   "nombre_receta": "Codillo de cerdo asado con patatas",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE122",
+   "nombre_receta": "Codillo de cerdo asado con patatas",
+   "orden": 4,
+   "id_alimento": "AL0230",
+   "nombre_alimento": "Hierbas secas (romero, tomillo, laurel)",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE122",
+   "nombre_receta": "Codillo de cerdo asado con patatas",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE123",
+   "nombre_receta": "Chuletas de cerdo ibérico con patatas",
+   "orden": 1,
+   "id_alimento": "AL0254",
+   "nombre_alimento": "Cerdo, chuleta con su grasa",
+   "gramos": 280,
+   "nota": "chuletas ibéricas"
+  },
+  {
+   "id_receta": "RE123",
+   "nombre_receta": "Chuletas de cerdo ibérico con patatas",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 120,
+   "nota": "guarnición frita"
+  },
+  {
+   "id_receta": "RE123",
+   "nombre_receta": "Chuletas de cerdo ibérico con patatas",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 20,
+   "nota": "grasa ibérica + fritura patatas"
+  },
+  {
+   "id_receta": "RE123",
+   "nombre_receta": "Chuletas de cerdo ibérico con patatas",
+   "orden": 4,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": "gruesa"
   }
  ]
 }
