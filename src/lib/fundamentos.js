@@ -38,6 +38,12 @@ export const FUNDAMENTOS = [
       refs: ['REF20'],
     },
     {
+      id: 'mantenimiento', t: 'Mantenerse cuesta menos que ganar',
+      x: 'Si lo que buscas es conservar la fuerza y el músculo que ya tienes, hace falta mucho menos entrenamiento que para ganarlos. En un ensayo, con un tercio del volumen semanal (y en jóvenes, hasta con un noveno) se conservó el músculo ganado durante 8 meses; los mayores necesitaron más. Las revisiones coinciden: lo que no se puede bajar es la intensidad (series exigentes, cerca del fallo). En jóvenes puede bastar 1 sesión y 1 serie por ejercicio a la semana; en mayores, unas 2 sesiones y 2-3 series.',
+      criterio: 'Por eso el objetivo «Salud y sentirme mejor (mantenimiento)» lleva menos series, calorías de mantenimiento y una progresión suave: sin ningún estímulo, con los años la fuerza y el músculo bajan.',
+      refs: ['REF51', 'REF52'],
+    },
+    {
       id: 'bilateral', t: 'Con una pierna (o un brazo) mueves más de la mitad',
       x: 'Lo que suma cada lado por separado suele ser más que lo que hacen los dos a la vez: es el «déficit bilateral». La explicación con más apoyo es neural (inhibición entre hemisferios). Varía mucho entre personas y tareas, y es más constante en ejercicios dinámicos.',
       criterio: 'Por eso un ejercicio a una pierna y su versión a dos son ejercicios distintos en PARE, y su progreso no se mezcla.',

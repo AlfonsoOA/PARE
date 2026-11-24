@@ -199,5 +199,13 @@ export const REFS = {
  "REF50": {
   "apa": "Wiewelhove, T., Döweling, A., Schneider, C., Hottenrott, L., Meyer, T., Kellmann, M., Pfeiffer, M., & Ferrauti, A. (2019). A meta-analysis of the effects of foam rolling on performance and recovery. *Frontiers in Physiology, 10*, Article 376.",
   "url": "https://doi.org/10.3389/fphys.2019.00376"
+ },
+ "REF51": {
+  "apa": "Bickel, C. S., Cross, J. M., & Bamman, M. M. (2011). Exercise dosing to retain resistance training adaptations in young and older adults. *Medicine & Science in Sports & Exercise, 43*(7), 1177–1187.",
+  "url": "https://doi.org/10.1249/MSS.0b013e318207c15d"
+ },
+ "REF52": {
+  "apa": "Spiering, B. A., Mujika, I., Sharp, M. A., & Foulis, S. A. (2021). Maintaining physical performance: The minimal dose of exercise needed to preserve endurance and strength over time. *Journal of Strength and Conditioning Research, 35*(5), 1449–1458.",
+  "url": "https://doi.org/10.1519/JSC.0000000000003964"
  }
 };

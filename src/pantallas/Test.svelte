@@ -154,7 +154,7 @@
 
   {:else if t.paso === 2}
     <div class="col">
-      {#each [['perder_grasa', 'Perder grasa'], ['recomposicion', 'Recomposición (perder grasa y ganar músculo)'], ['ganar_musculo', 'Ganar músculo'], ['fuerza', 'Ganar fuerza'], ['salud', 'Salud y sentirme mejor']] as [v, l]}
+      {#each [['perder_grasa', 'Perder grasa'], ['recomposicion', 'Recomposición (perder grasa y ganar músculo)'], ['ganar_musculo', 'Ganar músculo'], ['fuerza', 'Ganar fuerza'], ['salud', 'Salud y sentirme mejor (mantenimiento)']] as [v, l]}
         <button class="chip grande" class:on={t.objetivo === v} onclick={() => (t.objetivo = v)}>{l}</button>
       {/each}
     </div>
