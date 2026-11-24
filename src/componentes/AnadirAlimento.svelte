@@ -30,7 +30,11 @@
     if (!n) return soloAlimentos ? recientes.filter((x) => x.tipo === 'alimento') : recientes;
     const ws = palabras(q);
     const al = [...app.datos.productosPropios, ...cat.alimentos].filter((a) => coincide(ws, a.n)).slice(0, 40).map((a) => ({ tipo: 'alimento', id: a.id }));
-    const re = soloAlimentos ? [] : todasRecetas().filter((r) => coincide(ws, r.n)).map((r) => ({ tipo: 'receta', id: r.id }));
+    // Recetas: por nombre primero; después, por ingredientes, estilo o notas (ahí van las etiquetas: «saciante», «congelable»…)
+    const todas = soloAlimentos ? [] : todasRecetas();
+    const porNombre = todas.filter((r) => coincide(ws, r.n));
+    const porResto = todas.filter((r) => !porNombre.includes(r) && coincide(ws, r.n, r.estilo || '', r.notas || '', ...(r.ingredientes || []).map((i) => alimento(i.id)?.n || '')));
+    const re = [...porNombre, ...porResto].map((r) => ({ tipo: 'receta', id: r.id }));
     return [...re, ...al];
   });
   const nombre = (x) => (x.tipo === 'receta' ? receta(x.id)?.n : alimento(x.id)?.n);
