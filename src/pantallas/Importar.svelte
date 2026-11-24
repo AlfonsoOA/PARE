@@ -22,7 +22,11 @@
   async function elegido(ev) {
     const f = ev.currentTarget.files?.[0];
     ev.currentTarget.value = '';
-    if (!f) return;
+    if (f) await leer(f);
+  }
+  // Hoja recibida con «Compartir → PARE»
+  $effect(() => { const f = app.importarPendiente; if (f) { app.importarPendiente = null; leer(f); } });
+  async function leer(f) {
     error = ''; lectura = null;
     try {
       const { hojas } = await leerHojaDeCalculo(f);

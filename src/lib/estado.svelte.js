@@ -71,6 +71,7 @@ export const app = $state({
   subComer: 'dia',
   filtroRecetas: 'parati',
   archivoPendiente: null,
+  importarPendiente: null, // hoja de cálculo recibida con «Compartir → PARE»
   datos: datosVacios(),
 });
 

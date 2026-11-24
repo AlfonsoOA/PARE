@@ -45,8 +45,8 @@
 {:else}
 <div class="pantalla">
   <div class="fila"><button class="icono-b" data-atras onclick={() => (app.vista = null)} aria-label="Atrás"><Icono n="atras" /></button><span class="etiqueta">Cambios propuestos</span></div>
-  <h1>{c.compartida ? `Rutina de ${c.de?.nombre ?? 'un compañero'}` : `Cambios de ${c.de?.nombre ?? 'tu entrenador'}`}</h1>
-  <p class="sec peq">Del {fmtFecha(c.creado?.slice(0, 10))}. Nada cambia hasta que lo aceptes.{c.compartida ? ' Si la aceptas, sustituye a tu rutina; las cargas que ya tenías en los mismos ejercicios se conservan y el resto las pones tú el primer día.' : ''}</p>
+  <h1>{c.compartida ? `${c.rutina ? 'Rutina' : 'Dieta'} de ${c.de?.nombre ?? 'un compañero'}` : `Cambios de ${c.de?.nombre ?? 'tu entrenador'}`}</h1>
+  <p class="sec peq">Del {fmtFecha(c.creado?.slice(0, 10))}. Nada cambia hasta que lo aceptes.{c.compartida && c.rutina ? ' Si la aceptas, sustituye a tu rutina; las cargas que ya tenías en los mismos ejercicios se conservan y el resto las pones tú el primer día.' : c.compartida ? ' Si la aceptas, sustituye a tu dieta.' : ''}</p>
   {#if c.nota}<div class="tarjeta"><p>«{c.nota}»</p></div>{/if}
 
   {#if c.rutina}

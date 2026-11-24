@@ -21,6 +21,10 @@ export function archivoRutina(rutina, nota = '') {
   for (const s of limpia.sesiones) for (const it of s.items) it.carga = null;
   return cabecera('rutina', { datos: { rutina: limpia }, nota });
 }
+/** La dieta para compartir (con quien entrenas, tu pareja…): raciones por comida y menús. */
+export function archivoDieta(dieta, nota = '') {
+  return cabecera('dieta', { datos: { dieta: JSON.parse(JSON.stringify(dieta)) }, nota });
+}
 export function archivoCopia() {
   return cabecera('copia', { incluye: ['todo'], datos: app.datos });
 }
@@ -56,6 +60,8 @@ export async function compartir(obj, quien) {
 
 /** Abre un archivo PARE y lo coloca donde toca. */
 export async function abrirArchivo(file) {
+  // Hojas de cálculo (plantilla de rutina, de dieta o el recetario): a Importar, que ya las sabe leer
+  if (/\.(xlsx|csv)$/i.test(file.name || '')) { app.importarPendiente = file; app.vista = { nombre: 'importar', acento: 'yo', volver: null }; return; }
   let obj;
   try { obj = JSON.parse(await file.text()); } catch { aviso('Ese archivo no es un archivo PARE.'); return; }
   if (obj?.pare === 'cuestionario_inicial') { aviso('Es un cuestionario del formulario web: el test se hace ahora dentro de la app.'); return; }
@@ -83,6 +89,12 @@ export async function abrirArchivo(file) {
   if (obj.tipo === 'rutina') {
     if (!obj.datos?.rutina?.sesiones?.length) { aviso('El archivo no trae ninguna rutina.'); return; }
     d.cambiosPropuestos = { de: obj.de, creado: obj.creado, nota: obj.nota, rutina: obj.datos.rutina, dieta: null, compartida: true };
+    app.vista = { nombre: 'cambios', acento: 'yo' };
+    return;
+  }
+  if (obj.tipo === 'dieta') {
+    if (!obj.datos?.dieta?.comidas?.length) { aviso('El archivo no trae ninguna dieta.'); return; }
+    d.cambiosPropuestos = { de: obj.de, creado: obj.creado, nota: obj.nota, rutina: null, dieta: obj.datos.dieta, compartida: true };
     app.vista = { nombre: 'cambios', acento: 'yo' };
     return;
   }

@@ -1,5 +1,10 @@
 <script>
   import { app, aviso, uuid } from '../lib/estado.svelte.js';
+  import { archivoDieta, compartir } from '../lib/archivo.js';
+  async function compartirDieta() {
+    const r = await compartir(archivoDieta(app.datos.dieta), app.datos.perfil.nombre);
+    if (r !== 'cancelado') aviso(r === 'compartido' ? 'Dieta enviada' : 'Archivo descargado: mándalo por WhatsApp');
+  }
   import { GRUPOS_RACION, NOMBRE_RACION, comidaTrasEntreno } from '../lib/dieta.js';
   import { HORA_ENTRENO } from '../lib/dieta.js';
   import Icono from '../componentes/Icono.svelte';
@@ -60,6 +65,7 @@
     <button class="boton sec2 ancho" onclick={nuevaComida}>Añadir comida</button>
     <p class="sec peq">Total: {GRUPOS_RACION.map((g) => `${total(g)} ${NOMBRE_RACION[g].toLowerCase()}`).join(' · ')}</p>
     <button class="boton ancho" onclick={() => { recalcular(); app.vista = null; }}>Guardar</button>
+    <button class="boton sec2 ancho" onclick={compartirDieta}>Compartir mi dieta</button>
   {/if}
 </div>
 

@@ -50,7 +50,11 @@
             ".json",
             ".pare",
             "text/plain",
-            "application/octet-stream"
+            "application/octet-stream",
+            ".xlsx",
+            ".csv",
+            "text/csv",
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
           ]
         }
       ]
