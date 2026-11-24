@@ -4053,6 +4053,237 @@
     "leche"
    ],
    "coste_porcion": 0.7
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_es": "Patata rellena de atún y huevo (microondas)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "fit",
+   "peso_final_g": null,
+   "notas": "La patata es de lo que más sacia por caloría. Huevo cocido: cuece 6 a la vez el domingo (10 min desde que hierve el agua) y aguantan 5 días en la nevera con cáscara. Etiquetas: saciante, rápida.",
+   "pasos": "Patata al microondas: lávala, pínchala 6-8 veces con un tenedor y métela 8-10 minutos a máxima potencia, dándole la vuelta a mitad. Está hecha cuando un cuchillo entra sin resistencia. | Relleno: mientras tanto, mezcla el atún con el queso batido, el huevo cocido picado y el perejil. | Montaje: abre la patata a lo largo, chafa un poco el interior con un tenedor, riega con el aceite, sal y pimentón, y pon el relleno encima.",
+   "etiquetas": [
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 458,
+   "proteina_porcion": 37.9,
+   "hidratos_porcion": 43.6,
+   "grasa_porcion": 13.2,
+   "fibra_porcion": 3.7,
+   "peso_total_g": 471,
+   "alergenos": [
+    "huevo",
+    "leche",
+    "pescado"
+   ],
+   "coste_porcion": 2.6
+  },
+  {
+   "id_receta": "RE144",
+   "nombre_es": "Ensalada templada de garbanzos, patata y huevo",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "mediterránea",
+   "peso_final_g": null,
+   "notas": "Templada está mucho más rica que fría. Legumbre, patata y huevo: tres de los alimentos que más llenan, juntos. Etiquetas: saciante, rápida.",
+   "pasos": "Patata: en dados de 2 cm, en un bol con un dedo de agua y tapado, 5-6 minutos al microondas. Escurre. | Mezcla: junta la patata templada con los garbanzos enjuagados, el tomate en dados, la cebolla muy fina el atún y el huevo cocido en cuartos. | Aliño: aceite, sal y comino. Si tienes, un chorrito de vinagre o limón le sienta muy bien.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 557,
+   "proteina_porcion": 33.5,
+   "hidratos_porcion": 53,
+   "grasa_porcion": 18.6,
+   "fibra_porcion": 13.7,
+   "peso_total_g": 604,
+   "alergenos": [
+    "huevo",
+    "pescado"
+   ],
+   "coste_porcion": 2.34
+  },
+  {
+   "id_receta": "RE145",
+   "nombre_es": "Crema de calabaza y zanahoria",
+   "tipo": "lote",
+   "porciones": 4,
+   "momento": "comida;cena",
+   "tiempo_min": 35,
+   "estilo": "fit",
+   "peso_final_g": null,
+   "notas": "Se congela muy bien: haz el lote y guarda raciones en táperes. Para que sea plato completo, acompáñala de 2 huevos, pollo o un poco de jamón crujiente por encima. Etiquetas: saciante, congelable, lote.",
+   "pasos": "Sofrito: pocha la cebolla y el puerro en el aceite 5 minutos a fuego medio. | Cocción: añade la calabaza y la zanahoria en trozos y el caldo justo hasta cubrir. 20 minutos tapado, hasta que la zanahoria esté blanda. | Triturar: fuera del fuego, añade el queso batido, la sal y el comino y tritura hasta que quede muy fina. Si queda espesa, un poco más de caldo.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "4 porciones; cada una: 0.4 P · 0.7 HC · 0.5 G",
+   "kcal_porcion": 204,
+   "proteina_porcion": 8.9,
+   "hidratos_porcion": 28.3,
+   "grasa_porcion": 4.7,
+   "fibra_porcion": 7.1,
+   "peso_total_g": 2220,
+   "alergenos": [
+    "leche"
+   ],
+   "coste_porcion": 1.01
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_es": "Lentejas exprés con pavo y verduras",
+   "tipo": "lote",
+   "porciones": 4,
+   "momento": "comida;cena",
+   "tiempo_min": 30,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "Con lentejas de bote se hace en media hora. Se congela perfecto, en raciones. Etiquetas: saciante, congelable, lote.",
+   "pasos": "Sofrito: en una olla, pocha 8 minutos la cebolla, el ajo, la zanahoria y el pimiento picados con el aceite. | Pavo: sube el fuego, añade la carne picada y sofríe hasta que pierda el color rosa, deshaciéndola con la cuchara. | Guiso: fuera del fuego, añade el pimentón y el comino (se queman enseguida). Vuelve al fuego con el tomate, el caldo y las lentejas enjuagadas. 10-15 minutos a fuego suave, hasta que espese.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "4 porciones; cada una: 1.7 P · 1 HC · 1.5 G",
+   "kcal_porcion": 549,
+   "proteina_porcion": 42.1,
+   "hidratos_porcion": 41.4,
+   "grasa_porcion": 15.1,
+   "fibra_porcion": 23.4,
+   "peso_total_g": 2453,
+   "alergenos": [],
+   "coste_porcion": 2.07
+  },
+  {
+   "id_receta": "RE147",
+   "nombre_es": "Pisto con huevo",
+   "tipo": "lote",
+   "porciones": 3,
+   "momento": "comida;cena",
+   "tiempo_min": 40,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "El pisto (sin el huevo) se congela muy bien: haz el lote y cuaja los huevos en cada ración al calentarla. Etiquetas: saciante, congelable, lote.",
+   "pasos": "Sofrito: pocha la cebolla y los pimientos picados en el aceite, 10 minutos a fuego medio. | Calabacín: añade el calabacín en dados pequeños y cocina 10 minutos más, hasta que esté tierno. | Tomate: añade el tomate y la sal y deja 15 minutos a fuego suave, removiendo de vez en cuando, hasta que reduzca. | Huevos: al servir cada ración, haz dos huecos en el pisto caliente, casca dos huevos y tapa 3-4 minutos hasta que cuaje la clara.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "3 porciones; cada una: 0.8 P · 0.5 HC · 2 G",
+   "kcal_porcion": 343,
+   "proteina_porcion": 19.3,
+   "hidratos_porcion": 19.5,
+   "grasa_porcion": 19.6,
+   "fibra_porcion": 5.6,
+   "peso_total_g": 1633,
+   "alergenos": [
+    "huevo"
+   ],
+   "coste_porcion": 1.39
+  },
+  {
+   "id_receta": "RE148",
+   "nombre_es": "Judías verdes y champiñones salteados con jamón",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": null,
+   "notas": "Guarnición con sabor: con el jamón y el ajo, la verdura deja de saber a cartón. Acompaña bien cualquier pechuga o pescado a la plancha. Etiquetas: saciante, rápida, guarnición.",
+   "pasos": "Judías: cuécelas 8 minutos en agua con sal, o 5 en el microondas en un bol tapado con un poco de agua. Escurre bien. | Salteado: en una sartén muy caliente con el aceite, dora el ajo y los champiñones 3-4 minutos. Añade el jamón 1 minuto y después las judías. Saltea 2 minutos más.",
+   "etiquetas": [
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 284,
+   "proteina_porcion": 21.3,
+   "hidratos_porcion": 14.4,
+   "grasa_porcion": 14.4,
+   "fibra_porcion": 8.8,
+   "peso_total_g": 407,
+   "alergenos": [],
+   "coste_porcion": 2.22
+  },
+  {
+   "id_receta": "RE149",
+   "nombre_es": "Manzana asada al microondas con skyr y canela",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "merienda;postre",
+   "tiempo_min": 8,
+   "estilo": "fit",
+   "peso_final_g": null,
+   "notas": "Postre caliente, dulce y de mucho volumen, por unas 210 kcal y 17 g de proteína. Etiquetas: saciante, rápida, postre.",
+   "pasos": "Manzana: quítale el corazón y córtala en gajos. En un bol tapado, con la canela y una cucharada de agua, 3-4 minutos al microondas, hasta que esté blanda. | Servir: templada sobre el skyr con el eritritol, o el skyr encima.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 210,
+   "proteina_porcion": 16.8,
+   "hidratos_porcion": 31.9,
+   "grasa_porcion": 0.5,
+   "fibra_porcion": 5.3,
+   "peso_total_g": 357,
+   "alergenos": [
+    "leche"
+   ],
+   "coste_porcion": 1.24
+  },
+  {
+   "id_receta": "RE150",
+   "nombre_es": "Palomitas caseras al microondas",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "merienda;postre",
+   "tiempo_min": 5,
+   "estilo": "fit",
+   "peso_final_g": null,
+   "notas": "Un bol grande por unas 140 kcal. Variantes: con pimentón ahumado, o con canela y edulcorante. Etiquetas: saciante, rápida, picoteo.",
+   "pasos": "Bolsa: mezcla el maíz con el aceite y la sal en una bolsa de papel de estraza (la del pan sirve) y dobla bien la boca 2-3 veces. | Microondas: a máxima potencia, de pie, unos 2-3 minutos. Para cuando pasen 2 segundos entre explosión y explosión, o se quemarán.",
+   "etiquetas": [
+    "vegano",
+    "vegetariano",
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 143,
+   "proteina_porcion": 3.9,
+   "hidratos_porcion": 19,
+   "grasa_porcion": 4.3,
+   "fibra_porcion": 4.3,
+   "peso_total_g": 34,
+   "alergenos": [],
+   "coste_porcion": 0.15
   }
  ],
  "receta_ingredientes": [
@@ -12835,6 +13066,537 @@
    "id_receta": "RE142",
    "nombre_receta": "Remolacha cocida con yogur griego y especias",
    "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
+   "orden": 1,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 250,
+   "nota": "1 grande, con piel"
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
+   "orden": 2,
+   "id_alimento": "AL0034",
+   "nombre_alimento": "Atún claro en lata al natural, escurrido",
+   "gramos": 112,
+   "nota": "2 latas pequeñas"
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "1, cocido"
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
+   "orden": 4,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
+   "orden": 6,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
+   "orden": 8,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 2,
+   "nota": "perejil picado"
+  },
+  {
+   "id_receta": "RE144",
+   "nombre_receta": "Ensalada templada de garbanzos, patata y huevo",
+   "orden": 1,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 150,
+   "nota": "en dados"
+  },
+  {
+   "id_receta": "RE144",
+   "nombre_receta": "Ensalada templada de garbanzos, patata y huevo",
+   "orden": 2,
+   "id_alimento": "AL0091",
+   "nombre_alimento": "Garbanzos cocidos (bote), escurridos",
+   "gramos": 150,
+   "nota": "media lata grande, enjuagados"
+  },
+  {
+   "id_receta": "RE144",
+   "nombre_receta": "Ensalada templada de garbanzos, patata y huevo",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "1, cocido"
+  },
+  {
+   "id_receta": "RE144",
+   "nombre_receta": "Ensalada templada de garbanzos, patata y huevo",
+   "orden": 4,
+   "id_alimento": "AL0034",
+   "nombre_alimento": "Atún claro en lata al natural, escurrido",
+   "gramos": 56,
+   "nota": "1 lata pequeña"
+  },
+  {
+   "id_receta": "RE144",
+   "nombre_receta": "Ensalada templada de garbanzos, patata y huevo",
+   "orden": 5,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE144",
+   "nombre_receta": "Ensalada templada de garbanzos, patata y huevo",
+   "orden": 6,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 30,
+   "nota": "morada si tienes"
+  },
+  {
+   "id_receta": "RE144",
+   "nombre_receta": "Ensalada templada de garbanzos, patata y huevo",
+   "orden": 7,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 6,
+   "nota": null
+  },
+  {
+   "id_receta": "RE144",
+   "nombre_receta": "Ensalada templada de garbanzos, patata y huevo",
+   "orden": 8,
+   "id_alimento": "AL0220",
+   "nombre_alimento": "Comino molido",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE144",
+   "nombre_receta": "Ensalada templada de garbanzos, patata y huevo",
+   "orden": 9,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE145",
+   "nombre_receta": "Crema de calabaza y zanahoria",
+   "orden": 1,
+   "id_alimento": "AL0133",
+   "nombre_alimento": "Calabaza",
+   "gramos": 800,
+   "nota": "pelada y en trozos"
+  },
+  {
+   "id_receta": "RE145",
+   "nombre_receta": "Crema de calabaza y zanahoria",
+   "orden": 2,
+   "id_alimento": "AL0139",
+   "nombre_alimento": "Zanahoria",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE145",
+   "nombre_receta": "Crema de calabaza y zanahoria",
+   "orden": 3,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE145",
+   "nombre_receta": "Crema de calabaza y zanahoria",
+   "orden": 4,
+   "id_alimento": "AL0142",
+   "nombre_alimento": "Puerro",
+   "gramos": 100,
+   "nota": null
+  },
+  {
+   "id_receta": "RE145",
+   "nombre_receta": "Crema de calabaza y zanahoria",
+   "orden": 5,
+   "id_alimento": "AL0214",
+   "nombre_alimento": "Caldo de verduras o de pollo (brick)",
+   "gramos": 700,
+   "nota": null
+  },
+  {
+   "id_receta": "RE145",
+   "nombre_receta": "Crema de calabaza y zanahoria",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE145",
+   "nombre_receta": "Crema de calabaza y zanahoria",
+   "orden": 7,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 250,
+   "nota": "al final, para darle cremosidad y proteína"
+  },
+  {
+   "id_receta": "RE145",
+   "nombre_receta": "Crema de calabaza y zanahoria",
+   "orden": 8,
+   "id_alimento": "AL0220",
+   "nombre_alimento": "Comino molido",
+   "gramos": 2,
+   "nota": "o nuez moscada"
+  },
+  {
+   "id_receta": "RE145",
+   "nombre_receta": "Crema de calabaza y zanahoria",
+   "orden": 9,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 1,
+   "id_alimento": "AL0255",
+   "nombre_alimento": "Lentejas cocidas (bote), escurridas",
+   "gramos": 1000,
+   "nota": "2 botes grandes, enjuagadas"
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 2,
+   "id_alimento": "AL0004",
+   "nombre_alimento": "Carne picada de pavo (93 % magra)",
+   "gramos": 400,
+   "nota": null
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 3,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 4,
+   "id_alimento": "AL0139",
+   "nombre_alimento": "Zanahoria",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 5,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 120,
+   "nota": null
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 6,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 200,
+   "nota": null
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 7,
+   "id_alimento": "AL0214",
+   "nombre_alimento": "Caldo de verduras o de pollo (brick)",
+   "gramos": 400,
+   "nota": null
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 8,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": null
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 9,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 8,
+   "nota": "2 dientes"
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 10,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 4,
+   "nota": null
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 11,
+   "id_alimento": "AL0220",
+   "nombre_alimento": "Comino molido",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE146",
+   "nombre_receta": "Lentejas exprés con pavo y verduras",
+   "orden": 12,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 4,
+   "nota": null
+  },
+  {
+   "id_receta": "RE147",
+   "nombre_receta": "Pisto con huevo",
+   "orden": 1,
+   "id_alimento": "AL0131",
+   "nombre_alimento": "Calabacín",
+   "gramos": 400,
+   "nota": null
+  },
+  {
+   "id_receta": "RE147",
+   "nombre_receta": "Pisto con huevo",
+   "orden": 2,
+   "id_alimento": "AL0134",
+   "nombre_alimento": "Pimiento rojo",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE147",
+   "nombre_receta": "Pisto con huevo",
+   "orden": 3,
+   "id_alimento": "AL0135",
+   "nombre_alimento": "Pimiento verde",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE147",
+   "nombre_receta": "Pisto con huevo",
+   "orden": 4,
+   "id_alimento": "AL0140",
+   "nombre_alimento": "Cebolla",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE147",
+   "nombre_receta": "Pisto con huevo",
+   "orden": 5,
+   "id_alimento": "AL0137",
+   "nombre_alimento": "Tomate triturado en conserva",
+   "gramos": 400,
+   "nota": null
+  },
+  {
+   "id_receta": "RE147",
+   "nombre_receta": "Pisto con huevo",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 20,
+   "nota": null
+  },
+  {
+   "id_receta": "RE147",
+   "nombre_receta": "Pisto con huevo",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 3,
+   "nota": null
+  },
+  {
+   "id_receta": "RE147",
+   "nombre_receta": "Pisto con huevo",
+   "orden": 8,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 360,
+   "nota": "6, dos por ración"
+  },
+  {
+   "id_receta": "RE148",
+   "nombre_receta": "Judías verdes y champiñones salteados con jamón",
+   "orden": 1,
+   "id_alimento": "AL0130",
+   "nombre_alimento": "Judías verdes",
+   "gramos": 200,
+   "nota": "frescas o congeladas"
+  },
+  {
+   "id_receta": "RE148",
+   "nombre_receta": "Judías verdes y champiñones salteados con jamón",
+   "orden": 2,
+   "id_alimento": "AL0149",
+   "nombre_alimento": "Champiñones",
+   "gramos": 150,
+   "nota": "laminados"
+  },
+  {
+   "id_receta": "RE148",
+   "nombre_receta": "Judías verdes y champiñones salteados con jamón",
+   "orden": 3,
+   "id_alimento": "AL0193",
+   "nombre_alimento": "Jamón serrano",
+   "gramos": 40,
+   "nota": "en taquitos"
+  },
+  {
+   "id_receta": "RE148",
+   "nombre_receta": "Judías verdes y champiñones salteados con jamón",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 8,
+   "nota": "2 dientes laminados"
+  },
+  {
+   "id_receta": "RE148",
+   "nombre_receta": "Judías verdes y champiñones salteados con jamón",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 8,
+   "nota": null
+  },
+  {
+   "id_receta": "RE148",
+   "nombre_receta": "Judías verdes y champiñones salteados con jamón",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE149",
+   "nombre_receta": "Manzana asada al microondas con skyr y canela",
+   "orden": 1,
+   "id_alimento": "AL0101",
+   "nombre_alimento": "Manzana",
+   "gramos": 200,
+   "nota": "1 grande"
+  },
+  {
+   "id_receta": "RE149",
+   "nombre_receta": "Manzana asada al microondas con skyr y canela",
+   "orden": 2,
+   "id_alimento": "AL0185",
+   "nombre_alimento": "Skyr natural",
+   "gramos": 150,
+   "nota": null
+  },
+  {
+   "id_receta": "RE149",
+   "nombre_receta": "Manzana asada al microondas con skyr y canela",
+   "orden": 3,
+   "id_alimento": "AL0202",
+   "nombre_alimento": "Canela molida",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE149",
+   "nombre_receta": "Manzana asada al microondas con skyr y canela",
+   "orden": 4,
+   "id_alimento": "AL0197",
+   "nombre_alimento": "Eritritol",
+   "gramos": 5,
+   "nota": "o el edulcorante que uses"
+  },
+  {
+   "id_receta": "RE150",
+   "nombre_receta": "Palomitas caseras al microondas",
+   "orden": 1,
+   "id_alimento": "AL0256",
+   "nombre_alimento": "Maíz para palomitas",
+   "gramos": 30,
+   "nota": null
+  },
+  {
+   "id_receta": "RE150",
+   "nombre_receta": "Palomitas caseras al microondas",
+   "orden": 2,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 3,
+   "nota": "1 cucharadita"
+  },
+  {
+   "id_receta": "RE150",
+   "nombre_receta": "Palomitas caseras al microondas",
+   "orden": 3,
    "id_alimento": "AL0201",
    "nombre_alimento": "Sal",
    "gramos": 1,
