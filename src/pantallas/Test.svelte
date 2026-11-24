@@ -34,9 +34,12 @@
   const t = p.borradorTest;
 
   const toggle = (arr, v) => { const i = arr.indexOf(v); i >= 0 ? arr.splice(i, 1) : arr.push(v); };
+  // Altura escrita en metros (1,70) → centímetros
+  const alturaCm = (a) => (a > 0 && a < 3 ? Math.round(a * 100) : +a);
+  const falta0 = $derived([!t.sexo && 'el sexo', !(t.edad > 13) && 'la edad', !(alturaCm(t.altura) > 100) && 'la altura en centímetros (por ejemplo, 170)', !(t.peso > 30) && 'el peso'].filter(Boolean));
   const valido = $derived.by(() => {
     switch (t.paso) {
-      case 0: return t.sexo && t.edad > 13 && t.altura > 100 && t.peso > 30;
+      case 0: return t.sexo && t.edad > 13 && alturaCm(t.altura) > 100 && t.peso > 30;
       case 1: return t.parq.every((x) => x !== null);
       case 2: return !!t.objetivo;
       case 3: return t.experiencia && t.diasSemana && t.minutos && t.lugar;
@@ -69,7 +72,7 @@
   function terminarDieta() {
     const perfil = app.datos.perfil;
     Object.assign(perfil, {
-      nombre: t.nombre.trim() || perfil.nombre, sexo: t.sexo, edad: +t.edad, altura: +t.altura, objetivo: t.objetivo, alergenos: [...t.alergenos],
+      nombre: t.nombre.trim() || perfil.nombre, sexo: t.sexo, edad: +t.edad, altura: alturaCm(+t.altura), objetivo: t.objetivo, alergenos: [...t.alergenos],
       horaEntreno: t.horaEntreno || perfil.horaEntreno || 'varia',
       cocina: { tiempo: t.cocinaTiempo || 'normal', presupuesto: t.presupuesto || 'normal', dieta: t.tipoDieta || 'omnivora' },
     });
@@ -77,7 +80,7 @@
     const m = app.datos.medidas.find((x) => x.fecha === hoy);
     const med = { fecha: hoy, peso: +t.peso, cintura: t.cintura ? +t.cintura : null, cuello: t.cuello ? +t.cuello : null, cadera: t.cadera ? +t.cadera : null };
     if (m) Object.assign(m, med); else app.datos.medidas.push(med);
-    const dieta = generarDieta({ ...t, peso: +t.peso, altura: +t.altura, edad: +t.edad, cintura: +t.cintura || null, cuello: +t.cuello || null, cadera: +t.cadera || null });
+    const dieta = generarDieta({ ...t, peso: +t.peso, altura: alturaCm(+t.altura), edad: +t.edad, cintura: +t.cintura || null, cuello: +t.cuello || null, cadera: +t.cadera || null });
     dieta.menu = proponerMenu(dieta, perfil);
     app.datos.dieta = dieta;
     perfil.faseDieta = faseDeObjetivo(t.objetivo, dieta);
@@ -88,7 +91,7 @@
   function terminar() {
     const perfil = app.datos.perfil;
     Object.assign(perfil, {
-      nombre: t.nombre.trim(), sexo: t.sexo, edad: +t.edad, altura: +t.altura, objetivo: t.objetivo,
+      nombre: t.nombre.trim(), sexo: t.sexo, edad: +t.edad, altura: alturaCm(+t.altura), objetivo: t.objetivo,
       diasSemana: +t.diasSemana, diasWod: +t.diasWod || 0, minutos: +t.minutos, lugar: t.lugar, material: [...t.material], reparto: t.reparto || null,
       molestias: [...t.molestias], alergenos: [...t.alergenos], parqSi: t.parq.some((x) => x),
       parqCronica: t.parq[3] === true || t.parq[4] === true,
@@ -103,7 +106,7 @@
     const med = { fecha: hoy, peso: +t.peso, cintura: t.cintura ? +t.cintura : null, cuello: t.cuello ? +t.cuello : null, cadera: t.cadera ? +t.cadera : null };
     if (m) Object.assign(m, med); else app.datos.medidas.push(med);
     const rutina = generarRutina(perfil, app.datos.ajustes);
-    const dieta = generarDieta({ ...t, peso: +t.peso, altura: +t.altura, edad: +t.edad, cintura: +t.cintura || null, cuello: +t.cuello || null, cadera: +t.cadera || null });
+    const dieta = generarDieta({ ...t, peso: +t.peso, altura: alturaCm(+t.altura), edad: +t.edad, cintura: +t.cintura || null, cuello: +t.cuello || null, cadera: +t.cadera || null });
     dieta.menu = proponerMenu(dieta, perfil);
     app.datos.planPropuesto = { rutina, dieta, fase: faseDeObjetivo(t.objetivo, dieta) };
     delete perfil.borradorTest;
@@ -126,7 +129,7 @@
     </div>
     <div class="dos">
       <label class="campo">Edad<input type="number" inputmode="numeric" bind:value={t.edad} /></label>
-      <label class="campo">Altura (cm)<input type="number" inputmode="numeric" bind:value={t.altura} /></label>
+      <label class="campo">Altura (cm)<input type="number" inputmode="decimal" placeholder="170" bind:value={t.altura} onblur={() => { if (t.altura > 0 && t.altura < 3) t.altura = alturaCm(t.altura); }} /></label>
       <label class="campo">Peso (kg)<input type="number" inputmode="decimal" step="0.1" bind:value={t.peso} /></label>
       <label class="campo">Cintura (cm)<input type="number" inputmode="decimal" bind:value={t.cintura} /></label>
       <label class="campo">Cuello (cm, opcional)<input type="number" inputmode="decimal" bind:value={t.cuello} /></label>
@@ -246,6 +249,7 @@
     <p class="sec">Con esto, PARE te monta la rutina y la dieta. Lo verás antes de empezar y podrás ajustarlo.</p>
   {/if}
 
+  {#if t.paso === 0 && !valido && falta0.length}<p class="sec peq" style="margin:0">Falta: {falta0.join(', ')}.</p>{/if}
   <button class="boton ancho" disabled={!valido} onclick={siguiente}>{pos < ORDEN.length - 1 ? 'Siguiente' : soloDieta ? 'Calcular mi dieta' : 'Ver mi plan'}</button>
 </div>
 
