@@ -27,6 +27,21 @@ self.addEventListener('activate', (e) => {
 });
 
 self.addEventListener('fetch', (e) => {
+  // «Compartir → PARE» desde WhatsApp, el gestor de archivos…: se guarda el archivo y se abre la app para que lo lea
+  if (e.request.method === 'POST' && new URL(e.request.url).pathname.endsWith('/compartido')) {
+    e.respondWith((async () => {
+      try {
+        const fd = await e.request.formData();
+        const f = fd.getAll('archivo').find((x) => x && typeof x !== 'string');
+        if (f) {
+          const c = await caches.open('pare-compartido');
+          await c.put('./archivo-compartido', new Response(f, { headers: { 'x-nombre': encodeURIComponent(f.name || 'archivo.json') } }));
+        }
+      } catch { /* si falla, se abre la app sin más */ }
+      return Response.redirect('./?compartido=1', 303);
+    })());
+    return;
+  }
   if (e.request.method !== 'GET' || new URL(e.request.url).origin !== location.origin) return;
   // La página en sí: primero la red (así nunca se sirve un index viejo que apunte a archivos borrados); sin red, la de caché.
   if (e.request.mode === 'navigate') {

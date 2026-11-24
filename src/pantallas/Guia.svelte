@@ -49,6 +49,7 @@
     ]],
     ['importar', 'Pasar tu rutina, tu dieta o tus recetas desde Excel', [
       'Yo → Archivo PARE → Importar rutina o dieta. Ahí descargas la plantilla de rutina o la de dieta.',
+      'Archivos PARE que te mandan por WhatsApp o correo (rutina, dieta, deportista, copia): mantén pulsado el archivo → Compartir → PARE. Se abre solo donde toca. (Hace falta tener PARE instalada como app.)',
       'Rellénala en Excel, Google Sheets o la app de hojas de cálculo del móvil. Tiene una hoja de instrucciones, un ejemplo y la lista de ejercicios o alimentos de PARE para copiar los nombres.',
       'Guárdala como .xlsx (en Google Sheets: Archivo → Descargar → Microsoft Excel) y súbela en la misma pantalla.',
       'PARE reconoce los nombres. Los dudosos salen con «¿?» y los que no reconoce, en rojo: tócalos para elegir el bueno. Después revisas y aceptas.',

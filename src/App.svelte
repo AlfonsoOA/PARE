@@ -1,4 +1,5 @@
 <script>
+  import { abrirArchivo } from './lib/archivo.js';
   import { app, cargarDatos } from './lib/estado.svelte.js';
   import { cargarCatalogo, cat } from './lib/catalogo.js';
   import { iniciarAtras } from './lib/atras.js';
@@ -55,6 +56,21 @@
     }
   }
   $effect(() => { if (app.listo) abrirGuiaSiToca(); });
+  // Archivo recibido con «Compartir → PARE» (lo deja el service worker en caché)
+  $effect(() => {
+    if (!app.listo || !location.search.includes('compartido=1')) return;
+    try { history.replaceState(history.state, '', location.pathname); } catch { /* da igual */ }
+    (async () => {
+      try {
+        const c = await caches.open('pare-compartido');
+        const r = await c.match('./archivo-compartido');
+        if (!r) return;
+        await c.delete('./archivo-compartido');
+        const f = new File([await r.blob()], decodeURIComponent(r.headers.get('x-nombre') || 'archivo.json'));
+        await abrirArchivo(f);
+      } catch { /* nada que abrir */ }
+    })();
+  });
   $effect(() => { window.addEventListener('hashchange', abrirGuiaSiToca); return () => window.removeEventListener('hashchange', abrirGuiaSiToca); });
   const nuevo = $derived(app.listo && !app.datos.rutina && !app.datos.perfil.test);
   const Vista = $derived(app.vista && VISTAS[app.vista.nombre]);
@@ -66,7 +82,7 @@
   {#if error}
     <div class="pantalla"><h1>No se pudo cargar PARE</h1><p class="sec">{error}</p></div>
   {:else if !app.listo}
-    <div class="carga"><Logo tam={96} /></div>
+    <div class="carga"><Logo tam={150} /></div>
   {:else if nuevo && !Vista}
     <Bienvenida />
   {:else if Vista}
