@@ -4056,7 +4056,7 @@
   },
   {
    "id_receta": "RE143",
-   "nombre_es": "Patata rellena de atún y huevo (microondas)",
+   "nombre_es": "Patata asada al microondas con atún y huevo",
    "tipo": "plato",
    "porciones": 1,
    "momento": "comida;cena",
@@ -13101,78 +13101,6 @@
    "nota": null
   },
   {
-   "id_receta": "RE143",
-   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
-   "orden": 1,
-   "id_alimento": "AL0084",
-   "nombre_alimento": "Patata",
-   "gramos": 250,
-   "nota": "1 grande, con piel"
-  },
-  {
-   "id_receta": "RE143",
-   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
-   "orden": 2,
-   "id_alimento": "AL0034",
-   "nombre_alimento": "Atún claro en lata al natural, escurrido",
-   "gramos": 112,
-   "nota": "2 latas pequeñas"
-  },
-  {
-   "id_receta": "RE143",
-   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
-   "orden": 3,
-   "id_alimento": "AL0042",
-   "nombre_alimento": "Huevo entero",
-   "gramos": 60,
-   "nota": "1, cocido"
-  },
-  {
-   "id_receta": "RE143",
-   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
-   "orden": 4,
-   "id_alimento": "AL0186",
-   "nombre_alimento": "Queso fresco batido 0 %",
-   "gramos": 40,
-   "nota": null
-  },
-  {
-   "id_receta": "RE143",
-   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
-   "orden": 5,
-   "id_alimento": "AL0156",
-   "nombre_alimento": "Aceite de oliva virgen extra",
-   "gramos": 5,
-   "nota": null
-  },
-  {
-   "id_receta": "RE143",
-   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
-   "orden": 6,
-   "id_alimento": "AL0212",
-   "nombre_alimento": "Pimentón",
-   "gramos": 1,
-   "nota": null
-  },
-  {
-   "id_receta": "RE143",
-   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
-   "orden": 7,
-   "id_alimento": "AL0201",
-   "nombre_alimento": "Sal",
-   "gramos": 1,
-   "nota": null
-  },
-  {
-   "id_receta": "RE143",
-   "nombre_receta": "Patata rellena de atún y huevo (microondas)",
-   "orden": 8,
-   "id_alimento": "AL0225",
-   "nombre_alimento": "Perejil o cilantro fresco",
-   "gramos": 2,
-   "nota": "perejil picado"
-  },
-  {
    "id_receta": "RE144",
    "nombre_receta": "Ensalada templada de garbanzos, patata y huevo",
    "orden": 1,
@@ -13720,6 +13648,78 @@
    "nombre_alimento": "Canela molida",
    "gramos": 2,
    "nota": "opcional, para la base"
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata asada al microondas con atún y huevo",
+   "orden": 1,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 250,
+   "nota": "1 grande, con piel"
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata asada al microondas con atún y huevo",
+   "orden": 2,
+   "id_alimento": "AL0034",
+   "nombre_alimento": "Atún claro en lata al natural, escurrido",
+   "gramos": 112,
+   "nota": "2 latas pequeñas"
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata asada al microondas con atún y huevo",
+   "orden": 3,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 60,
+   "nota": "1, cocido"
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata asada al microondas con atún y huevo",
+   "orden": 4,
+   "id_alimento": "AL0186",
+   "nombre_alimento": "Queso fresco batido 0 %",
+   "gramos": 40,
+   "nota": null
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata asada al microondas con atún y huevo",
+   "orden": 5,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata asada al microondas con atún y huevo",
+   "orden": 6,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata asada al microondas con atún y huevo",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE143",
+   "nombre_receta": "Patata asada al microondas con atún y huevo",
+   "orden": 8,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 2,
+   "nota": "perejil picado"
   }
  ]
 }
