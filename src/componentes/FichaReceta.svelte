@@ -8,6 +8,7 @@
   import { fmtNum } from '../lib/unidades.js';
   import Hoja from './Hoja.svelte';
   import { archivoRecetas, compartir } from '../lib/archivo.js';
+  import { compartirRecetaComo } from '../lib/recetaCompartir.js';
 
   let { receta: r, cerrar, comidaInicial = null } = $props();
   const d = app.datos;
@@ -39,6 +40,22 @@
     aviso(d.gustosRecetas[r.id] === 1 ? 'Saldrá antes en tus recetas y en el menú' : d.gustosRecetas[r.id] === -1 ? 'No te la volverá a proponer' : 'Quitado');
   }
   let borrar = $state(false);
+  // Para leerla fuera de PARE (WhatsApp…): con las cantidades que se ven ahora en pantalla
+  let enviando = $state(false);
+  async function enviarComo(modo) {
+    if (enviando) return;
+    enviando = true;
+    try {
+      const para = r.tipo === 'lote' ? `Para ${r.porciones} porciones` : base || !c ? 'Receta base, 1 ración' : `1 ración (ajustada a ${c.nombre.toLowerCase()})`;
+      const resumen = `${fmtNum(total.kcal)} kcal · ${fmtNum(total.p)} g proteína · ${fmtNum(total.hc)} g hidratos · ${fmtNum(total.g)} g grasa${r.tipo === 'lote' ? ' por porción' : ''}`;
+      const datos = { titulo: r.n, para, tiempo: r.tiempo, resumen, notas: r.notas, pasos: r.pasos || [],
+        ingredientes: aj.items.map((it) => ({ n: alimento(it.aid)?.n ?? it.aid, g: it.g, casero: enCasero(it) || '', nota: it.nota || '' })) };
+      const res = await compartirRecetaComo(datos, modo);
+      if (res === 'copiado') aviso('Receta copiada: pégala en WhatsApp');
+      else if (res === 'descargado') aviso('Imagen descargada: mándala por WhatsApp');
+    } catch { aviso('No se ha podido compartir la receta'); }
+    enviando = false;
+  }
   async function compartirReceta() {
     const res = await compartir(archivoRecetas([r]), r.n);
     if (res !== 'cancelado') aviso(res === 'compartido' ? 'Receta enviada' : 'Archivo descargado: mándalo por WhatsApp');
@@ -116,10 +133,18 @@
   {#if r.notas}<p class="sec peq">{r.notas}</p>{/if}
   {#if r.alerg?.length}<p class="peq">Alérgenos: {r.alerg.join(', ')}</p>{/if}
 
+  <div class="col" style="gap:6px">
+    <span class="etiqueta">Enviar la receta (WhatsApp…), con estas cantidades</span>
+    <div class="fila" style="gap:8px">
+      <button class="boton sec2" style="flex:1" disabled={enviando} onclick={() => enviarComo('texto')}>Como texto</button>
+      <button class="boton sec2" style="flex:1" disabled={enviando} onclick={() => enviarComo('imagen')}>Como imagen</button>
+    </div>
+  </div>
+
   {#if r.propia}
     <div class="fila" style="gap:8px">
       <button class="boton sec2" style="flex:1" onclick={() => { cerrar(); app.vista = { nombre: 'editorReceta', id: r.id, acento: 'comer' }; }}>Editar</button>
-      <button class="boton sec2" style="flex:1" onclick={compartirReceta}>Compartir</button>
+      <button class="boton sec2" style="flex:1" onclick={compartirReceta}>Archivo PARE</button>
       <button class="boton sec2" style="flex:1" onclick={() => (borrar = !borrar)}>Borrar</button>
     </div>
     {#if borrar}<button class="boton peligro ancho" onclick={borrarReceta}>Sí, borrar «{r.n}»</button>{/if}
