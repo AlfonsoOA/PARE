@@ -4313,6 +4313,64 @@
     "leche"
    ],
    "coste_porcion": 0.69
+  },
+  {
+   "id_receta": "RE152",
+   "nombre_es": "Boniato crujiente en air fryer con pimentón de la Vera",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 25,
+   "estilo": "fit",
+   "peso_final_g": null,
+   "notas": "El pimentón ahumado con el dulzor del boniato es un acierto seguro. Guarnición para carne o pescado a la plancha, o plato del viernes con un par de huevos. Etiquetas: saciante, rápida, guarnición, air fryer.",
+   "pasos": "Corte: lava el boniato y córtalo en gajos o bastones de grosor parecido, con piel. | Agua (opcional, para que cruja más): déjalos 20-30 minutos en agua fría y sécalos muy bien con un paño. | Rebozado: en un bol, espolvorea la maicena y remueve; después el aceite, el pimentón, el comino y la sal, hasta que queden bien cubiertos. | Air fryer: en una sola capa, sin amontonar, a 185 °C unos 15-18 minutos. Sacude la cesta a mitad. Están cuando los bordes se doran.",
+   "etiquetas": [
+    "vegano",
+    "vegetariano",
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 265,
+   "proteina_porcion": 4.8,
+   "hidratos_porcion": 40.5,
+   "grasa_porcion": 6.5,
+   "fibra_porcion": 8.4,
+   "peso_total_g": 264,
+   "alergenos": [],
+   "coste_porcion": 0.63
+  },
+  {
+   "id_receta": "RE153",
+   "nombre_es": "Boniato dulce con canela y skyr",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "merienda;postre",
+   "tiempo_min": 20,
+   "estilo": "fit",
+   "peso_final_g": null,
+   "notas": "Postre caliente y dulce, con contraste frío-caliente, que llena mucho. Con edulcorante en vez de miel, unas 40 kcal menos. Etiquetas: saciante, postre, air fryer.",
+   "pasos": "Air fryer: espolvorea las rodajas de boniato con canela y hazlas a 180 °C unos 12-15 minutos, dándoles la vuelta a mitad, hasta que estén tiernas por dentro y algo caramelizadas por fuera. También vale el microondas: 5-6 minutos en un plato tapado. | Servir: templadas, con un hilito de miel por encima y el skyr frío al lado o debajo.",
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 284,
+   "proteina_porcion": 19.8,
+   "hidratos_porcion": 43.4,
+   "grasa_porcion": 1.1,
+   "fibra_porcion": 7.1,
+   "peso_total_g": 362,
+   "alergenos": [
+    "leche"
+   ],
+   "coste_porcion": 1.22
   }
  ],
  "receta_ingredientes": [
@@ -13720,6 +13778,96 @@
    "nombre_alimento": "Perejil o cilantro fresco",
    "gramos": 2,
    "nota": "perejil picado"
+  },
+  {
+   "id_receta": "RE152",
+   "nombre_receta": "Boniato crujiente en air fryer con pimentón de la Vera",
+   "orden": 1,
+   "id_alimento": "AL0085",
+   "nombre_alimento": "Boniato",
+   "gramos": 250,
+   "nota": "1 mediano, en gajos o bastones, con piel"
+  },
+  {
+   "id_receta": "RE152",
+   "nombre_receta": "Boniato crujiente en air fryer con pimentón de la Vera",
+   "orden": 2,
+   "id_alimento": "AL0077",
+   "nombre_alimento": "Harina de maíz (maicena)",
+   "gramos": 5,
+   "nota": "1 cucharadita, para que cruja"
+  },
+  {
+   "id_receta": "RE152",
+   "nombre_receta": "Boniato crujiente en air fryer con pimentón de la Vera",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 5,
+   "nota": "1 cucharadita"
+  },
+  {
+   "id_receta": "RE152",
+   "nombre_receta": "Boniato crujiente en air fryer con pimentón de la Vera",
+   "orden": 4,
+   "id_alimento": "AL0212",
+   "nombre_alimento": "Pimentón",
+   "gramos": 2,
+   "nota": "de la Vera, ahumado"
+  },
+  {
+   "id_receta": "RE152",
+   "nombre_receta": "Boniato crujiente en air fryer con pimentón de la Vera",
+   "orden": 5,
+   "id_alimento": "AL0220",
+   "nombre_alimento": "Comino molido",
+   "gramos": 1,
+   "nota": "o ajo en polvo"
+  },
+  {
+   "id_receta": "RE152",
+   "nombre_receta": "Boniato crujiente en air fryer con pimentón de la Vera",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE153",
+   "nombre_receta": "Boniato dulce con canela y skyr",
+   "orden": 1,
+   "id_alimento": "AL0085",
+   "nombre_alimento": "Boniato",
+   "gramos": 200,
+   "nota": "en rodajas de 1 cm"
+  },
+  {
+   "id_receta": "RE153",
+   "nombre_receta": "Boniato dulce con canela y skyr",
+   "orden": 2,
+   "id_alimento": "AL0202",
+   "nombre_alimento": "Canela molida",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE153",
+   "nombre_receta": "Boniato dulce con canela y skyr",
+   "orden": 3,
+   "id_alimento": "AL0258",
+   "nombre_alimento": "Miel",
+   "gramos": 10,
+   "nota": "un hilito; o edulcorante"
+  },
+  {
+   "id_receta": "RE153",
+   "nombre_receta": "Boniato dulce con canela y skyr",
+   "orden": 4,
+   "id_alimento": "AL0185",
+   "nombre_alimento": "Skyr natural",
+   "gramos": 150,
+   "nota": "frío"
   }
  ]
 }

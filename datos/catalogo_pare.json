@@ -97321,6 +97321,35 @@
    "fuente": "Etiqueta Milbona High Protein chocolate (Lidl); valores por 100 ml pasados a 100 g (330 ml = 350 g)",
    "id_fuente": null,
    "notas": "Botella de 330 ml: 221 kcal y 35 g de proteína."
+  },
+  {
+   "id_alimento": "AL0258",
+   "nombre_es": "Miel",
+   "nombre_en": "Corn, flour, pre-gelatinized",
+   "grupo": "dulce",
+   "cuenta_como": "HC",
+   "estado": "listo",
+   "kcal_100g": 304,
+   "proteina_100g": 0.3,
+   "hidratos_100g": 82.4,
+   "azucares_100g": 82.1,
+   "fibra_100g": 0.2,
+   "grasa_100g": 0,
+   "grasa_saturada_100g": 0,
+   "sal_100g": 0.01,
+   "racion_g": 49,
+   "medida_casera": "1 cucharada",
+   "g_medida": 21,
+   "alergenos": [],
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "USDA FoodData Central SR Legacy 19296 (Honey)",
+   "id_fuente": "2779266",
+   "notas": "Azúcar al fin y al cabo: mejor en hilito."
   }
  ],
  "recetas": [
