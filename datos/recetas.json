@@ -4284,6 +4284,35 @@
    "peso_total_g": 34,
    "alergenos": [],
    "coste_porcion": 0.15
+  },
+  {
+   "id_receta": "RE151",
+   "nombre_es": "Tarta de nube: flan de avena y vainilla con base crujiente",
+   "tipo": "lote",
+   "porciones": 6,
+   "momento": "merienda;postre",
+   "tiempo_min": 30,
+   "estilo": "fit",
+   "peso_final_g": null,
+   "notas": "La nube, pero en tarta: base crujiente de avena tostada que sabe a galleta y flan de avena firme encima. Aguanta 4 días en la nevera. Variantes: whey de chocolate y una cucharadita de cacao en la base; o canela y ralladura de limón en el flan. Etiquetas: saciante, postre, lote.",
+   "pasos": "Base: tuesta los copos de avena en una sartén sin aceite, 3-4 minutos a fuego medio y removiendo, hasta que huelan a galleta. Mézclalos con la canela y los 60 g de yogur, y aplasta la mezcla con una cuchara en el fondo de un táper o molde (unos 18 x 18 cm). Déjalo en la nevera mientras haces el flan. | Hidratar: espolvorea la gelatina sobre 100 ml de la leche fría y déjala 5 minutos. | Flan de avena: en un cazo, bate la harina de avena con el resto de la leche (400 ml) y calienta removiendo con varillas sin parar. Cuando empiece a espesar, cuenta 3-4 minutos más, hasta que tenga textura de natilla. Así la avena se cuece y no sabe a harina cruda. | Gelatina: fuera del fuego, añade la gelatina hidratada y remueve hasta que no quede ningún grano. | Proteína: deja que baje a unos 50-60 °C (se puede meter el dedo sin quemarse). Añade la whey, los 250 g de yogur, la vainilla y la sacarina, batiendo fuerte para que no queden grumos. | Montaje: vierte el flan sobre la base. 30 minutos de congelador (sin que llegue a congelarse) y después a la nevera, al menos 2-3 horas. Corta en 6 porciones.",
+   "etiquetas": [
+    "vegetariano"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "6 porciones; cada una: 0.7 P · 0.3 HC · 0.1 G",
+   "kcal_porcion": 142,
+   "proteina_porcion": 17.8,
+   "hidratos_porcion": 13.1,
+   "grasa_porcion": 1.1,
+   "fibra_porcion": 1.4,
+   "peso_total_g": 933,
+   "alergenos": [
+    "gluten",
+    "leche"
+   ],
+   "coste_porcion": 0.69
   }
  ],
  "receta_ingredientes": [
@@ -13601,6 +13630,96 @@
    "nombre_alimento": "Sal",
    "gramos": 1,
    "nota": null
+  },
+  {
+   "id_receta": "RE151",
+   "nombre_receta": "Tarta de nube: flan de avena y vainilla con base crujiente",
+   "orden": 1,
+   "id_alimento": "AL0063",
+   "nombre_alimento": "Copos de avena",
+   "gramos": 40,
+   "nota": "para la base, tostados"
+  },
+  {
+   "id_receta": "RE151",
+   "nombre_receta": "Tarta de nube: flan de avena y vainilla con base crujiente",
+   "orden": 2,
+   "id_alimento": "AL0183",
+   "nombre_alimento": "Yogur con proteínas natural (tipo +Pro)",
+   "gramos": 60,
+   "nota": "para ligar la base"
+  },
+  {
+   "id_receta": "RE151",
+   "nombre_receta": "Tarta de nube: flan de avena y vainilla con base crujiente",
+   "orden": 3,
+   "id_alimento": "AL0064",
+   "nombre_alimento": "Harina de avena",
+   "gramos": 30,
+   "nota": "para el flan"
+  },
+  {
+   "id_receta": "RE151",
+   "nombre_receta": "Tarta de nube: flan de avena y vainilla con base crujiente",
+   "orden": 4,
+   "id_alimento": "AL0179",
+   "nombre_alimento": "Leche desnatada con proteínas (+proteínas)",
+   "gramos": 500,
+   "nota": null
+  },
+  {
+   "id_receta": "RE151",
+   "nombre_receta": "Tarta de nube: flan de avena y vainilla con base crujiente",
+   "orden": 5,
+   "id_alimento": "AL0243",
+   "nombre_alimento": "Gelatina neutra en polvo",
+   "gramos": 12,
+   "nota": "unos 2 sobres y medio"
+  },
+  {
+   "id_receta": "RE151",
+   "nombre_receta": "Tarta de nube: flan de avena y vainilla con base crujiente",
+   "orden": 6,
+   "id_alimento": "AL0189",
+   "nombre_alimento": "Proteína de suero (whey aislada)",
+   "gramos": 30,
+   "nota": "de vainilla"
+  },
+  {
+   "id_receta": "RE151",
+   "nombre_receta": "Tarta de nube: flan de avena y vainilla con base crujiente",
+   "orden": 7,
+   "id_alimento": "AL0183",
+   "nombre_alimento": "Yogur con proteínas natural (tipo +Pro)",
+   "gramos": 250,
+   "nota": "para el flan"
+  },
+  {
+   "id_receta": "RE151",
+   "nombre_receta": "Tarta de nube: flan de avena y vainilla con base crujiente",
+   "orden": 8,
+   "id_alimento": "AL0204",
+   "nombre_alimento": "Aroma de vainilla",
+   "gramos": 4,
+   "nota": "extracto"
+  },
+  {
+   "id_receta": "RE151",
+   "nombre_receta": "Tarta de nube: flan de avena y vainilla con base crujiente",
+   "orden": 9,
+   "id_alimento": "AL0198",
+   "nombre_alimento": "Sacarina líquida",
+   "gramos": 5,
+   "nota": "al gusto"
+  },
+  {
+   "id_receta": "RE151",
+   "nombre_receta": "Tarta de nube: flan de avena y vainilla con base crujiente",
+   "orden": 10,
+   "id_alimento": "AL0202",
+   "nombre_alimento": "Canela molida",
+   "gramos": 2,
+   "nota": "opcional, para la base"
   }
  ]
 }
