@@ -21,6 +21,7 @@
       'Cada serie ya trae el peso que hiciste en esa misma serie la última vez, también si haces pirámide. Si cambias el peso de una serie, las siguientes se ajustan solas.',
       'Debajo de cada serie ves «antes 60 kg × 10»: lo que hiciste la vez anterior. La idea es igualarlo o mejorarlo.',
       'El primer día de un ejercicio, elige un peso con el que te sobren 2-3 repeticiones.',
+      'Si empezaste un ejercicio demasiado ligero (te sobraban muchas repeticiones), al terminar la sesión pulsa «Me sobraba mucho: subir todas» en ese ejercicio: sube un escalón todas las series de la próxima vez. La doble progresión normal solo sube cuando llegas al tope de repeticiones.',
       'Si durante la sesión añades o quitas una serie (+ Serie / − Serie), ese número se queda en tu rutina para la próxima vez; al terminar te lo recuerda y puedes volver a lo que tenías. Una serie que solo dejas sin marcar no cuenta como quitada.',
       'Lo mismo con los ejercicios: si durante la sesión sustituyes uno o añades otro, se queda en tu rutina. Si quitas uno de la sesión, sigue en la rutina (puede ser solo por hoy), pero al terminar puedes quitarlo también de ahí. En «Cambios en tu rutina», al terminar, puedes deshacer cualquiera.',
       'Estiramientos: en Editar rutina, «Añadir ejercicio» → «Estiramientos» (o busca «caballero», «espalda», «rodillo»…). Se anotan por segundos, no cuentan en tus series semanales y no tienen progresión. Ponlos al final de la sesión.',

@@ -2,7 +2,7 @@
   import PorQue from '../componentes/PorQue.svelte';
   import { app, ir, aviso } from '../lib/estado.svelte.js';
   import { ej, GRUPOS, NOMBRE_GRUPO } from '../lib/catalogo.js';
-  import { historialEjercicio, novedades, volumenSesionHecha, cargaEfectiva, usaPesoCorporal } from '../lib/entreno.js';
+  import { historialEjercicio, novedades, volumenSesionHecha, cargaEfectiva, usaPesoCorporal, incremento } from '../lib/entreno.js';
   import { propuestasPara, propuestaDe, pesoEnFecha, alternarCambioRutina } from '../lib/sesiones.js';
   import { copiaAutomatica } from '../lib/archivo.js';
   import { fmt, fmtMin, fmtNum, mostrar, guardar, ud, fmtReloj } from '../lib/unidades.js';
@@ -32,6 +32,11 @@
   // una casilla de peso por serie (si se cambia el número de series, se repite el último peso)
   const casillas = (p) => Array.from({ length: Math.max(1, +p.prop.series || 1) }, (_, k) => k);
   const valorSerie = (p, k) => p.cargas[k] ?? p.cargas.at(-1) ?? '';
+  // «Me sobraba mucho» (o «me pasé»): mueve todas las series un escalón, para cuando se empezó demasiado bajo o alto
+  function escalonTodas(p, signo) {
+    const paso = mostrar(incremento(p.ej, app.datos.ajustes)) ?? 0;
+    p.cargas = casillas(p).map((k) => { const v = valorSerie(p, k); return v === '' || v == null ? v : String(Math.max(0, Math.round((+v + signo * paso) * 100) / 100)); });
+  }
   // Tope de la máquina: marcarlo o quitarlo recalcula la propuesta (sube repeticiones en vez de peso)
   function cambiarTope(p, activo) {
     const d = app.datos;
@@ -141,6 +146,10 @@
           {#each casillas(p) as k}
             <label class="campo">S{k + 1}<input type="number" inputmode="decimal" step="0.25" value={valorSerie(p, k)} oninput={(ev) => (p.cargas[k] = ev.currentTarget.value)} aria-label="Peso de la serie {k + 1}" /></label>
           {/each}
+        </div>
+        <div class="fila" style="gap:8px;flex-wrap:wrap">
+          <button class="chip" onclick={() => escalonTodas(p, 1)}>Me sobraba mucho: subir todas</button>
+          <button class="chip" onclick={() => escalonTodas(p, -1)}>Me pasé: bajar todas</button>
         </div>
       </div>
     {/each}
