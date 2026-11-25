@@ -97291,6 +97291,36 @@
    "fuente": "USDA FoodData Central SR Legacy 19034 (Snacks, popcorn, air-popped)",
    "id_fuente": "2644288",
    "notas": "En grano. Al hacerlas en casa pesan casi igual que el grano: 30 g de grano dan un bol grande."
+  },
+  {
+   "id_alimento": "AL0257",
+   "nombre_es": "Batido proteico de chocolate Milbona (Lidl, 35 g)",
+   "nombre_en": null,
+   "grupo": "producto_proteico",
+   "cuenta_como": "P",
+   "estado": "listo",
+   "kcal_100g": 63.2,
+   "proteina_100g": 10.0,
+   "hidratos_100g": 5.0,
+   "azucares_100g": 4.9,
+   "fibra_100g": 0.4,
+   "grasa_100g": 0.28,
+   "grasa_saturada_100g": 0.19,
+   "sal_100g": 0.1,
+   "racion_g": 250,
+   "medida_casera": "1 botella",
+   "g_medida": 350.0,
+   "alergenos": [
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Etiqueta Milbona High Protein chocolate (Lidl); valores por 100 ml pasados a 100 g (330 ml = 350 g)",
+   "id_fuente": null,
+   "notas": "Botella de 330 ml: 221 kcal y 35 g de proteína."
   }
  ],
  "recetas": [
