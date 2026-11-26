@@ -8,6 +8,14 @@
   const kgSem = (v) => { const x = v * (ud() === 'lb' ? 2.20462 : 1); return Math.abs(x) < 0.005 ? `±0 ${ud()}/semana` : `${x > 0 ? '+' : '−'}${fmtNum(Math.abs(x), 2)} ${ud()}/semana`; };
   const dp = $derived(datos.encuestas?.at(-1)?.r?.dp);
   const comes = $derived(c.ok && (c.modo === 'anotado' ? 'lo que anotas' : 'lo que marca tu dieta'));
+  import { app } from '../lib/estado.svelte.js';
+  // Propuesta de kcal a partir del gasto real: mantenimiento = el gasto; déficit −15 %; superávit +10 %; recomposición −5 %
+  const propuesta = $derived.by(() => {
+    if (!c.ok || !c.creible) return null;
+    const f = datos.dieta?.objetivo === 'recomposicion' ? 0.95 : c.fase === 'deficit' ? 0.85 : c.fase === 'superavit' ? 1.1 : 1;
+    const k = Math.round((c.gastoReal * f) / 50) * 50;
+    return Math.abs(k - (datos.dieta?.kcal ?? 0)) >= 100 ? k : null;
+  });
 </script>
 
 <div class="tarjeta" style="gap:8px">
@@ -34,6 +42,10 @@
         <b>Bajas más deprisa de lo esperado</b>, como si comieras unas <b>{Math.abs(c.difKcal).toLocaleString('es-ES')} kcal/día menos</b> que {comes}. O tu gasto es mayor del estimado, o comes menos de lo que crees. Si no buscas déficit, sube algo la ingesta.
       {/if}
     </p>
+    {#if propuesta}
+      <button class="boton sec2 ancho" onclick={() => (app.vista = { nombre: 'midieta', acento: 'comer', kcal: propuesta })}>Ajustar mi dieta a {propuesta.toLocaleString('es-ES')} kcal</button>
+      <p class="sec peq" style="margin:0">{datos.dieta?.objetivo === 'recomposicion' ? 'Recomposición: un 5 % por debajo de tu gasto real.' : c.fase === 'deficit' ? 'Déficit: un 15 % por debajo de tu gasto real.' : c.fase === 'superavit' ? 'Superávit: un 10 % por encima de tu gasto real.' : 'Mantenimiento: tu gasto real.'} Antes de aplicarlo verás cada cambio del menú.</p>
+    {/if}
     <p class="sec peq">{#if c.creible}Gasto real que sale de tus datos: <b>{c.gastoReal.toLocaleString('es-ES')} kcal</b> (estimado al empezar: {c.tdee.toLocaleString('es-ES')}). {/if}Del {fmtFecha(c.desde)} al {fmtFecha(c.hasta)}, {c.pesadas} pesadas{c.modo === 'anotado' ? `, ${c.diasAnotados} días anotados` : ''}. 1 kg ≈ 7.700 kcal; el agua mueve el peso de un día para otro, por eso se usa la tendencia de 4 semanas. <PorQue id="bascula" /></p>
   {/if}
 </div>

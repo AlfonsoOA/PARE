@@ -10,6 +10,9 @@
   let objetivo = $state(null);
   let prop = $state(null);
   function calcularPropuesta() { if (+objetivo > 800) prop = propuestaKcal(app.datos.dieta, +objetivo); }
+  // Viene de «Ajustar mi dieta a X kcal» (Progreso → la báscula frente a lo que comes): la propuesta ya preparada
+  const desdeBascula = app.vista?.kcal;
+  if (desdeBascula && app.datos.dieta) { objetivo = desdeBascula; calcularPropuesta(); }
   function aplicarPropuesta() {
     app.datos.dietaAnterior = JSON.parse(JSON.stringify(app.datos.dieta));
     app.datos.dieta = prop.dieta; prop = null; objetivo = null;
