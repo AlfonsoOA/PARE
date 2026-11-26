@@ -179,3 +179,57 @@ export function desglose(fechas) {
   }
   return { dias, lineas: [...mapa.values()].map((l) => ({ ...l, hijos: [...l.hijos.values()] })) };
 }
+
+// ── Fijar las kcal diarias a mano y que el menú se ajuste ──
+// La proteína se queda como está (va por tu peso); lo que sube o baja son los hidratos y la grasa:
+// las raciones de HC y G de cada comida y, en el menú, los gramos de los alimentos que cuentan como hidratos o grasa
+// (arroz, pan, patata, aceite…). Carne, pescado, lácteos proteicos, fruta, verdura y especias no se tocan.
+const ESCALA = new Set(['HC', 'G']);
+const kcalDe = (aid, g) => { const a = alimento(aid); return a ? (a.kcal * g) / 100 : 0; };
+const escalable = (aid) => ESCALA.has(alimento(aid)?.cc);
+const redondeoG = (aid, g) => { const a = alimento(aid); const paso = g < 10 ? 0.5 : a?.cc === 'G' || g < 20 ? 1 : 5; return Math.max(paso, Math.round(g / paso) * paso); };
+// Los platos de receta (una rebanada de tu pan, un guiso…) se dejan como están: se escalan los alimentos sueltos
+function itemsDe(e) { return e.tipo === 'alimento' ? [e] : []; }
+function itemsTodos(e) { return e.tipo === 'plato' ? e.items : e.tipo === 'alimento' ? [e] : []; }
+/** kcal medias de un día de menú (solo días con algo) y parte que se puede escalar. */
+function partesMenu(dieta) {
+  const dias = Object.values(dieta.menu || {}).filter((M) => Object.values(M).some((l) => l?.length));
+  if (!dias.length) return null;
+  let fijo = 0, var_ = 0;
+  for (const M of dias) for (const L of Object.values(M)) for (const e of L || []) for (const it of itemsTodos(e)) {
+    const k = kcalDe(it.aid, it.g);
+    if (e.tipo === 'alimento' && escalable(it.aid)) var_ += k; else fijo += k;
+  }
+  return { dias: dias.length, fijo: fijo / dias.length, var: var_ / dias.length };
+}
+/** Propuesta (sin aplicar) para que la dieta y el menú den «objetivo» kcal al día. */
+export function propuestaKcal(dieta, objetivo) {
+  const pm = partesMenu(dieta);
+  const kcalPauta = (r) => { const m = pautaEnMacros(r); return m.P * 25 * 4 + m.HC * 40 * 4 + m.G * 10 * 9; };
+  const antesPauta = dieta.comidas.reduce((s, c) => s + kcalPauta(c.raciones), 0);
+  // factor: con menú, sobre lo que se come de verdad; sin menú, sobre la pauta
+  let f, antes;
+  if (pm && pm.var > 50) { antes = pm.fijo + pm.var; f = (objetivo - pm.fijo) / pm.var; }
+  else {
+    antes = antesPauta;
+    const P = dieta.comidas.reduce((s, c) => s + pautaEnMacros(c.raciones).P, 0) * 100;
+    f = (objetivo - P) / Math.max(1, antesPauta - P);
+  }
+  const limitado = f < 0.4 || f > 2.2;
+  f = Math.min(2.2, Math.max(0.4, f));
+  const nueva = JSON.parse(JSON.stringify(dieta));
+  const cambios = [];
+  for (const c of nueva.comidas) for (const g of ['HC', 'G']) c.raciones[g] = Math.round((+c.raciones[g] || 0) * f * 4) / 4;
+  for (const [dia, M] of Object.entries(nueva.menu || {})) for (const [com, L] of Object.entries(M)) for (const e of L || []) for (const it of itemsDe(e)) {
+    if (!escalable(it.aid) || it.g < 2) continue; // un par de puffs de aceite se quedan como están
+    const de = it.g, a = redondeoG(it.aid, it.g * f);
+    if (Math.abs(a - de) >= 0.5) { it.g = a; cambios.push({ dia: +dia, comida: com, n: alimento(it.aid)?.n, de, a }); }
+  }
+  for (const g of GRUPOS_RACION) nueva.raciones[g] = nueva.comidas.reduce((s, c) => s + (+c.raciones[g] || 0), 0);
+  nueva.kcal = Math.round(objetivo);
+  nueva.hc = Math.round((dieta.hc || 0) * f);
+  nueva.g = Math.round((dieta.g || 0) * f);
+  nueva.kcalFijadas = true;
+  const pmN = partesMenu(nueva);
+  return { f, limitado, antes: Math.round(antes), despues: Math.round(pmN ? pmN.fijo + pmN.var : objetivo), cambios, dieta: nueva };
+}

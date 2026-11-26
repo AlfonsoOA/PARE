@@ -5,7 +5,18 @@
     const r = await compartir(archivoDieta(app.datos.dieta), app.datos.perfil.nombre);
     if (r !== 'cancelado') aviso(r === 'compartido' ? 'Dieta enviada' : 'Archivo descargado: mándalo por WhatsApp');
   }
-  import { GRUPOS_RACION, NOMBRE_RACION, comidaTrasEntreno } from '../lib/dieta.js';
+  import { GRUPOS_RACION, NOMBRE_RACION, comidaTrasEntreno, propuestaKcal, DIAS_SEMANA } from '../lib/dieta.js';
+  // Fijar las kcal a mano: se ve la propuesta antes de aplicarla, y se puede deshacer
+  let objetivo = $state(null);
+  let prop = $state(null);
+  function calcularPropuesta() { if (+objetivo > 800) prop = propuestaKcal(app.datos.dieta, +objetivo); }
+  function aplicarPropuesta() {
+    app.datos.dietaAnterior = JSON.parse(JSON.stringify(app.datos.dieta));
+    app.datos.dieta = prop.dieta; prop = null; objetivo = null;
+    aviso('Dieta y menú ajustados');
+  }
+  function deshacer() { app.datos.dieta = app.datos.dietaAnterior; app.datos.dietaAnterior = null; aviso('Vuelves a la dieta de antes'); }
+  const nombreComida = (id) => app.datos.dieta?.comidas.find((c) => c.id === id)?.nombre ?? id;
   import { HORA_ENTRENO } from '../lib/dieta.js';
   import Icono from '../componentes/Icono.svelte';
   let dd = $derived(app.datos.dieta);
@@ -25,6 +36,27 @@
         <label class="campo" style="flex:1">Prot. (g)<input type="number" inputmode="numeric" bind:value={dd.p} /></label>
         <label class="campo" style="flex:1">Hidr. (g)<input type="number" inputmode="numeric" bind:value={dd.hc} /></label>
         <label class="campo" style="flex:1">Grasa (g)<input type="number" inputmode="numeric" bind:value={dd.g} /></label>
+      </div>
+      <div class="fijar">
+        <span class="etiqueta">Fijar mis kcal diarias</span>
+        <p class="sec peq" style="margin:0">Si ya sabes cuánto quieres comer (te lo ha dado un profesional, o lo has comprobado con la báscula), escríbelo: la proteína se queda igual y se ajustan los hidratos y la grasa, en la pauta y en los gramos de tu menú (arroz, pan, patata, aceite…).</p>
+        <div class="fila" style="gap:8px">
+          <input type="number" inputmode="numeric" placeholder="p. ej. 2400" bind:value={objetivo} style="flex:1" aria-label="kcal diarias" />
+          <button class="boton" disabled={!(+objetivo > 800)} onclick={calcularPropuesta}>Ver cambios</button>
+        </div>
+        {#if prop}
+          <div class="propuesta">
+            <p class="peq" style="margin:0"><b>Tu menú pasa de ~{prop.antes.toLocaleString('es-ES')} a ~{prop.despues.toLocaleString('es-ES')} kcal al día.</b> Hidratos y grasa ×{prop.f.toLocaleString('es-ES', { maximumFractionDigits: 2 })}; la proteína no cambia.</p>
+            {#if prop.limitado}<p class="peq aviso" style="margin:0">Es un cambio muy grande: se ha limitado. Revisa la pauta a mano o cambia el menú.</p>{/if}
+            {#if prop.cambios.length}
+              <details><summary class="peq">Ver los {prop.cambios.length} cambios de gramos del menú</summary>
+                <ul class="peq lista">{#each prop.cambios.slice(0, 60) as c}<li>{DIAS_SEMANA[c.dia]} · {nombreComida(c.comida)}: {c.n} {c.de} → <b>{c.a} g</b></li>{/each}</ul>
+              </details>
+            {/if}
+            <div class="fila" style="gap:8px"><button class="boton" style="flex:1" onclick={aplicarPropuesta}>Aplicar</button><button class="boton sec2" style="flex:1" onclick={() => (prop = null)}>Cancelar</button></div>
+          </div>
+        {/if}
+        {#if app.datos.dietaAnterior && !prop}<button class="enlace" style="align-self:flex-start;padding:0" onclick={deshacer}>Deshacer el último ajuste ({app.datos.dietaAnterior.kcal} kcal)</button>{/if}
       </div>
       <p class="sec peq">Gasto estimado al empezar: {dd.tdee?.toLocaleString('es-ES')} kcal. A las 3 semanas, mira el gasto real en Progreso → Cuerpo.</p>
     </div>
@@ -70,6 +102,10 @@
 </div>
 
 <style>
+  .fijar { display: flex; flex-direction: column; gap: 8px; padding-top: 10px; border-top: 1px solid var(--borde); margin-top: 4px; }
+  .propuesta { display: flex; flex-direction: column; gap: 8px; padding: 10px; border-radius: 12px; background: var(--elevada); }
+  .lista { margin: 6px 0 0; padding-left: 18px; max-height: 220px; overflow: auto; }
+  .aviso { color: var(--entrenar); }
   .rej { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
   .rej input { text-align: center; padding: 0 4px; }
   .rej .campo { font-size: 11px; }
