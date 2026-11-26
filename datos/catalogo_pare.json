@@ -97350,6 +97350,71 @@
    "fuente": "USDA FoodData Central SR Legacy 19296 (Honey)",
    "id_fuente": "2779266",
    "notas": "Azúcar al fin y al cabo: mejor en hilito."
+  },
+  {
+   "id_alimento": "AL0259",
+   "nombre_es": "Postre lácteo +Proteínas de chocolate (Hacendado)",
+   "nombre_en": null,
+   "grupo": "producto_proteico",
+   "cuenta_como": "P",
+   "estado": "listo",
+   "kcal_100g": 81,
+   "proteina_100g": 8.4,
+   "hidratos_100g": 8.7,
+   "azucares_100g": 6.6,
+   "fibra_100g": 0.7,
+   "grasa_100g": 1.1,
+   "grasa_saturada_100g": 0.6,
+   "sal_100g": 0.1,
+   "racion_g": 120,
+   "medida_casera": "1 tarrina",
+   "g_medida": 120,
+   "alergenos": [
+    "leche"
+   ],
+   "etiquetas": [
+    "vegetariano",
+    "sin_gluten"
+   ],
+   "activo": "SI",
+   "fuente": "Etiqueta Hacendado (Mercadona), especialidad láctea +Proteínas chocolate",
+   "id_fuente": null,
+   "notas": "Tarrina de 120 g: 97 kcal y 10 g de proteína."
+  },
+  {
+   "id_alimento": "AL0260",
+   "nombre_es": "Fideuá de marisco preparada (Hacendado, para microondas)",
+   "nombre_en": "Pasta, dry, enriched, spaghetti",
+   "grupo": "hidratos",
+   "cuenta_como": "HC",
+   "estado": "cocinado",
+   "kcal_100g": 199,
+   "proteina_100g": 7.7,
+   "hidratos_100g": 24,
+   "azucares_100g": 1.0,
+   "fibra_100g": 1.5,
+   "grasa_100g": 7.7,
+   "grasa_saturada_100g": 1.0,
+   "sal_100g": 1.0,
+   "racion_g": 167,
+   "medida_casera": null,
+   "g_medida": null,
+   "alergenos": [
+    "gluten",
+    "crustaceos",
+    "moluscos",
+    "pescado",
+    "sulfitos"
+   ],
+   "etiquetas": [
+    "vegano",
+    "vegetariano",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "FatSecret (Hacendado, fideuá de marisco); pendiente de comprobar con la etiqueta",
+   "id_fuente": "2758998",
+   "notas": "Plato preparado, ya cocinado: pesa la bandeja (peso neto en la etiqueta) y anota los gramos que comas. Saturadas, azúcares, fibra y sal estimados."
   }
  ],
  "recetas": [
