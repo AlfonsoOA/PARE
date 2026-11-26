@@ -1,4 +1,5 @@
 <script>
+  import { marcarVigencia } from '../lib/dieta.js';
   import { mifflin, factorActividad } from '../lib/plan.js';
   import { app, aviso, ir , ajustarDiasSinTest} from '../lib/estado.svelte.js';
   import { ej } from '../lib/catalogo.js';
@@ -27,7 +28,8 @@
   }
   function dieta(si) {
     if (si) {
-      d.dieta = { ...d.dieta, ...c.dieta };
+      const antes = d.dieta;
+      d.dieta = marcarVigencia({ ...d.dieta, ...c.dieta, kcalDesde: null }, antes);
       // Una dieta que viene de fuera puede no traer el gasto estimado: se calcula con el perfil, si lo hay.
       const pf = d.perfil, peso = d.medidas.filter((m) => m.peso).at(-1)?.peso;
       if (!d.dieta.tdee && pf.sexo && pf.edad && pf.altura && peso) {

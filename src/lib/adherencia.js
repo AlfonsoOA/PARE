@@ -163,6 +163,16 @@ export function contrasteBascula(d = app.datos, ventana = 28) {
   const ini = ps[0].fecha, fin = ps.at(-1).fecha, n = diasEntre(ini, fin) + 1;
   const anot = Object.keys(d.comidas || {}).filter((f) => f >= ini && f <= fin && d.comidas[f]?.length);
   const modo = anot.length >= Math.max(7, 0.6 * n) ? 'anotado' : 'plan';
+  // Lo pautado solo vale para las pesadas hechas con esa dieta: si cambió dentro de la ventana, se espera a tener
+  // pesadas con la nueva (si no, se compararía el peso de semanas atrás con unas kcal que aún no comías).
+  const vigente = d.dieta.kcalDesde;
+  if (modo === 'plan' && vigente && vigente > ini) {
+    const nuevas = ps.filter((m) => m.fecha >= vigente);
+    if (nuevas.length < 3 || diasEntre(nuevas[0].fecha, nuevas.at(-1).fecha) < 10) {
+      return { ok: false, motivo: `Tu dieta cambió el ${vigente.slice(8, 10)}/${vigente.slice(5, 7)}. Hacen falta al menos 3 pesadas en 10 días o más con la dieta nueva (o anotar lo que comes) para comparar.` };
+    }
+    return contrasteBascula(d, diasEntre(vigente, hasta) + 1);
+  }
   const kcal = modo === 'anotado' ? media(anot.map((f) => sumar(d.comidas[f]).kcal)) : d.dieta.kcal;
   const esperado = ((kcal - d.dieta.tdee) * 7) / 7700; // kg/semana
   const real = pend * 7;

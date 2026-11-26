@@ -1,4 +1,5 @@
 <script>
+  import { marcarVigencia } from '../lib/dieta.js';
   import { app, aviso, uuid } from '../lib/estado.svelte.js';
   import { archivoDieta, compartir } from '../lib/archivo.js';
   async function compartirDieta() {
@@ -15,10 +16,10 @@
   if (desdeBascula && app.datos.dieta) { objetivo = desdeBascula; calcularPropuesta(); }
   function aplicarPropuesta() {
     app.datos.dietaAnterior = JSON.parse(JSON.stringify(app.datos.dieta));
-    app.datos.dieta = prop.dieta; prop = null; objetivo = null;
+    app.datos.dieta = marcarVigencia(prop.dieta, app.datos.dietaAnterior); prop = null; objetivo = null;
     aviso('Dieta y menú ajustados');
   }
-  function deshacer() { app.datos.dieta = app.datos.dietaAnterior; app.datos.dietaAnterior = null; aviso('Vuelves a la dieta de antes'); }
+  function deshacer() { app.datos.dieta = marcarVigencia(app.datos.dietaAnterior, app.datos.dieta); app.datos.dietaAnterior = null; aviso('Vuelves a la dieta de antes'); }
   const nombreComida = (id) => app.datos.dieta?.comidas.find((c) => c.id === id)?.nombre ?? id;
   import { HORA_ENTRENO } from '../lib/dieta.js';
   import Icono from '../componentes/Icono.svelte';

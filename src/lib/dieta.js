@@ -3,6 +3,13 @@ import { app, uuid } from './estado.svelte.js';
 import { cat } from './catalogo.js';
 import { racionesDelDia } from './plan.js';
 
+/** Anota desde qué día rigen las kcal de la dieta (lo usa el contraste con la báscula). */
+export function marcarVigencia(nueva, antes) {
+  const hoy = new Date().toLocaleDateString('sv-SE');
+  nueva.kcalDesde = antes && antes.kcal === nueva.kcal && antes.kcalDesde ? antes.kcalDesde : hoy;
+  return nueva;
+}
+
 export const GRUPOS_RACION = ['P', 'HC', 'G', 'fruta', 'lacteo'];
 export const NOMBRE_RACION = { P: 'Proteína', HC: 'Hidratos', G: 'Grasa', fruta: 'Fruta', lacteo: 'Lácteo' };
 export const DEF_RACION = { P: '25 g de proteína', HC: '40 g de hidratos', G: '10 g de grasa', fruta: '15 g de hidratos', lacteo: '1 vaso de leche o 2 yogures' };

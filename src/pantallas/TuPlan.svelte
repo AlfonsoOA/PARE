@@ -1,4 +1,5 @@
 <script>
+  import { marcarVigencia } from '../lib/dieta.js';
   import { app, ir } from '../lib/estado.svelte.js';
   import { ej } from '../lib/catalogo.js';
   import { duracionSesion } from '../lib/entreno.js';
@@ -12,7 +13,7 @@
   function aceptar(editar = false) {
     if (app.datos.rutina) app.datos.rutinasAnteriores.push(app.datos.rutina);
     app.datos.rutina = prop.rutina;
-    app.datos.dieta = prop.dieta;
+    app.datos.dieta = marcarVigencia(prop.dieta, app.datos.dieta);
     app.datos.perfil.faseDieta = prop.fase;
     app.datos.secuencia = { siguiente: 0, pendientes: [] };
     delete app.datos.planPropuesto;

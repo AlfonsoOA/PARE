@@ -86,6 +86,8 @@ export async function cargarDatos() {
       app.datos.perfil = { ...datosVacios().perfil, ...guardado.datos.perfil };
       app.sesionActiva = guardado.sesionActiva ?? null;
       ajustarDiasSinTest(app.datos);
+      // Dietas de antes de anotar su vigencia: se toman como nuevas (el contraste con la báscula espera pesadas con ella)
+      if (app.datos.dieta && !app.datos.dieta.kcalDesde) app.datos.dieta.kcalDesde = new Date().toLocaleDateString('sv-SE');
     }
   } catch (e) {
     console.warn('No se pudieron leer los datos guardados', e);

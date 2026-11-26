@@ -1,4 +1,5 @@
 <script>
+  import { marcarVigencia } from '../lib/dieta.js';
   import { tick } from 'svelte';
   import { app, hoyISO, aviso } from '../lib/estado.svelte.js';
   let { soloDieta = false } = $props();
@@ -82,7 +83,7 @@
     if (m) Object.assign(m, med); else app.datos.medidas.push(med);
     const dieta = generarDieta({ ...t, peso: +t.peso, altura: alturaCm(+t.altura), edad: +t.edad, cintura: +t.cintura || null, cuello: +t.cuello || null, cadera: +t.cadera || null });
     dieta.menu = proponerMenu(dieta, perfil);
-    app.datos.dieta = dieta;
+    app.datos.dieta = marcarVigencia(dieta, app.datos.dieta);
     perfil.faseDieta = faseDeObjetivo(t.objetivo, dieta);
     delete perfil.borradorTest;
     aviso(`Dieta lista: ${dieta.kcal.toLocaleString('es-ES')} kcal`);
