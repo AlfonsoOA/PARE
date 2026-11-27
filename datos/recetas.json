@@ -4371,6 +4371,155 @@
     "leche"
    ],
    "coste_porcion": 1.22
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_es": "Patata rellena (La Original, de Bujalance)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 35,
+   "estilo": "española",
+   "peso_final_g": 260,
+   "notas": "Hacer el aliño de la carne la víspera intensifica el sabor; cantidades orientativas para 1 ración.",
+   "pasos": "Aliño previo: aliña la carne picada con ajo molido, perejil, nuez moscada, sal, pimienta molida y un poco de vino blanco; déjala reposar preferiblemente desde la noche anterior. | Patatas y relleno: pela las patatas, córtalas en rodajas ni muy finas ni muy gordas, fríelas ligeramente y, cuando estén algo frías, coloca carne sobre una rodaja y tapa con otra. | Rebozado y fritura: pasa cada patata rellena primero por harina, luego por huevo batido y por último por pan rallado, y fríe en aceite caliente hasta dorar.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 777,
+   "proteina_porcion": 35.5,
+   "hidratos_porcion": 58.1,
+   "grasa_porcion": 41.7,
+   "fibra_porcion": 4,
+   "peso_total_g": 406,
+   "alergenos": [
+    "frutos_cascara",
+    "gluten",
+    "huevo",
+    "sulfitos"
+   ],
+   "coste_porcion": 1.48
+  },
+  {
+   "id_receta": "RE155",
+   "nombre_es": "San Jacobos caseros de madre",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 20,
+   "estilo": "española",
+   "peso_final_g": 240,
+   "notas": "Doble rebozado con pan rallado en primer y último paso para sellar bien el queso al freír.",
+   "pasos": "Relleno y doblado: estira un poco el filete de lomo, ponle una pizca de sal, coloca sobre la mitad del filete jamón de york y queso en lonchas, y dobla la otra mitad por encima. | Doble empanado y fritura: pasa primero por pan rallado, después por huevo batido y por último otra vez por pan rallado, y fríe en aceite caliente hasta dorar.",
+   "etiquetas": [],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 758,
+   "proteina_porcion": 54.2,
+   "hidratos_porcion": 27.4,
+   "grasa_porcion": 46.9,
+   "fibra_porcion": 1.5,
+   "peso_total_g": 327,
+   "alergenos": [
+    "gluten",
+    "huevo",
+    "leche"
+   ],
+   "coste_porcion": 2.26
+  },
+  {
+   "id_receta": "RE156",
+   "nombre_es": "Flamenquín (El Original, de Bujalance - receta casera de madre)",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 20,
+   "estilo": "española",
+   "peso_final_g": 250,
+   "notas": "El tocino salado ya aporta salinidad, por lo que conviene moderar la sal añadida.",
+   "pasos": "Relleno y enrollado: estira un poco los filetes de lomo, coloca encima una tira de jamón serrano y otra de tocino salado, y enróllalos como un rollo. | Doble empanado y fritura: pásalos primero por pan rallado, después por huevo batido y por último de nuevo por pan rallado, y fríe en aceite caliente hasta dorar.",
+   "etiquetas": [
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 785,
+   "proteina_porcion": 56.3,
+   "hidratos_porcion": 26.4,
+   "grasa_porcion": 49.5,
+   "fibra_porcion": 1.5,
+   "peso_total_g": 321,
+   "alergenos": [
+    "gluten",
+    "huevo"
+   ],
+   "coste_porcion": 2.37
+  },
+  {
+   "id_receta": "RE157",
+   "nombre_es": "Salmorejo cordobés tradicional",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 10,
+   "estilo": "española",
+   "peso_final_g": 295,
+   "notas": "Ración individual estándar; si lo quieres más ligero de calorías/grasa, baja el AOVE a 8-10 g o sube algo el tomate y reduce el pan.",
+   "pasos": "Base: pon en el vaso de la batidora o procesador el tomate troceado, el pan asentado en trozos, el diente de ajo y la sal. | Triturado y emulsión: tritura a velocidad alta hasta obtener una crema fina y, sin dejar de batir, incorpora el aceite de oliva virgen extra a hilo hasta emulsionar y lograr una textura densa y aterciopelada. | Frío y servicio: enfría bien en nevera antes de servir (opcionalmente con huevo duro picado o jamón serrano por encima si se acompaña).",
+   "etiquetas": [
+    "vegano",
+    "vegetariano",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 306,
+   "proteina_porcion": 5.9,
+   "hidratos_porcion": 32.8,
+   "grasa_porcion": 16.6,
+   "fibra_porcion": 3.6,
+   "peso_total_g": 271,
+   "alergenos": [
+    "gluten"
+   ],
+   "coste_porcion": 0.73
+  },
+  {
+   "id_receta": "RE158",
+   "nombre_es": "Mazamorra cordobesa tradicional",
+   "tipo": "plato",
+   "porciones": 1,
+   "momento": "comida;cena",
+   "tiempo_min": 15,
+   "estilo": "española",
+   "peso_final_g": 295,
+   "notas": "Ración individual; regula el agua según prefieras más espesa o más ligera, y modera el AOVE si buscas ajustar grasa.",
+   "pasos": "Base: tritura las almendras crudas (o almendra molida) junto con el diente de ajo, el pan asentado en trozos, la sal y parte del agua fría hasta obtener una pasta fina. | Emulsión y textura: sin dejar de batir, añade el aceite de oliva virgen extra a hilo y ve incorporando el resto del agua hasta conseguir una crema densa, suave y bien emulsionada. | Frío y servicio: enfría en nevera y sirve bien fría (tradicionalmente con huevo duro picado, aceitunas o pasas al gusto).",
+   "etiquetas": [
+    "vegano",
+    "vegetariano",
+    "sin_lactosa"
+   ],
+   "activo": "SI",
+   "fuente": "Recetario maestro (GitHub)",
+   "cuenta_como": "Plato completo: se ajusta a las raciones de tu comida",
+   "kcal_porcion": 476,
+   "proteina_porcion": 12.3,
+   "hidratos_porcion": 25.5,
+   "grasa_porcion": 36.1,
+   "fibra_porcion": 5.6,
+   "peso_total_g": 295,
+   "alergenos": [
+    "frutos_cascara",
+    "gluten"
+   ],
+   "coste_porcion": 0.74
   }
  ],
  "receta_ingredientes": [
@@ -13868,6 +14017,339 @@
    "nombre_alimento": "Skyr natural",
    "gramos": 150,
    "nota": "frío"
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 1,
+   "id_alimento": "AL0017",
+   "nombre_alimento": "Carne picada de cerdo",
+   "gramos": 120,
+   "nota": "o la carne picada preferida, aliñada la noche anterior"
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 2,
+   "id_alimento": "AL0084",
+   "nombre_alimento": "Patata",
+   "gramos": 150,
+   "nota": "en rodajas ni muy finas ni muy gordas"
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 3,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 4,
+   "nota": "ajo molido o picado"
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 4,
+   "id_alimento": "AL0225",
+   "nombre_alimento": "Perejil o cilantro fresco",
+   "gramos": 3,
+   "nota": "perejil"
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 5,
+   "id_alimento": "AL0169",
+   "nombre_alimento": "Almendra molida / harina de almendra",
+   "gramos": 0.5,
+   "nota": "Nuez moscada molida"
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 6,
+   "id_alimento": "AL0229",
+   "nombre_alimento": "Pimienta negra molida",
+   "gramos": 1,
+   "nota": null
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 7,
+   "id_alimento": "AL0228",
+   "nombre_alimento": "Vino blanco seco",
+   "gramos": 20,
+   "nota": null
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 8,
+   "id_alimento": "AL0076",
+   "nombre_alimento": "Harina de trigo",
+   "gramos": 25,
+   "nota": "para rebozar"
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 9,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 40,
+   "nota": "batido para rebozar"
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 10,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 25,
+   "nota": "pan rallado para rebozar"
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 11,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": "parte en prefritura de rodajas + fritura final escurrida"
+  },
+  {
+   "id_receta": "RE154",
+   "nombre_receta": "Patata rellena (La Original, de Bujalance)",
+   "orden": 12,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE155",
+   "nombre_receta": "San Jacobos caseros de madre",
+   "orden": 1,
+   "id_alimento": "AL0015",
+   "nombre_alimento": "Cerdo, cinta de lomo",
+   "gramos": 140,
+   "nota": "filetes estirados un poco"
+  },
+  {
+   "id_receta": "RE155",
+   "nombre_receta": "San Jacobos caseros de madre",
+   "orden": 2,
+   "id_alimento": "AL0022",
+   "nombre_alimento": "Jamón cocido extra (96 % magro)",
+   "gramos": 40,
+   "nota": "jamón de york en lonchas"
+  },
+  {
+   "id_receta": "RE155",
+   "nombre_receta": "San Jacobos caseros de madre",
+   "orden": 3,
+   "id_alimento": "AL0057",
+   "nombre_alimento": "Queso cheddar (curado)",
+   "gramos": 35,
+   "nota": "queso en lonchas fundente"
+  },
+  {
+   "id_receta": "RE155",
+   "nombre_receta": "San Jacobos caseros de madre",
+   "orden": 4,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 45,
+   "nota": "batido para rebozar"
+  },
+  {
+   "id_receta": "RE155",
+   "nombre_receta": "San Jacobos caseros de madre",
+   "orden": 5,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 50,
+   "nota": "pan rallado para doble rebozado"
+  },
+  {
+   "id_receta": "RE155",
+   "nombre_receta": "San Jacobos caseros de madre",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE155",
+   "nombre_receta": "San Jacobos caseros de madre",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1.5,
+   "nota": null
+  },
+  {
+   "id_receta": "RE156",
+   "nombre_receta": "Flamenquín (El Original, de Bujalance - receta casera de madre)",
+   "orden": 1,
+   "id_alimento": "AL0015",
+   "nombre_alimento": "Cerdo, cinta de lomo",
+   "gramos": 140,
+   "nota": "filetes estirados un poco"
+  },
+  {
+   "id_receta": "RE156",
+   "nombre_receta": "Flamenquín (El Original, de Bujalance - receta casera de madre)",
+   "orden": 2,
+   "id_alimento": "AL0193",
+   "nombre_alimento": "Jamón serrano",
+   "gramos": 40,
+   "nota": "en tira"
+  },
+  {
+   "id_receta": "RE156",
+   "nombre_receta": "Flamenquín (El Original, de Bujalance - receta casera de madre)",
+   "orden": 3,
+   "id_alimento": "AL0019",
+   "nombre_alimento": "Panceta de cerdo con piel",
+   "gramos": 30,
+   "nota": "tocino en tira, algo salado"
+  },
+  {
+   "id_receta": "RE156",
+   "nombre_receta": "Flamenquín (El Original, de Bujalance - receta casera de madre)",
+   "orden": 4,
+   "id_alimento": "AL0042",
+   "nombre_alimento": "Huevo entero",
+   "gramos": 45,
+   "nota": "batido para rebozar"
+  },
+  {
+   "id_receta": "RE156",
+   "nombre_receta": "Flamenquín (El Original, de Bujalance - receta casera de madre)",
+   "orden": 5,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 50,
+   "nota": "pan rallado para doble rebozado"
+  },
+  {
+   "id_receta": "RE156",
+   "nombre_receta": "Flamenquín (El Original, de Bujalance - receta casera de madre)",
+   "orden": 6,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": "absorbido en fritura"
+  },
+  {
+   "id_receta": "RE156",
+   "nombre_receta": "Flamenquín (El Original, de Bujalance - receta casera de madre)",
+   "orden": 7,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 1,
+   "nota": "moderada, el tocino y el jamón ya aportan sal"
+  },
+  {
+   "id_receta": "RE157",
+   "nombre_receta": "Salmorejo cordobés tradicional",
+   "orden": 1,
+   "id_alimento": "AL0136",
+   "nombre_alimento": "Tomate",
+   "gramos": 200,
+   "nota": "maduro, pera preferiblemete, o rama, pelado"
+  },
+  {
+   "id_receta": "RE157",
+   "nombre_receta": "Salmorejo cordobés tradicional",
+   "orden": 2,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 50,
+   "nota": "telera, preferiblemente, o pan candeal asentado del día anterior"
+  },
+  {
+   "id_receta": "RE157",
+   "nombre_receta": "Salmorejo cordobés tradicional",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": "al hilo al emulsionar"
+  },
+  {
+   "id_receta": "RE157",
+   "nombre_receta": "Salmorejo cordobés tradicional",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 4,
+   "nota": "1 diente pequeño, sin germen"
+  },
+  {
+   "id_receta": "RE157",
+   "nombre_receta": "Salmorejo cordobés tradicional",
+   "orden": 5,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
+  },
+  {
+   "id_receta": "RE158",
+   "nombre_receta": "Mazamorra cordobesa tradicional",
+   "orden": 1,
+   "id_alimento": "AL0159",
+   "nombre_alimento": "Almendras crudas",
+   "gramos": 40,
+   "nota": "peladas o remojadas, o almendra molida"
+  },
+  {
+   "id_receta": "RE158",
+   "nombre_receta": "Mazamorra cordobesa tradicional",
+   "orden": 2,
+   "id_alimento": "AL0194",
+   "nombre_alimento": "Pan de barra blanco",
+   "gramos": 40,
+   "nota": "asentado del día anterior"
+  },
+  {
+   "id_receta": "RE158",
+   "nombre_receta": "Mazamorra cordobesa tradicional",
+   "orden": 3,
+   "id_alimento": "AL0156",
+   "nombre_alimento": "Aceite de oliva virgen extra",
+   "gramos": 15,
+   "nota": "al hilo al emulsionar"
+  },
+  {
+   "id_receta": "RE158",
+   "nombre_receta": "Mazamorra cordobesa tradicional",
+   "orden": 4,
+   "id_alimento": "AL0141",
+   "nombre_alimento": "Ajo",
+   "gramos": 4,
+   "nota": "1 diente pequeño, sin germen"
+  },
+  {
+   "id_receta": "RE158",
+   "nombre_receta": "Mazamorra cordobesa tradicional",
+   "orden": 5,
+   "id_alimento": "AL0200",
+   "nombre_alimento": "Agua",
+   "gramos": 194,
+   "nota": "ajustada para lograr la textura cremosa deseada"
+  },
+  {
+   "id_receta": "RE158",
+   "nombre_receta": "Mazamorra cordobesa tradicional",
+   "orden": 6,
+   "id_alimento": "AL0201",
+   "nombre_alimento": "Sal",
+   "gramos": 2,
+   "nota": null
   }
  ]
 }
